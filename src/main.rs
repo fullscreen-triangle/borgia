@@ -4,12 +4,15 @@
 
 use borgia::{
     BorgiaError, Result,
-    ProbabilisticMolecule,
+    ProbabilisticMolecule, EnhancedFingerprint,
     SimilarityEngine, SimilarityAlgorithm,
-    ProbabilisticValue,
+    ProbabilisticValue, BayesianInference,
+    EvidenceProcessor, EvidenceContext, EvidenceType, UpstreamSystem,
+    IntegrationManager, HegelIntegration, LavoisierIntegration,
 };
 
-fn main() -> Result<()> {
+#[tokio::main]
+async fn main() -> Result<()> {
     println!("🧬 Borgia - Revolutionary Probabilistic Cheminformatics Engine");
     println!("================================================================");
     
@@ -17,8 +20,13 @@ fn main() -> Result<()> {
     demo_molecular_representation()?;
     demo_similarity_calculation()?;
     demo_uncertainty_quantification()?;
+    demo_enhanced_fingerprints()?;
+    demo_bayesian_inference()?;
+    demo_evidence_processing()?;
+    demo_integration_systems().await?;
     
     println!("\n✅ All demonstrations completed successfully!");
+    println!("🎯 Borgia is ready for revolutionary probabilistic cheminformatics!");
     Ok(())
 }
 
