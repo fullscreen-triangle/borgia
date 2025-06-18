@@ -138,6 +138,139 @@ fn demo_uncertainty_quantification() -> Result<()> {
     Ok(())
 }
 
+/// Demonstrate enhanced molecular fingerprints
+fn demo_enhanced_fingerprints() -> Result<()> {
+    println!("\n🔍 4. Enhanced Molecular Fingerprints");
+    println!("-------------------------------------");
+    
+    let fp1 = EnhancedFingerprint::from_smiles("c1ccccc1CCO")?; // Benzyl alcohol
+    let fp2 = EnhancedFingerprint::from_smiles("c1ccccc1CCC")?; // Propylbenzene
+    let fp3 = EnhancedFingerprint::from_smiles("CCO")?; // Ethanol
+    
+    println!("Fingerprint dimensions: {}", fp1.dimension());
+    println!("Benzyl alcohol density: {:.4}", fp1.density());
+    println!("Propylbenzene density: {:.4}", fp2.density());
+    println!("Ethanol density: {:.4}", fp3.density());
+    
+    let sim_aromatic = fp1.tanimoto_similarity(&fp2);
+    let sim_different = fp1.tanimoto_similarity(&fp3);
+    
+    println!("Aromatic compounds similarity: {:.3}", sim_aromatic);
+    println!("Aromatic vs aliphatic similarity: {:.3}", sim_different);
+    
+    Ok(())
+}
+
+/// Demonstrate Bayesian inference
+fn demo_bayesian_inference() -> Result<()> {
+    println!("\n🎯 5. Bayesian Evidence Integration");
+    println!("-----------------------------------");
+    
+    let mut bayesian = BayesianInference::new();
+    
+    // Simulate evidence from different sources
+    println!("Adding evidence from multiple sources:");
+    bayesian.update_evidence(0.85, 0.9)?; // High confidence evidence
+    println!("  - Source 1: 0.85 (confidence: 0.9)");
+    
+    bayesian.update_evidence(0.75, 0.7)?; // Medium confidence evidence
+    println!("  - Source 2: 0.75 (confidence: 0.7)");
+    
+    bayesian.update_evidence(0.92, 0.95)?; // Very high confidence evidence
+    println!("  - Source 3: 0.92 (confidence: 0.95)");
+    
+    let posterior = bayesian.calculate_posterior()?;
+    println!("Posterior probability: {:.3} ± {:.3}", 
+        posterior.mean, posterior.std_dev);
+    
+    let prediction = bayesian.predict_outcome(0.8)?;
+    println!("Prediction for threshold 0.8: {:.3}", prediction);
+    
+    Ok(())
+}
+
+/// Demonstrate evidence processing
+fn demo_evidence_processing() -> Result<()> {
+    println!("\n📋 6. Evidence Processing System");
+    println!("--------------------------------");
+    
+    let evidence_processor = EvidenceProcessor::new();
+    let evidence_context = EvidenceContext::new(
+        EvidenceType::StructuralSimilarity,
+        UpstreamSystem::Hegel,
+        "drug_discovery_pipeline".to_string(),
+    );
+    
+    let mol1 = ProbabilisticMolecule::from_smiles("CCO")?;
+    let mol2 = ProbabilisticMolecule::from_smiles("CCN")?;
+    let molecules = vec![mol1, mol2];
+    
+    let evidence_strength = evidence_processor.assess_evidence_strength(
+        &evidence_context,
+        &molecules,
+    )?;
+    
+    println!("Evidence Assessment:");
+    println!("  Raw strength: {:.3}", evidence_strength.raw_strength);
+    println!("  Adjusted strength: {:.3}", evidence_strength.adjusted_strength);
+    println!("  Confidence: {:.3}", evidence_strength.confidence);
+    println!("  Reliability: {:.3}", evidence_strength.reliability);
+    println!("  Supporting factors: {:?}", evidence_strength.supporting_factors);
+    
+    if !evidence_strength.limiting_factors.is_empty() {
+        println!("  Limiting factors: {:?}", evidence_strength.limiting_factors);
+    }
+    
+    Ok(())
+}
+
+/// Demonstrate integration with upstream systems
+async fn demo_integration_systems() -> Result<()> {
+    println!("\n🔗 7. Upstream System Integration");
+    println!("---------------------------------");
+    
+    // Set up integration systems
+    let hegel = HegelIntegration::new("http://hegel-system:8080".to_string())
+        .with_timeout(30);
+    let lavoisier = LavoisierIntegration::new("http://lavoisier-system:8080".to_string())
+        .with_timeout(45);
+    
+    let mut integration_manager = IntegrationManager::new()
+        .with_hegel(hegel)
+        .with_lavoisier(lavoisier);
+    
+    // Create test molecules
+    let molecules = vec![
+        ProbabilisticMolecule::from_smiles("CC(C)CC1=CC=C(C=C1)C(C)C(=O)O")?, // Ibuprofen
+        ProbabilisticMolecule::from_smiles("COC1=CC=C(C=C1)CCN")?, // 4-Methoxyphenethylamine
+    ];
+    
+    println!("Requesting comprehensive analysis for {} molecules", molecules.len());
+    
+    // Request analysis from all available systems
+    let responses = integration_manager
+        .request_comprehensive_analysis(&molecules, "drug_discovery")
+        .await?;
+    
+    println!("Received {} integration responses:", responses.len());
+    for (i, response) in responses.iter().enumerate() {
+        println!("  Response {}: {}", i + 1, response.request_id);
+        println!("    Evidence strength: {:.3}", response.evidence_strength);
+        println!("    Confidence: {:.3}", response.confidence);
+        println!("    Processing time: {}ms", response.processing_time_ms);
+        println!("    Recommendations: {:?}", response.recommendations);
+        
+        if !response.supporting_data.is_empty() {
+            println!("    Supporting data:");
+            for (key, value) in &response.supporting_data {
+                println!("      {}: {}", key, value);
+            }
+        }
+    }
+    
+    Ok(())
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -148,5 +281,8 @@ mod tests {
         assert!(demo_molecular_representation().is_ok());
         assert!(demo_similarity_calculation().is_ok());
         assert!(demo_uncertainty_quantification().is_ok());
+        assert!(demo_enhanced_fingerprints().is_ok());
+        assert!(demo_bayesian_inference().is_ok());
+        assert!(demo_evidence_processing().is_ok());
     }
 } 

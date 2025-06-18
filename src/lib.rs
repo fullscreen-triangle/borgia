@@ -51,6 +51,14 @@ pub use core::{
     UpstreamSystem,
 };
 
+// Advanced engine
+pub use engine::{
+    AdvancedBorgiaEngine,
+    MolecularAnalysisResult,
+    AnalysisRecommendation,
+    ProcessingConfig,
+};
+
 // Molecular representations
 pub use molecular::{
     ProbabilisticMolecule,
@@ -82,6 +90,8 @@ pub use fuzzy::{
     LinguisticVariable,
     FuzzyRule,
     MembershipFunction,
+    FuzzyInferenceEngine,
+    create_molecular_similarity_system,
 };
 
 // Evidence processing
@@ -89,6 +99,8 @@ pub use evidence::{
     EvidenceProcessor,
     EvidenceContext,
     EvidencePropagation,
+    EvidenceStrength,
+    EvidenceFusionResult,
 };
 
 // Integration with upstream systems
@@ -97,6 +109,10 @@ pub use integration::{
     LavoisierIntegration,
     GospelIntegration,
     BeneGesseritIntegration,
+    IntegrationManager,
+    IntegrationRequest,
+    IntegrationResponse,
+    UpstreamFeedback,
 };
 
 #[cfg(test)]
