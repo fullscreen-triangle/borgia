@@ -1,0 +1,263 @@
+[build-system]
+requires = ["maturin>=1.0,<2.0"]
+build-backend = "maturin"
+
+[project]
+name = "borgia"
+version = "0.1.0"
+description = "Revolutionary Probabilistic Cheminformatics Engine"
+authors = [
+    {name = "Kundai Farai Sachikonye", email = "kundai.f.sachikonye@gmail.com"},
+]
+license = {text = "MIT"}
+readme = "README.md"
+homepage = "https://github.com/fullscreen-triangle/borgia"
+repository = "https://github.com/fullscreen-triangle/borgia"
+documentation = "https://borgia.readthedocs.io"
+keywords = ["cheminformatics", "probabilistic", "fuzzy-logic", "molecular", "bayesian"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Rust",
+    "Topic :: Scientific/Engineering :: Chemistry",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+requires-python = ">=3.9"
+
+dependencies = [
+    # Core scientific computing
+    "numpy>=1.21.0",
+    "scipy>=1.7.0",
+    "pandas>=1.3.0",
+    "scikit-learn>=1.0.0",
+    
+    # Probabilistic and statistical computing
+    "pymc>=5.0.0",
+    "arviz>=0.12.0",
+    "emcee>=3.1.0",
+    "scipy-stats>=1.7.0",
+    
+    # Fuzzy logic and uncertainty
+    "scikit-fuzzy>=0.4.2",
+    "uncertainty-quantification>=0.1.0",
+    "pyuncertainties>=1.6.0",
+    
+    # Cheminformatics
+    "rdkit>=2023.3.1",
+    "openeye-toolkits>=2023.2.2; extra == 'openeye'",
+    "chembl-webresource-client>=0.10.8",
+    "pubchempy>=1.0.4",
+    
+    # Molecular representations and fingerprints
+    "mordred>=1.2.0",
+    "deepchem>=2.7.0",
+    "molfeat>=0.8.0",
+    
+    # Graph algorithms
+    "networkx>=2.6.0",
+    "graph-tool>=2.45; extra == 'graph-tool'",
+    "igraph>=0.10.0",
+    
+    # Machine learning and deep learning
+    "torch>=1.12.0",
+    "torchvision>=0.13.0",
+    "tensorflow>=2.9.0",
+    "transformers>=4.20.0",
+    
+    # Bayesian inference
+    "pyro-ppl>=1.8.0",
+    "numpyro>=0.10.0",
+    "edward2>=0.0.3",
+    
+    # Data handling and serialization
+    "pydantic>=1.10.0",
+    "fastapi>=0.95.0",
+    "uvicorn>=0.20.0",
+    "httpx>=0.24.0",
+    
+    # Visualization
+    "matplotlib>=3.5.0",
+    "seaborn>=0.11.0",
+    "plotly>=5.10.0",
+    "bokeh>=2.4.0",
+    
+    # Configuration and CLI
+    "click>=8.0.0",
+    "typer>=0.7.0",
+    "hydra-core>=1.2.0",
+    "omegaconf>=2.2.0",
+    
+    # Logging and monitoring
+    "loguru>=0.6.0",
+    "wandb>=0.13.0",
+    "mlflow>=2.0.0",
+    
+    # Parallel computing
+    "joblib>=1.1.0",
+    "dask>=2022.7.0",
+    "ray>=2.0.0",
+    
+    # Database and storage
+    "sqlalchemy>=1.4.0",
+    "psycopg2-binary>=2.9.0",
+    "redis>=4.3.0",
+    
+    # Testing and development
+    "pytest>=7.0.0",
+    "pytest-cov>=3.0.0",
+    "pytest-benchmark>=4.0.0",
+    "hypothesis>=6.50.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "black>=22.0.0",
+    "isort>=5.10.0",
+    "flake8>=5.0.0",
+    "mypy>=0.991",
+    "pre-commit>=2.20.0",
+    "sphinx>=5.0.0",
+    "sphinx-rtd-theme>=1.0.0",
+    "jupyter>=1.0.0",
+    "ipykernel>=6.15.0",
+]
+
+test = [
+    "pytest>=7.0.0",
+    "pytest-cov>=3.0.0",
+    "pytest-benchmark>=4.0.0",
+    "pytest-mock>=3.8.0",
+    "pytest-xdist>=2.5.0",
+    "hypothesis>=6.50.0",
+    "coverage>=6.4.0",
+]
+
+docs = [
+    "sphinx>=5.0.0",
+    "sphinx-rtd-theme>=1.0.0",
+    "myst-parser>=0.18.0",
+    "sphinx-autodoc-typehints>=1.19.0",
+    "nbsphinx>=0.8.0",
+]
+
+performance = [
+    "numba>=0.56.0",
+    "cupy>=11.0.0",
+    "jax>=0.3.0",
+    "jaxlib>=0.3.0",
+]
+
+openeye = [
+    "openeye-toolkits>=2023.2.2",
+]
+
+graph-tool = [
+    "graph-tool>=2.45",
+]
+
+all = [
+    "borgia[dev,test,docs,performance,openeye,graph-tool]",
+]
+
+[project.urls]
+Homepage = "https://github.com/your-org/borgia"
+Repository = "https://github.com/your-org/borgia"
+Documentation = "https://borgia.readthedocs.io"
+Changelog = "https://github.com/your-org/borgia/blob/main/CHANGELOG.md"
+"Bug Tracker" = "https://github.com/your-org/borgia/issues"
+
+[project.scripts]
+borgia = "borgia.cli:main"
+borgia-analyze = "borgia.analysis:main"
+borgia-validate = "borgia.validation:main"
+
+[tool.maturin]
+features = ["python-bindings"]
+module-name = "borgia._borgia"
+python-source = "python"
+
+[tool.black]
+line-length = 88
+target-version = ['py39']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # directories
+  \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | build
+  | dist
+)/
+'''
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+line_length = 88
+known_first_party = ["borgia"]
+
+[tool.mypy]
+python_version = "3.9"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+disallow_untyped_decorators = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+warn_unreachable = true
+strict_equality = true
+
+[[tool.mypy.overrides]]
+module = [
+    "rdkit.*",
+    "openeye.*",
+    "graph_tool.*",
+    "scikit_fuzzy.*",
+    "deepchem.*",
+]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-ra -q --strict-markers --strict-config"
+testpaths = ["tests", "python/tests"]
+markers = [
+    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
+    "integration: marks tests as integration tests",
+    "benchmark: marks tests as benchmarks",
+    "probabilistic: marks tests related to probabilistic algorithms",
+    "fuzzy: marks tests related to fuzzy logic",
+    "molecular: marks tests related to molecular operations",
+]
+
+[tool.coverage.run]
+source = ["borgia"]
+omit = [
+    "*/tests/*",
+    "*/test_*.py",
+    "setup.py",
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "raise AssertionError",
+    "raise NotImplementedError",
+    "if __name__ == .__main__.:",
+    "if TYPE_CHECKING:",
+] 
