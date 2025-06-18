@@ -38,6 +38,12 @@ pub mod engine;
 pub mod integration;
 pub mod utils;
 
+// Algorithm modules
+pub mod algorithms;
+
+// Representation modules
+pub mod representation;
+
 // Error handling
 pub mod error;
 pub use error::{BorgiaError, Result};
