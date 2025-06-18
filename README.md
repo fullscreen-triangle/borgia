@@ -1,6 +1,11 @@
 
 <p align="center">
   <h1 align="center">Borgia</h1>
+
+</p>
+
+<p align="center">
+  <em>"Performing only  when it counts "</em>
 </p>
 
 <p align="center">
@@ -16,9 +21,7 @@
   <img src="https://img.shields.io/badge/Fuzzy-Logic-brightgreen.svg" alt="Fuzzy Logic">
 </p>
 
-<p align="center">
-  <em>"Performing only  when it counts "</em>
-</p>
+
 
 ## Project Vision
 
@@ -99,109 +102,58 @@ pub struct BorgiaRequest {
 - Context-aware feature enhancement
 - Computational budget optimization based on evidence importance
 
-## Implementation Roadmap
+## Getting Started
 
-### Phase 1: Core Infrastructure
-- [ ] **Probabilistic Molecular Data Structures**
-  - [ ] `ProbabilisticMolecule` with fuzzy features
-  - [ ] `FuzzyAromaticity`, `FuzzyRingSystems`, `FuzzyFunctionalGroups`
-  - [ ] `ProbabilisticInvariant` for graph algorithms
-  - [ ] Uncertainty propagation mathematics
+### Installation
 
-- [ ] **Evidence Request Processing**
-  - [ ] `BorgiaRequest` structure and validation
-  - [ ] Upstream system integration interfaces
-  - [ ] Request prioritization and queuing
-  - [ ] Computational budget allocation
+```bash
+# Clone the repository
+git clone https://github.com/fullscreen-triangle/borgia.git
+cd borgia
 
-- [ ] **Basic Probabilistic Algorithms**
-  - [ ] Probabilistic Morgan Algorithm implementation
-  - [ ] Fuzzy Tanimoto similarity with uncertainty bounds
-  - [ ] Enhanced molecular fingerprint generation
-  - [ ] Probabilistic substructure matching
+# Setup development environment
+make setup
 
-### Phase 2: Enhanced Representations
-- [ ] **Information-Rich Molecular Descriptors**
-  - [ ] Context-adaptive feature extraction
-  - [ ] Quantum mechanical property integration
-  - [ ] Conformational state distributions
-  - [ ] Interaction potential calculations
-  - [ ] Electronic property fuzzy sets
+# Start the development server
+make dev
+```
 
-- [ ] **Fuzzy Logic Integration**
-  - [ ] Linguistic variable definitions for molecular properties
-  - [ ] Fuzzy rule systems for molecular reasoning
-  - [ ] Hybrid fuzzy-logical programming framework
-  - [ ] Defuzzification methods for crisp outputs
+### Quick Example
 
-- [ ] **Advanced Graph Algorithms**
-  - [ ] Probabilistic maximum common substructure
-  - [ ] Fuzzy graph isomorphism detection
-  - [ ] Uncertainty-aware graph traversal
-  - [ ] Probabilistic molecular alignment
+```python
+from borgia import BorgiaEngine, ProbabilisticMolecule
 
-### Phase 3: Upstream System Integration
-- [ ] **Hegel Integration**
-  - [ ] Molecular identity confirmation protocols
-  - [ ] Evidence rectification support
-  - [ ] Fuzzy-Bayesian evidence networks interface
-  - [ ] Confidence propagation mechanisms
+# Initialize the engine
+engine = BorgiaEngine()
 
-- [ ] **Lavoisier Integration**
-  - [ ] Mass spectrometry compound identification support
-  - [ ] Metabolomics evidence confirmation
-  - [ ] Spectral matching enhancement
-  - [ ] Multi-modal evidence fusion
+# Create probabilistic molecular representations
+mol1 = ProbabilisticMolecule.from_smiles("CCO")  # Ethanol
+mol2 = ProbabilisticMolecule.from_smiles("CCN")  # Ethylamine
 
-- [ ] **Gospel Integration**
-  - [ ] Pharmacogenetic compound analysis
-  - [ ] Drug-metabolism pathway confirmation
-  - [ ] Nutritional compound identification
-  - [ ] Cross-domain molecular evidence
+# Compare with uncertainty quantification
+similarity = engine.compare_molecules(
+    mol1, mol2, 
+    evidence_context="drug_metabolism",
+    confidence_threshold=0.8
+)
 
-- [ ] **Bene Gesserit Integration**
-  - [ ] Membrane-drug interaction analysis
-  - [ ] ATP-constrained molecular dynamics
-  - [ ] Biophysical property confirmation
-  - [ ] Circuit parameter molecular mapping
+print(f"Similarity distribution: {similarity}")
+# Output: {highly_similar: 0.65, moderately_similar: 0.30, dissimilar: 0.05}
+```
 
-### Phase 4: Advanced Features
-- [ ] **Adaptive Learning System**
-  - [ ] Feedback-based representation evolution
-  - [ ] Context-aware feature weighting
-  - [ ] Performance optimization based on success metrics
-  - [ ] Computational efficiency improvements
+### API Usage
 
-- [ ] **Metacognitive Integration**
-  - [ ] Integration with Tres Commas Trinity Engine
-  - [ ] V8 Metabolism Pipeline molecular processing
-  - [ ] Probabilistic evidence generation for belief networks
-  - [ ] ATP-cost modeling for molecular computations
+```python
+# Evidence-driven molecular analysis
+request = BorgiaRequest(
+    requesting_system="hegel",
+    molecular_candidates=[mol1, mol2, mol3],
+    evidence_needed="structural_similarity",
+    objective_function="identity_confirmation"
+)
 
-- [ ] **Specialized Analysis Modules**
-  - [ ] ADMET property prediction with uncertainty
-  - [ ] Toxicity assessment using fuzzy toxicophores
-  - [ ] Binding affinity prediction with confidence intervals
-  - [ ] Metabolic pathway analysis with probabilistic rates
-
-### Phase 5: Performance & Optimization
-- [ ] **High-Performance Computing**
-  - [ ] Rust core engine for computationally intensive operations
-  - [ ] Python integration layer for flexibility
-  - [ ] Parallel processing for multiple molecular comparisons
-  - [ ] Memory-efficient probabilistic data structures
-
-- [ ] **Validation & Testing**
-  - [ ] Perturbation testing for molecular representations
-  - [ ] Cross-validation with known molecular datasets
-  - [ ] Upstream system integration testing
-  - [ ] Performance benchmarking against traditional methods
-
-- [ ] **Documentation & Deployment**
-  - [ ] Comprehensive API documentation
-  - [ ] Integration guides for upstream systems
-  - [ ] Performance optimization guidelines
-  - [ ] Deployment and scaling instructions
+result = engine.process_request(request)
+```
 
 ## Technical Specifications
 
