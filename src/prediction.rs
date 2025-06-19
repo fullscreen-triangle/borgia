@@ -12,6 +12,8 @@ use crate::quantum::QuantumMolecularComputer;
 use crate::oscillatory::UniversalOscillator;
 use crate::entropy::EntropyDistribution;
 use serde::{Serialize, Deserialize};
+use std::collections::HashMap;
+use ndarray::Array2;
 
 /// Main prediction engine for quantum-informed biological properties
 #[derive(Clone, Debug, Serialize, Deserialize)]
@@ -264,6 +266,55 @@ pub struct QuantumEfficiencyPrediction {
     pub error_correction_capability: f64,
 }
 
+/// Quantum property model for specific properties
+#[derive(Clone, Debug, Serialize, Deserialize)]
+pub struct QuantumPropertyModel {
+    pub property_name: String,
+    pub model_parameters: HashMap<String, f64>,
+    pub quantum_contributions: Vec<String>,
+    pub accuracy_metrics: ModelAccuracy,
+}
+
+/// Oscillatory property model
+#[derive(Clone, Debug, Serialize, Deserialize)]
+pub struct OscillatoryPropertyModel {
+    pub property_name: String,
+    pub frequency_dependencies: Vec<f64>,
+    pub amplitude_dependencies: Vec<f64>,
+    pub phase_dependencies: Vec<f64>,
+    pub hierarchy_contributions: HashMap<u8, f64>,
+}
+
+/// Hierarchical property model across scales
+#[derive(Clone, Debug, Serialize, Deserialize)]
+pub struct HierarchicalPropertyModel {
+    pub property_name: String,
+    pub scale_contributions: HashMap<u8, f64>,
+    pub cross_scale_coupling: Array2<f64>,
+    pub emergence_patterns: Vec<EmergencePattern>,
+}
+
+/// Model accuracy metrics
+#[derive(Clone, Debug, Serialize, Deserialize)]
+pub struct ModelAccuracy {
+    pub training_accuracy: f64,
+    pub validation_accuracy: f64,
+    pub test_accuracy: f64,
+    pub cross_validation_scores: Vec<f64>,
+    pub confidence_intervals: (f64, f64),
+    pub feature_importance: HashMap<String, f64>,
+}
+
+/// Pattern of property emergence across scales
+#[derive(Clone, Debug, Serialize, Deserialize)]
+pub struct EmergencePattern {
+    pub pattern_name: String,
+    pub emergence_scale: u8,
+    pub prerequisite_scales: Vec<u8>,
+    pub emergence_threshold: f64,
+    pub nonlinearity_factor: f64,
+}
+
 impl QuantumBiologicalPropertyPredictor {
     /// Create new predictor with default model parameters
     pub fn new() -> Self {
@@ -496,21 +547,43 @@ impl QuantumBiologicalPropertyPredictor {
     fn identify_longevity_mechanisms(&self, molecule: &OscillatoryQuantumMolecule, factor: f64) -> Vec<LongevityMechanism> {
         let mut mechanisms = Vec::new();
         
-        if factor > 0.5 {
+        // Metabolic optimization mechanism
+        if molecule.quantum_computer.transport_efficiency > 0.7 {
             mechanisms.push(LongevityMechanism {
-                mechanism_name: "Quantum coherence enhancement".to_string(),
-                effect_magnitude: factor,
+                mechanism_name: "metabolic_optimization".to_string(),
+                effect_magnitude: molecule.quantum_computer.transport_efficiency - 0.5,
                 confidence: 0.8,
-                supporting_evidence: vec!["High coherence factor".to_string()],
+                supporting_evidence: vec!["high_ENAQT_efficiency".to_string()],
             });
         }
         
+        // Antioxidant mechanism
+        if self.has_antioxidant_properties(molecule) {
+            mechanisms.push(LongevityMechanism {
+                mechanism_name: "antioxidant_protection".to_string(),
+                effect_magnitude: 1.0 - molecule.quantum_computer.radical_generation_rate * 1e6,
+                confidence: 0.7,
+                supporting_evidence: vec!["low_radical_generation".to_string()],
+            });
+        }
+        
+        // Quantum coherence enhancement mechanism
+        if molecule.quantum_computer.coherence_time > 1e-9 {
+            mechanisms.push(LongevityMechanism {
+                mechanism_name: "coherence_enhancement".to_string(),
+                effect_magnitude: (molecule.quantum_computer.coherence_time * 1e9).ln() / 10.0,
+                confidence: 0.6,
+                supporting_evidence: vec!["extended_coherence_time".to_string()],
+            });
+        }
+        
+        // Membrane quantum computation mechanism
         if molecule.quantum_computer.is_membrane_quantum_computer() {
             mechanisms.push(LongevityMechanism {
-                mechanism_name: "Membrane quantum computation".to_string(),
-                effect_magnitude: molecule.assess_membrane_qc_potential(),
+                mechanism_name: "membrane_quantum_computation".to_string(),
+                effect_magnitude: self.assess_membrane_qc_potential(molecule),
                 confidence: 0.9,
-                supporting_evidence: vec!["Membrane QC potential".to_string()],
+                supporting_evidence: vec!["membrane_QC_potential".to_string()],
             });
         }
         
@@ -569,13 +642,53 @@ impl QuantumBiologicalPropertyPredictor {
     }
     
     fn predict_target_proteins(&self, molecule: &OscillatoryQuantumMolecule) -> Vec<String> {
-        // Would use pattern recognition to predict protein targets
-        molecule.information_catalyst.pattern_recognition.recognized_patterns.iter().cloned().collect()
+        let mut targets = Vec::new();
+        
+        // Membrane proteins for membrane-like molecules
+        if molecule.quantum_computer.membrane_properties.amphipathic_score > 0.5 {
+            targets.push("ATP_synthase".to_string());
+            targets.push("cytochrome_c_oxidase".to_string());
+            targets.push("NADH_dehydrogenase".to_string());
+        }
+        
+        // Electron transport proteins for molecules with tunneling pathways
+        if !molecule.quantum_computer.tunneling_pathways.is_empty() {
+            targets.push("cytochrome_c".to_string());
+            targets.push("ferredoxin".to_string());
+        }
+        
+        // Antioxidant targets for radical-generating molecules
+        if molecule.quantum_computer.radical_generation_rate > 1e-6 {
+            targets.push("superoxide_dismutase".to_string());
+            targets.push("catalase".to_string());
+            targets.push("glutathione_peroxidase".to_string());
+        }
+        
+        targets
     }
     
     fn predict_pathway_involvement(&self, molecule: &OscillatoryQuantumMolecule) -> Vec<String> {
-        // Would predict biological pathway involvement
-        vec!["Metabolic pathways".to_string()] // Placeholder
+        let mut pathways = Vec::new();
+        
+        // Energy metabolism pathways
+        if molecule.quantum_computer.transport_efficiency > 0.5 {
+            pathways.push("oxidative_phosphorylation".to_string());
+            pathways.push("electron_transport_chain".to_string());
+        }
+        
+        // Membrane-related pathways
+        if molecule.quantum_computer.membrane_properties.amphipathic_score > 0.3 {
+            pathways.push("membrane_biogenesis".to_string());
+            pathways.push("lipid_metabolism".to_string());
+        }
+        
+        // Oxidative stress pathways
+        if molecule.quantum_computer.radical_generation_rate > 1e-7 {
+            pathways.push("oxidative_stress_response".to_string());
+            pathways.push("antioxidant_defense".to_string());
+        }
+        
+        pathways
     }
     
     fn calculate_bioavailability(&self, molecule: &OscillatoryQuantumMolecule) -> f64 {
@@ -649,6 +762,145 @@ impl QuantumBiologicalPropertyPredictor {
         let coupling_optimality = 1.0 - (coupling - optimal_coupling).abs();
         
         coherence * coupling_optimality
+    }
+    
+    /// Assess potential for membrane quantum computation
+    fn assess_membrane_qc_potential(&self, molecule: &OscillatoryQuantumMolecule) -> f64 {
+        let mut score = 0.0;
+        
+        // Amphipathic self-assembly potential
+        if molecule.quantum_computer.membrane_properties.critical_micelle_concentration < 1e-3 {
+            score += 0.3;
+        }
+        
+        // Optimal tunneling distances
+        let tunneling_distances = self.calculate_tunneling_distances(molecule);
+        let optimal_distances = tunneling_distances.iter()
+            .filter(|&&d| d >= 3.0 && d <= 5.0)
+            .count();
+        if !tunneling_distances.is_empty() {
+            score += 0.3 * (optimal_distances as f64 / tunneling_distances.len() as f64);
+        }
+        
+        // Environmental coupling optimization
+        let gamma_actual = molecule.quantum_computer.environmental_coupling_strength;
+        let gamma_optimal = molecule.quantum_computer.optimal_coupling;
+        if gamma_optimal > 0.0 {
+            let coupling_score = 1.0 - (gamma_actual - gamma_optimal).abs() / gamma_optimal;
+            score += 0.4 * coupling_score;
+        }
+        
+        score.min(1.0)
+    }
+    
+    /// Quantum activity model combining multiple quantum factors
+    fn quantum_activity_model(&self, membrane_potential: f64, enaqt_efficiency: f64, radical_generation: f64) -> f64 {
+        // Activity increases with membrane potential and ENAQT efficiency
+        // but decreases with radical generation (toxicity)
+        let positive_factors = membrane_potential * enaqt_efficiency;
+        let negative_factors = radical_generation * 10.0; // Scale radical toxicity
+        
+        (positive_factors - negative_factors).max(0.0).min(1.0)
+    }
+    
+    /// Calculate confidence in quantum predictions
+    fn calculate_quantum_confidence(&self, molecule: &OscillatoryQuantumMolecule) -> f64 {
+        // Confidence based on completeness of quantum characterization
+        let mut confidence = 0.0;
+        
+        // Coherence time characterization
+        if molecule.quantum_computer.coherence_time > 0.0 {
+            confidence += 0.2;
+        }
+        
+        // Tunneling pathway characterization
+        if !molecule.quantum_computer.tunneling_pathways.is_empty() {
+            confidence += 0.2;
+        }
+        
+        // ENAQT efficiency characterization
+        if molecule.quantum_computer.transport_efficiency > 0.0 {
+            confidence += 0.2;
+        }
+        
+        // Membrane properties characterization
+        if molecule.quantum_computer.membrane_properties.amphipathic_score > 0.0 {
+            confidence += 0.2;
+        }
+        
+        // Oscillatory characterization
+        if molecule.oscillatory_state.natural_frequency > 0.0 {
+            confidence += 0.2;
+        }
+        
+        confidence
+    }
+    
+    /// Calculate metabolic demand increase
+    fn calculate_metabolic_demand_increase(&self, molecule: &OscillatoryQuantumMolecule) -> f64 {
+        // Metabolic demand increases with quantum computational activity
+        let base_demand = 1.0;
+        let quantum_activity = molecule.quantum_computer.transport_efficiency;
+        let oscillatory_activity = molecule.oscillatory_state.natural_frequency / 1e12; // Scale to reasonable range
+        
+        base_demand + quantum_activity * 0.5 + oscillatory_activity * 0.3
+    }
+    
+    /// Calculate temperature factor for quantum processes
+    fn calculate_temperature_factor(&self, molecule: &OscillatoryQuantumMolecule) -> f64 {
+        // Temperature factor based on thermal activation of quantum processes
+        // Higher coherence suggests better temperature tolerance
+        let base_factor = 1.0;
+        let coherence_protection = molecule.quantum_computer.coherence_time / 1e-12; // Scale by picoseconds
+        
+        base_factor + (1.0 / (1.0 + coherence_protection))
+    }
+    
+    /// Check if molecule enables sustained high metabolism
+    fn enables_sustained_high_metabolism(&self, molecule: &OscillatoryQuantumMolecule) -> bool {
+        // High ENAQT efficiency with low radical generation enables sustained metabolism
+        molecule.quantum_computer.transport_efficiency > 0.8 && 
+        molecule.quantum_computer.radical_generation_rate < 1e-8
+    }
+    
+    /// Check if molecule enables temperature reduction
+    fn enables_temperature_reduction(&self, molecule: &OscillatoryQuantumMolecule) -> bool {
+        // Molecules that enhance low-temperature quantum coherence
+        molecule.quantum_computer.coherence_time > 1e-9 // Nanosecond coherence
+    }
+    
+    /// Check if molecule has antioxidant properties
+    fn has_antioxidant_properties(&self, molecule: &OscillatoryQuantumMolecule) -> bool {
+        // Molecules that can intercept radicals or reduce radical generation
+        molecule.quantum_computer.radical_generation_rate < 1e-10 ||
+        self.has_radical_scavenging_capability(molecule)
+    }
+    
+    /// Check for radical scavenging capability
+    fn has_radical_scavenging_capability(&self, molecule: &OscillatoryQuantumMolecule) -> bool {
+        // Look for electron-donating groups or structures that can neutralize radicals
+        // This would involve analyzing molecular structure for antioxidant motifs
+        // Simplified implementation
+        molecule.quantum_computer.tunneling_pathways.iter()
+            .any(|pathway| pathway.electron_energy > 2.0) // High-energy electrons available for donation
+    }
+    
+    /// Calculate lifespan change based on longevity factor
+    fn calculate_lifespan_change(&self, longevity_factor: f64) -> f64 {
+        // Empirical relationship between longevity factor and lifespan change
+        // Positive factors extend life, negative factors shorten it
+        if longevity_factor > 0.0 {
+            longevity_factor * 20.0 // Up to 20% lifespan extension
+        } else {
+            longevity_factor * 50.0 // Up to 50% lifespan reduction for highly toxic compounds
+        }
+    }
+    
+    /// Calculate tunneling distances in the molecule
+    fn calculate_tunneling_distances(&self, molecule: &OscillatoryQuantumMolecule) -> Vec<f64> {
+        molecule.quantum_computer.tunneling_pathways.iter()
+            .map(|pathway| pathway.barrier_width)
+            .collect()
     }
 }
 

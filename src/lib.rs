@@ -124,6 +124,17 @@ pub use integration::{
     UpstreamFeedback,
 };
 
+// Drug discovery
+pub use drug_discovery::{
+    QuantumDrugDiscovery,
+    QuantumTarget,
+    ProteinTarget,
+    QuantumBottleneck,
+    MolecularTemplate,
+    ComputationalTask,
+    QuantumRequirements,
+};
+
 // =====================================================================================
 // BORGIA: Quantum-Oscillatory Molecular Representation System
 // 
@@ -184,6 +195,7 @@ pub use integration::{
 
 pub mod algorithms;
 pub mod core;
+pub mod drug_discovery;
 pub mod engine;
 pub mod entropy;
 pub mod error;
