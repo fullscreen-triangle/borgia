@@ -5,6 +5,8 @@ use crate::molecular::ProbabilisticMolecule;
 use crate::probabilistic::{ProbabilisticValue, SimilarityDistribution};
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
+use ndarray::Array1;
+use crate::molecular::OscillatoryQuantumMolecule;
 
 /// Similarity calculation engine
 #[derive(Debug, Clone)]
@@ -49,6 +51,24 @@ pub enum SimilarityAlgorithm {
     ProbabilisticTanimoto,
     FuzzyTanimoto,
     WeightedSimilarity,
+}
+
+/// Oscillatory similarity calculator based on synchronization potential
+pub struct OscillatorySimilarityCalculator {
+    pub synchronization_threshold: f64,
+    pub frequency_weight: f64,
+    pub amplitude_weight: f64,
+    pub phase_weight: f64,
+    pub entropy_weight: f64,
+}
+
+/// Quantum computational similarity calculator
+pub struct QuantumComputationalSimilarityCalculator {
+    pub enaqt_weight: f64,
+    pub coupling_weight: f64,
+    pub coherence_weight: f64,
+    pub tunneling_weight: f64,
+    pub membrane_weight: f64,
 }
 
 impl SimilarityEngine {
@@ -342,6 +362,360 @@ impl SimilarityEngine {
 impl Default for SimilarityEngine {
     fn default() -> Self {
         Self::new()
+    }
+}
+
+impl OscillatorySimilarityCalculator {
+    pub fn new() -> Self {
+        Self {
+            synchronization_threshold: 0.1,
+            frequency_weight: 0.3,
+            amplitude_weight: 0.2,
+            phase_weight: 0.2,
+            entropy_weight: 0.3,
+        }
+    }
+    
+    /// Calculate similarity based on oscillatory synchronization potential
+    /// Following the Observer Synchronization Theorem
+    pub fn oscillatory_similarity(&self, mol1: &OscillatoryQuantumMolecule, mol2: &OscillatoryQuantumMolecule) -> f64 {
+        // Calculate frequency difference
+        let freq_diff = (mol1.oscillatory_state.natural_frequency - mol2.oscillatory_state.natural_frequency).abs();
+        
+        if freq_diff < self.synchronization_threshold {
+            // Molecules can synchronize - calculate information transfer rate
+            let phase_difference = self.calculate_phase_relationship(mol1, mol2);
+            let coupling_strength = self.calculate_coupling_strength(mol1, mol2);
+            let info_transfer_rate = coupling_strength * phase_difference.cos();
+            
+            // Similarity based on synchronization strength
+            (-freq_diff / self.synchronization_threshold).exp() * info_transfer_rate.abs()
+        } else {
+            // No synchronization possible
+            0.0
+        }
+    }
+    
+    /// Calculate entropy endpoint similarity
+    /// Molecules with similar "landing patterns" are similar
+    pub fn entropy_endpoint_similarity(&self, mol1: &OscillatoryQuantumMolecule, mol2: &OscillatoryQuantumMolecule) -> f64 {
+        // Compare endpoint distributions using Wasserstein distance
+        let endpoint_distance = self.wasserstein_distance(
+            &mol1.entropy_distribution.landing_probabilities,
+            &mol2.entropy_distribution.landing_probabilities
+        );
+        
+        // Convert distance to similarity
+        (-endpoint_distance).exp()
+    }
+    
+    /// Multi-scale similarity across the nested hierarchy
+    pub fn nested_hierarchy_similarity(&self, mol1: &OscillatoryQuantumMolecule, mol2: &OscillatoryQuantumMolecule) -> HashMap<u8, f64> {
+        let mut similarities = HashMap::new();
+        
+        // Compare at each hierarchy level
+        for (level, rep1) in &mol1.hierarchy_representations {
+            if let Some(rep2) = mol2.hierarchy_representations.get(level) {
+                let similarity = self.compare_hierarchy_level(rep1, rep2);
+                similarities.insert(*level, similarity);
+            }
+        }
+        
+        similarities
+    }
+    
+    /// Calculate phase relationship between two oscillators
+    fn calculate_phase_relationship(&self, mol1: &OscillatoryQuantumMolecule, mol2: &OscillatoryQuantumMolecule) -> f64 {
+        mol1.oscillatory_state.current_state.phase - mol2.oscillatory_state.current_state.phase
+    }
+    
+    /// Calculate coupling strength between oscillators
+    fn calculate_coupling_strength(&self, mol1: &OscillatoryQuantumMolecule, mol2: &OscillatoryQuantumMolecule) -> f64 {
+        // Coupling strength based on molecular properties and spatial proximity
+        let structural_coupling = self.calculate_structural_coupling(mol1, mol2);
+        let electronic_coupling = self.calculate_electronic_coupling(mol1, mol2);
+        let vibrational_coupling = self.calculate_vibrational_coupling(mol1, mol2);
+        
+        (structural_coupling * electronic_coupling * vibrational_coupling).sqrt()
+    }
+    
+    /// Calculate Wasserstein distance between probability distributions
+    fn wasserstein_distance(&self, dist1: &Array1<f64>, dist2: &Array1<f64>) -> f64 {
+        // Simplified Wasserstein distance calculation
+        // In practice, this would use optimal transport algorithms
+        let mut cumsum1 = 0.0;
+        let mut cumsum2 = 0.0;
+        let mut distance = 0.0;
+        
+        for i in 0..dist1.len().min(dist2.len()) {
+            cumsum1 += dist1[i];
+            cumsum2 += dist2[i];
+            distance += (cumsum1 - cumsum2).abs();
+        }
+        
+        distance / dist1.len() as f64
+    }
+    
+    /// Compare similarity at specific hierarchy level
+    fn compare_hierarchy_level(&self, level1: &crate::molecular::HierarchyLevel, level2: &crate::molecular::HierarchyLevel) -> f64 {
+        let freq_similarity = 1.0 - (level1.characteristic_frequency - level2.characteristic_frequency).abs() / 
+                             level1.characteristic_frequency.max(level2.characteristic_frequency);
+        let amplitude_similarity = 1.0 - (level1.oscillation_amplitude - level2.oscillation_amplitude).abs() /
+                                  level1.oscillation_amplitude.max(level2.oscillation_amplitude);
+        
+        (freq_similarity + amplitude_similarity) / 2.0
+    }
+    
+    /// Calculate structural coupling between molecules
+    fn calculate_structural_coupling(&self, mol1: &OscillatoryQuantumMolecule, mol2: &OscillatoryQuantumMolecule) -> f64 {
+        // Simplified structural coupling based on molecular size and shape
+        let size_factor = (mol1.molecular_weight / mol2.molecular_weight).min(mol2.molecular_weight / mol1.molecular_weight);
+        size_factor.sqrt()
+    }
+    
+    /// Calculate electronic coupling between molecules
+    fn calculate_electronic_coupling(&self, mol1: &OscillatoryQuantumMolecule, mol2: &OscillatoryQuantumMolecule) -> f64 {
+        // Electronic coupling based on quantum computational properties
+        let efficiency_similarity = 1.0 - (mol1.quantum_computer.transport_efficiency - mol2.quantum_computer.transport_efficiency).abs();
+        let coherence_similarity = 1.0 - (mol1.quantum_computer.coherence_time - mol2.quantum_computer.coherence_time).abs() /
+                                  mol1.quantum_computer.coherence_time.max(mol2.quantum_computer.coherence_time);
+        
+        (efficiency_similarity + coherence_similarity) / 2.0
+    }
+    
+    /// Calculate vibrational coupling between molecules
+    fn calculate_vibrational_coupling(&self, mol1: &OscillatoryQuantumMolecule, mol2: &OscillatoryQuantumMolecule) -> f64 {
+        // Vibrational coupling based on oscillatory properties
+        let damping_similarity = 1.0 - (mol1.oscillatory_state.damping_coefficient - mol2.oscillatory_state.damping_coefficient).abs();
+        damping_similarity
+    }
+}
+
+impl QuantumComputationalSimilarityCalculator {
+    pub fn new() -> Self {
+        Self {
+            enaqt_weight: 0.3,
+            coupling_weight: 0.25,
+            coherence_weight: 0.25,
+            tunneling_weight: 0.2,
+            membrane_weight: 0.2,
+        }
+    }
+    
+    /// Calculate similarity based on quantum computational architecture
+    /// Following the Membrane Quantum Computation Theorem
+    pub fn quantum_computational_similarity(&self, mol1: &OscillatoryQuantumMolecule, mol2: &OscillatoryQuantumMolecule) -> f64 {
+        // Compare ENAQT capabilities
+        let enaqt_similarity = self.compare_enaqt_architectures(mol1, mol2);
+        
+        // Compare environmental coupling optimization
+        let coupling_similarity = self.compare_coupling_optimization(mol1, mol2);
+        
+        // Compare quantum coherence properties
+        let coherence_similarity = self.compare_coherence_properties(mol1, mol2);
+        
+        // Compare tunneling pathway architectures
+        let tunneling_similarity = self.compare_tunneling_pathways(mol1, mol2);
+        
+        // Compare membrane-like properties
+        let membrane_similarity = self.compare_membrane_properties(mol1, mol2);
+        
+        // Weighted combination
+        self.enaqt_weight * enaqt_similarity +
+        self.coupling_weight * coupling_similarity +
+        self.coherence_weight * coherence_similarity +
+        self.tunneling_weight * tunneling_similarity +
+        self.membrane_weight * membrane_similarity
+    }
+    
+    /// Compare Environment-Assisted Quantum Transport capabilities
+    fn compare_enaqt_architectures(&self, mol1: &OscillatoryQuantumMolecule, mol2: &OscillatoryQuantumMolecule) -> f64 {
+        let eta1 = mol1.quantum_computer.transport_efficiency;
+        let eta2 = mol2.quantum_computer.transport_efficiency;
+        
+        let gamma_opt1 = mol1.quantum_computer.optimal_coupling;
+        let gamma_opt2 = mol2.quantum_computer.optimal_coupling;
+        
+        // Similarity based on quantum advantage
+        let efficiency_similarity = 1.0 - (eta1 - eta2).abs() / eta1.max(eta2);
+        let coupling_similarity = 1.0 - (gamma_opt1 - gamma_opt2).abs() / gamma_opt1.max(gamma_opt2);
+        
+        (efficiency_similarity + coupling_similarity) / 2.0
+    }
+    
+    /// Compare environmental coupling optimization
+    fn compare_coupling_optimization(&self, mol1: &OscillatoryQuantumMolecule, mol2: &OscillatoryQuantumMolecule) -> f64 {
+        let coupling1 = mol1.quantum_computer.environmental_coupling_strength;
+        let coupling2 = mol2.quantum_computer.environmental_coupling_strength;
+        
+        1.0 - (coupling1 - coupling2).abs() / coupling1.max(coupling2)
+    }
+    
+    /// Compare quantum coherence properties
+    fn compare_coherence_properties(&self, mol1: &OscillatoryQuantumMolecule, mol2: &OscillatoryQuantumMolecule) -> f64 {
+        let coherence1 = mol1.quantum_computer.coherence_time;
+        let coherence2 = mol2.quantum_computer.coherence_time;
+        
+        let beating1 = &mol1.quantum_computer.quantum_beating_frequencies;
+        let beating2 = &mol2.quantum_computer.quantum_beating_frequencies;
+        
+        let coherence_similarity = 1.0 - (coherence1 - coherence2).abs() / coherence1.max(coherence2);
+        let beating_similarity = self.compare_frequency_spectra(beating1, beating2);
+        
+        (coherence_similarity + beating_similarity) / 2.0
+    }
+    
+    /// Compare tunneling pathway architectures
+    fn compare_tunneling_pathways(&self, mol1: &OscillatoryQuantumMolecule, mol2: &OscillatoryQuantumMolecule) -> f64 {
+        let pathways1 = &mol1.quantum_computer.tunneling_pathways;
+        let pathways2 = &mol2.quantum_computer.tunneling_pathways;
+        
+        if pathways1.is_empty() && pathways2.is_empty() {
+            return 1.0;
+        }
+        
+        if pathways1.is_empty() || pathways2.is_empty() {
+            return 0.0;
+        }
+        
+        // Compare pathway characteristics
+        let mut total_similarity = 0.0;
+        let mut count = 0;
+        
+        for pathway1 in pathways1 {
+            for pathway2 in pathways2 {
+                let barrier_similarity = 1.0 - (pathway1.barrier_height - pathway2.barrier_height).abs() / 
+                                       pathway1.barrier_height.max(pathway2.barrier_height);
+                let width_similarity = 1.0 - (pathway1.barrier_width - pathway2.barrier_width).abs() /
+                                     pathway1.barrier_width.max(pathway2.barrier_width);
+                let prob_similarity = 1.0 - (pathway1.tunneling_probability - pathway2.tunneling_probability).abs();
+                
+                total_similarity += (barrier_similarity + width_similarity + prob_similarity) / 3.0;
+                count += 1;
+            }
+        }
+        
+        if count > 0 {
+            total_similarity / count as f64
+        } else {
+            0.0
+        }
+    }
+    
+    /// Compare membrane-like properties
+    fn compare_membrane_properties(&self, mol1: &OscillatoryQuantumMolecule, mol2: &OscillatoryQuantumMolecule) -> f64 {
+        let mem1 = &mol1.quantum_computer.membrane_properties;
+        let mem2 = &mol2.quantum_computer.membrane_properties;
+        
+        let amphipathic_similarity = 1.0 - (mem1.amphipathic_score - mem2.amphipathic_score).abs();
+        let assembly_similarity = 1.0 - (mem1.self_assembly_free_energy - mem2.self_assembly_free_energy).abs() / 100.0; // Scale by 100 kJ/mol
+        let cmc_similarity = if mem1.critical_micelle_concentration > 0.0 && mem2.critical_micelle_concentration > 0.0 {
+            1.0 - (mem1.critical_micelle_concentration.ln() - mem2.critical_micelle_concentration.ln()).abs() / 10.0
+        } else {
+            0.0
+        };
+        let coherence_similarity = 1.0 - (mem1.room_temp_coherence_potential - mem2.room_temp_coherence_potential).abs();
+        
+        (amphipathic_similarity + assembly_similarity + cmc_similarity + coherence_similarity) / 4.0
+    }
+    
+    /// Compare frequency spectra
+    fn compare_frequency_spectra(&self, freq1: &Array1<f64>, freq2: &Array1<f64>) -> f64 {
+        if freq1.len() != freq2.len() {
+            return 0.0;
+        }
+        
+        let mut similarity = 0.0;
+        for i in 0..freq1.len() {
+            similarity += 1.0 - (freq1[i] - freq2[i]).abs() / freq1[i].max(freq2[i]);
+        }
+        
+        similarity / freq1.len() as f64
+    }
+    
+    /// Assess how membrane-like molecules are (quantum computational capability)
+    pub fn membrane_like_similarity(&self, mol1: &OscillatoryQuantumMolecule, mol2: &OscillatoryQuantumMolecule) -> f64 {
+        let membrane_scores = [mol1, mol2].iter().map(|mol| {
+            let mut score = 0.0;
+            
+            // Amphipathic character (enables self-assembly)
+            if mol.quantum_computer.membrane_properties.amphipathic_score > 0.5 {
+                score += 0.2;
+            }
+            
+            // Quantum tunneling pathways quality
+            let tunneling_quality = self.assess_tunneling_pathway_quality(mol);
+            score += 0.3 * tunneling_quality;
+            
+            // Environmental coupling optimization
+            let coupling_optimization = self.assess_coupling_optimization(mol);
+            score += 0.3 * coupling_optimization;
+            
+            // Room temperature quantum coherence potential
+            score += 0.2 * mol.quantum_computer.membrane_properties.room_temp_coherence_potential;
+            
+            score
+        }).collect::<Vec<_>>();
+        
+        // Similarity based on both being membrane-like
+        1.0 - (membrane_scores[0] - membrane_scores[1]).abs()
+    }
+    
+    /// Assess tunneling pathway quality
+    fn assess_tunneling_pathway_quality(&self, mol: &OscillatoryQuantumMolecule) -> f64 {
+        if mol.quantum_computer.tunneling_pathways.is_empty() {
+            return 0.0;
+        }
+        
+        let mut quality_score = 0.0;
+        for pathway in &mol.quantum_computer.tunneling_pathways {
+            // Optimal tunneling occurs at 3-5 nm distances
+            let distance_score = if pathway.barrier_width >= 3.0 && pathway.barrier_width <= 5.0 {
+                1.0
+            } else if pathway.barrier_width < 3.0 {
+                pathway.barrier_width / 3.0
+            } else {
+                5.0 / pathway.barrier_width
+            };
+            
+            // Higher tunneling probability is better
+            let probability_score = pathway.tunneling_probability;
+            
+            // Environmental enhancement is beneficial
+            let enhancement_score = pathway.environmental_enhancement.min(1.0);
+            
+            quality_score += (distance_score + probability_score + enhancement_score) / 3.0;
+        }
+        
+        quality_score / mol.quantum_computer.tunneling_pathways.len() as f64
+    }
+    
+    /// Assess coupling optimization
+    fn assess_coupling_optimization(&self, mol: &OscillatoryQuantumMolecule) -> f64 {
+        let actual_coupling = mol.quantum_computer.environmental_coupling_strength;
+        let optimal_coupling = mol.quantum_computer.optimal_coupling;
+        
+        if optimal_coupling > 0.0 {
+            1.0 - (actual_coupling - optimal_coupling).abs() / optimal_coupling
+        } else {
+            0.0
+        }
+    }
+    
+    /// Compare radical generation potential (death-causing quantum leakage)
+    /// Following the Radical Inevitability Theorem
+    pub fn death_inevitability_similarity(&self, mol1: &OscillatoryQuantumMolecule, mol2: &OscillatoryQuantumMolecule) -> f64 {
+        let radical_rate1 = mol1.quantum_computer.radical_generation_rate;
+        let radical_rate2 = mol2.quantum_computer.radical_generation_rate;
+        
+        // Molecules with similar death-causing potential are similar
+        if radical_rate1 == 0.0 && radical_rate2 == 0.0 {
+            1.0
+        } else if radical_rate1 == 0.0 || radical_rate2 == 0.0 {
+            0.0
+        } else {
+            1.0 - (radical_rate1.ln() - radical_rate2.ln()).abs() / 10.0
+        }
     }
 }
 

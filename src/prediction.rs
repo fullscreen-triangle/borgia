@@ -164,6 +164,106 @@ pub struct BaselineValues {
     pub quantum_efficiency_baseline: f64,
 }
 
+/// Property predictions based on oscillatory-quantum framework
+#[derive(Clone, Debug, Serialize, Deserialize)]
+pub struct PropertyPredictions {
+    /// Biological activity predictions
+    pub biological_activity: BiologicalActivityPrediction,
+    
+    /// Longevity impact predictions
+    pub longevity_impact: LongevityPrediction,
+    
+    /// Toxicity predictions based on radical generation
+    pub toxicity_prediction: ToxicityPrediction,
+    
+    /// Drug-likeness based on quantum computational properties
+    pub drug_likeness: DrugLikenessPrediction,
+    
+    /// Membrane interaction predictions
+    pub membrane_interactions: MembraneInteractionPrediction,
+    
+    /// Quantum computational efficiency predictions
+    pub quantum_efficiency: QuantumEfficiencyPrediction,
+}
+
+/// Biological activity prediction
+#[derive(Clone, Debug, Serialize, Deserialize)]
+pub struct BiologicalActivityPrediction {
+    pub activity_score: f64,
+    pub mechanism: String,
+    pub confidence: f64,
+    pub target_proteins: Vec<String>,
+    pub pathway_involvement: Vec<String>,
+    pub quantum_contributions: f64,
+}
+
+/// Longevity impact prediction based on quantum aging theory
+#[derive(Clone, Debug, Serialize, Deserialize)]
+pub struct LongevityPrediction {
+    /// Net longevity factor (positive = life-extending, negative = life-shortening)
+    pub longevity_factor: f64,
+    
+    /// Quantum burden contribution to aging
+    pub quantum_burden: f64,
+    
+    /// Potential escape mechanisms from quantum aging
+    pub escape_mechanisms: f64,
+    
+    /// Predicted change in lifespan
+    pub predicted_lifespan_change: f64,
+    
+    /// Specific mechanisms of action
+    pub mechanisms: Vec<LongevityMechanism>,
+}
+
+/// Specific longevity mechanism
+#[derive(Clone, Debug, Serialize, Deserialize)]
+pub struct LongevityMechanism {
+    pub mechanism_name: String,
+    pub effect_magnitude: f64,
+    pub confidence: f64,
+    pub supporting_evidence: Vec<String>,
+}
+
+/// Toxicity prediction based on radical generation
+#[derive(Clone, Debug, Serialize, Deserialize)]
+pub struct ToxicityPrediction {
+    pub toxicity_score: f64,
+    pub radical_generation_contribution: f64,
+    pub cellular_damage_potential: f64,
+    pub target_organs: Vec<String>,
+    pub dose_response_curve: Vec<(f64, f64)>,
+}
+
+/// Drug-likeness prediction
+#[derive(Clone, Debug, Serialize, Deserialize)]
+pub struct DrugLikenessPrediction {
+    pub drug_likeness_score: f64,
+    pub quantum_advantages: Vec<String>,
+    pub membrane_compatibility: f64,
+    pub bioavailability_prediction: f64,
+    pub side_effect_potential: f64,
+}
+
+/// Membrane interaction prediction
+#[derive(Clone, Debug, Serialize, Deserialize)]
+pub struct MembraneInteractionPrediction {
+    pub membrane_affinity: f64,
+    pub insertion_probability: f64,
+    pub transport_mechanism: String,
+    pub membrane_disruption_potential: f64,
+    pub quantum_transport_enhancement: f64,
+}
+
+/// Quantum computational efficiency prediction
+#[derive(Clone, Debug, Serialize, Deserialize)]
+pub struct QuantumEfficiencyPrediction {
+    pub computational_efficiency: f64,
+    pub coherence_enhancement: f64,
+    pub environmental_coupling_optimization: f64,
+    pub error_correction_capability: f64,
+}
+
 impl QuantumBiologicalPropertyPredictor {
     /// Create new predictor with default model parameters
     pub fn new() -> Self {
@@ -633,6 +733,92 @@ impl Default for BaselineValues {
             drug_likeness_baseline: 0.2,
             membrane_affinity_baseline: 0.1,
             quantum_efficiency_baseline: 0.1,
+        }
+    }
+}
+
+impl PropertyPredictions {
+    /// Create new property predictions with default values
+    pub fn new() -> Self {
+        Self {
+            biological_activity: BiologicalActivityPrediction::new(),
+            longevity_impact: LongevityPrediction::new(),
+            toxicity_prediction: ToxicityPrediction::new(),
+            drug_likeness: DrugLikenessPrediction::new(),
+            membrane_interactions: MembraneInteractionPrediction::new(),
+            quantum_efficiency: QuantumEfficiencyPrediction::new(),
+        }
+    }
+}
+
+impl BiologicalActivityPrediction {
+    pub fn new() -> Self {
+        Self {
+            activity_score: 0.5,
+            mechanism: "unknown".to_string(),
+            confidence: 0.5,
+            target_proteins: Vec::new(),
+            pathway_involvement: Vec::new(),
+            quantum_contributions: 0.0,
+        }
+    }
+}
+
+impl LongevityPrediction {
+    pub fn new() -> Self {
+        Self {
+            longevity_factor: 0.0,
+            quantum_burden: 0.0,
+            escape_mechanisms: 0.0,
+            predicted_lifespan_change: 0.0,
+            mechanisms: Vec::new(),
+        }
+    }
+}
+
+impl ToxicityPrediction {
+    pub fn new() -> Self {
+        Self {
+            toxicity_score: 0.1,
+            radical_generation_contribution: 0.0,
+            cellular_damage_potential: 0.0,
+            target_organs: Vec::new(),
+            dose_response_curve: Vec::new(),
+        }
+    }
+}
+
+impl DrugLikenessPrediction {
+    pub fn new() -> Self {
+        Self {
+            drug_likeness_score: 0.5,
+            quantum_advantages: Vec::new(),
+            membrane_compatibility: 0.5,
+            bioavailability_prediction: 0.5,
+            side_effect_potential: 0.1,
+        }
+    }
+}
+
+impl MembraneInteractionPrediction {
+    pub fn new() -> Self {
+        Self {
+            membrane_affinity: 0.3,
+            insertion_probability: 0.2,
+            transport_mechanism: "passive_diffusion".to_string(),
+            membrane_disruption_potential: 0.1,
+            quantum_transport_enhancement: 0.0,
+        }
+    }
+}
+
+impl QuantumEfficiencyPrediction {
+    pub fn new() -> Self {
+        Self {
+            computational_efficiency: 0.5,
+            coherence_enhancement: 0.0,
+            environmental_coupling_optimization: 0.0,
+            error_correction_capability: 0.0,
         }
     }
 }

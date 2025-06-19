@@ -1,11 +1,27 @@
 // =====================================================================================
-// UNIVERSAL OSCILLATORY FRAMEWORK
-// Implements the Universal Oscillation Theorem and nested hierarchy principles
+// BORGIA: Quantum-Oscillatory Molecular Representation System
+// 
+// This comprehensive system implements revolutionary molecular representations based on:
+// 1. Universal Oscillatory Framework - Reality as nested oscillations
+// 2. Membrane Quantum Computation Theorem - Life as quantum inevitability
+// 3. Entropy as tangible oscillation endpoint distributions
+// 4. Environment-Assisted Quantum Transport (ENAQT) principles
+// 
+// The system represents molecules not as static structures but as dynamic quantum
+// oscillators embedded in the fundamental oscillatory fabric of reality itself.
 // =====================================================================================
 
-use ndarray::{Array1, Array2};
+use std::collections::{HashMap, BTreeMap};
+use std::sync::{Arc, Mutex};
+use ndarray::{Array1, Array2, Array3, ArrayD};
+use num_complex::Complex64;
 use serde::{Serialize, Deserialize};
-use std::collections::HashMap;
+use rayon::prelude::*;
+
+// =====================================================================================
+// CORE OSCILLATORY FRAMEWORK STRUCTURES
+// Implements the Universal Oscillation Theorem and nested hierarchy principles
+// =====================================================================================
 
 /// Represents the fundamental oscillatory nature of reality at molecular scales
 /// Based on the Universal Oscillation Theorem: all bounded systems with nonlinear
@@ -56,7 +72,7 @@ pub struct SynchronizationParameters {
     /// Information transfer rate when synchronized
     pub information_transfer_rate: f64,
     
-    /// Coupling strengths to other oscillators
+    /// Coupling strength to other oscillators
     pub coupling_strengths: HashMap<String, f64>,
     
     /// Synchronization history

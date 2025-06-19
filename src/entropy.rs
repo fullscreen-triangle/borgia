@@ -3,7 +3,7 @@
 // Revolutionary concept: entropy is tangible - it's where oscillations "land"
 // =====================================================================================
 
-use ndarray::Array1;
+use ndarray::{Array1, Array2, Array3};
 use serde::{Serialize, Deserialize};
 
 /// Entropy as statistical distribution of oscillation endpoints
@@ -48,7 +48,8 @@ pub struct ElectronicState {
     pub orbital_occupancies: Vec<f64>,
     pub spin_multiplicities: Vec<f64>,
     pub dipole_moment: (f64, f64, f64),
-    pub electron_density_distribution: Vec<f64>, // Simplified 1D representation
+    pub polarizability: Array2<f64>,
+    pub electron_density_distribution: Array3<f64>,
 }
 
 /// Vibrational mode information
@@ -76,7 +77,7 @@ pub struct ClusteringAnalysis {
     pub cluster_centers: Vec<MolecularConfiguration>,
     pub cluster_assignments: Vec<usize>,
     pub cluster_probabilities: Array1<f64>,
-    pub inter_cluster_transitions: Vec<Vec<f64>>, // Simplified 2D representation
+    pub inter_cluster_transitions: Array2<f64>,
     pub cluster_stability_metrics: Vec<f64>,
 }
 
@@ -227,7 +228,7 @@ impl ClusteringAnalysis {
             cluster_centers: Vec::with_capacity(num_clusters),
             cluster_assignments: Vec::new(),
             cluster_probabilities: Array1::from_vec(vec![1.0 / num_clusters as f64; num_clusters]),
-            inter_cluster_transitions: vec![vec![0.0; num_clusters]; num_clusters],
+            inter_cluster_transitions: Array2::eye(num_clusters),
             cluster_stability_metrics: vec![1.0; num_clusters],
         }
     }
@@ -256,7 +257,8 @@ impl MolecularConfiguration {
                 orbital_occupancies: Vec::new(),
                 spin_multiplicities: Vec::new(),
                 dipole_moment: (0.0, 0.0, 0.0),
-                electron_density_distribution: Vec::new(),
+                polarizability: Array2::eye(3),
+                electron_density_distribution: Array3::zeros((10, 10, 10)),
             },
             vibrational_modes: Vec::new(),
             energy: 0.0,

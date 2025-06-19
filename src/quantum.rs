@@ -12,6 +12,15 @@ use serde::{Serialize, Deserialize};
 /// where environmental coupling enhances rather than destroys coherence
 #[derive(Clone, Debug, Serialize, Deserialize)]
 pub struct QuantumMolecularComputer {
+    /// System Hamiltonian - internal molecular quantum mechanics
+    pub system_hamiltonian: Array2<Complex64>,
+    
+    /// Environment Hamiltonian - surrounding quantum environment
+    pub environment_hamiltonian: Array2<Complex64>,
+    
+    /// Interaction Hamiltonian - system-environment coupling
+    pub interaction_hamiltonian: Array2<Complex64>,
+    
     /// Environmental coupling strength γ - key ENAQT parameter
     pub environmental_coupling_strength: f64,
     
@@ -23,6 +32,9 @@ pub struct QuantumMolecularComputer {
     
     /// Quantum coherence time at room temperature
     pub coherence_time: f64,
+    
+    /// Decoherence-free subspaces protected by symmetry
+    pub decoherence_free_subspaces: Vec<Array1<Complex64>>,
     
     /// Quantum beating frequencies from 2D electronic spectroscopy
     pub quantum_beating_frequencies: Array1<f64>,
@@ -67,6 +79,9 @@ pub struct TunnelingPathway {
     /// Atoms forming the tunneling pathway
     pub pathway_atoms: Vec<usize>,
     
+    /// Tunneling current density
+    pub current_density: f64,
+    
     /// Environmental assistance factors
     pub environmental_enhancement: f64,
 }
@@ -76,6 +91,12 @@ pub struct TunnelingPathway {
 pub struct ElectronTransportChain {
     /// Redox centers in the transport chain
     pub redox_centers: Vec<RedoxCenter>,
+    
+    /// Coupling strengths between centers
+    pub coupling_matrix: Array2<f64>,
+    
+    /// Transport rates between centers
+    pub transport_rates: Array2<f64>,
     
     /// Overall transport efficiency
     pub efficiency: f64,
@@ -102,6 +123,9 @@ pub struct ProtonChannel {
     
     /// Quantized energy levels for proton states
     pub energy_levels: Array1<f64>,
+    
+    /// Proton wave functions in the channel
+    pub wave_functions: Vec<Array1<Complex64>>,
     
     /// Transport rate through the channel
     pub transport_rate: f64,
@@ -135,11 +159,16 @@ pub struct MembraneProperties {
 impl QuantumMolecularComputer {
     /// Create new quantum molecular computer with default parameters
     pub fn new() -> Self {
+        let system_size = 4;
         Self {
+            system_hamiltonian: Array2::eye(system_size),
+            environment_hamiltonian: Array2::eye(system_size),
+            interaction_hamiltonian: Array2::zeros((system_size, system_size)),
             environmental_coupling_strength: 0.5,
             optimal_coupling: 0.5,
             transport_efficiency: 0.7,
             coherence_time: 1e-12,
+            decoherence_free_subspaces: Vec::new(),
             quantum_beating_frequencies: Array1::from_vec(vec![1e12, 2e12, 3e12]),
             tunneling_pathways: Vec::new(),
             electron_transport_chains: Vec::new(),
@@ -174,6 +203,30 @@ impl QuantumMolecularComputer {
     pub fn update_transport_efficiency(&mut self) {
         self.transport_efficiency = self.calculate_enaqt_efficiency();
         self.optimal_coupling = self.calculate_optimal_coupling();
+    }
+    
+    /// Calculate tunneling probability for a specific pathway
+    pub fn calculate_tunneling_probability(&self, pathway: &TunnelingPathway) -> f64 {
+        let v0 = pathway.barrier_height; // eV
+        let a = pathway.barrier_width * 1e-9; // Convert nm to m
+        let e = pathway.electron_energy; // eV
+        
+        if e >= v0 {
+            return 1.0; // Classical transmission
+        }
+        
+        // Calculate decay constant κ = √(2m(V₀-E))/ℏ
+        let m_e = 9.10938356e-31; // Electron mass in kg
+        let hbar = 1.054571817e-34; // Reduced Planck constant
+        let ev_to_j = 1.602176634e-19; // eV to Joules conversion
+        
+        let kappa = ((2.0 * m_e * (v0 - e) * ev_to_j) / hbar.powi(2)).sqrt();
+        
+        // Tunneling probability with environmental enhancement
+        let base_probability = (16.0 * e * (v0 - e) / v0.powi(2)) * (-2.0 * kappa * a).exp();
+        let enhanced_probability = base_probability * (1.0 + pathway.environmental_enhancement);
+        
+        enhanced_probability.min(1.0)
     }
     
     /// Calculate radical generation rate from quantum processes
@@ -213,6 +266,110 @@ impl QuantumMolecularComputer {
         let coupling_advantage = 1.0 + self.environmental_coupling_strength;
         
         coherence_advantage * transport_advantage * coupling_advantage
+    }
+}
+
+impl TunnelingPathway {
+    /// Create new tunneling pathway
+    pub fn new(barrier_height: f64, barrier_width: f64, electron_energy: f64) -> Self {
+        let mut pathway = Self {
+            barrier_height,
+            barrier_width,
+            tunneling_probability: 0.0,
+            electron_energy,
+            pathway_atoms: Vec::new(),
+            current_density: 0.0,
+            environmental_enhancement: 0.0,
+        };
+        
+        // Calculate initial tunneling probability
+        pathway.tunneling_probability = pathway.calculate_base_tunneling_probability();
+        
+        pathway
+    }
+    
+    /// Calculate base tunneling probability without environmental effects
+    fn calculate_base_tunneling_probability(&self) -> f64 {
+        let v0 = self.barrier_height;
+        let a = self.barrier_width * 1e-9; // nm to m
+        let e = self.electron_energy;
+        
+        if e >= v0 {
+            return 1.0;
+        }
+        
+        let m_e = 9.10938356e-31;
+        let hbar = 1.054571817e-34;
+        let ev_to_j = 1.602176634e-19;
+        
+        let kappa = ((2.0 * m_e * (v0 - e) * ev_to_j) / hbar.powi(2)).sqrt();
+        
+        (16.0 * e * (v0 - e) / v0.powi(2)) * (-2.0 * kappa * a).exp()
+    }
+    
+    /// Update tunneling probability with environmental enhancement
+    pub fn update_with_environment(&mut self, enhancement: f64) {
+        self.environmental_enhancement = enhancement;
+        let base_prob = self.calculate_base_tunneling_probability();
+        self.tunneling_probability = (base_prob * (1.0 + enhancement)).min(1.0);
+    }
+}
+
+impl ElectronTransportChain {
+    /// Create new electron transport chain
+    pub fn new(num_centers: usize) -> Self {
+        Self {
+            redox_centers: Vec::with_capacity(num_centers),
+            coupling_matrix: Array2::eye(num_centers),
+            transport_rates: Array2::zeros((num_centers, num_centers)),
+            efficiency: 0.0,
+            coherence_contributions: vec![0.0; num_centers],
+        }
+    }
+    
+    /// Add redox center to the chain
+    pub fn add_redox_center(&mut self, center: RedoxCenter) {
+        self.redox_centers.push(center);
+        
+        // Expand matrices if needed
+        let new_size = self.redox_centers.len();
+        if new_size > self.coupling_matrix.nrows() {
+            let mut new_coupling = Array2::eye(new_size);
+            let mut new_rates = Array2::zeros((new_size, new_size));
+            
+            // Copy existing values
+            let old_size = new_size - 1;
+            for i in 0..old_size {
+                for j in 0..old_size {
+                    new_coupling[[i, j]] = self.coupling_matrix[[i, j]];
+                    new_rates[[i, j]] = self.transport_rates[[i, j]];
+                }
+            }
+            
+            self.coupling_matrix = new_coupling;
+            self.transport_rates = new_rates;
+            self.coherence_contributions.push(0.0);
+        }
+    }
+    
+    /// Calculate overall transport efficiency
+    pub fn calculate_efficiency(&mut self) -> f64 {
+        if self.redox_centers.len() < 2 {
+            self.efficiency = 0.0;
+            return 0.0;
+        }
+        
+        // Simple efficiency calculation based on coupling strengths
+        let mut total_efficiency = 1.0;
+        for i in 0..self.redox_centers.len() - 1 {
+            let coupling = self.coupling_matrix[[i, i + 1]];
+            let coherence = self.coherence_contributions[i];
+            let step_efficiency = coupling * (1.0 + coherence);
+            total_efficiency *= step_efficiency;
+        }
+        
+        self.efficiency = total_efficiency;
+        total_efficiency
     }
 }
 
