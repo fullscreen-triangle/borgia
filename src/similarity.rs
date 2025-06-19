@@ -7,6 +7,10 @@ use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
 use ndarray::Array1;
 use crate::molecular::OscillatoryQuantumMolecule;
+use crate::oscillatory::{UniversalOscillator, OscillationState};
+use crate::entropy::EntropyDistribution;
+use crate::quantum::QuantumMolecularComputer;
+use crate::representation::HierarchyLevel;
 
 /// Similarity calculation engine
 #[derive(Debug, Clone)]
@@ -442,7 +446,6 @@ impl OscillatorySimilarityCalculator {
     /// Calculate Wasserstein distance between probability distributions
     fn wasserstein_distance(&self, dist1: &Array1<f64>, dist2: &Array1<f64>) -> f64 {
         // Simplified Wasserstein distance calculation
-        // In practice, this would use optimal transport algorithms
         let mut cumsum1 = 0.0;
         let mut cumsum2 = 0.0;
         let mut distance = 0.0;
@@ -457,7 +460,7 @@ impl OscillatorySimilarityCalculator {
     }
     
     /// Compare similarity at specific hierarchy level
-    fn compare_hierarchy_level(&self, level1: &crate::molecular::HierarchyLevel, level2: &crate::molecular::HierarchyLevel) -> f64 {
+    fn compare_hierarchy_level(&self, level1: &HierarchyLevel, level2: &HierarchyLevel) -> f64 {
         let freq_similarity = 1.0 - (level1.characteristic_frequency - level2.characteristic_frequency).abs() / 
                              level1.characteristic_frequency.max(level2.characteristic_frequency);
         let amplitude_similarity = 1.0 - (level1.oscillation_amplitude - level2.oscillation_amplitude).abs() /
@@ -529,7 +532,7 @@ impl QuantumComputationalSimilarityCalculator {
     }
     
     /// Compare Environment-Assisted Quantum Transport capabilities
-    fn compare_enaqt_architectures(&self, mol1: &OscillatoryQuantumMolecule, mol2: &OscillatoryQuantumMolecule) -> f64 {
+    pub fn compare_enaqt_architectures(&self, mol1: &OscillatoryQuantumMolecule, mol2: &OscillatoryQuantumMolecule) -> f64 {
         let eta1 = mol1.quantum_computer.transport_efficiency;
         let eta2 = mol2.quantum_computer.transport_efficiency;
         
@@ -608,7 +611,7 @@ impl QuantumComputationalSimilarityCalculator {
         let mem2 = &mol2.quantum_computer.membrane_properties;
         
         let amphipathic_similarity = 1.0 - (mem1.amphipathic_score - mem2.amphipathic_score).abs();
-        let assembly_similarity = 1.0 - (mem1.self_assembly_free_energy - mem2.self_assembly_free_energy).abs() / 100.0; // Scale by 100 kJ/mol
+        let assembly_similarity = 1.0 - (mem1.self_assembly_free_energy - mem2.self_assembly_free_energy).abs() / 100.0;
         let cmc_similarity = if mem1.critical_micelle_concentration > 0.0 && mem2.critical_micelle_concentration > 0.0 {
             1.0 - (mem1.critical_micelle_concentration.ln() - mem2.critical_micelle_concentration.ln()).abs() / 10.0
         } else {
@@ -661,6 +664,22 @@ impl QuantumComputationalSimilarityCalculator {
         1.0 - (membrane_scores[0] - membrane_scores[1]).abs()
     }
     
+    /// Compare radical generation potential (death-causing quantum leakage)
+    /// Following the Radical Inevitability Theorem
+    pub fn death_inevitability_similarity(&self, mol1: &OscillatoryQuantumMolecule, mol2: &OscillatoryQuantumMolecule) -> f64 {
+        let radical_rate1 = mol1.quantum_computer.radical_generation_rate;
+        let radical_rate2 = mol2.quantum_computer.radical_generation_rate;
+        
+        // Molecules with similar death-causing potential are similar
+        if radical_rate1 == 0.0 && radical_rate2 == 0.0 {
+            1.0
+        } else if radical_rate1 == 0.0 || radical_rate2 == 0.0 {
+            0.0
+        } else {
+            1.0 - (radical_rate1.ln() - radical_rate2.ln()).abs() / 10.0
+        }
+    }
+    
     /// Assess tunneling pathway quality
     fn assess_tunneling_pathway_quality(&self, mol: &OscillatoryQuantumMolecule) -> f64 {
         if mol.quantum_computer.tunneling_pathways.is_empty() {
@@ -701,20 +720,32 @@ impl QuantumComputationalSimilarityCalculator {
             0.0
         }
     }
-    
-    /// Compare radical generation potential (death-causing quantum leakage)
-    /// Following the Radical Inevitability Theorem
-    pub fn death_inevitability_similarity(&self, mol1: &OscillatoryQuantumMolecule, mol2: &OscillatoryQuantumMolecule) -> f64 {
-        let radical_rate1 = mol1.quantum_computer.radical_generation_rate;
-        let radical_rate2 = mol2.quantum_computer.radical_generation_rate;
-        
-        // Molecules with similar death-causing potential are similar
-        if radical_rate1 == 0.0 && radical_rate2 == 0.0 {
-            1.0
-        } else if radical_rate1 == 0.0 || radical_rate2 == 0.0 {
-            0.0
-        } else {
-            1.0 - (radical_rate1.ln() - radical_rate2.ln()).abs() / 10.0
+}
+
+/// Comprehensive similarity result combining all frameworks
+#[derive(Clone, Debug)]
+pub struct ComprehensiveSimilarityResult {
+    pub oscillatory_similarity: f64,
+    pub quantum_computational_similarity: f64,
+    pub enaqt_similarity: f64,
+    pub membrane_similarity: f64,
+    pub death_inevitability_similarity: f64,
+    pub entropy_endpoint_similarity: f64,
+    pub hierarchical_similarities: HashMap<u8, f64>,
+    pub overall_similarity: f64,
+}
+
+impl Default for ComprehensiveSimilarityResult {
+    fn default() -> Self {
+        Self {
+            oscillatory_similarity: 0.0,
+            quantum_computational_similarity: 0.0,
+            enaqt_similarity: 0.0,
+            membrane_similarity: 0.0,
+            death_inevitability_similarity: 0.0,
+            entropy_endpoint_similarity: 0.0,
+            hierarchical_similarities: HashMap::new(),
+            overall_similarity: 0.0,
         }
     }
 }

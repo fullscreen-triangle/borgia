@@ -5659,5 +5659,1326 @@ impl QuantumComputationalIndex {
     pub fn add_molecule(&mut self, molecule_id: &str, properties: &QuantumProperties) {
         self.enaqt_efficiency_index.insert(molecule_id.to_string(), properties.enaqt_efficiency);
         self.coherence_time_index.
+        self.coherence_time_index.insert(molecule_id.to_string(), properties.coherence_time);
+        self.radical_generation_index.insert(molecule_id.to_string(), properties.radical_generation_rate);
+        self.membrane_potential_index.insert(molecule_id.to_string(), properties.membrane_potential);
+    }
+    
+    pub fn search_by_criteria(&self, criteria: &[(&str, &str, f64)]) -> Vec<String> {
+        let mut results = Vec::new();
+        
+        for (property, operator, value) in criteria {
+            let index = match *property {
+                "enaqt_efficiency" => &self.enaqt_efficiency_index,
+                "coherence_time" => &self.coherence_time_index,
+                "radical_generation_rate" => &self.radical_generation_index,
+                "membrane_potential" => &self.membrane_potential_index,
+                _ => continue,
+            };
+            
+            for (molecule_id, &prop_value) in index {
+                let matches = match *operator {
+                    ">" => prop_value > value,
+                    "<" => prop_value < value,
+                    ">=" => prop_value >= value,
+                    "<=" => prop_value <= value,
+                    "==" => (prop_value - value).abs() < 1e-10,
+                    _ => false,
+                };
+                
+                if matches && !results.contains(molecule_id) {
+                    results.push(molecule_id.clone());
+                }
+            }
+        }
+        
+        results
+    }
+}
+
+#[derive(Clone, Debug)]
+pub struct OscillatoryIndex {
+    pub frequency_index: BTreeMap<String, f64>,
+    pub synchronization_index: BTreeMap<String, f64>,
+    pub entropy_diversity_index: BTreeMap<String, usize>,
+}
+
+impl OscillatoryIndex {
+    pub fn new() -> Self {
+        Self {
+            frequency_index: BTreeMap::new(),
+            synchronization_index: BTreeMap::new(),
+            entropy_diversity_index: BTreeMap::new(),
+        }
+    }
+    
+    pub fn add_molecule(&mut self, molecule_id: &str, properties: &OscillatoryProperties) {
+        self.frequency_index.insert(molecule_id.to_string(), properties.natural_frequency);
+        self.synchronization_index.insert(molecule_id.to_string(), properties.synchronization_potential);
+        self.entropy_diversity_index.insert(molecule_id.to_string(), properties.entropy_endpoint_diversity);
+    }
+}
+
+#[derive(Clone, Debug)]
+pub struct HierarchyIndex {
+    pub level_representation_index: HashMap<u8, Vec<String>>,
+    pub cross_scale_coupling_index: BTreeMap<String, f64>,
+    pub emergence_pattern_index: HashMap<String, Vec<String>>,
+}
+
+impl HierarchyIndex {
+    pub fn new() -> Self {
+        Self {
+            level_representation_index: HashMap::new(),
+            cross_scale_coupling_index: BTreeMap::new(),
+            emergence_pattern_index: HashMap::new(),
+        }
+    }
+    
+    pub fn add_molecule(&mut self, molecule_id: &str, properties: &HierarchyProperties) {
+        // Index by hierarchy levels
+        for &level in &properties.represented_levels {
+            self.level_representation_index
+                .entry(level)
+                .or_insert_with(Vec::new)
+                .push(molecule_id.to_string());
+        }
+        
+        // Index cross-scale coupling
+        self.cross_scale_coupling_index.insert(molecule_id.to_string(), properties.cross_scale_coupling);
+        
+        // Index emergence patterns
+        for pattern in &properties.emergence_patterns {
+            self.emergence_pattern_index
+                .entry(pattern.pattern_name.clone())
+                .or_insert_with(Vec::new)
+                .push(molecule_id.to_string());
+        }
+    }
+}
+
+#[derive(Clone, Debug)]
+pub struct SimilarityCache {
+    pub cache: HashMap<(String, String), f64>,
+    pub cache_size_limit: usize,
+}
+
+impl SimilarityCache {
+    pub fn new() -> Self {
+        Self {
+            cache: HashMap::new(),
+            cache_size_limit: 1000000, // 1M entries
+        }
+    }
+    
+    pub fn get_similarity(&self, mol1: &str, mol2: &str) -> Option<f64> {
+        let key1 = (mol1.to_string(), mol2.to_string());
+        let key2 = (mol2.to_string(), mol1.to_string());
+        
+        self.cache.get(&key1).or_else(|| self.cache.get(&key2)).copied()
+    }
+    
+    pub fn store_similarity(&mut self, mol1: &str, mol2: &str, similarity: f64) {
+        if self.cache.len() >= self.cache_size_limit {
+            self.evict_oldest_entries();
+        }
+        
+        let key = (mol1.to_string(), mol2.to_string());
+        self.cache.insert(key, similarity);
+    }
+    
+    fn evict_oldest_entries(&mut self) {
+        // Simple eviction strategy - remove 10% of entries
+        let remove_count = self.cache_size_limit / 10;
+        let keys_to_remove: Vec<_> = self.cache.keys().take(remove_count).cloned().collect();
+        
+        for key in keys_to_remove {
+            self.cache.remove(&key);
+        }
+    }
+}
+
+#[derive(Clone, Debug)]
+pub struct TemporalIndex {
+    pub oscillation_patterns: HashMap<String, Vec<TemporalPattern>>,
+    pub coherence_evolution: HashMap<String, Vec<(f64, f64)>>,
+    pub synchronization_events: HashMap<String, Vec<SynchronizationEvent>>,
+}
+
+impl TemporalIndex {
+    pub fn new() -> Self {
+        Self {
+            oscillation_patterns: HashMap::new(),
+            coherence_evolution: HashMap::new(),
+            synchronization_events: HashMap::new(),
+        }
+    }
+    
+    pub fn add_molecule(&mut self, molecule_id: &str, temporal_dynamics: &TemporalDynamics) {
+        // Extract temporal patterns from oscillation time series
+        let patterns = self.extract_temporal_patterns(&temporal_dynamics.oscillation_time_series);
+        self.oscillation_patterns.insert(molecule_id.to_string(), patterns);
+        
+        // Store coherence evolution
+        self.coherence_evolution.insert(molecule_id.to_string(), temporal_dynamics.coherence_evolution.clone());
+        
+        // Store synchronization events
+        self.synchronization_events.insert(molecule_id.to_string(), temporal_dynamics.synchronization_history.clone());
+    }
+    
+    pub fn search_by_pattern(&self, query_pattern: &TemporalPattern) -> Vec<(String, f64)> {
+        let mut results = Vec::new();
+        
+        for (molecule_id, patterns) in &self.oscillation_patterns {
+            for pattern in patterns {
+                let similarity = self.calculate_pattern_similarity(query_pattern, pattern);
+                if similarity > 0.7 {
+                    results.push((molecule_id.clone(), similarity));
+                    break; // Found a good match, no need to check other patterns
+                }
+            }
+        }
+        
+        results.sort_by(|a, b| b.1.partial_cmp(&a.1).unwrap());
+        results
+    }
+    
+    fn extract_temporal_patterns(&self, time_series: &[(f64, OscillationState)]) -> Vec<TemporalPattern> {
+        let mut patterns = Vec::new();
+        
+        if time_series.len() < 10 {
+            return patterns; // Need sufficient data
+        }
+        
+        // Extract frequency patterns using FFT-like analysis
+        let energies: Vec<f64> = time_series.iter().map(|(_, state)| state.energy).collect();
+        let characteristic_timescale = self.find_characteristic_timescale(&energies);
+        
+        patterns.push(TemporalPattern {
+            pattern_name: "energy_oscillation".to_string(),
+            time_series: energies,
+            characteristic_timescale,
+            pattern_strength: self.calculate_pattern_strength(&energies),
+        });
+        
+        // Extract phase patterns
+        let phases: Vec<f64> = time_series.iter().map(|(_, state)| state.phase).collect();
+        let phase_timescale = self.find_characteristic_timescale(&phases);
+        
+        patterns.push(TemporalPattern {
+            pattern_name: "phase_evolution".to_string(),
+            time_series: phases,
+            characteristic_timescale: phase_timescale,
+            pattern_strength: self.calculate_pattern_strength(&phases),
+        });
+        
+        patterns
+    }
+    
+    fn find_characteristic_timescale(&self, data: &[f64]) -> f64 {
+        // Simplified autocorrelation analysis
+        if data.len() < 2 {
+            return 1.0;
+        }
+        
+        let mean = data.iter().sum::<f64>() / data.len() as f64;
+        let variance = data.iter().map(|x| (x - mean).powi(2)).sum::<f64>() / data.len() as f64;
+        
+        if variance < 1e-10 {
+            return 1.0; // No variation
+        }
+        
+        // Find first zero crossing of autocorrelation
+        for lag in 1..data.len()/2 {
+            let mut autocorr = 0.0;
+            for i in 0..data.len()-lag {
+                autocorr += (data[i] - mean) * (data[i + lag] - mean);
+            }
+            autocorr /= (data.len() - lag) as f64 * variance;
+            
+            if autocorr < 0.1 { // First significant drop
+                return lag as f64;
+            }
+        }
+        
+        data.len() as f64 / 4.0 // Default to quarter of the series length
+    }
+    
+    fn calculate_pattern_strength(&self, data: &[f64]) -> f64 {
+        if data.len() < 2 {
+            return 0.0;
+        }
+        
+        let mean = data.iter().sum::<f64>() / data.len() as f64;
+        let variance = data.iter().map(|x| (x - mean).powi(2)).sum::<f64>() / data.len() as f64;
+        
+        variance.sqrt() / mean.abs().max(1e-10) // Coefficient of variation
+    }
+    
+    fn calculate_pattern_similarity(&self, pattern1: &TemporalPattern, pattern2: &TemporalPattern) -> f64 {
+        // Compare characteristic timescales
+        let timescale_similarity = 1.0 - (pattern1.characteristic_timescale - pattern2.characteristic_timescale).abs() / 
+                                  pattern1.characteristic_timescale.max(pattern2.characteristic_timescale);
+        
+        // Compare pattern strengths
+        let strength_similarity = 1.0 - (pattern1.pattern_strength - pattern2.pattern_strength).abs() / 
+                                 pattern1.pattern_strength.max(pattern2.pattern_strength);
+        
+        // Compare time series using dynamic time warping (simplified)
+        let series_similarity = self.simplified_dtw_similarity(&pattern1.time_series, &pattern2.time_series);
+        
+        (timescale_similarity + strength_similarity + series_similarity) / 3.0
+    }
+    
+    fn simplified_dtw_similarity(&self, series1: &[f64], series2: &[f64]) -> f64 {
+        // Simplified dynamic time warping similarity
+        if series1.is_empty() || series2.is_empty() {
+            return 0.0;
+        }
+        
+        let len1 = series1.len().min(100); // Limit for performance
+        let len2 = series2.len().min(100);
+        
+        let mut dtw_matrix = vec![vec![f64::INFINITY; len2]; len1];
+        dtw_matrix[0][0] = (series1[0] - series2[0]).abs();
+        
+        // Fill first row and column
+        for i in 1..len1 {
+            dtw_matrix[i][0] = dtw_matrix[i-1][0] + (series1[i] - series2[0]).abs();
+        }
+        for j in 1..len2 {
+            dtw_matrix[0][j] = dtw_matrix[0][j-1] + (series1[0] - series2[j]).abs();
+        }
+        
+        // Fill the rest of the matrix
+        for i in 1..len1 {
+            for j in 1..len2 {
+                let cost = (series1[i] - series2[j]).abs();
+                dtw_matrix[i][j] = cost + dtw_matrix[i-1][j].min(dtw_matrix[i][j-1]).min(dtw_matrix[i-1][j-1]);
+            }
+        }
+        
+        let max_possible_distance = len1.max(len2) as f64 * 10.0; // Assume max difference of 10
+        let normalized_distance = dtw_matrix[len1-1][len2-1] / max_possible_distance;
+        
+        (1.0 - normalized_distance).max(0.0)
+    }
+}
+
+/// Search criteria structures
+#[derive(Clone, Debug)]
+pub struct SearchCriteria {
+    pub quantum_criteria: Option<QuantumSearchCriteria>,
+    pub oscillatory_criteria: Option<OscillatorySearchCriteria>,
+    pub hierarchy_criteria: Option<HierarchySearchCriteria>,
+    pub quantum_query: Option<OscillatoryQuantumMolecule>,
+    pub oscillatory_query: Option<OscillatoryQuantumMolecule>,
+    pub hierarchy_query: Option<OscillatoryQuantumMolecule>,
+    pub quantum_weight: Option<f64>,
+    pub oscillatory_weight: Option<f64>,
+    pub hierarchy_weight: Option<f64>,
+}
+
+#[derive(Clone, Debug)]
+pub struct QuantumSearchCriteria {
+    pub min_enaqt_efficiency: Option<f64>,
+    pub min_coherence_time: Option<f64>,
+    pub max_radical_generation: Option<f64>,
+    pub min_membrane_potential: Option<f64>,
+    pub required_tunneling_pathways: Option<usize>,
+}
+
+#[derive(Clone, Debug)]
+pub struct OscillatorySearchCriteria {
+    pub frequency_range: Option<(f64, f64)>,
+    pub min_synchronization_potential: Option<f64>,
+    pub max_damping_coefficient: Option<f64>,
+    pub required_entropy_diversity: Option<usize>,
+}
+
+#[derive(Clone, Debug)]
+pub struct HierarchySearchCriteria {
+    pub required_hierarchy_levels: Option<Vec<u8>>,
+    pub min_cross_scale_coupling: Option<f64>,
+    pub required_emergence_patterns: Option<Vec<String>>,
+}
+
+/// Property extraction structures
+#[derive(Clone, Debug)]
+pub struct QuantumProperties {
+    pub enaqt_efficiency: f64,
+    pub optimal_coupling: f64,
+    pub coherence_time: f64,
+    pub tunneling_pathways: usize,
+    pub radical_generation_rate: f64,
+    pub membrane_potential: f64,
+    pub death_inevitability: f64,
+    pub longevity_impact: f64,
+}
+
+#[derive(Clone, Debug)]
+pub struct OscillatoryProperties {
+    pub natural_frequency: f64,
+    pub damping_coefficient: f64,
+    pub amplitude_distribution: Array1<f64>,
+    pub synchronization_potential: f64,
+    pub information_transfer_rate: f64,
+    pub entropy_endpoint_diversity: usize,
+}
+
+#[derive(Clone, Debug)]
+pub struct HierarchyProperties {
+    pub represented_levels: Vec<u8>,
+    pub cross_scale_coupling: f64,
+    pub emergence_patterns: Vec<EmergencePattern>,
+    pub scale_specific_properties: BTreeMap<u8, HierarchyLevel>,
+}
+
+// =====================================================================================
+// MAIN SYSTEM ORCHESTRATOR
+// Coordinates all components of the quantum-oscillatory molecular system
+// =====================================================================================
+
+/// Main system that orchestrates all quantum-oscillatory molecular analysis
+pub struct BorgiaQuantumOscillatorySystem {
+    pub database: QuantumMolecularDatabase,
+    pub similarity_calculator_oscillatory: OscillatorySimilarityCalculator,
+    pub similarity_calculator_quantum: QuantumComputationalSimilarityCalculator,
+    pub property_predictor: QuantumBiologicalPropertyPredictor,
+    pub drug_discovery: QuantumDrugDiscovery,
+    pub analysis_cache: Arc<Mutex<HashMap<String, AnalysisResult>>>,
+}
+
+impl BorgiaQuantumOscillatorySystem {
+    pub fn new() -> Self {
+        Self {
+            database: QuantumMolecularDatabase::new(),
+            similarity_calculator_oscillatory: OscillatorySimilarityCalculator::new(),
+            similarity_calculator_quantum: QuantumComputationalSimilarityCalculator::new(),
+            property_predictor: QuantumBiologicalPropertyPredictor::new(),
+            drug_discovery: QuantumDrugDiscovery::new(),
+            analysis_cache: Arc::new(Mutex::new(HashMap::new())),
+        }
+    }
+    
+    /// Complete quantum-oscillatory analysis of a molecule
+    pub fn complete_analysis(&mut self, smiles: &str) -> Result<QuantumOscillatoryAnalysisResult, String> {
+        // Check cache first
+        if let Ok(cache) = self.analysis_cache.lock() {
+            if let Some(cached_result) = cache.get(smiles) {
+                return Ok(self.convert_to_full_result(cached_result.clone()));
+            }
+        }
+        
+        // Create molecular representation
+        let mut molecule = self.create_quantum_oscillatory_molecule(smiles)?;
+        
+        // Perform quantum computational analysis
+        self.analyze_quantum_computational_properties(&mut molecule)?;
+        
+        // Perform oscillatory analysis
+        self.analyze_oscillatory_properties(&mut molecule)?;
+        
+        // Perform hierarchical analysis
+        self.analyze_hierarchical_properties(&mut molecule)?;
+        
+        // Predict biological properties
+        let biological_activity = self.property_predictor.predict_biological_activity(&molecule);
+        let longevity_impact = self.property_predictor.predict_longevity_impact(&molecule);
+        
+        // Calculate similarity to known molecules
+        let similar_molecules = self.find_similar_molecules(&molecule);
+        
+        // Store in database
+        self.database.store_molecule_with_quantum_analysis(molecule.clone());
+        
+        // Create comprehensive result
+        let result = QuantumOscillatoryAnalysisResult {
+            molecule,
+            biological_activity,
+            longevity_impact,
+            similar_molecules,
+            quantum_computational_score: self.calculate_quantum_computational_score(&molecule),
+            oscillatory_synchronization_score: self.calculate_oscillatory_score(&molecule),
+            hierarchical_emergence_score: self.calculate_hierarchical_score(&molecule),
+            death_inevitability_score: self.calculate_death_inevitability_score(&molecule),
+            membrane_quantum_computer_potential: self.calculate_membrane_qc_potential(&molecule),
+            recommendations: self.generate_recommendations(&molecule),
+        };
+        
+        // Cache result
+        if let Ok(mut cache) = self.analysis_cache.lock() {
+            cache.insert(smiles.to_string(), AnalysisResult::from_full_result(&result));
+        }
+        
+        Ok(result)
+    }
+    
+    /// Batch analysis of multiple molecules with parallel processing
+    pub fn batch_analysis(&mut self, smiles_list: Vec<String>) -> Vec<Result<QuantumOscillatoryAnalysisResult, String>> {
+        smiles_list.into_par_iter().map(|smiles| {
+            // Note: In a real implementation, we'd need to handle the mutable self reference
+            // This is a simplified version for demonstration
+            self.complete_analysis(&smiles)
+        }).collect()
+    }
+    
+    /// Search for molecules with specific quantum-oscillatory properties
+    pub fn search_molecules(&self, criteria: SearchCriteria) -> Vec<(String, f64)> {
+        self.database.advanced_multi_criteria_search(&criteria)
+    }
+    
+    /// Design new molecules based on quantum-oscillatory principles
+    pub fn design_molecules(&self, design_goals: &DesignGoals) -> Vec<OscillatoryQuantumMolecule> {
+        match design_goals.goal_type.as_str() {
+            "longevity_enhancement" => self.drug_discovery.design_longevity_drugs(),
+            "enaqt_optimization" => {
+                if let Some(target) = &design_goals.target_protein {
+                    self.drug_discovery.design_enaqt_enhancers(target)
+                } else {
+                    Vec::new()
+                }
+            },
+            "membrane_quantum_computer" => {
+                if let Some(task) = &design_goals.computational_task {
+                    self.drug_discovery.design_membrane_quantum_computers(task)
+                } else {
+                    Vec::new()
+                }
+            },
+            _ => Vec::new(),
+        }
+    }
+    
+    /// Comprehensive similarity analysis using all frameworks
+    pub fn comprehensive_similarity(&self, mol1: &str, mol2: &str) -> ComprehensiveSimilarityResult {
+        if let (Some(molecule1), Some(molecule2)) = (self.database.molecules.get(mol1), self.database.molecules.get(mol2)) {
+            ComprehensiveSimilarityResult {
+                oscillatory_similarity: self.similarity_calculator_oscillatory.oscillatory_similarity(molecule1, molecule2),
+                quantum_computational_similarity: self.similarity_calculator_quantum.quantum_computational_similarity(molecule1, molecule2),
+                enaqt_similarity: self.similarity_calculator_quantum.compare_enaqt_architectures(molecule1, molecule2),
+                membrane_similarity: self.similarity_calculator_quantum.membrane_like_similarity(molecule1, molecule2),
+                death_inevitability_similarity: self.similarity_calculator_quantum.death_inevitability_similarity(molecule1, molecule2),
+                entropy_endpoint_similarity: self.similarity_calculator_oscillatory.entropy_endpoint_similarity(molecule1, molecule2),
+                hierarchical_similarities: self.similarity_calculator_oscillatory.nested_hierarchy_similarity(molecule1, molecule2),
+                overall_similarity: self.calculate_overall_similarity(molecule1, molecule2),
+            }
+        } else {
+            ComprehensiveSimilarityResult::default()
+        }
+    }
+    
+    /// Helper methods for system operation
+    fn create_quantum_oscillatory_molecule(&self, smiles: &str) -> Result<OscillatoryQuantumMolecule, String> {
+        // In a real implementation, this would parse SMILES and create the full molecular representation
+        // For now, we'll create a template molecule
+        let mut molecule = OscillatoryQuantumMolecule {
+            molecule_id: format!("mol_{}", smiles.len()), // Simplified ID
+            smiles: smiles.to_string(),
+            molecular_formula: "C8H10N4O2".to_string(), // Example: caffeine
+            molecular_weight: 194.19,
+            
+            // Initialize with default values - in practice, these would be calculated from structure
+            oscillatory_state: UniversalOscillator {
+                natural_frequency: 1e12,
+                damping_coefficient: 0.1,
+                amplitude_distribution: Array1::from_vec(vec![1.0, 0.8, 0.6, 0.4, 0.2]),
+                phase_space_trajectory: Vec::new(),
+                current_state: OscillationState {
+                    position: 0.0,
+                    momentum: 0.0,
+                    energy: 1.0,
+                    phase: 0.0,
+                    coherence_factor: 0.8,
+                },
+                coupling_matrix: Array2::eye(5),
+                hierarchy_level: 1,
+            },
+            
+            // Initialize other components with defaults
+            entropy_distribution: EntropyDistribution {
+                configuration_endpoints: Vec::new(),
+                landing_probabilities: Array1::from_vec(vec![0.4, 0.3, 0.2, 0.1]),
+                thermodynamic_accessibility: Array1::from_vec(vec![1.0, 0.8, 0.6, 0.4]),
+                oscillation_decay_patterns: Vec::new(),
+                endpoint_clustering: ClusteringAnalysis {
+                    cluster_centers: Vec::new(),
+                    cluster_assignments: Vec::new(),
+                    cluster_probabilities: Array1::from_vec(vec![0.5, 0.3, 0.2]),
+                    inter_cluster_transitions: Array2::eye(3),
+                    cluster_stability_metrics: vec![0.9, 0.7, 0.5],
+                },
+                temporal_evolution: Vec::new(),
+            },
+            
+            quantum_computer: QuantumMolecularComputer {
+                system_hamiltonian: Array2::eye(4),
+                environment_hamiltonian: Array2::eye(4),
+                interaction_hamiltonian: Array2::zeros((4, 4)),
+                environmental_coupling_strength: 0.5,
+                optimal_coupling: 0.5,
+                transport_efficiency: 0.7,
+                coherence_time: 1e-12,
+                decoherence_free_subspaces: Vec::new(),
+                quantum_beating_frequencies: Array1::from_vec(vec![1e12, 2e12, 3e12]),
+                tunneling_pathways: Vec::new(),
+                electron_transport_chains: Vec::new(),
+                proton_channels: Vec::new(),
+                radical_generation_rate: 1e-8,
+                quantum_damage_cross_section: 1e-15,
+                accumulated_damage: 0.0,
+                membrane_properties: MembraneProperties {
+                    amphipathic_score: 0.3,
+                    self_assembly_free_energy: -20.0,
+                    critical_micelle_concentration: 1e-3,
+                    optimal_tunneling_distances: vec![4.0],
+                    coupling_optimization_score: 0.5,
+                    room_temp_coherence_potential: 0.5,
+                },
+            },
+            
+            hierarchy_representations: BTreeMap::new(),
+            synchronization_parameters: SynchronizationParameters {
+                synchronization_threshold: 0.1,
+                phase_locking_strength: 0.5,
+                information_transfer_rate: 1e6,
+                coupling_strengths: HashMap::new(),
+                synchronization_events: Vec::new(),
+            },
+            
+            information_catalyst: InformationCatalyst {
+                input_filter: InputFilter {
+                    recognized_patterns: Vec::new(),
+                    binding_affinities: HashMap::new(),
+                    selectivity_factors: HashMap::new(),
+                    environmental_sensitivity: EnvironmentalSensitivity {
+                        ph_sensitivity: 0.1,
+                        temperature_sensitivity: 0.1,
+                        ionic_strength_sensitivity: 0.1,
+                        pressure_sensitivity: 0.1,
+                    },
+                },
+                output_filter: OutputFilter {
+                    targets: Vec::new(),
+                    channeling_efficiency: HashMap::new(),
+                    release_timing: HashMap::new(),
+                    quality_control: QualityControl {
+                        error_detection_rate: 0.9,
+                        error_correction_rate: 0.8,
+                        product_validation: Vec::new(),
+                    },
+                },
+                processing_capacity: 1000.0,
+                information_value: 10.0,
+                pattern_recognition: PatternRecognition {
+                    structural_recognition: StructuralRecognition {
+                        recognized_motifs: Vec::new(),
+                        geometric_constraints: Vec::new(),
+                        binding_site_analysis: BindingSiteAnalysis {
+                            binding_sites: Vec::new(),
+                            site_accessibility: Vec::new(),
+                            binding_energies: Vec::new(),
+                        },
+                    },
+                    dynamic_recognition: DynamicRecognition {
+                        temporal_patterns: Vec::new(),
+                        oscillation_recognition: OscillationRecognition {
+                            frequency_ranges: vec![(1e9, 1e12), (1e12, 1e15)],
+                            amplitude_thresholds: vec![0.1, 0.5, 1.0],
+                            phase_relationships: vec![0.0, 1.57, 3.14],
+                        },
+                        kinetic_patterns: Vec::new(),
+                    },
+                    chemical_recognition: ChemicalRecognition {
+                        functional_groups: Vec::new(),
+                        reaction_patterns: Vec::new(),
+                        chemical_similarity_measures: Vec::new(),
+                    },
+                    quantum_recognition: QuantumRecognition {
+                        electronic_state_patterns: Vec::new(),
+                        quantum_coherence_patterns: Vec::new(),
+                        tunneling_patterns: Vec::new(),
+                    },
+                },
+                amplification_factors: vec![10.0, 100.0, 1000.0],
+            },
+            
+            property_predictions: PropertyPredictions {
+                biological_activity: BiologicalActivityPrediction {
+                    activity_score: 0.5,
+                    mechanism: "unknown".to_string(),
+                    confidence: 0.5,
+                    target_proteins: Vec::new(),
+                    pathway_involvement: Vec::new(),
+                    quantum_contributions: 0.0,
+                },
+                longevity_impact: LongevityPrediction {
+                    longevity_factor: 0.0,
+                    quantum_burden: 0.0,
+                    escape_mechanisms: 0.0,
+                    predicted_lifespan_change: 0.0,
+                    mechanisms: Vec::new(),
+                },
+                toxicity_prediction: ToxicityPrediction {
+                    toxicity_score: 0.1,
+                    radical_generation_contribution: 0.0,
+                    cellular_damage_potential: 0.0,
+                    target_organs: Vec::new(),
+                    dose_response_curve: Vec::new(),
+                },
+                drug_likeness: DrugLikenessPrediction {
+                    drug_likeness_score: 0.5,
+                    quantum_advantages: Vec::new(),
+                    membrane_compatibility: 0.5,
+                    bioavailability_prediction: 0.5,
+                    side_effect_potential: 0.1,
+                },
+                membrane_interactions: MembraneInteractionPrediction {
+                    membrane_affinity: 0.3,
+                    insertion_probability: 0.2,
+                    transport_mechanism: "passive_diffusion".to_string(),
+                    membrane_disruption_potential: 0.1,
+                    quantum_transport_enhancement: 0.0,
+                },
+                quantum
+                quantum_efficiency: QuantumEfficiencyPrediction {
+                    computational_efficiency: 0.5,
+                    coherence_enhancement: 0.0,
+                    environmental_coupling_optimization: 0.0,
+                    error_correction_capability: 0.0,
+                },
+            },
+            
+            temporal_dynamics: TemporalDynamics {
+                oscillation_time_series: Vec::new(),
+                entropy_evolution: Vec::new(),
+                coherence_evolution: Vec::new(),
+                radical_accumulation: Vec::new(),
+                synchronization_history: Vec::new(),
+            },
+        };
+        
+        // Perform structure-based initialization
+        self.initialize_from_structure(&mut molecule, smiles)?;
+        
+        Ok(molecule)
+    }
+    
+    fn initialize_from_structure(&self, molecule: &mut OscillatoryQuantumMolecule, smiles: &str) -> Result<(), String> {
+        // In a real implementation, this would parse the SMILES string and calculate properties
+        // For demonstration, we'll set some structure-dependent properties
+        
+        // Estimate molecular properties based on SMILES features
+        let has_aromatic = smiles.contains("c") || smiles.contains("C1=CC=CC=C1");
+        let has_nitrogen = smiles.contains("N") || smiles.contains("n");
+        let has_oxygen = smiles.contains("O") || smiles.contains("o");
+        let molecular_size = smiles.len() as f64;
+        
+        // Set quantum computational properties based on structure
+        if has_aromatic {
+            molecule.quantum_computer.transport_efficiency += 0.2;
+            molecule.quantum_computer.coherence_time *= 2.0;
+        }
+        
+        if has_nitrogen {
+            molecule.quantum_computer.radical_generation_rate *= 0.8; // Nitrogen can stabilize radicals
+        }
+        
+        if has_oxygen {
+            molecule.quantum_computer.membrane_properties.amphipathic_score += 0.3;
+        }
+        
+        // Set oscillatory properties based on molecular size and flexibility
+        molecule.oscillatory_state.natural_frequency = 1e12 / (molecular_size / 10.0).sqrt();
+        molecule.oscillatory_state.damping_coefficient = 0.05 + (molecular_size / 100.0);
+        
+        // Initialize tunneling pathways based on conjugated systems
+        if has_aromatic {
+            molecule.quantum_computer.tunneling_pathways.push(TunnelingPathway {
+                barrier_height: 1.2,
+                barrier_width: 3.5,
+                tunneling_probability: 0.8,
+                electron_energy: 2.0,
+                pathway_atoms: vec![0, 1, 2, 3],
+                current_density: 1e-3,
+                environmental_enhancement: 0.7,
+            });
+        }
+        
+        Ok(())
+    }
+    
+    fn analyze_quantum_computational_properties(&self, molecule: &mut OscillatoryQuantumMolecule) -> Result<(), String> {
+        // Calculate optimal environmental coupling using ENAQT theory
+        let alpha = 1.2; // System-environment coupling strength parameter
+        let beta = 0.3;  // Environmental correlation parameter
+        let optimal_coupling = alpha / (2.0 * beta);
+        
+        molecule.quantum_computer.optimal_coupling = optimal_coupling;
+        
+        // Calculate transport efficiency enhancement
+        let eta_0 = 0.4; // Base efficiency without environmental assistance
+        molecule.quantum_computer.transport_efficiency = eta_0 * (1.0 + alpha * optimal_coupling + beta * optimal_coupling.powi(2));
+        
+        // Calculate membrane quantum computation potential
+        self.assess_membrane_quantum_computation_potential(molecule);
+        
+        // Calculate death inevitability contribution
+        self.calculate_death_inevitability_contribution(molecule);
+        
+        Ok(())
+    }
+    
+    fn analyze_oscillatory_properties(&self, molecule: &mut OscillatoryQuantumMolecule) -> Result<(), String> {
+        // Initialize oscillatory state based on molecular properties
+        self.initialize_oscillatory_dynamics(molecule);
+        
+        // Calculate entropy distribution endpoints
+        self.calculate_entropy_endpoints(molecule);
+        
+        // Analyze synchronization potential
+        self.analyze_synchronization_potential(molecule);
+        
+        // Calculate information catalysis properties
+        self.analyze_information_catalysis(molecule);
+        
+        Ok(())
+    }
+    
+    fn analyze_hierarchical_properties(&self, molecule: &mut OscillatoryQuantumMolecule) -> Result<(), String> {
+        // Create hierarchy representations across scales
+        self.create_hierarchy_representations(molecule);
+        
+        // Analyze cross-scale coupling
+        self.analyze_cross_scale_coupling(molecule);
+        
+        // Identify emergence patterns
+        self.identify_emergence_patterns(molecule);
+        
+        Ok(())
+    }
+    
+    fn assess_membrane_quantum_computation_potential(&self, molecule: &mut OscillatoryQuantumMolecule) {
+        // Assess amphipathic character
+        let amphipathic_score = self.calculate_amphipathic_score(molecule);
+        molecule.quantum_computer.membrane_properties.amphipathic_score = amphipathic_score;
+        
+        // Calculate self-assembly thermodynamics
+        let assembly_energy = self.calculate_self_assembly_energy(molecule);
+        molecule.quantum_computer.membrane_properties.self_assembly_free_energy = assembly_energy;
+        
+        // Determine critical micelle concentration
+        let cmc = self.calculate_critical_micelle_concentration(molecule);
+        molecule.quantum_computer.membrane_properties.critical_micelle_concentration = cmc;
+        
+        // Assess room temperature coherence potential
+        let coherence_potential = self.assess_room_temperature_coherence(molecule);
+        molecule.quantum_computer.membrane_properties.room_temp_coherence_potential = coherence_potential;
+    }
+    
+    fn calculate_death_inevitability_contribution(&self, molecule: &mut OscillatoryQuantumMolecule) {
+        // Calculate radical generation rate based on quantum leakage
+        let base_rate = 1e-8; // Base radical generation rate
+        let quantum_activity = molecule.quantum_computer.transport_efficiency;
+        let coupling_optimization = 1.0 - (molecule.quantum_computer.environmental_coupling_strength - molecule.quantum_computer.optimal_coupling).abs();
+        
+        // Higher quantum activity increases radical generation, but better coupling optimization reduces it
+        molecule.quantum_computer.radical_generation_rate = base_rate * quantum_activity / coupling_optimization.max(0.1);
+        
+        // Calculate quantum damage cross-section
+        molecule.quantum_computer.quantum_damage_cross_section = molecule.quantum_computer.radical_generation_rate * 1e-7;
+    }
+    
+    fn initialize_oscillatory_dynamics(&self, molecule: &mut OscillatoryQuantumMolecule) {
+        // Set natural frequency based on molecular characteristics
+        let molecular_stiffness = self.estimate_molecular_stiffness(molecule);
+        let molecular_mass = molecule.molecular_weight;
+        molecule.oscillatory_state.natural_frequency = (molecular_stiffness / molecular_mass).sqrt() * 1e12;
+        
+        // Set damping based on molecular flexibility
+        let flexibility = self.estimate_molecular_flexibility(molecule);
+        molecule.oscillatory_state.damping_coefficient = 0.05 + flexibility * 0.15;
+        
+        // Initialize amplitude distribution
+        let num_modes = 5;
+        let mut amplitudes = Vec::new();
+        for i in 0..num_modes {
+            amplitudes.push((-(i as f64) * 0.3).exp()); // Exponential decay
+        }
+        molecule.oscillatory_state.amplitude_distribution = Array1::from_vec(amplitudes);
+        
+        // Initialize current state
+        molecule.oscillatory_state.current_state = OscillationState {
+            position: 0.0,
+            momentum: 0.0,
+            energy: 1.0,
+            phase: 0.0,
+            coherence_factor: 0.8,
+        };
+    }
+    
+    fn calculate_entropy_endpoints(&self, molecule: &mut OscillatoryQuantumMolecule) {
+        // Calculate possible configuration endpoints based on molecular conformations
+        let num_conformations = self.estimate_conformational_flexibility(molecule);
+        let mut probabilities = Vec::new();
+        let mut accessibility = Vec::new();
+        
+        for i in 0..num_conformations {
+            // Boltzmann-weighted probabilities
+            let energy = i as f64 * 2.0; // kT units
+            let prob = (-energy).exp();
+            probabilities.push(prob);
+            
+            // Thermodynamic accessibility
+            let barrier = i as f64 * 1.5; // Activation barrier
+            let access = (-barrier).exp();
+            accessibility.push(access);
+        }
+        
+        // Normalize probabilities
+        let total_prob: f64 = probabilities.iter().sum();
+        probabilities.iter_mut().for_each(|p| *p /= total_prob);
+        
+        molecule.entropy_distribution.landing_probabilities = Array1::from_vec(probabilities);
+        molecule.entropy_distribution.thermodynamic_accessibility = Array1::from_vec(accessibility);
+    }
+    
+    fn analyze_synchronization_potential(&self, molecule: &mut OscillatoryQuantumMolecule) {
+        // Calculate synchronization threshold based on coupling strength
+        let coupling_strength = molecule.quantum_computer.environmental_coupling_strength;
+        molecule.synchronization_parameters.synchronization_threshold = 0.1 / coupling_strength.max(0.1);
+        
+        // Calculate phase locking strength
+        let coherence = molecule.quantum_computer.coherence_time * 1e12; // Convert to dimensionless
+        molecule.synchronization_parameters.phase_locking_strength = (1.0 - (-coherence).exp()).min(0.95);
+        
+        // Calculate information transfer rate
+        let frequency = molecule.oscillatory_state.natural_frequency;
+        molecule.synchronization_parameters.information_transfer_rate = frequency / 1000.0; // Scale down
+    }
+    
+    fn analyze_information_catalysis(&self, molecule: &mut OscillatoryQuantumMolecule) {
+        // Set processing capacity based on molecular complexity
+        let complexity = self.estimate_molecular_complexity(molecule);
+        molecule.information_catalyst.processing_capacity = complexity * 100.0;
+        
+        // Set information value based on uniqueness
+        let uniqueness = self.estimate_molecular_uniqueness(molecule);
+        molecule.information_catalyst.information_value = uniqueness * 20.0;
+        
+        // Initialize pattern recognition capabilities
+        self.initialize_pattern_recognition(molecule);
+    }
+    
+    fn create_hierarchy_representations(&self, molecule: &mut OscillatoryQuantumMolecule) {
+        // Create representations at different hierarchy levels
+        
+        // Level 0: Quantum/Electronic
+        let quantum_level = HierarchyLevel {
+            level_number: 0,
+            characteristic_frequency: molecule.oscillatory_state.natural_frequency * 1000.0, // Electronic frequencies
+            oscillation_amplitude: 0.1,
+            coupling_to_adjacent_levels: vec![0.8], // Strong coupling to molecular level
+            information_content: 50.0,
+            emergence_properties: vec!["quantum_coherence".to_string(), "tunneling".to_string()],
+        };
+        molecule.hierarchy_representations.insert(0, quantum_level);
+        
+        // Level 1: Molecular
+        let molecular_level = HierarchyLevel {
+            level_number: 1,
+            characteristic_frequency: molecule.oscillatory_state.natural_frequency,
+            oscillation_amplitude: 1.0,
+            coupling_to_adjacent_levels: vec![0.8, 0.6], // Coupling to quantum and cellular levels
+            information_content: 200.0,
+            emergence_properties: vec!["molecular_recognition".to_string(), "catalysis".to_string()],
+        };
+        molecule.hierarchy_representations.insert(1, molecular_level);
+        
+        // Level 2: Cellular (if applicable)
+        if molecule.quantum_computer.membrane_properties.amphipathic_score > 0.5 {
+            let cellular_level = HierarchyLevel {
+                level_number: 2,
+                characteristic_frequency: molecule.oscillatory_state.natural_frequency / 1000.0,
+                oscillation_amplitude: 10.0,
+                coupling_to_adjacent_levels: vec![0.6, 0.4], // Coupling to molecular and tissue levels
+                information_content: 1000.0,
+                emergence_properties: vec!["membrane_formation".to_string(), "cellular_computation".to_string()],
+            };
+            molecule.hierarchy_representations.insert(2, cellular_level);
+        }
+    }
+    
+    fn analyze_cross_scale_coupling(&self, molecule: &mut OscillatoryQuantumMolecule) {
+        // Analyze how oscillations couple across different scales
+        // This affects the overall system dynamics and emergence
+        
+        let num_levels = molecule.hierarchy_representations.len();
+        if num_levels < 2 {
+            return;
+        }
+        
+        // Calculate coupling matrix between levels
+        let mut coupling_matrix = Array2::zeros((num_levels, num_levels));
+        
+        for (i, (level_i, repr_i)) in molecule.hierarchy_representations.iter().enumerate() {
+            for (j, (level_j, repr_j)) in molecule.hierarchy_representations.iter().enumerate() {
+                if i != j {
+                    let frequency_ratio = repr_i.characteristic_frequency / repr_j.characteristic_frequency;
+                    let coupling_strength = if frequency_ratio > 1.0 {
+                        1.0 / frequency_ratio
+                    } else {
+                        frequency_ratio
+                    };
+                    coupling_matrix[[i, j]] = coupling_strength * 0.5; // Scale factor
+                }
+            }
+        }
+        
+        // Store coupling information (simplified storage)
+        // In a full implementation, this would be stored in a more sophisticated way
+    }
+    
+    fn identify_emergence_patterns(&self, molecule: &mut OscillatoryQuantumMolecule) {
+        // Identify patterns where higher-level properties emerge from lower-level interactions
+        // This is key to understanding how quantum effects manifest at biological scales
+        
+        // Check for quantum-to-molecular emergence
+        if molecule.quantum_computer.coherence_time > 1e-12 && molecule.oscillatory_state.natural_frequency > 1e11 {
+            // Quantum coherence enables molecular-level oscillations
+            // This is stored implicitly in the hierarchy representations
+        }
+        
+        // Check for molecular-to-cellular emergence
+        if molecule.quantum_computer.membrane_properties.amphipathic_score > 0.7 {
+            // Molecular properties enable cellular-level organization
+            // This represents the emergence of membrane quantum computation
+        }
+    }
+    
+    // Helper methods for property calculations
+    fn calculate_amphipathic_score(&self, molecule: &OscillatoryQuantumMolecule) -> f64 {
+        // Simplified amphipathic score calculation
+        // In reality, this would analyze hydrophobic/hydrophilic regions
+        let base_score = 0.3;
+        let size_factor = (molecule.molecular_weight / 300.0).min(2.0);
+        (base_score * size_factor).min(1.0)
+    }
+    
+    fn calculate_self_assembly_energy(&self, molecule: &OscillatoryQuantumMolecule) -> f64 {
+        // Calculate free energy of self-assembly
+        let amphipathic_contribution = molecule.quantum_computer.membrane_properties.amphipathic_score * (-30.0);
+        let size_contribution = (molecule.molecular_weight / 100.0) * (-2.0);
+        amphipathic_contribution + size_contribution
+    }
+    
+    fn calculate_critical_micelle_concentration(&self, molecule: &OscillatoryQuantumMolecule) -> f64 {
+        // Calculate CMC based on molecular properties
+        let base_cmc = 1e-3;
+        let amphipathic_factor = molecule.quantum_computer.membrane_properties.amphipathic_score;
+        let size_factor = molecule.molecular_weight / 200.0;
+        
+        base_cmc / (amphipathic_factor * size_factor).max(0.1)
+    }
+    
+    fn assess_room_temperature_coherence(&self, molecule: &OscillatoryQuantumMolecule) -> f64 {
+        // Assess potential for maintaining quantum coherence at room temperature
+        let base_potential = 0.2;
+        let coupling_optimization = 1.0 - (molecule.quantum_computer.environmental_coupling_strength - molecule.quantum_computer.optimal_coupling).abs();
+        let structural_protection = molecule.quantum_computer.membrane_properties.amphipathic_score;
+        
+        (base_potential + coupling_optimization * 0.4 + structural_protection * 0.4).min(1.0)
+    }
+    
+    fn estimate_molecular_stiffness(&self, molecule: &OscillatoryQuantumMolecule) -> f64 {
+        // Estimate molecular stiffness for oscillatory calculations
+        let base_stiffness = 100.0; // Arbitrary units
+        let aromatic_factor = if molecule.smiles.contains("c") { 1.5 } else { 1.0 };
+        base_stiffness * aromatic_factor
+    }
+    
+    fn estimate_molecular_flexibility(&self, molecule: &OscillatoryQuantumMolecule) -> f64 {
+        // Estimate molecular flexibility
+        let chain_length = molecule.smiles.matches("C").count() as f64;
+        let ring_count = molecule.smiles.matches("1").count() as f64;
+        
+        (chain_length / 10.0) / (1.0 + ring_count)
+    }
+    
+    fn estimate_conformational_flexibility(&self, molecule: &OscillatoryQuantumMolecule) -> usize {
+        // Estimate number of accessible conformations
+        let rotatable_bonds = molecule.smiles.matches("C-C").count() + molecule.smiles.matches("C-N").count();
+        (3_usize.pow(rotatable_bonds as u32)).min(10) // Limit for computational tractability
+    }
+    
+    fn estimate_molecular_complexity(&self, molecule: &OscillatoryQuantumMolecule) -> f64 {
+        // Estimate molecular complexity for information processing
+        let atom_count = molecule.molecular_weight / 12.0; // Rough estimate
+        let heteroatom_count = molecule.smiles.matches("N").count() + molecule.smiles.matches("O").count();
+        
+        atom_count + (heteroatom_count as f64 * 2.0)
+    }
+    
+    fn estimate_molecular_uniqueness(&self, molecule: &OscillatoryQuantumMolecule) -> f64 {
+        // Estimate molecular uniqueness
+        let functional_groups = molecule.smiles.matches("=O").count() + molecule.smiles.matches("N").count();
+        (functional_groups as f64 / 5.0).min(1.0)
+    }
+    
+    fn initialize_pattern_recognition(&self, molecule: &mut OscillatoryQuantumMolecule) {
+        // Initialize pattern recognition capabilities based on molecular structure
+        
+        // Frequency ranges for oscillation recognition
+        let base_freq = molecule.oscillatory_state.natural_frequency;
+        molecule.information_catalyst.pattern_recognition.dynamic_recognition.oscillation_recognition.frequency_ranges = vec![
+            (base_freq * 0.1, base_freq),
+            (base_freq, base_freq * 10.0),
+            (base_freq * 10.0, base_freq * 100.0),
+        ];
+        
+        // Amplitude thresholds
+        molecule.information_catalyst.pattern_recognition.dynamic_recognition.oscillation_recognition.amplitude_thresholds = vec![0.1, 0.5, 1.0, 2.0];
+        
+        // Phase relationships
+        molecule.information_catalyst.pattern_recognition.dynamic_recognition.oscillation_recognition.phase_relationships = vec![0.0, 1.57, 3.14, 4.71];
+    }
+    
+    fn find_similar_molecules(&self, molecule: &OscillatoryQuantumMolecule) -> Vec<(String, f64)> {
+        let mut similarities = Vec::new();
+        
+        for (id, stored_molecule) in &self.database.molecules {
+            if id != &molecule.molecule_id {
+                let similarity = self.calculate_overall_similarity(molecule, stored_molecule);
+                if similarity > 0.3 {
+                    similarities.push((id.clone(), similarity));
+                }
+            }
+        }
+        
+        similarities.sort_by(|a, b| b.1.partial_cmp(&a.1).unwrap());
+        similarities.truncate(10); // Top 10 similar molecules
+        similarities
+    }
+    
+    fn calculate_overall_similarity(&self, mol1: &OscillatoryQuantumMolecule, mol2: &OscillatoryQuantumMolecule) -> f64 {
+        let oscillatory_sim = self.similarity_calculator_oscillatory.oscillatory_similarity(mol1, mol2);
+        let quantum_sim = self.similarity_calculator_quantum.quantum_computational_similarity(mol1, mol2);
+        
+        // Weighted combination
+        0.6 * oscillatory_sim + 0.4 * quantum_sim
+    }
+    
+    fn calculate_quantum_computational_score(&self, molecule: &OscillatoryQuantumMolecule) -> f64 {
+        let enaqt_efficiency = molecule.quantum_computer.transport_efficiency;
+        let coupling_optimization = 1.0 - (molecule.quantum_computer.environmental_coupling_strength - molecule.quantum_computer.optimal_coupling).abs();
+        let coherence_quality = (molecule.quantum_computer.coherence_time * 1e12).min(1.0);
+        
+        (enaqt_efficiency + coupling_optimization + coherence_quality) / 3.0
+    }
+    
+    fn calculate_oscillatory_score(&self, molecule: &OscillatoryQuantumMolecule) -> f64 {
+        let synchronization_potential = molecule.synchronization_parameters.phase_locking_strength;
+        let frequency_stability = 1.0 / (1.0 + molecule.oscillatory_state.damping_coefficient);
+        let amplitude_coherence = molecule.oscillatory_state.current_state.coherence_factor;
+        
+        (synchronization_potential + frequency_stability + amplitude_coherence) / 3.0
+    }
+    
+    fn calculate_hierarchical_score(&self, molecule: &OscillatoryQuantumMolecule) -> f64 {
+        let num_levels = molecule.hierarchy_representations.len() as f64;
+        let max_levels = 5.0; // Assume maximum of 5 hierarchy levels
+        let level_score = num_levels / max_levels;
+        
+        let coupling_score = if num_levels > 1.0 {
+            let total_coupling: f64 = molecule.hierarchy_representations.values()
+                .map(|level| level.coupling_to_adjacent_levels.iter().sum::<f64>())
+                .sum();
+            total_coupling / (num_levels * 2.0) // Normalize by number of possible connections
+        } else {
+            0.0
+        };
+        
+        (level_score + coupling_score) / 2.0
+    }
+    
+    fn calculate_death_inevitability_score(&self, molecule: &OscillatoryQuantumMolecule) -> f64 {
+        // Higher score means more contribution to aging/death
+        let radical_contribution = (molecule.quantum_computer.radical_generation_rate * 1e6).min(1.0);
+        let quantum_burden = (molecule.quantum_computer.transport_efficiency * molecule.quantum_computer.radical_generation_rate * 1e6).min(1.0);
+        
+        (radical_contribution + quantum_burden) / 2.0
+    }
+    
+    fn calculate_membrane_qc_potential(&self, molecule: &OscillatoryQuantumMolecule) -> f64 {
+        let amphipathic_score = molecule.quantum_computer.membrane_properties.amphipathic_score;
+        let coherence_potential = molecule.quantum_computer.membrane_properties.room_temp_coherence_potential;
+        let tunneling_quality = if !molecule.quantum_computer.tunneling_pathways.is_empty() {
+            molecule.quantum_computer.tunneling_pathways.iter()
+                .map(|pathway| pathway.tunneling_probability * pathway.environmental_enhancement)
+                .sum::<f64>() / molecule.quantum_computer.tunneling_pathways.len() as f64
+        } else {
+            0.0
+        };
+        
+        (amphipathic_score + coherence_potential + tunneling_quality) / 3.0
+    }
+    
+    fn generate_recommendations(&self, molecule: &OscillatoryQuantumMolecule) -> Vec<String> {
+        let mut recommendations = Vec::new();
+        
+        // Quantum computational recommendations
+        if molecule.quantum_computer.transport_efficiency > 0.8 {
+            recommendations.push("High ENAQT efficiency - potential for energy metabolism enhancement".to_string());
+        }
+        
+        if molecule.quantum_computer.membrane_properties.amphipathic_score > 0.7 {
+            recommendations.push("Strong membrane potential - candidate for artificial membrane quantum computer".to_string());
+        }
+        
+        if molecule.quantum_computer.radical_generation_rate < 1e-9 {
+            recommendations.push("Low radical generation - potential longevity enhancer".to_string());
+        }
+        
+        // Oscillatory recommendations
+        if molecule.synchronization_parameters.phase_locking_strength > 0.8 {
+            recommendations.push("High synchronization potential - good for biological rhythm modulation".to_string());
+        }
+        
+        // Hierarchical recommendations
+        if molecule.hierarchy_representations.len() >= 3 {
+            recommendations.push("Multi-scale organization - potential for complex biological functions".to_string());
+        }
+        
+        // Safety recommendations
+        if molecule.quantum_computer.radical_generation_rate > 1e-6 {
+            recommendations.push("WARNING: High radical generation rate - potential toxicity concern".to_string());
+        }
+        
+        if recommendations.is_empty() {
+            recommendations.push("Standard molecular properties - no special quantum-oscillatory features identified".to_string());
+        }
+        
+        recommendations
+    }
+    
+    fn convert_to_full_result(&self, cached_result: AnalysisResult) -> QuantumOscillatoryAnalysisResult {
+        // Convert cached result to full result
+        // This is a simplified implementation
+        QuantumOscillatoryAnalysisResult {
+            molecule: cached_result.molecule,
+            biological_activity: cached_result.biological_activity,
+            longevity_impact: cached_result.longevity_impact,
+            similar_molecules: cached_result.similar_molecules,
+            quantum_computational_score: cached_result.quantum_computational_score,
+            oscillatory_synchronization_score: cached_result.oscillatory_synchronization_score,
+            hierarchical_emergence_score: cached_result.hierarchical_emergence_score,
+            death_inevitability_score: cached_result.death_inevitability_score,
+            membrane_quantum_computer_potential: cached_result.membrane_quantum_computer_potential,
+            recommendations: cached_result.recommendations,
+        }
+    }
+}
+
+/// Supporting structures for system operation
+#[derive(Clone, Debug)]
+pub struct QuantumOscillatoryAnalysisResult {
+    pub molecule: OscillatoryQuantumMolecule,
+    pub biological_activity: BiologicalActivityPrediction,
+    pub longevity_impact: LongevityPrediction,
+    pub similar_molecules: Vec<(String, f64)>,
+    pub quantum_computational_score: f64,
+    pub oscillatory_synchronization_score: f64,
+    pub hierarchical_emergence_score: f64,
+    pub death_inevitability_score: f64,
+    pub membrane_quantum_computer_potential: f64,
+    pub recommendations: Vec<String>,
+}
+
+#[derive(Clone, Debug)]
+pub struct AnalysisResult {
+    pub molecule: OscillatoryQuantumMolecule,
+    pub biological_activity: BiologicalActivityPrediction,
+    pub longevity_impact: LongevityPrediction,
+    pub similar_molecules: Vec<(String, f64)>,
+    pub quantum_computational_score: f64,
+    pub oscillatory_synchronization_score: f64,
+    pub hierarchical_emergence_score: f64,
+    pub death_inevitability_score: f64,
+    pub membrane_quantum_computer_potential: f64,
+    pub recommendations: Vec<String>,
+}
+
+impl AnalysisResult {
+    pub fn from_full_result(result: &QuantumOscillatoryAnalysisResult) -> Self {
+        Self {
+            molecule: result.molecule.clone(),
+            biological_activity: result.biological_activity.clone(),
+            longevity_impact: result.longevity_impact.clone(),
+            similar_molecules: result.similar_molecules.clone(),
+            quantum_computational_score: result.quantum_computational_score,
+            oscillatory_synchronization_score: result.oscillatory_synchronization_score,
+            hierarchical_emergence_score: result.hierarchical_emergence_score,
+            death_inevitability_score: result.death_inevitability_score,
+            membrane_quantum_computer_potential: result.membrane_quantum_computer_potential,
+            recommendations: result.recommendations.clone(),
+        }
+    }
+}
+
+#[derive(Clone, Debug)]
+pub struct ComprehensiveSimilarityResult {
+    pub oscillatory_similarity: f64,
+    pub quantum_computational_similarity: f64,
+    pub enaqt_similarity: f64,
+    pub membrane_similarity: f64,
+    pub death_inevitability_similarity: f64,
+    pub entropy_endpoint_similarity: f64,
+    pub hierarchical_similarities: HashMap<u8, f64>,
+    pub overall_similarity: f64,
+}
+
+impl Default for ComprehensiveSimilarityResult {
+    fn default() -> Self {
+        Self {
+            oscillatory_similarity: 0.0,
+            quantum_computational_similarity: 0.0,
+            enaqt_similarity: 0.0,
+            membrane_similarity: 0.0,
+            death_inevitability_similarity: 0.0,
+            entropy_endpoint_similarity: 0.0,
+            hierarchical_similarities: HashMap::new(),
+            overall_similarity: 0.0,
+        }
+    }
+}
+
+#[derive(Clone, Debug)]
+pub struct DesignGoals {
+    pub goal_type: String,
+    pub target_protein: Option<ProteinTarget>,
+    pub computational_task: Option<ComputationalTask>,
+    pub performance_requirements: HashMap<String, f64>,
+    pub constraints: Vec<String>,
+}
+
+#[derive(Clone, Debug)]
+pub struct TemporalPattern {
+    pub pattern_name: String,
+    pub time_series: Vec<f64>,
+    pub characteristic_timescale: f64,
+    pub pattern_strength: f64,
+}
+
+// =====================================================================================
+// EXAMPLE USAGE AND TESTS
+// Demonstrates the capabilities of the quantum-oscillatory molecular system
+// =====================================================================================
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    
+    #[test]
+    fn test_complete_molecular_
 
 
