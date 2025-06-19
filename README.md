@@ -25,24 +25,60 @@
 
 ## Project Vision
 
-**Borgia** is a  cheminformatics confirmation engine that serves as the molecular evidence workhorse for the larger biological intelligence ecosystem (Hegel, Lavoisier, Gospel, Bene Gesserit, etc.). Unlike mainstream cheminformatics that applies universal methods to millions of molecules, Borgia performs **purpose-driven, evidence-constrained, probabilistic molecular analysis** on small sets of highly relevant molecules.
+**Borgia** is a quantum-oscillatory molecular representation engine that implements revolutionary theoretical frameworks for cheminformatics. Based on novel physical principles including the Universal Oscillatory Framework, Membrane Quantum Computation Theorem, and Environment-Assisted Quantum Transport (ENAQT), Borgia represents molecules not as static structures but as dynamic quantum oscillators embedded in the fundamental oscillatory fabric of reality.
+
+The system serves as the molecular evidence engine for the larger biological intelligence ecosystem, performing **purpose-driven, quantum-informed, probabilistic molecular analysis** that captures the true quantum computational nature of biological molecules.
 
 
 
-### The Problem with Mainstream Cheminformatics
+## Theoretical Foundations
 
-**Universal Methods = Universal Failures**
-- One-size-fits-all algorithms designed for speed over precision
-- Deterministic representations that ignore molecular uncertainty
-- Blind computation without considering why analysis is needed
-- Methods that work "generally" but fail in specific critical cases
+### Universal Oscillatory Framework
 
-### Borgia's Solution: Evidence-Driven Probabilistic Cheminformatics
+**Postulate**: All bounded systems with nonlinear dynamics exhibit oscillatory behavior. Reality exists as nested hierarchies of oscillations, from quantum scales (10⁻¹⁵ s) through molecular vibrations (10⁻¹² s) to cellular rhythms (10² s) and organismal cycles (10⁴ s).
 
-1. **Small Search Space**: Analyze 3-10 molecules suggested by upstream evidence, not millions
-2. **Enhanced Representations**: Pack maximum fuzzy information into molecular descriptors
-3. **Probabilistic Methods**: All comparisons return probability distributions, not binary scores
-4. **Purpose-Driven**: Only compute what upstream systems actually need
+**Mathematical Foundation**: For any bounded nonlinear dynamical system with Hamiltonian H(q,p), the time evolution exhibits characteristic oscillatory patterns with natural frequency ω₀ and environmental coupling γ, where the dynamics are governed by:
+
+```
+d²q/dt² + 2γ(dq/dt) + ω₀²q = F_env(t)
+```
+
+### Membrane Quantum Computation Theorem
+
+**Theorem**: Amphipathic molecules with optimal tunneling distances (3-5 nm) function as room-temperature quantum computers through Environment-Assisted Quantum Transport (ENAQT).
+
+**ENAQT Principle**: Environmental coupling enhances rather than destroys quantum coherence when optimally tuned. Transport efficiency follows:
+
+```
+η = η₀ × (1 + αγ + βγ²)
+```
+
+where γ is environmental coupling strength, α > 0 represents coherent enhancement, and β < 0 represents overdamping effects.
+
+### Entropy as Tangible Distribution
+
+**Revolutionary Insight**: Entropy is not merely a statistical concept but represents the tangible distribution of oscillation termination points. Molecular configurations correspond to specific locations where oscillatory dynamics settle, making entropy a directly manipulable physical quantity.
+
+**Entropy Distribution**: S = -Σᵢ pᵢ log(pᵢ), where pᵢ represents the probability of oscillations terminating at molecular configuration i.
+
+### Death as Quantum Necessity
+
+**Theorem**: Biological quantum computation inevitably generates reactive radicals as quantum leakage, establishing death as a fundamental physical necessity rather than mere biological accident.
+
+**Quantitative Framework**: Radical generation rate R follows:
+
+```
+R = σ_damage × Φ_quantum × (1 - η_coupling)
+```
+
+where σ_damage is the quantum damage cross-section, Φ_quantum is quantum flux density, and η_coupling is coupling efficiency.
+
+### Borgia's Quantum-Oscillatory Approach
+
+1. **Dynamic Representation**: Molecules as quantum oscillators rather than static structures
+2. **Multi-Scale Integration**: Nested hierarchy from quantum → molecular → cellular → organismal scales
+3. **Synchronization-Based Similarity**: Molecular similarity based on oscillatory synchronization potential
+4. **Quantum-Informed Properties**: Predictions based on ENAQT efficiency and membrane quantum computation
 
 ## Core Architecture
 
@@ -59,14 +95,15 @@ Borgia (Adaptive learning from feedback)
 
 ### System Components
 
-#### 1. **Probabilistic Molecular Representations**
-Enhanced chemical descriptors that encode uncertainty and fuzzy molecular properties:
+#### 1. **Quantum-Oscillatory Molecular Representations**
+Revolutionary molecular descriptors based on dynamic quantum oscillator models:
 
-- **Fuzzy Aromaticity**: Probabilistic aromatic character, electron delocalization scores
-- **Fuzzy Ring Systems**: Ring strain distributions, puckering probabilities, flexibility membership
-- **Fuzzy Functional Groups**: Hydrogen bonding capacity, reactivity potential distributions
-- **Fuzzy Stereochemistry**: Chiral center confidence, conformational freedom modeling
-- **Quantum-Enhanced Features**: Electronic property distributions, interaction potentials
+- **Universal Oscillator State**: Natural frequency ω, damping coefficient γ, phase space trajectory, hierarchy level
+- **Entropy Distribution**: Tangible oscillation endpoint configurations with landing probabilities
+- **Quantum Computational Architecture**: ENAQT efficiency, environmental coupling optimization, tunneling pathways
+- **Membrane Properties**: Amphipathic character, self-assembly thermodynamics, quantum coherence potential
+- **Multi-Scale Hierarchy**: Representations across quantum, molecular, cellular, and organismal scales
+- **Synchronization Parameters**: Coupling strengths, phase-locking capabilities, information transfer rates
 
 #### 2. **Evidence-Driven Request Processing**
 ```rust
@@ -80,22 +117,25 @@ pub struct BorgiaRequest {
 }
 ```
 
-#### 3. **Probabilistic Analysis Engines**
+#### 3. **Quantum-Oscillatory Analysis Engines**
 
-**Probabilistic Morgan Algorithm**
-- Fuzzy invariant calculations with uncertainty propagation
-- Probabilistic hashing functions for molecular fingerprints
-- Graph isomorphism with probabilistic variables
+**Oscillatory Similarity Calculator**
+- Synchronization potential assessment based on frequency matching
+- Multi-scale hierarchy similarity across nested levels
+- Entropy endpoint distribution comparison using Wasserstein distance
+- Phase-locking strength and information transfer rate calculation
 
-**Enhanced Molecular Fingerprints**
-- 50,000+ probabilistic features (vs. traditional 1024-4096)
-- Context-adaptive feature weighting based on evidence type
-- Topological, pharmacophoric, quantum, conformational, and interaction features
+**Quantum Computational Similarity Engine**
+- ENAQT architecture comparison for membrane quantum computation
+- Environmental coupling optimization assessment
+- Tunneling pathway similarity analysis
+- Decoherence-free subspace evaluation
 
-**Fuzzy Logic Molecular Comparisons**
-- Maximum Common Substructure with fuzzy matching
-- Linguistic variables for molecular similarity (very_low, low, medium, high, very_high)
-- Hybrid fuzzy-logical programming for complex molecular reasoning
+**Property Prediction Engines**
+- Longevity impact prediction based on quantum aging theory
+- Biological activity prediction through quantum computational capability
+- Membrane interaction assessment via amphipathic quantum properties
+- Radical generation and toxicity prediction from quantum leakage analysis
 
 #### 4. **Adaptive Learning System**
 - Representation evolution based on upstream feedback
@@ -121,24 +161,27 @@ make dev
 ### Quick Example
 
 ```python
-from borgia import BorgiaEngine, ProbabilisticMolecule
+from borgia import BorgiaEngine, OscillatoryQuantumMolecule
 
-# Initialize the engine
+# Initialize the quantum-oscillatory engine
 engine = BorgiaEngine()
 
-# Create probabilistic molecular representations
-mol1 = ProbabilisticMolecule.from_smiles("CCO")  # Ethanol
-mol2 = ProbabilisticMolecule.from_smiles("CCN")  # Ethylamine
+# Create quantum-oscillatory molecular representations
+mol1 = OscillatoryQuantumMolecule.from_smiles("CCO")  # Ethanol
+mol2 = OscillatoryQuantumMolecule.from_smiles("CCN")  # Ethylamine
 
-# Compare with uncertainty quantification
-similarity = engine.compare_molecules(
-    mol1, mol2, 
-    evidence_context="drug_metabolism",
-    confidence_threshold=0.8
-)
+# Calculate oscillatory synchronization similarity
+similarity = engine.oscillatory_similarity(mol1, mol2)
+print(f"Synchronization potential: {similarity:.3f}")
 
-print(f"Similarity distribution: {similarity}")
-# Output: {highly_similar: 0.65, moderately_similar: 0.30, dissimilar: 0.05}
+# Predict longevity impact based on quantum aging theory
+longevity_impact = engine.predict_longevity_impact(mol1)
+print(f"Longevity factor: {longevity_impact.longevity_factor:.3f}")
+print(f"Quantum burden: {longevity_impact.quantum_burden:.3f}")
+
+# Assess membrane quantum computation potential
+membrane_potential = engine.assess_membrane_qc_potential(mol1)
+print(f"Membrane QC score: {membrane_potential:.3f}")
 ```
 
 ### API Usage

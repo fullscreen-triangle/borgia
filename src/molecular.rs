@@ -11,6 +11,10 @@ use petgraph::{Graph, Undirected};
 use serde::{Deserialize, Serialize};
 use std::collections::{HashMap, HashSet};
 use std::fmt;
+use crate::oscillatory::{UniversalOscillator, SynchronizationParameters};
+use crate::quantum::QuantumMolecularComputer;
+use crate::entropy::EntropyDistribution;
+use std::collections::BTreeMap;
 
 /// Type alias for molecular graph
 pub type MolecularGraph = Graph<Atom, Bond, Undirected>;
@@ -496,5 +500,495 @@ mod tests {
         let mol = ProbabilisticMolecule::from_smiles("CCO").unwrap();
         assert!(mol.fuzzy_aromaticity.overall_aromaticity.confidence_level > 0.0);
         assert!(!mol.atom_features.is_empty());
+    }
+}
+
+// =====================================================================================
+// OSCILLATORY QUANTUM MOLECULAR REPRESENTATION
+// Complete molecular representation combining oscillatory dynamics and quantum computation
+// =====================================================================================
+
+/// Complete molecular representation combining oscillatory dynamics and quantum computation
+/// This represents molecules as they actually exist: dynamic quantum oscillators
+/// embedded in the nested hierarchy of reality's oscillatory structure
+#[derive(Clone, Debug, Serialize, Deserialize)]
+pub struct OscillatoryQuantumMolecule {
+    /// Basic molecular information
+    pub molecule_id: String,
+    pub smiles: String,
+    pub molecular_formula: String,
+    pub molecular_weight: f64,
+    
+    /// Universal oscillatory framework representation
+    pub oscillatory_state: UniversalOscillator,
+    
+    /// Entropy as tangible oscillation endpoint distribution
+    pub entropy_distribution: EntropyDistribution,
+    
+    /// Quantum computational architecture
+    pub quantum_computer: QuantumMolecularComputer,
+    
+    /// Nested hierarchy representations across scales
+    pub hierarchy_representations: BTreeMap<u8, HierarchyLevel>,
+    
+    /// Synchronization properties with other oscillators
+    pub synchronization_parameters: SynchronizationParameters,
+    
+    /// Information processing capabilities (Maxwell's demon functionality)
+    pub information_catalyst: InformationCatalyst,
+    
+    /// Predictive models for various properties
+    pub property_predictions: PropertyPredictions,
+    
+    /// Temporal evolution data
+    pub temporal_dynamics: TemporalDynamics,
+}
+
+/// Representation at specific hierarchy level
+#[derive(Clone, Debug, Serialize, Deserialize)]
+pub struct HierarchyLevel {
+    pub level: u8,
+    pub timescale: f64,
+    pub characteristic_frequency: f64,
+    pub oscillation_amplitude: f64,
+    pub coupling_to_adjacent_levels: Vec<f64>,
+    pub emergent_properties: Vec<String>,
+    pub level_specific_dynamics: LevelDynamics,
+}
+
+/// Dynamics specific to each hierarchy level
+#[derive(Clone, Debug, Serialize, Deserialize)]
+pub enum LevelDynamics {
+    Quantum {
+        electronic_transitions: Vec<f64>,
+        spin_dynamics: Vec<f64>,
+    },
+    Molecular {
+        vibrational_modes: Vec<f64>,
+        rotational_states: Vec<f64>,
+        conformational_changes: Vec<String>,
+    },
+    Cellular {
+        metabolic_oscillations: Vec<f64>,
+        signaling_cascades: Vec<String>,
+        transport_processes: Vec<String>,
+    },
+    Organismal {
+        physiological_rhythms: Vec<f64>,
+        developmental_patterns: Vec<String>,
+        behavioral_cycles: Vec<String>,
+    },
+}
+
+/// Information catalyst functionality (biological Maxwell's demon)
+#[derive(Clone, Debug, Serialize, Deserialize)]
+pub struct InformationCatalyst {
+    /// Information processing capacity in bits
+    pub processing_capacity: f64,
+    
+    /// Information value using Kharkevich's measure
+    pub information_value: f64,
+    
+    /// Pattern recognition capabilities
+    pub pattern_recognition: PatternRecognition,
+    
+    /// Catalytic amplification factors
+    pub amplification_factors: Vec<f64>,
+}
+
+/// Pattern recognition capabilities
+#[derive(Clone, Debug, Serialize, Deserialize)]
+pub struct PatternRecognition {
+    /// Recognized molecular patterns
+    pub recognized_patterns: Vec<String>,
+    
+    /// Binding affinities for different substrates
+    pub binding_affinities: Vec<f64>,
+    
+    /// Selectivity factors
+    pub selectivity_factors: Vec<f64>,
+}
+
+/// Property predictions based on oscillatory-quantum framework
+#[derive(Clone, Debug, Serialize, Deserialize)]
+pub struct PropertyPredictions {
+    /// Biological activity predictions
+    pub biological_activity: BiologicalActivityPrediction,
+    
+    /// Longevity impact predictions
+    pub longevity_impact: LongevityPrediction,
+    
+    /// Toxicity predictions based on radical generation
+    pub toxicity_prediction: ToxicityPrediction,
+    
+    /// Drug-likeness based on quantum computational properties
+    pub drug_likeness: DrugLikenessPrediction,
+    
+    /// Membrane interaction predictions
+    pub membrane_interactions: MembraneInteractionPrediction,
+    
+    /// Quantum computational efficiency predictions
+    pub quantum_efficiency: QuantumEfficiencyPrediction,
+}
+
+/// Biological activity prediction
+#[derive(Clone, Debug, Serialize, Deserialize)]
+pub struct BiologicalActivityPrediction {
+    pub activity_score: f64,
+    pub mechanism: String,
+    pub confidence: f64,
+    pub target_proteins: Vec<String>,
+    pub pathway_involvement: Vec<String>,
+    pub quantum_contributions: f64,
+}
+
+/// Longevity impact prediction based on quantum aging theory
+#[derive(Clone, Debug, Serialize, Deserialize)]
+pub struct LongevityPrediction {
+    /// Net longevity factor (positive = life-extending, negative = life-shortening)
+    pub longevity_factor: f64,
+    
+    /// Quantum burden contribution to aging
+    pub quantum_burden: f64,
+    
+    /// Potential escape mechanisms from quantum aging
+    pub escape_mechanisms: f64,
+    
+    /// Predicted change in lifespan
+    pub predicted_lifespan_change: f64,
+    
+    /// Specific mechanisms of action
+    pub mechanisms: Vec<LongevityMechanism>,
+}
+
+/// Specific longevity mechanism
+#[derive(Clone, Debug, Serialize, Deserialize)]
+pub struct LongevityMechanism {
+    pub mechanism_name: String,
+    pub effect_magnitude: f64,
+    pub confidence: f64,
+    pub supporting_evidence: Vec<String>,
+}
+
+/// Toxicity prediction based on radical generation
+#[derive(Clone, Debug, Serialize, Deserialize)]
+pub struct ToxicityPrediction {
+    pub toxicity_score: f64,
+    pub radical_generation_contribution: f64,
+    pub cellular_damage_potential: f64,
+    pub target_organs: Vec<String>,
+    pub dose_response_curve: Vec<(f64, f64)>,
+}
+
+/// Drug-likeness prediction
+#[derive(Clone, Debug, Serialize, Deserialize)]
+pub struct DrugLikenessPrediction {
+    pub drug_likeness_score: f64,
+    pub quantum_advantages: Vec<String>,
+    pub membrane_compatibility: f64,
+    pub bioavailability_prediction: f64,
+    pub side_effect_potential: f64,
+}
+
+/// Membrane interaction prediction
+#[derive(Clone, Debug, Serialize, Deserialize)]
+pub struct MembraneInteractionPrediction {
+    pub membrane_affinity: f64,
+    pub insertion_probability: f64,
+    pub transport_mechanism: String,
+    pub membrane_disruption_potential: f64,
+    pub quantum_transport_enhancement: f64,
+}
+
+/// Quantum computational efficiency prediction
+#[derive(Clone, Debug, Serialize, Deserialize)]
+pub struct QuantumEfficiencyPrediction {
+    pub computational_efficiency: f64,
+    pub coherence_enhancement: f64,
+    pub environmental_coupling_optimization: f64,
+    pub error_correction_capability: f64,
+}
+
+/// Temporal dynamics of the molecular system
+#[derive(Clone, Debug, Serialize, Deserialize)]
+pub struct TemporalDynamics {
+    /// Time series of oscillatory states
+    pub oscillation_time_series: Vec<(f64, f64)>, // (time, energy)
+    
+    /// Evolution of entropy distribution over time
+    pub entropy_evolution: Vec<f64>,
+    
+    /// Quantum coherence evolution
+    pub coherence_evolution: Vec<(f64, f64)>,
+    
+    /// Radical accumulation over time
+    pub radical_accumulation: Vec<(f64, f64)>,
+}
+
+impl OscillatoryQuantumMolecule {
+    /// Create new oscillatory quantum molecule from SMILES
+    pub fn from_smiles(smiles: &str) -> Self {
+        let molecule_id = format!("mol_{}", uuid::Uuid::new_v4().to_string()[..8].to_uppercase());
+        
+        Self {
+            molecule_id,
+            smiles: smiles.to_string(),
+            molecular_formula: String::new(), // Would be parsed from SMILES
+            molecular_weight: 0.0, // Would be calculated
+            
+            oscillatory_state: UniversalOscillator::new(1e12, 1), // 1 THz, molecular level
+            entropy_distribution: EntropyDistribution::new(4),
+            quantum_computer: QuantumMolecularComputer::new(),
+            hierarchy_representations: BTreeMap::new(),
+            synchronization_parameters: SynchronizationParameters::new(),
+            information_catalyst: InformationCatalyst::new(),
+            property_predictions: PropertyPredictions::new(),
+            temporal_dynamics: TemporalDynamics::new(),
+        }
+    }
+    
+    /// Calculate synchronization potential with another molecule
+    pub fn synchronization_potential(&self, other: &OscillatoryQuantumMolecule) -> f64 {
+        self.oscillatory_state.synchronization_potential(&other.oscillatory_state)
+    }
+    
+    /// Calculate quantum computational similarity
+    pub fn quantum_computational_similarity(&self, other: &OscillatoryQuantumMolecule) -> f64 {
+        // Compare ENAQT efficiencies
+        let efficiency_diff = (self.quantum_computer.transport_efficiency - 
+                              other.quantum_computer.transport_efficiency).abs();
+        let efficiency_similarity = 1.0 - efficiency_diff;
+        
+        // Compare coherence times
+        let coherence_ratio = if other.quantum_computer.coherence_time > 0.0 {
+            (self.quantum_computer.coherence_time / other.quantum_computer.coherence_time)
+                .min(other.quantum_computer.coherence_time / self.quantum_computer.coherence_time)
+        } else {
+            0.0
+        };
+        
+        // Compare membrane properties
+        let membrane_similarity = self.quantum_computer.membrane_properties
+            .amphipathic_score - other.quantum_computer.membrane_properties.amphipathic_score;
+        let membrane_sim = 1.0 - membrane_similarity.abs();
+        
+        (efficiency_similarity + coherence_ratio + membrane_sim) / 3.0
+    }
+    
+    /// Update temporal dynamics
+    pub fn update_temporal_dynamics(&mut self, dt: f64) {
+        // Update oscillatory state
+        self.oscillatory_state.update_state(dt, 0.0);
+        
+        // Update quantum damage
+        self.quantum_computer.update_quantum_damage(dt);
+        
+        // Store temporal data
+        let current_time = self.temporal_dynamics.oscillation_time_series.len() as f64 * dt;
+        self.temporal_dynamics.oscillation_time_series.push((
+            current_time, 
+            self.oscillatory_state.current_state.energy
+        ));
+        
+        self.temporal_dynamics.coherence_evolution.push((
+            current_time,
+            self.quantum_computer.coherence_time
+        ));
+        
+        self.temporal_dynamics.radical_accumulation.push((
+            current_time,
+            self.quantum_computer.accumulated_damage
+        ));
+        
+        // Update entropy evolution
+        self.entropy_distribution.update_temporal_evolution();
+        self.temporal_dynamics.entropy_evolution.push(
+            self.entropy_distribution.shannon_entropy()
+        );
+    }
+    
+    /// Assess membrane quantum computation potential
+    pub fn assess_membrane_qc_potential(&self) -> f64 {
+        if self.quantum_computer.is_membrane_quantum_computer() {
+            self.quantum_computer.quantum_advantage()
+        } else {
+            0.0
+        }
+    }
+    
+    /// Predict longevity impact
+    pub fn predict_longevity_impact(&self) -> &LongevityPrediction {
+        &self.property_predictions.longevity_impact
+    }
+    
+    /// Get most probable entropy endpoint
+    pub fn most_probable_configuration(&self) -> Option<&crate::entropy::MolecularConfiguration> {
+        self.entropy_distribution.most_probable_endpoint()
+    }
+}
+
+impl InformationCatalyst {
+    /// Create new information catalyst
+    pub fn new() -> Self {
+        Self {
+            processing_capacity: 1000.0, // bits
+            information_value: 10.0, // bits
+            pattern_recognition: PatternRecognition::new(),
+            amplification_factors: vec![1.0, 2.0, 5.0],
+        }
+    }
+}
+
+impl PatternRecognition {
+    /// Create new pattern recognition system
+    pub fn new() -> Self {
+        Self {
+            recognized_patterns: Vec::new(),
+            binding_affinities: Vec::new(),
+            selectivity_factors: Vec::new(),
+        }
+    }
+}
+
+impl PropertyPredictions {
+    /// Create new property predictions with default values
+    pub fn new() -> Self {
+        Self {
+            biological_activity: BiologicalActivityPrediction::default(),
+            longevity_impact: LongevityPrediction::default(),
+            toxicity_prediction: ToxicityPrediction::default(),
+            drug_likeness: DrugLikenessPrediction::default(),
+            membrane_interactions: MembraneInteractionPrediction::default(),
+            quantum_efficiency: QuantumEfficiencyPrediction::default(),
+        }
+    }
+}
+
+impl TemporalDynamics {
+    /// Create new temporal dynamics tracker
+    pub fn new() -> Self {
+        Self {
+            oscillation_time_series: Vec::new(),
+            entropy_evolution: Vec::new(),
+            coherence_evolution: Vec::new(),
+            radical_accumulation: Vec::new(),
+        }
+    }
+}
+
+// Default implementations for prediction structures
+impl Default for BiologicalActivityPrediction {
+    fn default() -> Self {
+        Self {
+            activity_score: 0.0,
+            mechanism: "unknown".to_string(),
+            confidence: 0.0,
+            target_proteins: Vec::new(),
+            pathway_involvement: Vec::new(),
+            quantum_contributions: 0.0,
+        }
+    }
+}
+
+impl Default for LongevityPrediction {
+    fn default() -> Self {
+        Self {
+            longevity_factor: 0.0,
+            quantum_burden: 0.0,
+            escape_mechanisms: 0.0,
+            predicted_lifespan_change: 0.0,
+            mechanisms: Vec::new(),
+        }
+    }
+}
+
+impl Default for ToxicityPrediction {
+    fn default() -> Self {
+        Self {
+            toxicity_score: 0.0,
+            radical_generation_contribution: 0.0,
+            cellular_damage_potential: 0.0,
+            target_organs: Vec::new(),
+            dose_response_curve: Vec::new(),
+        }
+    }
+}
+
+impl Default for DrugLikenessPrediction {
+    fn default() -> Self {
+        Self {
+            drug_likeness_score: 0.0,
+            quantum_advantages: Vec::new(),
+            membrane_compatibility: 0.0,
+            bioavailability_prediction: 0.0,
+            side_effect_potential: 0.0,
+        }
+    }
+}
+
+impl Default for MembraneInteractionPrediction {
+    fn default() -> Self {
+        Self {
+            membrane_affinity: 0.0,
+            insertion_probability: 0.0,
+            transport_mechanism: "unknown".to_string(),
+            membrane_disruption_potential: 0.0,
+            quantum_transport_enhancement: 0.0,
+        }
+    }
+}
+
+impl Default for QuantumEfficiencyPrediction {
+    fn default() -> Self {
+        Self {
+            computational_efficiency: 0.0,
+            coherence_enhancement: 0.0,
+            environmental_coupling_optimization: 0.0,
+            error_correction_capability: 0.0,
+        }
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    
+    #[test]
+    fn test_molecule_creation() {
+        let mol = OscillatoryQuantumMolecule::from_smiles("CCO");
+        assert_eq!(mol.smiles, "CCO");
+        assert!(mol.molecule_id.len() > 0);
+        assert_eq!(mol.oscillatory_state.hierarchy_level, 1);
+    }
+    
+    #[test]
+    fn test_synchronization_potential() {
+        let mol1 = OscillatoryQuantumMolecule::from_smiles("CCO");
+        let mol2 = OscillatoryQuantumMolecule::from_smiles("CCN");
+        
+        let sync_potential = mol1.synchronization_potential(&mol2);
+        assert!(sync_potential >= 0.0);
+        assert!(sync_potential <= 1.0);
+    }
+    
+    #[test]
+    fn test_quantum_computational_similarity() {
+        let mol1 = OscillatoryQuantumMolecule::from_smiles("CCO");
+        let mol2 = OscillatoryQuantumMolecule::from_smiles("CCN");
+        
+        let similarity = mol1.quantum_computational_similarity(&mol2);
+        assert!(similarity >= 0.0);
+        assert!(similarity <= 1.0);
+    }
+    
+    #[test]
+    fn test_temporal_dynamics_update() {
+        let mut mol = OscillatoryQuantumMolecule::from_smiles("CCO");
+        
+        mol.update_temporal_dynamics(1e-15); // 1 femtosecond
+        
+        assert_eq!(mol.temporal_dynamics.oscillation_time_series.len(), 1);
+        assert_eq!(mol.temporal_dynamics.entropy_evolution.len(), 1);
+        assert_eq!(mol.temporal_dynamics.coherence_evolution.len(), 1);
     }
 } 

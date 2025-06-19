@@ -72,6 +72,7 @@ pub use molecular::{
     FuzzyRingSystems,
     FuzzyFunctionalGroups,
     EnhancedFingerprint,
+    OscillatoryQuantumMolecule,
 };
 
 // Similarity and comparison
@@ -80,6 +81,8 @@ pub use similarity::{
     ProbabilisticSimilarity,
     FuzzySimilarity,
     SimilarityDistribution,
+    OscillatorySimilarityCalculator,
+    QuantumComputationalSimilarityCalculator,
 };
 
 // Probabilistic computing
@@ -120,6 +123,32 @@ pub use integration::{
     IntegrationResponse,
     UpstreamFeedback,
 };
+
+// =====================================================================================
+// BORGIA: Quantum-Oscillatory Molecular Representation System
+// 
+// This system implements revolutionary molecular representations based on:
+// 1. Universal Oscillatory Framework - Reality as nested oscillations
+// 2. Membrane Quantum Computation Theorem - Life as quantum inevitability
+// 3. Entropy as tangible oscillation endpoint distributions
+// 4. Environment-Assisted Quantum Transport (ENAQT) principles
+// =====================================================================================
+
+// Quantum-Oscillatory Framework
+pub mod oscillatory;
+pub mod quantum;
+pub mod entropy;
+pub mod membrane;
+
+// Analysis Engines
+pub mod prediction;
+pub mod synchronization;
+
+// Re-export main types
+pub use oscillatory::UniversalOscillator;
+pub use quantum::QuantumMolecularComputer;
+pub use entropy::EntropyDistribution;
+pub use prediction::QuantumBiologicalPropertyPredictor;
 
 #[cfg(test)]
 mod tests {
