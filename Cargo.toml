@@ -62,10 +62,10 @@ parking_lot = "0.12"
 dashmap = "5.5"
 
 # Async and networking
-tokio = { version = "1.0", features = ["full"] }
-reqwest = { version = "0.11", features = ["json"] }
-axum = "0.6"
-tower = "0.4"
+tokio = { version = "1.0", features = ["full"], optional = true }
+reqwest = { version = "0.11", features = ["json"], optional = true }
+axum = { version = "0.6", optional = true }
+tower = { version = "0.4", optional = true }
 
 # Logging and error handling
 log = "0.4"
@@ -103,8 +103,8 @@ molecular = ["rdkit-sys"]
 gpu-acceleration = []
 python-bindings = ["pyo3"]
 advanced-algorithms = []
-autobahn = ["tokio", "reqwest", "serde_json"]
-distributed = ["autobahn", "uuid", "tokio"]
+autobahn = ["dep:tokio", "dep:reqwest", "serde_json"]
+distributed = ["autobahn", "uuid", "dep:tokio"]
 consciousness = ["autobahn", "nalgebra", "ndarray"]
 quantum = ["nalgebra", "ndarray", "num-complex"]
 oscillatory = ["nalgebra", "ndarray", "statrs"]

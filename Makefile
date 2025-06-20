@@ -78,6 +78,14 @@ test-integration: ## Run integration tests
 	@echo "Running integration tests..."
 	pytest tests/integration/ -v
 
+test-quantum-integration: ## Run quantum-oscillatory integration tests
+	@echo "Running quantum-oscillatory integration tests..."
+	cargo test quantum_oscillatory_integration_tests -- --nocapture
+
+test-all: ## Run all tests with full output
+	@echo "Running all tests with full output..."
+	cargo test --all-features -- --nocapture
+
 test-benchmark: ## Run benchmark tests
 	@echo "Running benchmark tests..."
 	cargo bench
@@ -106,8 +114,13 @@ lint-python: ## Lint Python code
 	flake8 python/
 	mypy python/
 
+validate-cargo: ## Validate Cargo.toml configuration
+	@echo "Validating Cargo.toml configuration..."
+	python3 scripts/validate_cargo.py
+
 check: ## Run all checks (format, lint, test)
 	@echo "Running all checks..."
+	$(MAKE) validate-cargo
 	$(MAKE) format
 	$(MAKE) lint
 	$(MAKE) test
