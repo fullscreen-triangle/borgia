@@ -106,6 +106,9 @@ advanced-algorithms = []
 autobahn = ["tokio", "reqwest", "serde_json"]
 distributed = ["autobahn", "uuid", "tokio"]
 consciousness = ["autobahn", "nalgebra", "ndarray"]
+quantum = ["nalgebra", "ndarray", "num-complex"]
+oscillatory = ["nalgebra", "ndarray", "statrs"]
+categorical = ["nalgebra", "ndarray", "rayon"]
 
 [profile.release]
 opt-level = 3

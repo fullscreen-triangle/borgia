@@ -40,6 +40,10 @@ distributed-intelligence: ## Run Borgia-Autobahn distributed intelligence exampl
 	@echo "Running Borgia-Autobahn Distributed Intelligence Example..."
 	cargo run --example distributed_molecular_intelligence --features="autobahn,distributed"
 
+quantum-oscillatory: ## Run quantum-oscillatory molecular analysis example
+	@echo "Running Quantum-Oscillatory Molecular Analysis Example..."
+	cargo run --example quantum_oscillatory_analysis --features="quantum,oscillatory,categorical"
+
 python-example: ## Run Python Borgia-Autobahn example
 	@echo "Running Python Borgia-Autobahn example..."
 	cd python && python3 borgia_autobahn_example.py

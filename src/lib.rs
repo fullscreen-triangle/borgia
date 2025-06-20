@@ -340,6 +340,44 @@ pub fn calculate_comprehensive_similarity(mol1: &str, mol2: &str) -> Comprehensi
     system.comprehensive_similarity(mol1, mol2)
 }
 
+// Export comprehensive quantum-oscillatory system
+pub use crate::core::{
+    BorgiaQuantumOscillatorySystem, 
+    QuantumOscillatoryAnalysisResult, 
+    AnalysisResult,
+    ComprehensiveSimilarityResult,
+    SearchCriteria,
+    QuantumSearchCriteria,
+    OscillatorySearchCriteria,
+    HierarchySearchCriteria,
+    MembraneRequirements,
+    DesignGoals,
+    ProteinTarget,
+    ComputationalTask,
+    HierarchyLevel,
+};
+
+// Export categorical predeterminism framework
+pub use crate::evidence::{
+    UniversalCategoricalCompletionSystem,
+    ThermodynamicNecessityEngine,
+    CategoricalCompletionTracker,
+    ConfigurationSpaceNavigator,
+    EntropyMaximizationCoordinator,
+    CategoricalPredeterminismProof,
+    ThermodynamicNecessity,
+    NecessityLevel,
+    CategoricalRequirements,
+    ConfigurationSpaceNavigation,
+    EntropyOptimization,
+    MaximizationStrategy,
+    ConfigurationSpacePosition,
+    ExplorationStrategy,
+    EntropyAnalysis,
+    FreeEnergyAnalysis,
+    SpontaneityAnalysis,
+};
+
 #[cfg(test)]
 mod tests {
     use super::*;
