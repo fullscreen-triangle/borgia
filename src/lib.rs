@@ -135,6 +135,23 @@ pub use drug_discovery::{
     QuantumRequirements,
 };
 
+// Autobahn integration
+pub use autobahn::{
+    AutobahnConfiguration,
+    HierarchyLevel,
+    MetabolicMode,
+    MolecularQuery,
+    ProbabilisticAnalysis,
+    SystemResponse,
+};
+
+// Distributed intelligence
+pub use distributed_intelligence::{
+    BorgiaAutobahnSystem,
+    PredeterminedMolecularNavigator,
+    AutobahnThinkingEngine,
+};
+
 // =====================================================================================
 // BORGIA: Quantum-Oscillatory Molecular Representation System
 // 
@@ -194,7 +211,9 @@ pub use drug_discovery::{
 //! ```
 
 pub mod algorithms;
+pub mod autobahn;
 pub mod core;
+pub mod distributed_intelligence;
 pub mod drug_discovery;
 pub mod engine;
 pub mod entropy;

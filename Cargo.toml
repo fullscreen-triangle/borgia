@@ -103,6 +103,9 @@ molecular = ["rdkit-sys"]
 gpu-acceleration = []
 python-bindings = ["pyo3"]
 advanced-algorithms = []
+autobahn = ["tokio", "reqwest", "serde_json"]
+distributed = ["autobahn", "uuid", "tokio"]
+consciousness = ["autobahn", "nalgebra", "ndarray"]
 
 [profile.release]
 opt-level = 3

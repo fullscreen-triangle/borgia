@@ -35,6 +35,19 @@ dev-full: ## Start full development environment with all services
 	@echo "Starting full development environment..."
 	docker-compose up -d
 
+# Distributed Intelligence
+distributed-intelligence: ## Run Borgia-Autobahn distributed intelligence example
+	@echo "Running Borgia-Autobahn Distributed Intelligence Example..."
+	cargo run --example distributed_molecular_intelligence --features="autobahn,distributed"
+
+python-example: ## Run Python Borgia-Autobahn example
+	@echo "Running Python Borgia-Autobahn example..."
+	cd python && python3 borgia_autobahn_example.py
+
+test-distributed: ## Run distributed intelligence tests
+	@echo "Running distributed intelligence tests..."
+	cargo test --test distributed_intelligence_tests --features="autobahn,distributed"
+
 # Building
 build: build-rust build-python ## Build all components
 
