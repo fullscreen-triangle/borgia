@@ -220,6 +220,7 @@ pub mod entropy;
 pub mod error;
 pub mod evidence;
 pub mod fuzzy;
+pub mod hardware_spectroscopy;
 pub mod integration;
 pub mod molecular;
 pub mod oscillatory;
@@ -240,6 +241,14 @@ pub use crate::oscillatory::{
     HardwareClockIntegration,
     HardwareOscillator,
     TimescaleMappings,
+};
+pub use crate::hardware_spectroscopy::{
+    HardwareSpectroscopySystem,
+    HardwareLightSources,
+    HardwareSensorArray,
+    MolecularSpectroscopyResult,
+    HardwareSpectroscopyResult,
+    FireLightCouplingIntegration,
 };
 pub use crate::entropy::{EntropyDistribution, MolecularConfiguration, ClusteringAnalysis};
 pub use crate::quantum::{QuantumMolecularComputer, MembraneProperties, TunnelingPathway, ElectronTransportChain, ProtonChannel};
