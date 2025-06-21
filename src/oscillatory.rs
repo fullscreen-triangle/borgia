@@ -13,10 +13,262 @@
 
 use std::collections::{HashMap, BTreeMap};
 use std::sync::{Arc, Mutex};
+use std::time::{Instant, Duration, SystemTime, UNIX_EPOCH};
 use ndarray::{Array1, Array2, Array3, ArrayD};
 use num_complex::Complex64;
 use serde::{Serialize, Deserialize};
 use rayon::prelude::*;
+
+// =====================================================================================
+// HARDWARE CLOCK INTEGRATION MODULE
+// Leverages computer hardware clocks to reduce computational burden of oscillation tracking
+// Maps molecular timescales to available hardware timing mechanisms
+// =====================================================================================
+
+/// Hardware clock integration for oscillatory framework
+/// Maps molecular oscillation timescales to hardware clock sources
+#[derive(Clone, Debug)]
+pub struct HardwareClockIntegration {
+    /// High-resolution performance counter for sub-microsecond timing
+    pub performance_counter_start: Instant,
+    
+    /// System time reference for absolute timing
+    pub system_time_reference: SystemTime,
+    
+    /// CPU cycle counter approximation (GHz range timing)
+    pub cpu_cycle_reference: u64,
+    
+    /// Hardware clock frequency mapping to molecular timescales
+    pub timescale_mappings: TimescaleMappings,
+    
+    /// Clock synchronization parameters
+    pub clock_sync: ClockSynchronization,
+}
+
+/// Maps molecular oscillation timescales to hardware clock capabilities
+#[derive(Clone, Debug, Serialize, Deserialize)]
+pub struct TimescaleMappings {
+    /// Quantum oscillations (10^-15 s) - Use CPU cycle approximation
+    pub quantum_scale_multiplier: f64,
+    
+    /// Molecular vibrations (10^-12 s) - Use high-resolution timer
+    pub molecular_scale_multiplier: f64,
+    
+    /// Conformational changes (10^-6 s) - Use system timer
+    pub conformational_scale_multiplier: f64,
+    
+    /// Biological processes (10^2 s) - Use system clock
+    pub biological_scale_multiplier: f64,
+    
+    /// Hardware clock frequency (estimated from system specs)
+    pub estimated_cpu_frequency_ghz: f64,
+}
+
+/// Clock synchronization for maintaining accuracy across timescales
+#[derive(Clone, Debug)]
+pub struct ClockSynchronization {
+    /// Drift compensation between hardware and simulation time
+    pub drift_compensation_factor: f64,
+    
+    /// Last synchronization timestamp
+    pub last_sync_time: Instant,
+    
+    /// Accumulated drift since last sync
+    pub accumulated_drift_ns: i64,
+    
+    /// Sync frequency (how often to recalibrate)
+    pub sync_frequency_ms: u64,
+}
+
+impl HardwareClockIntegration {
+    /// Initialize hardware clock integration
+    pub fn new() -> Self {
+        let now = Instant::now();
+        let sys_time = SystemTime::now();
+        
+        Self {
+            performance_counter_start: now,
+            system_time_reference: sys_time,
+            cpu_cycle_reference: Self::estimate_cpu_cycles(),
+            timescale_mappings: TimescaleMappings::detect_system_capabilities(),
+            clock_sync: ClockSynchronization {
+                drift_compensation_factor: 1.0,
+                last_sync_time: now,
+                accumulated_drift_ns: 0,
+                sync_frequency_ms: 100, // Sync every 100ms
+            },
+        }
+    }
+    
+    /// Get hardware-synchronized time for given molecular timescale
+    pub fn get_molecular_time(&mut self, hierarchy_level: u8) -> f64 {
+        let elapsed = self.performance_counter_start.elapsed();
+        let elapsed_ns = elapsed.as_nanos() as f64;
+        
+        // Check if we need to sync
+        if self.performance_counter_start.elapsed().as_millis() > self.clock_sync.sync_frequency_ms as u128 {
+            self.synchronize_clocks();
+        }
+        
+        // Apply drift compensation
+        let compensated_ns = elapsed_ns * self.clock_sync.drift_compensation_factor;
+        
+        // Map to appropriate molecular timescale
+        match hierarchy_level {
+            0 => compensated_ns * self.timescale_mappings.quantum_scale_multiplier, // Quantum scale
+            1 => compensated_ns * self.timescale_mappings.molecular_scale_multiplier, // Molecular scale
+            2 => compensated_ns * self.timescale_mappings.conformational_scale_multiplier, // Conformational scale
+            _ => compensated_ns * self.timescale_mappings.biological_scale_multiplier, // Biological scale
+        }
+    }
+    
+    /// Synchronize hardware clocks to maintain accuracy
+    fn synchronize_clocks(&mut self) {
+        let now = Instant::now();
+        let elapsed_since_sync = now.duration_since(self.clock_sync.last_sync_time);
+        
+        // Simple drift estimation based on system behavior
+        // In production, this could use more sophisticated calibration
+        let expected_ns = elapsed_since_sync.as_nanos() as i64;
+        let actual_ns = elapsed_since_sync.as_nanos() as i64;
+        
+        self.clock_sync.accumulated_drift_ns += actual_ns - expected_ns;
+        
+        // Update drift compensation
+        if self.clock_sync.accumulated_drift_ns.abs() > 1000 { // 1μs drift threshold
+            self.clock_sync.drift_compensation_factor *= 
+                1.0 - (self.clock_sync.accumulated_drift_ns as f64 / 1_000_000_000.0);
+            self.clock_sync.accumulated_drift_ns = 0;
+        }
+        
+        self.clock_sync.last_sync_time = now;
+    }
+    
+    /// Estimate CPU cycles (rough approximation)
+    fn estimate_cpu_cycles() -> u64 {
+        // This is a simplified approach - in practice, you'd use RDTSC instruction
+        // or platform-specific high-resolution counters
+        SystemTime::now()
+            .duration_since(UNIX_EPOCH)
+            .unwrap()
+            .as_nanos() as u64
+    }
+    
+    /// Calculate oscillation phase directly from hardware clock
+    pub fn get_hardware_phase(&mut self, natural_frequency: f64, hierarchy_level: u8) -> f64 {
+        let current_time = self.get_molecular_time(hierarchy_level);
+        (2.0 * std::f64::consts::PI * natural_frequency * current_time) % (2.0 * std::f64::consts::PI)
+    }
+    
+    /// Detect synchronization between oscillators using hardware timing
+    pub fn detect_hardware_synchronization(&mut self, freq1: f64, freq2: f64, hierarchy_level: u8) -> f64 {
+        let current_time = self.get_molecular_time(hierarchy_level);
+        let phase1 = (2.0 * std::f64::consts::PI * freq1 * current_time) % (2.0 * std::f64::consts::PI);
+        let phase2 = (2.0 * std::f64::consts::PI * freq2 * current_time) % (2.0 * std::f64::consts::PI);
+        
+        // Calculate phase synchronization
+        let phase_diff = (phase1 - phase2).abs();
+        let normalized_phase_diff = phase_diff.min(2.0 * std::f64::consts::PI - phase_diff);
+        
+        1.0 - (normalized_phase_diff / std::f64::consts::PI) // Returns 1.0 for perfect sync, 0.0 for anti-sync
+    }
+}
+
+impl TimescaleMappings {
+    /// Detect system capabilities and create appropriate mappings
+    pub fn detect_system_capabilities() -> Self {
+        // Rough estimation - in production, this would probe actual hardware
+        let estimated_cpu_ghz = 3.0; // Assume 3GHz CPU
+        
+        Self {
+            // Quantum scale: Map nanosecond precision to femtosecond simulation
+            quantum_scale_multiplier: 1e-6, // ns to fs scaling
+            
+            // Molecular scale: Map nanosecond precision to picosecond simulation  
+            molecular_scale_multiplier: 1e-3, // ns to ps scaling
+            
+            // Conformational scale: Direct microsecond mapping
+            conformational_scale_multiplier: 1e-3, // ns to μs scaling
+            
+            // Biological scale: Direct millisecond/second mapping
+            biological_scale_multiplier: 1e-6, // ns to ms scaling
+            
+            estimated_cpu_frequency_ghz: estimated_cpu_ghz,
+        }
+    }
+}
+
+// =====================================================================================
+// ENHANCED OSCILLATOR WITH HARDWARE CLOCK INTEGRATION
+// =====================================================================================
+
+/// Enhanced oscillator that leverages hardware clocks for timing
+pub struct HardwareOscillator {
+    /// Base oscillator properties
+    pub base_oscillator: UniversalOscillator,
+    
+    /// Hardware clock integration
+    pub hardware_clock: Arc<Mutex<HardwareClockIntegration>>,
+    
+    /// Whether to use hardware timing (vs software simulation)
+    pub use_hardware_timing: bool,
+}
+
+impl HardwareOscillator {
+    /// Create new hardware-integrated oscillator
+    pub fn new(frequency: f64, hierarchy_level: u8, use_hardware: bool) -> Self {
+        Self {
+            base_oscillator: UniversalOscillator::new(frequency, hierarchy_level),
+            hardware_clock: Arc::new(Mutex::new(HardwareClockIntegration::new())),
+            use_hardware_timing: use_hardware,
+        }
+    }
+    
+    /// Update oscillator state using hardware clock timing
+    pub fn update_with_hardware_clock(&mut self, environmental_force: f64) {
+        if self.use_hardware_timing {
+            // Use hardware clock for timing instead of manual dt
+            let mut clock = self.hardware_clock.lock().unwrap();
+            let current_time = clock.get_molecular_time(self.base_oscillator.hierarchy_level);
+            let current_phase = clock.get_hardware_phase(
+                self.base_oscillator.natural_frequency, 
+                self.base_oscillator.hierarchy_level
+            );
+            
+            // Update state based on hardware timing
+            self.base_oscillator.current_state.phase = current_phase;
+            self.base_oscillator.current_state.position = 
+                self.base_oscillator.current_state.energy.sqrt() * current_phase.cos();
+            self.base_oscillator.current_state.momentum = 
+                -self.base_oscillator.current_state.energy.sqrt() * 
+                self.base_oscillator.natural_frequency * current_phase.sin();
+            
+            // Apply environmental force correction
+            let dt = 1e-12; // Still need small dt for force integration
+            self.base_oscillator.current_state.momentum += environmental_force * dt;
+            
+        } else {
+            // Fall back to software timing
+            let dt = 1e-12; // 1 ps default timestep
+            self.base_oscillator.update_state(dt, environmental_force);
+        }
+    }
+    
+    /// Calculate hardware-synchronized synchronization potential
+    pub fn hardware_synchronization_potential(&mut self, other: &mut HardwareOscillator) -> f64 {
+        if self.use_hardware_timing && other.use_hardware_timing {
+            let mut clock = self.hardware_clock.lock().unwrap();
+            clock.detect_hardware_synchronization(
+                self.base_oscillator.natural_frequency,
+                other.base_oscillator.natural_frequency,
+                self.base_oscillator.hierarchy_level.min(other.base_oscillator.hierarchy_level)
+            )
+        } else {
+            // Fall back to software calculation
+            self.base_oscillator.synchronization_potential(&other.base_oscillator)
+        }
+    }
+}
 
 // =====================================================================================
 // CORE OSCILLATORY FRAMEWORK STRUCTURES

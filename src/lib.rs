@@ -234,7 +234,13 @@ pub mod utils;
 pub use crate::core::BorgiaEngine;
 pub use crate::engine::{BorgiaQuantumOscillatorySystem, QuantumOscillatoryAnalysisResult, DesignGoals};
 pub use crate::molecular::{OscillatoryQuantumMolecule, HierarchyLevel, LevelDynamics};
-pub use crate::oscillatory::{UniversalOscillator, OscillationState};
+pub use crate::oscillatory::{
+    UniversalOscillator, 
+    OscillationState,
+    HardwareClockIntegration,
+    HardwareOscillator,
+    TimescaleMappings,
+};
 pub use crate::entropy::{EntropyDistribution, MolecularConfiguration, ClusteringAnalysis};
 pub use crate::quantum::{QuantumMolecularComputer, MembraneProperties, TunnelingPathway, ElectronTransportChain, ProtonChannel};
 pub use crate::prediction::{QuantumBiologicalPropertyPredictor, BiologicalActivityPrediction, LongevityPrediction, ToxicityPrediction, DrugLikenessPrediction, MembraneInteractionPrediction, QuantumEfficiencyPrediction};
