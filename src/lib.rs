@@ -38,6 +38,9 @@ pub mod engine;
 pub mod integration;
 pub mod utils;
 
+// Turbulance language implementation
+pub mod turbulance;
+
 // Algorithm modules
 pub mod algorithms;
 
@@ -197,6 +200,15 @@ pub use bmd_integration::{
     demonstrate_prisoner_parable,
 };
 
+// Turbulance Language Compiler
+pub use turbulance_compiler::{
+    TurbulanceCompiler,
+    TurbulanceValue,
+    TurbulanceExecutionResult,
+    CompilationResult,
+    BMDMetrics,
+};
+
 // =====================================================================================
 // BORGIA: Quantum-Oscillatory Molecular Representation System
 // 
@@ -259,6 +271,7 @@ pub mod algorithms;
 pub mod autobahn;
 pub mod bmd_networks;
 pub mod bmd_integration;
+pub mod turbulance_compiler;
 pub mod core;
 pub mod distributed_intelligence;
 pub mod drug_discovery;
