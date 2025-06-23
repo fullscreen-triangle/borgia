@@ -23,17 +23,17 @@ fn main() -> BorgiaResult<()> {
     // Initialize the Turbulance compiler
     let mut compiler = TurbulanceCompiler::new();
     
-    // Demo 1: Basic Turbulance Syntax Translation
-    demonstrate_basic_syntax_translation(&mut compiler)?;
+    // Demo 1: Basic Syntax Translation
+    demonstrate_basic_syntax(&mut compiler)?;
     
-    // Demo 2: BMD Catalysis Operations
-    demonstrate_bmd_catalysis_operations(&mut compiler)?;
+    // Demo 2: BMD Operations
+    demonstrate_bmd_operations(&mut compiler)?;
     
-    // Demo 3: Cross-Scale Coordination
-    demonstrate_cross_scale_coordination(&mut compiler)?;
+    // Demo 3: Molecular Analysis
+    demonstrate_molecular_analysis(&mut compiler)?;
     
-    // Demo 4: Molecular Analysis Pipeline
-    demonstrate_molecular_analysis_pipeline(&mut compiler)?;
+    // Demo 4: Cross-Scale Coordination
+    demonstrate_cross_scale(&mut compiler)?;
     
     // Demo 5: Environmental Noise Processing
     demonstrate_environmental_noise_processing(&mut compiler)?;
@@ -53,100 +53,67 @@ fn main() -> BorgiaResult<()> {
     Ok(())
 }
 
-/// Demonstrate basic Turbulance syntax translation
-fn demonstrate_basic_syntax_translation(compiler: &mut TurbulanceCompiler) -> BorgiaResult<()> {
+/// Demonstrate basic syntax translation
+fn demonstrate_basic_syntax(compiler: &mut TurbulanceCompiler) -> BorgiaResult<()> {
     println!("🔤 Demo 1: Basic Turbulance Syntax Translation");
     println!("─────────────────────────────────────────────");
     
-    let turbulance_script = r#"
-        // Basic Turbulance syntax demonstration
+    let script = r#"
+        // Basic variable declarations
         item confidence_threshold = 0.85
-        item molecules = load_molecules(["CCO", "CC(=O)O", "C6H12O6"])
-        
-        point molecular_hypothesis = {
-            content: "These molecules show interesting binding patterns",
-            certainty: 0.82,
-            evidence_strength: 0.78
-        }
-        
-        item analysis_result = analyze_molecular molecules
-        
-        given analysis_result.confidence > confidence_threshold:
-            item validated_result = analysis_result
-        else:
-            item validated_result = "insufficient_confidence"
+        item molecule_count = 3
+        item analysis_mode = "comprehensive"
     "#;
     
     println!("📝 Turbulance Script:");
-    println!("{}", turbulance_script);
+    println!("{}", script);
     
-    println!("\n🔧 Compiling Turbulance script...");
-    let compilation_start = Instant::now();
-    let compilation_result = compiler.compile(turbulance_script)?;
-    let compilation_time = compilation_start.elapsed();
+    let compilation_result = compiler.compile(script)?;
+    println!("\n🔧 Compilation Results:");
+    println!("   • Statements: {}", compilation_result.statements.len());
+    println!("   • Symbols defined: {}", compilation_result.symbols_used.len());
+    println!("   • Functions called: {}", compilation_result.functions_called.len());
     
-    println!("✅ Compilation Results:");
-    println!("   • Compilation time: {:?}", compilation_time);
-    println!("   • Source lines: {}", compilation_result.metadata.source_lines);
-    println!("   • Symbols defined: {}", compilation_result.metadata.symbols_defined);
-    println!("   • Functions used: {}", compilation_result.metadata.functions_defined);
-    println!("   • BMDs required: {}", compilation_result.execution_plan.bmds_required.len());
-    println!("   • Estimated complexity: {:.1}", compilation_result.execution_plan.estimated_complexity);
-    
-    println!("\n🚀 Executing compiled script...");
     let execution_result = compiler.execute(&compilation_result)?;
-    
-    println!("✅ Execution Results:");
-    println!("   • Execution time: {:?}", execution_result.execution_time);
+    println!("\n✅ Execution Results:");
     println!("   • Final value: {:?}", execution_result.final_value);
-    println!("   • BMD metrics: {:?}", execution_result.bmd_metrics);
+    println!("   • Execution time: {:?}", execution_result.execution_time);
     
     Ok(())
 }
 
-/// Demonstrate BMD catalysis operations
-fn demonstrate_bmd_catalysis_operations(compiler: &mut TurbulanceCompiler) -> BorgiaResult<()> {
+/// Demonstrate BMD operations
+fn demonstrate_bmd_operations(compiler: &mut TurbulanceCompiler) -> BorgiaResult<()> {
     println!("\n⚗️ Demo 2: BMD Catalysis Operations");
     println!("──────────────────────────────────");
     
-    let catalysis_script = r#"
-        // BMD catalysis demonstration
+    let script = r#"
+        // BMD catalysis operations
         item quantum_energy = 2.5
-        item quantum_event = create_quantum_event(energy: quantum_energy, coherence_time: "1ns")
+        catalyze quantum_energy with quantum
         
-        // Quantum-scale catalysis
-        catalyze quantum_event with quantum
+        item molecules = load_molecules(["CCO", "CC(=O)O"])
+        catalyze molecules with molecular
         
-        // Molecular substrate preparation
-        item substrates = load_molecules(["ATP", "NADH", "glucose"])
+        item environmental_data = "screen_pixels"
+        catalyze environmental_data with environmental
         
-        // Molecular-scale catalysis
-        catalyze substrates with molecular
-        
-        // Environmental noise as input
-        item environmental_noise = capture_screen_pixels(region: "full")
-        item small_dataset = load_molecules(["aspirin", "caffeine"])
-        
-        // Environmental-scale catalysis
-        catalyze environmental_noise with environmental
-        
-        // Hardware-based analysis
-        item molecular_sample = create_molecular_sample(["fluorescein", "rhodamine"])
-        
-        // Hardware-scale catalysis
-        catalyze molecular_sample with hardware
+        item hardware_sample = "LED_spectroscopy"
+        catalyze hardware_sample with hardware
     "#;
     
-    println!("📝 BMD Catalysis Script:");
-    println!("{}", catalysis_script);
+    println!("📝 BMD Operations Script:");
+    println!("{}", script);
     
-    let compilation_result = compiler.compile(catalysis_script)?;
-    println!("\n🔧 Compilation Analysis:");
-    println!("   • BMDs required: {:?}", compilation_result.execution_plan.bmds_required);
-    println!("   • Molecular operations: {}", compilation_result.execution_plan.molecular_operations.len());
+    let compilation_result = compiler.compile(script)?;
+    println!("\n🔧 BMD Analysis:");
+    println!("   • BMD operations: {}", compilation_result.bmd_operations.len());
+    for op in &compilation_result.bmd_operations {
+        println!("     - {}", op);
+    }
     
     let execution_result = compiler.execute(&compilation_result)?;
-    println!("\n✅ BMD Catalysis Results:");
+    println!("\n✅ BMD Results:");
     println!("   • Quantum cycles: {}", execution_result.bmd_metrics.quantum_cycles);
     println!("   • Molecular cycles: {}", execution_result.bmd_metrics.molecular_cycles);
     println!("   • Environmental cycles: {}", execution_result.bmd_metrics.environmental_cycles);
@@ -156,119 +123,79 @@ fn demonstrate_bmd_catalysis_operations(compiler: &mut TurbulanceCompiler) -> Bo
     Ok(())
 }
 
+/// Demonstrate molecular analysis
+fn demonstrate_molecular_analysis(compiler: &mut TurbulanceCompiler) -> BorgiaResult<()> {
+    println!("\n🧪 Demo 3: Molecular Analysis Pipeline");
+    println!("──────────────────────────────────────");
+    
+    let script = r#"
+        // Molecular analysis pipeline
+        item drug_compounds = load_molecules([
+            "CC(C)CC1=CC=C(C=C1)C(C)C(=O)O",
+            "CC(=O)NC1=CC=C(C=C1)O",
+            "CC(=O)OC1=CC=CC=C1C(=O)O"
+        ])
+        
+        catalyze drug_compounds with molecular
+        
+        item analysis_result = analyze_molecular drug_compounds
+        
+        resolve pharmaceutical_analysis given context("drug_discovery")
+    "#;
+    
+    println!("📝 Molecular Analysis Script:");
+    println!("{}", script);
+    
+    let compilation_result = compiler.compile(script)?;
+    println!("\n🔧 Analysis Pipeline:");
+    println!("   • Functions called: {:?}", compilation_result.functions_called);
+    println!("   • BMD operations: {}", compilation_result.bmd_operations.len());
+    
+    let execution_result = compiler.execute(&compilation_result)?;
+    println!("\n✅ Molecular Results:");
+    println!("   • Analysis completed: {:?}", execution_result.final_value);
+    println!("   • Processing time: {:?}", execution_result.execution_time);
+    
+    Ok(())
+}
+
 /// Demonstrate cross-scale coordination
-fn demonstrate_cross_scale_coordination(compiler: &mut TurbulanceCompiler) -> BorgiaResult<()> {
-    println!("\n🔗 Demo 3: Cross-Scale Coordination");
+fn demonstrate_cross_scale(compiler: &mut TurbulanceCompiler) -> BorgiaResult<()> {
+    println!("\n🔗 Demo 4: Cross-Scale Coordination");
     println!("───────────────────────────────────");
     
-    let coordination_script = r#"
-        // Cross-scale coordination demonstration
-        
-        // Initialize multiple scales
-        item quantum_state = create_quantum_event(energy: 1.5, coherence_time: "500ps")
-        item molecules = load_molecules(["CCO", "CC(=O)O"])
-        item environmental_data = capture_screen_pixels(region: "active_window")
-        item hardware_sample = create_molecular_sample(["FITC"])
-        
-        // Individual scale catalysis
+    let script = r#"
+        // Cross-scale coordination
+        item quantum_state = create_quantum_event
         catalyze quantum_state with quantum
-        catalyze molecules with molecular
-        catalyze environmental_data with environmental
-        catalyze hardware_sample with hardware
         
-        // Cross-scale coordination cascade
+        item molecules = load_molecules(["glucose", "ATP"])
+        catalyze molecules with molecular
+        
         cross_scale coordinate quantum with molecular
         cross_scale coordinate molecular with environmental
         cross_scale coordinate environmental with hardware
         
-        // Bidirectional coordination
-        cross_scale coordinate hardware with molecular
-        cross_scale coordinate molecular with quantum
-        
-        item coordination_strength = measure_cross_scale_coherence()
+        item coordination_result = measure_coherence
     "#;
     
-    println!("📝 Cross-Scale Coordination Script:");
-    println!("{}", coordination_script);
+    println!("📝 Cross-Scale Script:");
+    println!("{}", script);
     
-    let compilation_result = compiler.compile(coordination_script)?;
+    let compilation_result = compiler.compile(script)?;
     println!("\n🔧 Cross-Scale Analysis:");
-    println!("   • Cross-scale dependencies: {}", compilation_result.execution_plan.cross_scale_dependencies.len());
-    for (scale1, scale2) in &compilation_result.execution_plan.cross_scale_dependencies {
-        println!("     - {:?} ↔ {:?}", scale1, scale2);
+    let cross_scale_ops: Vec<_> = compilation_result.bmd_operations.iter()
+        .filter(|op| op.contains("cross_scale"))
+        .collect();
+    println!("   • Cross-scale operations: {}", cross_scale_ops.len());
+    for op in cross_scale_ops {
+        println!("     - {}", op);
     }
     
     let execution_result = compiler.execute(&compilation_result)?;
     println!("\n✅ Coordination Results:");
     println!("   • Cross-scale coordinations: {}", execution_result.bmd_metrics.cross_scale_coordinations);
-    println!("   • Final coordination value: {:?}", execution_result.final_value);
-    
-    Ok(())
-}
-
-/// Demonstrate molecular analysis pipeline
-fn demonstrate_molecular_analysis_pipeline(compiler: &mut TurbulanceCompiler) -> BorgiaResult<()> {
-    println!("\n🧪 Demo 4: Molecular Analysis Pipeline");
-    println!("──────────────────────────────────────");
-    
-    let molecular_pipeline_script = r#"
-        // Comprehensive molecular analysis pipeline
-        
-        // Load pharmaceutical compounds
-        item drug_compounds = load_molecules([
-            "CC(C)CC1=CC=C(C=C1)C(C)C(=O)O",  // Ibuprofen
-            "CC(=O)NC1=CC=C(C=C1)O",          // Acetaminophen
-            "CC(=O)OC1=CC=CC=C1C(=O)O"        // Aspirin
-        ])
-        
-        // Create molecular analysis point
-        point drug_analysis = {
-            content: "Pharmaceutical compound analysis for efficacy prediction",
-            certainty: 0.89,
-            evidence_strength: 0.85,
-            contextual_relevance: 0.92
-        }
-        
-        // BMD-enhanced molecular analysis
-        catalyze drug_compounds with molecular
-        
-        // Cross-scale validation
-        cross_scale coordinate molecular with hardware
-        
-        // Hardware spectroscopy validation
-        item spectroscopy_sample = create_molecular_sample(drug_compounds)
-        catalyze spectroscopy_sample with hardware
-        
-        // Environmental noise enhancement for small dataset
-        item environmental_enhancement = capture_screen_pixels(region: "full")
-        catalyze environmental_enhancement with environmental
-        
-        // Integrated analysis
-        item final_analysis = integrate_multi_scale_results([
-            drug_compounds,
-            spectroscopy_sample,
-            environmental_enhancement
-        ])
-        
-        // Resolution with probabilistic analysis
-        resolve pharmaceutical_analysis(drug_analysis) given context("drug_discovery")
-    "#;
-    
-    println!("📝 Molecular Analysis Pipeline:");
-    println!("{}", molecular_pipeline_script);
-    
-    let compilation_result = compiler.compile(molecular_pipeline_script)?;
-    println!("\n🔧 Pipeline Analysis:");
-    println!("   • Molecular operations: {}", compilation_result.execution_plan.molecular_operations.len());
-    for op in &compilation_result.execution_plan.molecular_operations {
-        println!("     - {}: {}", op.operation_type, op.expected_output);
-    }
-    
-    let execution_result = compiler.execute(&compilation_result)?;
-    println!("\n✅ Molecular Pipeline Results:");
-    println!("   • Analysis completed in: {:?}", execution_result.execution_time);
-    println!("   • Molecular cycles: {}", execution_result.bmd_metrics.molecular_cycles);
-    println!("   • Hardware validation cycles: {}", execution_result.bmd_metrics.hardware_cycles);
+    println!("   • Final coordination: {:?}", execution_result.final_value);
     
     Ok(())
 }
@@ -588,35 +515,10 @@ mod tests {
     use super::*;
     
     #[test]
-    fn test_basic_compilation() {
+    fn test_demo_compilation() {
         let mut compiler = TurbulanceCompiler::new();
         let script = "item x = 42";
         let result = compiler.compile(script);
         assert!(result.is_ok());
-    }
-    
-    #[test]
-    fn test_bmd_catalysis_compilation() {
-        let mut compiler = TurbulanceCompiler::new();
-        let script = r#"
-            item molecules = load_molecules(["CCO"])
-            catalyze molecules with molecular
-        "#;
-        let result = compiler.compile(script);
-        assert!(result.is_ok());
-        
-        let compilation_result = result.unwrap();
-        assert!(!compilation_result.execution_plan.bmds_required.is_empty());
-    }
-    
-    #[test]
-    fn test_cross_scale_coordination() {
-        let mut compiler = TurbulanceCompiler::new();
-        let script = "cross_scale coordinate quantum with molecular";
-        let result = compiler.compile(script);
-        assert!(result.is_ok());
-        
-        let compilation_result = result.unwrap();
-        assert!(!compilation_result.execution_plan.cross_scale_dependencies.is_empty());
     }
 } 

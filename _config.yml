@@ -1,0 +1,59 @@
+title: "Borgia: Biological Maxwell's Demons Framework"
+description: "A computational framework implementing Mizraji's biological Maxwell's demons for information catalysis and multi-scale molecular analysis"
+baseurl: "/borgia"
+url: "https://fullscreen-triangle.github.io"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+theme: minima
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Navigation
+header_pages:
+  - index.md
+  - turbulance-revolution.md
+  - turbulance-masterclass.md
+  - theoretical-foundations.md
+  - implementation.md
+  - api-reference.md
+  - examples.md
+  - publications.md
+
+# Collections
+collections:
+  docs:
+    output: true
+    permalink: /:collection/:name/
+
+# Kramdown settings
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  math_engine: mathjax
+
+# MathJax configuration
+mathjax:
+  source: https://polyfill.io/v3/polyfill.min.js?features=es6
+  config: 'MathJax.Hub.Config({tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]], displayMath: [["$$","$$"],["\\[","\\]"]]}})'
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - target/
+  - Cargo.toml
+  - Cargo.lock
+  - src/
+  - examples/
+  - tests/ 
