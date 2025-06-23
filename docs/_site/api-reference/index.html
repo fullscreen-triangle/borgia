@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>API Reference | Borgia: Biological Maxwell’s Demons Framework</title>
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="API Reference" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A computational framework implementing Mizraji’s biological Maxwell’s demons for information catalysis and multi-scale molecular analysis" />
+<meta property="og:description" content="A computational framework implementing Mizraji’s biological Maxwell’s demons for information catalysis and multi-scale molecular analysis" />
+<link rel="canonical" href="https://fullscreen-triangle.github.io/borgia/api-reference/" />
+<meta property="og:url" content="https://fullscreen-triangle.github.io/borgia/api-reference/" />
+<meta property="og:site_name" content="Borgia: Biological Maxwell’s Demons Framework" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="API Reference" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"A computational framework implementing Mizraji’s biological Maxwell’s demons for information catalysis and multi-scale molecular analysis","headline":"API Reference","url":"https://fullscreen-triangle.github.io/borgia/api-reference/"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/borgia/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://fullscreen-triangle.github.io/borgia/feed.xml" title="Borgia: Biological Maxwell&apos;s Demons Framework" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/borgia/">Borgia: Biological Maxwell&#39;s Demons Framework</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">API Reference</h1>
+  </header>
+
+  <div class="post-content">
+    <h1 id="api-reference">API Reference</h1>
+
+<h2 id="core-types-and-structures">Core Types and Structures</h2>
+
+<h3 id="integratedbmdsystem">IntegratedBMDSystem</h3>
+
+<p>The main entry point for the Borgia framework, orchestrating all BMD scales and cross-scale coordination.</p>
+
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">pub</span> <span class="k">struct</span> <span class="n">IntegratedBMDSystem</span> <span class="p">{</span>
+    <span class="c1">// Private fields</span>
+<span class="p">}</span>
+
+<span class="k">impl</span> <span class="n">IntegratedBMDSystem</span> <span class="p">{</span>
+    <span class="cd">/// Creates a new integrated BMD system with default configuration</span>
+    <span class="k">pub</span> <span class="k">fn</span> <span class="nf">new</span><span class="p">()</span> <span class="k">-&gt;</span> <span class="k">Self</span>
+
+    <span class="cd">/// Executes cross-scale analysis on molecular data</span>
+    <span class="k">pub</span> <span class="k">fn</span> <span class="nf">execute_cross_scale_analysis</span><span class="p">(</span>
+        <span class="o">&amp;</span><span class="k">mut</span> <span class="k">self</span><span class="p">,</span>
+        <span class="n">molecules</span><span class="p">:</span> <span class="nb">Vec</span><span class="o">&lt;</span><span class="nb">String</span><span class="o">&gt;</span><span class="p">,</span>
+        <span class="n">scales</span><span class="p">:</span> <span class="nb">Vec</span><span class="o">&lt;</span><span class="n">BMDScale</span><span class="o">&gt;</span>
+    <span class="p">)</span> <span class="k">-&gt;</span> <span class="n">BorgiaResult</span><span class="o">&lt;</span><span class="n">BMDAnalysisResult</span><span class="o">&gt;</span>
+
+    <span class="cd">/// Demonstrates Mizraji's prisoner parable</span>
+    <span class="k">pub</span> <span class="k">fn</span> <span class="nf">demonstrate_prisoner_parable</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span> <span class="k">self</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="n">BorgiaResult</span><span class="o">&lt;</span><span class="n">PrisonerParableResult</span><span class="o">&gt;</span>
+
+    <span class="cd">/// Performs environmental noise-enhanced cheminformatics</span>
+    <span class="k">pub</span> <span class="k">fn</span> <span class="nf">noise_enhanced_cheminformatics</span><span class="p">(</span>
+        <span class="o">&amp;</span><span class="k">mut</span> <span class="k">self</span><span class="p">,</span>
+        <span class="n">small_dataset</span><span class="p">:</span> <span class="nb">Vec</span><span class="o">&lt;</span><span class="nb">String</span><span class="o">&gt;</span>
+    <span class="p">)</span> <span class="k">-&gt;</span> <span class="n">BorgiaResult</span><span class="o">&lt;</span><span class="n">EnhancedDatasetResult</span><span class="o">&gt;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="bmdscale">BMDScale</h3>
+
+<p>Enumeration of the five BMD scales implemented in the framework.</p>
+
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">#[derive(Debug,</span> <span class="nd">Clone,</span> <span class="nd">PartialEq,</span> <span class="nd">Hash,</span> <span class="nd">Eq)]</span>
+<span class="k">pub</span> <span class="k">enum</span> <span class="n">BMDScale</span> <span class="p">{</span>
+    <span class="cd">/// Quantum scale (10^-15 to 10^-12 seconds)</span>
+    <span class="n">Quantum</span><span class="p">,</span>
+    <span class="cd">/// Molecular scale (10^-12 to 10^-9 seconds)</span>
+    <span class="n">Molecular</span><span class="p">,</span>
+    <span class="cd">/// Cellular scale (10^-9 to 10^-6 seconds)</span>
+    <span class="n">Cellular</span><span class="p">,</span>
+    <span class="cd">/// Environmental scale (10^-6 to 10^-3 seconds)</span>
+    <span class="n">Environmental</span><span class="p">,</span>
+    <span class="cd">/// Hardware scale (10^-3 to 10^0 seconds)</span>
+    <span class="n">Hardware</span><span class="p">,</span>
+    <span class="cd">/// Cognitive scale (10^0 to 10^2 seconds)</span>
+    <span class="n">Cognitive</span><span class="p">,</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="bmdanalysisresult">BMDAnalysisResult</h3>
+
+<p>Result structure for cross-scale BMD analysis.</p>
+
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">#[derive(Debug,</span> <span class="nd">Clone)]</span>
+<span class="k">pub</span> <span class="k">struct</span> <span class="n">BMDAnalysisResult</span> <span class="p">{</span>
+    <span class="cd">/// Thermodynamic amplification factor achieved</span>
+    <span class="k">pub</span> <span class="n">amplification_factor</span><span class="p">:</span> <span class="nb">f64</span><span class="p">,</span>
+    <span class="cd">/// Information catalysis results</span>
+    <span class="k">pub</span> <span class="n">catalysis_results</span><span class="p">:</span> <span class="nb">Vec</span><span class="o">&lt;</span><span class="n">CatalysisResult</span><span class="o">&gt;</span><span class="p">,</span>
+    <span class="cd">/// Cross-scale coordination results</span>
+    <span class="k">pub</span> <span class="n">scale_coordination_results</span><span class="p">:</span> <span class="nb">Vec</span><span class="o">&lt;</span><span class="n">CoordinationResult</span><span class="o">&gt;</span><span class="p">,</span>
+    <span class="cd">/// Thermodynamic consistency validation</span>
+    <span class="k">pub</span> <span class="n">thermodynamic_consistency</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
+    <span class="cd">/// Performance metrics</span>
+    <span class="k">pub</span> <span class="n">performance_metrics</span><span class="p">:</span> <span class="n">PerformanceMetrics</span><span class="p">,</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="molecular-representation">Molecular Representation</h2>
+
+<h3 id="molecule">Molecule</h3>
+
+<p>Core molecular representation structure.</p>
+
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">#[derive(Debug,</span> <span class="nd">Clone)]</span>
+<span class="k">pub</span> <span class="k">struct</span> <span class="n">Molecule</span> <span class="p">{</span>
+    <span class="cd">/// Unique identifier for the molecule</span>
+    <span class="k">pub</span> <span class="n">id</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span>
+    <span class="cd">/// SMILES representation</span>
+    <span class="k">pub</span> <span class="n">smiles</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span>
+    <span class="cd">/// Molecular weight</span>
+    <span class="k">pub</span> <span class="n">molecular_weight</span><span class="p">:</span> <span class="nb">f64</span><span class="p">,</span>
+    <span class="cd">/// Calculated properties</span>
+    <span class="k">pub</span> <span class="n">properties</span><span class="p">:</span> <span class="n">MolecularProperties</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="k">impl</span> <span class="n">Molecule</span> <span class="p">{</span>
+    <span class="cd">/// Creates a molecule from SMILES string</span>
+    <span class="k">pub</span> <span class="k">fn</span> <span class="nf">from_smiles</span><span class="p">(</span><span class="n">smiles</span><span class="p">:</span> <span class="o">&amp;</span><span class="nb">str</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="n">BorgiaResult</span><span class="o">&lt;</span><span class="k">Self</span><span class="o">&gt;</span>
+
+    <span class="cd">/// Calculates molecular fingerprint</span>
+    <span class="k">pub</span> <span class="k">fn</span> <span class="nf">calculate_fingerprint</span><span class="p">(</span><span class="o">&amp;</span><span class="k">self</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="n">BorgiaResult</span><span class="o">&lt;</span><span class="n">MolecularFingerprint</span><span class="o">&gt;</span>
+
+    <span class="cd">/// Computes similarity to another molecule</span>
+    <span class="k">pub</span> <span class="k">fn</span> <span class="nf">similarity_to</span><span class="p">(</span><span class="o">&amp;</span><span class="k">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">Molecule</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="n">BorgiaResult</span><span class="o">&lt;</span><span class="nb">f64</span><span class="o">&gt;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="molecularproperties">MolecularProperties</h3>
+
+<p>Calculated molecular properties.</p>
+
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">#[derive(Debug,</span> <span class="nd">Clone)]</span>
+<span class="k">pub</span> <span class="k">struct</span> <span class="n">MolecularProperties</span> <span class="p">{</span>
+    <span class="cd">/// LogP (partition coefficient)</span>
+    <span class="k">pub</span> <span class="n">log_p</span><span class="p">:</span> <span class="nb">f64</span><span class="p">,</span>
+    <span class="cd">/// Topological polar surface area</span>
+    <span class="k">pub</span> <span class="n">tpsa</span><span class="p">:</span> <span class="nb">f64</span><span class="p">,</span>
+    <span class="cd">/// Number of hydrogen bond donors</span>
+    <span class="k">pub</span> <span class="n">hbd_count</span><span class="p">:</span> <span class="nb">u32</span><span class="p">,</span>
+    <span class="cd">/// Number of hydrogen bond acceptors</span>
+    <span class="k">pub</span> <span class="n">hba_count</span><span class="p">:</span> <span class="nb">u32</span><span class="p">,</span>
+    <span class="cd">/// Number of rotatable bonds</span>
+    <span class="k">pub</span> <span class="n">rotatable_bonds</span><span class="p">:</span> <span class="nb">u32</span><span class="p">,</span>
+    <span class="cd">/// Lipinski's Rule of Five compliance</span>
+    <span class="k">pub</span> <span class="n">lipinski_compliant</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="molecularfingerprint">MolecularFingerprint</h3>
+
+<p>Molecular fingerprint for similarity analysis.</p>
+
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">#[derive(Debug,</span> <span class="nd">Clone)]</span>
+<span class="k">pub</span> <span class="k">struct</span> <span class="n">MolecularFingerprint</span> <span class="p">{</span>
+    <span class="cd">/// Binary fingerprint data</span>
+    <span class="k">pub</span> <span class="n">bits</span><span class="p">:</span> <span class="nb">Vec</span><span class="o">&lt;</span><span class="nb">bool</span><span class="o">&gt;</span><span class="p">,</span>
+    <span class="cd">/// Fingerprint algorithm used</span>
+    <span class="k">pub</span> <span class="n">algorithm</span><span class="p">:</span> <span class="n">FingerprintAlgorithm</span><span class="p">,</span>
+    <span class="cd">/// Bit length</span>
+    <span class="k">pub</span> <span class="n">length</span><span class="p">:</span> <span class="nb">usize</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="k">impl</span> <span class="n">MolecularFingerprint</span> <span class="p">{</span>
+    <span class="cd">/// Calculates Tanimoto similarity with another fingerprint</span>
+    <span class="k">pub</span> <span class="k">fn</span> <span class="nf">tanimoto_similarity</span><span class="p">(</span><span class="o">&amp;</span><span class="k">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">MolecularFingerprint</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="nb">f64</span>
+
+    <span class="cd">/// Calculates Dice similarity with another fingerprint</span>
+    <span class="k">pub</span> <span class="k">fn</span> <span class="nf">dice_similarity</span><span class="p">(</span><span class="o">&amp;</span><span class="k">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">MolecularFingerprint</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="nb">f64</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="bmd-specific-apis">BMD-Specific APIs</h2>
+
+<h3 id="quantumbmd">QuantumBMD</h3>
+
+<p>Quantum-scale biological Maxwell’s demon implementation.</p>
+
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">pub</span> <span class="k">struct</span> <span class="n">QuantumBMD</span> <span class="p">{</span>
+    <span class="c1">// Private fields</span>
+<span class="p">}</span>
+
+<span class="k">impl</span> <span class="n">QuantumBMD</span> <span class="p">{</span>
+    <span class="cd">/// Creates a new quantum BMD</span>
+    <span class="k">pub</span> <span class="k">fn</span> <span class="nf">new</span><span class="p">()</span> <span class="k">-&gt;</span> <span class="k">Self</span>
+
+    <span class="cd">/// Creates a coherent quantum event</span>
+    <span class="k">pub</span> <span class="k">fn</span> <span class="nf">create_coherent_event</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span> <span class="k">self</span><span class="p">,</span> <span class="n">energy</span><span class="p">:</span> <span class="nb">f64</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="n">BorgiaResult</span><span class="o">&lt;</span><span class="n">QuantumEvent</span><span class="o">&gt;</span>
+
+    <span class="cd">/// Processes quantum information</span>
+    <span class="k">pub</span> <span class="k">fn</span> <span class="nf">process_quantum_information</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span> <span class="k">self</span><span class="p">,</span> <span class="n">info</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">QuantumInformation</span><span class="p">)</span> 
+        <span class="k">-&gt;</span> <span class="n">BorgiaResult</span><span class="o">&lt;</span><span class="n">QuantumProcessingResult</span><span class="o">&gt;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="molecularbmd">MolecularBMD</h3>
+
+<p>Molecular-scale biological Maxwell’s demon implementation.</p>
+
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">pub</span> <span class="k">struct</span> <span class="n">MolecularBMD</span> <span class="p">{</span>
+    <span class="c1">// Private fields</span>
+<span class="p">}</span>
+
+<span class="k">impl</span> <span class="n">MolecularBMD</span> <span class="p">{</span>
+    <span class="cd">/// Creates a new molecular BMD</span>
+    <span class="k">pub</span> <span class="k">fn</span> <span class="nf">new</span><span class="p">()</span> <span class="k">-&gt;</span> <span class="k">Self</span>
+
+    <span class="cd">/// Analyzes substrate binding</span>
+    <span class="k">pub</span> <span class="k">fn</span> <span class="nf">analyze_substrate_binding</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span> <span class="k">self</span><span class="p">,</span> <span class="n">molecule</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">Molecule</span><span class="p">)</span> 
+        <span class="k">-&gt;</span> <span class="n">BorgiaResult</span><span class="o">&lt;</span><span class="n">BindingAnalysis</span><span class="o">&gt;</span>
+
+    <span class="cd">/// Performs molecular recognition</span>
+    <span class="k">pub</span> <span class="k">fn</span> <span class="nf">recognize_molecular_pattern</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span> <span class="k">self</span><span class="p">,</span> <span class="n">molecules</span><span class="p">:</span> <span class="o">&amp;</span><span class="p">[</span><span class="n">Molecule</span><span class="p">])</span> 
+        <span class="k">-&gt;</span> <span class="n">BorgiaResult</span><span class="o">&lt;</span><span class="n">RecognitionResult</span><span class="o">&gt;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="environmentalbmd">EnvironmentalBMD</h3>
+
+<p>Environmental-scale biological Maxwell’s demon implementation.</p>
+
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">pub</span> <span class="k">struct</span> <span class="n">EnvironmentalBMD</span> <span class="p">{</span>
+    <span class="c1">// Private fields</span>
+<span class="p">}</span>
+
+<span class="k">impl</span> <span class="n">EnvironmentalBMD</span> <span class="p">{</span>
+    <span class="cd">/// Creates a new environmental BMD</span>
+    <span class="k">pub</span> <span class="k">fn</span> <span class="nf">new</span><span class="p">()</span> <span class="k">-&gt;</span> <span class="k">Self</span>
+
+    <span class="cd">/// Captures environmental noise from screen</span>
+    <span class="k">pub</span> <span class="k">fn</span> <span class="nf">capture_environmental_noise</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span> <span class="k">self</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="n">BorgiaResult</span><span class="o">&lt;</span><span class="n">EnvironmentalNoise</span><span class="o">&gt;</span>
+
+    <span class="cd">/// Enhances dataset using environmental noise</span>
+    <span class="k">pub</span> <span class="k">fn</span> <span class="nf">enhance_dataset</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span> <span class="k">self</span><span class="p">,</span> <span class="n">dataset</span><span class="p">:</span> <span class="o">&amp;</span><span class="p">[</span><span class="n">Molecule</span><span class="p">],</span> <span class="n">noise</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">EnvironmentalNoise</span><span class="p">)</span> 
+        <span class="k">-&gt;</span> <span class="n">BorgiaResult</span><span class="o">&lt;</span><span class="nb">Vec</span><span class="o">&lt;</span><span class="n">Molecule</span><span class="o">&gt;&gt;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="hardwarebmd">HardwareBMD</h3>
+
+<p>Hardware-scale biological Maxwell’s demon implementation.</p>
+
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">pub</span> <span class="k">struct</span> <span class="n">HardwareBMD</span> <span class="p">{</span>
+    <span class="c1">// Private fields</span>
+<span class="p">}</span>
+
+<span class="k">impl</span> <span class="n">HardwareBMD</span> <span class="p">{</span>
+    <span class="cd">/// Creates a new hardware BMD</span>
+    <span class="k">pub</span> <span class="k">fn</span> <span class="nf">new</span><span class="p">()</span> <span class="k">-&gt;</span> <span class="k">Self</span>
+
+    <span class="cd">/// Performs LED-based molecular spectroscopy</span>
+    <span class="k">pub</span> <span class="k">fn</span> <span class="nf">perform_led_spectroscopy</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span> <span class="k">self</span><span class="p">,</span> <span class="n">sample</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">MolecularSample</span><span class="p">)</span> 
+        <span class="k">-&gt;</span> <span class="n">BorgiaResult</span><span class="o">&lt;</span><span class="n">SpectroscopyResult</span><span class="o">&gt;</span>
+
+    <span class="cd">/// Enhances consciousness coupling at 650nm</span>
+    <span class="k">pub</span> <span class="k">fn</span> <span class="nf">enhance_consciousness_coupling</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span> <span class="k">self</span><span class="p">,</span> <span class="n">wavelength</span><span class="p">:</span> <span class="nb">u32</span><span class="p">)</span> 
+        <span class="k">-&gt;</span> <span class="n">BorgiaResult</span><span class="o">&lt;</span><span class="n">CouplingResult</span><span class="o">&gt;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="information-catalysis">Information Catalysis</h2>
+
+<h3 id="informationcatalysisengine">InformationCatalysisEngine</h3>
+
+<p>Implementation of Mizraji’s information catalysis equation.</p>
+
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">pub</span> <span class="k">struct</span> <span class="n">InformationCatalysisEngine</span> <span class="p">{</span>
+    <span class="c1">// Private fields</span>
+<span class="p">}</span>
+
+<span class="k">impl</span> <span class="n">InformationCatalysisEngine</span> <span class="p">{</span>
+    <span class="cd">/// Creates a new information catalysis engine</span>
+    <span class="k">pub</span> <span class="k">fn</span> <span class="nf">new</span><span class="p">()</span> <span class="k">-&gt;</span> <span class="k">Self</span>
+
+    <span class="cd">/// Executes information catalysis</span>
+    <span class="k">pub</span> <span class="k">fn</span> <span class="nf">execute_catalysis</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span> <span class="k">self</span><span class="p">,</span> <span class="n">input_info</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">InformationPacket</span><span class="p">,</span> 
+                           <span class="n">context</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">CatalysisContext</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="n">BorgiaResult</span><span class="o">&lt;</span><span class="n">CatalysisResult</span><span class="o">&gt;</span>
+
+    <span class="cd">/// Calculates amplification factor</span>
+    <span class="k">pub</span> <span class="k">fn</span> <span class="nf">calculate_amplification_factor</span><span class="p">(</span><span class="o">&amp;</span><span class="k">self</span><span class="p">,</span> <span class="n">input_energy</span><span class="p">:</span> <span class="nb">f64</span><span class="p">,</span> <span class="n">output_consequences</span><span class="p">:</span> <span class="nb">f64</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="nb">f64</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="catalysisresult">CatalysisResult</h3>
+
+<p>Result of information catalysis operation.</p>
+
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">#[derive(Debug,</span> <span class="nd">Clone)]</span>
+<span class="k">pub</span> <span class="k">struct</span> <span class="n">CatalysisResult</span> <span class="p">{</span>
+    <span class="cd">/// Input information after filtering</span>
+    <span class="k">pub</span> <span class="n">input_information</span><span class="p">:</span> <span class="n">FilteredInformation</span><span class="p">,</span>
+    <span class="cd">/// Output information after channeling</span>
+    <span class="k">pub</span> <span class="n">output_information</span><span class="p">:</span> <span class="n">ChanneledOutput</span><span class="p">,</span>
+    <span class="cd">/// Achieved amplification factor</span>
+    <span class="k">pub</span> <span class="n">amplification_factor</span><span class="p">:</span> <span class="nb">f64</span><span class="p">,</span>
+    <span class="cd">/// Thermodynamic impact</span>
+    <span class="k">pub</span> <span class="n">thermodynamic_impact</span><span class="p">:</span> <span class="nb">f64</span><span class="p">,</span>
+    <span class="cd">/// Energy cost of the catalysis</span>
+    <span class="k">pub</span> <span class="n">energy_cost</span><span class="p">:</span> <span class="nb">f64</span><span class="p">,</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="cross-scale-coordination">Cross-Scale Coordination</h2>
+
+<h3 id="crossscalecoordinator">CrossScaleCoordinator</h3>
+
+<p>Manages information transfer and synchronization between scales.</p>
+
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">pub</span> <span class="k">struct</span> <span class="n">CrossScaleCoordinator</span> <span class="p">{</span>
+    <span class="c1">// Private fields</span>
+<span class="p">}</span>
+
+<span class="k">impl</span> <span class="n">CrossScaleCoordinator</span> <span class="p">{</span>
+    <span class="cd">/// Creates a new cross-scale coordinator</span>
+    <span class="k">pub</span> <span class="k">fn</span> <span class="nf">new</span><span class="p">()</span> <span class="k">-&gt;</span> <span class="k">Self</span>
+
+    <span class="cd">/// Coordinates information transfer between two scales</span>
+    <span class="k">pub</span> <span class="k">fn</span> <span class="nf">coordinate_scales</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span> <span class="k">self</span><span class="p">,</span> <span class="n">scale1</span><span class="p">:</span> <span class="n">BMDScale</span><span class="p">,</span> <span class="n">scale2</span><span class="p">:</span> <span class="n">BMDScale</span><span class="p">,</span> 
+                           <span class="n">information</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">InformationPacket</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="n">BorgiaResult</span><span class="o">&lt;</span><span class="n">CoordinationResult</span><span class="o">&gt;</span>
+
+    <span class="cd">/// Calculates coupling coefficient between scales</span>
+    <span class="k">pub</span> <span class="k">fn</span> <span class="nf">calculate_coupling_coefficient</span><span class="p">(</span><span class="o">&amp;</span><span class="k">self</span><span class="p">,</span> <span class="n">scale1</span><span class="p">:</span> <span class="n">BMDScale</span><span class="p">,</span> <span class="n">scale2</span><span class="p">:</span> <span class="n">BMDScale</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="nb">f64</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="coordinationresult">CoordinationResult</h3>
+
+<p>Result of cross-scale coordination operation.</p>
+
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">#[derive(Debug,</span> <span class="nd">Clone)]</span>
+<span class="k">pub</span> <span class="k">struct</span> <span class="n">CoordinationResult</span> <span class="p">{</span>
+    <span class="cd">/// Source scale</span>
+    <span class="k">pub</span> <span class="n">source_scale</span><span class="p">:</span> <span class="n">BMDScale</span><span class="p">,</span>
+    <span class="cd">/// Target scale</span>
+    <span class="k">pub</span> <span class="n">target_scale</span><span class="p">:</span> <span class="n">BMDScale</span><span class="p">,</span>
+    <span class="cd">/// Information transfer efficiency</span>
+    <span class="k">pub</span> <span class="n">transfer_efficiency</span><span class="p">:</span> <span class="nb">f64</span><span class="p">,</span>
+    <span class="cd">/// Synchronization window used</span>
+    <span class="k">pub</span> <span class="n">synchronization_window</span><span class="p">:</span> <span class="n">Duration</span><span class="p">,</span>
+    <span class="cd">/// Coupling strength achieved</span>
+    <span class="k">pub</span> <span class="n">coupling_strength</span><span class="p">:</span> <span class="nb">f64</span><span class="p">,</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="cheminformatics-integration">Cheminformatics Integration</h2>
+
+<h3 id="smilesprocessor">SMILESProcessor</h3>
+
+<p>SMILES molecular representation processor.</p>
+
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">pub</span> <span class="k">struct</span> <span class="n">SMILESProcessor</span> <span class="p">{</span>
+    <span class="c1">// Private fields</span>
+<span class="p">}</span>
+
+<span class="k">impl</span> <span class="n">SMILESProcessor</span> <span class="p">{</span>
+    <span class="cd">/// Creates a new SMILES processor</span>
+    <span class="k">pub</span> <span class="k">fn</span> <span class="nf">new</span><span class="p">()</span> <span class="k">-&gt;</span> <span class="k">Self</span>
+
+    <span class="cd">/// Parses SMILES string into molecule</span>
+    <span class="k">pub</span> <span class="k">fn</span> <span class="nf">parse_smiles</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span> <span class="k">self</span><span class="p">,</span> <span class="n">smiles</span><span class="p">:</span> <span class="o">&amp;</span><span class="nb">str</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="n">BorgiaResult</span><span class="o">&lt;</span><span class="n">Molecule</span><span class="o">&gt;</span>
+
+    <span class="cd">/// Validates SMILES string</span>
+    <span class="k">pub</span> <span class="k">fn</span> <span class="nf">validate_smiles</span><span class="p">(</span><span class="o">&amp;</span><span class="k">self</span><span class="p">,</span> <span class="n">smiles</span><span class="p">:</span> <span class="o">&amp;</span><span class="nb">str</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="nb">bool</span>
+
+    <span class="cd">/// Canonicalizes SMILES string</span>
+    <span class="k">pub</span> <span class="k">fn</span> <span class="nf">canonicalize_smiles</span><span class="p">(</span><span class="o">&amp;</span><span class="k">self</span><span class="p">,</span> <span class="n">smiles</span><span class="p">:</span> <span class="o">&amp;</span><span class="nb">str</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="n">BorgiaResult</span><span class="o">&lt;</span><span class="nb">String</span><span class="o">&gt;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="smartsprocessor">SMARTSProcessor</h3>
+
+<p>SMARTS molecular pattern processor.</p>
+
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">pub</span> <span class="k">struct</span> <span class="n">SMARTSProcessor</span> <span class="p">{</span>
+    <span class="c1">// Private fields</span>
+<span class="p">}</span>
+
+<span class="k">impl</span> <span class="n">SMARTSProcessor</span> <span class="p">{</span>
+    <span class="cd">/// Creates a new SMARTS processor</span>
+    <span class="k">pub</span> <span class="k">fn</span> <span class="nf">new</span><span class="p">()</span> <span class="k">-&gt;</span> <span class="k">Self</span>
+
+    <span class="cd">/// Parses SMARTS pattern</span>
+    <span class="k">pub</span> <span class="k">fn</span> <span class="nf">parse_smarts</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span> <span class="k">self</span><span class="p">,</span> <span class="n">smarts</span><span class="p">:</span> <span class="o">&amp;</span><span class="nb">str</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="n">BorgiaResult</span><span class="o">&lt;</span><span class="n">MolecularPattern</span><span class="o">&gt;</span>
+
+    <span class="cd">/// Matches SMARTS pattern against molecule</span>
+    <span class="k">pub</span> <span class="k">fn</span> <span class="nf">match_pattern</span><span class="p">(</span><span class="o">&amp;</span><span class="k">self</span><span class="p">,</span> <span class="n">pattern</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">MolecularPattern</span><span class="p">,</span> <span class="n">molecule</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">Molecule</span><span class="p">)</span> 
+        <span class="k">-&gt;</span> <span class="n">BorgiaResult</span><span class="o">&lt;</span><span class="nb">Vec</span><span class="o">&lt;</span><span class="n">Match</span><span class="o">&gt;&gt;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="moleculardatabase">MolecularDatabase</h3>
+
+<p>Database for storing and querying molecules.</p>
+
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">pub</span> <span class="k">struct</span> <span class="n">MolecularDatabase</span> <span class="p">{</span>
+    <span class="c1">// Private fields</span>
+<span class="p">}</span>
+
+<span class="k">impl</span> <span class="n">MolecularDatabase</span> <span class="p">{</span>
+    <span class="cd">/// Creates a new molecular database</span>
+    <span class="k">pub</span> <span class="k">fn</span> <span class="nf">new</span><span class="p">()</span> <span class="k">-&gt;</span> <span class="k">Self</span>
+
+    <span class="cd">/// Adds molecule to database</span>
+    <span class="k">pub</span> <span class="k">fn</span> <span class="nf">add_molecule</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span> <span class="k">self</span><span class="p">,</span> <span class="n">molecule</span><span class="p">:</span> <span class="n">Molecule</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="n">BorgiaResult</span><span class="o">&lt;</span><span class="p">()</span><span class="o">&gt;</span>
+
+    <span class="cd">/// Searches for similar molecules</span>
+    <span class="k">pub</span> <span class="k">fn</span> <span class="nf">search_similar</span><span class="p">(</span><span class="o">&amp;</span><span class="k">self</span><span class="p">,</span> <span class="n">query</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">Molecule</span><span class="p">,</span> <span class="n">threshold</span><span class="p">:</span> <span class="nb">f64</span><span class="p">)</span> 
+        <span class="k">-&gt;</span> <span class="n">BorgiaResult</span><span class="o">&lt;</span><span class="nb">Vec</span><span class="o">&lt;</span><span class="n">SimilarityMatch</span><span class="o">&gt;&gt;</span>
+
+    <span class="cd">/// Performs substructure search</span>
+    <span class="k">pub</span> <span class="k">fn</span> <span class="nf">substructure_search</span><span class="p">(</span><span class="o">&amp;</span><span class="k">self</span><span class="p">,</span> <span class="n">pattern</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">MolecularPattern</span><span class="p">)</span> 
+        <span class="k">-&gt;</span> <span class="n">BorgiaResult</span><span class="o">&lt;</span><span class="nb">Vec</span><span class="o">&lt;</span><span class="n">Molecule</span><span class="o">&gt;&gt;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="performance-and-metrics">Performance and Metrics</h2>
+
+<h3 id="performancemetrics">PerformanceMetrics</h3>
+
+<p>Performance metrics for BMD operations.</p>
+
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">#[derive(Debug,</span> <span class="nd">Clone)]</span>
+<span class="k">pub</span> <span class="k">struct</span> <span class="n">PerformanceMetrics</span> <span class="p">{</span>
+    <span class="cd">/// Total execution time</span>
+    <span class="k">pub</span> <span class="n">execution_time</span><span class="p">:</span> <span class="n">Duration</span><span class="p">,</span>
+    <span class="cd">/// Memory usage in bytes</span>
+    <span class="k">pub</span> <span class="n">memory_usage</span><span class="p">:</span> <span class="nb">usize</span><span class="p">,</span>
+    <span class="cd">/// Number of quantum cycles</span>
+    <span class="k">pub</span> <span class="n">quantum_cycles</span><span class="p">:</span> <span class="nb">u64</span><span class="p">,</span>
+    <span class="cd">/// Number of molecular cycles</span>
+    <span class="k">pub</span> <span class="n">molecular_cycles</span><span class="p">:</span> <span class="nb">u64</span><span class="p">,</span>
+    <span class="cd">/// Number of environmental cycles</span>
+    <span class="k">pub</span> <span class="n">environmental_cycles</span><span class="p">:</span> <span class="nb">u64</span><span class="p">,</span>
+    <span class="cd">/// Number of hardware cycles</span>
+    <span class="k">pub</span> <span class="n">hardware_cycles</span><span class="p">:</span> <span class="nb">u64</span><span class="p">,</span>
+    <span class="cd">/// Cross-scale coordination count</span>
+    <span class="k">pub</span> <span class="n">cross_scale_coordinations</span><span class="p">:</span> <span class="nb">u64</span><span class="p">,</span>
+    <span class="cd">/// Total amplification achieved</span>
+    <span class="k">pub</span> <span class="n">total_amplification</span><span class="p">:</span> <span class="nb">f64</span><span class="p">,</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="bmdmetrics">BMDMetrics</h3>
+
+<p>Specific metrics for BMD operations.</p>
+
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">#[derive(Debug,</span> <span class="nd">Clone)]</span>
+<span class="k">pub</span> <span class="k">struct</span> <span class="n">BMDMetrics</span> <span class="p">{</span>
+    <span class="cd">/// Quantum BMD metrics</span>
+    <span class="k">pub</span> <span class="n">quantum_metrics</span><span class="p">:</span> <span class="n">QuantumMetrics</span><span class="p">,</span>
+    <span class="cd">/// Molecular BMD metrics</span>
+    <span class="k">pub</span> <span class="n">molecular_metrics</span><span class="p">:</span> <span class="n">MolecularMetrics</span><span class="p">,</span>
+    <span class="cd">/// Environmental BMD metrics</span>
+    <span class="k">pub</span> <span class="n">environmental_metrics</span><span class="p">:</span> <span class="n">EnvironmentalMetrics</span><span class="p">,</span>
+    <span class="cd">/// Hardware BMD metrics</span>
+    <span class="k">pub</span> <span class="n">hardware_metrics</span><span class="p">:</span> <span class="n">HardwareMetrics</span><span class="p">,</span>
+    <span class="cd">/// Overall system efficiency</span>
+    <span class="k">pub</span> <span class="n">system_efficiency</span><span class="p">:</span> <span class="nb">f64</span><span class="p">,</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="error-handling">Error Handling</h2>
+
+<h3 id="borgiaerror">BorgiaError</h3>
+
+<p>Comprehensive error type for the Borgia framework.</p>
+
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">#[derive(Debug,</span> <span class="nd">thiserror::Error)]</span>
+<span class="k">pub</span> <span class="k">enum</span> <span class="n">BorgiaError</span> <span class="p">{</span>
+    <span class="nd">#[error(</span><span class="s">"Quantum coherence lost: {message}"</span><span class="nd">)]</span>
+    <span class="n">QuantumCoherenceLoss</span> <span class="p">{</span> <span class="n">message</span><span class="p">:</span> <span class="nb">String</span> <span class="p">},</span>
+    
+    <span class="nd">#[error(</span><span class="s">"Molecular recognition failed: {molecule_id}"</span><span class="nd">)]</span>
+    <span class="n">MolecularRecognitionFailure</span> <span class="p">{</span> <span class="n">molecule_id</span><span class="p">:</span> <span class="nb">String</span> <span class="p">},</span>
+    
+    <span class="nd">#[error(</span><span class="s">"Environmental noise processing error: {details}"</span><span class="nd">)]</span>
+    <span class="n">EnvironmentalProcessingError</span> <span class="p">{</span> <span class="n">details</span><span class="p">:</span> <span class="nb">String</span> <span class="p">},</span>
+    
+    <span class="nd">#[error(</span><span class="s">"Hardware integration failure: {hardware_type}"</span><span class="nd">)]</span>
+    <span class="n">HardwareIntegrationFailure</span> <span class="p">{</span> <span class="n">hardware_type</span><span class="p">:</span> <span class="nb">String</span> <span class="p">},</span>
+    
+    <span class="nd">#[error(</span><span class="s">"Cross-scale coordination failed between {scale1:?} and {scale2:?}"</span><span class="nd">)]</span>
+    <span class="n">CrossScaleCoordinationFailure</span> <span class="p">{</span> <span class="n">scale1</span><span class="p">:</span> <span class="n">BMDScale</span><span class="p">,</span> <span class="n">scale2</span><span class="p">:</span> <span class="n">BMDScale</span> <span class="p">},</span>
+    
+    <span class="nd">#[error(</span><span class="s">"Information catalysis error: {context}"</span><span class="nd">)]</span>
+    <span class="n">InformationCatalysisError</span> <span class="p">{</span> <span class="n">context</span><span class="p">:</span> <span class="nb">String</span> <span class="p">},</span>
+    
+    <span class="nd">#[error(</span><span class="s">"Thermodynamic consistency violation: {details}"</span><span class="nd">)]</span>
+    <span class="n">ThermodynamicInconsistency</span> <span class="p">{</span> <span class="n">details</span><span class="p">:</span> <span class="nb">String</span> <span class="p">},</span>
+    
+    <span class="nd">#[error(</span><span class="s">"SMILES parsing error: {smiles}"</span><span class="nd">)]</span>
+    <span class="n">SMILESParsingError</span> <span class="p">{</span> <span class="n">smiles</span><span class="p">:</span> <span class="nb">String</span> <span class="p">},</span>
+    
+    <span class="nd">#[error(</span><span class="s">"SMARTS pattern error: {pattern}"</span><span class="nd">)]</span>
+    <span class="n">SMARTSPatternError</span> <span class="p">{</span> <span class="n">pattern</span><span class="p">:</span> <span class="nb">String</span> <span class="p">},</span>
+    
+    <span class="nd">#[error(</span><span class="s">"Database error: {details}"</span><span class="nd">)]</span>
+    <span class="n">DatabaseError</span> <span class="p">{</span> <span class="n">details</span><span class="p">:</span> <span class="nb">String</span> <span class="p">},</span>
+    
+    <span class="nd">#[error(</span><span class="s">"I/O error: {source}"</span><span class="nd">)]</span>
+    <span class="n">IoError</span> <span class="p">{</span> <span class="nd">#[from]</span> <span class="n">source</span><span class="p">:</span> <span class="nn">std</span><span class="p">::</span><span class="nn">io</span><span class="p">::</span><span class="n">Error</span> <span class="p">},</span>
+    
+    <span class="nd">#[error(</span><span class="s">"Serialization error: {source}"</span><span class="nd">)]</span>
+    <span class="n">SerializationError</span> <span class="p">{</span> <span class="nd">#[from]</span> <span class="n">source</span><span class="p">:</span> <span class="nn">serde_json</span><span class="p">::</span><span class="n">Error</span> <span class="p">},</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="borgiaresult">BorgiaResult</h3>
+
+<p>Result type alias for convenient error handling.</p>
+
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">pub</span> <span class="k">type</span> <span class="n">BorgiaResult</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">=</span> <span class="nb">Result</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="n">BorgiaError</span><span class="o">&gt;</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h2 id="utility-functions">Utility Functions</h2>
+
+<h3 id="high-level-api-functions">High-Level API Functions</h3>
+
+<p>Convenient functions for common operations.</p>
+
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cd">/// Demonstrates Mizraji's prisoner parable</span>
+<span class="k">pub</span> <span class="k">fn</span> <span class="nf">demonstrate_prisoner_parable</span><span class="p">()</span> <span class="k">-&gt;</span> <span class="n">BorgiaResult</span><span class="o">&lt;</span><span class="n">PrisonerParableResult</span><span class="o">&gt;</span>
+
+<span class="cd">/// Performs noise-enhanced cheminformatics analysis</span>
+<span class="k">pub</span> <span class="k">fn</span> <span class="nf">noise_enhanced_cheminformatics</span><span class="p">(</span><span class="n">molecules</span><span class="p">:</span> <span class="nb">Vec</span><span class="o">&lt;</span><span class="nb">String</span><span class="o">&gt;</span><span class="p">)</span> 
+    <span class="k">-&gt;</span> <span class="n">BorgiaResult</span><span class="o">&lt;</span><span class="n">EnhancedAnalysisResult</span><span class="o">&gt;</span>
+
+<span class="cd">/// Executes hardware-integrated molecular spectroscopy</span>
+<span class="k">pub</span> <span class="k">fn</span> <span class="nf">hardware_molecular_spectroscopy</span><span class="p">(</span><span class="n">molecules</span><span class="p">:</span> <span class="nb">Vec</span><span class="o">&lt;</span><span class="nb">String</span><span class="o">&gt;</span><span class="p">)</span> 
+    <span class="k">-&gt;</span> <span class="n">BorgiaResult</span><span class="o">&lt;</span><span class="n">SpectroscopyAnalysisResult</span><span class="o">&gt;</span>
+
+<span class="cd">/// Validates thermodynamic consistency across scales</span>
+<span class="k">pub</span> <span class="k">fn</span> <span class="nf">validate_thermodynamic_consistency</span><span class="p">(</span><span class="n">system</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">IntegratedBMDSystem</span><span class="p">)</span> 
+    <span class="k">-&gt;</span> <span class="n">BorgiaResult</span><span class="o">&lt;</span><span class="n">ConsistencyReport</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<h3 id="molecular-utility-functions">Molecular Utility Functions</h3>
+
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cd">/// Calculates molecular similarity using Tanimoto coefficient</span>
+<span class="k">pub</span> <span class="k">fn</span> <span class="nf">calculate_tanimoto_similarity</span><span class="p">(</span><span class="n">mol1</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">Molecule</span><span class="p">,</span> <span class="n">mol2</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">Molecule</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="n">BorgiaResult</span><span class="o">&lt;</span><span class="nb">f64</span><span class="o">&gt;</span>
+
+<span class="cd">/// Generates molecular descriptor vector</span>
+<span class="k">pub</span> <span class="k">fn</span> <span class="nf">generate_molecular_descriptors</span><span class="p">(</span><span class="n">molecule</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">Molecule</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="n">BorgiaResult</span><span class="o">&lt;</span><span class="nb">Vec</span><span class="o">&lt;</span><span class="nb">f64</span><span class="o">&gt;&gt;</span>
+
+<span class="cd">/// Predicts molecular properties using BMD-enhanced methods</span>
+<span class="k">pub</span> <span class="k">fn</span> <span class="nf">predict_molecular_properties</span><span class="p">(</span><span class="n">molecule</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">Molecule</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="n">BorgiaResult</span><span class="o">&lt;</span><span class="n">PropertyPrediction</span><span class="o">&gt;</span>
+
+<span class="cd">/// Validates Lipinski's Rule of Five</span>
+<span class="k">pub</span> <span class="k">fn</span> <span class="nf">validate_lipinski_rule</span><span class="p">(</span><span class="n">molecule</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">Molecule</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="n">BorgiaResult</span><span class="o">&lt;</span><span class="n">LipinskiResult</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<h3 id="information-theory-utilities">Information Theory Utilities</h3>
+
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cd">/// Calculates Shannon entropy of information</span>
+<span class="k">pub</span> <span class="k">fn</span> <span class="nf">calculate_shannon_entropy</span><span class="p">(</span><span class="n">probabilities</span><span class="p">:</span> <span class="o">&amp;</span><span class="p">[</span><span class="nb">f64</span><span class="p">])</span> <span class="k">-&gt;</span> <span class="nb">f64</span>
+
+<span class="cd">/// Computes information transfer efficiency</span>
+<span class="k">pub</span> <span class="k">fn</span> <span class="nf">compute_information_transfer_efficiency</span><span class="p">(</span>
+    <span class="n">input_info</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">InformationPacket</span><span class="p">,</span> 
+    <span class="n">output_info</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">InformationPacket</span>
+<span class="p">)</span> <span class="k">-&gt;</span> <span class="nb">f64</span>
+
+<span class="cd">/// Measures cross-scale information coherence</span>
+<span class="k">pub</span> <span class="k">fn</span> <span class="nf">measure_cross_scale_coherence</span><span class="p">(</span>
+    <span class="n">scale1_info</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">ScaleInformation</span><span class="p">,</span> 
+    <span class="n">scale2_info</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">ScaleInformation</span>
+<span class="p">)</span> <span class="k">-&gt;</span> <span class="nb">f64</span>
+</code></pre></div></div>
+
+<h2 id="configuration-and-initialization">Configuration and Initialization</h2>
+
+<h3 id="borgiaconfig">BorgiaConfig</h3>
+
+<p>Configuration structure for the Borgia framework.</p>
+
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">#[derive(Debug,</span> <span class="nd">Clone)]</span>
+<span class="k">pub</span> <span class="k">struct</span> <span class="n">BorgiaConfig</span> <span class="p">{</span>
+    <span class="cd">/// Enable quantum BMD</span>
+    <span class="k">pub</span> <span class="n">enable_quantum_bmd</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
+    <span class="cd">/// Enable molecular BMD</span>
+    <span class="k">pub</span> <span class="n">enable_molecular_bmd</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
+    <span class="cd">/// Enable environmental BMD</span>
+    <span class="k">pub</span> <span class="n">enable_environmental_bmd</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
+    <span class="cd">/// Enable hardware BMD</span>
+    <span class="k">pub</span> <span class="n">enable_hardware_bmd</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
+    <span class="cd">/// Cross-scale coordination threshold</span>
+    <span class="k">pub</span> <span class="n">coordination_threshold</span><span class="p">:</span> <span class="nb">f64</span><span class="p">,</span>
+    <span class="cd">/// Maximum amplification factor allowed</span>
+    <span class="k">pub</span> <span class="n">max_amplification_factor</span><span class="p">:</span> <span class="nb">f64</span><span class="p">,</span>
+    <span class="cd">/// Performance optimization level</span>
+    <span class="k">pub</span> <span class="n">optimization_level</span><span class="p">:</span> <span class="n">OptimizationLevel</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="k">impl</span> <span class="nb">Default</span> <span class="k">for</span> <span class="n">BorgiaConfig</span> <span class="p">{</span>
+    <span class="k">fn</span> <span class="nf">default</span><span class="p">()</span> <span class="k">-&gt;</span> <span class="k">Self</span> <span class="p">{</span>
+        <span class="k">Self</span> <span class="p">{</span>
+            <span class="n">enable_quantum_bmd</span><span class="p">:</span> <span class="k">true</span><span class="p">,</span>
+            <span class="n">enable_molecular_bmd</span><span class="p">:</span> <span class="k">true</span><span class="p">,</span>
+            <span class="n">enable_environmental_bmd</span><span class="p">:</span> <span class="k">true</span><span class="p">,</span>
+            <span class="n">enable_hardware_bmd</span><span class="p">:</span> <span class="k">true</span><span class="p">,</span>
+            <span class="n">coordination_threshold</span><span class="p">:</span> <span class="mf">0.8</span><span class="p">,</span>
+            <span class="n">max_amplification_factor</span><span class="p">:</span> <span class="mf">10000.0</span><span class="p">,</span>
+            <span class="n">optimization_level</span><span class="p">:</span> <span class="nn">OptimizationLevel</span><span class="p">::</span><span class="n">Balanced</span><span class="p">,</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="initialization-functions">Initialization Functions</h3>
+
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cd">/// Initializes Borgia framework with default configuration</span>
+<span class="k">pub</span> <span class="k">fn</span> <span class="nf">initialize</span><span class="p">()</span> <span class="k">-&gt;</span> <span class="n">BorgiaResult</span><span class="o">&lt;</span><span class="n">IntegratedBMDSystem</span><span class="o">&gt;</span>
+
+<span class="cd">/// Initializes Borgia framework with custom configuration</span>
+<span class="k">pub</span> <span class="k">fn</span> <span class="nf">initialize_with_config</span><span class="p">(</span><span class="n">config</span><span class="p">:</span> <span class="n">BorgiaConfig</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="n">BorgiaResult</span><span class="o">&lt;</span><span class="n">IntegratedBMDSystem</span><span class="o">&gt;</span>
+
+<span class="cd">/// Initializes specific BMD scales only</span>
+<span class="k">pub</span> <span class="k">fn</span> <span class="nf">initialize_scales</span><span class="p">(</span><span class="n">scales</span><span class="p">:</span> <span class="nb">Vec</span><span class="o">&lt;</span><span class="n">BMDScale</span><span class="o">&gt;</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="n">BorgiaResult</span><span class="o">&lt;</span><span class="n">IntegratedBMDSystem</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<h2 id="examples">Examples</h2>
+
+<h3 id="basic-usage-example">Basic Usage Example</h3>
+
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">use</span> <span class="nn">borgia</span><span class="p">::{</span><span class="n">initialize</span><span class="p">,</span> <span class="n">BMDScale</span><span class="p">};</span>
+
+<span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="k">-&gt;</span> <span class="nn">borgia</span><span class="p">::</span><span class="n">BorgiaResult</span><span class="o">&lt;</span><span class="p">()</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="c1">// Initialize the framework</span>
+    <span class="k">let</span> <span class="k">mut</span> <span class="n">system</span> <span class="o">=</span> <span class="nf">initialize</span><span class="p">()</span><span class="o">?</span><span class="p">;</span>
+    
+    <span class="c1">// Define molecules for analysis</span>
+    <span class="k">let</span> <span class="n">molecules</span> <span class="o">=</span> <span class="nd">vec!</span><span class="p">[</span>
+        <span class="s">"CCO"</span><span class="nf">.to_string</span><span class="p">(),</span>        <span class="c1">// Ethanol</span>
+        <span class="s">"CC(=O)O"</span><span class="nf">.to_string</span><span class="p">(),</span>    <span class="c1">// Acetic acid</span>
+        <span class="s">"C6H12O6"</span><span class="nf">.to_string</span><span class="p">(),</span>    <span class="c1">// Glucose</span>
+    <span class="p">];</span>
+    
+    <span class="c1">// Execute cross-scale analysis</span>
+    <span class="k">let</span> <span class="n">result</span> <span class="o">=</span> <span class="n">system</span><span class="nf">.execute_cross_scale_analysis</span><span class="p">(</span>
+        <span class="n">molecules</span><span class="p">,</span>
+        <span class="nd">vec!</span><span class="p">[</span><span class="nn">BMDScale</span><span class="p">::</span><span class="n">Quantum</span><span class="p">,</span> <span class="nn">BMDScale</span><span class="p">::</span><span class="n">Molecular</span><span class="p">,</span> <span class="nn">BMDScale</span><span class="p">::</span><span class="n">Environmental</span><span class="p">]</span>
+    <span class="p">)</span><span class="o">?</span><span class="p">;</span>
+    
+    <span class="nd">println!</span><span class="p">(</span><span class="s">"Amplification factor: {:.2}×"</span><span class="p">,</span> <span class="n">result</span><span class="py">.amplification_factor</span><span class="p">);</span>
+    <span class="nd">println!</span><span class="p">(</span><span class="s">"Thermodynamic consistency: {}"</span><span class="p">,</span> <span class="n">result</span><span class="py">.thermodynamic_consistency</span><span class="p">);</span>
+    
+    <span class="nf">Ok</span><span class="p">(())</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="advanced-analysis-example">Advanced Analysis Example</h3>
+
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">use</span> <span class="nn">borgia</span><span class="p">::{</span><span class="n">initialize</span><span class="p">,</span> <span class="n">demonstrate_prisoner_parable</span><span class="p">,</span> <span class="n">noise_enhanced_cheminformatics</span><span class="p">};</span>
+
+<span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="k">-&gt;</span> <span class="nn">borgia</span><span class="p">::</span><span class="n">BorgiaResult</span><span class="o">&lt;</span><span class="p">()</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="c1">// Demonstrate Mizraji's prisoner parable</span>
+    <span class="k">let</span> <span class="n">parable_result</span> <span class="o">=</span> <span class="nf">demonstrate_prisoner_parable</span><span class="p">()</span><span class="o">?</span><span class="p">;</span>
+    <span class="nd">println!</span><span class="p">(</span><span class="s">"Prisoner parable amplification: {:.0}×"</span><span class="p">,</span> <span class="n">parable_result</span><span class="py">.amplification_factor</span><span class="p">);</span>
+    
+    <span class="c1">// Perform noise-enhanced cheminformatics</span>
+    <span class="k">let</span> <span class="n">small_dataset</span> <span class="o">=</span> <span class="nd">vec!</span><span class="p">[</span>
+        <span class="s">"CCO"</span><span class="nf">.to_string</span><span class="p">(),</span>
+        <span class="s">"CC(=O)O"</span><span class="nf">.to_string</span><span class="p">(),</span>
+    <span class="p">];</span>
+    
+    <span class="k">let</span> <span class="n">enhanced_result</span> <span class="o">=</span> <span class="nf">noise_enhanced_cheminformatics</span><span class="p">(</span><span class="n">small_dataset</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
+    <span class="nd">println!</span><span class="p">(</span><span class="s">"Dataset enhanced from {} to {} molecules"</span><span class="p">,</span> 
+             <span class="n">enhanced_result</span><span class="py">.original_size</span><span class="p">,</span> 
+             <span class="n">enhanced_result</span><span class="py">.enhanced_size</span><span class="p">);</span>
+    
+    <span class="nf">Ok</span><span class="p">(())</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<hr />
+
+<p><em>This API reference provides comprehensive documentation for all public interfaces in the Borgia framework, enabling developers to effectively utilize biological Maxwell’s demons for computational chemistry and bioinformatics applications.</em></p>
+
+  </div>
+
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/borgia/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Borgia: Biological Maxwell&#39;s Demons Framework</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Borgia: Biological Maxwell&#39;s Demons Framework</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>A computational framework implementing Mizraji&#39;s biological Maxwell&#39;s demons for information catalysis and multi-scale molecular analysis</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

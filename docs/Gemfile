@@ -15,6 +15,7 @@ gem "minima", "~> 2.5"
 # Additional gems for enhanced functionality
 gem "kramdown-parser-gfm"
 gem "rouge"
+gem "webrick", "~> 1.7"
 
 # Windows and JRuby specific gems
 platforms :mingw, :x64_mingw, :mswin, :jruby do

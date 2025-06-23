@@ -16,14 +16,14 @@ plugins:
 
 # Navigation
 header_pages:
-  - index.md
-  - turbulance-revolution.md
-  - turbulance-masterclass.md
-  - theoretical-foundations.md
-  - implementation.md
-  - api-reference.md
-  - examples.md
-  - publications.md
+  - docs/index.md
+  - docs/turbulance-revolution.md
+  - docs/turbulance-masterclass.md
+  - docs/theoretical-foundations.md
+  - docs/implementation.md
+  - docs/api-reference.md
+  - docs/examples.md
+  - docs/publications.md
 
 # Collections
 collections:
