@@ -152,6 +152,51 @@ pub use distributed_intelligence::{
     AutobahnThinkingEngine,
 };
 
+// BMD Networks - Biological Maxwell's Demons
+pub use bmd_networks::{
+    BiologicalMaxwellDemon,
+    MetastableBMD,
+    QuantumBMD,
+    MolecularBMD,
+    EnvironmentalBMD,
+    HardwareBMD,
+    BMDNetwork,
+    ThermodynamicAmplifier,
+    ThermodynamicConsequence,
+    Energy,
+    QuantumEvent,
+    QuantumState,
+    Product,
+    Solution,
+    RGBPixel,
+    MolecularSample,
+    AnalysisResult,
+    UniversalInput,
+    SystemResponse,
+    validate_haldane_relation,
+};
+
+// Noise-enhanced cheminformatics
+pub use noise_enhanced_cheminformatics::{
+    NoiseEnhancedCheminformatics,
+    EnvironmentalNoiseSource,
+    NoiseType,
+    MolecularPerturbation,
+    EmergentSolution,
+    SolutionEmergenceDetector,
+    NaturalConditionsSimulator,
+};
+
+// BMD Integration
+pub use bmd_integration::{
+    IntegratedBMDSystem,
+    BMDPerformanceMetrics,
+    IntegratedAnalysisRequest,
+    IntegratedAnalysisResult,
+    create_comprehensive_request,
+    demonstrate_prisoner_parable,
+};
+
 // =====================================================================================
 // BORGIA: Quantum-Oscillatory Molecular Representation System
 // 
@@ -212,6 +257,8 @@ pub use distributed_intelligence::{
 
 pub mod algorithms;
 pub mod autobahn;
+pub mod bmd_networks;
+pub mod bmd_integration;
 pub mod core;
 pub mod distributed_intelligence;
 pub mod drug_discovery;
@@ -223,6 +270,7 @@ pub mod fuzzy;
 pub mod hardware_spectroscopy;
 pub mod integration;
 pub mod molecular;
+pub mod noise_enhanced_cheminformatics;
 pub mod oscillatory;
 pub mod prediction;
 pub mod probabilistic;
