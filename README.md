@@ -9,7 +9,7 @@ Computational implementation of Eduardo Mizraji's biological Maxwell's demons th
 ## Installation
 
 ```bash
-git clone https://github.com/your-username/borgia.git
+git clone https://github.com/fullscreen-triangle/borgia.git
 cd borgia
 cargo build --release
 ```
@@ -45,7 +45,7 @@ let result = system.execute_cross_scale_analysis(
 
 ## Documentation
 
-Technical documentation available at: [https://your-username.github.io/borgia](https://your-username.github.io/borgia)
+Technical documentation available at: [https://fullscreen-triangle.github.io/borgia](https://fullscreen-triangle.github.io/borgia)
 
 ## Methodological Contributions
 
