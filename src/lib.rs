@@ -292,6 +292,10 @@ pub mod representation;
 pub mod similarity;
 pub mod utils;
 
+pub mod buhera_vpos_coolant_processors;
+pub mod gas_delivery_circulation;  
+pub mod pressure_temperature_cycling;
+
 // Re-export main components for easy access
 pub use crate::core::BorgiaEngine;
 pub use crate::engine::{BorgiaQuantumOscillatorySystem, QuantumOscillatoryAnalysisResult, DesignGoals};
