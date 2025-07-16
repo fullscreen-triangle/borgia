@@ -18,426 +18,148 @@ Borgia represents the first comprehensive computational framework implementing E
 
 ## System Architecture Overview
 
-The following interactive diagram illustrates the complete Borgia framework architecture, showing the integration of multi-scale BMD networks, information catalysis flows, hardware integration systems, and downstream system coordination:
+The Borgia framework implements a comprehensive multi-scale biological Maxwell demon architecture with integrated hardware systems and downstream molecular provision capabilities:
 
-<div align="center">
-<svg viewBox="0 0 3200 2400" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <!-- Molecular gradients and effects -->
-    <radialGradient id="molecularCore" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" style="stop-color:#ff0066;stop-opacity:1"/>
-      <stop offset="30%" style="stop-color:#ff3366;stop-opacity:0.9"/>
-      <stop offset="70%" style="stop-color:#ff6666;stop-opacity:0.7"/>
-      <stop offset="100%" style="stop-color:#ff9966;stop-opacity:0.5"/>
-    </radialGradient>
-    
-    <radialGradient id="bmdGlow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" style="stop-color:#00ff88;stop-opacity:1"/>
-      <stop offset="40%" style="stop-color:#44ffaa;stop-opacity:0.8"/>
-      <stop offset="80%" style="stop-color:#88ffcc;stop-opacity:0.6"/>
-      <stop offset="100%" style="stop-color:#aaffdd;stop-opacity:0.3"/>
-    </radialGradient>
-    
-    <radialGradient id="quantumField" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" style="stop-color:#0066ff;stop-opacity:1"/>
-      <stop offset="50%" style="stop-color:#3388ff;stop-opacity:0.8"/>
-      <stop offset="100%" style="stop-color:#66aaff;stop-opacity:0.4"/>
-    </radialGradient>
-    
-    <linearGradient id="informationFlow" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#ff00ff;stop-opacity:0.9"/>
-      <stop offset="20%" style="stop-color:#ff0088;stop-opacity:0.8"/>
-      <stop offset="40%" style="stop-color:#ff6600;stop-opacity:0.7"/>
-      <stop offset="60%" style="stop-color:#ffaa00;stop-opacity:0.8"/>
-      <stop offset="80%" style="stop-color:#88ff00;stop-opacity:0.8"/>
-      <stop offset="100%" style="stop-color:#00ff88;stop-opacity:0.9"/>
-    </linearGradient>
-    
-    <linearGradient id="catalysisFlow" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#00ffaa;stop-opacity:0.9"/>
-      <stop offset="25%" style="stop-color:#00ff66;stop-opacity:0.8"/>
-      <stop offset="50%" style="stop-color:#66ff00;stop-opacity:0.7"/>
-      <stop offset="75%" style="stop-color:#aaff00;stop-opacity:0.8"/>
-      <stop offset="100%" style="stop-color:#ffff00;stop-opacity:0.9"/>
-    </linearGradient>
-    
-    <!-- Advanced filters for molecular effects -->
-    <filter id="molecularGlow" x="-100%" y="-100%" width="300%" height="300%">
-      <feGaussianBlur stdDeviation="15" result="coloredBlur"/>
-      <feMerge>
-        <feMergeNode in="coloredBlur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-    
-    <filter id="bmdGlow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="10" result="coloredBlur"/>
-      <feMerge>
-        <feMergeNode in="coloredBlur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-    
-    <filter id="quantumGlow" x="-75%" y="-75%" width="250%" height="250%">
-      <feGaussianBlur stdDeviation="12" result="coloredBlur"/>
-      <feMerge>
-        <feMergeNode in="coloredBlur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-    
-    <filter id="informationGlow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
-      <feMerge>
-        <feMergeNode in="coloredBlur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-  </defs>
-  
-  <!-- Molecular background field -->
-  <rect width="3200" height="2400" fill="#0a0a0a"/>
-  
-  <!-- Quantum molecular background pattern -->
-  <g opacity="0.15">
-    <circle cx="300" cy="400" r="120" fill="url(#quantumField)"/>
-    <circle cx="800" cy="300" r="90" fill="url(#quantumField)"/>
-    <circle cx="1300" cy="500" r="110" fill="url(#quantumField)"/>
-    <circle cx="1800" cy="350" r="100" fill="url(#quantumField)"/>
-    <circle cx="2300" cy="450" r="95" fill="url(#quantumField)"/>
-    <circle cx="2800" cy="300" r="105" fill="url(#quantumField)"/>
-    <circle cx="500" cy="800" r="85" fill="url(#quantumField)"/>
-    <circle cx="1100" cy="900" r="115" fill="url(#quantumField)"/>
-    <circle cx="1600" cy="850" r="80" fill="url(#quantumField)"/>
-    <circle cx="2100" cy="950" r="125" fill="url(#quantumField)"/>
-    <circle cx="2600" cy="800" r="90" fill="url(#quantumField)"/>
-  </g>
-  
-  <!-- Title and subtitle -->
-  <text x="1600" y="60" text-anchor="middle" font-size="48" font-weight="bold" fill="#00ff88" filter="url(#informationGlow)">
-    BORGIA: BIOLOGICAL MAXWELL DEMON MOLECULAR GENERATION
-  </text>
-  <text x="1600" y="110" text-anchor="middle" font-size="28" fill="#ffaa00">
-    Eduardo Mizraji's BMD Theory + Information Catalysis + Multi-Scale Molecular Manufacturing
-  </text>
-  <text x="1600" y="145" text-anchor="middle" font-size="20" fill="#ffffff">
-    "iCat = ℑinput ◦ ℑoutput" | >1000× Thermodynamic Amplification | Zero-Cost LED Spectroscopy
-  </text>
-  <text x="1600" y="175" text-anchor="middle" font-size="16" fill="#aaffaa">
-    On-Demand Virtual Molecules for Temporal Navigation, Quantum Processors & Consciousness Systems
-  </text>
-  
-  <!-- Central Borgia Core - Molecular Generation Engine -->
-  <circle cx="1600" cy="700" r="280" fill="url(#molecularCore)" filter="url(#molecularGlow)">
-    <animate attributeName="r" values="280;310;280" dur="4s" repeatCount="indefinite"/>
-  </circle>
-  <circle cx="1600" cy="700" r="220" fill="none" stroke="#ff3366" stroke-width="6">
-    <animate attributeName="stroke-opacity" values="0.4;1;0.4" dur="3s" repeatCount="indefinite"/>
-  </circle>
-  <circle cx="1600" cy="700" r="160" fill="none" stroke="#ff6666" stroke-width="8">
-    <animate attributeName="stroke-opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite"/>
-  </circle>
-  <circle cx="1600" cy="700" r="100" fill="none" stroke="#ff9966" stroke-width="10">
-    <animate attributeName="stroke-opacity" values="0.8;1;0.8" dur="1.5s" repeatCount="indefinite"/>
-  </circle>
-  
-  <text x="1600" y="670" text-anchor="middle" font-size="36" font-weight="bold" fill="#ffffff">
-    BORGIA
-  </text>
-  <text x="1600" y="710" text-anchor="middle" font-size="24" fill="#ffffff">
-    MOLECULAR ENGINE
-  </text>
-  <text x="1600" y="740" text-anchor="middle" font-size="18" fill="#ffccaa">
-    Information Catalysis Core
-  </text>
-  <text x="1600" y="765" text-anchor="middle" font-size="16" fill="#ffddcc">
-    BMD Network Coordinator
-  </text>
-  
-  <!-- Multi-Scale BMD Networks -->
-  <g id="bmd-networks">
-    <!-- Quantum BMD Layer (10^-15s) -->
-    <g transform="translate(200, 200)">
-      <circle cx="0" cy="0" r="180" fill="url(#quantumField)" filter="url(#quantumGlow)">
-        <animate attributeName="opacity" values="0.7;1;0.7" dur="1.5s" repeatCount="indefinite"/>
-      </circle>
-      <text x="0" y="-20" text-anchor="middle" font-size="20" font-weight="bold" fill="#66aaff">QUANTUM BMD</text>
-      <text x="0" y="5" text-anchor="middle" font-size="16" fill="#ffffff">10⁻¹⁵s Timescale</text>
-      <text x="0" y="30" text-anchor="middle" font-size="14" fill="#aaccff">Coherence: 247±23μs</text>
-      <text x="0" y="50" text-anchor="middle" font-size="12" fill="#ccddff">• Quantum state management</text>
-      <text x="0" y="65" text-anchor="middle" font-size="12" fill="#ccddff">• Entanglement networks</text>
-      <text x="0" y="80" text-anchor="middle" font-size="12" fill="#ccddff">• Decoherence mitigation</text>
-      <text x="0" y="95" text-anchor="middle" font-size="12" fill="#ccddff">• Room temp coherence</text>
-      <text x="0" y="110" text-anchor="middle" font-size="12" fill="#ccddff">• Superposition control</text>
-      
-      <!-- Quantum particles -->
-      <g id="quantum-particles">
-        <circle cx="60" cy="-60" r="8" fill="#0066ff">
-          <animateMotion dur="3s" repeatCount="indefinite">
-            <animateMotion dur="3s" repeatCount="indefinite" path="M 60,-60 Q 120,0 60,60 Q 0,120 -60,60 Q -120,0 -60,-60 Q 0,-120 60,-60"/>
-          </animateMotion>
-        </circle>
-        <circle cx="-60" cy="60" r="8" fill="#3388ff">
-          <animateMotion dur="2.5s" repeatCount="indefinite" path="M -60,60 Q 0,120 60,60 Q 120,0 60,-60 Q 0,-120 -60,-60 Q -120,0 -60,60"/>
-        </circle>
-        <circle cx="0" cy="-90" r="6" fill="#66aaff">
-          <animateMotion dur="2s" repeatCount="indefinite" path="M 0,-90 Q 90,0 0,90 Q -90,0 0,-90"/>
-        </circle>
-      </g>
-    </g>
-    
-    <!-- Molecular BMD Layer (10^-9s) -->
-    <g transform="translate(3000, 200)">
-      <circle cx="0" cy="0" r="180" fill="url(#bmdGlow)" filter="url(#bmdGlow)">
-        <animate attributeName="opacity" values="0.8;1;0.8" dur="2.2s" repeatCount="indefinite"/>
-      </circle>
-      <text x="0" y="-20" text-anchor="middle" font-size="20" font-weight="bold" fill="#44ffaa">MOLECULAR BMD</text>
-      <text x="0" y="5" text-anchor="middle" font-size="16" fill="#ffffff">10⁻⁹s Timescale</text>
-      <text x="0" y="30" text-anchor="middle" font-size="14" fill="#88ffcc">Efficiency: 97.3±1.2%</text>
-      <text x="0" y="50" text-anchor="middle" font-size="12" fill="#aaffdd">• Pattern recognition</text>
-      <text x="0" y="65" text-anchor="middle" font-size="12" fill="#aaffdd">• Reaction networks</text>
-      <text x="0" y="80" text-anchor="middle" font-size="12" fill="#aaffdd">• Conformation optimization</text>
-      <text x="0" y="95" text-anchor="middle" font-size="12" fill="#aaffdd">• Intermolecular forces</text>
-      <text x="0" y="110" text-anchor="middle" font-size="12" fill="#aaffdd">• 2.3×10⁶ molecules/sec</text>
-      
-      <!-- Molecular structures -->
-      <g id="molecular-structures">
-        <g transform="translate(70, -70)">
-          <circle cx="0" cy="0" r="12" fill="#00ff88"/>
-          <circle cx="15" cy="0" r="8" fill="#ff6600"/>
-          <circle cx="-15" cy="0" r="8" fill="#0066ff"/>
-          <line x1="0" y1="0" x2="15" y2="0" stroke="#ffffff" stroke-width="2"/>
-          <line x1="0" y1="0" x2="-15" y2="0" stroke="#ffffff" stroke-width="2"/>
-          <animateTransform attributeName="transform" type="rotate" values="0 70 -70;360 70 -70" dur="4s" repeatCount="indefinite"/>
-        </g>
-        <g transform="translate(-70, 70)">
-          <circle cx="0" cy="0" r="10" fill="#ff0088"/>
-          <circle cx="12" cy="12" r="6" fill="#00ff88"/>
-          <circle cx="-12" cy="12" r="6" fill="#0066ff"/>
-          <circle cx="0" cy="-15" r="6" fill="#ffaa00"/>
-          <line x1="0" y1="0" x2="12" y2="12" stroke="#ffffff" stroke-width="2"/>
-          <line x1="0" y1="0" x2="-12" y2="12" stroke="#ffffff" stroke-width="2"/>
-          <line x1="0" y1="0" x2="0" y2="-15" stroke="#ffffff" stroke-width="2"/>
-          <animateTransform attributeName="transform" type="rotate" values="360 -70 70;0 -70 70" dur="3.5s" repeatCount="indefinite"/>
-        </g>
-      </g>
-    </g>
-    
-    <!-- Environmental BMD Layer (10^2s) -->
-    <g transform="translate(1600, 200)">
-      <circle cx="0" cy="0" r="180" fill="url(#informationFlow)" opacity="0.6" filter="url(#informationGlow)">
-        <animate attributeName="opacity" values="0.5;0.8;0.5" dur="3s" repeatCount="indefinite"/>
-      </circle>
-      <text x="0" y="-20" text-anchor="middle" font-size="20" font-weight="bold" fill="#ffaa00">ENVIRONMENTAL BMD</text>
-      <text x="0" y="5" text-anchor="middle" font-size="16" fill="#ffffff">10²s Timescale</text>
-      <text x="0" y="30" text-anchor="middle" font-size="14" fill="#ffcc88">Amplification: 1247±156×</text>
-      <text x="0" y="50" text-anchor="middle" font-size="12" fill="#ffddaa">• Environmental integration</text>
-      <text x="0" y="65" text-anchor="middle" font-size="12" fill="#ffddaa">• Long-term stability</text>
-      <text x="0" y="80" text-anchor="middle" font-size="12" fill="#ffddaa">• System coordination</text>
-      <text x="0" y="95" text-anchor="middle" font-size="12" fill="#ffddaa">• Resource optimization</text>
-      <text x="0" y="110" text-anchor="middle" font-size="12" fill="#ffddaa">• Hardware integration</text>
-    </g>
-  </g>
-  
-  <!-- Information Catalysis Flow Connections -->
-  <g id="information-flows" stroke-width="12" fill="none" opacity="0.8">
-    <!-- Quantum to Core -->
-    <path d="M 380 350 Q 600 400 900 550" stroke="url(#informationFlow)" filter="url(#informationGlow)">
-      <animate attributeName="stroke-dasharray" values="0,2000;100,1900;200,1800" dur="3s" repeatCount="indefinite"/>
-    </path>
-    
-    <!-- Molecular to Core -->
-    <path d="M 2820 350 Q 2600 400 2300 550" stroke="url(#informationFlow)" filter="url(#informationGlow)">
-      <animate attributeName="stroke-dasharray" values="0,2000;100,1900;200,1800" dur="2.5s" repeatCount="indefinite"/>
-    </path>
-    
-    <!-- Environmental to Core -->
-    <path d="M 1600 380 Q 1600 450 1600 520" stroke="url(#informationFlow)" filter="url(#informationGlow)">
-      <animate attributeName="stroke-dasharray" values="0,1000;50,950;100,900" dur="2s" repeatCount="indefinite"/>
-    </path>
-    
-    <!-- Cross-scale coordination -->
-    <path d="M 380 280 Q 800 150 1420 280" stroke="url(#catalysisFlow)" stroke-width="8" opacity="0.6">
-      <animate attributeName="stroke-dasharray" values="0,1500;75,1425;150,1350" dur="4s" repeatCount="indefinite"/>
-    </path>
-    <path d="M 1780 280 Q 2200 150 2820 280" stroke="url(#catalysisFlow)" stroke-width="8" opacity="0.6">
-      <animate attributeName="stroke-dasharray" values="0,1500;75,1425;150,1350" dur="3.5s" repeatCount="indefinite"/>
-    </path>
-  </g>
-  
-  <!-- Hardware Integration Systems -->
-  <g id="hardware-integration">
-    <!-- LED Spectroscopy System -->
-    <rect x="100" y="1100" width="450" height="200" fill="#001a1a" stroke="#00ffaa" stroke-width="4" rx="15" filter="url(#bmdGlow)">
-      <animate attributeName="opacity" values="0.8;1;0.8" dur="2.8s" repeatCount="indefinite"/>
-    </rect>
-    <text x="325" y="1140" text-anchor="middle" font-size="20" font-weight="bold" fill="#00ffaa">LED SPECTROSCOPY</text>
-    <text x="325" y="1165" text-anchor="middle" font-size="16" fill="#ffffff">Zero-Cost Molecular Analysis</text>
-    
-    <!-- LED wavelengths -->
-    <circle cx="225" cy="1200" r="25" fill="#0066ff" filter="url(#quantumGlow)">
-      <animate attributeName="opacity" values="0.7;1;0.7" dur="1.5s" repeatCount="indefinite"/>
-    </circle>
-    <text x="225" y="1210" text-anchor="middle" font-size="12" font-weight="bold" fill="#ffffff">470nm</text>
-    <text x="225" y="1240" text-anchor="middle" font-size="10" fill="#aaccff">Blue LED</text>
-    
-    <circle cx="325" cy="1200" r="25" fill="#00ff00" filter="url(#bmdGlow)">
-      <animate attributeName="opacity" values="0.8;1;0.8" dur="1.8s" repeatCount="indefinite"/>
-    </circle>
-    <text x="325" y="1210" text-anchor="middle" font-size="12" font-weight="bold" fill="#ffffff">525nm</text>
-    <text x="325" y="1240" text-anchor="middle" font-size="10" fill="#aaffaa">Green LED</text>
-    
-    <circle cx="425" cy="1200" r="25" fill="#ff3300" filter="url(#molecularGlow)">
-      <animate attributeName="opacity" values="0.9;1;0.9" dur="2.1s" repeatCount="indefinite"/>
-    </circle>
-    <text x="425" y="1210" text-anchor="middle" font-size="12" font-weight="bold" fill="#ffffff">625nm</text>
-    <text x="425" y="1240" text-anchor="middle" font-size="10" fill="#ffaaaa">Red LED</text>
-    
-    <text x="325" y="1275" text-anchor="middle" font-size="12" fill="#ccffcc">Standard Computer Hardware</text>
-    <text x="325" y="1290" text-anchor="middle" font-size="12" fill="#ccffcc">$0.00 Additional Cost</text>
-    
-    <!-- CPU Timing Coordination -->
-    <rect x="600" y="1100" width="450" height="200" fill="#1a001a" stroke="#ff00aa" stroke-width="4" rx="15" filter="url(#molecularGlow)">
-      <animate attributeName="opacity" values="0.7;1;0.7" dur="2.3s" repeatCount="indefinite"/>
-    </rect>
-    <text x="825" y="1140" text-anchor="middle" font-size="20" font-weight="bold" fill="#ff00aa">CPU TIMING SYNC</text>
-    <text x="825" y="1165" text-anchor="middle" font-size="16" fill="#ffffff">Molecular-Hardware Coordination</text>
-    <text x="825" y="1190" text-anchor="middle" font-size="14" fill="#ffaaff">Performance: 3.2× ± 0.4×</text>
-    <text x="825" y="1210" text-anchor="middle" font-size="14" fill="#ffaaff">Memory: 157× reduction</text>
-    <text x="825" y="1235" text-anchor="middle" font-size="12" fill="#ffccff">• Molecular timescale mapping</text>
-    <text x="825" y="1250" text-anchor="middle" font-size="12" fill="#ffccff">• Hardware synchronization</text>
-    <text x="825" y="1265" text-anchor="middle" font-size="12" fill="#ffccff">• Real-time coordination</text>
-    <text x="825" y="1280" text-anchor="middle" font-size="12" fill="#ffccff">• Precision timing control</text>
-    
-    <!-- Noise Enhancement System -->
-    <rect x="1100" y="1100" width="450" height="200" fill="#1a1a00" stroke="#ffff00" stroke-width="4" rx="15" filter="url(#informationGlow)">
-      <animate attributeName="opacity" values="0.9;1;0.9" dur="2.6s" repeatCount="indefinite"/>
-    </rect>
-    <text x="1325" y="1140" text-anchor="middle" font-size="20" font-weight="bold" fill="#ffff00">NOISE ENHANCEMENT</text>
-    <text x="1325" y="1165" text-anchor="middle" font-size="16" fill="#ffffff">Natural Environment Simulation</text>
-    <text x="1325" y="1190" text-anchor="middle" font-size="14" fill="#ffffaa">SNR: 3.2:1 ± 0.4:1</text>
-    <text x="1325" y="1210" text-anchor="middle" font-size="14" fill="#ffffaa">Solution Emergence Above Noise</text>
-    <text x="1325" y="1235" text-anchor="middle" font-size="12" fill="#ffffcc">• RGB pixel → chemistry</text>
-    <text x="1325" y="1250" text-anchor="middle" font-size="12" fill="#ffffcc">• Natural noise patterns</text>
-    <text x="1325" y="1265" text-anchor="middle" font-size="12" fill="#ffffcc">• Enhanced processing</text>
-    <text x="1325" y="1280" text-anchor="middle" font-size="12" fill="#ffffcc">• Signal detection</text>
-  </g>
-  
-  <!-- Downstream System Integration -->
-  <g id="downstream-integration">
-    <!-- Masunda Temporal Navigator -->
-    <rect x="1650" y="1100" width="450" height="200" fill="#001100" stroke="#00ff00" stroke-width="4" rx="15" filter="url(#bmdGlow)">
-      <animate attributeName="opacity" values="0.8;1;0.8" dur="2.4s" repeatCount="indefinite"/>
-    </rect>
-    <text x="1875" y="1140" text-anchor="middle" font-size="20" font-weight="bold" fill="#00ff00">MASUNDA TEMPORAL</text>
-    <text x="1875" y="1165" text-anchor="middle" font-size="16" fill="#ffffff">Oscillating Atom Provision</text>
-    <text x="1875" y="1190" text-anchor="middle" font-size="14" fill="#aaffaa">Precision: 10⁻³⁰ to 10⁻⁵⁰s</text>
-    <text x="1875" y="1210" text-anchor="middle" font-size="14" fill="#aaffaa">Cesium-133: 9.192×10⁹ Hz</text>
-    <text x="1875" y="1235" text-anchor="middle" font-size="12" fill="#ccffcc">• Ultra-precision atoms</text>
-    <text x="1875" y="1250" text-anchor="middle" font-size="12" fill="#ccffcc">• Temporal coordination</text>
-    <text x="1875" y="1265" text-anchor="middle" font-size="12" fill="#ccffcc">• Oscillation control</text>
-    <text x="1875" y="1280" text-anchor="middle" font-size="12" fill="#ccffcc">• Quantum timing</text>
-    
-    <!-- Buhera Foundry -->
-    <rect x="2150" y="1100" width="450" height="200" fill="#110000" stroke="#ff0000" stroke-width="4" rx="15" filter="url(#molecularGlow)">
-      <animate attributeName="opacity" values="0.7;1;0.7" dur="2.7s" repeatCount="indefinite"/>
-    </rect>
-    <text x="2375" y="1140" text-anchor="middle" font-size="20" font-weight="bold" fill="#ff0000">BUHERA FOUNDRY</text>
-    <text x="2375" y="1165" text-anchor="middle" font-size="16" fill="#ffffff">BMD Substrate Manufacturing</text>
-    <text x="2375" y="1190" text-anchor="middle" font-size="14" fill="#ffaaaa">Recognition: 99.9% accuracy</text>
-    <text x="2375" y="1210" text-anchor="middle" font-size="14" fill="#ffaaaa">Throughput: 10⁶ ops/sec</text>
-    <text x="2375" y="1235" text-anchor="middle" font-size="12" fill="#ffcccc">• Pattern recognition proteins</text>
-    <text x="2375" y="1250" text-anchor="middle" font-size="12" fill="#ffcccc">• Information channels</text>
-    <text x="2375" y="1265" text-anchor="middle" font-size="12" fill="#ffcccc">• Quantum processors</text>
-    <text x="2375" y="1280" text-anchor="middle" font-size="12" fill="#ffcccc">• BMD networks</text>
-    
-    <!-- Kambuzuma Integration -->
-    <rect x="2650" y="1100" width="450" height="200" fill="#000011" stroke="#0066ff" stroke-width="4" rx="15" filter="url(#quantumGlow)">
-      <animate attributeName="opacity" values="0.9;1;0.9" dur="2.1s" repeatCount="indefinite"/>
-    </rect>
-    <text x="2875" y="1140" text-anchor="middle" font-size="20" font-weight="bold" fill="#0066ff">KAMBUZUMA</text>
-    <text x="2875" y="1165" text-anchor="middle" font-size="16" fill="#ffffff">Biological Quantum Molecules</text>
-    <text x="2875" y="1190" text-anchor="middle" font-size="14" fill="#aaccff">Coherence: 247±23μs</text>
-    <text x="2875" y="1210" text-anchor="middle" font-size="14" fill="#aaccff">Temperature: >298K</text>
-    <text x="2875" y="1235" text-anchor="middle" font-size="12" fill="#ccddff">• Quantum coherence</text>
-    <text x="2875" y="1250" text-anchor="middle" font-size="12" fill="#ccddff">• Membrane synthesis</text>
-    <text x="2875" y="1265" text-anchor="middle" font-size="12" fill="#ccddff">• Biological quantum computing</text>
-    <text x="2875" y="1280" text-anchor="middle" font-size="12" fill="#ccddff">• Room temp operation</text>
-  </g>
-  
-  <!-- Mathematical Framework Display -->
-  <g id="mathematical-framework">
-    <rect x="200" y="1400" width="800" height="320" fill="#000a00" stroke="#00ff44" stroke-width="3" rx="10" opacity="0.9"/>
-    <text x="600" y="1440" text-anchor="middle" font-size="24" font-weight="bold" fill="#00ff44">MATHEMATICAL FRAMEWORK</text>
-    
-    <text x="220" y="1480" font-size="18" font-weight="bold" fill="#66ff66">Information Catalysis:</text>
-    <text x="220" y="1510" font-size="16" fill="#aaffaa">iCat = ℑinput ◦ ℑoutput</text>
-    <text x="220" y="1535" font-size="14" fill="#ccffcc">Where ℑinput = Pattern recognition filter</text>
-    <text x="220" y="1555" font-size="14" fill="#ccffcc">      ℑoutput = Information channeling operator</text>
-    
-    <text x="220" y="1590" font-size="18" font-weight="bold" fill="#66ff66">Thermodynamic Amplification:</text>
-    <text x="220" y="1620" font-size="16" fill="#aaffaa">ΔS = S_input - S_processed = log₂(|Ω_input|/|Ω_computed|)</text>
-    <text x="220" y="1645" font-size="14" fill="#ccffcc">Entropy reduction enables >1000× amplification</text>
-    
-    <text x="220" y="1680" font-size="18" font-weight="bold" fill="#66ff66">Catalytic Efficiency:</text>
-    <text x="220" y="1710" font-size="16" fill="#aaffaa">η = (Rate_catalyzed / Rate_uncatalyzed) × (I_preserved / I_total)</text>
-    <text x="220" y="1735" font-size="14" fill="#ccffcc">Information preservation ensures repeated catalytic cycles</text>
-  </g>
-  
-  <!-- Performance Metrics -->
-  <g id="performance-metrics">
-    <rect x="1050" y="1400" width="800" height="320" fill="#0a0000" stroke="#ff4400" stroke-width="3" rx="10" opacity="0.9"/>
-    <text x="1450" y="1440" text-anchor="middle" font-size="24" font-weight="bold" fill="#ff4400">PERFORMANCE METRICS</text>
-    
-    <text x="1070" y="1480" font-size="18" font-weight="bold" fill="#ff6666">Validated Achievements:</text>
-    <text x="1070" y="1510" font-size="16" fill="#ffaaaa">• Amplification Factor: 1247 ± 156× (>1000× target)</text>
-    <text x="1070" y="1535" font-size="16" fill="#ffaaaa">• Catalysis Efficiency: 97.3 ± 1.2% (>95% target)</text>
-    <text x="1070" y="1560" font-size="16" fill="#ffaaaa">• Quantum Coherence: 247 ± 23μs (>100μs target)</text>
-    <text x="1070" y="1585" font-size="16" fill="#ffaaaa">• Generation Rate: 2.3×10⁶ molecules/sec</text>
-    
-    <text x="1070" y="1620" font-size="18" font-weight="bold" fill="#ff6666">Hardware Integration:</text>
-    <text x="1070" y="1650" font-size="16" fill="#ffaaaa">• Performance Improvement: 3.2× ± 0.4×</text>
-    <text x="1070" y="1675" font-size="16" fill="#ffaaaa">• Memory Reduction: 157× ± 12×</text>
-    <text x="1070" y="1700" font-size="16" fill="#ffaaaa">• Zero-Cost LED Spectroscopy: $0.00</text>
-  </g>
-  
-  <!-- System Integration Arrows -->
-  <g id="integration-arrows" stroke-width="6" fill="none" opacity="0.7">
-    <!-- Core to Hardware Systems -->
-    <path d="M 1600 980 Q 1200 1000 800 1100" stroke="#00ffaa" marker-end="url(#arrowhead)">
-      <animate attributeName="stroke-dasharray" values="0,1000;50,950;100,900" dur="2.5s" repeatCount="indefinite"/>
-    </path>
-    
-    <!-- Core to Downstream Systems -->
-    <path d="M 1600 980 Q 1800 1000 2200 1100" stroke="#ff4400" marker-end="url(#arrowhead)">
-      <animate attributeName="stroke-dasharray" values="0,1000;50,950;100,900" dur="3s" repeatCount="indefinite"/>
-    </path>
-    
-    <!-- BMD Networks to Hardware -->
-    <path d="M 1600 420 Q 1200 600 800 1000" stroke="#ffaa00" stroke-width="4" opacity="0.5">
-      <animate attributeName="stroke-dasharray" values="0,800;40,760;80,720" dur="3.5s" repeatCount="indefinite"/>
-    </path>
-  </g>
-  
-  <!-- Arrow markers -->
-  <defs>
-    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-      <polygon points="0 0, 10 3.5, 0 7" fill="#ffffff"/>
-    </marker>
-  </defs>
-</svg>
-</div>
+### Core Architecture
 
-**Key Components Illustrated:**
+```mermaid
+graph TB
+    subgraph "BORGIA MOLECULAR ENGINE"
+        Core["🧬 Information Catalysis Core<br/>iCat = ℑinput ◦ ℑoutput<br/>1247±156× Amplification"]
+        BMD["🔬 BMD Network Coordinator<br/>Multi-Scale Integration"]
+    end
+    
+    subgraph "Multi-Scale BMD Networks"
+        QBM["⚛️ Quantum BMD<br/>10⁻¹⁵s Timescale<br/>247±23μs Coherence"]
+        MBM["🧪 Molecular BMD<br/>10⁻⁹s Timescale<br/>97.3±1.2% Efficiency"]
+        EBM["🌍 Environmental BMD<br/>10²s Timescale<br/>1247±156× Amplification"]
+    end
+    
+    subgraph "Hardware Integration"
+        LED["💡 LED Spectroscopy<br/>470nm/525nm/625nm<br/>$0.00 Cost"]
+        CPU["💻 CPU Timing Sync<br/>3.2±0.4× Performance<br/>157±12× Memory Reduction"]
+        NE["📡 Noise Enhancement<br/>3.2:1±0.4:1 SNR<br/>Natural Environment Simulation"]
+    end
+    
+    subgraph "Downstream Systems"
+        MT["🕐 Masunda Temporal<br/>10⁻³⁰ to 10⁻⁵⁰s Precision<br/>Oscillating Atom Provision"]
+        BF["🏭 Buhera Foundry<br/>99.9% Recognition Accuracy<br/>BMD Substrate Manufacturing"]
+        KZ["🧠 Kambuzuma<br/>Room Temp Quantum<br/>Biological Molecule Provision"]
+    end
+    
+    QBM --> Core
+    MBM --> Core
+    EBM --> Core
+    
+    Core --> LED
+    Core --> CPU
+    Core --> NE
+    
+    Core --> MT
+    Core --> BF
+    Core --> KZ
+    
+    BMD --> QBM
+    BMD --> MBM
+    BMD --> EBM
+```
 
-1. **Central Borgia Core**: The molecular generation engine implementing information catalysis (iCat = ℑinput ◦ ℑoutput)
-2. **Multi-Scale BMD Networks**: Three operational layers (Quantum 10⁻¹⁵s, Molecular 10⁻⁹s, Environmental 10²s) with animated information flows
-3. **Hardware Integration**: LED spectroscopy ($0.00 cost), CPU timing synchronization (3.2× performance), and noise enhancement (3.2:1 SNR)
-4. **Downstream Integration**: Direct molecular substrate provision for Masunda Temporal Navigation, Buhera Foundry manufacturing, and Kambuzuma biological quantum systems
-5. **Mathematical Framework**: Core equations showing >1000× thermodynamic amplification through information catalysis
-6. **Performance Validation**: Experimentally confirmed metrics exceeding theoretical predictions
+### Information Catalysis Flow
 
-This diagram demonstrates how Borgia serves as the foundational molecular workhorse enabling advanced computational architectures through on-demand virtual molecule generation with mandatory dual clock/processor functionality.
+```mermaid
+flowchart LR
+    subgraph "Input Processing"
+        IP["🔍 Pattern Recognition<br/>ℑinput Filter<br/>Chemical Space Navigation"]
+    end
+    
+    subgraph "Catalytic Processing"
+        IC["⚡ Information Catalysis<br/>iCat = ℑinput ◦ ℑoutput<br/>Thermodynamic Amplification"]
+    end
+    
+    subgraph "Output Generation"
+        OC["📤 Information Channeling<br/>ℑoutput Operator<br/>Molecular Configuration"]
+    end
+    
+    subgraph "Quality Control"
+        QC["✅ Molecular Validation<br/>Dual Clock/Processor<br/>Verification"]
+    end
+    
+    IP --> IC
+    IC --> OC
+    OC --> QC
+    
+    QC -->|"Validated Molecules"| MT["🕐 Masunda Temporal"]
+    QC -->|"BMD Substrates"| BF["🏭 Buhera Foundry"]
+    QC -->|"Quantum Molecules"| KZ["🧠 Kambuzuma"]
+```
+
+### Dual-Functionality Molecular Architecture
+
+```mermaid
+graph TD
+    subgraph "Every Generated Molecule"
+        DFM["🔄 Dual-Functionality Molecule<br/>Universal Clock + Processor"]
+    end
+    
+    subgraph "Clock Functionality"
+        OSC["🌊 Oscillatory Properties<br/>Frequency Stability<br/>Phase Coherence"]
+        TEMP["⏱️ Temporal Precision<br/>10⁻³⁰ to 10⁻⁵⁰s<br/>Navigation Capability"]
+    end
+    
+    subgraph "Processor Functionality"
+        COMP["🖥️ Computational Properties<br/>Instruction Set<br/>Memory Capacity"]
+        PROC["⚡ Processing Rate<br/>Parallel Operations<br/>Information Storage"]
+    end
+    
+    subgraph "Recursive Enhancement"
+        RE["🔁 Enhancement Capability<br/>N×Precision × N×Power<br/>Exponential Scaling"]
+    end
+    
+    DFM --> OSC
+    DFM --> COMP
+    OSC --> TEMP
+    COMP --> PROC
+    TEMP --> RE
+    PROC --> RE
+```
+
+### Hardware Integration Architecture
+
+```mermaid
+graph LR
+    subgraph "Standard Hardware"
+        LED_B["💙 Blue LED<br/>470nm<br/>Standard Computer"]
+        LED_G["💚 Green LED<br/>525nm<br/>Monitor Backlight"]
+        LED_R["❤️ Red LED<br/>625nm<br/>Zero Cost"]
+        CPU_CLK["🕒 CPU Clock<br/>Hardware Timing<br/>Cycle Mapping"]
+        RGB["🖥️ Screen Pixels<br/>RGB Changes<br/>Real-time Interface"]
+    end
+    
+    subgraph "Molecular Interface"
+        SPEC["🔬 LED Spectroscopy<br/>Molecular Analysis<br/>Fluorescence Detection"]
+        SYNC["⏱️ Timing Coordination<br/>Molecular-Hardware<br/>Synchronization"]
+        NOISE["📊 Noise Processing<br/>Pixel→Chemistry<br/>Environment Simulation"]
+    end
+    
+    LED_B --> SPEC
+    LED_G --> SPEC
+    LED_R --> SPEC
+    CPU_CLK --> SYNC
+    RGB --> NOISE
+    
+    SPEC --> |"Molecular Data"| QC["✅ Quality Control"]
+    SYNC --> |"Precise Timing"| QC
+    NOISE --> |"Enhanced Signals"| QC
+```
+
+**Key Architectural Features:**
+
+1. **Central Information Catalysis Engine**: Implements iCat = ℑinput ◦ ℑoutput with >1000× thermodynamic amplification
+2. **Multi-Scale BMD Networks**: Hierarchical coordination across quantum (10⁻¹⁵s), molecular (10⁻⁹s), and environmental (10²s) timescales
+3. **Hardware Integration Systems**: Zero-cost LED spectroscopy, CPU timing synchronization, and noise-enhanced processing
+4. **Mandatory Dual Functionality**: Every molecule functions as both precision clock and computational processor
+5. **Downstream System Support**: Direct molecular substrate provision for temporal navigation, quantum processing, and consciousness systems
+6. **Quality Assurance**: Comprehensive validation ensuring dual clock/processor functionality in all generated molecules
 
 ---
 
