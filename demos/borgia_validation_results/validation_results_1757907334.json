@@ -1,0 +1,82 @@
+{
+  "total_tests": 4,
+  "passed_tests": 3,
+  "pass_rate": 0.75,
+  "overall_score": 0.9871743353457607,
+  "critical_claims_validated": true,
+  "execution_time": 1.1474530696868896,
+  "results": {
+    "dual_functionality": {
+      "test_name": "dual_functionality_molecules",
+      "success": true,
+      "score": 1.0,
+      "metrics": {
+        "total_molecules": 50,
+        "clock_functional_rate": 1.0,
+        "processor_functional_rate": 1.0,
+        "dual_functional_rate": 1.0,
+        "average_clock_precision": 1.0185321655242948e-30,
+        "average_processing_capacity": 6258311.899141935,
+        "generation_time": 0.27976240835888266,
+        "requirement_met": true
+      },
+      "errors": [],
+      "timestamp": 1757907334.2396033
+    },
+    "bmd_networks": {
+      "test_name": "bmd_network_coordination",
+      "success": false,
+      "score": 0.9680463070176115,
+      "metrics": {
+        "quantum_efficiency": 0.9070139531594389,
+        "molecular_efficiency": 0.9885787900460149,
+        "environmental_efficiency": 0.8647545594266322,
+        "amplification_factor": 1318.0766222596399,
+        "synchronization_quality": 0.9755742787106252,
+        "amplification_requirement_met": true,
+        "efficiency_requirement_met": false,
+        "coordination_time": 0.432555487853315
+      },
+      "errors": [
+        "Efficiency requirements not met"
+      ],
+      "timestamp": 1757907334.5167248
+    },
+    "information_catalysis": {
+      "test_name": "information_catalysis",
+      "success": true,
+      "score": 0.9806510343654313,
+      "metrics": {
+        "efficiency": 0.9615680515150968,
+        "amplification_factor": 1802.4213849581504,
+        "entropy_reduction": 8.535558048122063,
+        "information_preservation": 0.9801190687969631,
+        "efficiency_requirement_met": true,
+        "amplification_requirement_met": true,
+        "preservation_requirement_met": true,
+        "catalysis_time": 0.3730294616141943
+      },
+      "errors": [],
+      "timestamp": 1757907334.7754438
+    },
+    "hardware_integration": {
+      "test_name": "hardware_integration",
+      "success": true,
+      "score": 1.0,
+      "metrics": {
+        "led_spectroscopy_success": true,
+        "cpu_timing_success": true,
+        "noise_enhancement_success": true,
+        "performance_improvement": 3.553401121561605,
+        "memory_reduction": 157.1247949740104,
+        "zero_cost_confirmed": true,
+        "components_requirement_met": true,
+        "performance_requirement_met": true,
+        "integration_time": 0.622811149699128
+      },
+      "errors": [],
+      "timestamp": 1757907334.954577
+    }
+  },
+  "system_ready": true
+}

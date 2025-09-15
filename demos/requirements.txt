@@ -1,0 +1,8 @@
+# Minimal dependencies for Borgia validation framework
+# Basic scientific computing and data handling
+numpy>=1.21.0
+matplotlib>=3.5.0
+# JSON and data export
+pytest>=7.0.0
+# Optional: Basic statistical analysis
+scipy>=1.9.0; python_version<"3.13"
