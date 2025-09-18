@@ -1,0 +1,14 @@
+{
+  "timestamp": 1757998463.3474536,
+  "test_name": "comprehensive",
+  "stage": "summary",
+  "data": {
+    "total_tests": 4,
+    "passed_tests": 3,
+    "pass_rate": 0.75,
+    "overall_score": 0.9896098675493542,
+    "critical_claims_validated": true,
+    "system_ready": true,
+    "execution_time": 1.9622526168823242
+  }
+}

@@ -1,0 +1,125 @@
+{
+  "results": {
+    "total_tests": 4,
+    "passed_tests": 3,
+    "pass_rate": 0.75,
+    "overall_score": 0.9903536773721929,
+    "critical_claims_validated": true,
+    "execution_time": 0.8348550796508789,
+    "results": {
+      "dual_functionality": {
+        "test_name": "dual_functionality_molecules",
+        "success": true,
+        "score": 1.0,
+        "metrics": {
+          "total_molecules": 50,
+          "clock_functional_rate": 1.0,
+          "processor_functional_rate": 1.0,
+          "dual_functional_rate": 1.0,
+          "average_clock_precision": 9.819546044552871e-31,
+          "average_processing_capacity": 5306046.043527824,
+          "generation_time": 0.1508771850467976,
+          "requirement_met": true
+        },
+        "errors": [],
+        "timestamp": 1758003169.334372
+      },
+      "bmd_networks": {
+        "test_name": "bmd_network_coordination",
+        "success": false,
+        "score": 0.9682115772675792,
+        "metrics": {
+          "quantum_efficiency": 0.910927652556126,
+          "molecular_efficiency": 0.964085258817536,
+          "environmental_efficiency": 0.8865739181331824,
+          "amplification_factor": 1081.6648941204473,
+          "synchronization_quality": 0.9374892212070014,
+          "amplification_requirement_met": true,
+          "efficiency_requirement_met": false,
+          "coordination_time": 0.20997021465587107
+        },
+        "errors": [
+          "Efficiency requirements not met"
+        ],
+        "timestamp": 1758003169.6131485
+      },
+      "information_catalysis": {
+        "test_name": "information_catalysis",
+        "success": true,
+        "score": 0.9932031322211924,
+        "metrics": {
+          "efficiency": 0.9840854052559737,
+          "amplification_factor": 1080.2289660585998,
+          "entropy_reduction": 9.16182364989075,
+          "information_preservation": 0.9978448505940146,
+          "efficiency_requirement_met": true,
+          "amplification_requirement_met": true,
+          "preservation_requirement_met": true,
+          "catalysis_time": 0.5125338298851774
+        },
+        "errors": [],
+        "timestamp": 1758003169.8080914
+      },
+      "hardware_integration": {
+        "test_name": "hardware_integration",
+        "success": true,
+        "score": 1.0,
+        "metrics": {
+          "led_spectroscopy_success": true,
+          "cpu_timing_success": true,
+          "noise_enhancement_success": true,
+          "performance_improvement": 3.479129341919298,
+          "memory_reduction": 157.36941876421335,
+          "zero_cost_confirmed": true,
+          "components_requirement_met": true,
+          "performance_requirement_met": true,
+          "integration_time": 0.7976349669136709
+        },
+        "errors": [],
+        "timestamp": 1758003169.9179258
+      }
+    },
+    "system_ready": true
+  },
+  "progress": [
+    {
+      "timestamp": 1758003169.0540686,
+      "test_name": "comprehensive",
+      "stage": "start",
+      "data": {
+        "quick_mode": false
+      }
+    },
+    {
+      "timestamp": 1758003169.190533,
+      "test_name": "comprehensive",
+      "stage": "system_info",
+      "data": {
+        "version": "1.0.0-mock",
+        "mode": "mock_interface",
+        "capabilities": [
+          "dual_functionality_molecules",
+          "bmd_network_coordination",
+          "information_catalysis",
+          "hardware_integration",
+          "s_entropy_framework"
+        ]
+      }
+    },
+    {
+      "timestamp": 1758003169.9180012,
+      "test_name": "comprehensive",
+      "stage": "summary",
+      "data": {
+        "total_tests": 4,
+        "passed_tests": 3,
+        "pass_rate": 0.75,
+        "overall_score": 0.9903536773721929,
+        "critical_claims_validated": true,
+        "system_ready": true,
+        "execution_time": 0.8348550796508789
+      }
+    }
+  ],
+  "timestamp": 1758003169
+}

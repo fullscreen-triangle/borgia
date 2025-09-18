@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheminformatics Engine Visualizations</title>
+    <script src="node_modules/d3/dist/d3.min.js"></script>
+    <script src="node_modules/three/build/three.min.js"></script>
+    <script src="node_modules/plotly.js-dist/plotly.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .plot-section {
+            background: white;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .plot-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .export-controls {
+            margin: 10px 0;
+        }
+        
+        .export-btn {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            margin: 5px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+        
+        .export-btn:hover {
+            background: #0056b3;
+        }
+        
+        .static-btn {
+            background: #28a745;
+        }
+        
+        .static-btn:hover {
+            background: #1e7e34;
+        }
+        
+        .plot-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .plot-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Publication-ready styles */
+        .publication-plot {
+            font-family: 'Times New Roman', serif;
+        }
+        
+        .publication-plot text {
+            font-size: 12px;
+        }
+        
+        .publication-plot .axis-label {
+            font-size: 14px;
+            font-weight: bold;
+        }
+        
+        .publication-plot .title {
+            font-size: 16px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cheminformatics Engine Data Visualizations</h1>
+        
+        <div class="plot-section">
+            <div class="plot-title">LED Spectroscopy Analysis</div>
+            <div class="export-controls">
+                <button class="export-btn" onclick="exportSVG('spectrum-plot', 'led_spectroscopy')">Export Interactive SVG</button>
+                <button class="export-btn static-btn" onclick="generateStaticPlot('spectrum')">Generate Static Plot</button>
+            </div>
+            <div id="spectrum-plot"></div>
+        </div>
+
+        <div class="plot-section">
+            <div class="plot-title">Molecular Property Analysis</div>
+            <div class="plot-grid">
+                <div>
+                    <div class="export-controls">
+                        <button class="export-btn" onclick="exportSVG('property-matrix', 'molecular_properties')">Export Matrix SVG</button>
+                        <button class="export-btn static-btn" onclick="generateStaticPlot('properties')">Static Version</button>
+                    </div>
+                    <div id="property-matrix"></div>
+                </div>
+                <div>
+                    <div class="export-controls">
+                        <button class="export-btn" onclick="exportSVG('molecular-radar', 'molecular_radar')">Export Radar SVG</button>
+                        <button class="export-btn static-btn" onclick="generateStaticPlot('radar')">Static Version</button>
+                    </div>
+                    <div id="molecular-radar"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="plot-section">
+            <div class="plot-title">3D Molecular Property Space</div>
+            <div class="export-controls">
+                <button class="export-btn" onclick="export3DSVG('property-3d', 'molecular_3d_space')">Export 3D SVG</button>
+                <button class="export-btn static-btn" onclick="generateStatic3D('property-3d')">Static 3D Plot</button>
+            </div>
+            <div id="property-3d" style="height: 500px;"></div>
+        </div>
+
+        <div class="plot-section">
+            <div class="plot-title">Network Topology Analysis</div>
+            <div class="plot-grid">
+                <div>
+                    <div class="export-controls">
+                        <button class="export-btn" onclick="exportSVG('network-graph', 'network_topology')">Export Network SVG</button>
+                        <button class="export-btn static-btn" onclick="generateStaticPlot('network')">Static Version</button>
+                    </div>
+                    <div id="network-graph"></div>
+                </div>
+                <div>
+                    <div class="export-controls">
+                        <button class="export-btn" onclick="exportSVG('adjacency-heatmap', 'adjacency_matrix')">Export Heatmap SVG</button>
+                        <button class="export-btn static-btn" onclick="generateStaticPlot('heatmap')">Static Version</button>
+                    </div>
+                    <div id="adjacency-heatmap"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="plot-section">
+            <div class="plot-title">3D Quantum State Surface</div>
+            <div class="export-controls">
+                <button class="export-btn" onclick="export3DSVG('quantum-surface', 'quantum_surface')">Export 3D Surface SVG</button>
+                <button class="export-btn static-btn" onclick="generateStatic3D('quantum-surface')">Static 3D Surface</button>
+            </div>
+            <div id="quantum-surface" style="height: 500px;"></div>
+        </div>
+
+        <div class="plot-section">
+            <div class="plot-title">Time Series Analysis</div>
+            <div class="export-controls">
+                <button class="export-btn" onclick="exportSVG('time-explorer', 'time_series')">Export Time Series SVG</button>
+                <button class="export-btn static-btn" onclick="generateStaticPlot('timeseries')">Static Version</button>
+            </div>
+            <div id="time-explorer"></div>
+        </div>
+    </div>
+
+    <!-- Load all visualization scripts -->
+    <script src="js/utils.js"></script>
+    <script src="js/2d-plots.js"></script>
+    <script src="js/3d-plots.js"></script>
+    <script src="js/static-plots.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

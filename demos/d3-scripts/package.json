@@ -1,0 +1,26 @@
+{
+    "name": "cheminformatics-visualization",
+    "version": "1.0.0",
+    "description": "D3.js visualizations for cheminformatics engine data",
+    "main": "index.html",
+    "scripts": {
+      "start": "live-server --port=8080 --open=/index.html",
+      "dev": "live-server --port=8080 --open=/index.html --watch=.",
+      "build-static": "node generate-static-plots.js"
+    },
+    "dependencies": {
+      "d3": "^7.8.5",
+      "three": "^0.155.0",
+      "plotly.js-dist": "^2.26.0"
+    },
+    "devDependencies": {
+      "live-server": "^1.2.2",
+      "puppeteer": "^21.1.1",
+      "jsdom": "^22.1.0",
+      "canvas": "^2.11.2"
+    },
+    "keywords": ["cheminformatics", "d3js", "visualization", "scientific-plots"],
+    "author": "Your Name",
+    "license": "MIT"
+  }
+  
