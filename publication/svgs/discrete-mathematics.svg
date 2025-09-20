@@ -1,0 +1,86 @@
+<svg width="1000" height="600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .title-text { font-family: Arial, sans-serif; font-weight: bold; font-size: 14px; text-anchor: middle; }
+      .section-title { font-family: Arial, sans-serif; font-weight: bold; font-size: 12px; text-anchor: middle; }
+      .body-text { font-family: Arial, sans-serif; font-size: 11px; text-anchor: middle; }
+      .small-text { font-family: Arial, sans-serif; font-size: 10px; text-anchor: middle; }
+      .equation-text { font-family: "Times New Roman", serif; font-size: 11px; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#000"/>
+    </marker>
+    <pattern id="ignored" patternUnits="userSpaceOnUse" width="10" height="10">
+      <path d="M0,0 L10,10 M10,0 L0,10" stroke="#808080" stroke-width="1" opacity="0.3"/>
+    </pattern>
+  </defs>
+  
+  <!-- Continuous oscillatory field background -->
+  <rect x="50" y="50" width="900" height="300" fill="#E6F3FF" opacity="0.3" stroke="#000" stroke-width="1"/>
+  
+  <!-- Continuous oscillatory patterns -->
+  <g opacity="0.4">
+    <path d="M 50,200 Q 100,180 150,200 Q 200,220 250,200 Q 300,180 350,200 Q 400,220 450,200 Q 500,180 550,200 Q 600,220 650,200 Q 700,180 750,200 Q 800,220 850,200 Q 900,180 950,200" 
+          stroke="#0000FF" stroke-width="3" fill="none"/>
+    <path d="M 50,150 Q 100,170 150,150 Q 200,130 250,150 Q 300,170 350,150 Q 400,130 450,150 Q 500,170 550,150 Q 600,130 650,150 Q 700,170 750,150 Q 800,130 850,150 Q 900,170 950,150" 
+          stroke="#FF0000" stroke-width="3" fill="none"/>
+    <path d="M 50,250 Q 100,230 150,250 Q 200,270 250,250 Q 300,230 350,250 Q 400,270 450,250 Q 500,230 550,250 Q 600,270 650,250 Q 700,230 750,250 Q 800,270 850,250 Q 900,230 950,250" 
+          stroke="#00AA00" stroke-width="3" fill="none"/>
+  </g>
+  
+  <text x="500" y="80" class="section-title">Continuous Oscillatory Reality</text>
+  <text x="500" y="100" class="body-text">Infinite possibilities between any two points</text>
+  
+  <!-- Ignored oscillatory space (hatched areas) -->
+  <rect x="100" y="120" width="50" height="200" fill="url(#ignored)"/>
+  <rect x="300" y="120" width="50" height="200" fill="url(#ignored)"/>
+  <rect x="500" y="120" width="50" height="200" fill="url(#ignored)"/>
+  <rect x="700" y="120" width="50" height="200" fill="url(#ignored)"/>
+  <rect x="850" y="120" width="50" height="200" fill="url(#ignored)"/>
+  
+  <!-- Decoherence process creating first "1" -->
+  <rect x="175" y="120" width="100" height="200" stroke="#000" stroke-width="3" stroke-dasharray="10,5" fill="none"/>
+  <circle cx="225" cy="220" r="40" fill="#FFFFCC" stroke="#000" stroke-width="2"/>
+  <text x="225" y="230" class="title-text">1</text>
+  <text x="225" y="340" class="body-text">Decoherence</text>
+  <text x="225" y="355" class="body-text">Creates "One"</text>
+  
+  <!-- Addition operation -->
+  <line x1="275" y1="220" x2="325" y2="220" stroke="#000" stroke-width="3" marker-end="url(#arrowhead)"/>
+  <text x="300" y="200" class="title-text">+</text>
+  
+  <!-- Decoherence process creating second "1" -->
+  <rect x="375" y="120" width="100" height="200" stroke="#000" stroke-width="3" stroke-dasharray="10,5" fill="none"/>
+  <circle cx="425" cy="220" r="40" fill="#FFFFCC" stroke="#000" stroke-width="2"/>
+  <text x="425" y="230" class="title-text">1</text>
+  <text x="425" y="340" class="body-text">Decoherence</text>
+  <text x="425" y="355" class="body-text">Creates "One"</text>
+  
+  <!-- Equals operation -->
+  <line x1="475" y1="220" x2="525" y2="220" stroke="#000" stroke-width="3" marker-end="url(#arrowhead)"/>
+  <text x="500" y="200" class="title-text">=</text>
+  
+  <!-- Result -->
+  <rect x="575" y="120" width="100" height="200" stroke="#000" stroke-width="3" stroke-dasharray="10,5" fill="none"/>
+  <circle cx="625" cy="220" r="40" fill="#FFCC99" stroke="#000" stroke-width="2"/>
+  <text x="625" y="230" class="title-text">2</text>
+  <text x="625" y="340" class="body-text">New Discrete</text>
+  <text x="625" y="355" class="body-text">Confluence</text>
+  
+  <!-- Ignored information labels -->
+  <text x="125" y="40" class="small-text" fill="#808080">95% Ignored</text>
+  <text x="325" y="40" class="small-text" fill="#808080">Oscillatory</text>
+  <text x="525" y="40" class="small-text" fill="#808080">Information</text>
+  <text x="725" y="40" class="small-text" fill="#808080">("Dark Math")</text>
+  <text x="875" y="40" class="small-text" fill="#808080">95% Ignored</text>
+  
+  <!-- Mathematical formulation -->
+  <rect x="100" y="400" width="800" height="150" fill="#E6D3F7" stroke="#000" stroke-width="2" rx="10"/>
+  <text x="500" y="425" class="section-title">Discrete Mathematics as Approximation:</text>
+  <text x="120" y="450" class="equation-text">One = lim[ε → 0] ∫_confluence δ(coherence - ε) dΦ</text>
+  <text x="500" y="480" class="section-title">Operation 1 + 1 = 2:</text>
+  <text x="120" y="500" class="small-text">1. Decoherence creates discrete confluences labeled "1"</text>
+  <text x="120" y="515" class="small-text">2. Approximation ignores infinite oscillatory possibilities between units</text>
+  <text x="120" y="530" class="small-text">3. Combination creates new discrete confluence labeled "2"</text>
+  <text x="120" y="545" class="small-text">4. Result discards 95% of oscillatory information (mathematical "dark matter")</text>
+</svg>

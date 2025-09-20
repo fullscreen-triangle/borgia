@@ -1,0 +1,107 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="membrane" patternUnits="userSpaceOnUse" width="10" height="10">
+      <path d="M0,0 L10,10 M10,0 L0,10" stroke="#cccc00" stroke-width="1"/>
+    </pattern>
+  </defs>
+  
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" font-size="18" font-weight="bold">
+    Biological Membrane Quantum Tunneling Architecture
+  </text>
+  
+  <!-- Extracellular space -->
+  <rect x="50" y="60" width="700" height="80" fill="#e6f2ff" stroke="#0066cc"/>
+  <text x="400" y="105" text-anchor="middle" font-weight="bold">Extracellular Space</text>
+  
+  <!-- Ion concentrations -->
+  <circle cx="200" cy="170" r="25" fill="#66b3ff"/>
+  <text x="200" y="175" text-anchor="middle" font-size="12">Na⁺</text>
+  <circle cx="300" cy="170" r="25" fill="#66b3ff"/>
+  <text x="300" y="175" text-anchor="middle" font-size="12">K⁺</text>
+  <circle cx="400" cy="170" r="25" fill="#66b3ff"/>
+  <text x="400" y="175" text-anchor="middle" font-size="12">Ca²⁺</text>
+  <circle cx="500" cy="170" r="25" fill="#66b3ff"/>
+  <text x="500" y="175" text-anchor="middle" font-size="12">H⁺</text>
+  
+  <!-- Arrows to membrane -->
+  <path d="M200,195 L200,220" stroke="#0066cc" stroke-width="3" marker-end="url(#arrowhead)"/>
+  <path d="M300,195 L300,220" stroke="#0066cc" stroke-width="3" marker-end="url(#arrowhead)"/>
+  <path d="M400,195 L400,220" stroke="#0066cc" stroke-width="3" marker-end="url(#arrowhead)"/>
+  <path d="M500,195 L500,220" stroke="#0066cc" stroke-width="3" marker-end="url(#arrowhead)"/>
+  
+  <!-- Membrane bilayer -->
+  <rect x="50" y="220" width="700" height="120" fill="url(#membrane)" stroke="#666600" stroke-width="2"/>
+  <text x="25" y="285" text-anchor="middle" font-weight="bold" transform="rotate(-90, 25, 285)">
+    Lipid Bilayer
+  </text>
+  
+  <!-- Ion channels -->
+  <rect x="185" y="220" width="30" height="120" fill="#ff9999" stroke="#cc0000" stroke-width="2"/>
+  <text x="200" y="365" text-anchor="middle" font-size="10">Na⁺ Channel</text>
+  <rect x="285" y="220" width="30" height="120" fill="#ff9999" stroke="#cc0000" stroke-width="2"/>
+  <text x="300" y="365" text-anchor="middle" font-size="10">K⁺ Channel</text>
+  <rect x="385" y="220" width="30" height="120" fill="#ff9999" stroke="#cc0000" stroke-width="2"/>
+  <text x="400" y="365" text-anchor="middle" font-size="10">Ca²⁺ Channel</text>
+  <rect x="485" y="220" width="30" height="120" fill="#ff9999" stroke="#cc0000" stroke-width="2"/>
+  <text x="500" y="365" text-anchor="middle" font-size="10">H⁺ Channel</text>
+  
+  <!-- Quantum tunneling paths -->
+  <path d="M200,220 Q195,240 200,260 Q205,280 200,300 Q195,320 200,340" 
+        stroke="#cc0000" stroke-width="3" fill="none"/>
+  <path d="M300,220 Q295,240 300,260 Q305,280 300,300 Q295,320 300,340" 
+        stroke="#cc0000" stroke-width="3" fill="none"/>
+  <path d="M400,220 Q395,240 400,260 Q405,280 400,300 Q395,320 400,340" 
+        stroke="#cc0000" stroke-width="3" fill="none"/>
+  <path d="M500,220 Q495,240 500,260 Q505,280 500,300 Q495,320 500,340" 
+        stroke="#cc0000" stroke-width="3" fill="none"/>
+  
+  <!-- Ions in channels -->
+  <circle cx="200" cy="280" r="12" fill="#ff6666"/>
+  <text x="200" y="285" text-anchor="middle" font-size="10">Na⁺</text>
+  <circle cx="300" cy="280" r="12" fill="#ff6666"/>
+  <text x="300" y="285" text-anchor="middle" font-size="10">K⁺</text>
+  <circle cx="400" cy="280" r="12" fill="#ff6666"/>
+  <text x="400" y="285" text-anchor="middle" font-size="10">Ca²⁺</text>
+  <circle cx="500" cy="280" r="12" fill="#ff6666"/>
+  <text x="500" y="285" text-anchor="middle" font-size="10">H⁺</text>
+  
+  <!-- Quantum tunneling events box -->
+  <rect x="100" y="380" width="600" height="60" fill="#e6ffe6" stroke="#009900" stroke-width="2"/>
+  <text x="400" y="415" text-anchor="middle" font-weight="bold">Quantum Tunneling Events</text>
+  
+  <!-- Wave functions -->
+  <path d="M175,410 Q185,400 195,410 Q205,420 215,410 Q225,400 235,410" 
+        stroke="#9900cc" stroke-width="2" fill="none"/>
+  <path d="M275,410 Q285,400 295,410 Q305,420 315,410 Q325,400 335,410" 
+        stroke="#9900cc" stroke-width="2" fill="none"/>
+  <path d="M375,410 Q385,400 395,410 Q405,420 415,410 Q425,400 435,410" 
+        stroke="#9900cc" stroke-width="2" fill="none"/>
+  <path d="M475,410 Q485,400 495,410 Q505,420 515,410 Q525,400 535,410" 
+        stroke="#9900cc" stroke-width="2" fill="none"/>
+  
+  <!-- Intracellular space -->
+  <rect x="50" y="460" width="700" height="80" fill="#e6ffe6" stroke="#009900"/>
+  <text x="400" y="505" text-anchor="middle" font-weight="bold">Intracellular Space</text>
+  
+  <!-- Energy barrier arrow -->
+  <path d="M770,460 L770,220" stroke="#000000" stroke-width="3" marker-start="url(#arrowhead)" marker-end="url(#arrowhead)"/>
+  <text x="785" y="345" text-anchor="middle" font-weight="bold" transform="rotate(90, 785, 345)">
+    Energy Barrier
+  </text>
+  
+  <!-- Quantum equations -->
+  <text x="600" y="200" font-size="12">
+    <tspan x="600" dy="0">Ψ(x) = Ae^(-κx) + Be^(κx)</tspan>
+    <tspan x="600" dy="15">κ = √(2m(V-E)/ℏ²)</tspan>
+    <tspan x="600" dy="15">P_tunnel = |T|²</tspan>
+  </text>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" 
+            refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#000000"/>
+    </marker>
+  </defs>
+</svg>

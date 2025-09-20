@@ -1,0 +1,92 @@
+<svg width="1100" height="700" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 700">
+  <defs>
+    <style>
+      .title-text { font-family: Arial, sans-serif; font-weight: bold; font-size: 14px; text-anchor: middle; }
+      .label-text { font-family: Arial, sans-serif; font-weight: bold; font-size: 12px; }
+      .body-text { font-family: Arial, sans-serif; font-size: 11px; }
+      .small-text { font-family: Arial, sans-serif; font-size: 10px; }
+      .equation-text { font-family: "Times New Roman", serif; font-size: 11px; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#000"/>
+    </marker>
+  </defs>
+
+  <!-- Traditional Autonomous Systems Box -->
+  <g transform="translate(50, 100)">
+    <rect x="0" y="0" width="240" height="160" fill="#ffcccc" stroke="black" stroke-width="1"/>
+    <text x="120" y="20" class="label-text" text-anchor="middle">Traditional Autonomous Systems</text>
+    
+    <text x="20" y="45" class="label-text">Required Sensors:</text>
+    <text x="30" y="65" class="body-text">• LiDAR: $20,000-$75,000</text>
+    <text x="30" y="80" class="body-text">• Cameras: $5,000-$15,000</text>
+    <text x="30" y="95" class="body-text">• Radar: $3,000-$10,000</text>
+    <text x="30" y="110" class="body-text">• Ultrasonic: $1,000-$3,000</text>
+    
+    <text x="20" y="135" class="label-text">Total Cost: $50,000+</text>
+    <text x="20" y="150" class="label-text">Power: 500W</text>
+    <text x="120" y="150" class="label-text">Response: 50-100ms</text>
+  </g>
+
+  <!-- Verum Oscillation Harvesting Box -->
+  <g transform="translate(440, 100)">
+    <rect x="0" y="0" width="240" height="160" fill="#ccffcc" stroke="black" stroke-width="1"/>
+    <text x="120" y="20" class="label-text" text-anchor="middle">Verum Oscillation Harvesting</text>
+    
+    <text x="20" y="45" class="label-text">Harvested Oscillations:</text>
+    <text x="30" y="65" class="body-text">• CPU Clock: 1-4 GHz</text>
+    <text x="30" y="80" class="body-text">• Power Supply: 50-60 Hz</text>
+    <text x="30" y="95" class="body-text">• EM Fields: 100 kHz-6 GHz</text>
+    <text x="30" y="110" class="body-text">• Mechanical: 0.1-1000 Hz</text>
+    
+    <text x="20" y="135" class="label-text">Total Cost: $5,000</text>
+    <text x="20" y="150" class="label-text">Power: 180W</text>
+    <text x="120" y="150" class="label-text">Response: &lt;10ms</text>
+  </g>
+
+  <!-- Transformation Arrow -->
+  <g transform="translate(290, 180)">
+    <line x1="0" y1="0" x2="150" y2="0" stroke="black" stroke-width="3" marker-end="url(#arrowhead)"/>
+    <text x="75" y="-10" class="label-text" text-anchor="middle">Verum Transform</text>
+    <text x="75" y="20" class="label-text" text-anchor="middle">90% Cost Reduction</text>
+  </g>
+
+  <!-- Oscillation Sources Detail Box -->
+  <g transform="translate(170, 350)">
+    <rect x="0" y="0" width="480" height="80" fill="#ccddff" stroke="black" stroke-width="1"/>
+    <text x="240" y="20" class="label-text" text-anchor="middle">Oscillation Source Details</text>
+    <text x="20" y="40" class="small-text">CPU Clock Variations: ±0.1% sensitivity to temperature/load | Power Harmonics: ±0.01V electrical changes</text>
+    <text x="20" y="60" class="small-text">EM Fields: ±1 dBm external interference | Mechanical: ±0.001 m/s² road conditions</text>
+  </g>
+
+  <!-- Environmental Detection Box -->
+  <g transform="translate(170, 480)">
+    <rect x="0" y="0" width="480" height="60" fill="#ffffcc" stroke="black" stroke-width="1"/>
+    <text x="240" y="20" class="label-text" text-anchor="middle">Environmental Detection Capability</text>
+    <text x="20" y="40" class="small-text">Sensitivity: S_env > 10³ | Range: 500m (5× traditional) | Multi-modal interference analysis</text>
+  </g>
+
+  <!-- Connection Arrows -->
+  <line x1="170" y1="260" x2="350" y2="350" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="560" y1="260" x2="450" y2="350" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="410" y1="430" x2="410" y2="480" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Traditional Comparison Text -->
+  <g transform="translate(10, 100)">
+    <text x="0" y="20" class="label-text">Traditional:</text>
+    <text x="0" y="40" class="body-text">• Expensive sensors</text>
+    <text x="0" y="55" class="body-text">• High power</text>
+    <text x="0" y="70" class="body-text">• Slow response</text>
+    <text x="0" y="85" class="body-text">• Limited range</text>
+  </g>
+
+  <!-- Verum Comparison Text -->
+  <g transform="translate(700, 100)">
+    <text x="0" y="20" class="label-text">Verum:</text>
+    <text x="0" y="40" class="body-text">• Zero new hardware</text>
+    <text x="0" y="55" class="body-text">• Low power</text>
+    <text x="0" y="70" class="body-text">• Ultra-fast</text>
+    <text x="0" y="85" class="body-text">• Extended range</text>
+  </g>
+
+</svg>

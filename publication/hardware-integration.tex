@@ -2,7 +2,7 @@
 
 \subsection{Introduction}
 
-The Borgia framework implements comprehensive hardware integration protocols enabling direct coordination between molecular systems and computational hardware. The integration architecture utilizes standard computer components including LED displays, CPU timing sources, and screen pixel interfaces to achieve zero-cost molecular spectroscopy, precise timing coordination, and noise-enhanced processing capabilities.
+The Borgia framework implements comprehensive hardware integration protocols enabling direct coordination between molecular systems and computational hardware \cite{sterling2015principles}. The integration architecture utilizes standard computer components including LED displays, CPU timing sources, and screen pixel interfaces to achieve zero-cost molecular spectroscopy, precise timing coordination, and noise-enhanced processing capabilities \cite{sachikonye2024oscillatory}.
 
 \subsection{LED Spectroscopy Integration}
 
@@ -20,7 +20,7 @@ These wavelengths provide comprehensive molecular excitation coverage with zero 
 
 \subsubsection{Molecular Fluorescence Analysis}
 
-Fluorescence detection utilizes standard photodetectors integrated in computer hardware. The excitation-emission relationship follows:
+Fluorescence detection utilizes standard photodetectors integrated in computer hardware \cite{lakowicz2006principles}. The excitation-emission relationship follows:
 
 \begin{equation}
 I_{emission}(\lambda) = I_{excitation}(\lambda_{ex}) \times \Phi_{quantum} \times \sigma_{absorption}(\lambda_{ex}) \times \eta_{detection}(\lambda)
@@ -78,7 +78,7 @@ Control Interface & \$0.00 & GPIO/USB ports & \$0.00 \\
 
 \subsubsection{Molecular-Hardware Timing Synchronization}
 
-Molecular timescales are synchronized with CPU cycles through the mapping function:
+Molecular timescales are synchronized with CPU cycles through the mapping function \cite{hennessy2019computer}:
 
 \begin{equation}
 f_{molecular} = \frac{f_{CPU}}{N_{mapping}} \times \eta_{coordination}
@@ -130,7 +130,7 @@ The timing coordination protocol ensures stable synchronization:
 
 \subsubsection{Natural Environment Simulation}
 
-Noise-enhanced processing simulates natural environmental conditions where molecular solutions emerge above background noise. The noise generation model follows:
+Noise-enhanced processing simulates natural environmental conditions where molecular solutions emerge above background noise \cite{mcdonnell2011benefits}. The noise generation model follows:
 
 \begin{equation}
 N(t) = \sum_{k=1}^{K} A_k \cos(2\pi f_k t + \phi_k) + \xi(t)
@@ -182,7 +182,7 @@ The noise enhancement protocol optimizes solution emergence:
 
 \subsubsection{RGB-to-Chemical Parameter Mapping}
 
-Screen pixel RGB values are mapped to chemical structure modifications through:
+Screen pixel RGB values are mapped to chemical structure modifications through \cite{jensen2017introduction}:
 
 \begin{align}
 \Delta E_{bond} &= \alpha_R \times (R - 128) + \beta_R \\
@@ -284,7 +284,7 @@ Power Consumption & $125 \pm 15$ W & $78 \pm 9$ W & $1.6 \times$ \\
 
 \subsubsection{Hardware Failure Detection}
 
-Hardware component failure detection protocols:
+Hardware component failure detection protocols \cite{koren2007fault}:
 
 \begin{align}
 \text{LED Failure} &: I_{LED} < I_{threshold} \lor \lambda_{actual} \neq \lambda_{specified} \\
@@ -294,7 +294,7 @@ Hardware component failure detection protocols:
 
 \subsubsection{Redundancy Implementation}
 
-Hardware redundancy ensures continuous operation:
+Hardware redundancy ensures continuous operation \cite{avizienis2004basic}:
 
 \begin{itemize}
 \item \textbf{LED Redundancy}: Multiple LED sources per wavelength with automatic switching
@@ -370,7 +370,7 @@ System Integration & End-to-end validation & Daily \\
 
 \subsubsection{GPU Acceleration Support}
 
-Graphics processing unit acceleration for molecular computations:
+Graphics processing unit acceleration for molecular computations \cite{stone2010opencl}:
 
 \begin{equation}
 A_{GPU} = \frac{N_{cores} \times f_{GPU}}{N_{CPU} \times f_{CPU}} \times \eta_{parallel}
@@ -391,7 +391,7 @@ where $R_i$ represents the modification rate of display $i$ and $W_i$ represents
 
 \subsubsection{Network Integration}
 
-Network-based hardware resource coordination:
+Network-based hardware resource coordination \cite{tanenbaum2002distributed}:
 
 \begin{itemize}
 \item \textbf{Distributed LED Arrays}: Network coordination of LED spectroscopy across multiple machines

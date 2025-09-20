@@ -1,0 +1,108 @@
+<svg width="1000" height="700" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .title-text { font-family: Arial, sans-serif; font-weight: bold; font-size: 14px; text-anchor: middle; }
+      .section-title { font-family: Arial, sans-serif; font-weight: bold; font-size: 12px; text-anchor: middle; }
+      .body-text { font-family: Arial, sans-serif; font-size: 11px; text-anchor: middle; }
+      .small-text { font-family: Arial, sans-serif; font-size: 10px; text-anchor: middle; }
+      .equation-text { font-family: "Times New Roman", serif; font-size: 10px; }
+    </style>
+    <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#000"/>
+    </marker>
+  </defs>
+  
+  <!-- Vehicle schematic -->
+  <rect x="200" y="50" width="400" height="80" fill="#D3D3D3" stroke="#000" stroke-width="2"/>
+  <path d="M 220,130 L 280,170 L 520,170 L 580,130" stroke="#000" stroke-width="2" fill="none"/>
+  <text x="400" y="95" class="title-text">Automotive Hardware Platform</text>
+  
+  <!-- Four oscillatory domains -->
+  
+  <!-- Panel A: CPU Oscillations -->
+  <g transform="translate(50,200)">
+    <line x1="0" y1="80" x2="400" y2="80" stroke="#000" stroke-width="1" marker-end="url(#arrowhead)"/>
+    <text x="420" y="85" class="small-text">Time</text>
+    <line x1="0" y1="80" x2="0" y2="20" stroke="#000" stroke-width="1" marker-end="url(#arrowhead)"/>
+    <text x="-20" y="15" class="small-text">CPU Freq</text>
+    
+    <!-- CPU oscillation pattern -->
+    <path d="M 0,50 Q 50,40 100,55 Q 150,45 200,50 Q 250,40 300,55 Q 350,45 400,50" 
+          stroke="#0000FF" stroke-width="3" fill="none"/>
+    <text x="450" y="55" class="equation-text" fill="#ffffff">Ω_CPU(t) = f_base + ε_env(t)</text>
+    <text x="0" y="100" class="section-title">A: CPU Frequency Oscillations</text>
+    <text x="300" y="30" class="small-text">Environmental Detection: S_env &gt; 10³</text>
+  </g>
+  
+  <!-- Panel B: Power System -->
+  <g transform="translate(50,300)">
+    <line x1="0" y1="80" x2="400" y2="80" stroke="#000" stroke-width="1" marker-end="url(#arrowhead)"/>
+    <text x="420" y="85" class="small-text">Time</text>
+    <line x1="0" y1="80" x2="0" y2="20" stroke="#000" stroke-width="1" marker-end="url(#arrowhead)"/>
+    <text x="-20" y="15" class="small-text">Power</text>
+    
+    <!-- Power oscillation pattern -->
+    <path d="M 0,50 Q 50,60 100,45 Q 150,55 200,50 Q 250,60 300,45 Q 350,55 400,50" 
+          stroke="#00AA00" stroke-width="3" fill="none"/>
+    <text x="450" y="55" class="equation-text" fill="#ffffff">Ω_power(t) = V_nominal + δ_load(t)</text>
+    <text x="0" y="100" class="section-title">B: Power System Oscillations</text>
+    <text x="300" y="30" class="small-text">Aerodynamic &amp; Terrain Sensing</text>
+  </g>
+  
+  <!-- Panel C: Mechanical Vibrations -->
+  <g transform="translate(50,400)">
+    <line x1="0" y1="80" x2="400" y2="80" stroke="#000" stroke-width="1" marker-end="url(#arrowhead)"/>
+    <text x="420" y="85" class="small-text">Time</text>
+    <line x1="0" y1="80" x2="0" y2="20" stroke="#000" stroke-width="1" marker-end="url(#arrowhead)"/>
+    <text x="-20" y="15" class="small-text">Vibration</text>
+    
+    <!-- Mechanical oscillation pattern -->
+    <path d="M 0,50 Q 25,30 50,60 Q 75,35 100,55 Q 125,25 150,65 Q 175,30 200,50 Q 225,35 250,60 Q 275,25 300,55 Q 325,35 350,50 Q 375,40 400,55" 
+          stroke="#FF8800" stroke-width="3" fill="none"/>
+    <text x="450" y="55" class="equation-text" fill="#FF8800">Ω_mech(t) = Σ C_k e^(iω_k t) + ζ_road(t)</text>
+    <text x="0" y="100" class="section-title">C: Mechanical Vibrations</text>
+    <text x="300" y="30" class="small-text">Road Surface &amp; Traffic Analysis</text>
+  </g>
+  
+  <!-- Panel D: Electromagnetic Fields -->
+  <g transform="translate(50,500)">
+    <line x1="0" y1="80" x2="400" y2="80" stroke="#000" stroke-width="1" marker-end="url(#arrowhead)"/>
+    <text x="420" y="85" class="small-text">Time</text>
+    <line x1="0" y1="80" x2="0" y2="20" stroke="#000" stroke-width="1" marker-end="url(#arrowhead)"/>
+    <text x="-20" y="15" class="small-text">EM Field</text>
+    
+    <!-- EM oscillation pattern -->
+    <path d="M 0,50 Q 20,40 40,55 Q 60,35 80,60 Q 100,40 120,50 Q 140,30 160,65 Q 180,45 200,50 Q 220,35 240,60 Q 260,40 280,50 Q 300,30 320,65 Q 340,45 360,50 Q 380,40 400,55" 
+          stroke="#800080" stroke-width="3" fill="none"/>
+    <text x="450" y="55" class="equation-text" fill="#800080">Ω_EM(t) = Σ D_l sin(γ_l t) + ξ_env(t)</text>
+    <text x="0" y="100" class="section-title">D: Electromagnetic Oscillations</text>
+    <text x="300" y="30" class="small-text">Infrastructure &amp; Vehicle Detection</text>
+  </g>
+  
+  <!-- Tangible entropy engineering box -->
+  <rect x="600" y="250" width="300" height="200" fill="#ffffff" stroke="#000" stroke-width="2" rx="10"/>
+  <text x="750" y="275" class="section-title">Tangible Entropy Engineering:</text>
+  <text x="620" y="300" class="equation-text">S_tangible = k ln(Ω_endpoints)</text>
+  <text x="620" y="325" class="equation-text">dS_tangible/dt = (k/Ω_endpoints) × dΩ_endpoints/dt</text>
+  <text x="750" y="355" class="section-title">Direct Vehicle Control:</text>
+  <text x="750" y="375" class="small-text">• Throttle position</text>
+  <text x="750" y="390" class="small-text">• Steering angle</text>
+  <text x="750" y="405" class="small-text">• Brake pressure</text>
+  <text x="750" y="430" class="small-text">Through oscillation endpoint steering</text>
+  
+  <!-- Environmental information extraction -->
+  <ellipse cx="750" cy="550" rx="80" ry="60" fill="#E0FFFF" stroke="#000" stroke-width="2"/>
+  <text x="750" y="535" class="section-title">Environmental</text>
+  <text x="750" y="550" class="section-title">Information</text>
+  <text x="750" y="565" class="section-title">Extraction</text>
+  <text x="750" y="590" class="small-text">No additional</text>
+  <text x="750" y="605" class="small-text">sensors required</text>
+  
+  <!-- Connection arrows -->
+  <line x1="450" y1="250" x2="600" y2="320" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="450" y1="350" x2="600" y2="350" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="450" y1="450" x2="600" y2="380" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="450" y1="550" x2="600" y2="410" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <line x1="750" y1="450" x2="750" y2="490" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+</svg>

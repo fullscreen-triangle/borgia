@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="420" viewBox="0 0 820 420"> <rect x="0" y="0" width="820" height="420" fill="white"/> <!-- Left annotation box (L) --> <rect x="20" y="120" width="70" height="110" rx="6" ry="6" fill="#ffe5e5" stroke="#cc6666"/> <text x="55" y="175" font-family="Arial" font-size="20" text-anchor="middle" fill="#993333">L</text> <!-- Right annotation box (R) --> <rect x="730" y="120" width="70" height="110" rx="6" ry="6" fill="#e5ffe5" stroke="#66aa66"/> <text x="765" y="175" font-family="Arial" font-size="20" text-anchor="middle" fill="#2d7a2d">R</text> <!-- Top continuous oscillations --> <g id="continuous" transform="translate(0,40)"> <!-- Blue wave --> <path d=" M40 60 C 80 20,120 100,160 60 C 200 20,240 100,280 60 C 320 20,360 100,400 60 C 440 20,480 100,520 60 C 560 20,600 100,640 60 C 680 20,720 100,760 60" fill="none" stroke="#1f66d8" stroke-width="4" opacity="0.7"/> <!-- Red wave (shifted) --> <path d=" M40 40 C 80 0,120 80,160 40 C 200 0,240 80,280 40 C 320 0,360 80,400 40 C 440 0,480 80,520 40 C 560 0,600 80,640 40 C 680 0,720 80,760 40" fill="none" stroke="#d82222" stroke-width="3.5" opacity="0.65"/> <!-- Green wave (shifted down) --> <path d=" M40 80 C 80 40,120 120,160 80 C 200 40,240 120,280 80 C 320 40,360 120,400 80 C 440 40,480 120,520 80 C 560 40,600 120,640 80 C 680 40,720 120,760 80" fill="none" stroke="#1fa347" stroke-width="3.5" opacity="0.7"/> <text x="400" y="15" font-family="Arial" font-size="22" text-anchor="middle" fill="#222">C</text> </g> <!-- Downward arrows (approximation) --> <g stroke="#222" stroke-width="3" marker-end="url(#arrowhead)"> <line x1="200" y1="150" x2="200" y2="200"/> <line x1="410" y1="150" x2="410" y2="200"/> <line x1="620" y1="150" x2="620" y2="200"/> </g> <!-- Definition of arrowhead --> <defs> <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto"> <path d="M0,0 L6,3 L0,6 Z" fill="#222"/> </marker> <marker id="arrowRight" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"> <path d="M0,0 L8,3 L0,6 Z" fill="#222"/> </marker> </defs> <!-- Time axis baseline --> <line x1="60" y1="270" x2="760" y2="270" stroke="#222" stroke-width="2" marker-end="url(#arrowRight)"/> <!-- Time markers t0 ... t6 --> <g font-family="Arial" font-size="13" text-anchor="middle" fill="#222"> <!-- positions --> <g stroke="#222" stroke-width="2"> <line x1="100" y1="270" x2="100" y2="255"/> <line x1="200" y1="270" x2="200" y2="255"/> <line x1="300" y1="270" x2="300" y2="255"/> <line x1="400" y1="270" x2="400" y2="255"/> <line x1="500" y1="270" x2="500" y2="255"/> <line x1="600" y1="270" x2="600" y2="255"/> <line x1="700" y1="270" x2="700" y2="255"/> </g> <text x="100" y="288">t0</text> <text x="200" y="288">t1</text> <text x="300" y="288">t2</text> <text x="400" y="288">t3</text> <text x="500" y="288">t4</text> <text x="600" y="288">t5</text> <text x="700" y="288">t6</text> </g> <!-- Discrete objects row --> <g font-family="Arial" font-size="16" text-anchor="middle" fill="#222"> <!-- O1 circle --> <circle cx="150" cy="230" r="32" fill="#c7ddff" stroke="#1f66d8" stroke-width="2"/> <text x="150" y="236">O1</text>
+<!-- O2 rectangle -->
+<rect x="230" y="198" width="64" height="64" fill="#ffcccc" stroke="#d82222" stroke-width="2"/>
+<text x="262" y="236">O2</text>
+
+<!-- O3 ellipse -->
+<ellipse cx="350" cy="230" rx="42" ry="30" fill="#c9f5d6" stroke="#1fa347" stroke-width="2"/>
+<text x="350" y="236">O3</text>
+
+<!-- O4 diamond -->
+<polygon points="430,230 460,200 490,230 460,260"
+  fill="#fff3b3" stroke="#d2a300" stroke-width="2"/>
+<text x="460" y="236">O4</text>
+
+<!-- O5 star -->
+<polygon points="560,200 568,222 592,222 572,236 580,258 560,244 540,258 548,236 528,222 552,222"
+  fill="#e5ccff" stroke="#7d36b2" stroke-width="2"/>
+<text x="560" y="236">O5</text>
+
+<!-- O6 circle -->
+<circle cx="660" cy="230" r="32" fill="#ffd9b3" stroke="#ff8800" stroke-width="2"/>
+<text x="660" y="236">O6</text>
+</g> <!-- Arrows between objects --> <g stroke="#222" stroke-width="2.8" marker-end="url(#arrowhead)"> <line x1="182" y1="230" x2="228" y2="230"/> <line x1="294" y1="230" x2="308" y2="230"/> <line x1="392" y1="230" x2="428" y2="230"/> <line x1="492" y1="230" x2="528" y2="230"/> <line x1="592" y1="230" x2="628" y2="230"/> </g> <!-- Equation / emergence box --> <rect x="220" y="310" width="380" height="70" rx="8" ry="8" fill="#d8f8ff" stroke="#2693aa" stroke-width="2"/> <text x="410" y="352" font-family="Arial" font-size="26" text-anchor="middle" fill="#155a66">E</text> </svg>
