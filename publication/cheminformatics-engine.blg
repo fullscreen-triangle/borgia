@@ -1,0 +1,78 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: cheminformatics-engine.aux
+Reallocating 'name_of_file' (item size: 1) to 6 items.
+The style file: unsrt.bst
+I found no \bibdata command---while reading file cheminformatics-engine.aux
+Warning--I didn't find a database entry for "sterling2015principles"
+Warning--I didn't find a database entry for "landauer1961irreversibility"
+Warning--I didn't find a database entry for "bennett1982thermodynamics"
+Warning--I didn't find a database entry for "ball2011physics"
+Warning--I didn't find a database entry for "tegmark2000importance"
+Warning--I didn't find a database entry for "mizraji2007biological"
+Warning--I didn't find a database entry for "lloyd2000ultimate"
+Warning--I didn't find a database entry for "vedral2011living"
+Warning--I didn't find a database entry for "atkins2010physical"
+Warning--I didn't find a database entry for "jarzynski1997nonequilibrium"
+Warning--I didn't find a database entry for "nielsen2010quantum"
+Warning--I didn't find a database entry for "erdi2005mathematical"
+Warning--I didn't find a database entry for "jackson1998classical"
+Warning--I didn't find a database entry for "bishop2006pattern"
+Warning--I didn't find a database entry for "kumar1994introduction"
+Warning--I didn't find a database entry for "tanenbaum2002distributed"
+Warning--I didn't find a database entry for "ludlow2015optical"
+Warning--I didn't find a database entry for "lakowicz2006principles"
+Warning--I didn't find a database entry for "hennessy2019computer"
+Warning--I didn't find a database entry for "mcdonnell2011benefits"
+Warning--I didn't find a database entry for "jensen2017introduction"
+Warning--I didn't find a database entry for "breuer2002theory"
+Warning--I didn't find a database entry for "stone2013theory"
+Warning--I didn't find a database entry for "newman2010networks"
+Warning--I didn't find a database entry for "barabasi2016network"
+Warning--I didn't find a database entry for "watts1998collective"
+Warning--I didn't find a database entry for "barabasi1999emergence"
+Warning--I didn't find a database entry for "albert2000error"
+Warning--I didn't find a database entry for "sears2003university"
+Warning--I didn't find a database entry for ""
+You've used 0 entries,
+            1791 wiz_defined-function locations,
+            473 strings with 4115 characters,
+and the built_in function-call counts, 18 in all, are:
+= -- 0
+> -- 0
+< -- 0
++ -- 0
+- -- 0
+* -- 2
+:= -- 7
+add.period$ -- 0
+call.type$ -- 0
+change.case$ -- 0
+chr.to.int$ -- 0
+cite$ -- 0
+duplicate$ -- 0
+empty$ -- 1
+format.name$ -- 0
+if$ -- 1
+int.to.chr$ -- 0
+int.to.str$ -- 0
+missing$ -- 0
+newline$ -- 3
+num.names$ -- 0
+pop$ -- 0
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 1
+stack$ -- 0
+substring$ -- 0
+swap$ -- 0
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 0
+width$ -- 0
+write$ -- 2
+(There was 1 error message)

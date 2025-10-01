@@ -1,0 +1,17 @@
+#Walters2002
+#W. P. Walters and A. M. Murcko. Prediction of ’drug-likeness’. Adv. Drug Deliv.
+#Rev., 54:255–271, 2002
+#Filter for reactive groups defined in SMARTS pattern
+# SMARTS pattern: 11
+#not daylight conform 0
+S(=O)(=O)[F,Cl,Br,I]   walters.smarts_0
+[N;+0,+1;$(N(=O)~[O;H0;-0,-1])]   walters.smarts_1
+[HC]=O   walters.smarts_2
+[Cl,Br,I][CH2]   walters.smarts_3
+C1[O,N]C1   walters.smarts_4
+[#6]S(=O)(=O)O[#6]   walters.smarts_5
+[#6]OP(=O)O[#6]   walters.smarts_6
+[CH2][CH2][CH2][CH2][CH2][CH2][CH2][CH2]   walters.smarts_7
+OO   walters.smarts_8
+C(=O)C(=O)   walters.smarts_9
+C(=O)[Cl,Br,I]   walters.smarts_10
