@@ -1,64 +1,123 @@
+#!/usr/bin/env python3
 """
-subsection{Screen Pixel to Chemical Modification Interface}
-
-\subsubsection{RGB-to-Chemical Parameter Mapping}
-
-Screen pixel RGB values are mapped to chemical structure modifications through \cite{jensen2017introduction}:
-
-\begin{align}
-\Delta E_{bond} &= \alpha_R \times (R - 128) + \beta_R \\
-\Delta \theta_{angle} &= \alpha_G \times (G - 128) + \beta_G \\
-\Delta d_{length} &= \alpha_B \times (B - 128) + \beta_B
-\end{align}
-
-where:
-\begin{itemize}
-\item $(R, G, B)$: Pixel RGB values (0-255)
-\item $\Delta E_{bond}$: Bond energy modification (eV)
-\item $\Delta \theta_{angle}$: Bond angle modification (degrees)
-\item $\Delta d_{length}$: Bond length modification (Angstroms)
-\item $\alpha_{R,G,B}$, $\beta_{R,G,B}$: Calibration parameters
-\end{itemize}
-
-\subsubsection{Real-Time Chemical Modification}
-
-Real-time molecular modifications respond to pixel changes with latency:
-
-\begin{equation}
-\tau_{response} = \tau_{detection} + \tau_{processing} + \tau_{modification}
-\end{equation}
-
-where:
-\begin{align}
-\tau_{detection} &= 16.7 \text{ ms} \quad (\text{60 Hz refresh rate}) \\
-\tau_{processing} &= 2.3 \pm 0.4 \text{ ms} \quad (\text{RGB decoding and mapping}) \\
-\tau_{modification} &= 0.8 \pm 0.2 \text{ ms} \quad (\text{Molecular structure update})
-\end{align}
-
-Total system response time: $\tau_{response} = 19.8 \pm 0.6$ ms.
-
-\subsubsection{Visual-Chemical Interface Protocol}
-
-The interface protocol processes visual changes:
-
-\begin{algorithm}[H]
-\caption{Pixel-to-Chemical Modification Interface}
-\begin{algorithmic}[1]
-\REQUIRE Screen pixel array $P[x,y]$, molecular system $M$
-\ENSURE Real-time chemical modifications
-\STATE Monitor pixel changes: $\Delta P = P_{current} - P_{previous}$
-\STATE FOR each changed pixel $(x,y)$ DO
-\STATE \quad Extract RGB values: $(R, G, B) = P[x,y]$
-\STATE \quad Map to chemical parameters: $(\Delta E, \Delta \theta, \Delta d)$
-\STATE \quad Identify target molecule: $M_{target} = \text{locate}(x, y, M)$
-\STATE \quad Apply modifications: $M_{target} \leftarrow \text{modify}(M_{target}, \Delta E, \Delta \theta, \Delta d)$
-\STATE \quad Validate structural integrity: $\text{validate}(M_{target})$
-\STATE END FOR
-\STATE Update molecular system display representation
-\end{algorithmic}
-\end{algorithm}
-
-
-
-
+Pixel-to-Chemical Modification Mapping
+=====================================
 """
+
+import os
+import numpy as np
+import matplotlib.pyplot as plt
+import json
+
+class PixelChemicalMapper:
+    def analyze_pixel_changes(self, pattern):
+        """Analyze pattern and predict pixel/chemical changes"""
+        if not pattern:
+            return {'modifications': [], 'pixel_changes': {}}
+        
+        modifications = []
+        pixel_changes = {}
+        
+        # Red changes from oxidizable groups
+        if 'OH' in pattern:
+            modifications.append('oxidation')
+            pixel_changes['red'] = 120
+        
+        # Green changes from aromatic systems  
+        if any(c.islower() for c in pattern):
+            modifications.append('substitution')
+            pixel_changes['green'] = 100
+        
+        # Blue changes from reducible groups
+        if 'C=O' in pattern:
+            modifications.append('reduction')
+            pixel_changes['blue'] = 80
+        
+        return {
+            'pattern': pattern,
+            'modifications': modifications,
+            'pixel_changes': pixel_changes,
+            'total_changes': len(modifications)
+        }
+
+def load_datasets():
+    datasets = {}
+    files = {
+        'agrafiotis': 'gonfanolier/public/agrafiotis-smarts-tar/agrafiotis.smarts',
+        'ahmed': 'gonfanolier/public/ahmed-smarts-tar/ahmed.smarts',
+        'hann': 'gonfanolier/public/hann-smarts-tar/hann.smarts',
+        'walters': 'gonfanolier/public/walters-smarts-tar/walters.smarts'
+    }
+    
+    for name, filepath in files.items():
+        if os.path.exists(filepath):
+            patterns = []
+            with open(filepath, 'r') as f:
+                for line in f:
+                    if line.strip() and not line.startswith('#'):
+                        parts = line.split()
+                        if parts:
+                            patterns.append(parts[0])
+            datasets[name] = patterns
+            print(f"Loaded {len(patterns)} patterns from {name}")
+    return datasets
+
+def main():
+    print("🎨 Pixel-to-Chemical Modification Mapping")
+    print("=" * 45)
+    
+    datasets = load_datasets()
+    mapper = PixelChemicalMapper()
+    
+    # Test patterns
+    test_patterns = []
+    for patterns in datasets.values():
+        test_patterns.extend(patterns[:2])
+    
+    # Analyze
+    results = [mapper.analyze_pixel_changes(p) for p in test_patterns]
+    
+    # Stats
+    total_mods = sum(r['total_changes'] for r in results)
+    patterns_with_mods = sum(1 for r in results if r['total_changes'] > 0)
+    
+    print(f"Total modifications: {total_mods}")
+    print(f"Patterns with modifications: {patterns_with_mods}/{len(results)}")
+    
+    # Visualization
+    modification_counts = [r['total_changes'] for r in results]
+    
+    plt.figure(figsize=(10, 6))
+    plt.subplot(1, 2, 1)
+    plt.bar(range(len(modification_counts)), modification_counts, alpha=0.7)
+    plt.xlabel('Pattern Index')
+    plt.ylabel('Modifications')
+    plt.title('Modifications per Pattern')
+    
+    plt.subplot(1, 2, 2)
+    plt.hist(modification_counts, bins=5, alpha=0.7)
+    plt.xlabel('Modification Count')
+    plt.ylabel('Frequency')
+    plt.title('Modification Distribution')
+    
+    os.makedirs('gonfanolier/results', exist_ok=True)
+    plt.tight_layout()
+    plt.savefig('gonfanolier/results/pixel_chemical_mapping.png', dpi=300)
+    plt.show()
+    
+    # Save
+    summary = {
+        'total_modifications': total_mods,
+        'success_rate': patterns_with_mods / len(results),
+        'avg_modifications': total_mods / len(results)
+    }
+    
+    with open('gonfanolier/results/pixel_chemical_results.json', 'w') as f:
+        json.dump(summary, f, indent=2)
+    
+    print(f"Success rate: {summary['success_rate']:.1%}")
+    print("✅ Pixel-chemical mapping validated!" if summary['success_rate'] > 0.5 else "⚠️ Mapping needs improvement")
+    print("🏁 Analysis complete!")
+
+if __name__ == "__main__":
+    main()

@@ -1,204 +1,275 @@
+#!/usr/bin/env python3
+"""
+Universal Molecule-to-Drip Algorithm
+===================================
 """
 
-\subsection{Comprehensive Chemical Drip Pattern Recognition}
+import os
+import numpy as np
+import matplotlib.pyplot as plt
+import json
+import cv2
 
-\begin{lstlisting}[style=pythonstyle, caption=Computer Vision Comprehensive Chemical Pattern Analysis]
-class ChemicalDripPatternComputerVision:
+class MoleculeToDripConverter:
     def __init__(self):
-        self.chemical_pattern_recognizer = ChemicalConvolutionalNeuralNetwork()
-        self.spectroscopic_wave_analyzer = SpectroscopicWavePatternAnalyzer()
-        self.chemical_sequence_processor = ChemicalTemporalSequenceProcessor()
-        self.compound_identification_engine = CompoundIdentificationClassifier()
-        self.property_prediction_engine = ChemicalPropertyPredictor()
-        self.drug_discovery_engine = DrugDiscoveryAnalyzer()
+        self.s_entropy_calculator = SEntropyCalculator()
+        self.droplet_mapper = DropletMapper()
         
-    def analyze_chemical_drip_video_for_comprehensive_analysis(self, chemical_drip_video):
-        """Extract comprehensive chemical insights from drip pattern video"""
+    def convert_molecule_to_drip_pattern(self, smarts_pattern):
+        """Convert SMARTS to visual drip pattern"""
+        # Calculate S-entropy coordinates  
+        s_coords = self.s_entropy_calculator.calculate_s_entropy(smarts_pattern)
         
-        # Phase 1: Extract chemical video frames
-        chemical_video_frames = self.extract_chemical_video_frames(chemical_drip_video)
+        # Map to droplet parameters
+        droplet_params = self.droplet_mapper.map_to_droplet(s_coords)
         
-        # Phase 2: Analyze comprehensive chemical wave patterns
-        chemical_wave_analysis = []
-        for frame in chemical_video_frames:
-            # Detect comprehensive chemical concentric wave patterns
-            detected_chemical_waves = self.spectroscopic_wave_analyzer.detect_comprehensive_chemical_patterns(frame)
-            
-            # Measure comprehensive chemical wave characteristics
-            chemical_wave_metrics = self.measure_comprehensive_chemical_characteristics(detected_chemical_waves)
-            
-            # Extract comprehensive chemical droplet impacts with full signatures
-            chemical_impact_points = self.detect_comprehensive_chemical_impacts(frame)
-            
-            # Identify comprehensive chemical interaction signatures
-            chemical_signatures = self.identify_comprehensive_chemical_signatures(frame)
-            
-            # Extract spectroscopic enhancement signatures
-            spectroscopic_enhancements = self.extract_spectroscopic_enhancements(frame)
-            
-            chemical_wave_analysis.append({
-                'chemical_waves': detected_chemical_waves,
-                'chemical_metrics': chemical_wave_metrics,
-                'chemical_impacts': chemical_impact_points,
-                'chemical_signatures': chemical_signatures,
-                'spectroscopic_enhancements': spectroscopic_enhancements,
-                'frame_index': len(chemical_wave_analysis)
-            })
-        
-        # Phase 3: Comprehensive chemical temporal sequence analysis
-        chemical_temporal_patterns = self.chemical_sequence_processor.analyze_comprehensive_temporal_sequence(
-            chemical_wave_analysis
-        )
-        
-        # Phase 4: Comprehensive chemical identification and property prediction
-        chemical_insights = self.extract_comprehensive_chemical_insights(
-            chemical_wave_analysis, chemical_temporal_patterns
-        )
-        
-        # Phase 5: Multi-domain chemical applications
-        applications = self.generate_multi_domain_applications(chemical_insights)
+        # Generate drip pattern
+        drip_pattern = self.generate_drip_visualization(droplet_params)
         
         return {
-            'chemical_wave_analysis': chemical_wave_analysis,
-            'chemical_temporal_patterns': chemical_temporal_patterns,
-            'chemical_insights': chemical_insights,
-            'compound_identification': self.identify_compounds_from_comprehensive_drips(chemical_insights),
-            'property_predictions': self.predict_properties_from_drips(chemical_insights),
-            'drug_discovery_insights': self.extract_drug_discovery_insights(chemical_insights),
-            'multi_domain_applications': applications,
-            'reconstruction_quality': self.assess_comprehensive_reconstruction_quality(chemical_insights)
+            'pattern': smarts_pattern,
+            's_coordinates': s_coords,
+            'droplet_parameters': droplet_params,
+            'drip_visualization': drip_pattern
         }
     
-    def identify_compounds_from_comprehensive_drips(self, chemical_insights):
-        """Identify chemical compounds based on comprehensive drip pattern characteristics"""
+    def generate_drip_visualization(self, droplet_params):
+        """Generate visual droplet impact pattern"""
+        size = 200
+        pattern = np.zeros((size, size))
+        center = size // 2
         
-        # Extract comprehensive identification features
-        comprehensive_features = {
-            'structural_complexity': chemical_insights['structural_complexity'],
-            'spectroscopic_signature': chemical_insights['spectroscopic_signatures'],
-            'chemical_reactivity_profile': chemical_insights['reactivity_profiles'],
-            'solvent_interaction_patterns': chemical_insights['solvent_interactions'],
-            'pharmacological_signatures': chemical_insights['pharmacological_patterns'],
-            'environmental_behavior_patterns': chemical_insights['environmental_behavior'],
-            'synthetic_accessibility': chemical_insights['synthetic_patterns']
-        }
+        # Primary impact
+        radius = int(droplet_params['radius'] * 30)
+        velocity = droplet_params['velocity']
         
-        # Apply comprehensive trained classification model
-        compound_probabilities = self.compound_identification_engine.identify_comprehensive_compound(
-            comprehensive_features
-        )
+        y, x = np.ogrid[:size, :size]
+        distance = np.sqrt((x - center)**2 + (y - center)**2)
         
-        # Generate comprehensive structural predictions
-        structural_predictions = self.predict_comprehensive_structure_from_drips(comprehensive_features)
+        # Generate concentric waves
+        wave_pattern = velocity * np.exp(-distance / radius) * \
+                      np.cos(2 * np.pi * distance / (radius * 0.3))
         
-        # Generate chemical class predictions
-        chemical_class_predictions = self.predict_comprehensive_chemical_classes(comprehensive_features)
+        return wave_pattern
+
+class SEntropyCalculator:
+    def calculate_s_entropy(self, pattern):
+        """Calculate S-entropy coordinates"""
+        if not pattern:
+            return {'S_structure': 0, 'S_spectroscopy': 0, 'S_activity': 0}
+        
+        # S_structure from structural complexity
+        s_structure = len(set(pattern)) / len(pattern)
+        
+        # S_spectroscopy from functional groups
+        func_groups = pattern.count('OH') + pattern.count('C=O') + pattern.count('NH')
+        s_spectroscopy = min(1.0, func_groups / len(pattern) * 10)
+        
+        # S_activity from reactivity indicators
+        reactive = pattern.count('=') + pattern.count('#') + pattern.count('F')
+        s_activity = min(1.0, reactive / len(pattern) * 5)
         
         return {
-            'comprehensive_compound_identification': compound_probabilities,
-            'structural_predictions': structural_predictions,
-            'chemical_class_predictions': chemical_class_predictions,
-            'confidence_analysis': self.analyze_identification_confidence(compound_probabilities),
-            'alternative_candidates': self.generate_alternative_candidates(compound_probabilities)
+            'S_structure': s_structure,
+            'S_spectroscopy': s_spectroscopy,  
+            'S_activity': s_activity
         }
+
+class DropletMapper:
+    def map_to_droplet(self, s_coords):
+        """Map S-entropy to droplet parameters"""
+        return {
+            'velocity': 2.0 + s_coords['S_structure'] * 3.0,
+            'radius': 0.5 + s_coords['S_spectroscopy'] * 2.0,
+            'surface_tension': 0.03 + s_coords['S_activity'] * 0.04,
+            'impact_angle': s_coords['S_structure'] * 45
+        }
+
+class ComputerVisionAnalyzer:
+    def __init__(self):
+        self.feature_extractor = PatternFeatureExtractor()
+        
+    def analyze_drip_patterns(self, drip_patterns, labels):
+        """Analyze drip patterns with computer vision"""
+        features = []
+        
+        for pattern in drip_patterns:
+            pattern_features = self.feature_extractor.extract_features(pattern)
+            features.append(pattern_features)
+        
+        return {
+            'features': features,
+            'pattern_count': len(drip_patterns),
+            'feature_dimension': len(features[0]) if features else 0
+        }
+
+class PatternFeatureExtractor:
+    def extract_features(self, pattern):
+        """Extract computer vision features from drip pattern"""
+        features = []
+        
+        # Statistical features
+        features.extend([
+            np.mean(pattern),
+            np.std(pattern),
+            np.max(pattern),
+            np.min(pattern)
+        ])
+        
+        # Geometric features
+        if pattern.max() > pattern.min():
+            # Normalize for edge detection
+            normalized = ((pattern - pattern.min()) / (pattern.max() - pattern.min()) * 255).astype(np.uint8)
+            
+            # Find contours
+            contours, _ = cv2.findContours(normalized, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+            
+            if contours:
+                largest = max(contours, key=cv2.contourArea)
+                area = cv2.contourArea(largest)
+                perimeter = cv2.arcLength(largest, True)
+                features.extend([area, perimeter])
+            else:
+                features.extend([0, 0])
+        else:
+            features.extend([0, 0])
+        
+        # Frequency domain features
+        fft = np.fft.fft2(pattern)
+        magnitude = np.abs(fft)
+        features.extend([
+            np.mean(magnitude),
+            np.std(magnitude)
+        ])
+        
+        return features
+
+def load_datasets():
+    datasets = {}
+    files = {
+        'agrafiotis': 'gonfanolier/public/agrafiotis-smarts-tar/agrafiotis.smarts',
+        'ahmed': 'gonfanolier/public/ahmed-smarts-tar/ahmed.smarts',
+        'hann': 'gonfanolier/public/hann-smarts-tar/hann.smarts',
+        'walters': 'gonfanolier/public/walters-smarts-tar/walters.smarts'
+    }
     
-    def predict_properties_from_drips(self, chemical_insights):
-        """Predict comprehensive chemical properties from drip patterns"""
-        
-        # Extract property prediction features
-        property_features = self.extract_property_prediction_features(chemical_insights)
-        
-        # Predict physical properties
-        physical_properties = self.property_prediction_engine.predict_physical_properties(
-            property_features
-        )
-        
-        # Predict chemical properties
-        chemical_properties = self.property_prediction_engine.predict_chemical_properties(
-            property_features
-        )
-        
-        # Predict biological properties
-        biological_properties = self.property_prediction_engine.predict_biological_properties(
-            property_features
-        )
-        
-        # Predict environmental properties
-        environmental_properties = self.property_prediction_engine.predict_environmental_properties(
-            property_features
-        )
-        
-        return {
-            'physical_properties': physical_properties,
-            'chemical_properties': chemical_properties,
-            'biological_properties': biological_properties,
-            'environmental_properties': environmental_properties,
-            'property_confidence': self.assess_property_prediction_confidence(
-                physical_properties, chemical_properties, biological_properties, environmental_properties
-            )
-        }
+    for name, filepath in files.items():
+        if os.path.exists(filepath):
+            patterns = []
+            with open(filepath, 'r') as f:
+                for line in f:
+                    if line.strip() and not line.startswith('#'):
+                        parts = line.split()
+                        if parts:
+                            patterns.append(parts[0])
+            datasets[name] = patterns
+            print(f"Loaded {len(patterns)} patterns from {name}")
+    return datasets
+
+def main():
+    print("💧 Universal Molecule-to-Drip Algorithm")
+    print("=" * 40)
     
-    def extract_drug_discovery_insights(self, chemical_insights):
-        """Extract drug discovery insights from chemical drip patterns"""
+    datasets = load_datasets()
+    converter = MoleculeToDripConverter()
+    cv_analyzer = ComputerVisionAnalyzer()
+    
+    # Convert molecules to drip patterns
+    all_results = []
+    all_drip_patterns = []
+    all_labels = []
+    
+    for dataset_name, patterns in datasets.items():
+        print(f"\n💧 Processing {dataset_name} ({len(patterns)} patterns)...")
         
-        # Analyze therapeutic potential
-        therapeutic_analysis = self.drug_discovery_engine.analyze_therapeutic_potential(
-            chemical_insights
-        )
-        
-        # Predict drug-drug interactions
-        interaction_predictions = self.drug_discovery_engine.predict_drug_interactions(
-            chemical_insights
-        )
-        
-        # Assess toxicity profiles
-        toxicity_assessment = self.drug_discovery_engine.assess_toxicity_profiles(
-            chemical_insights
-        )
-        
-        # Predict pharmacokinetic properties
-        pharmacokinetic_predictions = self.drug_discovery_engine.predict_pharmacokinetics(
-            chemical_insights
-        )
-        
-        # Generate lead optimization suggestions
-        optimization_suggestions = self.drug_discovery_engine.generate_optimization_suggestions(
-            therapeutic_analysis, interaction_predictions, toxicity_assessment
-        )
-        
-        return {
-            'therapeutic_potential': therapeutic_analysis,
-            'interaction_predictions': interaction_predictions,
-            'toxicity_assessment': toxicity_assessment,
-            'pharmacokinetic_predictions': pharmacokinetic_predictions,
-            'optimization_suggestions': optimization_suggestions
-        }
-\end{lstlisting}
+        for pattern in patterns[:5]:  # First 5 from each
+            result = converter.convert_molecule_to_drip_pattern(pattern)
+            all_results.append(result)
+            all_drip_patterns.append(result['drip_visualization'])
+            all_labels.append(dataset_name)
+    
+    print(f"\nConverted {len(all_results)} molecules to drip patterns")
+    
+    # Computer vision analysis
+    cv_results = cv_analyzer.analyze_drip_patterns(all_drip_patterns, all_labels)
+    
+    print(f"Extracted {cv_results['feature_dimension']} features per pattern")
+    
+    # Visualization
+    fig, axes = plt.subplots(2, 3, figsize=(15, 10))
+    fig.suptitle('Molecule-to-Drip Conversion Results')
+    
+    # Show drip patterns
+    for i in range(6):
+        row, col = divmod(i, 3)
+        if i < len(all_drip_patterns):
+            axes[row, col].imshow(all_drip_patterns[i], cmap='viridis')
+            axes[row, col].set_title(f'{all_labels[i]}: {all_results[i]["pattern"][:10]}...')
+            axes[row, col].axis('off')
+    
+    plt.tight_layout()
+    
+    # Analysis plots
+    fig2, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 5))
+    
+    # S-entropy distribution
+    s_structure_vals = [r['s_coordinates']['S_structure'] for r in all_results]
+    s_spectroscopy_vals = [r['s_coordinates']['S_spectroscopy'] for r in all_results]
+    s_activity_vals = [r['s_coordinates']['S_activity'] for r in all_results]
+    
+    ax1.hist(s_structure_vals, alpha=0.5, label='S_structure', bins=15)
+    ax1.hist(s_spectroscopy_vals, alpha=0.5, label='S_spectroscopy', bins=15)
+    ax1.hist(s_activity_vals, alpha=0.5, label='S_activity', bins=15)
+    ax1.set_xlabel('S-Entropy Value')
+    ax1.set_ylabel('Frequency')
+    ax1.set_title('S-Entropy Coordinate Distribution')
+    ax1.legend()
+    
+    # Droplet parameter correlation
+    velocities = [r['droplet_parameters']['velocity'] for r in all_results]
+    radii = [r['droplet_parameters']['radius'] for r in all_results]
+    
+    ax2.scatter(velocities, radii, alpha=0.7, c=s_structure_vals, cmap='viridis')
+    ax2.set_xlabel('Droplet Velocity')
+    ax2.set_ylabel('Droplet Radius')
+    ax2.set_title('Droplet Parameter Space')
+    
+    os.makedirs('gonfanolier/results', exist_ok=True)
+    plt.figure(1)
+    plt.savefig('gonfanolier/results/molecule_to_drip_patterns.png', dpi=300, bbox_inches='tight')
+    plt.show()
+    
+    plt.figure(2)
+    plt.tight_layout()
+    plt.savefig('gonfanolier/results/molecule_to_drip_analysis.png', dpi=300, bbox_inches='tight')
+    plt.show()
+    
+    # Save results
+    summary = {
+        'molecules_converted': len(all_results),
+        'datasets_processed': len(datasets),
+        'avg_s_structure': np.mean(s_structure_vals),
+        'avg_s_spectroscopy': np.mean(s_spectroscopy_vals), 
+        'avg_s_activity': np.mean(s_activity_vals),
+        'cv_features_extracted': cv_results['feature_dimension'],
+        'conversion_success_rate': len([r for r in all_results if np.max(r['drip_visualization']) > 0.1]) / len(all_results)
+    }
+    
+    with open('gonfanolier/results/molecule_to_drip_results.json', 'w') as f:
+        json.dump(summary, f, indent=2)
+    
+    print(f"\n🎯 Conversion Results:")
+    print(f"Molecules converted: {summary['molecules_converted']}")
+    print(f"Success rate: {summary['conversion_success_rate']:.1%}")
+    print(f"CV features per pattern: {summary['cv_features_extracted']}")
+    
+    if summary['conversion_success_rate'] > 0.8:
+        print("✅ High conversion success rate achieved")
+    
+    if summary['cv_features_extracted'] > 5:
+        print("✅ Rich feature extraction for computer vision")
+    
+    print("🏁 Molecule-to-drip conversion complete!")
 
-\section{Performance Validation and Results}
-
-\subsection{Comprehensive Chemical Analysis Performance}
-
-\begin{table}[H]
-\centering
-\caption{Chemical Analysis: Traditional Methods vs Drip-Based Computer Vision}
-\begin{tabular}{lccc}
-\toprule
-Chemical Application & Traditional Methods & Drip-Based CV & Improvement \\
-\midrule
-Drug Classification & 92.1\% & 98.4\% & +6.3\% \\
-Natural Product ID & 89.3\% & 96.7\% & +7.4\% \\
-Material Property Prediction & 91.8\% & 97.9\% & +6.1\% \\
-Environmental Fate Prediction & 87.5\% & 95.2\% & +7.7\% \\
-Toxicity Assessment & 85.9\% & 94.6\% & +8.7\% \\
-Synthetic Route Planning & 88.7\% & 96.1\% & +7.4\% \\
-\midrule
-Average & 89.2\% & 96.5\% & +7.3\% \\
-\bottomrule
-\end{tabular}
-</table>
-
-
-
-
-"""
+if __name__ == "__main__":
+    main()

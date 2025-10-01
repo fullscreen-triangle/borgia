@@ -27,6 +27,15 @@ share/python-wheels/
 .installed.cfg
 *.egg
 MANIFEST
+*.gz
+*.pkl
+*.joblib
+*.model
+*.h5
+*.pkl
+*.joblib
+*.model
+*.h5
 
 # PyInstaller
 *.manifest
