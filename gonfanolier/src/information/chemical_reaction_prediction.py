@@ -81,25 +81,48 @@ class ReactionMechanismPredictor:
 
 def load_datasets():
     datasets = {}
+    
+    # Find the correct base directory
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    base_dir = os.path.join(current_dir, '..', '..')  # Go up to gonfanolier root
+    
     files = {
-        'agrafiotis': 'gonfanolier/public/agrafiotis-smarts-tar/agrafiotis.smarts',
-        'ahmed': 'gonfanolier/public/ahmed-smarts-tar/ahmed.smarts',
-        'hann': 'gonfanolier/public/hann-smarts-tar/hann.smarts',
-        'walters': 'gonfanolier/public/walters-smarts-tar/walters.smarts'
+        'agrafiotis': os.path.join(base_dir, 'public', 'agrafiotis-smarts-tar', 'agrafiotis.smarts'),
+        'ahmed': os.path.join(base_dir, 'public', 'ahmed-smarts-tar', 'ahmed.smarts'),
+        'hann': os.path.join(base_dir, 'public', 'hann-smarts-tar', 'hann.smarts'),
+        'walters': os.path.join(base_dir, 'public', 'walters-smarts-tar', 'walters.smarts')
     }
     
     for name, filepath in files.items():
         if os.path.exists(filepath):
             patterns = []
-            with open(filepath, 'r') as f:
-                for line in f:
-                    line = line.strip()
-                    if line and not line.startswith('#'):
-                        parts = line.split()
-                        if parts:
-                            patterns.append(parts[0])
-            datasets[name] = patterns
-            print(f"Loaded {len(patterns)} patterns from {name}")
+            try:
+                with open(filepath, 'r') as f:
+                    for line in f:
+                        line = line.strip()
+                        if line and not line.startswith('#'):
+                            parts = line.split()
+                            if parts:
+                                patterns.append(parts[0])
+                datasets[name] = patterns
+                print(f"Loaded {len(patterns)} patterns from {name}")
+            except Exception as e:
+                print(f"Error loading {name}: {e}")
+        else:
+            print(f"File not found: {filepath}")
+    
+    # If no datasets found, create synthetic data for demo
+    if not datasets:
+        print("No SMARTS files found, using synthetic molecular patterns for demo...")
+        datasets['synthetic'] = [
+            'c1ccccc1',  # benzene
+            'CCO',       # ethanol
+            'CC(=O)O',   # acetic acid
+            'c1ccc2ccccc2c1',  # naphthalene
+            'CC(C)O'     # isopropanol
+        ]
+        print(f"Created {len(datasets['synthetic'])} synthetic patterns")
+    
     return datasets
 
 def create_reaction_database(patterns):
@@ -168,9 +191,13 @@ def main():
     ax2.pie(dataset_counts, labels=datasets.keys(), autopct='%1.1f%%')
     ax2.set_title('Dataset Composition')
     
-    os.makedirs('gonfanolier/results', exist_ok=True)
+    # Create results directory
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    base_dir = os.path.join(current_dir, '..', '..')
+    results_dir = os.path.join(base_dir, 'results')
+    os.makedirs(results_dir, exist_ok=True)
     plt.tight_layout()
-    plt.savefig('gonfanolier/results/reaction_prediction.png', dpi=300)
+    plt.savefig(os.path.join(results_dir, 'reaction_prediction.png'), dpi=300)
     plt.show()
     
     # Save results
@@ -185,7 +212,7 @@ def main():
         'dataset_info': {k: len(v) for k, v in datasets.items()}
     }
     
-    with open('gonfanolier/results/reaction_prediction_results.json', 'w') as f:
+    with open(os.path.join(results_dir, 'reaction_prediction_results.json'), 'w') as f:
         json.dump(results, f, indent=2)
     
     print(f"\n🎯 Results:")

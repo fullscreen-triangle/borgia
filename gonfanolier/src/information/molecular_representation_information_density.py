@@ -17,6 +17,10 @@ import seaborn as sns
 from collections import Counter
 from typing import Dict, List, Tuple, Any
 
+# Add parent directory to path for common utilities
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from common_utils import get_base_directory, load_smarts_datasets, ensure_results_directory, safe_divide, save_results
+
 class SMARTSDataLoader:
     """Load and parse SMARTS datasets from University of Hamburg"""
     
@@ -25,20 +29,16 @@ class SMARTSDataLoader:
         self.datasets = {}
         
     def load_all_datasets(self) -> Dict[str, List[Tuple[str, str]]]:
-        """Load all SMARTS datasets"""
-        dataset_files = {
-            'agrafiotis': 'agrafiotis-smarts-tar/agrafiotis.smarts',
-            'ahmed': 'ahmed-smarts-tar/ahmed.smarts', 
-            'hann': 'hann-smarts-tar/hann.smarts',
-            'walters': 'walters-smarts-tar/walters.smarts'
-        }
+        """Load all SMARTS datasets using common utility"""
+        raw_datasets = load_smarts_datasets()
         
-        for name, filepath in dataset_files.items():
-            full_path = os.path.join(self.data_dir, filepath)
-            if os.path.exists(full_path):
-                self.datasets[name] = self._parse_smarts_file(full_path)
-                print(f"Loaded {len(self.datasets[name])} SMARTS patterns from {name}")
-                
+        # Convert to expected format (pattern, description) tuples
+        for name, patterns in raw_datasets.items():
+            formatted_patterns = []
+            for i, pattern in enumerate(patterns):
+                formatted_patterns.append((pattern, f"{name}_pattern_{i}"))
+            self.datasets[name] = formatted_patterns
+            
         return self.datasets
     
     def _parse_smarts_file(self, filepath: str) -> List[Tuple[str, str]]:
@@ -97,8 +97,7 @@ def main():
     print("=" * 60)
     
     # Initialize components
-    data_dir = "gonfanolier/public"
-    loader = SMARTSDataLoader(data_dir)
+    loader = SMARTSDataLoader("")  # data_dir not needed with common utils
     analyzer = InformationDensityAnalyzer()
     
     # Load SMARTS datasets
@@ -126,12 +125,8 @@ def main():
         print(f"  Avg Pattern Length: {metrics['avg_pattern_length']:.1f}")
         print(f"  Pattern Diversity: {metrics['pattern_diversity']:.3f}")
     
-    # Create results directory
-    os.makedirs("gonfanolier/results", exist_ok=True)
-    
     # Save results
-    with open('gonfanolier/results/information_density_results.json', 'w') as f:
-        json.dump(results, f, indent=2, default=str)
+    save_results(results, 'information_density_results.json')
     
     # Create summary
     summary_data = []

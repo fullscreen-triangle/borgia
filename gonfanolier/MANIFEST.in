@@ -1,0 +1,67 @@
+# Package manifest for Gonfanolier
+# Ensures all necessary files are included in distributions
+
+include *.py
+include *.md
+include *.txt
+include *.cfg
+include *.ini
+include *.yml
+include *.yaml
+
+# Documentation files
+include README.md
+include README_VALIDATION.md
+include SCIENTIFIC_VISUALIZATION_COMPLETION.md
+include scientific_visualisations-template.md
+include requirements.txt
+include setup.py
+
+# Source code and modules
+recursive-include src *.py
+recursive-include src *.md
+recursive-include src *.txt
+
+# Visualization modules
+include viz_*.py
+include generate_scientific_visualizations.py
+include run_all_validations.py
+
+# Data directories
+recursive-include public *
+recursive-include public/agrafiotis-smarts-tar *
+recursive-include public/ahmed-smarts-tar *
+recursive-include public/daylight-smarts-tar *
+recursive-include public/hann-smarts-tar *
+recursive-include public/walters-smarts-tar *
+
+# Results directory (for structure, will be created at runtime)
+recursive-include results *.json
+recursive-include results *.png
+recursive-include results *.pdf
+recursive-include results *.csv
+recursive-include results *.xlsx
+
+# Configuration files
+include *.config
+include .gitignore
+
+# Exclude unwanted files
+exclude *.pyc
+exclude *.pyo
+exclude *.pyd
+exclude __pycache__
+exclude .git*
+exclude .DS_Store
+exclude *.so
+exclude *.dll
+
+# Exclude development files
+exclude tests/*
+exclude .pytest_cache/*
+exclude .coverage
+exclude htmlcov/*
+exclude .tox/*
+exclude build/*
+exclude dist/*
+exclude *.egg-info/*

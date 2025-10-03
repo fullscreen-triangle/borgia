@@ -5,11 +5,16 @@ Meta-Information Extraction Analysis
 """
 
 import os
+import sys
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import json
 from collections import defaultdict, Counter
+
+# Add parent directory to path for common utilities
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from common_utils import get_base_directory, load_smarts_datasets, ensure_results_directory, safe_divide, save_results
 
 class MetaInfoExtractor:
     def extract_meta_patterns(self, patterns):
@@ -84,29 +89,8 @@ class MetaInfoExtractor:
         }
 
 def load_datasets():
-    """Load SMARTS datasets"""
-    datasets = {}
-    files = {
-        'agrafiotis': 'gonfanolier/public/agrafiotis-smarts-tar/agrafiotis.smarts',
-        'ahmed': 'gonfanolier/public/ahmed-smarts-tar/ahmed.smarts',
-        'hann': 'gonfanolier/public/hann-smarts-tar/hann.smarts',
-        'walters': 'gonfanolier/public/walters-smarts-tar/walters.smarts'
-    }
-    
-    for name, filepath in files.items():
-        if os.path.exists(filepath):
-            patterns = []
-            with open(filepath, 'r') as f:
-                for line in f:
-                    line = line.strip()
-                    if line and not line.startswith('#'):
-                        parts = line.split()
-                        if parts:
-                            patterns.append(parts[0])
-            datasets[name] = patterns
-            print(f"Loaded {len(patterns)} patterns from {name}")
-    
-    return datasets
+    """Load datasets using common utility"""
+    return load_smarts_datasets()
 
 def main():
     print("🧠 Meta-Information Extraction Analysis")
@@ -117,7 +101,7 @@ def main():
     extractor = MetaInfoExtractor()
     
     # Create results directory
-    os.makedirs('gonfanolier/results', exist_ok=True)
+    results_dir = ensure_results_directory()
     
     # Extract meta-information
     all_results = {}
@@ -163,12 +147,11 @@ def main():
     axes[1,1].tick_params(axis='x', rotation=45)
     
     plt.tight_layout()
-    plt.savefig('gonfanolier/results/meta_information_analysis.png', dpi=300)
+    plt.savefig(os.path.join(results_dir, 'meta_information_analysis.png'), dpi=300)
     plt.show()
     
     # Save results
-    with open('gonfanolier/results/meta_information_results.json', 'w') as f:
-        json.dump(all_results, f, indent=2)
+    save_results(all_results, 'meta_information_results.json')
     
     # Summary
     summary_data = []
@@ -183,7 +166,7 @@ def main():
         })
     
     summary_df = pd.DataFrame(summary_data)
-    summary_df.to_csv('gonfanolier/results/meta_information_summary.csv', index=False)
+    summary_df.to_csv(os.path.join(results_dir, 'meta_information_summary.csv'), index=False)
     
     print("\n📋 Meta-Information Summary:")
     print(summary_df.round(3))

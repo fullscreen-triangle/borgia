@@ -166,29 +166,56 @@ class SpectroscopyValidator:
 
 def load_datasets():
     datasets = {}
+    
+    # Find the correct base directory
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    base_dir = os.path.join(current_dir, '..', '..')  # Go up to gonfanolier root
+    
     files = {
-        'agrafiotis': 'gonfanolier/public/agrafiotis-smarts-tar/agrafiotis.smarts',
-        'ahmed': 'gonfanolier/public/ahmed-smarts-tar/ahmed.smarts',
-        'hann': 'gonfanolier/public/hann-smarts-tar/hann.smarts',
-        'walters': 'gonfanolier/public/walters-smarts-tar/walters.smarts'
+        'agrafiotis': os.path.join(base_dir, 'public', 'agrafiotis-smarts-tar', 'agrafiotis.smarts'),
+        'ahmed': os.path.join(base_dir, 'public', 'ahmed-smarts-tar', 'ahmed.smarts'),
+        'hann': os.path.join(base_dir, 'public', 'hann-smarts-tar', 'hann.smarts'),
+        'walters': os.path.join(base_dir, 'public', 'walters-smarts-tar', 'walters.smarts')
     }
     
     for name, filepath in files.items():
         if os.path.exists(filepath):
             patterns = []
-            with open(filepath, 'r') as f:
-                for line in f:
-                    if line.strip() and not line.startswith('#'):
-                        parts = line.split()
-                        if parts:
-                            patterns.append(parts[0])
-            datasets[name] = patterns
-            print(f"Loaded {len(patterns)} patterns from {name}")
+            try:
+                with open(filepath, 'r') as f:
+                    for line in f:
+                        if line.strip() and not line.startswith('#'):
+                            parts = line.split()
+                            if parts:
+                                patterns.append(parts[0])
+                datasets[name] = patterns
+                print(f"Loaded {len(patterns)} patterns from {name}")
+            except Exception as e:
+                print(f"Error loading {name}: {e}")
+        else:
+            print(f"File not found: {filepath}")
+    
+    # If no datasets found, create synthetic data for demo
+    if not datasets:
+        print("No SMARTS files found, using synthetic molecular patterns for demo...")
+        datasets['synthetic'] = [
+            'c1ccccc1',  # benzene
+            'CCO',       # ethanol
+            'CC(=O)O',   # acetic acid
+            'c1ccc2ccccc2c1',  # naphthalene
+            'CC(C)O'     # isopropanol
+        ]
+        print(f"Created {len(datasets['synthetic'])} synthetic patterns")
+    
     return datasets
 
 def main():
     print("💡 LED Spectroscopy Integration Analysis")
     print("=" * 45)
+    
+    # Get base directory for file paths
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    base_dir = os.path.join(current_dir, '..', '..')  # Go up to gonfanolier root
     
     datasets = load_datasets()
     validator = SpectroscopyValidator()
@@ -210,6 +237,11 @@ def main():
     for result in validation_results:
         led_usage[result['optimal_led']] += 1
         intensities.append(result['max_intensity'])
+    
+    # Handle empty results
+    if not intensities:
+        print("❌ No validation results to analyze")
+        return
     
     avg_intensity = np.mean(intensities)
     detection_success_rate = sum(1 for i in intensities if i > 0.1) / len(intensities)
@@ -257,9 +289,12 @@ def main():
         axes[2].set_title(f'Example Emission Spectrum\n({best_led} LED excitation)')
         axes[2].grid(True, alpha=0.3)
     
-    os.makedirs('gonfanolier/results', exist_ok=True)
+    # Use correct results directory path
+    results_dir = os.path.join(base_dir, 'results')
+    os.makedirs(results_dir, exist_ok=True)
+    
     plt.tight_layout()
-    plt.savefig('gonfanolier/results/led_spectroscopy.png', dpi=300)
+    plt.savefig(os.path.join(results_dir, 'led_spectroscopy.png'), dpi=300)
     plt.show()
     
     # Save results
@@ -273,7 +308,7 @@ def main():
         'molecules_tested': len(validation_results)
     }
     
-    with open('gonfanolier/results/led_spectroscopy_results.json', 'w') as f:
+    with open(os.path.join(results_dir, 'led_spectroscopy_results.json'), 'w') as f:
         json.dump(summary_results, f, indent=2, default=str)
     
     print(f"\n🎯 LED Spectroscopy Validation:")

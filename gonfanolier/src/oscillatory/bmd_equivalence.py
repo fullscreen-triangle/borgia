@@ -208,25 +208,47 @@ class BMDEquivalenceValidator:
 def load_smarts_datasets():
     """Load SMARTS datasets"""
     datasets = {}
+    
+    # Find the correct base directory
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    base_dir = os.path.join(current_dir, '..', '..')  # Go up to gonfanolier root
+    
     files = {
-        'agrafiotis': 'gonfanolier/public/agrafiotis-smarts-tar/agrafiotis.smarts',
-        'ahmed': 'gonfanolier/public/ahmed-smarts-tar/ahmed.smarts',
-        'hann': 'gonfanolier/public/hann-smarts-tar/hann.smarts',
-        'walters': 'gonfanolier/public/walters-smarts-tar/walters.smarts'
+        'agrafiotis': os.path.join(base_dir, 'public', 'agrafiotis-smarts-tar', 'agrafiotis.smarts'),
+        'ahmed': os.path.join(base_dir, 'public', 'ahmed-smarts-tar', 'ahmed.smarts'),
+        'hann': os.path.join(base_dir, 'public', 'hann-smarts-tar', 'hann.smarts'),
+        'walters': os.path.join(base_dir, 'public', 'walters-smarts-tar', 'walters.smarts')
     }
     
     for name, filepath in files.items():
         if os.path.exists(filepath):
             patterns = []
-            with open(filepath, 'r', encoding='utf-8', errors='ignore') as f:
-                for line in f:
-                    line = line.strip()
-                    if line and not line.startswith('#'):
-                        parts = line.split()
-                        if parts:
-                            patterns.append(parts[0])
-            datasets[name] = patterns
-            print(f"Loaded {len(patterns)} patterns from {name}")
+            try:
+                with open(filepath, 'r', encoding='utf-8', errors='ignore') as f:
+                    for line in f:
+                        line = line.strip()
+                        if line and not line.startswith('#'):
+                            parts = line.split()
+                            if parts:
+                                patterns.append(parts[0])
+                datasets[name] = patterns
+                print(f"Loaded {len(patterns)} patterns from {name}")
+            except Exception as e:
+                print(f"Error loading {name}: {e}")
+        else:
+            print(f"File not found: {filepath}")
+    
+    # If no datasets found, create synthetic data for demo
+    if not datasets:
+        print("No SMARTS files found, using synthetic molecular patterns for demo...")
+        datasets['synthetic'] = [
+            'c1ccccc1',  # benzene
+            'CCO',       # ethanol
+            'CC(=O)O',   # acetic acid
+            'c1ccc2ccccc2c1',  # naphthalene
+            'CC(C)O'     # isopropanol
+        ]
+        print(f"Created {len(datasets['synthetic'])} synthetic patterns")
     
     return datasets
 
@@ -248,7 +270,10 @@ def main():
         return
     
     # Create results directory
-    os.makedirs('gonfanolier/results', exist_ok=True)
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    base_dir = os.path.join(current_dir, '..', '..')
+    results_dir = os.path.join(base_dir, 'results')
+    os.makedirs(results_dir, exist_ok=True)
     
     # Validate BMD equivalence for each dataset
     print("\n🔬 Validating BMD equivalence across pathways...")
@@ -318,12 +343,12 @@ def main():
     axes[1,1].tick_params(axis='x', rotation=45)
     
     plt.tight_layout()
-    plt.savefig('gonfanolier/results/bmd_equivalence_validation.png', dpi=300, bbox_inches='tight')
+    plt.savefig(os.path.join(results_dir, 'bmd_equivalence_validation.png'), dpi=300, bbox_inches='tight')
     plt.show()
     
     # Save results
     print("\n💾 Saving validation results...")
-    with open('gonfanolier/results/bmd_equivalence_results.json', 'w') as f:
+    with open(os.path.join(results_dir, 'bmd_equivalence_results.json'), 'w') as f:
         json.dump(all_validation_results, f, indent=2, default=str)
     
     # Create summary
@@ -341,7 +366,7 @@ def main():
         })
     
     summary_df = pd.DataFrame(summary_data)
-    summary_df.to_csv('gonfanolier/results/bmd_equivalence_summary.csv', index=False)
+    summary_df.to_csv(os.path.join(results_dir, 'bmd_equivalence_summary.csv'), index=False)
     
     print("\n📋 BMD Equivalence Validation Summary:")
     print(summary_df.round(4))

@@ -297,12 +297,32 @@ def main():
     
     # Define validation scripts to run
     validation_scripts = [
+        # Information scripts (ALL 6) ✅
         ('gonfanolier/src/information/molecular_representation_information_density.py', 'Information Density Analysis'),
+        ('gonfanolier/src/information/meta_information_extraction.py', 'Meta-Information Extraction'), 
+        ('gonfanolier/src/information/chemical_reaction_prediction.py', 'Chemical Reaction Prediction'),
+        ('gonfanolier/src/information/compression_information_retention.py', 'Compression Information Retention'),
+        ('gonfanolier/src/information/dynamic_information_database.py', 'Dynamic Information Database'),
+        ('gonfanolier/src/information/situational_utility_analysis.py', 'Situational Utility Analysis'),
+        
+        # Oscillatory scripts (ALL 6) ✅  
         ('gonfanolier/src/oscillatory/st_stellas_entropy_coordinates.py', 'S-Entropy Coordinates'),
-        ('gonfanolier/src/information/meta_information_extraction.py', 'Meta-Information Extraction'),
         ('gonfanolier/src/oscillatory/bmd_equivalence.py', 'BMD Equivalence Validation'),
+        ('gonfanolier/src/oscillatory/dual_functionality.py', 'Dual Functionality Testing'),
+        ('gonfanolier/src/oscillatory/information_catalysis.py', 'Information Catalysis Validation'),
+        ('gonfanolier/src/oscillatory/strategic_optimization.py', 'Strategic Optimization'),
+        ('gonfanolier/src/oscillatory/oscilatory_molecular_architecture.py', 'Oscillatory Molecular Architecture'),
+        
+        # Spectroscopy scripts (ALL 10) ✅
         ('gonfanolier/src/spectroscopy/computer_vision_chemical_analysis.py', 'Computer Vision Analysis'),
-        ('gonfanolier/src/spectroscopy/molecule_to_drip_simple.py', 'Molecule-to-Drip Algorithm')
+        ('gonfanolier/src/spectroscopy/molecule_to_drip_simple.py', 'Molecule-to-Drip Algorithm (Simple)'),
+        ('gonfanolier/src/spectroscopy/molecule_to_drip.py', 'Molecule-to-Drip Algorithm (Full)'),
+        ('gonfanolier/src/spectroscopy/led_spectroscopy.py', 'LED Spectroscopy'),
+        ('gonfanolier/src/spectroscopy/hardware_clock_synchronization.py', 'Hardware Clock Synchronization'),
+        ('gonfanolier/src/spectroscopy/noise_enhanced_processing.py', 'Noise Enhanced Processing'),
+        ('gonfanolier/src/spectroscopy/pixel_chemical_modification.py', 'Pixel Chemical Modification'),
+        ('gonfanolier/src/spectroscopy/rgb_chemical_mapping.py', 'RGB Chemical Mapping'),
+        ('gonfanolier/src/spectroscopy/spectral_analysis_algorithm.py', 'Spectral Analysis Algorithm'),
     ]
     
     # Run all validation scripts
