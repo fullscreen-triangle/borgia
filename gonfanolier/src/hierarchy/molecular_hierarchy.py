@@ -270,23 +270,32 @@ class MolecularHierarchyNavigator:
 def load_smarts_datasets():
     """Load SMARTS datasets from the public directory."""
     datasets = {}
-    base_path = Path("gonfanolier/public")
+
+    # Find the correct base directory
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    base_dir = os.path.join(current_dir, '..', '..')  # Go up to gonfanolier root
 
     dataset_files = {
-        'agrafiotis': base_path / "agrafiotis-smarts-tar" / "agrafiotis.smarts",
-        'ahmed': base_path / "ahmed-smarts-tar" / "ahmed.smarts",
-        'daylight': base_path / "daylight-smarts-tar" / "daylight.smarts",
-        'hann': base_path / "hann-smarts-tar" / "hann.smarts",
-        'walters': base_path / "walters-smarts-tar" / "walters.smarts"
+        'agrafiotis': os.path.join(base_dir, 'public', 'agrafiotis-smarts-tar', 'agrafiotis.smarts'),
+        'ahmed': os.path.join(base_dir, 'public', 'ahmed-smarts-tar', 'ahmed.smarts'),
+        'daylight': os.path.join(base_dir, 'public', 'daylight-smarts-tar', 'daylight.smarts'),
+        'hann': os.path.join(base_dir, 'public', 'hann-smarts-tar', 'hann.smarts'),
+        'walters': os.path.join(base_dir, 'public', 'walters-smarts-tar', 'walters.smarts')
     }
 
     all_smarts = []
 
     for name, file_path in dataset_files.items():
         try:
-            if file_path.exists():
-                with open(file_path, 'r') as f:
-                    smarts_list = [line.strip() for line in f if line.strip()]
+            if os.path.exists(file_path):
+                with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
+                    smarts_list = []
+                    for line in f:
+                        line = line.strip()
+                        if line and not line.startswith('#'):
+                            parts = line.split()
+                            if parts:
+                                smarts_list.append(parts[0])
                     datasets[name] = smarts_list
                     all_smarts.extend(smarts_list)
                     print(f"✅ Loaded {len(smarts_list)} SMARTS from {name}")
