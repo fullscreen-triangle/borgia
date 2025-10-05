@@ -1,0 +1,937 @@
+{
+  "therapeutic_coordinate_space": {
+    "total_coordinates_mapped": 12,
+    "coordinate_types": [
+      "placebo_equivalent",
+      "consciousness_optimization",
+      "membrane_quantum",
+      "visual_pattern",
+      "environmental_catalysis",
+      "fire_circle"
+    ],
+    "average_efficacy": 0.8233333333333334,
+    "fire_adaptation_range": [
+      1.77,
+      2.42
+    ],
+    "coordinate_space_dimensions": 3
+  },
+  "navigation_pathways": {
+    "total_pathways_designed": 48,
+    "average_pathway_efficiency": 0.7088210142933801,
+    "average_navigation_time": 11.951394469820633,
+    "average_success_probability": 0.6288745101238419
+  },
+  "therapeutic_agents": {
+    "total_agents_modeled": 8,
+    "agent_types": [
+      "consciousness",
+      "environmental",
+      "pharmaceutical"
+    ],
+    "average_navigation_capability": 0.8325,
+    "average_catalysis_rate": 0.81
+  },
+  "coordinate_clustering": {
+    "kmeans_clustering": {
+      "n_clusters": 5,
+      "cluster_centers": [
+        [
+          1.6,
+          1.9,
+          -0.5
+        ],
+        [
+          2.2,
+          1.8333333333333333,
+          -0.3666666666666667
+        ],
+        [
+          2.1666666666666665,
+          1.5333333333333334,
+          -0.8
+        ],
+        [
+          2.7,
+          1.5666666666666667,
+          -0.2
+        ],
+        [
+          1.85,
+          2.05,
+          -0.6
+        ]
+      ],
+      "cluster_assignments": {
+        "mood_elevation_coord": 1,
+        "anxiety_reduction_coord": 4,
+        "cognitive_enhancement_coord": 3,
+        "visual_pain_relief_coord": 2,
+        "visual_sleep_induction_coord": 0,
+        "fire_accelerated_healing_coord": 3,
+        "fire_immune_boost_coord": 3,
+        "membrane_neuroprotection_coord": 2,
+        "membrane_cardioprotection_coord": 2,
+        "env_anti_inflammatory_coord": 1,
+        "placebo_analgesic_coord": 4,
+        "placebo_antidepressant_coord": 1
+      },
+      "silhouette_score": 0.37219212579825917,
+      "cluster_0_efficacy": {
+        "mean_efficacy": 0.75,
+        "coordinate_count": 1,
+        "coordinates": [
+          "visual_sleep_induction_coord"
+        ]
+      },
+      "cluster_1_efficacy": {
+        "mean_efficacy": 0.7766666666666667,
+        "coordinate_count": 3,
+        "coordinates": [
+          "mood_elevation_coord",
+          "env_anti_inflammatory_coord",
+          "placebo_antidepressant_coord"
+        ]
+      },
+      "cluster_2_efficacy": {
+        "mean_efficacy": 0.85,
+        "coordinate_count": 3,
+        "coordinates": [
+          "visual_pain_relief_coord",
+          "membrane_neuroprotection_coord",
+          "membrane_cardioprotection_coord"
+        ]
+      },
+      "cluster_3_efficacy": {
+        "mean_efficacy": 0.9133333333333332,
+        "coordinate_count": 3,
+        "coordinates": [
+          "cognitive_enhancement_coord",
+          "fire_accelerated_healing_coord",
+          "fire_immune_boost_coord"
+        ]
+      },
+      "cluster_4_efficacy": {
+        "mean_efficacy": 0.755,
+        "coordinate_count": 2,
+        "coordinates": [
+          "anxiety_reduction_coord",
+          "placebo_analgesic_coord"
+        ]
+      }
+    },
+    "dbscan_clustering": {
+      "n_clusters": 1,
+      "noise_points": 0,
+      "cluster_assignments": {
+        "mood_elevation_coord": 0,
+        "anxiety_reduction_coord": 0,
+        "cognitive_enhancement_coord": 0,
+        "visual_pain_relief_coord": 0,
+        "visual_sleep_induction_coord": 0,
+        "fire_accelerated_healing_coord": 0,
+        "fire_immune_boost_coord": 0,
+        "membrane_neuroprotection_coord": 0,
+        "membrane_cardioprotection_coord": 0,
+        "env_anti_inflammatory_coord": 0,
+        "placebo_analgesic_coord": 0,
+        "placebo_antidepressant_coord": 0
+      }
+    },
+    "coordinate_type_distribution": {
+      "placebo_equivalent": 2,
+      "consciousness_optimization": 3,
+      "membrane_quantum": 2,
+      "visual_pattern": 2,
+      "environmental_catalysis": 1,
+      "fire_circle": 2
+    }
+  },
+  "navigation_optimization": {
+    "coordinate_optimizations": {
+      "mood_elevation_coord": {
+        "coordinate_id": "mood_elevation_coord",
+        "therapeutic_effect": "mood_elevation",
+        "target_condition": "depression",
+        "total_combinations_evaluated": 36,
+        "top_5_combinations": [
+          {
+            "agent_id": "consciousness_optimization_agent",
+            "agent_name": "Consciousness Optimization",
+            "agent_type": "consciousness",
+            "pathway_id": "pathway_012_healthy_baseline_to_placebo_antidepressant_coord",
+            "combined_efficiency": 0.918,
+            "optimization_score": 1.2596187916800001,
+            "navigation_time": 8.543418519538884,
+            "success_probability": 0.72324,
+            "energy_requirement": 4.206986392197178
+          },
+          {
+            "agent_id": "consciousness_optimization_agent",
+            "agent_name": "Consciousness Optimization",
+            "agent_type": "consciousness",
+            "pathway_id": "pathway_024_mild_dysfunction_to_placebo_antidepressant_coord",
+            "combined_efficiency": 0.918,
+            "optimization_score": 1.2596187916800001,
+            "navigation_time": 6.794850991743674,
+            "success_probability": 0.72324,
+            "energy_requirement": 3.3459493519949914
+          },
+          {
+            "agent_id": "consciousness_optimization_agent",
+            "agent_name": "Consciousness Optimization",
+            "agent_type": "consciousness",
+            "pathway_id": "pathway_036_moderate_dysfunction_to_placebo_antidepressant_coord",
+            "combined_efficiency": 0.918,
+            "optimization_score": 1.2596187916800001,
+            "navigation_time": 5.117616632769594,
+            "success_probability": 0.72324,
+            "energy_requirement": 2.52003849340927
+          },
+          {
+            "agent_id": "consciousness_optimization_agent",
+            "agent_name": "Consciousness Optimization",
+            "agent_type": "consciousness",
+            "pathway_id": "pathway_048_severe_dysfunction_to_placebo_antidepressant_coord",
+            "combined_efficiency": 0.918,
+            "optimization_score": 1.2596187916800001,
+            "navigation_time": 3.3674916480965473,
+            "success_probability": 0.72324,
+            "energy_requirement": 1.658234523683906
+          },
+          {
+            "agent_id": "fluoxetine_agent",
+            "agent_name": "Fluoxetine",
+            "agent_type": "pharmaceutical",
+            "pathway_id": "pathway_012_healthy_baseline_to_placebo_antidepressant_coord",
+            "combined_efficiency": 0.9289999999999999,
+            "optimization_score": 1.2533127852,
+            "navigation_time": 8.543418519538884,
+            "success_probability": 0.76342,
+            "energy_requirement": 4.355468264862961
+          }
+        ],
+        "optimal_combination": {
+          "agent_id": "consciousness_optimization_agent",
+          "agent_name": "Consciousness Optimization",
+          "agent_type": "consciousness",
+          "pathway_id": "pathway_012_healthy_baseline_to_placebo_antidepressant_coord",
+          "combined_efficiency": 0.918,
+          "optimization_score": 1.2596187916800001,
+          "navigation_time": 8.543418519538884,
+          "success_probability": 0.72324,
+          "energy_requirement": 4.206986392197178
+        },
+        "optimization_improvement": 1.4819044608000003
+      },
+      "anxiety_reduction_coord": {
+        "coordinate_id": "anxiety_reduction_coord",
+        "therapeutic_effect": "anxiety_reduction",
+        "target_condition": "anxiety_disorders",
+        "total_combinations_evaluated": 24,
+        "top_5_combinations": [
+          {
+            "agent_id": "consciousness_optimization_agent",
+            "agent_name": "Consciousness Optimization",
+            "agent_type": "consciousness",
+            "pathway_id": "pathway_011_healthy_baseline_to_placebo_analgesic_coord",
+            "combined_efficiency": 0.898,
+            "optimization_score": 1.23623478912,
+            "navigation_time": 5.51361950083609,
+            "success_probability": 0.70805,
+            "energy_requirement": 3.7592860232973333
+          },
+          {
+            "agent_id": "consciousness_optimization_agent",
+            "agent_name": "Consciousness Optimization",
+            "agent_type": "consciousness",
+            "pathway_id": "pathway_023_mild_dysfunction_to_placebo_analgesic_coord",
+            "combined_efficiency": 0.898,
+            "optimization_score": 1.23623478912,
+            "navigation_time": 4.354308211415448,
+            "success_probability": 0.70805,
+            "energy_requirement": 2.96884650778326
+          },
+          {
+            "agent_id": "consciousness_optimization_agent",
+            "agent_name": "Consciousness Optimization",
+            "agent_type": "consciousness",
+            "pathway_id": "pathway_035_moderate_dysfunction_to_placebo_analgesic_coord",
+            "combined_efficiency": 0.898,
+            "optimization_score": 1.23623478912,
+            "navigation_time": 3.249615361854384,
+            "success_probability": 0.70805,
+            "energy_requirement": 2.215646837627989
+          },
+          {
+            "agent_id": "consciousness_optimization_agent",
+            "agent_name": "Consciousness Optimization",
+            "agent_type": "consciousness",
+            "pathway_id": "pathway_047_severe_dysfunction_to_placebo_analgesic_coord",
+            "combined_efficiency": 0.898,
+            "optimization_score": 1.23623478912,
+            "navigation_time": 2.08806130178211,
+            "success_probability": 0.70805,
+            "energy_requirement": 1.423678160305984
+          },
+          {
+            "agent_id": "consciousness_optimization_agent",
+            "agent_name": "Consciousness Optimization",
+            "agent_type": "consciousness",
+            "pathway_id": "pathway_002_healthy_baseline_to_anxiety_reduction_coord",
+            "combined_efficiency": 0.895314688,
+            "optimization_score": 1.2325380451177268,
+            "navigation_time": 14.474114826130126,
+            "success_probability": 0.7263446220800002,
+            "energy_requirement": 4.934357327089816
+          }
+        ],
+        "optimal_combination": {
+          "agent_id": "consciousness_optimization_agent",
+          "agent_name": "Consciousness Optimization",
+          "agent_type": "consciousness",
+          "pathway_id": "pathway_011_healthy_baseline_to_placebo_analgesic_coord",
+          "combined_efficiency": 0.898,
+          "optimization_score": 1.23623478912,
+          "navigation_time": 5.51361950083609,
+          "success_probability": 0.70805,
+          "energy_requirement": 3.7592860232973333
+        },
+        "optimization_improvement": 1.5849163963076924
+      },
+      "cognitive_enhancement_coord": {
+        "coordinate_id": "cognitive_enhancement_coord",
+        "therapeutic_effect": "cognitive_enhancement",
+        "target_condition": "cognitive_decline",
+        "total_combinations_evaluated": 8,
+        "top_5_combinations": [
+          {
+            "agent_id": "consciousness_optimization_agent",
+            "agent_name": "Consciousness Optimization",
+            "agent_type": "consciousness",
+            "pathway_id": "pathway_007_healthy_baseline_to_fire_immune_boost_coord",
+            "combined_efficiency": 0.7793056901120001,
+            "optimization_score": 1.0666699875066596,
+            "navigation_time": 22.345245579317314,
+            "success_probability": 0.48956626321408003,
+            "energy_requirement": 6.166707383902505
+          },
+          {
+            "agent_id": "consciousness_optimization_agent",
+            "agent_name": "Consciousness Optimization",
+            "agent_type": "consciousness",
+            "pathway_id": "pathway_019_mild_dysfunction_to_fire_immune_boost_coord",
+            "combined_efficiency": 0.7793056901120001,
+            "optimization_score": 1.0666699875066596,
+            "navigation_time": 18.26718369097984,
+            "success_probability": 0.48956626321408003,
+            "energy_requirement": 5.041268226406775
+          },
+          {
+            "agent_id": "consciousness_optimization_agent",
+            "agent_name": "Consciousness Optimization",
+            "agent_type": "consciousness",
+            "pathway_id": "pathway_031_moderate_dysfunction_to_fire_immune_boost_coord",
+            "combined_efficiency": 0.7793056901120001,
+            "optimization_score": 1.0666699875066596,
+            "navigation_time": 14.328642643321103,
+            "success_probability": 0.48956626321408003,
+            "energy_requirement": 3.9543331970204347
+          },
+          {
+            "agent_id": "consciousness_optimization_agent",
+            "agent_name": "Consciousness Optimization",
+            "agent_type": "consciousness",
+            "pathway_id": "pathway_043_severe_dysfunction_to_fire_immune_boost_coord",
+            "combined_efficiency": 0.7793056901120001,
+            "optimization_score": 1.0666699875066596,
+            "navigation_time": 10.335376142163382,
+            "success_probability": 0.48956626321408003,
+            "energy_requirement": 2.8522953639087256
+          },
+          {
+            "agent_id": "consciousness_optimization_agent",
+            "agent_name": "Consciousness Optimization",
+            "agent_type": "consciousness",
+            "pathway_id": "pathway_003_healthy_baseline_to_cognitive_enhancement_coord",
+            "combined_efficiency": 0.7186967007344001,
+            "optimization_score": 0.9837117969500057,
+            "navigation_time": 23.79915964902963,
+            "success_probability": 0.30531252166463996,
+            "energy_requirement": 6.085012410263256
+          }
+        ],
+        "optimal_combination": {
+          "agent_id": "consciousness_optimization_agent",
+          "agent_name": "Consciousness Optimization",
+          "agent_type": "consciousness",
+          "pathway_id": "pathway_007_healthy_baseline_to_fire_immune_boost_coord",
+          "combined_efficiency": 0.7793056901120001,
+          "optimization_score": 1.0666699875066596,
+          "navigation_time": 22.345245579317314,
+          "success_probability": 0.48956626321408003,
+          "energy_requirement": 6.166707383902505
+        },
+        "optimization_improvement": 1.1721648214358897
+      },
+      "visual_pain_relief_coord": {
+        "coordinate_id": "visual_pain_relief_coord",
+        "therapeutic_effect": "pain_relief",
+        "target_condition": "chronic_pain",
+        "total_combinations_evaluated": 8,
+        "top_5_combinations": [
+          {
+            "agent_id": "morphine_agent",
+            "agent_name": "Morphine",
+            "agent_type": "pharmaceutical",
+            "pathway_id": "pathway_004_healthy_baseline_to_visual_pain_relief_coord",
+            "combined_efficiency": 0.9306995324,
+            "optimization_score": 1.1242380348128138,
+            "navigation_time": 10.384603988597735,
+            "success_probability": 0.781156625256,
+            "energy_requirement": 3.994078457152975
+          },
+          {
+            "agent_id": "morphine_agent",
+            "agent_name": "Morphine",
+            "agent_type": "pharmaceutical",
+            "pathway_id": "pathway_016_mild_dysfunction_to_visual_pain_relief_coord",
+            "combined_efficiency": 0.9306995324,
+            "optimization_score": 1.1242380348128138,
+            "navigation_time": 7.939773296511684,
+            "success_probability": 0.781156625256,
+            "energy_requirement": 3.053758960196801
+          },
+          {
+            "agent_id": "morphine_agent",
+            "agent_name": "Morphine",
+            "agent_type": "pharmaceutical",
+            "pathway_id": "pathway_028_moderate_dysfunction_to_visual_pain_relief_coord",
+            "combined_efficiency": 0.9306995324,
+            "optimization_score": 1.1242380348128138,
+            "navigation_time": 5.513619500836089,
+            "success_probability": 0.781156625256,
+            "energy_requirement": 2.1206228849369566
+          },
+          {
+            "agent_id": "morphine_agent",
+            "agent_name": "Morphine",
+            "agent_type": "pharmaceutical",
+            "pathway_id": "pathway_040_severe_dysfunction_to_visual_pain_relief_coord",
+            "combined_efficiency": 0.9306995324,
+            "optimization_score": 1.1242380348128138,
+            "navigation_time": 2.85657137141714,
+            "success_probability": 0.781156625256,
+            "energy_requirement": 1.0986812966989
+          },
+          {
+            "agent_id": "visual_pattern_agent",
+            "agent_name": "Visual Pattern Therapy",
+            "agent_type": "environmental",
+            "pathway_id": "pathway_004_healthy_baseline_to_visual_pain_relief_coord",
+            "combined_efficiency": 0.8396995324000001,
+            "optimization_score": 1.0447900973520667,
+            "navigation_time": 10.384603988597735,
+            "success_probability": 0.67753380762,
+            "energy_requirement": 4.659758200011804
+          }
+        ],
+        "optimal_combination": {
+          "agent_id": "morphine_agent",
+          "agent_name": "Morphine",
+          "agent_type": "pharmaceutical",
+          "pathway_id": "pathway_004_healthy_baseline_to_visual_pain_relief_coord",
+          "combined_efficiency": 0.9306995324,
+          "optimization_score": 1.1242380348128138,
+          "navigation_time": 10.384603988597735,
+          "success_probability": 0.781156625256,
+          "energy_requirement": 3.994078457152975
+        },
+        "optimization_improvement": 1.3710219936741632
+      },
+      "visual_sleep_induction_coord": {
+        "coordinate_id": "visual_sleep_induction_coord",
+        "therapeutic_effect": "sleep_induction",
+        "target_condition": "insomnia",
+        "total_combinations_evaluated": 16,
+        "top_5_combinations": [
+          {
+            "agent_id": "visual_pattern_agent",
+            "agent_name": "Visual Pattern Therapy",
+            "agent_type": "environmental",
+            "pathway_id": "pathway_011_healthy_baseline_to_placebo_analgesic_coord",
+            "combined_efficiency": 0.88,
+            "optimization_score": 1.1005393344,
+            "navigation_time": 5.51361950083609,
+            "success_probability": 0.73304,
+            "energy_requirement": 4.241245769873914
+          },
+          {
+            "agent_id": "visual_pattern_agent",
+            "agent_name": "Visual Pattern Therapy",
+            "agent_type": "environmental",
+            "pathway_id": "pathway_023_mild_dysfunction_to_placebo_analgesic_coord",
+            "combined_efficiency": 0.88,
+            "optimization_score": 1.1005393344,
+            "navigation_time": 4.354308211415448,
+            "success_probability": 0.73304,
+            "energy_requirement": 3.34946785493496
+          },
+          {
+            "agent_id": "visual_pattern_agent",
+            "agent_name": "Visual Pattern Therapy",
+            "agent_type": "environmental",
+            "pathway_id": "pathway_035_moderate_dysfunction_to_placebo_analgesic_coord",
+            "combined_efficiency": 0.88,
+            "optimization_score": 1.1005393344,
+            "navigation_time": 3.249615361854384,
+            "success_probability": 0.73304,
+            "energy_requirement": 2.4997041245033724
+          },
+          {
+            "agent_id": "visual_pattern_agent",
+            "agent_name": "Visual Pattern Therapy",
+            "agent_type": "environmental",
+            "pathway_id": "pathway_047_severe_dysfunction_to_placebo_analgesic_coord",
+            "combined_efficiency": 0.88,
+            "optimization_score": 1.1005393344,
+            "navigation_time": 2.08806130178211,
+            "success_probability": 0.73304,
+            "energy_requirement": 1.6062010013708539
+          },
+          {
+            "agent_id": "visual_pattern_agent",
+            "agent_name": "Visual Pattern Therapy",
+            "agent_type": "environmental",
+            "pathway_id": "pathway_005_healthy_baseline_to_visual_sleep_induction_coord",
+            "combined_efficiency": 0.86794548256,
+            "optimization_score": 1.0854637996273513,
+            "navigation_time": 7.601315675591956,
+            "success_probability": 0.7691472764236802,
+            "energy_requirement": 4.222953153106642
+          }
+        ],
+        "optimal_combination": {
+          "agent_id": "visual_pattern_agent",
+          "agent_name": "Visual Pattern Therapy",
+          "agent_type": "environmental",
+          "pathway_id": "pathway_011_healthy_baseline_to_placebo_analgesic_coord",
+          "combined_efficiency": 0.88,
+          "optimization_score": 1.1005393344,
+          "navigation_time": 5.51361950083609,
+          "success_probability": 0.73304,
+          "energy_requirement": 4.241245769873914
+        },
+        "optimization_improvement": 1.4673857792
+      },
+      "fire_accelerated_healing_coord": {
+        "coordinate_id": "fire_accelerated_healing_coord",
+        "therapeutic_effect": "accelerated_healing",
+        "target_condition": "wound_healing",
+        "total_combinations_evaluated": 4,
+        "top_5_combinations": [
+          {
+            "agent_id": "fire_circle_agent",
+            "agent_name": "Fire Circle Optimization",
+            "agent_type": "environmental",
+            "pathway_id": "pathway_006_healthy_baseline_to_fire_accelerated_healing_coord",
+            "combined_efficiency": 0.79541534664704,
+            "optimization_score": 1.086370962629338,
+            "navigation_time": 29.10773093183321,
+            "success_probability": 0.37135052708511734,
+            "energy_requirement": 6.468384651518491
+          },
+          {
+            "agent_id": "fire_circle_agent",
+            "agent_name": "Fire Circle Optimization",
+            "agent_type": "environmental",
+            "pathway_id": "pathway_018_mild_dysfunction_to_fire_accelerated_healing_coord",
+            "combined_efficiency": 0.79541534664704,
+            "optimization_score": 1.086370962629338,
+            "navigation_time": 23.777720664521233,
+            "success_probability": 0.37135052708511734,
+            "energy_requirement": 5.2839379254491625
+          },
+          {
+            "agent_id": "fire_circle_agent",
+            "agent_name": "Fire Circle Optimization",
+            "agent_type": "environmental",
+            "pathway_id": "pathway_030_moderate_dysfunction_to_fire_accelerated_healing_coord",
+            "combined_efficiency": 0.79541534664704,
+            "optimization_score": 1.086370962629338,
+            "navigation_time": 18.575790696495265,
+            "success_probability": 0.37135052708511734,
+            "energy_requirement": 4.127953488110059
+          },
+          {
+            "agent_id": "fire_circle_agent",
+            "agent_name": "Fire Circle Optimization",
+            "agent_type": "environmental",
+            "pathway_id": "pathway_042_severe_dysfunction_to_fire_accelerated_healing_coord",
+            "combined_efficiency": 0.79541534664704,
+            "optimization_score": 1.086370962629338,
+            "navigation_time": 13.379461872586653,
+            "success_probability": 0.37135052708511734,
+            "energy_requirement": 2.9732137494637008
+          }
+        ],
+        "optimal_combination": {
+          "agent_id": "fire_circle_agent",
+          "agent_name": "Fire Circle Optimization",
+          "agent_type": "environmental",
+          "pathway_id": "pathway_006_healthy_baseline_to_fire_accelerated_healing_coord",
+          "combined_efficiency": 0.79541534664704,
+          "optimization_score": 1.086370962629338,
+          "navigation_time": 29.10773093183321,
+          "success_probability": 0.37135052708511734,
+          "energy_requirement": 6.468384651518491
+        },
+        "optimization_improvement": 1.1435483817150929
+      },
+      "fire_immune_boost_coord": {
+        "coordinate_id": "fire_immune_boost_coord",
+        "therapeutic_effect": "immune_enhancement",
+        "target_condition": "immunodeficiency",
+        "total_combinations_evaluated": 8,
+        "top_5_combinations": [
+          {
+            "agent_id": "fire_circle_agent",
+            "agent_name": "Fire Circle Optimization",
+            "agent_type": "environmental",
+            "pathway_id": "pathway_007_healthy_baseline_to_fire_immune_boost_coord",
+            "combined_efficiency": 0.8603056901120001,
+            "optimization_score": 1.1804102960225293,
+            "navigation_time": 22.345245579317314,
+            "success_probability": 0.58135993756672,
+            "energy_requirement": 5.712318418772847
+          },
+          {
+            "agent_id": "fire_circle_agent",
+            "agent_name": "Fire Circle Optimization",
+            "agent_type": "environmental",
+            "pathway_id": "pathway_019_mild_dysfunction_to_fire_immune_boost_coord",
+            "combined_efficiency": 0.8603056901120001,
+            "optimization_score": 1.1804102960225293,
+            "navigation_time": 18.26718369097984,
+            "success_probability": 0.58135993756672,
+            "energy_requirement": 4.669806357092591
+          },
+          {
+            "agent_id": "fire_circle_agent",
+            "agent_name": "Fire Circle Optimization",
+            "agent_type": "environmental",
+            "pathway_id": "pathway_031_moderate_dysfunction_to_fire_immune_boost_coord",
+            "combined_efficiency": 0.8603056901120001,
+            "optimization_score": 1.1804102960225293,
+            "navigation_time": 14.328642643321103,
+            "success_probability": 0.58135993756672,
+            "energy_requirement": 3.6629612772399818
+          },
+          {
+            "agent_id": "fire_circle_agent",
+            "agent_name": "Fire Circle Optimization",
+            "agent_type": "environmental",
+            "pathway_id": "pathway_043_severe_dysfunction_to_fire_immune_boost_coord",
+            "combined_efficiency": 0.8603056901120001,
+            "optimization_score": 1.1804102960225293,
+            "navigation_time": 10.335376142163382,
+            "success_probability": 0.58135993756672,
+            "energy_requirement": 2.6421262318312406
+          },
+          {
+            "agent_id": "fire_circle_agent",
+            "agent_name": "Fire Circle Optimization",
+            "agent_type": "environmental",
+            "pathway_id": "pathway_003_healthy_baseline_to_cognitive_enhancement_coord",
+            "combined_efficiency": 0.7996967007344,
+            "optimization_score": 1.0972497684157374,
+            "navigation_time": 23.79915964902963,
+            "success_probability": 0.36255861947675994,
+            "energy_requirement": 5.636643074770174
+          }
+        ],
+        "optimal_combination": {
+          "agent_id": "fire_circle_agent",
+          "agent_name": "Fire Circle Optimization",
+          "agent_type": "environmental",
+          "pathway_id": "pathway_007_healthy_baseline_to_fire_immune_boost_coord",
+          "combined_efficiency": 0.8603056901120001,
+          "optimization_score": 1.1804102960225293,
+          "navigation_time": 22.345245579317314,
+          "success_probability": 0.58135993756672,
+          "energy_requirement": 5.712318418772847
+        },
+        "optimization_improvement": 1.3413753363892378
+      },
+      "membrane_neuroprotection_coord": {
+        "coordinate_id": "membrane_neuroprotection_coord",
+        "therapeutic_effect": "neuroprotection",
+        "target_condition": "neurodegenerative_disease",
+        "total_combinations_evaluated": 0,
+        "top_5_combinations": [],
+        "optimal_combination": null,
+        "optimization_improvement": 1.0
+      },
+      "membrane_cardioprotection_coord": {
+        "coordinate_id": "membrane_cardioprotection_coord",
+        "therapeutic_effect": "cardioprotection",
+        "target_condition": "cardiovascular_disease",
+        "total_combinations_evaluated": 0,
+        "top_5_combinations": [],
+        "optimal_combination": null,
+        "optimization_improvement": 1.0
+      },
+      "env_anti_inflammatory_coord": {
+        "coordinate_id": "env_anti_inflammatory_coord",
+        "therapeutic_effect": "anti_inflammatory",
+        "target_condition": "inflammatory_disease",
+        "total_combinations_evaluated": 12,
+        "top_5_combinations": [
+          {
+            "agent_id": "environmental_catalysis_agent",
+            "agent_name": "Environmental Information Catalysis",
+            "agent_type": "environmental",
+            "pathway_id": "pathway_012_healthy_baseline_to_placebo_antidepressant_coord",
+            "combined_efficiency": 0.9199999999999999,
+            "optimization_score": 1.1605224079999996,
+            "navigation_time": 8.543418519538884,
+            "success_probability": 0.76342,
+            "energy_requirement": 4.514814664796972
+          },
+          {
+            "agent_id": "environmental_catalysis_agent",
+            "agent_name": "Environmental Information Catalysis",
+            "agent_type": "environmental",
+            "pathway_id": "pathway_024_mild_dysfunction_to_placebo_antidepressant_coord",
+            "combined_efficiency": 0.9199999999999999,
+            "optimization_score": 1.1605224079999996,
+            "navigation_time": 6.794850991743674,
+            "success_probability": 0.76342,
+            "energy_requirement": 3.5907749143360883
+          },
+          {
+            "agent_id": "environmental_catalysis_agent",
+            "agent_name": "Environmental Information Catalysis",
+            "agent_type": "environmental",
+            "pathway_id": "pathway_036_moderate_dysfunction_to_placebo_antidepressant_coord",
+            "combined_efficiency": 0.9199999999999999,
+            "optimization_score": 1.1605224079999996,
+            "navigation_time": 5.117616632769594,
+            "success_probability": 0.76342,
+            "energy_requirement": 2.704431553902631
+          },
+          {
+            "agent_id": "environmental_catalysis_agent",
+            "agent_name": "Environmental Information Catalysis",
+            "agent_type": "environmental",
+            "pathway_id": "pathway_048_severe_dysfunction_to_placebo_antidepressant_coord",
+            "combined_efficiency": 0.9199999999999999,
+            "optimization_score": 1.1605224079999996,
+            "navigation_time": 3.3674916480965473,
+            "success_probability": 0.76342,
+            "energy_requirement": 1.7795687571241918
+          },
+          {
+            "agent_id": "environmental_catalysis_agent",
+            "agent_name": "Environmental Information Catalysis",
+            "agent_type": "environmental",
+            "pathway_id": "pathway_010_healthy_baseline_to_env_anti_inflammatory_coord",
+            "combined_efficiency": 0.8836236800000001,
+            "optimization_score": 1.1146359574776321,
+            "navigation_time": 14.352700094407325,
+            "success_probability": 0.7097532384000002,
+            "energy_requirement": 5.250987839417314
+          }
+        ],
+        "optimal_combination": {
+          "agent_id": "environmental_catalysis_agent",
+          "agent_name": "Environmental Information Catalysis",
+          "agent_type": "environmental",
+          "pathway_id": "pathway_012_healthy_baseline_to_placebo_antidepressant_coord",
+          "combined_efficiency": 0.9199999999999999,
+          "optimization_score": 1.1605224079999996,
+          "navigation_time": 8.543418519538884,
+          "success_probability": 0.76342,
+          "energy_requirement": 4.514814664796972
+        },
+        "optimization_improvement": 1.4506530099999995
+      },
+      "placebo_analgesic_coord": {
+        "coordinate_id": "placebo_analgesic_coord",
+        "therapeutic_effect": "analgesic_effect",
+        "target_condition": "pain_management",
+        "total_combinations_evaluated": 24,
+        "top_5_combinations": [
+          {
+            "agent_id": "placebo_equivalent_agent",
+            "agent_name": "Placebo Equivalent Pathway",
+            "agent_type": "consciousness",
+            "pathway_id": "pathway_011_healthy_baseline_to_placebo_analgesic_coord",
+            "combined_efficiency": 0.887,
+            "optimization_score": 1.2240983184,
+            "navigation_time": 5.51361950083609,
+            "success_probability": 0.76636,
+            "energy_requirement": 4.410895600668871
+          },
+          {
+            "agent_id": "placebo_equivalent_agent",
+            "agent_name": "Placebo Equivalent Pathway",
+            "agent_type": "consciousness",
+            "pathway_id": "pathway_023_mild_dysfunction_to_placebo_analgesic_coord",
+            "combined_efficiency": 0.887,
+            "optimization_score": 1.2240983184,
+            "navigation_time": 4.354308211415448,
+            "success_probability": 0.76636,
+            "energy_requirement": 3.4834465691323584
+          },
+          {
+            "agent_id": "placebo_equivalent_agent",
+            "agent_name": "Placebo Equivalent Pathway",
+            "agent_type": "consciousness",
+            "pathway_id": "pathway_035_moderate_dysfunction_to_placebo_analgesic_coord",
+            "combined_efficiency": 0.887,
+            "optimization_score": 1.2240983184,
+            "navigation_time": 3.249615361854384,
+            "success_probability": 0.76636,
+            "energy_requirement": 2.599692289483507
+          },
+          {
+            "agent_id": "placebo_equivalent_agent",
+            "agent_name": "Placebo Equivalent Pathway",
+            "agent_type": "consciousness",
+            "pathway_id": "pathway_047_severe_dysfunction_to_placebo_analgesic_coord",
+            "combined_efficiency": 0.887,
+            "optimization_score": 1.2240983184,
+            "navigation_time": 2.08806130178211,
+            "success_probability": 0.76636,
+            "energy_requirement": 1.670449041425688
+          },
+          {
+            "agent_id": "placebo_equivalent_agent",
+            "agent_name": "Placebo Equivalent Pathway",
+            "agent_type": "consciousness",
+            "pathway_id": "pathway_002_healthy_baseline_to_anxiety_reduction_coord",
+            "combined_efficiency": 0.884314688,
+            "optimization_score": 1.2203924718345216,
+            "navigation_time": 14.474114826130126,
+            "success_probability": 0.7861612380160002,
+            "energy_requirement": 5.789645930452051
+          }
+        ],
+        "optimal_combination": {
+          "agent_id": "placebo_equivalent_agent",
+          "agent_name": "Placebo Equivalent Pathway",
+          "agent_type": "consciousness",
+          "pathway_id": "pathway_011_healthy_baseline_to_placebo_analgesic_coord",
+          "combined_efficiency": 0.887,
+          "optimization_score": 1.2240983184,
+          "navigation_time": 5.51361950083609,
+          "success_probability": 0.76636,
+          "energy_requirement": 4.410895600668871
+        },
+        "optimization_improvement": 1.6768470115068494
+      },
+      "placebo_antidepressant_coord": {
+        "coordinate_id": "placebo_antidepressant_coord",
+        "therapeutic_effect": "antidepressant_effect",
+        "target_condition": "depression",
+        "total_combinations_evaluated": 12,
+        "top_5_combinations": [
+          {
+            "agent_id": "placebo_equivalent_agent",
+            "agent_name": "Placebo Equivalent Pathway",
+            "agent_type": "consciousness",
+            "pathway_id": "pathway_012_healthy_baseline_to_placebo_antidepressant_coord",
+            "combined_efficiency": 0.871,
+            "optimization_score": 1.1991657989999998,
+            "navigation_time": 8.543418519538884,
+            "success_probability": 0.707168,
+            "energy_requirement": 4.936197366844689
+          },
+          {
+            "agent_id": "placebo_equivalent_agent",
+            "agent_name": "Placebo Equivalent Pathway",
+            "agent_type": "consciousness",
+            "pathway_id": "pathway_024_mild_dysfunction_to_placebo_antidepressant_coord",
+            "combined_efficiency": 0.871,
+            "optimization_score": 1.1991657989999998,
+            "navigation_time": 6.794850991743674,
+            "success_probability": 0.707168,
+            "energy_requirement": 3.92591390634079
+          },
+          {
+            "agent_id": "placebo_equivalent_agent",
+            "agent_name": "Placebo Equivalent Pathway",
+            "agent_type": "consciousness",
+            "pathway_id": "pathway_036_moderate_dysfunction_to_placebo_antidepressant_coord",
+            "combined_efficiency": 0.871,
+            "optimization_score": 1.1991657989999998,
+            "navigation_time": 5.117616632769594,
+            "success_probability": 0.707168,
+            "energy_requirement": 2.95684516560021
+          },
+          {
+            "agent_id": "placebo_equivalent_agent",
+            "agent_name": "Placebo Equivalent Pathway",
+            "agent_type": "consciousness",
+            "pathway_id": "pathway_048_severe_dysfunction_to_placebo_antidepressant_coord",
+            "combined_efficiency": 0.871,
+            "optimization_score": 1.1991657989999998,
+            "navigation_time": 3.3674916480965473,
+            "success_probability": 0.707168,
+            "energy_requirement": 1.9456618411224496
+          },
+          {
+            "agent_id": "placebo_equivalent_agent",
+            "agent_name": "Placebo Equivalent Pathway",
+            "agent_type": "consciousness",
+            "pathway_id": "pathway_010_healthy_baseline_to_env_anti_inflammatory_coord",
+            "combined_efficiency": 0.8346236800000001,
+            "optimization_score": 1.1490840092899202,
+            "navigation_time": 14.352700094407325,
+            "success_probability": 0.6574556313600002,
+            "energy_requirement": 5.74108003776293
+          }
+        ],
+        "optimal_combination": {
+          "agent_id": "placebo_equivalent_agent",
+          "agent_name": "Placebo Equivalent Pathway",
+          "agent_type": "consciousness",
+          "pathway_id": "pathway_012_healthy_baseline_to_placebo_antidepressant_coord",
+          "combined_efficiency": 0.871,
+          "optimization_score": 1.1991657989999998,
+          "navigation_time": 8.543418519538884,
+          "success_probability": 0.707168,
+          "energy_requirement": 4.936197366844689
+        },
+        "optimization_improvement": 1.76347911617647
+      }
+    },
+    "optimization_summary": {
+      "coordinates_optimized": 12,
+      "average_optimization_improvement": 1.4453296307205394,
+      "best_optimized_coordinate": "placebo_antidepressant_coord",
+      "agent_type_effectiveness": {
+        "pharmaceutical": 1.1242380348128138,
+        "environmental": 1.1319607502629667,
+        "consciousness": 1.1971575371413319
+      }
+    }
+  },
+  "clinical_applications": [
+    "Precision therapeutic targeting through coordinate navigation",
+    "Personalized treatment selection based on individual coordinate profiles",
+    "Multi-modal therapy combining pharmaceutical, environmental, and consciousness agents",
+    "Real-time navigation monitoring for treatment optimization",
+    "Fire-circle enhancement protocols for accelerated therapeutic effects",
+    "Environmental information catalysis for enhanced treatment efficacy"
+  ],
+  "precision_medicine_implications": [
+    "Individual consciousness coordinate mapping for personalized therapy",
+    "Agent-coordinate matching algorithms for optimal treatment selection",
+    "Navigation pathway optimization based on patient-specific factors",
+    "Therapeutic coordinate clustering for treatment stratification",
+    "Real-time coordinate navigation monitoring and adjustment",
+    "Integration with traditional pharmacogenomics for comprehensive precision medicine"
+  ]
+}

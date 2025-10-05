@@ -1,0 +1,95 @@
+{
+  "consciousness_coordinates": {
+    "total_coordinates_mapped": 9,
+    "optimization_types": [
+      "audio_pattern",
+      "environmental",
+      "fire_circle",
+      "visual_pattern",
+      "memory_95_5"
+    ],
+    "average_optimization_strength": 0.8522222222222222,
+    "fire_adaptation_factor_range": [
+      1.77,
+      2.42
+    ]
+  },
+  "pharmaceutical_bmds": {
+    "total_drugs_modeled": 6,
+    "average_catalysis_rate": 0.8266666666666667,
+    "average_environmental_coupling": 0.8283333333333333
+  },
+  "coupling_analysis": {
+    "fluoxetine": {
+      "target_consciousness_state": "elevated_mood",
+      "coordinate_alignment": 1.0,
+      "optimization_efficiency": 0.896,
+      "fire_enhanced_efficiency": 1.58592,
+      "environmental_catalysis_potential": 1.270152,
+      "consciousness_navigation_accuracy": 0.94,
+      "overall_coupling_strength": 1.3620056,
+      "therapeutic_mechanism": "consciousness_optimization_coordinate_navigation",
+      "traditional_vs_consciousness_advantage": 1.6609824390243904
+    },
+    "diazepam": {
+      "target_consciousness_state": "reduced_anxiety",
+      "coordinate_alignment": 1.0,
+      "optimization_efficiency": 0.8640000000000001,
+      "fire_enhanced_efficiency": 1.5292800000000002,
+      "environmental_catalysis_potential": 1.32396,
+      "consciousness_navigation_accuracy": 0.912,
+      "overall_coupling_strength": 1.3442280000000002,
+      "therapeutic_mechanism": "consciousness_optimization_coordinate_navigation",
+      "traditional_vs_consciousness_advantage": 1.701554430379747
+    },
+    "morphine": {
+      "target_consciousness_state": "pain_relief",
+      "coordinate_alignment": 1.0,
+      "optimization_efficiency": 0.891,
+      "fire_enhanced_efficiency": 1.57707,
+      "environmental_catalysis_potential": 1.0832400000000002,
+      "consciousness_navigation_accuracy": 0.9279999999999999,
+      "overall_coupling_strength": 1.299107,
+      "therapeutic_mechanism": "consciousness_optimization_coordinate_navigation",
+      "traditional_vs_consciousness_advantage": 1.4762579545454546
+    },
+    "modafinil": {
+      "target_consciousness_state": "enhanced_focus",
+      "coordinate_alignment": 1.0,
+      "optimization_efficiency": 0.919,
+      "fire_enhanced_efficiency": 1.62663,
+      "environmental_catalysis_potential": 1.23369,
+      "consciousness_navigation_accuracy": 0.964,
+      "overall_coupling_strength": 1.376222,
+      "therapeutic_mechanism": "consciousness_optimization_coordinate_navigation",
+      "traditional_vs_consciousness_advantage": 1.619084705882353
+    },
+    "melatonin": {
+      "target_consciousness_state": "sleep_induction",
+      "coordinate_alignment": 1.0,
+      "optimization_efficiency": 0.8520000000000001,
+      "fire_enhanced_efficiency": 1.5080400000000003,
+      "environmental_catalysis_potential": 1.497951,
+      "consciousness_navigation_accuracy": 0.9,
+      "overall_coupling_strength": 1.3834053,
+      "therapeutic_mechanism": "consciousness_optimization_coordinate_navigation",
+      "traditional_vs_consciousness_advantage": 1.8950757534246576
+    },
+    "psilocybin": {
+      "target_consciousness_state": "expanded_consciousness",
+      "coordinate_alignment": 1.0,
+      "optimization_efficiency": 0.9590000000000001,
+      "fire_enhanced_efficiency": 2.32078,
+      "environmental_catalysis_potential": 2.115564,
+      "consciousness_navigation_accuracy": 0.952,
+      "overall_coupling_strength": 1.9854591999999998,
+      "therapeutic_mechanism": "consciousness_optimization_coordinate_navigation",
+      "traditional_vs_consciousness_advantage": 2.158107826086956
+    }
+  },
+  "equivalence_theorem_validation": {
+    "visual_consciousness_equivalence_theorem": {
+      "statement": "Visual stimuli achieve identical consciousness optimization to pharmaceutical molecules",
+      "validation_score": 0.568886137178327,
+      "cross_modality_equivalence": 0.5242270740363624,
+      "theorem_supported": 

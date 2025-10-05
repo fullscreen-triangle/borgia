@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?> <svg width="500" height="240" viewBox="0 0 500 240" xmlns="http://www.w3.org/2000/svg"> <defs> <style> .axis { stroke:#111; stroke-width:1; } .grid { stroke:#bbb; stroke-width:0.3; stroke-dasharray:3 3; } .label { font-family:'Helvetica, Arial, sans-serif'; font-size:12px; fill:#111; } .title { font-family:'Helvetica, Arial, sans-serif'; font-size:13px; font-weight:600; fill:#111; } .curve { stroke:#1f77b4; stroke-width:2; fill:none; } .legend { font-size:11px; } </style> </defs> <g transform="translate(60,20)"> <text class="title" x="190" y="-5" text-anchor="middle">Therapeutic Amplification Factor</text> <!-- Grid --> <path class="grid" d="M0 0 V190"/> <path class="grid" d="M95 0 V190"/> <path class="grid" d="M190 0 V190"/> <path class="grid" d="M285 0 V190"/> <path class="grid" d="M0 190 H380"/> <path class="grid" d="M0 142 H380"/> <path class="grid" d="M0 95 H380"/> <path class="grid" d="M0 47 H380"/>
+    <!-- Axes -->
+<line x1="0" y1="190" x2="380" y2="190" class="axis"/>
+<line x1="0" y1="0" x2="0" y2="190" class="axis"/>
+
+<!-- Labels -->
+<text class="label" x="190" y="215" text-anchor="middle">ln(N_states) / E_binding</text>
+<text class="label" x="-42" y="95" transform="rotate(-90)" text-anchor="middle">A_therapeutic</text>
+
+<!-- Curve -->
+<path class="curve" d="M0,180 C80,160 160,120 240,80 C300,50 340,35 380,30"/>
+
+<!-- Equation -->
+<text class="label" x="250" y="60">A ≥ k_B T · ln(N_states) / E_binding</text>
+</g> </svg>

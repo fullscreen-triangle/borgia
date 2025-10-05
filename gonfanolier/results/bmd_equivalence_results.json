@@ -1,0 +1,74 @@
+{
+  "agrafiotis": {
+    "equivalence_achieved": "False",
+    "total_variance_difference": 0.4440198646904574,
+    "epsilon_threshold": 0.1,
+    "pathway_variances": {
+      "visual": 0.38994713115503865,
+      "spectral": 0.1768453245830297,
+      "semantic": 0.16793719880980995
+    },
+    "pathway_correlations": {
+      "visual_spectral": 0.26694391342629226,
+      "spectral_semantic": 0.4502062313716206,
+      "semantic_visual": 0.9807020290202045,
+      "average": 0.5659507246060391
+    },
+    "information_consistency": 0.0,
+    "validation_score": 0.0
+  },
+  "ahmed": {
+    "equivalence_achieved": "False",
+    "total_variance_difference": 0.4131272177177087,
+    "epsilon_threshold": 0.1,
+    "pathway_variances": {
+      "visual": 0.1436230624858619,
+      "spectral": 0.21453109863118106,
+      "semantic": 0.35018667134471626
+    },
+    "pathway_correlations": {
+      "visual_spectral": 0.6264111897054724,
+      "spectral_semantic": 0.8874230034106662,
+      "semantic_visual": 0.6864698976728806,
+      "average": 0.733434696929673
+    },
+    "information_consistency": 0.0,
+    "validation_score": 0.0
+  },
+  "hann": {
+    "equivalence_achieved": "False",
+    "total_variance_difference": 0.4623581527098028,
+    "epsilon_threshold": 0.1,
+    "pathway_variances": {
+      "visual": 0.13361022503648246,
+      "spectral": 0.07652970302948317,
+      "semantic": 0.30770877938438457
+    },
+    "pathway_correlations": {
+      "visual_spectral": 0.12163802617048018,
+      "spectral_semantic": 0.5455565857695797,
+      "semantic_visual": 0.12675614581969533,
+      "average": 0.26465025258658503
+    },
+    "information_consistency": 0.0,
+    "validation_score": 0.0
+  },
+  "walters": {
+    "equivalence_achieved": "False",
+    "total_variance_difference": 0.564876435682117,
+    "epsilon_threshold": 0.1,
+    "pathway_variances": {
+      "visual": 0.06065147884628502,
+      "spectral": 0.15240940740331047,
+      "semantic": 0.3430896966873435
+    },
+    "pathway_correlations": {
+      "visual_spectral": 0.486342239007912,
+      "spectral_semantic": -0.41151630734757716,
+      "semantic_visual": -0.8193242344844552,
+      "average": -0.24816610094137345
+    },
+    "information_consistency": 0.0,
+    "validation_score": -0.0
+  }
+}

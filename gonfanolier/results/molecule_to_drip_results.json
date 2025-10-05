@@ -1,0 +1,9 @@
+{
+  "molecules_converted": 20,
+  "datasets_processed": 4,
+  "avg_s_structure": 0.6925169668565141,
+  "avg_s_spectroscopy": 0.04879740980573543,
+  "avg_s_activity": 0.34972066831302173,
+  "cv_features_extracted": 8,
+  "conversion_success_rate": 1.0
+}

@@ -1,0 +1,271 @@
+{
+  "individual_drug_analyses": {
+    "fluoxetine": {
+      "traditional_pharmaceutics": {
+        "characteristics": {
+          "bioavailability": 0.72,
+          "half_life_hours": 24,
+          "side_effects_count": 15,
+          "metabolic_burden": 0.8,
+          "dosage_precision": 0.6,
+          "therapeutic_window": 0.4
+        },
+        "effectiveness_score": 0.1728,
+        "limitations_score": 0.61,
+        "overall_traditional_score": 0.06739200000000001
+      },
+      "informational_pharmaceutics": {
+        "characteristics": {
+          "information_bioavailability": 1.0,
+          "information_half_life": 0.0,
+          "side_effects_count": 0,
+          "metabolic_burden": 0.0,
+          "dosage_precision": NaN,
+          "therapeutic_window": 0.95,
+          "delivery_success_probability": 0.0,
+          "information_advantage": 15.7248
+        },
+        "conformational_information": [],
+        "delivery_protocol": {
+          "therapeutic_packet": "TherapeuticInformationPacket(drug_name='fluoxetine', target_condition='fluoxetine_indication', conformational_changes=[], delivery_method=<InformationDeliveryMethod.TEMPORAL_INJECTION: 'temporal_injection'>, information_dosage=1.0, delivery_timing=[0.0, 0.5, 1.0], expected_efficacy=0.85)",
+          "target_pathway": "BiologicalPathway(pathway_id='pathway_0', pathway_name='fluoxetine_pathway', molecular_steps=['step_1', 'step_2', 'step_3', 'step_4', 'step_5'], information_flow=[0.2424954887211587, 0.5411441080742937, 0.8283142357522864, 1.098756132431523, 1.2124928256414533], oscillatory_frequencies=[7.162473598200903, 7.166952008158904, 16.768072245965573, 0.5792773127328452, 13.712778932828726], bmd_coordinates=[[0.8783777110724049, -2.130991310663078, 0.7838605007153698], [2.398849493973536, -0.3196026086790065, 2.098813222407534], [-0.347821973467652, -2.6651022920769467, -1.6061092725835433], [2.2625152730820055, 2.798171193917036, -1.9615537554499778], [0.6037427636807573, -1.2646631531557688, 0.9347256948237264]], pathway_state='normal')",
+          "delivery_plan": [],
+          "coordination_sequence": [],
+          "total_delivery_time": 0.0,
+          "success_probability": 0.0,
+          "information_vs_molecule_advantage": 15.7248
+        },
+        "effectiveness_score": NaN,
+        "limitations_score": 0.1,
+        "overall_informational_score": NaN
+      },
+      "comparative_analysis": {
+        "effectiveness_improvement": NaN,
+        "limitations_reduction": 6.1,
+        "overall_improvement": NaN,
+        "side_effects_elimination": 15,
+        "bioavailability_improvement": 1.3888888888888888,
+        "precision_improvement": NaN,
+        "metabolic_burden_elimination": 0.8,
+        "information_advantage": 15.7248
+      },
+      "recommendation": {
+        "recommendation": "CONSIDER_INFORMATIONAL",
+        "confidence": 0.65,
+        "key_advantages": [
+          "nanx effectiveness improvement",
+          "15 side effects eliminated",
+          "1.4x bioavailability improvement",
+          "nanx precision improvement"
+        ],
+        "implementation_priority": "LOW"
+      }
+    },
+    "dopamine": {
+      "traditional_pharmaceutics": {
+        "characteristics": {
+          "bioavailability": 0.0,
+          "half_life_hours": 0.02,
+          "side_effects_count": 8,
+          "metabolic_burden": 0.9,
+          "dosage_precision": 0.3,
+          "therapeutic_window": 0.2
+        },
+        "effectiveness_score": 0.0,
+        "limitations_score": 0.7666666666666666,
+        "overall_traditional_score": 0.0
+      },
+      "informational_pharmaceutics": {
+        "characteristics": {
+          "information_bioavailability": 1.0,
+          "information_half_life": 0.0,
+          "side_effects_count": 0,
+          "metabolic_burden": 0.0,
+          "dosage_precision": NaN,
+          "therapeutic_window": 0.95,
+          "delivery_success_probability": 0.0,
+          "information_advantage": 15.7248
+        },
+        "conformational_information": [],
+        "delivery_protocol": {
+          "therapeutic_packet": "TherapeuticInformationPacket(drug_name='dopamine', target_condition='dopamine_indication', conformational_changes=[], delivery_method=<InformationDeliveryMethod.TEMPORAL_INJECTION: 'temporal_injection'>, information_dosage=1.0, delivery_timing=[0.0, 0.5, 1.0], expected_efficacy=0.85)",
+          "target_pathway": "BiologicalPathway(pathway_id='pathway_0', pathway_name='dopamine_pathway', molecular_steps=['dopamine_synthesis', 'vesicle_storage', 'synaptic_release', 'receptor_activation', 'reuptake'], information_flow=[0.1563280856640697, 0.3329528282373747, 0.5880699798956999, 0.7339858401629231, 1.0153488083945925], oscillatory_frequencies=[0.8, 1.5, 8.0, 12.0, 6.0], bmd_coordinates=[[2.1, 1.6, -0.5], [2.0, 1.7, -0.4], [1.8, 2.0, -0.2], [2.2, 1.9, -0.3], [1.9, 1.5, -0.6]], pathway_state='normal')",
+          "delivery_plan": [],
+          "coordination_sequence": [],
+          "total_delivery_time": 0.0,
+          "success_probability": 0.0,
+          "information_vs_molecule_advantage": 15.7248
+        },
+        "effectiveness_score": NaN,
+        "limitations_score": 0.1,
+        "overall_informational_score": NaN
+      },
+      "comparative_analysis": {
+        "effectiveness_improvement": 1,
+        "limitations_reduction": 7.666666666666666,
+        "overall_improvement": NaN,
+        "side_effects_elimination": 8,
+        "bioavailability_improvement": 1,
+        "precision_improvement": NaN,
+        "metabolic_burden_elimination": 0.9,
+        "information_advantage": 15.7248
+      },
+      "recommendation": {
+        "recommendation": "CONSIDER_INFORMATIONAL",
+        "confidence": 0.65,
+        "key_advantages": [
+          "1.0x effectiveness improvement",
+          "8 side effects eliminated",
+          "1.0x bioavailability improvement",
+          "nanx precision improvement"
+        ],
+        "implementation_priority": "LOW"
+      }
+    },
+    "aspirin": {
+      "traditional_pharmaceutics": {
+        "characteristics": {
+          "bioavailability": 0.68,
+          "half_life_hours": 0.3,
+          "side_effects_count": 12,
+          "metabolic_burden": 0.7,
+          "dosage_precision": 0.7,
+          "therapeutic_window": 0.5
+        },
+        "effectiveness_score": 0.238,
+        "limitations_score": 0.5399999999999999,
+        "overall_traditional_score": 0.10948000000000001
+      },
+      "informational_pharmaceutics": {
+        "characteristics": {
+          "information_bioavailability": 1.0,
+          "information_half_life": 0.0,
+          "side_effects_count": 0,
+          "metabolic_burden": 0.0,
+          "dosage_precision": NaN,
+          "therapeutic_window": 0.95,
+          "delivery_success_probability": 0.0,
+          "information_advantage": 15.7248
+        },
+        "conformational_information": [],
+        "delivery_protocol": {
+          "therapeutic_packet": "TherapeuticInformationPacket(drug_name='aspirin', target_condition='aspirin_indication', conformational_changes=[], delivery_method=<InformationDeliveryMethod.TEMPORAL_INJECTION: 'temporal_injection'>, information_dosage=1.0, delivery_timing=[0.0, 0.5, 1.0], expected_efficacy=0.85)",
+          "target_pathway": "BiologicalPathway(pathway_id='pathway_0', pathway_name='aspirin_pathway', molecular_steps=['step_1', 'step_2', 'step_3'], information_flow=[0.11732703259936453, 0.25457507213947306, 0.5262763153983083], oscillatory_frequencies=[19.510077569223338, 5.899132297704901, 9.841608250402967], bmd_coordinates=[[-2.022040275890162, 0.9965479554598398, -0.7966727289885105], [-0.022110211211622488, 1.7368008007881768, -2.0563026891134797], [2.830303456635445, 1.7129654316844967, -0.25219856644983096]], pathway_state='normal')",
+          "delivery_plan": [],
+          "coordination_sequence": [],
+          "total_delivery_time": 0.0,
+          "success_probability": 0.0,
+          "information_vs_molecule_advantage": 15.7248
+        },
+        "effectiveness_score": NaN,
+        "limitations_score": 0.1,
+        "overall_informational_score": NaN
+      },
+      "comparative_analysis": {
+        "effectiveness_improvement": NaN,
+        "limitations_reduction": 5.399999999999999,
+        "overall_improvement": NaN,
+        "side_effects_elimination": 12,
+        "bioavailability_improvement": 1.4705882352941175,
+        "precision_improvement": NaN,
+        "metabolic_burden_elimination": 0.7,
+        "information_advantage": 15.7248
+      },
+      "recommendation": {
+        "recommendation": "CONSIDER_INFORMATIONAL",
+        "confidence": 0.65,
+        "key_advantages": [
+          "nanx effectiveness improvement",
+          "12 side effects eliminated",
+          "1.5x bioavailability improvement",
+          "nanx precision improvement"
+        ],
+        "implementation_priority": "LOW"
+      }
+    },
+    "morphine": {
+      "traditional_pharmaceutics": {
+        "characteristics": {
+          "bioavailability": 0.35,
+          "half_life_hours": 3,
+          "side_effects_count": 20,
+          "metabolic_burden": 0.9,
+          "dosage_precision": 0.4,
+          "therapeutic_window": 0.3
+        },
+        "effectiveness_score": 0.041999999999999996,
+        "limitations_score": 0.85,
+        "overall_traditional_score": 0.0063
+      },
+      "informational_pharmaceutics": {
+        "characteristics": {
+          "information_bioavailability": 1.0,
+          "information_half_life": 0.0,
+          "side_effects_count": 0,
+          "metabolic_burden": 0.0,
+          "dosage_precision": NaN,
+          "therapeutic_window": 0.95,
+          "delivery_success_probability": 0.0,
+          "information_advantage": 15.7248
+        },
+        "conformational_information": [],
+        "delivery_protocol": {
+          "therapeutic_packet": "TherapeuticInformationPacket(drug_name='morphine', target_condition='morphine_indication', conformational_changes=[], delivery_method=<InformationDeliveryMethod.TEMPORAL_INJECTION: 'temporal_injection'>, information_dosage=1.0, delivery_timing=[0.0, 0.5, 1.0], expected_efficacy=0.85)",
+          "target_pathway": "BiologicalPathway(pathway_id='pathway_0', pathway_name='morphine_pathway', molecular_steps=['step_1', 'step_2', 'step_3', 'step_4', 'step_5', 'step_6'], information_flow=[0.1264666226655587, 0.23269214163683244, 0.35625452491989157, 0.6178626453240228, 0.82439611165666, 1.0508078374713055], oscillatory_frequencies=[4.445575043405999, 15.290072115526748, 3.457441598925163, 18.569248002323082, 3.214003050750227, 17.466876014067125], bmd_coordinates=[[-2.2465950262682846, 0.10026464328560136, -1.0884493647392943], [-1.5998636123637595, -2.102517952275812, -2.785323332306831], [-0.4590115141513458, 2.998982877107289, 0.8233594133247992], [-2.2138428756496458, -1.1422321002269467, -0.11992405653376847], [-0.6764179318400148, 0.7609527019126805, -1.7965478516575677], [-2.120604364239223, -2.749477444594551, -0.8699763813935082]], pathway_state='normal')",
+          "delivery_plan": [],
+          "coordination_sequence": [],
+          "total_delivery_time": 0.0,
+          "success_probability": 0.0,
+          "information_vs_molecule_advantage": 15.7248
+        },
+        "effectiveness_score": NaN,
+        "limitations_score": 0.1,
+        "overall_informational_score": NaN
+      },
+      "comparative_analysis": {
+        "effectiveness_improvement": NaN,
+        "limitations_reduction": 8.5,
+        "overall_improvement": NaN,
+        "side_effects_elimination": 20,
+        "bioavailability_improvement": 2.857142857142857,
+        "precision_improvement": NaN,
+        "metabolic_burden_elimination": 0.9,
+        "information_advantage": 15.7248
+      },
+      "recommendation": {
+        "recommendation": "CONSIDER_INFORMATIONAL",
+        "confidence": 0.65,
+        "key_advantages": [
+          "nanx effectiveness improvement",
+          "20 side effects eliminated",
+          "2.9x bioavailability improvement",
+          "nanx precision improvement"
+        ],
+        "implementation_priority": "LOW"
+      }
+    }
+  },
+  "overall_validation": {
+    "drugs_analyzed": 4,
+    "average_effectiveness_improvement": NaN,
+    "average_limitations_reduction": 6.916666666666666,
+    "average_overall_improvement": NaN,
+    "average_success_probability": 0.0,
+    "average_information_advantage": 15.7248,
+    "recommendation_distribution": {
+      "STRONGLY_RECOMMEND_INFORMATIONAL": 0,
+      "RECOMMEND_INFORMATIONAL": 0,
+      "CONSIDER_INFORMATIONAL": 4,
+      "TRADITIONAL_PREFERRED": 0
+    },
+    "informational_pharmaceutics_viability": 1.0,
+    "key_findings": [
+      "Average nanx effectiveness improvement",
+      "Average 6.9x safety improvement",
+      "Average nanx overall improvement",
+      "0.0% average success probability",
+      "15.7x information advantage"
+    ]
+  },
+  "validation_timestamp": "2025-10-04T10:09:09.562169"
+}

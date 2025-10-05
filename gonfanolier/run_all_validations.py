@@ -291,6 +291,9 @@ def main():
     print("=" * 60)
     print("Comprehensive validation of fuzzy molecular representations")
     print("Using S-entropy transformations and cross-modal validation")
+    print("Running ALL 29 validation scripts:")
+    print("• Information: 6 scripts • Oscillatory: 6 scripts • Spectroscopy: 10 scripts")
+    print("• Pharmaceutics: 8 scripts • Temporal: 2 scripts")
     print("=" * 60)
     
     validator = MasterValidator()
@@ -313,17 +316,31 @@ def main():
         ('gonfanolier/src/oscillatory/strategic_optimization.py', 'Strategic Optimization'),
         ('gonfanolier/src/oscillatory/oscilatory_molecular_architecture.py', 'Oscillatory Molecular Architecture'),
         
-        # Spectroscopy scripts (ALL 10) ✅
-        ('gonfanolier/src/spectroscopy/computer_vision_chemical_analysis.py', 'Computer Vision Analysis'),
-        ('gonfanolier/src/spectroscopy/molecule_to_drip_simple.py', 'Molecule-to-Drip Algorithm (Simple)'),
-        ('gonfanolier/src/spectroscopy/molecule_to_drip.py', 'Molecule-to-Drip Algorithm (Full)'),
-        ('gonfanolier/src/spectroscopy/led_spectroscopy.py', 'LED Spectroscopy'),
-        ('gonfanolier/src/spectroscopy/hardware_clock_synchronization.py', 'Hardware Clock Synchronization'),
-        ('gonfanolier/src/spectroscopy/noise_enhanced_processing.py', 'Noise Enhanced Processing'),
-        ('gonfanolier/src/spectroscopy/pixel_chemical_modification.py', 'Pixel Chemical Modification'),
-        ('gonfanolier/src/spectroscopy/rgb_chemical_mapping.py', 'RGB Chemical Mapping'),
-        ('gonfanolier/src/spectroscopy/spectral_analysis_algorithm.py', 'Spectral Analysis Algorithm'),
-    ]
+    # Spectroscopy scripts (ALL 10) ✅
+    ('gonfanolier/src/spectroscopy/computer_vision_chemical_analysis.py', 'Computer Vision Analysis'),
+    ('gonfanolier/src/spectroscopy/molecule_to_drip_simple.py', 'Molecule-to-Drip Algorithm (Simple)'),
+    ('gonfanolier/src/spectroscopy/molecule_to_drip.py', 'Molecule-to-Drip Algorithm (Full)'),
+    ('gonfanolier/src/spectroscopy/led_spectroscopy.py', 'LED Spectroscopy'),
+    ('gonfanolier/src/spectroscopy/hardware_clock_synchronization.py', 'Hardware Clock Synchronization'),
+    ('gonfanolier/src/spectroscopy/noise_enhanced_processing.py', 'Noise Enhanced Processing'),
+    ('gonfanolier/src/spectroscopy/pixel_chemical_modification.py', 'Pixel Chemical Modification'),
+    ('gonfanolier/src/spectroscopy/rgb_chemical_mapping.py', 'RGB Chemical Mapping'),
+    ('gonfanolier/src/spectroscopy/spectral_analysis_algorithm.py', 'Spectral Analysis Algorithm'),
+    
+    # Pharmaceutics scripts (ALL 8) ✅
+    ('gonfanolier/src/pharmaceutics/placebo_equivalent_pathway_analysis.py', 'Placebo Equivalent Pathway Analysis'),
+    ('gonfanolier/src/pharmaceutics/environmental_drug_enhancement.py', 'Environmental Drug Enhancement'),
+    ('gonfanolier/src/pharmaceutics/informational_pharmaceutics_framework.py', 'Informational Pharmaceutics Framework'),
+    ('gonfanolier/src/pharmaceutics/bont_lps_conjugate_analysis.py', 'BoNT-LPS Conjugate Analysis'),
+    ('gonfanolier/src/pharmaceutics/consciousness_pharmaceutical_coupling.py', 'Consciousness-Pharmaceutical Coupling'),
+    ('gonfanolier/src/pharmaceutics/placebo_amplification_analysis.py', 'Placebo Amplification Analysis'),
+    ('gonfanolier/src/pharmaceutics/therapeutic_coordinate_navigation.py', 'Therapeutic Coordinate Navigation'),
+    ('gonfanolier/src/pharmaceutics/unified_bioactive_molecular_framework.py', 'Unified Bioactive Molecular Framework'),
+    
+    # Temporal scripts (ALL 2) ✅
+    ('gonfanolier/src/temporal/unified_oscillatory_temporal_framework.py', 'Unified Oscillatory-Temporal Framework'),
+    ('gonfanolier/src/temporal/oscillatory_gear_networks.py', 'Oscillatory Gear Networks Framework'),
+]
     
     # Run all validation scripts
     successful_scripts = 0

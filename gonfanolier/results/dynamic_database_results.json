@@ -1,0 +1,158 @@
+{
+  "performance_metrics": {
+    "avg_synthesis_time": 0.024791666666666667,
+    "avg_definition_quality": 0.9291666666666666,
+    "success_rate": 0.9236111111111112
+  },
+  "storage_analysis": {
+    "traditional_storage_mb": 36.40625,
+    "dynamic_storage_mb": 1.38671875,
+    "storage_reduction": 96.19098712446352
+  },
+  "example_syntheses": {
+    "[OH;!$([OH][C,S,P])=O)]": {
+      "definition": {
+        "technical_aspects": [
+          "Carbon framework (weight: 0.00)",
+          "Double bond character (weight: 0.00)",
+          "Specific atom specification (weight: 0.00)"
+        ],
+        "interaction_aspects": [
+          "Oxygen interactions (weight: 0.16)",
+          "Hydrogen bonding (weight: 0.16)"
+        ],
+        "reactivity_aspects": [],
+        "structural_aspects": [
+          "Complexity: 0.49"
+        ]
+      },
+      "perturbation": [
+        0.0,
+        0.2,
+        0.4,
+        0.6086956521739131
+      ],
+      "equilibrium": [
+        0.0,
+        0.16000000000000003,
+        0.32000000000000006,
+        0.4869565217391305
+      ]
+    },
+    "[S;!H0]": {
+      "definition": {
+        "technical_aspects": [
+          "Specific atom specification (weight: 0.00)"
+        ],
+        "interaction_aspects": [],
+        "reactivity_aspects": [],
+        "structural_aspects": [
+          "Ring structure (weight: 0.80)",
+          "Complexity: 0.80"
+        ]
+      },
+      "perturbation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "equilibrium": [
+        0.0,
+        0.0,
+        0.0,
+        0.8
+      ]
+    },
+    "[CH]#C": {
+      "definition": {
+        "technical_aspects": [
+          "Carbon framework (weight: 0.00)",
+          "Specific atom specification (weight: 0.00)"
+        ],
+        "interaction_aspects": [],
+        "reactivity_aspects": [
+          "Triple bond reactivity (weight: 0.32)"
+        ],
+        "structural_aspects": [
+          "Complexity: 0.67"
+        ]
+      },
+      "perturbation": [
+        0.0,
+        0.0,
+        0.4,
+        0.8333333333333334
+      ],
+      "equilibrium": [
+        0.0,
+        0.0,
+        0.32000000000000006,
+        0.6666666666666667
+      ]
+    },
+    "[N;!H0;!$([N;!H0]#C);!$([NH](C(F)(F)(F))S(=O)=O);!$([nH]1nnnc1);!$([nH]1nncn1);!$([nH]1ncnn1)]": {
+      "definition": {
+        "technical_aspects": [
+          "Carbon framework (weight: 0.00)",
+          "Double bond character (weight: 0.00)",
+          "Specific atom specification (weight: 0.00)"
+        ],
+        "interaction_aspects": [
+          "Oxygen interactions (weight: 0.00)",
+          "Nitrogen interactions (weight: 0.00)"
+        ],
+        "reactivity_aspects": [
+          "Triple bond reactivity (weight: 0.32)"
+        ],
+        "structural_aspects": [
+          "Ring structure (weight: 0.16)",
+          "Aromatic character (weight: 0.16)",
+          "Complexity: 0.16"
+        ]
+      },
+      "perturbation": [
+        0.0,
+        0.0,
+        0.4,
+        0.20212765957446807
+      ],
+      "equilibrium": [
+        0.0,
+        0.0,
+        0.32000000000000006,
+        0.16170212765957448
+      ]
+    },
+    "[#7,#8,#16;-0,-1;!$([o,s,nX3]);!$([Nv5,Pv4,Pv5,Sv4,Sv6])]": {
+      "definition": {
+        "technical_aspects": [
+          "Specific atom specification (weight: 0.00)"
+        ],
+        "interaction_aspects": [
+          "Nitrogen interactions (weight: 0.00)"
+        ],
+        "reactivity_aspects": [
+          "Triple bond reactivity (weight: 0.32)"
+        ],
+        "structural_aspects": [
+          "Ring structure (weight: 0.36)",
+          "Aromatic character (weight: 0.36)",
+          "Complexity: 0.36"
+        ]
+      },
+      "perturbation": [
+        0.0,
+        0.0,
+        0.4,
+        0.45614035087719296
+      ],
+      "equilibrium": [
+        0.0,
+        0.0,
+        0.32000000000000006,
+        0.3649122807017544
+      ]
+    }
+  }
+}

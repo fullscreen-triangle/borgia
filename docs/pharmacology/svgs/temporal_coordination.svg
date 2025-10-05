@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?> <svg width="520" height="240" viewBox="0 0 520 240" xmlns="http://www.w3.org/2000/svg"> <defs> <style> .axis { stroke:#111; stroke-width:1; } .label { font-family:'Helvetica, Arial, sans-serif'; font-size:12px; fill:#111; } .title { font-family:'Helvetica, Arial, sans-serif'; font-size:13px; font-weight:600; fill:#111; } .w1 { stroke:#1f77b4; stroke-width:1.6; fill:none; } .w2 { stroke:#ff7f0e; stroke-width:1.6; fill:none; } .w3 { stroke:#2ca02c; stroke-width:1.6; fill:none; } .window { fill:rgba(160,160,160,0.12); } .marker { stroke:#555; stroke-dasharray:4 3; } .legend { font-size:11px; } </style> </defs> <!-- Axes --> <g transform="translate(50,20)"> <rect x="0" y="0" width="440" height="180" fill="#fff"/> <!-- time window (H(tau - t)) --> <rect x="0" y="0" width="320" height="180" class="window"/> <text class="label" x="330" y="20" fill="#555">τ window</text>
+    <!-- axis lines -->
+<line x1="0" y1="90" x2="440" y2="90" class="axis"/>
+<line x1="0" y1="0" x2="0" y2="180" class="axis"/>
+
+<!-- t ticks -->
+<text class="label" x="-20" y="94">0</text>
+<text class="label" x="305" y="200">τ</text>
+<line x1="320" y1="0" x2="320" y2="180" class="marker"/>
+<text class="label" x="420" y="200">t</text>
+<text class="title" x="220" y="-6" text-anchor="middle">Temporal Coordination F_temporal(M)</text>
+
+<!-- Waves -->
+<!-- ω1 -->
+<path class="w1" d="M0,90
+  C20,70 40,70 60,90
+  C80,110 100,110 120,90
+  C140,70 160,70 180,90
+  C200,110 220,110 240,90
+  C260,70 280,70 300,90
+  C320,110 340,110 360,90
+  C380,70 400,70 420,90
+  "/>
+<!-- ω2 with phase shift -->
+<path class="w2" d="M0,90
+  C15,80 35,80 55,90
+  C75,100 95,100 115,90
+  C135,80 155,80 175,90
+  C195,100 215,100 235,90
+  C255,80 275,80 295,90
+  C315,100 335,100 355,90
+  C375,80 395,80 415,90
+  "/>
+<!-- ω3 different frequency -->
+<path class="w3" d="M0,90
+  C30,50 60,50 90,90
+  C120,130 150,130 180,90
+  C210,50 240,50 270,90
+  C300,130 330,130 360,90
+  C390,50 420,50 450,90
+  "/>
+
+<!-- legends -->
+<circle cx="70" cy="20" r="4" fill="#1f77b4"/><text class="legend" x="80" y="24">ω1, φ1(M)</text>
+<circle cx="160" cy="20" r="4" fill="#ff7f0e"/><text class="legend" x="170" y="24">ω2, φ2(M)</text>
+<circle cx="250" cy="20" r="4" fill="#2ca02c"/><text class="legend" x="260" y="24">ω3, φ3(M)</text>
+
+<!-- y label -->
+<text class="label" x="-36" y="10" transform="rotate(-90)">Coordination amplitude</text>
+</g> </svg>

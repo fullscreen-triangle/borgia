@@ -1,0 +1,25 @@
+{
+  "network_stats": {
+    "nodes": 39,
+    "edges": 178,
+    "density": 0.24021592442645073
+  },
+  "optimization": {
+    "initial_efficiency": 0.5081789747224327,
+    "final_efficiency": 0.5098883764318345,
+    "improvement": 0.0017094017094018144,
+    "improvements_applied": 1
+  },
+  "scale_interactions": {
+    "quantum_quantum": 1.0,
+    "quantum_molecular": 0.9023443535038371,
+    "quantum_environmental": 0.3383791325639389,
+    "molecular_quantum": 0.9023443535038371,
+    "molecular_molecular": 1.0,
+    "molecular_environmental": 0.6767582651278778,
+    "environmental_quantum": 0.3383791325639389,
+    "environmental_molecular": 0.6767582651278778,
+    "environmental_environmental": 1.0
+  },
+  "avg_scale_coupling": 0.7594403891545898
+}

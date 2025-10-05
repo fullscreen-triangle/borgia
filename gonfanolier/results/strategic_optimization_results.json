@@ -1,0 +1,12 @@
+[
+  {
+    "problem_type": "drug_discovery",
+    "avg_improvement": 0.039999999999999994,
+    "success_rate": 0.0
+  },
+  {
+    "problem_type": "general",
+    "avg_improvement": 0.03333333333333336,
+    "success_rate": 0.0
+  }
+]

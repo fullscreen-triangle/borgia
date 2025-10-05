@@ -1,0 +1,19 @@
+{
+  "boundary_detection_attempts": [
+    {
+      "attempt_id": 0,
+      "boundary_type": "emotional_rational",
+      "experience_intensity": 1.2581923967020232,
+      "experience_complexity": 0.46778813309631234,
+      "experience_duration": 1.071478589434106,
+      "detection_methods": {
+        "introspective_analysis": {
+          "method": "introspective_analysis",
+          "boundary_detected": true,
+          "confidence": 0.4797342597876408,
+          "clarity": 1.1993356494691019,
+          "limitations": "introspection_cannot_access_processing_substrate"
+        },
+        "behavioral_observation": {
+          "method": "behavioral_observation",
+          "boundary_detected": 

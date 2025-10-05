@@ -1,0 +1,26 @@
+{
+  "agrafiotis": {
+    "count": 9,
+    "avg_S_knowledge": 1.4931876922236724,
+    "avg_S_time": 2.2435411884464114,
+    "avg_S_entropy": 0.928811008051642
+  },
+  "ahmed": {
+    "count": 149,
+    "avg_S_knowledge": 1.8431574665767534,
+    "avg_S_time": 0.9811484478079363,
+    "avg_S_entropy": 0.9778305872737837
+  },
+  "hann": {
+    "count": 119,
+    "avg_S_knowledge": 1.4654825908305305,
+    "avg_S_time": 1.71443624286035,
+    "avg_S_entropy": NaN
+  },
+  "walters": {
+    "count": 11,
+    "avg_S_knowledge": 1.5073337057208023,
+    "avg_S_time": 1.7027807631187442,
+    "avg_S_entropy": NaN
+  }
+}

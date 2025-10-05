@@ -1,0 +1,26 @@
+{
+  "agrafiotis": {
+    "clock_performance": 0.9543297961215094,
+    "processor_performance": 0.9543297961215094,
+    "dual_functionality_score": 0.9543297961215094,
+    "success_rate": 1.0
+  },
+  "ahmed": {
+    "clock_performance": 0.9514322413721918,
+    "processor_performance": 0.9514322413721918,
+    "dual_functionality_score": 0.9514322413721918,
+    "success_rate": 1.0
+  },
+  "hann": {
+    "clock_performance": 0.9537319983114176,
+    "processor_performance": 0.9537319983114176,
+    "dual_functionality_score": 0.9537319983114176,
+    "success_rate": 1.0
+  },
+  "walters": {
+    "clock_performance": 0.9532704929479121,
+    "processor_performance": 0.9532704929479121,
+    "dual_functionality_score": 0.9532704929479121,
+    "success_rate": 1.0
+  }
+}

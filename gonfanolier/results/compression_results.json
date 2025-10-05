@@ -1,0 +1,110 @@
+{
+  "agrafiotis": {
+    "0.1": {
+      "storage_reduction": 6.896551724137931,
+      "info_retention": 100.0,
+      "reconstruction_fidelity": 98.41269841269842
+    },
+    "0.3": {
+      "storage_reduction": 17.67241379310345,
+      "info_retention": 100.0,
+      "reconstruction_fidelity": 93.80952380952381
+    },
+    "0.5": {
+      "storage_reduction": 26.29310344827586,
+      "info_retention": 100.0,
+      "reconstruction_fidelity": 88.14407814407814
+    },
+    "0.7": {
+      "storage_reduction": 92.24137931034483,
+      "info_retention": 14.285714285714285,
+      "reconstruction_fidelity": 20.911895122421438
+    },
+    "0.9": {
+      "storage_reduction": 93.10344827586206,
+      "info_retention": 14.285714285714285,
+      "reconstruction_fidelity": 20.118244328770643
+    }
+  },
+  "ahmed": {
+    "0.1": {
+      "storage_reduction": 13.13383208645054,
+      "info_retention": 100.0,
+      "reconstruction_fidelity": 86.43748123613894
+    },
+    "0.3": {
+      "storage_reduction": 20.36575228595179,
+      "info_retention": 96.875,
+      "reconstruction_fidelity": 81.71368527073226
+    },
+    "0.5": {
+      "storage_reduction": 29.177057356608476,
+      "info_retention": 81.25,
+      "reconstruction_fidelity": 73.76913913826667
+    },
+    "0.7": {
+      "storage_reduction": 85.70241064006649,
+      "info_retention": 31.25,
+      "reconstruction_fidelity": 19.016337875398275
+    },
+    "0.9": {
+      "storage_reduction": 87.61429758935994,
+      "info_retention": 31.25,
+      "reconstruction_fidelity": 18.301180549502693
+    }
+  },
+  "hann": {
+    "0.1": {
+      "storage_reduction": 7.521286660359508,
+      "info_retention": 100.0,
+      "reconstruction_fidelity": 96.13235270798296
+    },
+    "0.3": {
+      "storage_reduction": 17.975402081362347,
+      "info_retention": 100.0,
+      "reconstruction_fidelity": 91.46926602808956
+    },
+    "0.5": {
+      "storage_reduction": 27.105014191106907,
+      "info_retention": 100.0,
+      "reconstruction_fidelity": 87.28580709673147
+    },
+    "0.7": {
+      "storage_reduction": 81.12582781456953,
+      "info_retention": 17.5,
+      "reconstruction_fidelity": 25.13474407999865
+    },
+    "0.9": {
+      "storage_reduction": 91.95837275307474,
+      "info_retention": 20.0,
+      "reconstruction_fidelity": 15.900952661333287
+    }
+  },
+  "walters": {
+    "0.1": {
+      "storage_reduction": 7.262569832402235,
+      "info_retention": 100.0,
+      "reconstruction_fidelity": 97.07792207792208
+    },
+    "0.3": {
+      "storage_reduction": 17.877094972067038,
+      "info_retention": 100.0,
+      "reconstruction_fidelity": 93.28463203463204
+    },
+    "0.5": {
+      "storage_reduction": 27.37430167597765,
+      "info_retention": 96.29629629629629,
+      "reconstruction_fidelity": 87.84632034632035
+    },
+    "0.7": {
+      "storage_reduction": 81.56424581005587,
+      "info_retention": 11.11111111111111,
+      "reconstruction_fidelity": 25.537518037518037
+    },
+    "0.9": {
+      "storage_reduction": 91.62011173184358,
+      "info_retention": 14.814814814814813,
+      "reconstruction_fidelity": 21.013708513708515
+    }
+  }
+}

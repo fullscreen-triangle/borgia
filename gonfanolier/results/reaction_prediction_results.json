@@ -1,0 +1,18 @@
+{
+  "pattern_matching": {
+    "rigid_matches": 324,
+    "fuzzy_matches": 344,
+    "additional_matches": 20,
+    "improvement_ratio": 1.0617283950617284
+  },
+  "mechanism_prediction": {
+    "accuracy": 1.0,
+    "mechanisms_identified": 3
+  },
+  "dataset_info": {
+    "agrafiotis": 9,
+    "ahmed": 149,
+    "hann": 119,
+    "walters": 11
+  }
+}
