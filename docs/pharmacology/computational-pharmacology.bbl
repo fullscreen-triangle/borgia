@@ -1,0 +1,106 @@
+\begin{thebibliography}{17}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Arnold(1978)]{arnold1978mathematical}
+Vladimir~I. Arnold.
+\newblock \emph{Mathematical methods of classical mechanics}.
+\newblock Springer-Verlag, New York, 1978.
+
+\bibitem[Bennett(1982)]{bennett1982thermodynamics}
+Charles~H. Bennett.
+\newblock The thermodynamics of computation—a review.
+\newblock \emph{International Journal of Theoretical Physics}, 21\penalty0
+  (12):\penalty0 905--940, 1982.
+
+\bibitem[Buzsáki(2006)]{buzsaki2006rhythms}
+György Buzsáki.
+\newblock \emph{Rhythms of the brain}.
+\newblock Oxford University Press, Oxford, UK, 2006.
+
+\bibitem[Clark(2013)]{clark2013whatever}
+Andy Clark.
+\newblock Whatever next? predictive brains, situated agents, and the future of
+  cognitive science.
+\newblock \emph{Behavioral and Brain Sciences}, 36\penalty0 (3):\penalty0
+  181--204, 2013.
+
+\bibitem[Cohen and Monod(1957)]{cohen1957}
+Seymour~S. Cohen and Jacques Monod.
+\newblock Biosynthesis of bacterial flagella.
+\newblock \emph{Bacteriological Reviews}, 21\penalty0 (3):\penalty0 169--194,
+  1957.
+
+\bibitem[Friston(2010)]{friston2010free}
+Karl Friston.
+\newblock The free-energy principle: a unified brain theory?
+\newblock \emph{Nature Reviews Neuroscience}, 11\penalty0 (2):\penalty0
+  127--138, 2010.
+
+\bibitem[Goldbeter(1996)]{goldbeter1996biochemical}
+Albert Goldbeter.
+\newblock \emph{Biochemical oscillations and cellular rhythms: the molecular
+  bases of periodic and chaotic behaviour}.
+\newblock Cambridge University Press, Cambridge, UK, 1996.
+
+\bibitem[Goldstein et~al.(2002)Goldstein, Poole, and
+  Safko]{goldstein2002classical}
+Herbert Goldstein, Charles Poole, and John Safko.
+\newblock \emph{Classical mechanics}.
+\newblock Addison Wesley, San Francisco, 3rd edition, 2002.
+
+\bibitem[Haldane(1930)]{haldane1930}
+John Burdon~Sanderson Haldane.
+\newblock Enzymes.
+\newblock \emph{London: Longmans, Green and Co.}, 1930.
+
+\bibitem[Hopfield(1982)]{hopfield1982}
+John~J. Hopfield.
+\newblock Neural networks and physical systems with emergent collective
+  computational abilities.
+\newblock \emph{Proceedings of the National Academy of Sciences}, 79\penalty0
+  (8):\penalty0 2554--2558, 1982.
+
+\bibitem[Jacob(1973)]{jacob1973}
+François Jacob.
+\newblock \emph{The logic of life: A history of heredity}.
+\newblock Pantheon Books, New York, 1973.
+
+\bibitem[Landauer(1961)]{landauer1961irreversibility}
+Rolf Landauer.
+\newblock Irreversibility and heat generation in the computing process.
+\newblock \emph{IBM Journal of Research and Development}, 5\penalty0
+  (3):\penalty0 183--191, 1961.
+
+\bibitem[Lwoff(1962)]{lwoff1962}
+André Lwoff.
+\newblock Biological order.
+\newblock \emph{MIT Press}, 1962.
+
+\bibitem[Maxwell(1867)]{maxwell1867theory}
+James~Clerk Maxwell.
+\newblock On the dynamical theory of gases.
+\newblock \emph{Philosophical Transactions of the Royal Society of London},
+  157:\penalty0 49--88, 1867.
+
+\bibitem[Mizraji(2007)]{mizraji2007biological}
+Eduardo Mizraji.
+\newblock Biological maxwell demons and the origin of biological information.
+\newblock \emph{BioSystems}, 88\penalty0 (3):\penalty0 269--281, 2007.
+
+\bibitem[Monod(1972)]{monod1972}
+Jacques Monod.
+\newblock \emph{Chance and necessity: An essay on the natural philosophy of
+  modern biology}.
+\newblock Vintage Books, New York, 1972.
+
+\bibitem[Wiener(1948)]{wiener1948}
+Norbert Wiener.
+\newblock \emph{Cybernetics: Or Control and Communication in the Animal and the
+  Machine}.
+\newblock MIT Press, Cambridge, MA, 1948.
+
+\end{thebibliography}
