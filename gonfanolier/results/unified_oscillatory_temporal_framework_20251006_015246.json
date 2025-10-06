@@ -1,0 +1,814 @@
+{
+  "framework_execution_timestamp": "2025-10-06T01:52:46.655720",
+  "oscillatory_theorems": {
+    "mathematical_necessity": {
+      "mathematical_necessity_proven": false,
+      "oscillatory_manifestation_rate": 0.04,
+      "total_structures_tested": 100,
+      "oscillatory_structures": 4,
+      "theorem_validation": "Mathematical structures necessarily oscillate",
+      "structures": [
+        {
+          "id": 0,
+          "consistency_parameter": 0.9035451491050656,
+          "complexity": 798,
+          "self_reference_loops": 3,
+          "oscillatory_manifestation": 0.18112760427057084,
+          "oscillation_frequency": 12.15558362184155
+        },
+        {
+          "id": 1,
+          "consistency_parameter": 0.9183934188137155,
+          "complexity": 865,
+          "self_reference_loops": 8,
+          "oscillatory_manifestation": 0.4968677017906849,
+          "oscillation_frequency": 36.094809730336486
+        },
+        {
+          "id": 2,
+          "consistency_parameter": 0.9308528913993355,
+          "complexity": 372,
+          "self_reference_loops": 4,
+          "oscillatory_manifestation": 0.2203847783254366,
+          "oscillation_frequency": 21.56723389754158
+        },
+        {
+          "id": 3,
+          "consistency_parameter": 0.8171265786040613,
+          "complexity": 480,
+          "self_reference_loops": 4,
+          "oscillatory_manifestation": 0.2017905886445875,
+          "oscillation_frequency": 7.422108716363779
+        },
+        {
+          "id": 4,
+          "consistency_parameter": 0.8368687226701572,
+          "complexity": 710,
+          "self_reference_loops": 6,
+          "oscillatory_manifestation": 0.32965589456787725,
+          "oscillation_frequency": 6.767582606790559
+        },
+        {
+          "id": 5,
+          "consistency_parameter": 0.8262262647092512,
+          "complexity": 910,
+          "self_reference_loops": 8,
+          "oscillatory_manifestation": 0.45035575050058463,
+          "oscillation_frequency": 6.880694279750524
+        },
+        {
+          "id": 6,
+          "consistency_parameter": 0.9901101951950417,
+          "complexity": 614,
+          "self_reference_loops": 9,
+          "oscillatory_manifestation": 0.572085218831305,
+          "oscillation_frequency": 43.577800704696806
+        },
+        {
+          "id": 7,
+          "consistency_parameter": 0.907046071310799,
+          "complexity": 305,
+          "self_reference_loops": 9,
+          "oscillatory_manifestation": 0.4669727691280185,
+          "oscillation_frequency": 21.761880298741136
+        },
+        {
+          "id": 8,
+          "consistency_parameter": 0.9430833811584642,
+          "complexity": 584,
+          "self_reference_loops": 6,
+          "oscillatory_manifestation": 0.36044086539181613,
+          "oscillation_frequency": 13.210148555650344
+        },
+        {
+          "id": 9,
+          "consistency_parameter": 0.8109349908989231,
+          "complexity": 162,
+          "self_reference_loops": 7,
+          "oscillatory_manifestation": 0.28879969214663476,
+          "oscillation_frequency": 10.255858234321547
+        },
+        {
+          "id": 10,
+          "consistency_parameter": 0.9877887323014578,
+          "complexity": 302,
+          "self_reference_loops": 1,
+          "oscillatory_manifestation": 0.05640695464392717,
+          "oscillation_frequency": 5.590588836820242
+        },
+        {
+          "id": 11,
+          "consistency_parameter": 0.9827047685826906,
+          "complexity": 531,
+          "self_reference_loops": 7,
+          "oscillatory_manifestation": 0.4316366991997211,
+          "oscillation_frequency": 26.378623110615653
+        },
+        {
+          "id": 12,
+          "consistency_parameter": 0.9821394449556136,
+          "complexity": 145,
+          "self_reference_loops": 8,
+          "oscillatory_manifestation": 0.3910277212378253,
+          "oscillation_frequency": 36.585265389218584
+        },
+        {
+          "id": 13,
+          "consistency_parameter": 0.9849525490367473,
+          "complexity": 621,
+          "self_reference_loops": 3,
+          "oscillatory_manifestation": 0.19003667828548929,
+          "oscillation_frequency": 6.566515275664766
+        },
+        {
+          "id": 14,
+          "consistency_parameter": 0.9200332975457443,
+          "complexity": 290,
+          "self_reference_loops": 5,
+          "oscillatory_manifestation": 0.26082396211307374,
+          "oscillation_frequency": 14.536874090648249
+        },
+        {
+          "id": 15,
+          "consistency_parameter": 0.9724459759820208,
+          "complexity": 244,
+          "self_reference_loops": 5,
+          "oscillatory_manifestation": 0.26728495599913005,
+          "oscillation_frequency": 17.06202527303627
+        },
+        {
+          "id": 16,
+          "consistency_parameter": 0.8422612106888245,
+          "complexity": 375,
+          "self_reference_loops": 3,
+          "oscillatory_manifestation": 0.14976059670890826,
+          "oscillation_frequency": 1.6589806460067493
+        },
+        {
+          "id": 17,
+          "consistency_parameter": 0.9899293264439168,
+          "complexity": 625,
+          "self_reference_loops": 6,
+          "oscillatory_manifestation": 0.3823751492662062,
+          "oscillation_frequency": 14.028091910958924
+        },
+        {
+          "id": 18,
+          "consistency_parameter": 0.8470361676938276,
+          "complexity": 838,
+          "self_reference_loops": 9,
+          "oscillatory_manifestation": 0.5131274198859118,
+          "oscillation_frequency": 12.56053909402431
+        },
+        {
+          "id": 19,
+          "consistency_parameter": 0.8809247698643123,
+          "complexity": 200,
+          "self_reference_loops": 9,
+          "oscillatory_manifestation": 0.4200677106114976,
+          "oscillation_frequency": 36.497373733101284
+        },
+        {
+          "id": 20,
+          "consistency_parameter": 0.9383885019692624,
+          "complexity": 575,
+          "self_reference_loops": 8,
+          "oscillatory_manifestation": 0.47702942268337495,
+          "oscillation_frequency": 1.0036740056993219
+        },
+        {
+          "id": 21,
+          "consistency_parameter": 0.8831467738667426,
+          "complexity": 373,
+          "self_reference_loops": 7,
+          "oscillatory_manifestation": 0.3660736014255152,
+          "oscillation_frequency": 35.017212552525315
+        },
+        {
+          "id": 22,
+          "consistency_parameter": 0.9394883576395829,
+          "complexity": 40,
+          "self_reference_loops": 4,
+          "oscillatory_manifestation": 0.13862637199503614,
+          "oscillation_frequency": 5.972467230388905
+        },
+        {
+          "id": 23,
+          "consistency_parameter": 0.8693744593851844,
+          "complexity": 429,
+          "self_reference_loops": 7,
+          "oscillatory_manifestation": 0.3688773082385741,
+          "oscillation_frequency": 20.588770573008436
+        },
+        {
+          "id": 24,
+          "consistency_parameter": 0.8723926360165939,
+          "complexity": 283,
+          "self_reference_loops": 9,
+          "oscillatory_manifestation": 0.4432541670474018,
+          "oscillation_frequency": 28.073711597799722
+        },
+        {
+          "id": 25,
+          "consistency_parameter": 0.9867353032440227,
+          "complexity": 246,
+          "self_reference_loops": 6,
+          "oscillatory_manifestation": 0.32593829895402604,
+          "oscillation_frequency": 31.574435877112244
+        },
+        {
+          "id": 26,
+          "consistency_parameter": 0.9992415496806137,
+          "complexity": 827,
+          "self_reference_loops": 5,
+          "oscillatory_manifestation": 0.3356354786953588,
+          "oscillation_frequency": 27.979687448257504
+        },
+        {
+          "id": 27,
+          "consistency_parameter": 0.9876137282909812,
+          "complexity": 680,
+          "self_reference_loops": 4,
+          "oscillatory_manifestation": 0.2576523353864233,
+          "oscillation_frequency": 22.27177917925398
+        },
+        {
+          "id": 28,
+          "consistency_parameter": 0.8638139655870483,
+          "complexity": 225,
+          "self_reference_loops": 5,
+          "oscillatory_manifestation": 0.23392515832229038,
+          "oscillation_frequency": 18.185333816025306
+        },
+        {
+          "id": 29,
+          "consistency_parameter": 0.8320518505672889,
+          "complexity": 409,
+          "self_reference_loops": 7,
+          "oscillatory_manifestation": 0.3502605977058976,
+          "oscillation_frequency": 30.426120048424067
+        },
+        {
+          "id": 30,
+          "consistency_parameter": 0.8370492359126769,
+          "complexity": 930,
+          "self_reference_loops": 5,
+          "oscillatory_manifestation": 0.28606930175783524,
+          "oscillation_frequency": 15.772551034819145
+        },
+        {
+          "id": 31,
+          "consistency_parameter": 0.9111117366779216,
+          "complexity": 675,
+          "self_reference_loops": 6,
+          "oscillatory_manifestation": 0.356137871624314,
+          "oscillation_frequency": 16.121154324852405
+        },
+        {
+          "id": 32,
+          "consistency_parameter": 0.919546490164022,
+          "complexity": 533,
+          "self_reference_loops": 4,
+          "oscillatory_manifestation": 0.23093569356045276,
+          "oscillation_frequency": 4.424900832097268
+        },
+        {
+          "id": 33,
+          "consistency_parameter": 0.9603494010245499,
+          "complexity": 227,
+          "self_reference_loops": 6,
+          "oscillatory_manifestation": 0.31259084999258324,
+          "oscillation_frequency": 26.466463915082755
+        },
+        {
+          "id": 34,
+          "consistency_parameter": 0.8487169175863662,
+          "complexity": 676,
+          "self_reference_loops": 6,
+          "oscillatory_manifestation": 0.33182419811380837,
+          "oscillation_frequency": 25.3801916903405
+        },
+        {
+          "id": 35,
+          "consistency_parameter": 0.9380989365050441,
+          "complexity": 200,
+          "self_reference_loops": 3,
+          "oscillatory_manifestation": 0.14911037660474755,
+          "oscillation_frequency": 12.888618869909665
+        },
+        {
+          "id": 36,
+          "consistency_parameter": 0.9534666506169674,
+          "complexity": 324,
+          "self_reference_loops": 4,
+          "oscillatory_manifestation": 0.2204698463231306,
+          "oscillation_frequency": 19.83507871170881
+        },
+        {
+          "id": 37,
+          "consistency_parameter": 0.9663504031171741,
+          "complexity": 492,
+          "self_reference_loops": 5,
+          "oscillatory_manifestation": 0.29949512031977826,
+          "oscillation_frequency": 21.246888040273976
+        },
+        {
+          "id": 38,
+          "consistency_parameter": 0.9309357682379381,
+          "complexity": 499,
+          "self_reference_loops": 2,
+          "oscillatory_manifestation": 0.11567074457016276,
+          "oscillation_frequency": 9.20963971676601
+        },
+        {
+          "id": 39,
+          "consistency_parameter": 0.8512022663447438,
+          "complexity": 168,
+          "self_reference_loops": 4,
+          "oscillatory_manifestation": 0.17446119007747543,
+          "oscillation_frequency": 10.132520519194996
+        },
+        {
+          "id": 40,
+          "consistency_parameter": 0.8557259966046804,
+          "complexity": 440,
+          "self_reference_loops": 5,
+          "oscillatory_manifestation": 0.26043056846476076,
+          "oscillation_frequency": 18.895755721299786
+        },
+        {
+          "id": 41,
+          "consistency_parameter": 0.973141891487662,
+          "complexity": 677,
+          "self_reference_loops": 3,
+          "oscillatory_manifestation": 0.19027856851849947,
+          "oscillation_frequency": 6.472020832377596
+        },
+        {
+          "id": 42,
+          "consistency_parameter": 0.9919250622534367,
+          "complexity": 196,
+          "self_reference_loops": 3,
+          "oscillatory_manifestation": 0.1570648263581402,
+          "oscillation_frequency": 8.948986926858263
+        },
+        {
+          "id": 43,
+          "consistency_parameter": 0.8273248901950859,
+          "complexity": 458,
+          "self_reference_loops": 9,
+          "oscillatory_manifestation": 0.4562020237488232,
+          "oscillation_frequency": 19.346357184181326
+        },
+        {
+          "id": 44,
+          "consistency_parameter": 0.9313157477166492,
+          "complexity": 60,
+          "self_reference_loops": 4,
+          "oscillatory_manifestation": 0.15252510269501887,
+          "oscillation_frequency": 0.9001687693700224
+        },
+        {
+          "id": 45,
+          "consistency_parameter": 0.9663460573552127,
+          "complexity": 703,
+          "self_reference_loops": 4,
+          "oscillatory_manifestation": 0.2533897314783023,
+          "oscillation_frequency": 6.612395251934401
+        },
+        {
+          "id": 46,
+          "consistency_parameter": 0.9000067228677027,
+          "complexity": 581,
+          "self_reference_loops": 9,
+          "oscillatory_manifestation": 0.5155486623489617,
+          "oscillation_frequency": 45.972333216888835
+        },
+        {
+          "id": 47,
+          "consistency_parameter": 0.8460697756001665,
+          "complexity": 192,
+          "self_reference_loops": 2,
+          "oscillatory_manifestation": 0.08896415859260917,
+          "oscillation_frequency": 0.2596241277129198
+        },
+        {
+          "id": 48,
+          "consistency_parameter": 0.9891273716200677,
+          "complexity": 662,
+          "self_reference_loops": 2,
+          "oscillatory_manifestation": 0.12849289894636662,
+          "oscillation_frequency": 3.218656427675494
+        },
+        {
+          "id": 49,
+          "consistency_parameter": 0.9679811304358854,
+          "complexity": 775,
+          "self_reference_loops": 1,
+          "oscillatory_manifestation": 0.06439845875788562,
+          "oscillation_frequency": 3.7862984622161293
+        },
+        {
+          "id": 50,
+          "consistency_parameter": 0.895838827877309,
+          "complexity": 670,
+          "self_reference_loops": 6,
+          "oscillatory_manifestation": 0.3497683223121075,
+          "oscillation_frequency": 7.027956535331107
+        },
+        {
+          "id": 51,
+          "consistency_parameter": 0.8979236870830641,
+          "complexity": 451,
+          "self_reference_loops": 9,
+          "oscillatory_manifestation": 0.49388681582765726,
+          "oscillation_frequency": 37.89841754785329
+        },
+        {
+          "id": 52,
+          "consistency_parameter": 0.8605107499633141,
+          "complexity": 951,
+          "self_reference_loops": 8,
+          "oscillatory_manifestation": 0.4720771655075925,
+          "oscillation_frequency": 31.256637444441907
+        },
+        {
+          "id": 53,
+          "consistency_parameter": 0.8208613423589064,
+          "complexity": 374,
+          "self_reference_loops": 6,
+          "oscillatory_manifestation": 0.29177955398059363,
+          "oscillation_frequency": 15.044645526657002
+        },
+        {
+          "id": 54,
+          "consistency_parameter": 0.822605338548193,
+          "complexity": 889,
+          "self_reference_loops": 8,
+          "oscillatory_manifestation": 0.4468456188156052,
+          "oscillation_frequency": 39.09401442201292
+        },
+        {
+          "id": 55,
+          "consistency_parameter": 0.9861446760206057,
+          "complexity": 952,
+          "self_reference_loops": 1,
+          "oscillatory_manifestation": 0.06763537394200586,
+          "oscillation_frequency": 1.706298944923299
+        },
+        {
+          "id": 56,
+          "consistency_parameter": 0.8692544151185906,
+          "complexity": 916,
+          "self_reference_loops": 7,
+          "oscillatory_manifestation": 0.41498305353218184,
+          "oscillation_frequency": 33.96830217522085
+        },
+        {
+          "id": 57,
+          "consistency_parameter": 0.84206107083791,
+          "complexity": 518,
+          "self_reference_loops": 5,
+          "oscillatory_manifestation": 0.2631430422603723,
+          "oscillation_frequency": 11.065493957888263
+        },
+        {
+          "id": 58,
+          "consistency_parameter": 0.8204737664294602,
+          "complexity": 494,
+          "self_reference_loops": 7,
+          "oscillatory_manifestation": 0.3562312374039772,
+          "oscillation_frequency": 17.02811953828655
+        },
+        {
+          "id": 59,
+          "consistency_parameter": 0.8908510973516421,
+          "complexity": 317,
+          "self_reference_loops": 8,
+          "oscillatory_manifestation": 0.4104259171839115,
+          "oscillation_frequency": 2.077789700817772
+        },
+        {
+          "id": 60,
+          "consistency_parameter": 0.8062042864906445,
+          "complexity": 188,
+          "self_reference_loops": 2,
+          "oscillatory_manifestation": 0.08443283912785977,
+          "oscillation_frequency": 0.3424866815488387
+        },
+        {
+          "id": 61,
+          "consistency_parameter": 0.9533957771057965,
+          "complexity": 471,
+          "self_reference_loops": 3,
+          "oscillatory_manifestation": 0.17604047146562052,
+          "oscillation_frequency": 3.059896368464631
+        },
+        {
+          "id": 62,
+          "consistency_parameter": 0.8928245796037771,
+          "complexity": 852,
+          "self_reference_loops": 5,
+          "oscillatory_manifestation": 0.30122055520782465,
+          "oscillation_frequency": 18.858022183400607
+        },
+        {
+          "id": 63,
+          "consistency_parameter": 0.9051629599272001,
+          "complexity": 811,
+          "self_reference_loops": 3,
+          "oscillatory_manifestation": 0.18189072414746743,
+          "oscillation_frequency": 11.296617991782892
+        },
+        {
+          "id": 64,
+          "consistency_parameter": 0.8430065017710784,
+          "complexity": 674,
+          "self_reference_loops": 8,
+          "oscillatory_manifestation": 0.43925562648241895,
+          "oscillation_frequency": 2.8729738359227825
+        },
+        {
+          "id": 65,
+          "consistency_parameter": 0.9792954213782152,
+          "complexity": 209,
+          "self_reference_loops": 8,
+          "oscillatory_manifestation": 0.4185378777936921,
+          "oscillation_frequency": 26.143423009839495
+        },
+        {
+          "id": 66,
+          "consistency_parameter": 0.9555212013736185,
+          "complexity": 151,
+          "self_reference_loops": 7,
+          "oscillatory_manifestation": 0.33558820801107203,
+          "oscillation_frequency": 14.53461217365885
+        },
+        {
+          "id": 67,
+          "consistency_parameter": 0.9189183313184427,
+          "complexity": 802,
+          "self_reference_loops": 7,
+          "oscillatory_manifestation": 0.43014346783001245,
+          "oscillation_frequency": 29.902804252968156
+        },
+        {
+          "id": 68,
+          "consistency_parameter": 0.8335118073299895,
+          "complexity": 776,
+          "self_reference_loops": 9,
+          "oscillatory_manifestation": 0.4991683224012588,
+          "oscillation_frequency": 1.1949070607031371
+        },
+        {
+          "id": 69,
+          "consistency_parameter": 0.8490870945492346,
+          "complexity": 690,
+          "self_reference_loops": 7,
+          "oscillatory_manifestation": 0.3885154333594237,
+          "oscillation_frequency": 2.6041411620101704
+        },
+        {
+          "id": 70,
+          "consistency_parameter": 0.9271376041715714,
+          "complexity": 793,
+          "self_reference_loops": 7,
+          "oscillatory_manifestation": 0.43325847233056314,
+          "oscillation_frequency": 14.768218495834283
+        },
+        {
+          "id": 71,
+          "consistency_parameter": 0.8318431345425029,
+          "complexity": 81,
+          "self_reference_loops": 9,
+          "oscillatory_manifestation": 0.32899431234693366,
+          "oscillation_frequency": 28.74262395138622
+        },
+        {
+          "id": 72,
+          "consistency_parameter": 0.8062652027265574,
+          "complexity": 99,
+          "self_reference_loops": 8,
+          "oscillatory_manifestation": 0.2963908190017275,
+          "oscillation_frequency": 3.7089608555291487
+        },
+        {
+          "id": 73,
+          "consistency_parameter": 0.9132386521812769,
+          "complexity": 180,
+          "self_reference_loops": 4,
+          "oscillatory_manifestation": 0.18969635661370013,
+          "oscillation_frequency": 4.218098625193164
+        },
+        {
+          "id": 74,
+          "consistency_parameter": 0.8379393812793122,
+          "complexity": 770,
+          "self_reference_loops": 3,
+          "oscillatory_manifestation": 0.16707817067256583,
+          "oscillation_frequency": 2.803888485970992
+        },
+        {
+          "id": 75,
+          "consistency_parameter": 0.8742273045102886,
+          "complexity": 139,
+          "self_reference_loops": 2,
+          "oscillatory_manifestation": 0.08627703691474252,
+          "oscillation_frequency": 0.45699831528860085
+        },
+        {
+          "id": 76,
+          "consistency_parameter": 0.8818497416406075,
+          "complexity": 248,
+          "self_reference_loops": 4,
+          "oscillatory_manifestation": 0.19448062861437954,
+          "oscillation_frequency": 17.951758502040793
+        },
+        {
+          "id": 77,
+          "consistency_parameter": 0.8574389139362009,
+          "complexity": 250,
+          "self_reference_loops": 8,
+          "oscillatory_manifestation": 0.37874523622023865,
+          "oscillation_frequency": 13.96006951314799
+        },
+        {
+          "id": 78,
+          "consistency_parameter": 0.9620384069069172,
+          "complexity": 102,
+          "self_reference_loops": 6,
+          "oscillatory_manifestation": 0.26696408863678817,
+          "oscillation_frequency": 8.730947170920054
+        },
+        {
+          "id": 79,
+          "consistency_parameter": 0.9579162952201175,
+          "complexity": 820,
+          "self_reference_loops": 8,
+          "oscillatory_manifestation": 0.5141561565699587,
+          "oscillation_frequency": 39.67855565189958
+        },
+        {
+          "id": 80,
+          "consistency_parameter": 0.8714871365599578,
+          "complexity": 993,
+          "self_reference_loops": 6,
+          "oscillatory_manifestation": 0.3608338803948134,
+          "oscillation_frequency": 21.982587945330728
+        },
+        {
+          "id": 81,
+          "consistency_parameter": 0.8065090954622115,
+          "complexity": 273,
+          "self_reference_loops": 8,
+          "oscillatory_manifestation": 0.3619272018844327,
+          "oscillation_frequency": 9.71964466292259
+        },
+        {
+          "id": 82,
+          "consistency_parameter": 0.9549288702688424,
+          "complexity": 152,
+          "self_reference_loops": 3,
+          "oscillatory_manifestation": 0.14392345650412136,
+          "oscillation_frequency": 13.43855145766206
+        },
+        {
+          "id": 83,
+          "consistency_parameter": 0.9956084203285869,
+          "complexity": 926,
+          "self_reference_loops": 7,
+          "oscillatory_manifestation": 0.47606131343535296,
+          "oscillation_frequency": 17.384808538899144
+        },
+        {
+          "id": 84,
+          "consistency_parameter": 0.8220040625828973,
+          "complexity": 79,
+          "self_reference_loops": 3,
+          "oscillatory_manifestation": 0.10775111657916023,
+          "oscillation_frequency": 2.222087469984087
+        },
+        {
+          "id": 85,
+          "consistency_parameter": 0.951867451293347,
+          "complexity": 845,
+          "self_reference_loops": 4,
+          "oscillatory_manifestation": 0.256598207155615,
+          "oscillation_frequency": 7.581327957121321
+        },
+        {
+          "id": 86,
+          "consistency_parameter": 0.8148104451772364,
+          "complexity": 469,
+          "self_reference_loops": 2,
+          "oscillatory_manifestation": 0.1002315075973211,
+          "oscillation_frequency": 9.884204216867396
+        },
+        {
+          "id": 87,
+          "consistency_parameter": 0.8737795700496613,
+          "complexity": 984,
+          "self_reference_loops": 8,
+          "oscillatory_manifestation": 0.48174095306155434,
+          "oscillation_frequency": 15.23081145540751
+        },
+        {
+          "id": 88,
+          "consistency_parameter": 0.8345276802737476,
+          "complexity": 580,
+          "self_reference_loops": 7,
+          "oscillatory_manifestation": 0.3717086157935002,
+          "oscillation_frequency": 6.041003571381988
+        },
+        {
+          "id": 89,
+          "consistency_parameter": 0.9261469955916652,
+          "complexity": 516,
+          "self_reference_loops": 1,
+          "oscillatory_manifestation": 0.05784813014995524,
+          "oscillation_frequency": 1.045746797343007
+        },
+        {
+          "id": 90,
+          "consistency_parameter": 0.9077995194330349,
+          "complexity": 443,
+          "self_reference_loops": 7,
+          "oscillatory_manifestation": 0.38722177962150506,
+          "oscillation_frequency": 36.75833276807112
+        },
+        {
+          "id": 91,
+          "consistency_parameter": 0.9227706582062818,
+          "complexity": 346,
+          "self_reference_loops": 7,
+          "oscillatory_manifestation": 0.3776445509635921,
+          "oscillation_frequency": 28.164557036984448
+        },
+        {
+          "id": 92,
+          "consistency_parameter": 0.9638079479065467,
+          "complexity": 272,
+          "self_reference_loops": 4,
+          "oscillatory_manifestation": 0.21611666343548097,
+          "oscillation_frequency": 10.52649331189621
+        },
+        {
+          "id": 93,
+          "consistency_parameter": 0.9845267917078036,
+          "complexity": 157,
+          "self_reference_loops": 5,
+          "oscillatory_manifestation": 0.24890047304128046,
+          "oscillation_frequency": 24.729919720047747
+        },
+        {
+          "id": 94,
+          "consistency_parameter": 0.9178724476067471,
+          "complexity": 92,
+          "self_reference_loops": 4,
+          "oscillatory_manifestation": 0.16601700595104935,
+          "oscillation_frequency": 3.565320811969818
+        },
+        {
+          "id": 95,
+          "consistency_parameter": 0.9032800776802952,
+          "complexity": 825,
+          "self_reference_loops": 5,
+          "oscillatory_manifestation": 0.30329360134306765,
+          "oscillation_frequency": 19.176429364175586
+        },
+        {
+          "id": 96,
+          "consistency_parameter": 0.968150273247437,
+          "complexity": 340,
+          "self_reference_loops": 4,
+          "oscillatory_manifestation": 0.2257318116973509,
+          "oscillation_frequency": 17.505898423877653
+        },
+        {
+          "id": 97,
+          "consistency_parameter": 0.864789652875025,
+          "complexity": 32,
+          "self_reference_loops": 6,
+          "oscillatory_manifestation": 0.1798279529003212,
+          "oscillation_frequency": 3.4598597695301696
+        },
+        {
+          "id": 98,
+          "consistency_parameter": 0.874896076792359,
+          "complexity": 913,
+          "self_reference_loops": 3,
+          "oscillatory_manifestation": 0.17891806435386734,
+          "oscillation_frequency": 11.57921068225198
+        },
+        {
+          "id": 99,
+          "consistency_parameter": 0.8575268240484881,
+          "complexity": 698,
+          "self_reference_loops": 5,
+          "oscillatory_manifestation": 0.2807636765182729,
+          "oscillation_frequency": 23.579579740792873
+        }
+      ]
+    },
+    "computational_impossibility": {
+      "computational_impossibility_proven": 

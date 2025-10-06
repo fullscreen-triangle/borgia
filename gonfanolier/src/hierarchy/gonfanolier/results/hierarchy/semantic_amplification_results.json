@@ -1,0 +1,67 @@
+{
+  "semantic_amplification_summary": {
+    "theoretical_amplification": 657.9636,
+    "molecules_processed": 50,
+    "total_processing_time": 0.01891350746154785,
+    "overall_throughput": 2643.6133066091847
+  },
+  "layer_performance": {
+    "processing_times": {
+      "layer1_word_expansion": 0.0025908946990966797,
+      "layer2_positional_context": 0.005128383636474609,
+      "layer3_directional_transformation": 0.0015225410461425781,
+      "layer4_ambiguous_compression": 0.009569644927978516,
+      "total_processing_time": 0.01891350746154785
+    },
+    "amplification_factors": {
+      "word_expansion": 3.7,
+      "positional_context": 4.2,
+      "directional_transformation": 5.8,
+      "ambiguous_compression": 7.3
+    },
+    "efficiency_metrics": {
+      "molecules_per_second_layer1": 19298.35281126346,
+      "molecules_per_second_layer2": 9749.660622966063,
+      "molecules_per_second_layer3": 32839.83714375196,
+      "molecules_per_second_layer4": 5224.854252827744,
+      "overall_throughput": 2643.6133066091847
+    }
+  },
+  "distance_analysis": {
+    "base_distance_stats": {
+      "mean": 1.3870911353734448,
+      "std": 0.7984205265358245,
+      "min": 0.0,
+      "max": 2.9758938393769068
+    },
+    "amplified_distance_stats": {
+      "mean": 912.6554769583993,
+      "std": 525.3316439534067,
+      "min": 0.0,
+      "max": 1958.0298237742516
+    },
+    "amplification_effectiveness": {
+      "mean_amplification_ratio": 643.3421866666666,
+      "distance_separation_improvement": 657.9636
+    }
+  },
+  "compression_performance": {
+    "compression_statistics": {
+      "avg_compression_resistance": 0.6601421356421356,
+      "avg_pattern_diversity": 0.8087628066378066,
+      "avg_sequence_entropy": 2.159061939771777
+    },
+    "meta_information_extraction": {
+      "total_unique_patterns": 266,
+      "avg_resistant_segments": 3.86,
+      "ambiguous_patterns_found": 15
+    }
+  },
+  "dataset_info": {
+    "agrafiotis": 9,
+    "ahmed": 149,
+    "daylight": 265,
+    "hann": 119,
+    "walters": 11
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "empty_dictionary_summary": {
+    "total_queries_processed": 8,
+    "avg_synthesis_time": 0.0006995201110839844,
+    "synthesis_throughput": 1429.5514655760055,
+    "avg_confidence": 0.9569167020583587
+  },
+  "synthesis_performance": {
+    "avg_synthesis_time": 0.0006995201110839844,
+    "avg_confidence": 0.9569167020583587,
+    "avg_uniqueness": 0.16680276132960384,
+    "avg_feasibility": 1.0,
+    "total_queries_processed": 8,
+    "synthesis_throughput": 1429.5514655760055,
+    "pressure_stability": 0.11322952321482595
+  },
+  "coordinate_coverage": {
+    "coordinate_ranges": {
+      "technical": {
+        "min": 0.033,
+        "max": 0.5065
+      },
+      "emotional": {
+        "min": 0.0,
+        "max": 0.5355263157894736
+      },
+      "action": {
+        "min": 0.0,
+        "max": 0.15
+      },
+      "descriptive": {
+        "min": 0.4426065103715944,
+        "max": 0.9166666666666666
+      }
+    },
+    "coordinate_correlations": {
+      "technical_emotional": -0.6937746696954289,
+      "technical_action": -0.20332162716038144,
+      "technical_descriptive": -0.16244254899400437,
+      "emotional_action": 0.4557472134313863,
+      "emotional_descriptive": 0.5184033458591717,
+      "action_descriptive": 0.3983897607885585
+    },
+    "space_density": 5545.931297780041,
+    "coverage_volume": 0.01803123670861711
+  },
+  "dataset_info": {
+    "agrafiotis": 9,
+    "ahmed": 149,
+    "daylight": 265,
+    "hann": 119,
+    "walters": 11
+  }
+}

@@ -4,7 +4,7 @@ Semantic Distance Amplification for Molecular Similarity Analysis
 Implements multi-layer encoding transformations that amplify semantic distances
 between molecular representations by factors of 10¹ to 10³ per layer.
 """
-
+import os
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt

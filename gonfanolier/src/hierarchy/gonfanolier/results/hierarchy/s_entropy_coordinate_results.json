@@ -1,0 +1,258 @@
+{
+  "coordinate_transformation_summary": {
+    "total_molecules": 100,
+    "coordinate_space_volume": 0.19623423035711374,
+    "strategic_positions_generated": 100,
+    "miracle_windows_created": 100
+  },
+  "coordinate_statistics": {
+    "S_knowledge": {
+      "mean": 0.8424752922131927,
+      "std": 0.10383722455337001,
+      "min": 0.3580482290404643,
+      "max": 1.0
+    },
+    "S_time": {
+      "mean": 0.09627896513711956,
+      "std": 0.07974858743741499,
+      "min": 0.0304,
+      "max": 0.6755617021276595
+    },
+    "S_entropy": {
+      "mean": 0.6066691846840829,
+      "std": 0.11304819809680204,
+      "min": 0.27380952380952384,
+      "max": 0.7476190476190476
+    }
+  },
+  "space_analysis": {
+    "volume_occupied": 0.19623423035711374,
+    "density_distribution": {
+      "total_bins": 125,
+      "occupied_bins": 19,
+      "occupancy_ratio": 0.152,
+      "max_density": 33.0,
+      "avg_density": 5.2631578947368425
+    },
+    "coordinate_correlations": {
+      "S_knowledge_S_time": -0.017399171452175198,
+      "S_knowledge_S_entropy": 0.6424859172811846,
+      "S_time_S_entropy": -0.05714498656353167
+    }
+  },
+  "strategic_analysis": {
+    "strength_distribution": {
+      "balanced": 67,
+      "weak": 32,
+      "advantageous": 1
+    },
+    "position_type_distribution": {
+      "intermediate": 93,
+      "chaotic": 3,
+      "knowledge_rich": 4
+    },
+    "strategic_value_stats": {
+      "mean": 0.46902045851224833,
+      "std": 0.0429465635183635,
+      "min": 0.3425606918667369,
+      "max": 0.6678976919102599
+    }
+  },
+  "miracle_analysis": {
+    "effectiveness_by_type": {
+      "knowledge": {
+        "mean": 0.8532022616336306,
+        "std": 0.10705294618655085,
+        "min": 0.7474545228225665,
+        "max": 1.3246106806355356
+      },
+      "time": {
+        "mean": 1.266608365650708,
+        "std": 0.12592809827174403,
+        "min": 1.1211817842338494,
+        "max": 1.4809951000000001
+      },
+      "entropy": {
+        "mean": 1.0861124609439492,
+        "std": 0.24362658401406018,
+        "min": 0.7645466666666667,
+        "max": 1.4809951000000001
+      },
+      "dimensional": {
+        "mean": 1.05550697137559,
+        "std": 0.10494008189311999,
+        "min": 0.934318153528208,
+        "max": 1.2341625833333334
+      },
+      "synthesis": {
+        "mean": 1.1610576685131488,
+        "std": 0.11543409008243201,
+        "min": 1.027749968881029,
+        "max": 1.357578841666667
+      }
+    },
+    "total_miracles": 500,
+    "avg_effectiveness": 1.0844975456234052
+  },
+  "sample_coordinates": {
+    "mol_0": [
+      0.8636581959051546,
+      0.16852173913043478,
+      0.6904761904761905
+    ],
+    "mol_1": [
+      0.85,
+      0.0484,
+      0.7
+    ],
+    "mol_2": [
+      0.747234344978607,
+      0.0678,
+      0.6041666666666667
+    ],
+    "mol_3": [
+      0.8884913611593599,
+      0.6755617021276595,
+      0.6957817931926591
+    ],
+    "mol_4": [
+      0.9566065456318467,
+      0.37886315789473685,
+      0.6303164428164428
+    ],
+    "mol_5": [
+      0.6875191004480643,
+      0.121,
+      0.7476190476190476
+    ],
+    "mol_6": [
+      0.7625191004480643,
+      0.1214,
+      0.7476190476190476
+    ],
+    "mol_7": [
+      0.3580482290404643,
+      0.06955,
+      0.27380952380952384
+    ],
+    "mol_8": [
+      0.38664339633350886,
+      0.06662857142857143,
+      0.3416666666666667
+    ],
+    "mol_9": [
+      0.71441056373945,
+      0.06359999999999999,
+      0.5625
+    ]
+  },
+  "sample_strategic_positions": {
+    "mol_0": {
+      "coordinates": [
+        0.8636581959051546,
+        0.16852173913043478,
+        0.6904761904761905
+      ],
+      "strategic_value": 0.4818268394386664,
+      "strategic_strength": "balanced",
+      "position_type": "intermediate"
+    },
+    "mol_1": {
+      "coordinates": [
+        0.85,
+        0.0484,
+        0.7
+      ],
+      "strategic_value": 0.43194000000000005,
+      "strategic_strength": "weak",
+      "position_type": "intermediate"
+    },
+    "mol_2": {
+      "coordinates": [
+        0.747234344978607,
+        0.0678,
+        0.6041666666666667
+      ],
+      "strategic_value": 0.4215820713247761,
+      "strategic_strength": "weak",
+      "position_type": "intermediate"
+    },
+    "mol_3": {
+      "coordinates": [
+        0.8884913611593599,
+        0.6755617021276595,
+        0.6957817931926591
+      ],
+      "strategic_value": 0.6678976919102599,
+      "strategic_strength": "advantageous",
+      "position_type": "intermediate"
+    },
+    "mol_4": {
+      "coordinates": [
+        0.9566065456318467,
+        0.37886315789473685,
+        0.6303164428164428
+      ],
+      "strategic_value": 0.6076656128117859,
+      "strategic_strength": "balanced",
+      "position_type": "intermediate"
+    },
+    "mol_5": {
+      "coordinates": [
+        0.6875191004480643,
+        0.121,
+        0.7476190476190476
+      ],
+      "strategic_value": 0.38045287827446383,
+      "strategic_strength": "weak",
+      "position_type": "chaotic"
+    },
+    "mol_6": {
+      "coordinates": [
+        0.7625191004480643,
+        0.1214,
+        0.7476190476190476
+      ],
+      "strategic_value": 0.4105928782744638,
+      "strategic_strength": "weak",
+      "position_type": "chaotic"
+    },
+    "mol_7": {
+      "coordinates": [
+        0.3580482290404643,
+        0.06955,
+        0.27380952380952384
+      ],
+      "strategic_value": 0.34910941066380474,
+      "strategic_strength": "weak",
+      "position_type": "intermediate"
+    },
+    "mol_8": {
+      "coordinates": [
+        0.38664339633350886,
+        0.06662857142857143,
+        0.3416666666666667
+      ],
+      "strategic_value": 0.3425606918667369,
+      "strategic_strength": "weak",
+      "position_type": "intermediate"
+    },
+    "mol_9": {
+      "coordinates": [
+        0.71441056373945,
+        0.06359999999999999,
+        0.5625
+      ],
+      "strategic_value": 0.41739922549578,
+      "strategic_strength": "weak",
+      "position_type": "intermediate"
+    }
+  },
+  "dataset_info": {
+    "agrafiotis": 9,
+    "ahmed": 149,
+    "daylight": 265,
+    "hann": 119,
+    "walters": 11
+  }
+}

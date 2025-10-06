@@ -6,7 +6,7 @@ Implements dynamic molecular identification synthesis without static storage,
 operating through equilibrium-seeking coordinate navigation in chemical space.
 Addresses the vast chemical space problem (10⁶⁰+ possible molecules).
 """
-
+import os
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt

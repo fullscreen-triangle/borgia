@@ -5,7 +5,7 @@ Converts SMILES/molecular graphs to tri-dimensional S-entropy coordinates
 (S_knowledge, S_time, S_entropy) enabling strategic molecular navigation
 and chess-like exploration with miracle operations.
 """
-
+import os
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
