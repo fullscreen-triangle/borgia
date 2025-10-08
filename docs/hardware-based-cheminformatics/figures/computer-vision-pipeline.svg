@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="480" viewBox="0 0 1100 480" role="img"
+    aria-label="Computer vision pipeline for molecular property prediction">
+
+    <style> .title { font:700 16px Helvetica, Arial, sans-serif; fill:#111; } .text { font:12px
+        Helvetica, Arial, sans-serif; fill:#333; } .panel { stroke:#bbb; fill:#fff; rx:12; ry:12; }
+        .block { fill:#eef2f7; stroke:#90a4ae; rx:10; ry:10; } .arrow { stroke:#333;
+        stroke-width:1.5; fill:none; marker-end:url(#arr); } .eq { font: 12px Menlo, monospace;
+        fill:#1f2937; } </style>
+    <defs>
+        <marker id="arr" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+            <path d="M0,0 L10,4 L0,8 Z" fill="#333" />
+        </marker>
+    </defs>
+    <rect x="40" y="40" width="1020" height="400" class="panel" />
+    <text x="60" y="66" class="title">Computer Vision Feature Extraction and Prediction</text> <!--
+    Input pattern -->
+    <rect x="60" y="110" width="180" height="200" class="block" />
+    <text x="80" y="136" class="text">Visual Pattern</text>
+    <g transform="translate(80,150)">
+        <circle cx="70" cy="60" r="4" fill="#111" />
+        <circle cx="70" cy="60" r="20" fill="none" stroke="#555" />
+        <circle cx="70" cy="60" r="40" fill="none" stroke="#777" stroke-dasharray="3 4" />
+        <circle cx="70" cy="60" r="60" fill="none" stroke="#999" />
+    </g>
+    <path d="M240,210 L300,210" class="arrow" /> <!-- Feature blocks -->
+    <rect x="300" y="100" width="180" height="70" class="block" />
+    <text x="320" y="126" class="text">Spatial Features</text>
+    <text x="320" y="146" class="text">Amplitude, rings, interference</text>
+    <rect x="300" y="190" width="180" height="70" class="block" />
+    <text x="320" y="216" class="text">Temporal Features</text>
+    <text x="320" y="236" class="text">Propagation, evolution</text>
+    <rect x="300" y="280" width="180" height="70" class="block" />
+    <text x="320" y="306" class="text">Spectral Features</text>
+    <text x="320" y="326" class="text">Harmonics, phase</text>
+    <path d="M480,135 L560,200" class="arrow" />
+    <path d="M480,225 L560,200" class="arrow" />
+    <path d="M480,315 L560,200" class="arrow" /> <!-- Model head -->
+    <rect x="560" y="160" width="200" height="80" class="block" />
+    <text x="590" y="186" class="text">Model f_CV</text>
+    <text x="590" y="206" class="eq">ŷ = f_CV(F_sp, F_tmp, F_spc)</text>
+    <path d="M760,200 L820,200" class="arrow" /> <!-- Outputs -->
+    <rect x="820" y="110" width="220" height="70" class="block" />
+    <text x="840" y="136" class="text">Property Prediction</text>
+    <text x="840" y="156" class="eq">ŷ_molecular</text>
+    <rect x="820" y="210" width="220" height="110" class="block" />
+    <text x="840" y="236" class="text">Reconstruction</text>
+    <text x="840" y="256" class="eq">ĝ_S = (ĝ_S_str, ĝ_S_spec, ĝ_S_act)</text>
+    <text x="840" y="276" class="eq">A_recon = 1 − ||ĝ_S − S|| / ||S||</text>
+</svg>

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="440" viewBox="0 0 1000 440" role="img"
+    aria-label="Mapping from S-entropy to droplet parameters">
+
+    <style> .title { font: 700 16px Helvetica, Arial, sans-serif; fill:#111; } .text { font: 12px
+        Helvetica, Arial, sans-serif; fill:#333; } .panel { stroke:#bbb; fill:#fff; rx:12; ry:12; }
+        .eq { font: 12px 'Menlo','DejaVu Sans Mono',monospace; fill:#1a202c; } .arrow { stroke:#333;
+        stroke-width:1.4; fill:none; marker-end:url(#arr); } </style>
+    <defs>
+        <marker id="arr" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+            <path d="M0,0 L10,4 L0,8 Z" fill="#333" />
+        </marker>
+    </defs>
+    <rect x="40" y="40" width="420" height="160" class="panel" />
+    <text x="60" y="66" class="title">Mapping Functions</text>
+    <text x="60" y="92" class="eq">v = α_v S_str^0.8 + β_v S_act^0.6 + γ_v</text>
+    <text x="60" y="114" class="eq">r = α_r (S_str · S_spec)^0.4 · exp(-β_r · complexity)</text>
+    <text x="60" y="136" class="eq">θ⃗ = θ⃗₀ + α_θ ∇S_act × ŝ_spec</text>
+    <text x="60" y="158" class="eq">σ = σ₀ + α_σ S_total β_type + γ_int</text>
+    <path d="M480,120 L560,120" class="arrow" /> <!-- Droplet canvas -->
+    <rect x="560" y="40" width="380" height="340" class="panel" />
+    <text x="580" y="66" class="title">Droplet Parameters</text> <!-- Droplet -->
+    <ellipse cx="750" cy="170" rx="18" ry="26" fill="#3b82f6" opacity="0.9" />
+    <line x1="670" y1="210" x2="740" y2="180" stroke="#1f2937" stroke-width="1.5" />
+    <circle cx="670" cy="210" r="3" fill="#1f2937" />
+    <text x="612" y="206" class="text">impact point r</text> <!-- Velocity vector -->
+    <line x1="750" y1="170" x2="820" y2="140" stroke="#0f766e" stroke-width="2"
+        marker-end="url(#arr)" />
+    <text x="826" y="140" class="text">v</text> <!-- Trajectory angle -->
+    <path d="M750,170 A35,35 0 0 1 775,150" stroke="#7c3aed" stroke-width="1.6" fill="none" />
+    <text x="778" y="150" class="text">θ⃗</text> <!-- Ripples (σ effect) -->
+    <circle cx="670" cy="210" r="30" fill="none" stroke="#475569" stroke-width="1.2" opacity="0.9" />
+    <circle cx="670" cy="210" r="55" fill="none" stroke="#64748b" stroke-width="1" opacity="0.8" />
+    <circle cx="670" cy="210" r="80" fill="none" stroke="#94a3b8" stroke-width="0.9" opacity="0.7" />
+    <text x="585" y="250" class="text">surface tension σ shapes ring spacing</text>
+</svg>

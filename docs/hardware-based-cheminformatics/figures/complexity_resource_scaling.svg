@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="560" viewBox="0 0 980 560" role="img"
+    aria-label="Complexity and resource scaling summary">
+
+    <style> .title { font:700 16px Helvetica, Arial, sans-serif; fill:#111; } .text { font:12px
+        Helvetica, Arial, sans-serif; fill:#333; } .panel { stroke:#bbb; fill:#fff; rx:12; ry:12; }
+        .axis { stroke:#aaa; } .curve1 { stroke:#ef4444; fill:none; stroke-width:2; } .curve2 {
+        stroke:#10b981; fill:none; stroke-width:2; } .barTrad { fill:#94a3b8; } .barHW {
+        fill:#60a5fa; } </style>
+    <rect x="40" y="40" width="900" height="480" class="panel" />
+    <text x="60" y="66" class="title">Complexity and Resource Scaling</text> <!-- Complexity plot -->
+    <text x="60" y="96" class="text">Computational Complexity</text>
+    <line x1="60" y1="120" x2="460" y2="120" class="axis" />
+    <line x1="60" y1="120" x2="60" y2="300" class="axis" />
+    <path d="M60,295 C140,260 220,210 300,130" class="curve1" />
+    <path d="M60,295 C140,290 220,285 300,280" class="curve2" />
+    <text x="310" y="130" class="text">O(e^n)</text>
+    <text x="310" y="280" class="text">O(log S₀)</text>
+
+    <!-- Memory bars -->
+    <text x="520" y="96" class="text">Memory Scaling</text>
+    <rect x="520" y="120" width="70" height="160" class="barTrad" />
+    <text x="520" y="300" class="text">Traditional O(N²)</text>
+    <rect x="620" y="244" width="70" height="36" class="barHW" />
+    <text x="620" y="300" class="text">Hardware O(1)</text>
+
+    <!-- Cost comparison -->
+    <text x="60" y="340" class="text">Equipment Cost</text>
+    <rect x="60" y="360" width="180" height="24" class="barTrad" />
+    <text x="250" y="378" class="text">$10K–$100K</text>
+    <rect x="60" y="400" width="20" height="24" class="barHW" />
+    <text x="90" y="418" class="text">$0</text>
+</svg>

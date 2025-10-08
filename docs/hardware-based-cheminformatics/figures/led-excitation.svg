@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="500" viewBox="0 0 900 500" role="img"
+    aria-label="Water surface impact physics and wave pattern encoding">
+
+    <style> .title { font:700 16px Helvetica, Arial, sans-serif; fill:#111; } .text { font:12px
+        Helvetica, Arial, sans-serif; fill:#333; } .panel { stroke:#bbb; fill:#fff; rx:12; ry:12; }
+        .eq { font: 12px Menlo, monospace; fill:#1f2937; } .ring { fill:none; stroke:#475569; } </style>
+    <rect x="40" y="40" width="820" height="420" class="panel" />
+    <text x="60" y="66" class="title">Impact Dynamics and Molecular Wave Pattern</text>
+    <text x="60" y="96" class="eq">∂²h/∂t² = c_mol² ∇²h − γ_mol ∂h/∂t + S_impact(r,t) + Φ_mol(r,t)</text>
+    <text x="60" y="120" class="eq">Ψ_wave(r,t) = A_mol J₀(2π|r−r₀|/λ_mol) e^{−γ_mol t}</text>
+
+    <!-- Ripple field -->
+    <g transform="translate(130,150)">
+        <circle cx="300" cy="180" r="10" fill="#111" />
+        <circle cx="300" cy="180" r="40" class="ring" stroke-width="1.6" opacity="0.95" />
+        <circle cx="300" cy="180" r="70" class="ring" stroke-width="1.3" opacity="0.9"
+            stroke-dasharray="3 4" />
+        <circle cx="300" cy="180" r="100" class="ring" stroke-width="1.1" opacity="0.8" />
+        <circle cx="300" cy="180" r="130" class="ring" stroke-width="1" opacity="0.7"
+            stroke-dasharray="2 5" />
+        <circle cx="300" cy="180" r="160" class="ring" stroke-width="0.9" opacity="0.6" />
+        <text x="320" y="178" class="text">r₀</text>
+        <text x="420" y="182" class="text">λ_mol controls ring spacing</text>
+        <text x="420" y="202" class="text">A_mol controls amplitude</text>
+    </g>
+</svg>

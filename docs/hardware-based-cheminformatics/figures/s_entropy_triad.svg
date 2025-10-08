@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="520" viewBox="0 0 1100 520" role="img"
+    aria-label="S-entropy coordinate transformation from oscillatory signatures">
+
+    <style> .title { font: 700 16px Helvetica, Arial, sans-serif; fill:#111; } .text { font: 12px
+        Helvetica, Arial, sans-serif; fill:#333; } .panel { stroke:#bbb; fill:#fff; rx:10; ry:10; }
+        .axis { stroke:#aaa; stroke-width:1; } .sig { fill:none; stroke-width:1.8; } .arrow {
+        stroke:#333; stroke-width:1.4; fill:none; marker-end:url(#arr); } .pill { fill:#f7fafc;
+        stroke:#999; rx:10; ry:10; } </style>
+    <defs>
+        <marker id="arr" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+            <path d="M0,0 L10,4 L0,8 Z" fill="#333" />
+        </marker>
+    </defs> <!-- Panels for
+    three signals -->
+    <rect x="40" y="40" width="300" height="130" class="panel" />
+    <rect x="40" y="190" width="300" height="130" class="panel" />
+    <rect x="40" y="340" width="300" height="130" class="panel" />
+    <text x="60" y="62" class="title">Ω_struct(t)</text>
+    <text x="60" y="212" class="title">Ω_spec(t)</text>
+    <text x="60" y="362" class="title">Ω_act(t)</text>
+
+    <!-- Axes -->
+    <line x1="60" y1="150" x2="320" y2="150" class="axis" />
+    <line x1="60" y1="300" x2="320" y2="300" class="axis" />
+    <line x1="60" y1="450" x2="320" y2="450" class="axis" /> <!-- Signals -->
+    <path
+        d="M60,125
+        C90,95 120,155 150,125
+        C180,95 210,155 240,125
+        C270,95 300,155 320,125"
+        stroke="#2b6cb0" class="sig" />
+    <path
+        d="M60,275
+        C85,265 110,285 135,275
+        C160,265 185,285 210,275
+        C235,265 260,285 285,275
+        C310,265 335,285 360,275"
+        stroke="#2f855a" class="sig" transform="translate(-40,0)" />
+    <path d="M60,425
+        C100,390 140,460 180,425
+        C220,390 260,460 300,425"
+        stroke="#c53030" class="sig" />
+
+    <!-- Integral boxes -->
+    <rect x="380" y="60" width="320" height="100" class="pill" />
+    <rect x="380" y="210" width="320" height="100" class="pill" />
+    <rect x="380" y="360" width="320" height="100" class="pill" />
+    <text x="395" y="95" class="text">S_structure = ∫₀ᵀ Ω_struct(t) log[Ω_struct(t)] dt + μ_struct</text>
+    <text x="395" y="245" class="text">S_spectroscopy = ∫₀ᵀ Ω_spec(t) log[Ω_spec(t)] dt + μ_spec</text>
+    <text x="395" y="395" class="text">S_activity = ∫₀ᵀ Ω_act(t) log[Ω_act(t)] dt + μ_act</text>
+
+    <!-- Arrows from signals to integrals -->
+    <path d="M340,110 L380,110" class="arrow" />
+    <path d="M340,260 L380,260" class="arrow" />
+    <path d="M340,410 L380,410" class="arrow" /> <!-- Output vector -->
+    <rect x="760" y="200" width="300" height="120" class="panel" />
+    <text x="780" y="226" class="title">S_coords</text>
+    <text x="780" y="250" class="text">S_structure</text>
+    <text x="780" y="270" class="text">S_spectroscopy</text>
+    <text x="780" y="290" class="text">S_activity</text>
+    <path d="M700,110 C770,140 770,160 820,200" class="arrow" />
+    <path d="M700,260 L760,260" class="arrow" />
+    <path d="M700,410 C770,380 770,360 820,320" class="arrow" />
+</svg>

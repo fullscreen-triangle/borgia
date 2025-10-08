@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="420" viewBox="0 0 920 420" role="img"
+    aria-label="LED excitation and coherence enhancement">
+
+    <style> .title { font:700 16px Helvetica, Arial, sans-serif; fill:#111; } .text { font:12px
+        Helvetica, Arial, sans-serif; fill:#333; } .panel { stroke:#bbb; fill:#fff; rx:12; ry:12; }
+        .eq { font: 12px Menlo, monospace; fill:#1f2937; } </style>
+    <rect x="40" y="40" width="840" height="340" class="panel" />
+    <text x="60" y="66" class="title">Zero-Cost LED Spectroscopy & Coherence</text> <!-- LED blocks -->
+    <rect x="80" y="110" width="80" height="28" fill="#2b6cb0" rx="5" />
+    <text x="170" y="130" class="text" fill="#2b6cb0">470 nm</text>
+    <rect x="80" y="160" width="80" height="28" fill="#2f855a" rx="5" />
+    <text x="170" y="180" class="text" fill="#2f855a">525 nm</text>
+    <rect x="80" y="210" width="80" height="28" fill="#c53030" rx="5" />
+    <text x="170" y="230" class="text" fill="#c53030">625 nm</text> <!-- Equations -->
+    <text x="60" y="280" class="eq">η_excitation(λ, M) = σ_abs(λ, M) · I_LED(λ) · τ_coherence(M)</text>
+    <text x="60" y="310" class="eq">τ_coh^LED = τ_base · F_LED · F_coordination</text>
+    <text x="60" y="335" class="text">Empirical: τ_coh ≈ 247 ± 23 fs with coordinated
+        multi-wavelength illumination</text>
+
+    <!-- Schematic molecule target -->
+    <circle cx="620" cy="170" r="40" fill="none" stroke="#666" />
+    <circle cx="620" cy="170" r="4" fill="#666" />
+    <line x1="160" y1="124" x2="580" y2="160" stroke="#2b6cb0" stroke-width="2" opacity="0.8" />
+    <line x1="160" y1="174" x2="580" y2="170" stroke="#2f855a" stroke-width="2" opacity="0.8" />
+    <line x1="160" y1="224" x2="580" y2="180" stroke="#c53030" stroke-width="2" opacity="0.8" />
+</svg>

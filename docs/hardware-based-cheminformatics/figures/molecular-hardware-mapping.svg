@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="560" viewBox="0 0 1100 560" role="img" aria-label="Unified molecular-hardware-visual mapping overview">
+<defs>
+<linearGradient id="gradBlue" x1="0" x2="1">
+<stop offset="0%" stop-color="#e8f0fe"/>
+<stop offset="100%" stop-color="#c5dcff"/>
+</linearGradient>
+<linearGradient id="gradGreen" x1="0" x2="1">
+<stop offset="0%" stop-color="#e7f6ed"/>
+<stop offset="100%" stop-color="#c9efd8"/>
+</linearGradient>
+<linearGradient id="gradOrange" x1="0" x2="1">
+<stop offset="0%" stop-color="#fff2e0"/>
+<stop offset="100%" stop-color="#ffd6a8"/>
+</linearGradient>
+<linearGradient id="gradPurple" x1="0" x2="1">
+<stop offset="0%" stop-color="#f3e8ff"/>
+<stop offset="100%" stop-color="#e0c9ff"/>
+</linearGradient>
+<marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+<path d="M0,0 L10,4 L0,8 Z" fill="#333"/>
+</marker>
+<style>
+.box { stroke:#333; stroke-width:1.2; rx:10; ry:10; }
+.title { font: 700 16px 'Helvetica Neue', Arial, sans-serif; fill:#111; }
+.text { font: 13px 'Helvetica Neue', Arial, sans-serif; fill:#222; }
+.small { font: 12px 'Helvetica Neue', Arial, sans-serif; fill:#333; }
+.mono { font: 12px 'Menlo', 'DejaVu Sans Mono', monospace; fill:#333; }
+.arrow { stroke:#333; stroke-width:1.4; fill:none; marker-end:url(#arrow); }
+.pill { fill:#fff; stroke:#666; stroke-width:1; rx:12; ry:12; }
+</style>
+</defs>
+
+<!-- Stage 1: Molecular data --> <rect x="40" y="60" width="290" height="180" fill="url(#gradBlue)" class="box"/> <text x="60" y="86" class="title">Molecular Data</text> <text x="60" y="114" class="text">• Structure: modes ω, A, φ</text> <text x="60" y="136" class="text">• Spectroscopy: ν, B, ψ</text> <text x="60" y="158" class="text">• Activity: λ, C, χ</text> <text x="60" y="186" class="mono">Ω_struct(t), Ω_spec(t), Ω_act(t)</text> <circle cx="300" cy="200" r="22" fill="none" stroke="#2b6cb0" stroke-width="2"/> <circle cx="274" cy="200" r="12" fill="#2b6cb0" opacity="0.15"/> <!-- Arrow 1 --> <path d="M340,150 L410,150" class="arrow"/> <!-- Stage 2: S-entropy coords --> <rect x="410" y="60" width="290" height="180" fill="url(#gradGreen)" class="box"/> <text x="430" y="86" class="title">S-Entropy Coordinates</text> <text x="430" y="114" class="text">S_structure = ∫ Ω_struct log Ω_struct dt + μ_struct</text> <text x="430" y="136" class="text">S_spectroscopy = ∫ Ω_spec log Ω_spec dt + μ_spec</text> <text x="430" y="158" class="text">S_activity = ∫ Ω_act log Ω_act dt + μ_act</text> <rect x="430" y="176" width="240" height="40" class="pill"/> <text x="440" y="200" class="text">S_coords = (S_structure, S_spectroscopy, S_activity)</text> <!-- Arrow 2 --> <path d="M700,150 L770,150" class="arrow"/> <!-- Stage 3: Parameter mapping --> <rect x="770" y="60" width="290" height="180" fill="url(#gradOrange)" class="box"/> <text x="790" y="86" class="title">Droplet Parameter Mapping</text> <text x="790" y="114" class="small">v = α_v S_str^0.8 + β_v S_act^0.6 + γ_v</text> <text x="790" y="134" class="small">r = α_r (S_str·S_spec)^0.4 e^{-β_r·complexity}</text> <text x="790" y="154" class="small">θ⃗ = θ⃗_0 + α_θ ∇S_act × ŝ_spec</text> <text x="790" y="174" class="small">σ = σ_0 + α_σ S_total β_type + γ_int</text> <!-- Down arrows --> <path d="M200,240 L200,320" class="arrow"/> <path d="M555,240 L555,320" class="arrow"/> <path d="M915,240 L915,320" class="arrow"/> <!-- Stage A: Hardware timing --> <rect x="40" y="320" width="330" height="200" fill="url(#gradPurple)" class="box"/> <text x="60" y="346" class="title">Hardware Clock Integration</text> <text x="60" y="372" class="text">t_mol = (t_hw · S_scaling) / M_performance</text> <text x="60" y="396" class="small">Timescale hierarchy:</text> <text x="80" y="416" class="small">10^-15 s → CPU cycle (0.3 ns)</text> <text x="80" y="436" class="small">10^-12 s → High-res timer (1 ns)</text> <text x="80" y="456" class="small">10^-6 s → System timer (1 μs)</text> <!-- Stage B: LED spectroscopy --> <rect x="400" y="320" width="330" height="200" fill="url(#gradPurple)" class="box"/> <text x="420" y="346" class="title">Zero-Cost LED Spectroscopy</text> <text x="420" y="372" class="text">η(λ,M) = σ_abs(λ,M)·I_LED(λ)·τ_coh(M)</text> <g> <rect x="430" y="388" width="50" height="18" fill="#2b6cb0" rx="3"/> <text x="486" y="402" class="small" fill="#2b6cb0">470 nm</text> </g> <g> <rect x="430" y="412" width="50" height="18" fill="#2f855a" rx="3"/> <text x="486" y="426" class="small" fill="#2f855a">525 nm</text> </g> <g> <rect x="430" y="436" width="50" height="18" fill="#c53030" rx="3"/> <text x="486" y="450" class="small" fill="#c53030">625 nm</text> </g> <text x="420" y="474" class="small">τ_coh^LED = τ_base · F_LED · F_coordination</text> <!-- Stage C: Visual pattern and CV --> <rect x="760" y="320" width="330" height="200" fill="url(#gradPurple)" class="box"/> <text x="780" y="346" class="title">Visual Pattern + CV Analysis</text> <!-- Droplet/ripple motif --> <g transform="translate(820,370)"> <circle cx="90" cy="70" r="6" fill="#333" opacity="0.8"/> <circle cx="90" cy="70" r="24" fill="none" stroke="#666" stroke-width="1.2" opacity="0.8"/> <circle cx="90" cy="70" r="44" fill="none" stroke="#777" stroke-dasharray="3 4" stroke-width="1.2" opacity="0.9"/> <circle cx="90" cy="70" r="64" fill="none" stroke="#999" stroke-width="1" opacity="0.7"/> </g> <text x="780" y="404" class="small">Ψ_wave(r,t) = A_mol J0(2π|r-r0|/λ_mol) e^{-γ t}</text> <text x="780" y="426" class="small">Features: spatial, temporal, spectral</text> <text x="780" y="448" class="small">ŷ = f_CV(F_spatial, F_temporal, F_spectral)</text> <!-- Bijectivity ribbon --> <path d="M160,300 C250,300 860,300 950,300" stroke="#5a67d8" stroke-width="2" fill="none"/> <text x="510" y="292" class="small" fill="#4c51bf">Bijective information preservation</text> </svg>

@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1060" height="420" viewBox="0 0 1060 420" role="img"
+    aria-label="Information preservation and bijective mapping">
+
+    <style> .title { font:700 16px Helvetica, Arial, sans-serif; fill:#111; } .text { font:12px
+        Helvetica, Arial, sans-serif; fill:#333; } .panel { stroke:#bbb; fill:#fff; rx:12; ry:12; }
+        .arrow { stroke:#1f2937; stroke-width:1.6; fill:none; marker-end:url(#arr); } .arrowRev {
+        stroke:#475569; stroke-width:1.2; fill:none; marker-end:url(#arr2); } </style>
+    <defs>
+        <marker id="arr" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+            <path d="M0,0 L10,4 L0,8 Z" fill="#1f2937" />
+        </marker>
+        <marker id="arr2" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+            <path d="M0,0 L9,3.5 L0,7 Z" fill="#475569" />
+        </marker>
+    </defs>
+    <rect x="40" y="60" width="280" height="140" class="panel" />
+    <text x="60" y="86" class="title">Stage 1</text>
+    <text x="60" y="110" class="text">Molecular → S-Entropy</text>
+    <text x="60" y="132" class="text">Φ: Ω → (S_str, S_spec, S_act)</text>
+    <rect x="390" y="60" width="280" height="140" class="panel" />
+    <text x="410" y="86" class="title">Stage 2</text>
+    <text x="410" y="110" class="text">S-Entropy → Droplet Params</text>
+    <text x="410" y="132" class="text">Ψ: S → (v, r, θ, σ)</text>
+    <rect x="740" y="60" width="280" height="140" class="panel" />
+    <text x="760" y="86" class="title">Stage 3</text>
+    <text x="760" y="110" class="text">Droplet → Visual Pattern</text>
+    <text x="760" y="132" class="text">Ω: (v, r, θ, σ) → Pattern</text> <!-- Forward arrows -->
+    <path d="M320,130 L390,130" class="arrow" />
+    <path d="M670,130 L740,130" class="arrow" /> <!-- Reverse arrows (inverse mappings) -->
+    <path d="M390,150 L320,150" class="arrowRev" />
+    <path d="M740,150 L670,150" class="arrowRev" /> <!-- Bijective note -->
+    <text x="300" y="240" class="text">Composition Ω∘Ψ∘Φ is bijective under precision constraints.</text>
+    <text x="300" y="262" class="text">Inverse exists: Φ⁻¹∘Ψ⁻¹∘Ω⁻¹ enables reconstruction.</text>
+</svg>
