@@ -1,0 +1,154 @@
+%==============================================================================
+\section{Resonant Coupling as Partition Traversal}
+\label{sec:coupling}
+%==============================================================================
+
+\subsection{The Coupling Mechanism}
+
+Spectroscopic measurement operates through resonant coupling between instrument oscillators and molecular partition coordinates. This section analyses the coupling mechanism in detail, establishing that the charge redistribution during coupling constitutes partition traversal.
+
+\begin{definition}[Resonant Coupling]
+\label{def:resonant_coupling}
+Resonant coupling between system oscillator $S$ at frequency $\omega_S$ and apparatus oscillator $A$ at frequency $\omega_A$ occurs when:
+\begin{equation}
+|\omega_S - \omega_A| < \Gamma
+\end{equation}
+where $\Gamma$ is the coupling linewidth.
+\end{definition}
+
+The coupling strength follows a Lorentzian profile:
+
+\begin{theorem}[Lorentzian Coupling]
+\label{thm:lorentzian}
+The coupling strength $g$ between system and apparatus satisfies:
+\begin{equation}
+g(\omega_S, \omega_A) = \frac{g_0}{1 + \left(\frac{\omega_S - \omega_A}{\Gamma}\right)^2}
+\end{equation}
+where $g_0$ is the on-resonance coupling strength.
+\end{theorem}
+
+\begin{proof}
+The coupled system-apparatus Hamiltonian takes the form:
+\begin{equation}
+H = H_S + H_A + H_{\mathrm{int}}
+\end{equation}
+where $H_{\mathrm{int}} = \lambda (a^\dagger b + a b^\dagger)$ for system operator $a$ and apparatus operator $b$ with coupling constant $\lambda$. In the interaction picture, the rotating-wave approximation yields effective coupling $g = \lambda^2/[(\omega_S - \omega_A)^2 + \Gamma^2]$, which rearranges to the Lorentzian form.
+\end{proof}
+
+\subsection{Charge Redistribution During Coupling}
+
+When resonant coupling occurs, charge redistributes between the system and apparatus oscillatory modes.
+
+\begin{definition}[Coupling-Induced Charge Transfer]
+\label{def:charge_transfer}
+During resonant coupling at frequency $\omega$, the charge distribution $\rho(\mathbf{r}, t)$ oscillates between configurations $\rho_S$ (system-localised) and $\rho_A$ (apparatus-coupled):
+\begin{equation}
+\rho(\mathbf{r}, t) = \rho_S(\mathbf{r}) \cos^2(\omega t/2) + \rho_A(\mathbf{r}) \sin^2(\omega t/2)
+\end{equation}
+\end{definition}
+
+This charge redistribution is not a static transfer but an oscillatory exchange that maintains coherence between system and apparatus. The key observation is that this redistribution traverses partition elements in categorical space.
+
+\begin{theorem}[Coupling as Partition Traversal]
+\label{thm:coupling_partition}
+Resonant coupling at frequency $\omega_\xi$ corresponding to partition coordinate $\xi$ induces traversal across partition elements indexed by $\xi$:
+\begin{equation}
+\partition_\xi(t) = \partition_\xi(0) + \Delta\xi \cdot \sin(\omega_\xi t)
+\end{equation}
+where $\Delta\xi$ is the partition excursion amplitude.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The partition coordinate $\xi$ is encoded in oscillatory dynamics at frequency $\omega_\xi$. Resonant coupling at this frequency drives transitions between adjacent partition elements $\partition_{\xi}$ and $\partition_{\xi \pm 1}$. The oscillatory charge redistribution corresponds to oscillation between these partition states, with the system spending time in each partition proportional to $|\langle \partition_\xi | \Psi \rangle|^2$.
+\end{proof}
+
+\subsection{Selection Rules from Partition Geometry}
+
+The partition structure imposes selection rules on allowed transitions.
+
+\begin{theorem}[Selection Rules]
+\label{thm:selection_rules}
+Resonant coupling transitions must satisfy:
+\begin{align}
+\Delta l &= \pm 1 \quad \text{(dipole selection)} \\
+\Delta m &\in \{0, \pm 1\} \quad \text{(magnetic selection)} \\
+\Delta s &= 0 \quad \text{(chirality conservation)}
+\end{align}
+\end{theorem}
+
+\begin{proof}
+Selection rules arise from continuity requirements on partition traversal. The wavefunction must remain continuous during transitions, constraining the change in partition coordinates.
+
+For $\Delta l$: Angular momentum transitions require dipole coupling, which changes angular momentum by $\pm\hbar$, corresponding to $\Delta l = \pm 1$.
+
+For $\Delta m$: The magnetic quantum number changes by the angular momentum of the absorbed or emitted photon along the quantisation axis: $\Delta m = 0$ for linearly polarised light (no angular momentum transfer), $\Delta m = \pm 1$ for circularly polarised light.
+
+For $\Delta s$: Chirality is a discrete symmetry that cannot change continuously. Electromagnetic coupling preserves chirality, requiring $\Delta s = 0$.
+\end{proof}
+
+These selection rules, conventionally derived from angular momentum conservation and parity considerations, emerge naturally from the partition geometry of bounded oscillatory systems.
+
+\subsection{The Aperture Structure of Resonance}
+
+Resonant coupling exhibits aperture structure: the resonance condition acts as a geometric filter that permits passage only for configurations satisfying $|\omega_S - \omega_A| < \Gamma$.
+
+\begin{definition}[Resonance Aperture]
+\label{def:resonance_aperture}
+The resonance aperture $\aperture_\omega$ at frequency $\omega$ is:
+\begin{equation}
+\aperture_\omega(\omega_S) = \begin{cases}
+1 & \text{if } |\omega_S - \omega| < \Gamma \\
+0 & \text{otherwise}
+\end{cases}
+\end{equation}
+\end{definition}
+
+\begin{theorem}[Aperture Selectivity]
+\label{thm:aperture_selectivity}
+The selectivity $\mathcal{S}$ of resonance aperture $\aperture_\omega$ for partition coordinate $\xi$ is:
+\begin{equation}
+\mathcal{S}_\xi = \frac{\omega_\xi}{\Gamma}
+\end{equation}
+High selectivity ($\mathcal{S}_\xi \gg 1$) implies that the aperture couples predominantly to coordinate $\xi$.
+\end{theorem}
+
+\begin{proof}
+Selectivity measures the ratio of in-band to out-of-band coupling. The in-band region has width $\Gamma$ centred at $\omega_\xi$. The out-of-band region spans from zero to the next frequency regime. The ratio of target frequency to linewidth gives the selectivity.
+\end{proof}
+
+The well-separated frequency regimes (Section~\ref{sec:instruments}) ensure high selectivity: each instrument couples predominantly to its target coordinate without interference from other coordinates. This separation enables independent extraction of all four partition coordinates through appropriately tuned resonance apertures.
+
+\subsection{Coherent Coupling and Information Preservation}
+
+Resonant coupling preserves quantum coherence, enabling interference effects that encode partition coordinate information.
+
+\begin{theorem}[Coherence Preservation]
+\label{thm:coherence}
+Under resonant coupling at frequency $\omega_\xi$, the coherence between partition states $|\xi\rangle$ and $|\xi'\rangle$ satisfies:
+\begin{equation}
+|\langle \xi | \rho(t) | \xi' \rangle| = |\langle \xi | \rho(0) | \xi' \rangle| \cdot e^{-t/T_2}
+\end{equation}
+where $T_2$ is the coherence time determined by coupling to the environment.
+\end{theorem}
+
+This coherence preservation is essential for multi-dimensional spectroscopy, where correlations between partition coordinates are detected through coherent superpositions. The charge redistribution during coupling maintains phase relationships that encode the partition structure of the molecular system.
+
+\subsection{Energy Exchange and Partition Completion}
+
+Resonant coupling enables energy exchange between system and apparatus, but this exchange is secondary to the partition completion that occurs.
+
+\begin{theorem}[Energy-Partition Relationship]
+\label{thm:energy_partition}
+During resonant coupling, energy exchange $\Delta E$ relates to partition traversal $\Delta\xi$ through:
+\begin{equation}
+\Delta E = \hbar \omega_\xi \cdot \Delta\xi
+\end{equation}
+Energy is the carrier of partition transitions, not the quantity being measured.
+\end{theorem}
+
+\begin{proof}
+Each partition transition at frequency $\omega_\xi$ involves absorption or emission of one quantum of energy $\hbar\omega_\xi$. The number of quanta exchanged equals the number of partition elements traversed. Therefore $\Delta E = \hbar\omega_\xi \cdot \Delta\xi$.
+\end{proof}
+
+This relationship clarifies the role of energy in spectroscopy. The spectroscopic signal reports partition structure through the frequencies at which absorption or emission occurs. Energy transfer enables the measurement but is not the subject of measurement. The molecular properties revealed by spectroscopy are partition coordinates $(n, l, m, s)$, accessed through energy exchange at characteristic frequencies $\omega_\xi$.

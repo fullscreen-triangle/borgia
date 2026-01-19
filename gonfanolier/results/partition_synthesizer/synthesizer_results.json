@@ -1,0 +1,50 @@
+{
+  "H2O+": {
+    "partition_coords": [
+      7,
+      3,
+      -1,
+      0.5
+    ],
+    "s_entropy": [
+      0.28073549220576044,
+      0.2,
+      0.15000000000000002
+    ],
+    "information_generated": 287.6366770899845,
+    "confidence": 0.9,
+    "multi_modal_info": 172,
+    "trajectory_completed": 1,
+    "modality_contributions": {
+      "Optical (UV-Vis)": 59.79470570797252,
+      "Spectral (Refractive Index)": 57.45274640107693,
+      "Vibrational (Raman)": 59.114740246230035,
+      "Metabolic GPS": 56.13089713113187,
+      "Temporal-Causal": 55.14358760357318
+    }
+  },
+  "N2+": {
+    "partition_coords": [
+      10,
+      2,
+      -2,
+      0.5
+    ],
+    "s_entropy": [
+      0.33219280948873625,
+      0.15849625007211562,
+      0.25
+    ],
+    "information_generated": 287.6366770899845,
+    "confidence": 0.9,
+    "multi_modal_info": 172,
+    "trajectory_completed": 1,
+    "modality_contributions": {
+      "Optical (UV-Vis)": 59.79470570797252,
+      "Spectral (Refractive Index)": 57.45274640107693,
+      "Vibrational (Raman)": 59.114740246230035,
+      "Metabolic GPS": 56.13089713113187,
+      "Temporal-Causal": 55.14358760357318
+    }
+  }
+}

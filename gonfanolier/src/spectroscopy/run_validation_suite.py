@@ -20,7 +20,7 @@ current_dir = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(current_dir)
 
 from validation import SpectroscopyValidator, load_molecular_patterns
-from statistics import SpectroscopyStatistics
+from chemical_statistics import SpectroscopyStatistics
 
 class ValidationSuite:
     """

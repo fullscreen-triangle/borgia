@@ -1,0 +1,225 @@
+\section{Ternary Representation of Three-Dimensional Space}
+\label{sec:ternary}
+
+\subsection{The Dimensional Limitation of Binary Representation}
+
+Binary representation underlies contemporary digital computation. A bit encodes two states: $\{0, 1\}$. This provides natural encoding for one-dimensional information—``left or right?'' along a single axis. The $2^k$ hierarchy (2 values for 1 bit, 4 for 2 bits, 256 for 8 bits) reflects this one-dimensional structure.
+
+Encoding position in higher-dimensional spaces requires multiple independent binary coordinates. For three-dimensional space, three separate bit strings specify $(x, y, z)$ coordinates, with explicit transformations required to move between representations. This architectural choice—separating dimensions into independent binary channels—is convenient for Boolean logic but unnatural for multi-dimensional spaces.
+
+\subsection{Ternary as Natural Three-Dimensional Encoding}
+
+\begin{definition}[Ternary Digit]
+\label{def:trit}
+A \textit{ternary digit} (trit) is a variable taking three values: $\trit \in \{0, 1, 2\}$.
+\end{definition}
+
+For entropy coordinate space $\Sspace = [0,1]^3$, ternary representation provides intrinsic dimensional encoding:
+\begin{align}
+\trit = 0 &\leftrightarrow \text{refinement along } \Sk \text{ axis} \\
+\trit = 1 &\leftrightarrow \text{refinement along } \St \text{ axis} \\
+\trit = 2 &\leftrightarrow \text{refinement along } \Se \text{ axis}
+\end{align}
+
+A $k$-trit string $(\trit_1, \trit_2, \ldots, \trit_k)$ specifies a sequence of refinements, each subdividing one of the three dimensions.
+
+\subsection{Hierarchical Cell Structure}
+
+\begin{definition}[Cell Partition]
+\label{def:cell}
+At depth $k$, the space $\Sspace$ is partitioned into $3^k$ cells. Each cell is addressed by a unique $k$-trit string.
+\end{definition}
+
+Starting from depth $k=0$ (entire space is one cell), each refinement step splits cells along one axis:
+\begin{align}
+k = 0: \quad & 3^0 = 1 \text{ cell (entire space)} \\
+k = 1: \quad & 3^1 = 3 \text{ cells (one per axis)} \\
+k = 2: \quad & 3^2 = 9 \text{ cells} \\
+k = 6: \quad & 3^6 = 729 \text{ cells (one tryte)}
+\end{align}
+
+\begin{definition}[Tryte]
+\label{def:tryte}
+A \textit{tryte} is a 6-trit ternary word, analogous to the 8-bit byte. A tryte addresses $3^6 = 729$ distinct cells.
+\end{definition}
+
+\subsection{The Trit-Coordinate Mapping}
+
+\begin{theorem}[Trit-Coordinate Correspondence]
+\label{thm:trit_coord}
+A $k$-trit string $\mathbf{t} = (\trit_1, \ldots, \trit_k)$ maps bijectively to a cell $C_{\mathbf{t}}$ in the $3^k$ partition of $\Sspace$. The mapping $\phi: \{0,1,2\}^k \to \mathcal{C}_k$ is:
+\begin{equation}
+\phi(\mathbf{t}) = \left\{ \mathbf{s} \in [0,1]^3 : s_i \in \left[\sum_{j:\trit_j=i} \frac{d_j}{3^j}, \sum_{j:\trit_j=i} \frac{d_j + 1}{3^j}\right] \right\}
+\end{equation}
+where $s_i$ is the $i$-th coordinate ($s_0 = \Sk$, $s_1 = \St$, $s_2 = \Se$), and $d_j$ counts how many previous trits refined the same axis.
+\end{theorem}
+
+\begin{proof}
+Each trit $\trit_j \in \{0,1,2\}$ specifies which axis to refine. The $j$-th refinement divides the current cell into three subcells along the specified axis. The position along that axis is determined by counting how many previous refinements occurred on the same axis.
+
+For axis $i$, let $d_j(i)$ be the number of times axis $i$ was refined in steps $1, \ldots, j-1$. When $\trit_j = i$, the refinement at step $j$ subdivides axis $i$ into thirds, selecting the $d_j(i)$-th third.
+
+The coordinate range after $k$ refinements is:
+\begin{equation}
+s_i \in \left[\frac{1}{3^{m_i}} \sum_{j:\trit_j=i} d_j(i), \frac{1}{3^{m_i}} \left(\sum_{j:\trit_j=i} d_j(i) + 1\right)\right]
+\end{equation}
+where $m_i$ is the number of refinements along axis $i$ (i.e., number of trits equal to $i$).
+
+This mapping is bijective: each $k$-trit string corresponds to exactly one cell, and each cell is addressed by exactly one $k$-trit string.
+\end{proof}
+
+\subsection{Continuous Emergence}
+
+\begin{theorem}[Continuous Emergence]
+\label{thm:continuous}
+An infinite ternary string $\mathbf{t}_{\infty} = (\trit_1, \trit_2, \ldots)$ converges to a unique point $\mathbf{s} \in [0,1]^3$:
+\begin{equation}
+\lim_{k \to \infty} \phi((\trit_1, \ldots, \trit_k)) = \mathbf{s}
+\end{equation}
+The mapping $\phi_{\infty}: \{0,1,2\}^{\infty} \to [0,1]^3$ is bijective for almost all points (excluding a set of measure zero).
+\end{theorem}
+
+\begin{proof}
+For each coordinate $s_i$, the sequence of refinements along axis $i$ produces nested intervals:
+\begin{equation}
+I_0 \supset I_1 \supset I_2 \supset \cdots
+\end{equation}
+with $|I_k| = 3^{-k}$ where $k$ counts refinements of axis $i$. As $k \to \infty$, the interval width vanishes: $|I_k| \to 0$. By the nested interval theorem, there exists a unique point $s_i \in \bigcap_k I_k$.
+
+This holds for each axis independently. Thus, the infinite ternary string converges to unique $\mathbf{s} = (\Sk, \St, \Se) \in [0,1]^3$.
+
+The mapping is bijective except for points with multiple ternary representations (analogous to $0.1000\ldots = 0.0222\ldots$ in ternary), which form a set of measure zero.
+\end{proof}
+
+\begin{corollary}[Discrete-Continuous Duality]
+\label{cor:discrete_continuous}
+Finite ternary strings represent discrete cells. Infinite ternary strings represent continuous points. The continuum $[0,1]^3$ emerges as the $k \to \infty$ limit of discrete $3^k$ cell structures.
+\end{corollary}
+
+\subsection{Trajectory Encoding}
+
+A crucial property of ternary representation: it encodes both position and trajectory simultaneously.
+
+\begin{theorem}[Trajectory-Position Duality]
+\label{thm:trajectory}
+A ternary string $\mathbf{t} = (\trit_1, \ldots, \trit_k)$ specifies both:
+\begin{enumerate}
+\item \textbf{Position:} Which cell in the $3^k$ partition
+\item \textbf{Trajectory:} The sequence of refinements leading to that cell
+\end{enumerate}
+The address is the path.
+\end{theorem}
+
+\begin{proof}
+The cell position is determined by the final state after $k$ refinements (Theorem~\ref{thm:trit_coord}). The trajectory is the sequence $(\trit_1, \ldots, \trit_k)$ itself, specifying which axis to refine at each step.
+
+Reading the string left-to-right gives the navigation path:
+\begin{itemize}
+\item Start at root cell (entire space)
+\item $\trit_1$ specifies first refinement axis $\to$ move to one of 3 subcells
+\item $\trit_2$ specifies second refinement axis $\to$ move to one of 9 subcells
+\item Continue until $\trit_k$ $\to$ arrive at final cell
+\end{itemize}
+
+The same string that addresses the final cell encodes the path taken to reach it. This duality has no analog in binary representation, where addresses and paths are distinct data structures.
+\end{proof}
+
+\subsection{Ternary Operations}
+
+Binary computation employs Boolean operations: AND, OR, NOT. Ternary computation in entropy coordinate space employs categorical operations.
+
+\begin{definition}[Ternary Operations]
+\label{def:ternary_ops}
+The fundamental ternary operations on strings $\mathbf{t} \in \{0,1,2\}^k$ are:
+\begin{enumerate}
+\item \textbf{Project}$_i(\mathbf{t})$: Extract subsequence of trits equal to $i$, giving refinements along axis $i$
+\item \textbf{Complete}$(\mathbf{t})$: Extend string until cell size falls below threshold, terminating trajectory
+\item \textbf{Compose}$(\mathbf{t}_1, \mathbf{t}_2)$: Concatenate strings, composing trajectories
+\end{enumerate}
+\end{definition}
+
+\textbf{Project}: For string $\mathbf{t} = (0,1,2,0,1)$, we have:
+\begin{align}
+\text{Project}_0(\mathbf{t}) &= (0, 0) \quad \text{(refinements along } \Sk \text{)} \\
+\text{Project}_1(\mathbf{t}) &= (1, 1) \quad \text{(refinements along } \St \text{)} \\
+\text{Project}_2(\mathbf{t}) &= (2) \quad \text{(refinements along } \Se \text{)}
+\end{align}
+
+\textbf{Complete}: Extends $\mathbf{t}$ by appending trits until convergence criterion is met (e.g., cell size $< \epsilon$). This implements categorical finalization.
+
+\textbf{Compose}: Concatenation $\mathbf{t}_1 \cdot \mathbf{t}_2$ corresponds to trajectory composition—first follow path $\mathbf{t}_1$, then path $\mathbf{t}_2$ from the reached position.
+
+\begin{proposition}[Operational Completeness]
+\label{prop:operational}
+The operations Project, Complete, and Compose are sufficient for all navigation in $\Sspace$. They replace Boolean AND, OR, NOT as fundamental primitives for three-dimensional spaces.
+\end{proposition}
+
+\subsection{Information Density}
+
+\begin{proposition}[Ternary Information Density]
+\label{prop:density}
+A $k$-trit string encodes $3^k$ distinguishable cells. A $k$-bit string encodes $2^k$ cells. For equal information content:
+\begin{equation}
+k_{\text{ternary}} = \frac{\log_2 N}{\log_2 3} = \frac{k_{\text{binary}}}{\log_2 3} \approx 0.631 \times k_{\text{binary}}
+\end{equation}
+Ternary representation requires 37\% fewer digits for the same information content.
+\end{proposition}
+
+\begin{proof}
+To address $N$ cells:
+\begin{align}
+\text{Binary:} \quad & k_{\text{binary}} = \lceil \log_2 N \rceil \\
+\text{Ternary:} \quad & k_{\text{ternary}} = \lceil \log_3 N \rceil = \left\lceil \frac{\log_2 N}{\log_2 3} \right\rceil
+\end{align}
+
+Since $\log_2 3 \approx 1.585$, we have $k_{\text{ternary}} \approx 0.631 \times k_{\text{binary}}$.
+
+However, if we measure in bits (using $1$ trit $= \log_2 3 \approx 1.585$ bits), the information content is identical: both require $\log_2 N$ bits. The advantage of ternary is structural (intrinsic three-dimensional encoding), not information-theoretic.
+\end{proof}
+
+\subsection{Hardware Implementation: Three-Phase Oscillators}
+
+Ternary logic has natural physical realization through three-phase oscillators.
+
+\begin{definition}[Three-Phase Encoding]
+\label{def:three_phase}
+Three oscillators with phases separated by $2\pi/3$ encode ternary values:
+\begin{align}
+\phi_0 &= 0 \quad \leftrightarrow \quad \trit = 0 \\
+\phi_1 &= 2\pi/3 \quad \leftrightarrow \quad \trit = 1 \\
+\phi_2 &= 4\pi/3 \quad \leftrightarrow \quad \trit = 2
+\end{align}
+At any instant, the oscillator with maximum amplitude indicates the trit value.
+\end{definition}
+
+Three-phase systems are ubiquitous in engineering (three-phase AC power) and natural systems (circadian rhythms, chemical oscillators, coupled pendula). Ternary computation maps naturally onto these physical substrates.
+
+\begin{proposition}[Phase-Trit Correspondence]
+\label{prop:phase_trit}
+Three-phase oscillators with frequency $\omega$ and phases $\{\phi_0, \phi_1, \phi_2\}$ implement ternary state transitions at rate $3\omega/(2\pi)$ (three state changes per period).
+\end{proposition}
+
+\begin{proof}
+During one period $T = 2\pi/\omega$, each oscillator passes through maximum amplitude once. At three equally-spaced times ($t = 0, T/3, 2T/3$), a different oscillator reaches maximum. This corresponds to three ternary state transitions: $0 \to 1 \to 2 \to 0$.
+
+The transition rate is:
+\begin{equation}
+\frac{dM}{dt} = \frac{3}{T} = \frac{3\omega}{2\pi}
+\end{equation}
+
+For binary (two-state) oscillators, the rate is $2\omega/(2\pi) = \omega/\pi$. Ternary provides 50\% higher categorical transition rate for the same base frequency.
+\end{proof}
+
+\subsection{Summary: Ternary Structure of Entropy Space}
+
+Three-dimensional entropy coordinate space $\Sspace = [0,1]^3$ admits natural ternary encoding where:
+\begin{enumerate}
+\item Each trit value corresponds to one coordinate axis
+\item $k$-trit strings address $3^k$ cells bijectively
+\item Infinite strings converge to unique continuous points
+\item Strings simultaneously encode position and trajectory
+\item Operations Project, Complete, Compose replace Boolean primitives
+\item Three-phase oscillators provide hardware implementation
+\end{enumerate}
+
+This ternary structure is not a notational convenience but the natural representation for three-dimensional spaces, matching the dimensionality of entropy coordinates to the base of the number system. Measurement in entropy space is naturally ternary measurement.

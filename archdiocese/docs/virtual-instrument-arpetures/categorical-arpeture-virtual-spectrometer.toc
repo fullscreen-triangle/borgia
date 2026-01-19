@@ -1,0 +1,49 @@
+\contentsline {section}{\numberline {1}Introduction}{4}{section.1}%
+\contentsline {subsection}{\numberline {1.1}The Problem of Measurement}{4}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Outline of Results}{5}{subsection.1.2}%
+\contentsline {section}{\numberline {2}Resolution of Maxwell's Demon}{5}{section.2}%
+\contentsline {subsection}{\numberline {2.1}The Paradox and Standard Resolutions}{5}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}The Phase-Lock Network Perspective}{5}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Categorical Completion}{6}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}The Demon Dissolution}{7}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Zero Information Processing}{7}{subsection.2.5}%
+\contentsline {section}{\numberline {3}Geometric Principles of Catalysis}{8}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Contradictions in Temporal Catalysis}{8}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Categorical Apertures}{9}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Partition Pathway Creation}{9}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Categorical Burden and Autocatalysis}{10}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Resolution of Contradictions}{10}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Distinction from Maxwell's Demon}{11}{subsection.3.6}%
+\contentsline {section}{\numberline {4}Necessity of Spectroscopic Instruments}{11}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Bounded Oscillatory Systems}{11}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Partition Coordinates from Finite Resolution}{12}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Frequency-Coordinate Duality}{13}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Instrument Necessity Theorem}{13}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Correspondence to Physical Instruments}{14}{subsection.4.5}%
+\contentsline {section}{\numberline {5}Resonant Coupling as Partition Traversal}{14}{section.5}%
+\contentsline {subsection}{\numberline {5.1}The Coupling Mechanism}{14}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Charge Redistribution During Coupling}{15}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Selection Rules from Partition Geometry}{16}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}The Aperture Structure of Resonance}{16}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}Coherent Coupling and Information Preservation}{17}{subsection.5.5}%
+\contentsline {subsection}{\numberline {5.6}Energy Exchange and Partition Completion}{17}{subsection.5.6}%
+\contentsline {section}{\numberline {6}Information Catalysis}{17}{section.6}%
+\contentsline {subsection}{\numberline {6.1}The Central Synthesis}{17}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Instruments as Categorical Apertures}{18}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Zero Information Acquisition}{19}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}Comparison to Chemical Catalysis}{20}{subsection.6.4}%
+\contentsline {subsection}{\numberline {6.5}The Molecular Maxwell Demon Resolved}{20}{subsection.6.5}%
+\contentsline {section}{\numberline {7}Autocatalytic Structure of Virtual Instruments}{21}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Categorical Burden in Measurement}{21}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Signal Averaging Enhancement}{22}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Multi-Dimensional Spectroscopy}{22}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.4}Virtual Instrument Implementation}{23}{subsection.7.4}%
+\contentsline {subsection}{\numberline {7.5}Minimal Hardware Requirements}{23}{subsection.7.5}%
+\contentsline {subsection}{\numberline {7.6}Reconfigurability Through Signal Processing}{24}{subsection.7.6}%
+\contentsline {subsection}{\numberline {7.7}Implications for Instrument Design}{24}{subsection.7.7}%
+\contentsline {section}{\numberline {8}Discussion}{24}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Unification of Three Frameworks}{24}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Resolution of the Measurement Problem}{25}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}Implications for Instrument Design}{26}{subsection.8.3}%
+\contentsline {subsection}{\numberline {8.4}The Molecular Maxwell Demon Reconsidered}{26}{subsection.8.4}%
+\contentsline {section}{\numberline {9}Conclusion}{27}{section.9}%

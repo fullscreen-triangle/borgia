@@ -1,0 +1,247 @@
+{
+  "descriptive_statistics": {
+    "real_spectra_stats": {
+      "intensity_mean": 6.4840613331629005,
+      "intensity_std": 80.35648394152072,
+      "intensity_median": -1.347589,
+      "intensity_iqr": 2.5873573515625,
+      "intensity_skewness": 22.665732067472838,
+      "intensity_kurtosis": 570.7297075038166,
+      "wavelength_range": [
+        -47.748917,
+        840.0
+      ],
+      "n_spectra": 7,
+      "total_data_points": 59981
+    },
+    "virtual_spectra_stats": {
+      "intensity_mean": 0.1125368144521045,
+      "intensity_std": 0.09642422197431542,
+      "intensity_median": 0.10510736632524628,
+      "intensity_iqr": 0.10132399423724461,
+      "intensity_skewness": 4.24473560863207,
+      "intensity_kurtosis": 28.19566746138622,
+      "wavelength_range": [
+        200.0,
+        800.0
+      ],
+      "n_spectra": 10,
+      "total_data_points": 5000
+    },
+    "comparative_stats": {
+      "intensity_mean_ratio": 0.017355914552586362,
+      "intensity_std_ratio": 0.0011999557129016244,
+      "wavelength_overlap": 100.0
+    }
+  },
+  "hypothesis_testing": {
+    "correlation_vs_zero": {
+      "test": "One-sample t-test (correlation > 0)",
+      "statistic": 1.4806947681933185,
+      "p_value": 0.14323996280625736,
+      "significant": "False",
+      "interpretation": "No significant correlation"
+    },
+    "peak_f1_vs_random": {
+      "test": "One-sample t-test (peak F1 > random)",
+      "statistic": -57.78125040179403,
+      "p_value": 3.5954545248067483e-60,
+      "significant": "True",
+      "interpretation": "Peak detection significantly better than random"
+    },
+    "rmse_vs_unity": {
+      "test": "One-sample t-test (RMSE < 1)",
+      "statistic": -17.681805185716044,
+      "p_value": 2.4882597999256046e-27,
+      "significant": "True",
+      "interpretation": "RMSE significantly less than unity"
+    },
+    "correlation_normality": {
+      "test": "Shapiro-Wilk normality test",
+      "statistic": 0.939259777735001,
+      "p_value": 0.0020670426638337105,
+      "is_normal": "False",
+      "interpretation": "Correlations are not normally distributed"
+    },
+    "led_anova": {
+      "test": "One-way ANOVA (LED responses)",
+      "statistic": 1.6652938570541551,
+      "p_value": 0.24247350837939344,
+      "significant": "False",
+      "interpretation": "No significant differences between LED responses"
+    }
+  },
+  "effect_sizes": {
+    "correlation_cohens_d": {
+      "value": 0.17697687486364128,
+      "interpretation": "Negligible effect"
+    },
+    "peak_f1_cohens_d": {
+      "value": -6.9061803563338655,
+      "interpretation": "Large effect"
+    },
+    "mean_r_squared": {
+      "value": -39.819041200366456,
+      "interpretation": "Very weak relationship"
+    }
+  },
+  "confidence_intervals": {
+    "correlation": {
+      "mean": 0.013693454966505515,
+      "ci_lower": -0.004755786422885971,
+      "ci_upper": 0.032142696355897005,
+      "sem": 0.009247993077745315
+    },
+    "peak_f1": {
+      "mean": 0.05502341325911663,
+      "ci_lower": 0.04552961938712506,
+      "ci_upper": 0.0645172071311082,
+      "sem": 0.00475892412899991
+    },
+    "rmse": {
+      "mean": 0.43027320575023914,
+      "ci_lower": 0.36599391728876085,
+      "ci_upper": 0.49455249421171743,
+      "sem": 0.032221076313520586
+    }
+  },
+  "power_analysis": {
+    "sample_size": 70,
+    "effect_size": 0.17697687486364128,
+    "alpha": 0.05,
+    "observed_power": 0.30435996960541556,
+    "power_interpretation": "Very low power - high risk of Type II error",
+    "recommended_sample_size": 251
+  },
+  "multivariate_analysis": {
+    "pca": {
+      "explained_variance_ratio": [
+        0.9999812908819201,
+        1.5253666293069098e-05,
+        2.3763574769776964e-06
+      ],
+      "cumulative_variance": [
+        0.9999812908819201,
+        0.9999965445482132,
+        0.9999989209056902
+      ],
+      "components": [
+        [
+          0.00010146699021329014,
+          0.002071145277768194,
+          -0.0037969803672695136,
+          0.9999881357922379,
+          -0.002238588069252652
+        ],
+        [
+          -0.05283426260380605,
+          -0.6437202540661722,
+          -0.09030451725988341,
+          0.002692753752669974,
+          0.758070325523814
+        ],
+        [
+          -0.44851376650311603,
+          -0.03278921780247168,
+          0.8919224448954988,
+          0.0036055891302093704,
+          0.04713406911938735
+        ]
+      ],
+      "n_components": 3
+    },
+    "clustering": {
+      "n_clusters": 3,
+      "cluster_labels": [
+        2,
+        2,
+        0,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        0,
+        0,
+        2,
+        2,
+        0,
+        0,
+        2,
+        2,
+        0,
+        2,
+        0,
+        0,
+        2,
+        2,
+        0,
+        0,
+        2,
+        2,
+        0,
+        2,
+        0,
+        0,
+        2,
+        2,
+        0,
+        0,
+        2,
+        2,
+        0,
+        2,
+        0,
+        0,
+        2,
+        2,
+        0,
+        0,
+        2,
+        2,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "cluster_centers": [
+        [
+          10.197840710844702,
+          -0.05697712459392376,
+          0.10536016158542767
+        ],
+        [
+          -158.17771304305893,
+          0.015761372627208867,
+          -0.03458100459704458
+        ],
+        [
+          35.06724296161156,
+          0.026638612569239488,
+          -0.04786547044419309
+        ]
+      ],
+      "inertia": 1030.3412910999598
+    }
+  }
+}

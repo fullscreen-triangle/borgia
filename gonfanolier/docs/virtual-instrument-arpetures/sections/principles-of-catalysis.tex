@@ -1,0 +1,152 @@
+%==============================================================================
+\section{Geometric Principles of Catalysis}
+\label{sec:catalysis}
+%==============================================================================
+
+\subsection{Contradictions in Temporal Catalysis}
+
+The standard theory of catalysis describes catalysts as agents that accelerate reactions by lowering activation energy barriers \citep{eyring1935, pauling1946}. The rate constant follows the Arrhenius equation:
+\begin{equation}
+k = A \exp\left(-\frac{E_a}{RT}\right)
+\label{eq:arrhenius}
+\end{equation}
+where reduction of activation energy $E_a$ increases rate constant $k$, interpreted as temporal acceleration of the reaction.
+
+This temporal interpretation generates three fundamental contradictions \citep{sachikonye2024catalysis}.
+
+\textbf{The instantaneous concentration paradox.} If catalysts accelerate reactions proportionally to substrate availability, arbitrarily high substrate concentrations should yield arbitrarily high rates. However, Michaelis-Menten kinetics demonstrates finite maximum velocity:
+\begin{equation}
+\lim_{[S] \to \infty} v = V_{\max} = k_{\mathrm{cat}}[E]_{\mathrm{total}} < \infty
+\end{equation}
+The existence of finite $V_{\max}$ independent of substrate concentration contradicts unlimited temporal acceleration.
+
+\textbf{The reversible reaction paradox.} Catalysts accelerate reversible reactions without altering equilibrium constants:
+\begin{equation}
+K_{\mathrm{eq}}^{\mathrm{cat}} = K_{\mathrm{eq}}^{\mathrm{uncat}} = \frac{k_{\mathrm{forward}}}{k_{\mathrm{reverse}}}
+\end{equation}
+This requires simultaneous acceleration of forward and reverse reactions, which proceed in opposite temporal directions. Time cannot flow in both directions simultaneously.
+
+\textbf{The step-exclusion paradox.} Catalysed reactions proceed through different intermediates than uncatalysed reactions. If catalysts execute the same steps faster, intermediates should be identical. If catalysts skip steps, those steps were unnecessary. If catalysts introduce new steps, the reaction is different rather than accelerated. These alternatives are mutually contradictory.
+
+\subsection{Categorical Apertures}
+
+The contradictions are resolved by reformulating catalysis as geometric selection through categorical apertures rather than temporal acceleration.
+
+\begin{definition}[Categorical Aperture]
+\label{def:aperture}
+A categorical aperture $\aperture$ is a geometric structure in phase-lock network space that permits molecular passage based on configurational complementarity. Formally, $\aperture: \catspace \to \{0, 1\}$ maps configurations to passage permission:
+\begin{equation}
+\aperture(C) = \begin{cases}
+1 & \text{if } C \text{ is geometrically complementary to } \aperture \\
+0 & \text{otherwise}
+\end{cases}
+\end{equation}
+\end{definition}
+
+Configurational complementarity encompasses all structural properties: atomic positions, bond angles, charge distribution, hydrogen bonding patterns, and hydrophobic interactions. These properties determine whether a molecule's phase-lock network couples productively with the aperture's phase-lock network. Velocity, being a kinetic property describing rate of change of position, does not enter the complementarity criterion.
+
+\begin{theorem}[Aperture Velocity Independence]
+\label{thm:aperture_velocity}
+Categorical aperture selection is velocity-independent:
+\begin{equation}
+\aperture(C, v) = \aperture(C, v') \quad \forall v, v'
+\end{equation}
+A molecule moving rapidly and a molecule moving slowly with identical configurations have identical aperture compatibility.
+\end{theorem}
+
+\begin{proof}
+The aperture function $\aperture(C)$ depends on configurational complementarity determined by structural fit: van der Waals contacts, electrostatic interactions, hydrogen bonds. These interactions depend on molecular geometry $C$ and electronic structure, not on velocity $v$. Since $\partial \aperture/\partial v = 0$, the result follows.
+\end{proof}
+
+\subsection{Partition Pathway Creation}
+
+Catalysts function by creating partition pathways that reduce categorical distance between reactant and product states.
+
+\begin{definition}[Partition Distance]
+\label{def:partition_dist}
+The partition distance $\dcat(R, P)$ between reactant state $R$ and product state $P$ is the minimum number of partition elements traversed in any pathway from $R$ to $P$ in categorical space $\catspace$.
+\end{definition}
+
+In the absence of a catalyst, certain reactions have infinite partition distance: no sequence of accessible partition transitions connects reactants to products. The uncatalysed dissociation of N$_2$ exemplifies this: no intermediate partition elements connect the triply-bonded molecule to separated nitrogen atoms in the gas phase.
+
+\begin{theorem}[Catalyst Pathway Creation]
+\label{thm:pathway_creation}
+A catalyst reduces partition distance by introducing intermediate states:
+\begin{equation}
+\dcat^{\mathrm{cat}}(R, P) < \dcat^{\mathrm{uncat}}(R, P)
+\end{equation}
+through new partition elements $\{I_1, I_2, \ldots, I_k\}$ satisfying:
+\begin{equation}
+R \prec I_1 \prec I_2 \prec \cdots \prec I_k \prec P
+\end{equation}
+\end{theorem}
+
+The catalyst does not accelerate the uncatalysed reaction; it creates a different reaction pathway through partition space. The different intermediates observed experimentally (acyl-enzyme intermediates, surface-adsorbed species) reflect these different partition trajectories.
+
+\subsection{Categorical Burden and Autocatalysis}
+
+A crucial feature of partition dynamics is that each successful aperture transit generates categorical burden on the receiving partition.
+
+\begin{definition}[Categorical Burden]
+\label{def:burden}
+When a molecule traverses aperture $\aperture$ from partition $\partition_A$ to partition $\partition_B$, categorical burden $B$ is generated on $\partition_B$:
+\begin{equation}
+B = \Delta|\partition_B| = |\partition_B'| - |\partition_B|
+\end{equation}
+where $|\partition_B|$ denotes the number of occupied partition elements.
+\end{definition}
+
+\begin{theorem}[Autocatalytic Burden]
+\label{thm:autocatalysis}
+Categorical burden reduces resistance to subsequent aperture transits:
+\begin{equation}
+\frac{\partial R_{\aperture}}{\partial B} < 0
+\end{equation}
+where $R_{\aperture}$ is the resistance to passage through aperture $\aperture$.
+\end{theorem}
+
+\begin{proof}
+The aperture permits passage when the arriving molecule's phase-lock network couples to available partition elements on the receiving side. Categorical burden $B > 0$ indicates occupation of partition elements that would otherwise block passage. Occupied elements cannot simultaneously block new arrivals and maintain their current occupancy. Therefore resistance decreases with increasing burden, yielding $\partial R_{\aperture}/\partial B < 0$.
+\end{proof}
+
+This theorem establishes that catalysis is inherently autocatalytic at the categorical level. Each successful reaction reduces resistance to subsequent reactions through positive feedback that is independent of velocity, distance, or time. The feedback operates through partition dynamics: products occupying partition elements create burden that facilitates further product formation.
+
+\subsection{Resolution of Contradictions}
+
+The categorical framework resolves the three contradictions of temporal catalysis.
+
+\textbf{Instantaneous concentration paradox resolved.} The maximum velocity $V_{\max}$ reflects partition traversal rate rather than temporal acceleration:
+\begin{equation}
+V_{\max} = \frac{[E]_{\mathrm{total}}}{\dcat \cdot \tau_{\mathrm{step}}}
+\end{equation}
+where $\tau_{\mathrm{step}}$ is the time per partition transition. Increasing substrate concentration increases aperture encounter frequency but cannot reduce partition distance $\dcat$, which is determined by categorical structure.
+
+\textbf{Reversible reaction paradox resolved.} Catalysts create bidirectional partition pathways:
+\begin{equation}
+\dcat(R \to P) = \dcat(P \to R)
+\end{equation}
+The same aperture structure that permits forward passage permits reverse passage. Direction is determined by thermodynamic driving force, not by temporal flow.
+
+\textbf{Step-exclusion paradox resolved.} Catalysts create new partition pathways rather than accelerating existing pathways. The different intermediates reflect different partition trajectories through categorical space, not acceleration or omission of steps.
+
+\subsection{Distinction from Maxwell's Demon}
+
+Categorical apertures are fundamentally distinct from Maxwell's Demon mechanisms.
+
+\begin{theorem}[Aperture-Demon Distinction]
+\label{thm:aperture_demon}
+Categorical aperture selection involves zero Shannon information processing:
+\begin{equation}
+I_{\aperture} = 0 \text{ bits}
+\end{equation}
+while Maxwell's Demon mechanisms require:
+\begin{equation}
+I_{\mathrm{demon}} \geq 1 \text{ bit per selection}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The demon measures molecular velocity, discriminates fast from slow, and records the decision to control the door. This constitutes information acquisition ($\geq 1$ bit per molecule). The aperture permits passage based on configurational complementarity without measurement: the molecule either fits or does not, determined by physical contact forces arising from quantum mechanical properties. No property is interrogated, no decision is recorded, no uncertainty is reduced through observation. Therefore $I_{\aperture} = 0$.
+\end{proof}
+
+This distinction is critical for thermodynamics. Demon mechanisms incur Landauer cost from memory erasure; aperture mechanisms incur no such cost because no memory is created. Catalysis through categorical apertures is thermodynamically free in the information-theoretic sense, consistent with the observation that catalysts do not alter equilibrium constants.

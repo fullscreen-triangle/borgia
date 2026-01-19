@@ -1,0 +1,162 @@
+%==============================================================================
+\section{Necessity of Spectroscopic Instruments}
+\label{sec:instruments}
+%==============================================================================
+
+\subsection{Bounded Oscillatory Systems}
+
+Spectroscopic instruments arise necessarily from the structure of bounded measure-preserving dynamical systems \citep{sachikonye2024instruments}. Consider a phase space $\Gamma$ with finite measure $\mu(\Gamma) < \infty$ and a measure-preserving flow $\phi_t: \Gamma \to \Gamma$ satisfying $\mu(\phi_t(A)) = \mu(A)$ for all measurable sets $A$ and times $t$.
+
+\begin{theorem}[Poincaré Recurrence]
+\label{thm:poincare}
+For any measurable set $A \subset \Gamma$ with $\mu(A) > 0$, almost every point $x \in A$ returns to $A$ infinitely often under the flow $\phi_t$.
+\end{theorem}
+
+This theorem, due to Poincaré, establishes that bounded measure-preserving systems exhibit recurrent behaviour. The dynamics cannot escape to infinity; trajectories must revisit regions of phase space.
+
+\begin{theorem}[Oscillatory Necessity]
+\label{thm:oscillatory}
+In a bounded measure-preserving system, every trajectory exhibits oscillatory behaviour: there exist times $t_1 < t_2$ such that $d(\phi_{t_1}(x), \phi_{t_2}(x)) < \epsilon$ for arbitrarily small $\epsilon$.
+\end{theorem}
+
+\begin{proof}
+By Poincaré recurrence, trajectories return arbitrarily close to initial conditions. Let $B_\epsilon(x)$ be the $\epsilon$-ball around $x$. The trajectory starting at $x$ returns to $B_\epsilon(x)$ at some time $T > 0$. Thus $d(x, \phi_T(x)) < \epsilon$, establishing near-periodicity. Applying this argument recursively yields oscillatory behaviour.
+\end{proof}
+
+\subsection{Partition Coordinates from Finite Resolution}
+
+An observer with finite resolution cannot distinguish arbitrarily close states. This limitation generates partition structure on phase space.
+
+\begin{axiom}[Finite Observer Resolution]
+\label{ax:resolution}
+There exists minimum resolution $\delta > 0$ such that states $x, y \in \Gamma$ with $d(x, y) < \delta$ are observationally indistinguishable.
+\end{axiom}
+
+\begin{definition}[Categorical Partition]
+\label{def:categorical_partition}
+A categorical partition $\partition = \{P_1, P_2, \ldots, P_N\}$ divides phase space into disjoint regions such that:
+\begin{enumerate}
+\item $\bigcup_i P_i = \Gamma$ (complete coverage)
+\item $P_i \cap P_j = \emptyset$ for $i \neq j$ (mutual exclusivity)
+\item $\mathrm{diam}(P_i) \geq \delta$ for all $i$ (resolution consistency)
+\end{enumerate}
+\end{definition}
+
+The oscillatory dynamics combined with finite resolution generates a coordinate system on the partition.
+
+\begin{theorem}[Partition Coordinate Emergence]
+\label{thm:partition_coords}
+Nested oscillatory boundaries in a bounded system generate a four-parameter coordinate system $(n, l, m, s)$ satisfying:
+\begin{enumerate}
+\item $n \in \{1, 2, 3, \ldots\}$ (depth: radial nesting level)
+\item $l \in \{0, 1, \ldots, n-1\}$ (complexity: angular subdivisions)
+\item $m \in \{-l, -l+1, \ldots, l\}$ (orientation: azimuthal position)
+\item $s \in \{-\frac{1}{2}, +\frac{1}{2}\}$ (chirality: binary parity)
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+The proof proceeds by geometric construction. The outermost oscillatory boundary defines depth $n = 1$. Nested boundaries at smaller radii define $n = 2, 3, \ldots$. Each depth level admits angular subdivisions determined by the intersection of oscillatory modes, parameterised by $l = 0, 1, \ldots, n-1$. Each angular subdivision admits orientational positions $m = -l, \ldots, l$. Finally, each state admits binary chirality $s = \pm\frac{1}{2}$ from oscillatory phase parity.
+\end{proof}
+
+\begin{theorem}[Capacity Theorem]
+\label{thm:capacity}
+The number of distinguishable states at depth $n$ is exactly:
+\begin{equation}
+C(n) = 2n^2
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+At depth $n$, complexity ranges over $l = 0, 1, \ldots, n-1$. For each $l$, orientation ranges over $m = -l, \ldots, l$, giving $2l + 1$ orientations. Chirality doubles each count. Therefore:
+\begin{equation}
+C(n) = 2 \sum_{l=0}^{n-1} (2l + 1) = 2 \cdot n^2 = 2n^2
+\end{equation}
+\end{proof}
+
+\subsection{Frequency-Coordinate Duality}
+
+Each partition coordinate maps to a characteristic frequency regime through the oscillatory structure.
+
+\begin{theorem}[Frequency-Coordinate Duality]
+\label{thm:freq_duality}
+The partition coordinates $(n, l, m, s)$ correspond to characteristic frequencies:
+\begin{align}
+\omega_n &\propto n^{-3} \quad \text{(depth)} \\
+\omega_l &\propto l(l+1) \quad \text{(complexity)} \\
+\omega_m &\propto m \cdot B \quad \text{(orientation, with external field } B\text{)} \\
+\omega_s &\propto s \cdot B \quad \text{(chirality, with external field } B\text{)}
+\end{align}
+\end{theorem}
+
+\begin{proof}
+The depth coordinate $n$ parameterises radial oscillation. For bound systems, radial frequency scales as $\omega_n \propto E_n^{3/2}/n \propto n^{-3}$ from virial theorem considerations. The complexity coordinate $l$ parameterises angular oscillation with frequency $\omega_l \propto L^2/I \propto l(l+1)$ from angular momentum. Orientation $m$ in external field $B$ precesses at Larmor frequency $\omega_m = \gamma m B$. Chirality $s$ in external field precesses at $\omega_s = g \gamma s B$ with g-factor $g$.
+\end{proof}
+
+These frequency regimes are well-separated:
+\begin{align}
+\omega_n &\sim 10^{15} - 10^{18} \text{ Hz (X-ray/UV)} \\
+\omega_l &\sim 10^{12} - 10^{15} \text{ Hz (optical/IR)} \\
+\omega_m &\sim 10^{9} - 10^{12} \text{ Hz (microwave)} \\
+\omega_s &\sim 10^{6} - 10^{9} \text{ Hz (radio)}
+\end{align}
+
+\subsection{Instrument Necessity Theorem}
+
+The extraction of partition coordinate information requires frequency-selective coupling structures.
+
+\begin{definition}[Information Extraction]
+\label{def:extraction}
+Information extraction from coordinate $\xi \in \{n, l, m, s\}$ is a map $\mathcal{E}_\xi: \partition \to \mathbb{R}$ that yields the value of $\xi$ for states in $\partition$.
+\end{definition}
+
+\begin{theorem}[Coupling Necessity]
+\label{thm:coupling_necessity}
+Information extraction $\mathcal{E}_\xi$ requires coupling between the system and an apparatus oscillating at frequency $\omega \approx \omega_\xi$.
+\end{theorem}
+
+\begin{proof}
+The coordinate $\xi$ is encoded in oscillatory dynamics at characteristic frequency $\omega_\xi$. Extracting $\xi$ requires interaction with these dynamics. Off-resonant coupling (at frequency $\omega \neq \omega_\xi$) averages to zero over the oscillation period. Only resonant coupling ($\omega \approx \omega_\xi$) accumulates non-zero signal, enabling extraction.
+\end{proof}
+
+\begin{definition}[Minimal Coupling Structure]
+\label{def:minimal_coupling}
+A minimal coupling structure $\coupling_\xi$ for coordinate $\xi$ consists of:
+\begin{enumerate}
+\item An oscillator with tunable frequency $\omega$ near $\omega_\xi$
+\item A coupling mechanism between system and oscillator
+\item A detector for coupled oscillator response
+\end{enumerate}
+\end{definition}
+
+\begin{theorem}[Instrument Necessity]
+\label{thm:instrument_necessity}
+For each partition coordinate $\xi \in \{n, l, m, s\}$, there exists a unique (up to equivalence) minimal coupling structure $\coupling_\xi$ necessary and sufficient for extraction of $\xi$.
+\end{theorem}
+
+\begin{proof}
+\textit{Existence:} The frequency-coordinate duality (Theorem~\ref{thm:freq_duality}) establishes that each coordinate has characteristic frequency $\omega_\xi$. Construct $\coupling_\xi$ with oscillator at $\omega_\xi$, electromagnetic coupling to the molecular system, and intensity detector. This structure extracts $\xi$ through resonant enhancement.
+
+\textit{Necessity:} By Theorem~\ref{thm:coupling_necessity}, extraction requires resonant coupling at $\omega_\xi$. Any apparatus achieving extraction must include an oscillator at this frequency.
+
+\textit{Uniqueness:} Two coupling structures extracting the same coordinate $\xi$ must couple at the same frequency $\omega_\xi$ and must detect the same oscillatory response. They differ only in implementation details (detector technology, coupling strength) and are therefore equivalent as information extractors.
+\end{proof}
+
+\subsection{Correspondence to Physical Instruments}
+
+The derived coupling structures correspond to known spectroscopic instruments:
+
+\begin{center}
+\begin{tabular}{llll}
+\toprule
+\textbf{Coordinate} & \textbf{Frequency Regime} & \textbf{Coupling Structure} & \textbf{Instrument} \\
+\midrule
+$n$ (depth) & X-ray/UV & Photoelectric coupling & XPS, UV absorption \\
+$l$ (complexity) & Optical/IR & Electric dipole coupling & Optical spectroscopy \\
+$m$ (orientation) & Microwave & Magnetic dipole coupling & Zeeman spectroscopy \\
+$s$ (chirality) & Radio & Spin-field coupling & NMR spectroscopy \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The four fundamental spectroscopic techniques are not arbitrary instrumental choices but necessary structures for extracting partition coordinate information from bounded oscillatory molecular systems. Any apparatus capable of molecular characterisation must include coupling structures equivalent to these four.
