@@ -16,6 +16,17 @@ where $\mathbf{F}$ is the measurement dynamics determined by multi-modal synthes
 
 This reformulation shifts perspective: instead of ``measuring properties of a molecule,'' we ``complete a trajectory through entropy space until recurrence to a known molecular state.''
 
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{figures/molecular_clustering_analysis.png}
+    \caption{\textbf{Molecular clustering analysis: Four-cluster structure revealing categorical organization.} 
+    \textbf{Top-left: PCA visualization of molecular clusters.} Two-dimensional scatter plot shows PC2 (vertical axis, $$-3$$ to $$+3$$, 19.69\% variance) versus PC1 (horizontal axis, $$-3$$ to $$+3$$, 25.38\% variance). Approximately 50 colored circles represent molecules: Cluster 0 (cyan, $$\sim 16$$ molecules, dispersed across $$-3 < \text{PC1} < 0$$), Cluster 1 (gray, $$\sim 10$$ molecules, concentrated near PC1 $$\sim -1$$, PC2 $$\sim 0$$), Cluster 2 (pink, $$\sim 7$$ molecules, compact group at PC1 $$\sim 0$$, PC2 $$\sim -2$$), Cluster 3 (red, $$\sim 12$$ molecules, spread across PC1 $$> 0$$). Color gradient (0.0--3.0, blue $$\to$$ yellow) indicates cluster index. Clusters exhibit spatial separation with some overlap, validating $$k=4$$ structure. PC1 correlates with base frequency ($$r \sim 0.6$$), PC2 with molecular weight ($$r \sim 0.5$$). 
+    \textbf{Top-right: Cluster characteristics (mean values).} Heatmap shows seven features (rows: molecular\_weight, logp, tpsa, base\_frequency\_hz, frequency\_stability, processing\_rate\_ops\_per\_sec, memory\_capacity\_bits) versus four clusters (columns: 0--3). Color scale ($$0.0$$--$$1 \times 10^{12}$$, dark purple $$\to$$ yellow) encodes feature values. Key patterns: Cluster 3 has highest molecular weight ($$206.76$$ Da, yellow) and LogP ($$1.98$$, lightest purple). Cluster 2 has lowest molecular weight ($$134.36$$ Da) and highest TPSA ($$58.96$$ Ų). Base frequency varies dramatically: Cluster 0 ($$1.74 \times 10^{12}$$ Hz, $$\sim 1.7$$ THz, yellow), Cluster 1 ($$3.46 \times 10^{12}$$ Hz, $$\sim 3.5$$ THz, brightest yellow), Cluster 2 ($$3.33 \times 10^{12}$$ Hz), Cluster 3 ($$3.86 \times 10^{12}$$ Hz). Frequency stability uniformly high ($$0.96$$--$$0.98$$, dark purple). Processing rate highest for Cluster 3 ($$7.33 \times 10^6$$ ops/sec). Memory capacity varies: Cluster 1 highest ($$7.54 \times 10^5$$ bits). 
+    \textbf{Bottom-left: Cluster size distribution.} Histogram shows number of molecules (vertical axis, 0--16) versus cluster index (horizontal axis, $$-0.5$$ to $$3.5$$). Light blue bars: Cluster 0 ($$\sim 16$$ molecules, largest), Cluster 1 ($$\sim 10$$), Cluster 2 ($$\sim 7$$, smallest), Cluster 3 ($$\sim 12$$). Unequal distribution suggests natural categorical organization rather than arbitrary partitioning. 
+    \textbf{Bottom-right: Feature importance in clustering.} Bar chart shows standard deviation of cluster centers (vertical axis, 0.0--0.7) for seven features (horizontal axis). Pink bars indicate importance: frequency\_stability ($$\sim 0.72$$, highest), memory\_capacity\_bits ($$\sim 0.67$$), base\_frequency\_hz ($$\sim 0.65$$), molecular\_weight ($$\sim 0.62$$), tpsa ($$\sim 0.58$$), processing\_rate\_ops\_per\_sec ($$\sim 0.56$$), logp ($$\sim 0.31$$, lowest). Frequency stability most discriminative feature, followed by memory capacity and base frequency. LogP least important, confirming top-right panel observation.}
+    \label{fig:molecular_clustering_analysis}
+    \end{figure}
 \subsection{Poincaré Recurrence in Bounded Entropy Space}
 
 The entropy coordinate space $\Sspace = [0,1]^3$ is bounded by construction—all coordinates lie in $[0,1]$. This boundedness implies Poincaré recurrence.
@@ -65,6 +76,18 @@ T_{\text{id}} \sim \frac{100}{10^{14}} = 10^{-12} \text{ s}
 
 Picosecond timescales are experimentally accessible. Identification does not require full recurrence, only sufficient trajectory exploration to distinguish among known molecular states.
 \end{proof}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{figures/fig_pressure_perspectives.png}
+    \caption{\textbf{Pressure: Triple equivalence perspectives demonstrating categorical, oscillatory, and partition descriptions.} 
+    (A) Categorical versus classical pressure. Pressure $$P$$ (Pa, log scale $$10^{-9}$$--$$10^{12}$$) versus density $$\rho$$ ($$10^{10}$$--$$10^{31}$$ particles/m$$^3$$, log scale). Black dashed line shows classical ideal gas ($$P = \rho k_B T$$, linear on log-log). Green curve shows categorical pressure following classical until $$\rho \sim 10^{28}$$, then saturating at $$P_{\text{sat}} \sim 10^9$$ Pa (red annotation). Saturation occurs when categorical space fills: no additional pressure increase despite density growth. Demonstrates fundamental difference from classical: categorical framework predicts maximum pressure. 
+    (B) Oscillatory pressure. Pressure $$P$$ versus density $$\rho$$ (same axes as panel A). Blue curve shows oscillatory pressure $$P = \frac{1}{3}\rho m \omega^2 A^2$$ (amplitude creates pressure). Inset diagram: blue irregular closed curve (oscillation trajectory) around black dot (equilibrium position), with annotation ``$$A\omega^2$$'' showing amplitude-frequency product. Pressure arises from oscillation amplitude squared times frequency squared. Gray dashed line (classical) for comparison. Oscillatory perspective: pressure $$=$$ kinetic energy density $$=$$ oscillation intensity. 
+    (C) Partition pressure. Pressure $$P$$ versus density $$\rho$$ (log-log, $$10^{-9}$$--$$10^{12}$$ Pa, $$10^{10}$$--$$10^{31}$$ particles/m$$^3$$). Red curve shows partition pressure (boundary rate contribution). Inset shows boundary/bulk detail: red bars (boundary categories, $$\sim 10000$$ at peak) versus blue bars (bulk categories) across spatial bins. Red dashed line (ideal) versus blue line (real) show deviation at high density. Gray dashed line (classical) for comparison. Partition perspective: pressure $$=$$ rate of boundary category traversal $$=$$ momentum flux through apertures. 
+    (D) Pressure saturation at high density. Compressibility factor $$Z = P/(\rho k_B T)$$ versus density $$\rho$$ ($$10^{25}$$--$$10^{32}$$ particles/m$$^3$$, log scale). Black dashed line ($$Z = 1$$, classical). Green curve (categorical with saturation) maintains $$Z = 1$$ until $$\rho \sim 10^{29}$$, then drops to $$Z \approx 0.1$$ at $$\rho = 10^{31}$$. Purple dotted line (Van der Waals) shows divergence at $$\rho \sim 10^{28}$$. Green shaded region (saturation regime, $$\rho > 10^{29}$$) marks categorical prediction. Purple dotted vertical line marks Van der Waals critical point. Categorical framework avoids unphysical divergence through natural saturation mechanism.}
+    \label{fig:pressure_perspectives}
+    \end{figure}
+
 
 \subsection{Entropy Space as Riemannian Manifold}
 
@@ -224,6 +247,22 @@ for $K$ independent modalities with equal individual rates $\gamma_1$.
 \end{corollary}
 
 This explains the factor-of-5 speedup observed in quintupartite synthesis compared to single-modality measurement.
+
+
+
+    
+    \begin{figure}[htbp]
+        \centering
+        \includegraphics[width=\textwidth]{figures/figure4_experimental_validation.png}
+        \caption{\textbf{Experimental validation of categorical measurement and autocatalytic information generation.} 
+        (A) Sequential ambiguity reduction through multi-modal measurement. Initial structural ambiguity ($$\sim 10^{61}$$ possibilities, blue region) decreases exponentially through successive measurement modalities. Each modality contributes exclusion factor $$\sim 10^{-15}$$: optical ($$\sim 10^{53}$$), spectral ($$\sim 10^{45}$$), vibrational ($$\sim 10^{37}$$), metabolic ($$\sim 10^{21}$$), temporal ($$\sim 10^{13}$$). Final ambiguity reaches unique identification (green dashed line, $$\sim 10^0$$). Red annotations show exclusion factors at each stage. 
+        (B) Partition coordinate synthesis convergence. Time evolution of coordinate estimates for $$n$$ (red), $$\ell$$ (blue), $$m$$ (green), and $$s$$ (yellow) over 100 measurement iterations. Initial noisy estimates (left) converge to stable values (right, horizontal plateaus): $$n \approx 3.0$$, $$\ell \approx 2.0$$, $$m \approx 1.0$$, $$s \approx 0.5$$. Convergence demonstrates successful categorical state determination through iterative refinement. 
+        (C) Three-dimensional trajectory in entropy coordinate space $$S = (S_k, S_t, S_e)$$. Blue curve shows system evolution from initial state (red sphere, lower right) through intermediate states (orange curve segment) to fixed point attractor (black sphere with yellow star, upper left). Wireframe grid shows unit cube boundaries. Trajectory demonstrates Poincar\'e recurrence in bounded phase space, validating Trajectory Completion Theorem. 
+        (D) Signal averaging enhancement comparing standard ($$\alpha=0.5$$, blue curve) versus catalytic ($$\alpha=0.7$$, red curve) scaling. Signal-to-noise ratio plotted against number of measurements $$N$$ on log-log scale. Catalytic measurement (red) exceeds standard $$\sqrt{N}$$ scaling (blue), approaching ideal $$\alpha=1.0$$ limit (green dashed line) and surpassing quantum limit (gray dashed line). Demonstrates autocatalytic information generation through categorical burden accumulation. 
+        (E) Cross-coordinate autocatalysis matrix showing information gain for measured coordinate (vertical) when measuring different coordinate (horizontal). Diagonal elements (dark red, value 1.0) show direct measurement. Off-diagonal elements (yellow-orange, values 0.1--0.4) show catalytic enhancement: measuring coordinate $$n$$ provides information about $$\ell$$ (0.3), $$m$$ (0.2), $$s$$ (0.1). Matrix demonstrates coupling between partition coordinates through shared entropy space structure. 
+        (F) Measurement convergence rate comparing standard (blue) versus catalytic (red) protocols. Vertical axis shows measurement uncertainty (logarithmic scale), horizontal axis shows measurement time. Catalytic protocol (red) reaches convergence threshold (green dashed line at $$\sim 10^{-2}$$) at time $$\sim 8$$, while standard protocol (blue) requires time $$\sim 14$$. Catalytic measurement achieves $$\sim 1.75\times$$ speedup through autocatalytic information generation.}
+        \label{fig:experimental_validation}
+        \end{figure}
 
 \subsection{Trajectory Visualization and Phase Portraits}
 

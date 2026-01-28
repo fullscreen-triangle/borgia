@@ -110,6 +110,20 @@ These three quantities are related by:
 Given any one quantity, the others are uniquely determined. The three perspectives are thus informationally equivalent.
 \end{proof}
 
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{figures/topology_categorical_spaces.png}
+    \caption{\textbf{Topological structure of categorical spaces: Partial order, branching, and completion dynamics.} 
+    (A) Partial order (completion precedence). Hasse diagram shows seven nodes (teal circles) connected by blue edges. Top node (root) branches to two nodes at level 1, which branch to four nodes at level 2, converging to single bottom node. Edges represent completion precedence: parent must complete before children. Diamond structure demonstrates multiple completion pathways: different orderings satisfy precedence constraints. Illustrates categorical space as partially ordered set (poset). 
+    (B) Tri-dimensional S-space. Three-dimensional coordinate system with orthogonal axes: $$S_k$$ (knowledge entropy, blue, horizontal), $$S_t$$ (temporal entropy, green, diagonal), $$S_e$$ (evolution entropy, red, vertical). Yellow sphere marks point in entropy space. Wireframe grid shows unit cube boundaries. Every physical state maps to unique point in $$\mathbf{S} = (S_k, S_t, S_e)$$ space. Topology: continuous 3D manifold with metric structure enabling distance measurements. 
+    (C) $$3^k$$ branching structure. Hierarchical ternary tree with four levels. Root node (top, teal) labeled $$C$$. Level 1: three nodes (blue, green, red). Level 2: nine nodes ($$3^2$$, three colors per parent). Level 3: twenty-seven nodes ($$3^3$$, three colors per parent). Bottom level: eighty-one implied nodes ($$3^4$$). Color coding: blue (trit 0), green (trit 1), red (trit 2). Each node has exactly three children, producing exponential growth: $$N(k) = 3^k$$ nodes at depth $$k$$. Demonstrates hierarchical categorical refinement. 
+    (D) Scale ambiguity: Identical structure. Two triangular structures (left: Level $$n$$, right: Level $$n+1$$) with identical topology. Three nodes (teal circles) form equilateral triangle connected by blue edges. Red arrows labeled $$\Psi_n$$ show mapping between levels. Structures are isomorphic: same connectivity, different scales. Illustrates scale invariance: categorical relationships preserved across hierarchical levels. Ambiguity: cannot determine absolute level from local structure alone. 
+    (E) Completion trajectory $$\gamma(t)$$ expanding. Green curve shows fraction completed (vertical axis, 0--1.0) versus time (horizontal axis, 0--10). Sigmoid shape: slow start ($$t < 2$$, completion $$< 0.2$$), rapid middle phase ($$2 < t < 8$$, completion $$0.2 \to 0.9$$), asymptotic approach to unity ($$t > 8$$, completion $$> 0.9$$). Red dashed line marks complete state ($$\gamma = 1.0$$). Green shaded region shows trajectory envelope. Equation: $$|\gamma(t)|/|c|$$ where $$c$$ is completion constant. Demonstrates non-uniform completion rate: accelerating then decelerating. 
+    (F) Asymptotic slowing $$\dot{C}(t) \to 0$$. Red curve shows completion rate $$\dot{C}(t)$$ (vertical axis, 0--0.30) versus time (horizontal axis, 0--10). Peak rate ($$\dot{C} \approx 0.30$$) at $$t = 0$$, exponential decay to $$\dot{C} \approx 0.02$$ at $$t = 10$$. Black dotted line shows completion time $$T$$ (asymptotic limit). Pink shaded region under curve represents total completion. Demonstrates Zeno-like behavior: rate decreases as completion approaches unity, requiring infinite time to fully complete. Mathematically: $$\dot{C}(t) \propto e^{-t/\tau}$$ with $$\tau \sim 2$$ time constant.}
+    \label{fig:topology_categorical_spaces}
+    \end{figure}
+
 \subsection{Entropy in Three Equivalent Forms}
 
 The triple equivalence implies that thermodynamic entropy admits three equivalent formulations.

@@ -42,6 +42,18 @@ Each phase configuration corresponds to a categorical state. The observation per
 Remarkably, this is independent of $T$: longer observation accumulates more phase but also spans more time, with the ratio remaining constant. The resolution depends only on the ensemble structure ($N$, $\delta\omega$), not the observation duration.
 \end{proof}
 
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{figures/clock_properties_analysis.png}
+    \caption{\textbf{Clock properties analysis: Frequency-stability relationships and processing architecture.} 
+    \textbf{Top-left: Frequency versus stability (colored by molecular weight).} Scatter plot shows frequency stability (vertical axis, 0.950--0.990) versus base frequency (horizontal axis, 1.0--5.0 THz). Approximately 50 colored circles (gradient: purple $$\to$$ pink $$\to$$ orange $$\to$$ yellow, encoding molecular weight 90--260 Da) show diverse frequency-stability combinations. No clear correlation: high stability ($$> 0.98$$) appears across full frequency range. Heaviest molecules (yellow, $$\sim 250$$ Da) cluster at mid-frequencies ($$2$$--$$3$$ THz) with moderate stability ($$0.965$$--$$0.970$$). Lightest molecules (purple, $$\sim 90$$ Da) span full frequency range with variable stability. Demonstrates frequency-stability independence: categorical clocks achieve high stability regardless of base frequency. 
+    \textbf{Top-right: Temporal precision versus LogP.} Scatter plot shows temporal precision (vertical axis, $$0$$--$$10 \times 10^{-26}$$ s) versus LogP (horizontal axis, 0--5). Orange circles ($$\sim 50$$ points) distributed broadly: precision ranges $$1$$--$$10 \times 10^{-26}$$ s across all LogP values. Highest precision ($$\sim 10 \times 10^{-26}$$ s, approaching Planck time $$t_P \sim 5 \times 10^{-44}$$ s scaled) achieved at LogP $$\sim 2$$--$$4$$. No strong correlation: temporal resolution independent of lipophilicity. Demonstrates universality: categorical measurement achieves extreme precision ($$\sim 10^{-26}$$ s) across diverse molecular properties. 
+    \textbf{Bottom-left: Frequency distribution by processing type.} Grouped histogram shows count (vertical axis, 0--4) versus base frequency (horizontal axis, 1.0--5.0 THz, binned). Green bars (parallel processing) dominate at frequencies $$1.0$$, $$2.0$$, $$2.5$$, $$4.5$$, $$5.0$$ THz (count $$\sim 3$$--$$4$$). Red bars (sequential processing) appear at $$1.0$$, $$2.0$$, $$2.5$$, $$4.0$$, $$4.5$$ THz (count $$\sim 1$$--$$3$$). Parallel processing more common overall ($$\sim 60\%$$ of clocks). Certain frequencies ($$2.0$$, $$4.5$$ THz) support both architectures. Demonstrates architectural flexibility: categorical clocks implement parallel or sequential processing depending on frequency regime. 
+    \textbf{Bottom-right: 3D relationship.} Three-dimensional scatter plot shows frequency stability (vertical axis, 0.2--1.0), molecular weight (depth axis, 75--275 Da), and processing rate (color axis, 0--10 Mops/sec, purple $$\to$$ teal $$\to$$ green $$\to$$ yellow). Approximately 50 colored spheres distributed throughout volume. High processing rates (yellow-green, $$> 6$$ Mops/sec) cluster at mid-weights ($$150$$--$$200$$ Da) with moderate stability ($$0.6$$--$$0.8$$). Low rates (purple, $$< 2$$ Mops/sec) appear at extremes of weight and stability. Demonstrates three-way coupling: processing rate peaks at intermediate molecular weight and stability, suggesting optimal operating regime for categorical computation.}
+    \label{fig:clock_properties_analysis}
+    \end{figure}
+
+
 \subsection{Molecular Ensemble Resolution}
 
 \begin{corollary}[Molecular Temporal Resolution]
@@ -173,6 +185,8 @@ T_{\text{distinguish}} = \frac{1}{\lambda} \ln\left(\frac{1}{|\delta\mathbf{x}_0
 High categorical resolution ($\Delta t_{\text{cat}} \sim 10^{-66}$ s) enables distinguishing trajectories with extremely small initial differences $|\delta\mathbf{x}_0|$, given sufficient observation time $T$.
 \end{proof}
 
+
+
 \subsection{Experimental Observables}
 
 Categorical temporal resolution manifests in measurable quantities:
@@ -212,6 +226,16 @@ I = \log_2\left(\frac{10^{-3}}{10^{-66}}\right) = \log_2(10^{63}) \approx 209 \t
 \end{equation}
 
 This is the information content of distinguishing $2^{209} \sim 10^{63}$ categorical states over millisecond measurement time.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{figures/amplification_frequency_analysis.png}
+    \caption{\textbf{Amplification factor frequency analysis: Temporal dynamics and spectral decomposition.} 
+    \textbf{Top panel: Amplification factor time series.} Blue curve shows amplification factor (vertical axis, 500--1100) versus time (horizontal axis, 0--60 seconds). Signal exhibits three distinct epochs: early rise ($$t < 10$$ s, factor $$750 \to 1000$$), mid-period plateau ($$10 < t < 20$$ s, factor $$\sim 950$$--$$1050$$), decline and recovery ($$20 < t < 30$$ s, factor drops to $$\sim 600$$, then recovers to $$\sim 850$$ by $$t = 35$$ s), and late-period oscillations ($$t > 35$$ s, factor $$\sim 900$$--$$1100$$ with periodic structure). High-frequency fluctuations ($$\Delta f \sim 50$$--$$100$$) superimposed on slower envelope. Demonstrates non-stationary amplification dynamics with characteristic timescales $$\tau_{\text{fast}} \sim 1$$ s, $$\tau_{\text{slow}} \sim 20$$ s. 
+    \textbf{Middle panel: Frequency domain (FFT).} Log-log plot shows magnitude (vertical axis, $$10^1$$--$$10^4$$) versus frequency (horizontal axis, $$10^{-1}$$--$$10^1$$ Hz). Red curve exhibits dominant low-frequency peak at $$f \sim 0.05$$ Hz (magnitude $$\sim 5 \times 10^3$$, corresponding to $$\sim 20$$ s period in time series). Secondary peak at $$f \sim 0.2$$ Hz (magnitude $$\sim 2 \times 10^3$$, $$\sim 5$$ s period). High-frequency regime ($$f > 1$$ Hz) shows broadband noise floor (magnitude $$\sim 10^2$$--$$10^3$$) with multiple small peaks. Power-law decay ($$\sim f^{-1}$$) for $$0.1 < f < 1$$ Hz suggests scale-free dynamics. FFT validates two-timescale structure observed in time series. 
+    \textbf{Bottom panel: Spectrogram.} Time-frequency heatmap shows power (dB, color scale $$-10$$ to $$+50$$ dB, purple $$\to$$ teal $$\to$$ green $$\to$$ yellow) versus time (horizontal axis, 10--45 seconds) and frequency (vertical axis, 0--5 Hz). Dominant horizontal band at $$f \sim 0.1$$ Hz (teal, power $$\sim 20$$ dB) persists throughout observation window. Transient high-power events (yellow-green, power $$> 30$$ dB) appear at $$t \sim 15$$ s ($$f \sim 0.5$$ Hz), $$t \sim 25$$ s ($$f \sim 0.3$$ Hz), and $$t \sim 35$$ s ($$f \sim 0.2$$ Hz). Vertical striations indicate amplitude modulation. Spectrogram reveals time-varying spectral content: amplification mechanism exhibits frequency drift and intermittent bursts, consistent with autocatalytic dynamics where information accumulation modulates oscillation spectrum.}
+    \label{fig:amplification_frequency_analysis}
+    \end{figure}
 
 \subsection{Limitations and Caveats}
 

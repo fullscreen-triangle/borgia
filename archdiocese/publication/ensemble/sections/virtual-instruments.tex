@@ -44,6 +44,17 @@ Systems with no frequency dependence (e.g., uniform broadband response) cannot d
 Therefore, frequency-selective coupling is necessary for coordinate measurement in bounded oscillatory systems.
 \end{proof}
 
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{figures/figure2_frequency_coupling.png}
+    \caption{\textbf{Frequency-selective coupling and partition coordinate measurement.} 
+    (A) Partition coordinate frequency regimes spanning 15 orders of magnitude. Four distinct frequency bands correspond to quantum numbers: $$n$$ (electronic, red, $$\sim 10^{15}$$ Hz), $$\ell$$ (vibrational, blue, $$\sim 10^{13}$$ Hz), $$m$$ (rotational, green, $$\sim 10^{11}$$ Hz), and $$s$$ (hyperfine, yellow, $$\sim 10^7$$ Hz). Each coordinate occupies well-separated frequency regime, enabling independent measurement through frequency-selective coupling. 
+    (B) Resonance condition for frequency-selective coupling. Coupling strength (vertical axis) peaks when oscillator frequency $$\omega$$ matches characteristic frequency $$\omega_0$$. Two bandwidth cases shown: narrow bandwidth $$\Delta\omega = 1.0$$ (red dashed curve) provides high selectivity, wide bandwidth $$\Delta\omega = 5.0$$ (blue solid curve) provides broader coupling. Peak at $$\omega = \omega_0 \approx 5$$ demonstrates resonant enhancement. 
+    (C) Multi-modal frequency matching with four independent detection channels. Each colored curve (red, blue, green, yellow) represents frequency-selective aperture centered at different characteristic frequency. Total detection response (black curve) shows combined multi-modal measurement capability. Non-overlapping peaks enable simultaneous independent measurement of all four partition coordinates $$(n, \ell, m, s)$$. 
+    (D) Frequency resolution versus integration time, demonstrating fundamental uncertainty relation $$\Delta\omega = 2\pi/T$$. Blue line shows inverse relationship on log-log scale. Red markers indicate characteristic timescales: 1~ms integration yields $$\sim 10^3$$ rad/s resolution, 100~s integration yields $$\sim 10^{-1}$$ rad/s resolution. Gray horizontal lines mark frequency regimes from panel A, showing required integration times for each partition coordinate measurement.}
+    \label{fig:frequency_coupling}
+    \end{figure}
+
 \subsection{Minimal Oscillator Count}
 
 \begin{theorem}[Minimal Oscillator Requirement]
@@ -268,6 +279,17 @@ f_{\text{total}} \approx \prod_{i=1}^{K} f_i
 
 The modalities must be truly independent (measuring different coordinates or orthogonal combinations). Non-independent modalities provide redundant information, reducing the effective product.
 \end{proof}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{figures/figure3_ensemble_measurement.png}
+    \caption{\textbf{Hardware oscillator ensembles and categorical temporal resolution.} 
+    (A) Hardware oscillator ensemble distributed across frequency-phase space. Each circle represents one oscillator, color-coded by partition coordinate: $$n$$ (purple, $$\sim 10^7$$ Hz), $$\ell$$ (teal, $$\sim 10^{11}$$ Hz), $$m$$ (green, $$\sim 10^{13}$$ Hz), $$s$$ (yellow, $$\sim 10^{15}$$ Hz). Phase values (vertical axis, 0--6 rad) and frequency values (horizontal axis, log scale) show oscillators distributed across coordinate-specific frequency bands (gray/white alternating background regions). Ensemble provides parallel measurement capability for all partition coordinates simultaneously. 
+    (B) Temporal resolution versus ensemble size, demonstrating fundamental trade-off. Blue curve shows temporal resolution $$\Delta t \propto N^{-1/2}$$ improving with ensemble size $$N$$ (left axis, logarithmic scale). Red curve shows spatial coverage $$C$$ approaching unity (right axis, 0--1). Black circle marks optimal ensemble size $$N \approx 10^5$$ where temporal resolution reaches $$\sim 10^{-16}$$ s while maintaining near-complete spatial coverage ($$C \approx 0.5$$). 
+    (C) Phase accumulation for two oscillators with frequencies $$\omega_1$$ (blue line) and $$\omega_2$$ (red line). Phase difference $$\Delta\phi = (\omega_2 - \omega_1)t$$ (black curve) accumulates linearly with time, enabling high-precision frequency discrimination through long integration times. Vertical lines mark phase reset events when either oscillator completes full cycle. 
+    (D) Categorical temporal resolution as function of normalized frequency $$\omega/\omega_0$$. Detection sensitivity peaks sharply at resonance ($$\omega/\omega_0 = 1$$). Ensemble size dramatically improves resolution: $$N=1$$ (blue, broad peak), $$N=10$$ (orange, narrower), $$N=100$$ (green, sharp), $$N=1000$$ (red, extremely sharp). Larger ensembles provide exponentially better frequency discrimination, enabling categorical state distinction with arbitrarily high precision.}
+    \label{fig:ensemble_measurement}
+    \end{figure}
 
 \subsection{Summary: Necessary Conditions for Measurement}
 

@@ -56,6 +56,17 @@ Solving:
 This is finite, determining finite $m_{\max}$. No categorical state exists beyond $m_{\max}$—the velocity distribution is intrinsically bounded.
 \end{proof}
 
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{figures/fig_ideal_gas_law.png}
+    \caption{\textbf{Ideal gas law validation: Categorical balance across extreme density and temperature regimes.} 
+    (A) Ideal gas law ratio (wide range). Compressibility factor $$Z = PV/(Nk_B T)$$ versus density $$\rho$$ ($$10^{10}$$--$$10^{28}$$ particles/m$$^3$$, log scale). Black dashed line shows classical ideal gas ($$Z = 1$$, constant). Green curve shows categorical prediction with saturation. Green shaded band ($$Z = 1.000 \pm 0.001$$) spans full density range. Annotation: ``Agreement within 0.1\% across 10 orders of magnitude.'' Categorical framework maintains $$Z \approx 1$$ from dilute gas ($$\rho \sim 10^{10}$$) to moderate density ($$\rho \sim 10^{25}$$), validating ideal gas law over 15 orders of magnitude. Demonstrates thermodynamic consistency. 
+    (B) Categorical balance. Vertical axis shows $$M_{\text{boundary}}/V$$ (boundary categories per volume) versus horizontal axis $$M_{\text{total}}/N$$ (categories per particle), both ranging 0.90--1.10. Colored scatter points ($$\sim 20$$ points, color gradient blue $$\to$$ teal $$\to$$ green $$\to$$ yellow encoding $$\log_{10}(N)$$ from 20 to 26) cluster tightly around black dashed diagonal line ($$y = x$$, perfect balance). All points within $$\pm 5\%$$ of diagonal. Demonstrates categorical balance: boundary categories scale proportionally with total categories, confirming $$M_{\text{boundary}}/V = M_{\text{total}}/N$$ relationship. Validates theoretical prediction of categorical equilibrium. 
+    (C) High-density deviations. Compressibility factor $$Z$$ versus density $$\rho$$ ($$10^{25}$$--$$10^{32}$$ particles/m$$^3$$). Black dashed line ($$Z = 1$$, classical ideal gas). Green curve (categorical with saturation) follows $$Z = 1$$ until $$\rho \sim 10^{29}$$, then decreases smoothly to $$Z \approx 0.2$$ at $$\rho = 10^{31}$$. Purple dotted line (Van der Waals) shows divergence: $$Z$$ decreases to $$\sim 0.4$$ at $$\rho \sim 10^{28}$$, then increases sharply (unphysical). Red annotation: ``$$P_{\text{sat}}$$'' marks saturation onset. Green shaded region (saturation regime, $$\rho > 10^{29}$$) shows categorical prediction of smooth pressure saturation, avoiding Van der Waals divergence. Annotation: ``VdW predicts diverge'', ``Categorical predicts saturation.'' 
+    (D) Low-temperature deviations (quantum). Compressibility factor $$Z$$ versus temperature $$T$$ ($$10^{-1}$$--$$10^2$$ K, log scale). Black dashed line ($$Z = 1$$, classical). Green curve (categorical) follows classical for $$T > 10$$ K, then increases to $$Z \approx 1.02$$ at $$T = 1$$ K. Blue circles (quantum correction) show additional increase to $$Z \approx 1.05$$ at $$T = 0.1$$ K. Gray annotation box: ``Quantum degeneracy increases $$Z$$.'' Demonstrates quantum effects at ultra-low temperatures: Bose-Einstein statistics increase pressure above classical prediction. Categorical framework captures quantum corrections naturally through degeneracy factors.}
+    \label{fig:ideal_gas_law_validation}
+    \end{figure}
+
 \subsection{Discrete Velocity Distribution}
 
 \begin{theorem}[Categorical Maxwell Distribution]
@@ -133,6 +144,20 @@ M_{\text{occ}} = \frac{k_B \times 100 \times 10^{-9} \text{ K}}{(1.05 \times 10^
 
 The velocity distribution consists of approximately 20 discrete peaks, experimentally observable through time-of-flight imaging.
 \end{example}
+
+    \begin{figure}[htbp]
+        \centering
+        \includegraphics[width=\textwidth]{figures/system_topology_panel.png}
+        \caption{\textbf{Topological structure of categorical spaces: Partial order, branching, and completion dynamics.} 
+        (A) Partial order (completion precedence). Hasse diagram shows seven nodes (teal circles) connected by blue edges. Top node (root) branches to two nodes at level 1, which branch to four nodes at level 2, converging to single bottom node. Edges represent completion precedence: parent must complete before children. Diamond structure demonstrates multiple completion pathways: different orderings satisfy precedence constraints. Illustrates categorical space as partially ordered set (poset). 
+        (B) Tri-dimensional S-space. Three-dimensional coordinate system with orthogonal axes: $$S_k$$ (knowledge entropy, blue, horizontal), $$S_t$$ (temporal entropy, green, diagonal), $$S_e$$ (evolution entropy, red, vertical). Yellow sphere marks point in entropy space. Wireframe grid shows unit cube boundaries. Every physical state maps to unique point in $$\mathbf{S} = (S_k, S_t, S_e)$$ space. Topology: continuous 3D manifold with metric structure enabling distance measurements. 
+        (C) $$3^k$$ branching structure. Hierarchical ternary tree with four levels. Root node (top, teal) labeled $$C$$. Level 1: three nodes (blue, green, red). Level 2: nine nodes ($$3^2$$, three colors per parent). Level 3: twenty-seven nodes ($$3^3$$, three colors per parent). Bottom level: eighty-one implied nodes ($$3^4$$). Color coding: blue (trit 0), green (trit 1), red (trit 2). Each node has exactly three children, producing exponential growth: $$N(k) = 3^k$$ nodes at depth $$k$$. Demonstrates hierarchical categorical refinement. 
+        (D) Scale ambiguity: Identical structure. Two triangular structures (left: Level $$n$$, right: Level $$n+1$$) with identical topology. Three nodes (teal circles) form equilateral triangle connected by blue edges. Red arrows labeled $$\Psi_n$$ show mapping between levels. Structures are isomorphic: same connectivity, different scales. Illustrates scale invariance: categorical relationships preserved across hierarchical levels. Ambiguity: cannot determine absolute level from local structure alone. 
+        (E) Completion trajectory $$\gamma(t)$$ expanding. Green curve shows fraction completed (vertical axis, 0--1.0) versus time (horizontal axis, 0--10). Sigmoid shape: slow start ($$t < 2$$, completion $$< 0.2$$), rapid middle phase ($$2 < t < 8$$, completion $$0.2 \to 0.9$$), asymptotic approach to unity ($$t > 8$$, completion $$> 0.9$$). Red dashed line marks complete state ($$\gamma = 1.0$$). Green shaded region shows trajectory envelope. Equation: $$|\gamma(t)|/|c|$$ where $$c$$ is completion constant. Demonstrates non-uniform completion rate: accelerating then decelerating. 
+        (F) Asymptotic slowing $$\dot{C}(t) \to 0$$. Red curve shows completion rate $$\dot{C}(t)$$ (vertical axis, 0--0.30) versus time (horizontal axis, 0--10). Peak rate ($$\dot{C} \approx 0.30$$) at $$t = 0$$, exponential decay to $$\dot{C} \approx 0.02$$ at $$t = 10$$. Black dotted line shows completion time $$T$$ (asymptotic limit). Pink shaded region under curve represents total completion. Demonstrates Zeno-like behavior: rate decreases as completion approaches unity, requiring infinite time to fully complete. Mathematically: $$\dot{C}(t) \propto e^{-t/\tau}$$ with $$\tau \sim 2$$ time constant.}
+        \label{fig:topology_categorical_spaces}
+        \end{figure}
+
 
 \subsection{High-Temperature Limit: Continuum Approximation}
 
@@ -243,6 +268,17 @@ Heavier particles have higher state density at fixed velocity, leading to broade
 
 This explains the classical result that heavy particles have narrower velocity distributions than light particles at the same temperature—in the categorical framework, this emerges from state density differences.
 
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{figures/fig_velocity_distributions.png}
+    \caption{\textbf{Velocity distributions: Discrete categorical structure versus continuous classical limits.} 
+    (A) Room temperature comparison ($$T = 300$$ K). Black curve shows classical Maxwell-Boltzmann distribution (continuous, peak $$\sim 400$$ m/s). Green bars show categorical discrete distribution with quantized velocity states. Inset (top right) shows discrete structure detail for high velocities (500--700 m/s): green bars maintain discrete spacing while classical distribution (black curve) decays smoothly. Categorical distribution exhibits finite support ($$v_{\max} \sim 1400$$ m/s) versus infinite classical tail. Demonstrates velocity quantization at room temperature. 
+    (B) Ultra-cold regime ($$T = 1$$ mK). Green bars show probability $$f(m)$$ versus category index $$m$$ (0--14). Exponential decay: $$f(0) \approx 0.28$$, $$f(1) \approx 0.20$$, $$f(5) \approx 0.04$$, $$f(14) \approx 0.001$$. Annotation shows velocity spacing: $$\Delta v \approx 215.06$$ mm/s. At ultra-cold temperatures, discrete categorical structure dominates: molecules occupy distinct velocity categories separated by $$\sim 200$$ mm/s. Validates quantum-like discretization in velocity space. 
+    (C) Relativistic regime ($$T = 10^9$$ K). Log-linear plot shows probability density versus $$v/c$$ (velocity as fraction of light speed, 0--1.2). Dashed black curve shows classical (unphysical) Maxwell-Boltzmann extending beyond $$v = c$$. Green curve shows categorical distribution with natural cutoff at $$v = c$$. Pink shaded region ($$v > c$$, forbidden zone) has zero probability. Categorical framework automatically enforces relativistic causality: no states exist for $$v > c$$, eliminating unphysical superluminal velocities present in classical theory. 
+    (D) Oscillatory distribution. Log-log plot shows occupation number $$n$$ versus frequency $$\omega$$ ($$10^{10}$$--$$10^{15}$$ rad/s). Gray line shows Bose-Einstein distribution (perfect agreement benchmark). Green circles show categorical oscillatory distribution. Both curves follow $$n(\omega) \propto [\exp(\hbar\omega/k_B T) - 1]^{-1}$$ for low frequencies ($$\omega < 10^{13}$$ rad/s), exhibiting high occupation ($$n \sim 10^4$$). At high frequencies ($$\omega > 10^{14}$$ rad/s), occupation drops precipitously ($$n < 10^{-6}$$), demonstrating quantum cutoff. Categorical distribution reproduces Bose-Einstein statistics exactly, confirming thermodynamic consistency.}
+    \label{fig:velocity_distributions}
+    \end{figure}
 \subsection{Experimental Observables}
 
 \begin{theorem}[Velocity Quantization in Cold Gases]

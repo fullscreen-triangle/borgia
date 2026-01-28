@@ -1,0 +1,39 @@
+\begin{thebibliography}{5}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Arnold(1963)]{arnold1963small}
+Vladimir~I Arnold.
+\newblock Small denominators and problems of stability of motion in classical
+  and celestial mechanics.
+\newblock \emph{Russian Mathematical Surveys}, 18\penalty0 (6):\penalty0
+  85--191, 1963.
+
+\bibitem[Kolmogorov(1954)]{kolmogorov1954conservation}
+Andrey~N Kolmogorov.
+\newblock On conservation of conditionally periodic motions for a small change
+  in {Hamilton's} function.
+\newblock \emph{Doklady Akademii Nauk SSSR}, 98:\penalty0 527--530, 1954.
+
+\bibitem[Landauer(1961)]{landauer1961irreversibility}
+Rolf Landauer.
+\newblock Irreversibility and heat generation in the computing process.
+\newblock \emph{IBM Journal of Research and Development}, 5\penalty0
+  (3):\penalty0 183--191, 1961.
+
+\bibitem[Moser(1962)]{moser1962invariant}
+J{\"u}rgen Moser.
+\newblock On invariant curves of area-preserving mappings of an annulus.
+\newblock \emph{Nachrichten der Akademie der Wissenschaften in G{\"o}ttingen.
+  II. Mathematisch-Physikalische Klasse}, 1962:\penalty0 1--20, 1962.
+
+\bibitem[Poincar{\'e}(1890)]{poincare1890probleme}
+Henri Poincar{\'e}.
+\newblock Sur le probl{\`e}me des trois corps et les {\'e}quations de la
+  dynamique.
+\newblock \emph{Acta Mathematica}, 13:\penalty0 1--270, 1890.
+
+\end{thebibliography}
