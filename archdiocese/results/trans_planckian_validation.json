@@ -1,0 +1,58 @@
+{
+  "spectral_0": {
+    "n_oscillators": 4,
+    "mean_frequency_Hz": 1226353427657186.5,
+    "categorical_resolution_s": 2.0385640416694356e-16,
+    "planck_time_s": 5.391246448313604e-44,
+    "ratio_to_planck": 3.781248105078008e+27,
+    "orders_beyond_planck": 0.0,
+    "is_trans_planckian": false
+  },
+  "spectral_1": {
+    "n_oscillators": 20,
+    "mean_frequency_Hz": 3.8076588337684946e-05,
+    "categorical_resolution_s": 1313.1428571428569,
+    "planck_time_s": 5.391246448313604e-44,
+    "ratio_to_planck": 2.4356943607235975e+46,
+    "orders_beyond_planck": 0.0,
+    "is_trans_planckian": false
+  },
+  "spectral_2": {
+    "n_oscillators": 20,
+    "mean_frequency_Hz": 3.8076588337684946e-05,
+    "categorical_resolution_s": 1313.1428571428569,
+    "planck_time_s": 5.391246448313604e-44,
+    "ratio_to_planck": 2.4356943607235975e+46,
+    "orders_beyond_planck": 0.0,
+    "is_trans_planckian": false
+  },
+  "isotope_discrimination": {
+    "isotopomers": {
+      "CH4": 3000.0,
+      "CH3D": 2910.4275004359956,
+      "CH2D2": 2828.42712474619,
+      "CHD3": 2752.988806446741,
+      "CD4": 2683.2815729997474
+    },
+    "min_frequency_difference_Hz": 69.70723344699354,
+    "required_resolution_s": 0.014345713501317126,
+    "n_oscillators_required": 0,
+    "ratio_to_planck": 2.6609270488468404e+41,
+    "is_trans_planckian_regime": false
+  },
+  "no_violation_validation": {
+    "theorem": "No Planck Violation (Theorem 12.3)",
+    "mechanism": "Phase accumulation across ensemble",
+    "explanation": [
+      "Planck time limits physical clock resolution",
+      "Categorical resolution uses phase accumulation, not faster clocks",
+      "N oscillators accumulate phase in parallel",
+      "Total phase Phi = N\u00b7omega\u00b7t grows linearly with N",
+      "Phase difference \u0394Phi = 2\u03c0 corresponds to categorical state transition",
+      "Resolution Delta_t = 2\u03c0/(N\u00b7omega) improves with N",
+      "No individual oscillator exceeds physical limits",
+      "Analogous to interferometry achieving sub-wavelength resolution"
+    ],
+    "valid": true
+  }
+}

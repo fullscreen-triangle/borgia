@@ -1,0 +1,85 @@
+{
+  "single_oscillator": {
+    "n_oscillators": 1,
+    "frequency_Hz": 1000.0,
+    "period_s": 0.001,
+    "duration_s": 1.0,
+    "tau_p_s": 0.001,
+    "states_per_oscillator": 1000,
+    "total_categorical_states": 1000,
+    "time_computed_s": 1.0,
+    "time_error": 0.0,
+    "categorical_entropy_J_K": 9.537185418171409e-23,
+    "entropy_rate_J_K_s": 1.380649e-23
+  },
+  "ensemble": {
+    "n_oscillators": 100,
+    "frequency_Hz": 10000000000000.0,
+    "period_s": 1e-13,
+    "duration_s": 1e-09,
+    "tau_p_s": 1e-15,
+    "states_per_oscillator": 10000,
+    "total_categorical_states": 1000000,
+    "time_computed_s": 1e-09,
+    "time_error": 0.0,
+    "categorical_entropy_J_K": 1.9074370836342817e-22,
+    "entropy_rate_J_K_s": 1.3806490000000001e-14
+  },
+  "trajectory_sample": [
+    {
+      "step": 0,
+      "time_fraction": 0.0,
+      "coordinates": [
+        0.1,
+        0.2,
+        0.3
+      ],
+      "categorical_state": 0,
+      "entropy": 0.0
+    },
+    {
+      "step": 1,
+      "time_fraction": 0.1,
+      "coordinates": [
+        0.17000000000000004,
+        0.25,
+        0.36000000000000004
+      ],
+      "categorical_state": 1,
+      "entropy": 9.569929616929079e-24
+    },
+    {
+      "step": 2,
+      "time_fraction": 0.2,
+      "coordinates": [
+        0.24000000000000005,
+        0.30000000000000004,
+        0.42000000000000004
+      ],
+      "categorical_state": 2,
+      "entropy": 1.5167979577373372e-23
+    },
+    {
+      "step": 3,
+      "time_fraction": 0.3,
+      "coordinates": [
+        0.31,
+        0.35,
+        0.48
+      ],
+      "categorical_state": 3,
+      "entropy": 1.9139859233858158e-23
+    },
+    {
+      "step": 4,
+      "time_fraction": 0.4,
+      "coordinates": [
+        0.38000000000000006,
+        0.39999999999999997,
+        0.54
+      ],
+      "categorical_state": 4,
+      "entropy": 2.2220688443642282e-23
+    }
+  ]
+}

@@ -30,11 +30,30 @@ class MolecularEncoder:
 
     def parse_smarts(self, smarts: str) -> Chem.Mol:
         """Parse SMARTS pattern to RDKit molecule."""
+        # Try as SMILES first (more complete molecules)
+        mol = Chem.MolFromSmiles(smarts)
+        if mol is not None:
+            try:
+                Chem.SanitizeMol(mol)
+                return mol
+            except:
+                pass
+
+        # Try as SMARTS (patterns)
         mol = Chem.MolFromSmarts(smarts)
-        if mol is None:
-            # Try as SMILES
-            mol = Chem.MolFromSmiles(smarts)
-        return mol
+        if mol is not None:
+            try:
+                # SMARTS molecules need special handling
+                for atom in mol.GetAtoms():
+                    try:
+                        atom.UpdatePropertyCache(strict=False)
+                    except:
+                        pass
+                return mol
+            except:
+                pass
+
+        return None
 
     def compute_partition_depth_atomic(self, atom: Chem.Atom) -> float:
         """
@@ -273,6 +292,12 @@ class MolecularEncoder:
         M_total = sum(self.compute_partition_depth_atomic(atom) for atom in mol.GetAtoms())
         M_total += sum(self.compute_partition_depth_bond(bond) for bond in mol.GetBonds())
 
+        # Try to compute molecular weight (may fail for SMARTS patterns)
+        try:
+            mol_wt = Descriptors.MolWt(mol)
+        except:
+            mol_wt = 0.0
+
         return {
             'coordinates': {
                 'S_k': S_k,
@@ -286,7 +311,7 @@ class MolecularEncoder:
             'partition_depth': M_total / self.M_max,
             'n_atoms': mol.GetNumAtoms(),
             'n_bonds': mol.GetNumBonds(),
-            'molecular_weight': Descriptors.MolWt(mol)
+            'molecular_weight': mol_wt
         }
 
     def compute_distance(self, s1: Tuple[float, float, float],
@@ -384,7 +409,7 @@ def main():
                               f"{encoded['coordinates']['S_e']:.4f}), "
                               f"depth = {encoded['trit_string_length']}")
 
-    print(f"\n✓ Encoded {len(molecules_encoded)} molecules")
+    print(f"\n[OK] Encoded {len(molecules_encoded)} molecules")
 
     # Validate uniqueness
     validation = encoder.validate_uniqueness(molecules_encoded)
@@ -405,7 +430,7 @@ def main():
     with open(output_file, 'w') as f:
         json.dump(results, f, indent=2)
 
-    print(f"\n✓ Results saved to {output_file}")
+    print(f"\n[OK] Results saved to {output_file}")
 
     # Also save as CSV for easy viewing
     df = pd.DataFrame([{
@@ -420,7 +445,7 @@ def main():
 
     csv_file = output_file.with_suffix('.csv')
     df.to_csv(csv_file, index=False)
-    print(f"✓ CSV saved to {csv_file}")
+    print(f"[OK] CSV saved to {csv_file}")
 
     return results
 

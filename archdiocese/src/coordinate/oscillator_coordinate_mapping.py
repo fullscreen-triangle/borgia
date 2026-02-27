@@ -367,7 +367,7 @@ def main():
     with open(output_file, 'w') as f:
         json.dump(results, f, indent=2)
 
-    print(f"\n✓ Results saved to {output_file}")
+    print(f"\n[OK] Results saved to {output_file}")
 
     return results
 

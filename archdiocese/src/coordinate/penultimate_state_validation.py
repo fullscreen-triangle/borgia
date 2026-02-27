@@ -312,7 +312,7 @@ def main():
     atlas_file = Path(__file__).parent.parent.parent / 'results' / 'fixed_point_uniqueness.json'
 
     if not atlas_file.exists():
-        print("⚠ Atlas not found. Run fixed_point_uniqueness.py first.")
+        print("[WARNING] Atlas not found. Run fixed_point_uniqueness.py first.")
         return
 
     with open(atlas_file, 'r') as f:
@@ -364,7 +364,7 @@ def main():
     with open(output_file, 'w') as f:
         json.dump(results, f, indent=2)
 
-    print(f"\n✓ Results saved to {output_file}")
+    print(f"\n[OK] Results saved to {output_file}")
 
     return results
 

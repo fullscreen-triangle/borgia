@@ -1,0 +1,195 @@
+{
+  "penultimate_structures": [
+    {
+      "depth": 1,
+      "penultimate_depth": 0,
+      "penultimate_string": [],
+      "gateway_trit": 1,
+      "three_cells": [
+        {
+          "trit_string": [
+            0
+          ],
+          "final_trit": 0,
+          "is_target": false
+        },
+        {
+          "trit_string": [
+            1
+          ],
+          "final_trit": 1,
+          "is_target": true
+        },
+        {
+          "trit_string": [
+            2
+          ],
+          "final_trit": 2,
+          "is_target": false
+        }
+      ]
+    },
+    {
+      "depth": 1,
+      "penultimate_depth": 0,
+      "penultimate_string": [],
+      "gateway_trit": 1,
+      "three_cells": [
+        {
+          "trit_string": [
+            0
+          ],
+          "final_trit": 0,
+          "is_target": false
+        },
+        {
+          "trit_string": [
+            1
+          ],
+          "final_trit": 1,
+          "is_target": true
+        },
+        {
+          "trit_string": [
+            2
+          ],
+          "final_trit": 2,
+          "is_target": false
+        }
+      ]
+    },
+    {
+      "depth": 1,
+      "penultimate_depth": 0,
+      "penultimate_string": [],
+      "gateway_trit": 1,
+      "three_cells": [
+        {
+          "trit_string": [
+            0
+          ],
+          "final_trit": 0,
+          "is_target": false
+        },
+        {
+          "trit_string": [
+            1
+          ],
+          "final_trit": 1,
+          "is_target": true
+        },
+        {
+          "trit_string": [
+            2
+          ],
+          "final_trit": 2,
+          "is_target": false
+        }
+      ]
+    },
+    {
+      "depth": 1,
+      "penultimate_depth": 0,
+      "penultimate_string": [],
+      "gateway_trit": 1,
+      "three_cells": [
+        {
+          "trit_string": [
+            0
+          ],
+          "final_trit": 0,
+          "is_target": false
+        },
+        {
+          "trit_string": [
+            1
+          ],
+          "final_trit": 1,
+          "is_target": true
+        },
+        {
+          "trit_string": [
+            2
+          ],
+          "final_trit": 2,
+          "is_target": false
+        }
+      ]
+    },
+    {
+      "depth": 3,
+      "penultimate_depth": 2,
+      "penultimate_string": [
+        2,
+        2
+      ],
+      "gateway_trit": 1,
+      "three_cells": [
+        {
+          "trit_string": [
+            2,
+            2,
+            0
+          ],
+          "final_trit": 0,
+          "is_target": false
+        },
+        {
+          "trit_string": [
+            2,
+            2,
+            1
+          ],
+          "final_trit": 1,
+          "is_target": true
+        },
+        {
+          "trit_string": [
+            2,
+            2,
+            2
+          ],
+          "final_trit": 2,
+          "is_target": false
+        }
+      ]
+    }
+  ],
+  "three_cell_validation": {
+    "n_tested": 5,
+    "n_valid": 5,
+    "validity_rate": 1.0,
+    "all_valid": true
+  },
+  "method_comparison": {
+    "noise_levels": [
+      0.001,
+      0.01,
+      0.05
+    ],
+    "n_trials": 20,
+    "comparisons": [
+      {
+        "noise_level": 0.001,
+        "penultimate_accuracy": 0.06,
+        "fixed_point_accuracy": 0.245,
+        "early_id_rate": 0.06,
+        "penultimate_advantage": -0.185
+      },
+      {
+        "noise_level": 0.01,
+        "penultimate_accuracy": 0.045,
+        "fixed_point_accuracy": 0.245,
+        "early_id_rate": 0.045,
+        "penultimate_advantage": -0.2
+      },
+      {
+        "noise_level": 0.05,
+        "penultimate_accuracy": 0.045,
+        "fixed_point_accuracy": 0.155,
+        "early_id_rate": 0.045,
+        "penultimate_advantage": -0.11
+      }
+    ]
+  }
+}

@@ -1,7 +1,7 @@
 """
 Trans-Planckian Resolution Module
 
-Validates Theorem 12.2: Categorical temporal resolution τ_cat = 2π/(N·⟨ω⟩)
+Validates Theorem 12.2: Categorical temporal resolution tau_cat = 2π/(N·avg_omega)
 can exceed Planck-scale limits through phase accumulation.
 
 Demonstrates that categorical resolution does not violate quantum mechanics
@@ -37,14 +37,14 @@ class TransPlanckianValidator:
         """
         Compute categorical temporal resolution.
 
-        From Theorem 12.2: τ_cat = 2π / (N * ⟨ω⟩)
+        From Theorem 12.2: tau_cat = 2π / (N * avg_omega)
 
         Args:
             n_oscillators: Number of oscillators
             frequencies: Array of oscillator frequencies (Hz)
 
         Returns:
-            Categorical resolution τ_cat (seconds)
+            Categorical resolution tau_cat (seconds)
         """
         mean_omega = 2 * np.pi * np.mean(frequencies)
         tau_cat = (2 * np.pi) / (n_oscillators * mean_omega)
@@ -59,7 +59,7 @@ class TransPlanckianValidator:
             tau_cat: Categorical resolution
 
         Returns:
-            τ_cat / t_P (< 1 means trans-Planckian)
+            tau_cat / t_P (< 1 means trans-Planckian)
         """
         return tau_cat / self.t_P
 
@@ -86,13 +86,13 @@ class TransPlanckianValidator:
         orders_of_magnitude = np.log10(ratio) if ratio > 0 else float('-inf')
 
         return {
-            'n_oscillators': n_osc,
+            'n_oscillators': int(n_osc),
             'mean_frequency_Hz': float(np.mean(frequencies)),
-            'categorical_resolution_s': tau_cat,
-            'planck_time_s': self.t_P,
-            'ratio_to_planck': ratio,
-            'orders_beyond_planck': -orders_of_magnitude if orders_of_magnitude < 0 else 0,
-            'is_trans_planckian': ratio < 1.0
+            'categorical_resolution_s': float(tau_cat),
+            'planck_time_s': float(self.t_P),
+            'ratio_to_planck': float(ratio),
+            'orders_beyond_planck': float(-orders_of_magnitude if orders_of_magnitude < 0 else 0),
+            'is_trans_planckian': bool(ratio < 1.0)
         }
 
     def isotope_discrimination_test(self) -> Dict:
@@ -105,7 +105,7 @@ class TransPlanckianValidator:
             Discrimination analysis
         """
         # Isotope mass ratios affect vibrational frequencies
-        # ω ∝ 1/√m
+        # omega ∝ 1/√m
 
         masses = {
             'CH4': 16.0,
@@ -137,12 +137,12 @@ class TransPlanckianValidator:
         N_required = int((2 * np.pi) / (tau_required * omega_0))
 
         return {
-            'isotopomers': results,
-            'min_frequency_difference_Hz': min_diff,
-            'required_resolution_s': tau_required,
-            'n_oscillators_required': N_required,
-            'ratio_to_planck': tau_required / self.t_P,
-            'is_trans_planckian_regime': tau_required < 1e-20
+            'isotopomers': {k: float(v) for k, v in results.items()},
+            'min_frequency_difference_Hz': float(min_diff),
+            'required_resolution_s': float(tau_required),
+            'n_oscillators_required': int(N_required),
+            'ratio_to_planck': float(tau_required / self.t_P),
+            'is_trans_planckian_regime': bool(tau_required < 1e-20)
         }
 
     def validate_no_violation(self) -> Dict:
@@ -161,9 +161,9 @@ class TransPlanckianValidator:
                 'Planck time limits physical clock resolution',
                 'Categorical resolution uses phase accumulation, not faster clocks',
                 'N oscillators accumulate phase in parallel',
-                'Total phase Φ = N·ω·t grows linearly with N',
-                'Phase difference ΔΦ = 2π corresponds to categorical state transition',
-                'Resolution Δt = 2π/(N·ω) improves with N',
+                'Total phase Phi = N·omega·t grows linearly with N',
+                'Phase difference ΔPhi = 2π corresponds to categorical state transition',
+                'Resolution Delta_t = 2π/(N·omega) improves with N',
                 'No individual oscillator exceeds physical limits',
                 'Analogous to interferometry achieving sub-wavelength resolution'
             ],
@@ -192,7 +192,7 @@ def main():
 
             print(f"\n{data['file']}:")
             print(f"  N oscillators: {analysis['n_oscillators']}")
-            print(f"  τ_cat: {analysis['categorical_resolution_s']:.2e} s")
+            print(f"  tau_cat: {analysis['categorical_resolution_s']:.2e} s")
             print(f"  t_P: {analysis['planck_time_s']:.2e} s")
             print(f"  Ratio: {analysis['ratio_to_planck']:.2e}")
             print(f"  Beyond Planck: {analysis['orders_beyond_planck']:.1f} orders of magnitude")
@@ -223,7 +223,7 @@ def main():
     print(f"Mechanism: {validation['mechanism']}")
     print("\nExplanation:")
     for point in validation['explanation']:
-        print(f"  • {point}")
+        print(f"  * {point}")
     print(f"\nValid: {validation['valid']}")
 
     results['no_violation_validation'] = validation
@@ -235,7 +235,7 @@ def main():
     with open(output_file, 'w') as f:
         json.dump(results, f, indent=2)
 
-    print(f"\n✓ Results saved to {output_file}")
+    print(f"\n[OK] Results saved to {output_file}")
 
     return results
 

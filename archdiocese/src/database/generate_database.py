@@ -285,18 +285,18 @@ class FixedPointAtlasGenerator:
         mol_atlas = self.generate_molecular_atlas()
 
         if 'error' not in mol_atlas:
-            print(f"  ✓ {mol_atlas['n_entries']} molecular entries")
+            print(f"  [OK] {mol_atlas['n_entries']} molecular entries")
 
         print("\nGenerating spectral atlas...")
         spec_atlas = self.generate_spectral_atlas()
 
         if 'error' not in spec_atlas:
-            print(f"  ✓ {spec_atlas['n_entries']} spectral entries")
+            print(f"  [OK] {spec_atlas['n_entries']} spectral entries")
 
         print("\nGenerating combined atlas...")
         combined_atlas = self.generate_combined_atlas()
 
-        print(f"  ✓ {combined_atlas['n_entries']} total entries")
+        print(f"  [OK] {combined_atlas['n_entries']} total entries")
         print(f"    - {combined_atlas['n_molecular']} molecular")
         print(f"    - {combined_atlas['n_spectral']} spectral")
 
@@ -320,17 +320,17 @@ class FixedPointAtlasGenerator:
         json_file = self.results_dir / 'fixed_point_atlas.json'
         with open(json_file, 'w') as f:
             json.dump(combined_atlas, f, indent=2)
-        print(f"✓ JSON: {json_file}")
+        print(f"[OK] JSON: {json_file}")
 
         # CSV format
         csv_file = self.export_to_csv(combined_atlas, 'fixed_point_atlas.csv')
-        print(f"✓ CSV: {csv_file}")
+        print(f"[OK] CSV: {csv_file}")
 
         # Statistics
         stats_file = self.results_dir / 'atlas_statistics.json'
         with open(stats_file, 'w') as f:
             json.dump(stats, f, indent=2)
-        print(f"✓ Stats: {stats_file}")
+        print(f"[OK] Stats: {stats_file}")
 
         return {
             'combined_atlas': combined_atlas,
