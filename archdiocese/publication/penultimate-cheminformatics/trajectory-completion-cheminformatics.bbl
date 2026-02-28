@@ -1,0 +1,126 @@
+\begin{thebibliography}{19}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Arnold(1989)]{arnold1989mathematical}
+Vladimir~I Arnold.
+\newblock \emph{Mathematical Methods of Classical Mechanics}, volume~60 of
+  \emph{Graduate Texts in Mathematics}.
+\newblock Springer-Verlag, New York, 2nd edition, 1989.
+
+\bibitem[Bekenstein(1973)]{bekenstein1973black}
+Jacob~D Bekenstein.
+\newblock Black holes and entropy.
+\newblock \emph{Physical Review D}, 7\penalty0 (8):\penalty0 2333--2346, 1973.
+
+\bibitem[Bendixson(1901)]{bendixson1901courbes}
+Ivar Bendixson.
+\newblock Sur les courbes d{\'e}finies par des {\'e}quations
+  diff{\'e}rentielles.
+\newblock \emph{Acta Mathematica}, 24\penalty0 (1):\penalty0 1--88, 1901.
+
+\bibitem[Bolton et~al.(2008)Bolton, Wang, Thiessen, and
+  Bryant]{bolton2008pubchem}
+Evan~E Bolton, Yanli Wang, Paul~A Thiessen, and Stephen~H Bryant.
+\newblock Pubchem: integrated platform of small molecules and biological
+  activities.
+\newblock \emph{Annual Reports in Computational Chemistry}, 4:\penalty0
+  217--241, 2008.
+
+\bibitem[Boltzmann(1877)]{boltzmann1877beziehung}
+Ludwig Boltzmann.
+\newblock {\"U}ber die {B}eziehung zwischen dem zweiten {H}auptsatze der
+  mechanischen {W}{\"a}rmetheorie und der {W}ahrscheinlichkeitsrechnung
+  respektive den {S}{\"a}tzen {\"u}ber das {W}{\"a}rmegleichgewicht.
+\newblock \emph{Wiener Berichte}, 76:\penalty0 373--435, 1877.
+
+\bibitem[Bridgman(1927)]{bridgman1927logic}
+Percy~Williams Bridgman.
+\newblock \emph{The Logic of Modern Physics}.
+\newblock Macmillan, New York, 1927.
+
+\bibitem[Cantor(1872)]{cantor1872ueber}
+Georg Cantor.
+\newblock {\"U}ber die {A}usdehnung eines {S}atzes aus der {T}heorie der
+  trigonometrischen {R}eihen.
+\newblock \emph{Mathematische Annalen}, 5\penalty0 (1):\penalty0 123--132,
+  1872.
+
+\bibitem[Gibbs(1902)]{gibbs1902elementary}
+Josiah~Willard Gibbs.
+\newblock \emph{Elementary Principles in Statistical Mechanics}.
+\newblock Charles Scribner's Sons, New York, 1902.
+
+\bibitem[Kolmogorov(1958)]{kolmogorov1958new}
+Andrey~N Kolmogorov.
+\newblock A new metric invariant of transient dynamical systems and
+  automorphisms in {L}ebesgue spaces.
+\newblock \emph{Doklady Akademii Nauk SSSR}, 119\penalty0 (5):\penalty0
+  861--864, 1958.
+
+\bibitem[Liouville(1838)]{liouville1838note}
+Joseph Liouville.
+\newblock Note sur la th{\'e}orie de la variation des constantes arbitraires.
+\newblock \emph{Journal de Math{\'e}matiques Pures et Appliqu{\'e}es},
+  3:\penalty0 342--349, 1838.
+
+\bibitem[Michelson and Morley(1887)]{michelson1887relative}
+Albert~A Michelson and Edward~W Morley.
+\newblock On the relative motion of the {E}arth and the luminiferous ether.
+\newblock \emph{American Journal of Science}, 34\penalty0 (203):\penalty0
+  333--345, 1887.
+
+\bibitem[Nernst(1906)]{nernst1906warmesatz}
+Walther Nernst.
+\newblock {{\"U}ber die {B}erechnung chemischer {G}leichgewichte aus
+  thermischen {M}essungen}.
+\newblock \emph{Nachrichten von der Gesellschaft der Wissenschaften zu
+  G{\"o}ttingen, Mathematisch-Physikalische Klasse}, 1906:\penalty0 1--40,
+  1906.
+
+\bibitem[Planck(1901)]{planck1901gesetz}
+Max Planck.
+\newblock {\"U}ber das {G}esetz der {E}nergieverteilung im {N}ormalspektrum.
+\newblock \emph{Annalen der Physik}, 309\penalty0 (3):\penalty0 553--563, 1901.
+
+\bibitem[Poincar{\'e}(1881)]{poincare1881memoire}
+Henri Poincar{\'e}.
+\newblock M{\'e}moire sur les courbes d{\'e}finies par une {\'e}quation
+  diff{\'e}rentielle.
+\newblock \emph{Journal de Math{\'e}matiques Pures et Appliqu{\'e}es},
+  7:\penalty0 375--422, 1881.
+
+\bibitem[Poincar{\'e}(1890)]{poincare1890probleme}
+Henri Poincar{\'e}.
+\newblock Sur le probl{\`e}me des trois corps et les {\'e}quations de la
+  dynamique.
+\newblock \emph{Acta Mathematica}, 13\penalty0 (1):\penalty0 A3--A270, 1890.
+
+\bibitem[Sinai(1959)]{sinai1959concept}
+Yakov~G Sinai.
+\newblock On the concept of entropy of a dynamical system.
+\newblock \emph{Doklady Akademii Nauk SSSR}, 124:\penalty0 768--771, 1959.
+
+\bibitem[Smale(1967)]{smale1967differentiable}
+Stephen Smale.
+\newblock Differentiable dynamical systems.
+\newblock \emph{Bulletin of the American Mathematical Society}, 73\penalty0
+  (6):\penalty0 747--817, 1967.
+
+\bibitem[Todeschini and Consonni(2009)]{todeschini2009molecular}
+Roberto Todeschini and Viviana Consonni.
+\newblock \emph{Molecular Descriptors for Chemoinformatics}, volume~1 of
+  \emph{Methods and Principles in Medicinal Chemistry}.
+\newblock Wiley-VCH, Weinheim, 2nd edition, 2009.
+
+\bibitem[Weininger(1988)]{weininger1988smiles}
+David Weininger.
+\newblock {SMILES}, a chemical language and information system. 1. introduction
+  to methodology and encoding rules.
+\newblock \emph{Journal of Chemical Information and Computer Sciences},
+  28\penalty0 (1):\penalty0 31--36, 1988.
+
+\end{thebibliography}
