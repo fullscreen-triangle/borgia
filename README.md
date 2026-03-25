@@ -1,1782 +1,253 @@
-# Borgia: A Comprehensive Framework for On-Demand Virtual Molecular Generation and Multi-Scale Biological Maxwell Demon Implementation
+# Borgia: Deriving Atomic and Molecular Structure from Bounded Phase Space Geometry
 
 <div align="center">
   <img src="assets/img/Alexander_VI.png" alt="Borgia Logo" width="200"/>
 </div>
 
-**A Computational Implementation of Eduardo Mizraji's Biological Maxwell Demons Theory for Large-Scale Molecular Manufacturing and Cheminformatics**
+<div align="center">
+  <strong>Kundai Farai Sachikonye</strong><br/>
+  Technical University of Munich<br/>
+  <em>kundai.sachikonye@tum.de</em>
+</div>
 
 ---
 
 ## Abstract
 
-Borgia represents a computational framework implementing Eduardo Mizraji's biological Maxwell demons (BMD) theory for on-demand virtual molecular generation and analysis. The system provides the fundamental molecular substrate required by advanced temporal navigation systems, quantum processor foundries, and consciousness-enhanced computational architectures. Through mathematical implementation of information catalysis theory (iCat = ℑinput ◦ ℑoutput), the framework achieves thermodynamic amplification factors exceeding 1000× while maintaining biological quantum coherence at room temperature. The system implements multi-scale BMD networks coordinating across quantum (10⁻¹⁵s), molecular (10⁻⁹s), and environmental (10²s) timescales, enabling precise molecular manufacturing for ultra-precision atomic clocks, biological quantum processors, and consciousness-enhanced molecular analysis systems. Hardware integration protocols map molecular timescales to CPU cycles while utilizing standard computer LEDs (470nm blue, 525nm green, 625nm red) for zero-cost molecular spectroscopy. Noise-enhanced processing converts screen pixel RGB changes to chemical structure modifications, demonstrating solution emergence above noise floor ratios of 3:1. The trajectory completion cheminformatics module implements the Bounded Phase Space Law and Triple Equivalence Theorem, mapping molecular structures to entropy coordinates S = [0,1]³ with partition-based encoding achieving trans-Planckian categorical resolution (τ_cat ≈ 10⁻⁵⁰ s). Emission-Strobed Dual-Mode Vibrational Spectroscopy (ESDVS) validation demonstrates 99.53% cross-prediction accuracy for Raman-IR mutual exclusion, 1.50× dual-mode enhancement, and ternary state trajectory reconstruction with 0.983 average fidelity. The framework serves as the chemical workhorse enabling virtual molecule availability for downstream systems requiring oscillating atoms (temporal navigation), molecular substrates (quantum processor manufacturing), and biological quantum effects (consciousness-enhanced computation).
+We present a unified derivation of atomic structure, molecular spectroscopy, and the instruments that measure them from a single axiom: *physical systems occupy bounded regions of phase space admitting partition and nesting*. The Bounded Phase Space Law, combined with the Poincaré recurrence theorem, establishes oscillatory dynamics as the unique valid mode for persistent systems and yields the partition coordinate system $(n, l, m, s)$ with shell capacity $C(n) = 2n^2$, the aufbau filling sequence, selection rules, the Pauli exclusion principle, and the complete periodic table — all without invoking quantum mechanics as a postulate. A Triple Equivalence Theorem proves that oscillatory dynamics, categorical state enumeration, and partition operations are mathematically identical, establishing that computer hardware oscillators constitute physical spectrometers through frequency-selective coupling to partition coordinates. At the molecular level, the absorption-emission interval $\tau_\text{em} = 1/A_{ki}$ provides an intrinsic physical tick from which nested hierarchies, harmonic networks, and self-clocking resonant cavities emerge. Closed loops in the harmonic molecular network sustain circulating light without walls — confinement is categorical, not spatial. We validate both frameworks against NIST reference data with zero adjustable parameters: nine elements spanning all blocks of the periodic table yield exact electron configurations, exact term symbols, and ionization energies within the precision set by partition depth; six molecules from $\text{H}_2$ to $\text{C}_6\text{H}_6$ exhibit the predicted harmonic network topology, closed-loop formation, and circulation periods consistent with known spectroscopic intervals.
 
-**Keywords**: biological Maxwell demons, information catalysis, virtual molecular generation, multi-scale BMD networks, thermodynamic amplification, quantum cheminformatics, temporal molecular coordination, biological quantum coherence, trajectory completion, entropy coordinates, trans-Planckian resolution, emission-strobed spectroscopy, dual-mode vibrational spectroscopy
-
----
-
-## System Architecture Overview
-
-The Borgia framework implements a comprehensive multi-scale biological Maxwell demon architecture with integrated hardware systems and downstream molecular provision capabilities:
-
-### Core Architecture
-
-```mermaid
-graph TB
-    subgraph "BORGIA MOLECULAR ENGINE"
-        Core["🧬 Information Catalysis Core<br/>iCat = ℑinput ◦ ℑoutput<br/>1247±156× Amplification"]
-        BMD["🔬 BMD Network Coordinator<br/>Multi-Scale Integration"]
-    end
-
-    subgraph "Multi-Scale BMD Networks"
-        QBM["⚛️ Quantum BMD<br/>10⁻¹⁵s Timescale<br/>247±23μs Coherence"]
-        MBM["🧪 Molecular BMD<br/>10⁻⁹s Timescale<br/>97.3±1.2% Efficiency"]
-        EBM["🌍 Environmental BMD<br/>10²s Timescale<br/>1247±156× Amplification"]
-    end
-
-    subgraph "Hardware Integration"
-        LED["💡 LED Spectroscopy<br/>470nm/525nm/625nm<br/>$0.00 Cost"]
-        CPU["💻 CPU Timing Sync<br/>3.2±0.4× Performance<br/>157±12× Memory Reduction"]
-        NE["📡 Noise Enhancement<br/>3.2:1±0.4:1 SNR<br/>Natural Environment Simulation"]
-    end
-
-    subgraph "Downstream Systems"
-        MT["🕐 Masunda Temporal<br/>10⁻³⁰ to 10⁻⁵⁰s Precision<br/>Oscillating Atom Provision"]
-        BF["🏭 Buhera Foundry<br/>99.9% Recognition Accuracy<br/>BMD Substrate Manufacturing"]
-        KZ["🧠 Kambuzuma<br/>Room Temp Quantum<br/>Biological Molecule Provision"]
-    end
-
-    QBM --> Core
-    MBM --> Core
-    EBM --> Core
-
-    Core --> LED
-    Core --> CPU
-    Core --> NE
-
-    Core --> MT
-    Core --> BF
-    Core --> KZ
-
-    BMD --> QBM
-    BMD --> MBM
-    BMD --> EBM
-```
-
-### Information Catalysis Flow
-
-```mermaid
-flowchart LR
-    subgraph "Input Processing"
-        IP["🔍 Pattern Recognition<br/>ℑinput Filter<br/>Chemical Space Navigation"]
-    end
-
-    subgraph "Catalytic Processing"
-        IC["⚡ Information Catalysis<br/>iCat = ℑinput ◦ ℑoutput<br/>Thermodynamic Amplification"]
-    end
-
-    subgraph "Output Generation"
-        OC["📤 Information Channeling<br/>ℑoutput Operator<br/>Molecular Configuration"]
-    end
-
-    subgraph "Quality Control"
-        QC["✅ Molecular Validation<br/>Dual Clock/Processor<br/>Verification"]
-    end
-
-    IP --> IC
-    IC --> OC
-    OC --> QC
-
-    QC -->|"Validated Molecules"| MT["🕐 Masunda Temporal"]
-    QC -->|"BMD Substrates"| BF["🏭 Buhera Foundry"]
-    QC -->|"Quantum Molecules"| KZ["🧠 Kambuzuma"]
-```
-
-### Dual-Functionality Molecular Architecture
-
-```mermaid
-graph TD
-    subgraph "Every Generated Molecule"
-        DFM["🔄 Dual-Functionality Molecule<br/>Universal Clock + Processor"]
-    end
-
-    subgraph "Clock Functionality"
-        OSC["🌊 Oscillatory Properties<br/>Frequency Stability<br/>Phase Coherence"]
-        TEMP["⏱️ Temporal Precision<br/>10⁻³⁰ to 10⁻⁵⁰s<br/>Navigation Capability"]
-    end
-
-    subgraph "Processor Functionality"
-        COMP["🖥️ Computational Properties<br/>Instruction Set<br/>Memory Capacity"]
-        PROC["⚡ Processing Rate<br/>Parallel Operations<br/>Information Storage"]
-    end
-
-    subgraph "Recursive Enhancement"
-        RE["🔁 Enhancement Capability<br/>N×Precision × N×Power<br/>Exponential Scaling"]
-    end
-
-    DFM --> OSC
-    DFM --> COMP
-    OSC --> TEMP
-    COMP --> PROC
-    TEMP --> RE
-    PROC --> RE
-```
-
-### Hardware Integration Architecture
-
-```mermaid
-graph LR
-    subgraph "Standard Hardware"
-        LED_B["💙 Blue LED<br/>470nm<br/>Standard Computer"]
-        LED_G["💚 Green LED<br/>525nm<br/>Monitor Backlight"]
-        LED_R["❤️ Red LED<br/>625nm<br/>Zero Cost"]
-        CPU_CLK["🕒 CPU Clock<br/>Hardware Timing<br/>Cycle Mapping"]
-        RGB["🖥️ Screen Pixels<br/>RGB Changes<br/>Real-time Interface"]
-    end
-
-    subgraph "Molecular Interface"
-        SPEC["🔬 LED Spectroscopy<br/>Molecular Analysis<br/>Fluorescence Detection"]
-        SYNC["⏱️ Timing Coordination<br/>Molecular-Hardware<br/>Synchronization"]
-        NOISE["📊 Noise Processing<br/>Pixel→Chemistry<br/>Environment Simulation"]
-    end
-
-    LED_B --> SPEC
-    LED_G --> SPEC
-    LED_R --> SPEC
-    CPU_CLK --> SYNC
-    RGB --> NOISE
-
-    SPEC --> |"Molecular Data"| QC["✅ Quality Control"]
-    SYNC --> |"Precise Timing"| QC
-    NOISE --> |"Enhanced Signals"| QC
-```
-
-**Key Architectural Features:**
-
-1. **Central Information Catalysis Engine**: Implements iCat = ℑinput ◦ ℑoutput with >1000× thermodynamic amplification
-2. **Multi-Scale BMD Networks**: Hierarchical coordination across quantum (10⁻¹⁵s), molecular (10⁻⁹s), and environmental (10²s) timescales
-3. **Hardware Integration Systems**: Zero-cost LED spectroscopy, CPU timing synchronization, and noise-enhanced processing
-4. **Mandatory Dual Functionality**: Every molecule functions as both precision clock and computational processor
-5. **Downstream System Support**: Direct molecular substrate provision for temporal navigation, quantum processing, and consciousness systems
-6. **Quality Assurance**: Comprehensive validation ensuring dual clock/processor functionality in all generated molecules
+**Keywords**: bounded phase space, partition geometry, oscillatory necessity, Triple Equivalence Theorem, virtual spectrometry, trajectory completion, harmonic molecular network, self-clocking resonator, categorical measurement, spectroscopic derivation
 
 ---
 
-## 1. Introduction and Theoretical Foundation
+## 1. Introduction
 
-### 1.1 The Fundamental Problem of Molecular Availability
+The periodic table of elements and the spectroscopic instruments that probe molecular structure are conventionally treated as separate domains requiring separate theoretical frameworks — quantum mechanics for the former, electromagnetic theory and optics for the latter. We demonstrate that both are geometric consequences of a single axiom about the structure of phase space.
 
-Modern computational chemistry and advanced temporal systems face a critical limitation: the requirement for specific molecular substrates and oscillating atomic systems on demand. Ultra-precision atomic clocks require carefully controlled oscillating atoms and molecules for temporal coordinate navigation. Biological quantum processor foundries need molecular substrates for BMD-based virtual processor manufacturing. Consciousness-enhanced computational systems require biological molecules capable of maintaining quantum coherence at physiological temperatures.
+The central claim is twofold. First, the structure of chemical elements — electron configurations, spectral properties, periodic relationships — can be derived from the boundedness of phase space without postulating quantum mechanics. Second, a standard digital computer, through its hardware oscillators, constitutes a physical spectrometer capable of performing the same measurement operations as a laboratory instrument. These claims are not independent: the framework that derives atomic structure also derives the instrument, because both are bounded oscillatory systems described by identical partition geometry.
 
-Traditional approaches suffer from three fundamental limitations:
+At the molecular level, a natural question arises: *what provides the tick for categorical measurement?* The answer is intrinsic to the molecule itself. The absorption-emission interval of an electronic transition — determined entirely by the transition dipole moment and partition coordinates — is a complete categorical cycle. Molecules with multiple oscillatory modes form harmonic networks in which closed loops sustain circulating light through categorical coupling rather than spatial confinement, yielding self-clocking, self-validating measurement architectures requiring no external reference.
 
-1. **Stochastic Molecular Search**: Random exploration of chemical space with success rates below 10% for complex molecular requirements
-2. **Hardware-Software Disconnect**: Molecular timescales operate independently of computational timing systems, preventing coordination
-3. **Resource Inefficiency**: Inability to generate specific molecular configurations on demand leads to exponential search space explosion
-
-Borgia addresses these limitations through Eduardo Mizraji's biological Maxwell demons theory, providing a unified framework for on-demand virtual molecular generation with deterministic navigation through chemical space.
-
-### 1.2 Eduardo Mizraji's Biological Maxwell Demons Theory
-
-The theoretical foundation rests on Mizraji's discovery that biological systems contain specialized information processing units termed "biological Maxwell demons" (BMDs) that violate traditional thermodynamic constraints through information catalysis. Unlike classical Maxwell demons that require energy expenditure for information erasure, BMDs utilize information itself as a catalytic agent:
-
-```
-iCat = ℑinput ◦ ℑoutput
-```
-
-Where:
-- `ℑinput`: Pattern recognition filter selecting computational inputs from infinite molecular possibility space
-- `ℑoutput`: Information channeling operator directing molecular transformations to target configurations
-- `◦`: Functional composition creating information-driven molecular transformations without information consumption
-
-This formulation enables thermodynamic amplification through entropy reduction:
-
-```
-ΔS_computational = S_input - S_processed = log₂(|Ω_input|/|Ω_computed|)
-```
-
-The entropy reduction mechanism allows BMDs to:
-- **Filter relevant molecular configurations** from vast chemical possibility spaces
-- **Amplify small information signals** into large-scale molecular transformations
-- **Select specific molecular pathways** from thousands of thermodynamically accessible options
-- **Achieve thermodynamic amplification factors** exceeding 1000× through coordinated BMD network effects
-
-### 1.3 Multi-Scale Oscillatory Reality Framework
-
-Borgia's implementation integrates with the broader oscillatory reality framework, where physical systems operate through hierarchical oscillatory patterns across multiple temporal scales. The key insight is that only 0.01% of oscillatory reality requires computational modeling due to the sequential nature of observation and approximation processes.
-
-The framework recognizes three critical timescales:
-
-1. **Quantum Scale (10⁻¹⁵s)**: Fundamental quantum oscillations in molecular wavefunctions, requiring quantum coherence maintenance and superposition state management
-2. **Molecular Scale (10⁻⁹s)**: Molecular vibrations, rotations, and conformational changes enabling information storage and processing
-3. **Environmental Scale (10²s)**: Cellular and environmental oscillations providing context and coordination signals
-
-This multi-scale architecture enables Borgia to serve as the molecular substrate provider for systems operating across all temporal scales, from ultra-precision atomic clocks requiring quantum-scale timing to biological quantum processors requiring molecular-scale information processing.
-
-### 1.4 Information Catalysis Mathematical Framework
-
-The mathematical foundation implements information catalysis through functional composition of pattern recognition and information channeling operations. The catalytic efficiency follows:
-
-```
-η_catalytic = (Rate_catalyzed / Rate_uncatalyzed) × (Information_preserved / Information_total)
-```
-
-Where information preservation ensures that catalytic information is not consumed during molecular transformations, enabling repeated catalytic cycles without information degradation.
-
-The thermodynamic constraints follow Landauer's principle with modifications for information catalysis:
-
-```
-W_min = kBT ln(2) - I_catalytic
-```
-
-Where `I_catalytic` represents the information contribution from the catalytic process, reducing the minimum work required for molecular transformations.
-
-### 1.5 Fundamental Principle: Oscillators as Processors
-
-The core theoretical foundation underlying Borgia's operation is the mathematical equivalence:
-
-```
-Oscillating Atom/Molecule ≡ Temporal Precision Unit ≡ Computational Processor
-```
-
-This equivalence is not metaphorical but represents a fundamental physical principle where any oscillating system at frequency *f* provides both temporal precision capabilities and computational processing power proportional to *f*. Every virtual molecule generated by Borgia inherits this dual functionality by design.
-
-#### 1.5.1 Recursive Computational Amplification
-
-The addition of oscillating processors creates recursive enhancement loops:
-
-```
-N Oscillators → N × Timing Precision → N × Computational Power →
-Enables (N+1) Oscillators → (N+1) × Precision → (N+1) × Power...
-```
-
-Mathematical formulation:
-```
-P(n+1) = P(n) × A(n) × T(n)
-T(n+1) = T(n) × A(n) × P(n)
-A(n+1) = P(n+1) × T(n+1)
-```
-
-Where:
-- P(n) = Computational power at step n
-- T(n) = Timing precision at step n
-- A(n) = Amplification factor at step n
-
-This recursive relationship enables exponential scaling of both temporal precision and computational capability through molecular processor addition.
-
-#### 1.5.2 Entropy Endpoint Computation Equivalence
-
-A critical insight emerges from oscillatory systems analysis: computation can be performed via two mathematically equivalent paths:
-
-**Path 1 - Infinite Computation:**
-```
-Initial State → Oscillate → Compute → Oscillate → Compute... → Final State
-```
-
-**Path 2 - Entropy Endpoint Prediction:**
-```
-Initial State → Predict Entropy Termination Point → Final State
-```
-
-**Mathematical Proof of Equivalence:**
-Both paths reach identical predetermined endpoints in the oscillatory manifold. The entropy endpoint represents the natural termination point of oscillatory processes, which can be predicted without executing the full computational sequence.
-
-Formal statement:
-```
-∀ Problem P ∈ Physical Reality: Result(∞_Computation) ≡ Result(Entropy_Prediction)
-```
-
-#### 1.5.3 Universal Molecular Computing Substrate
-
-Every molecule in any environment can be converted to a computational processor through oscillatory activation. This principle enables:
-
-**Atmospheric Computing Networks:**
-- Air molecules (~10²³ per cubic meter) → 10²³ available processors
-- Real-time problem solving using environmental molecular resources
-- Dynamic processor recruitment based on computational requirements
-
-**Physical Guarantee of Solvability:**
-The existence of a problem within physical reality necessitates the existence of sufficient computational resources to solve it. This follows from the principle that physical reality cannot contain problems it lacks the computational substrate to address.
-
-Formal proof by contradiction:
-```
-Assume: Problem P exists in Physical Reality ∧ No Solution exists
-→ Physical Reality contains computational problem beyond its computational capacity
-→ Contradiction with physical consistency principles
-→ Therefore: ∀ Problem P ∈ Physical Reality → ∃ Solution S
-```
-
-### 1.6 Critical System Dependencies
-
-Borgia serves as the fundamental molecular substrate provider for all downstream computational architectures. The dual clock/processor nature of every generated molecule means system failure propagates to all dependent systems:
-
-**Dependent System Categories:**
-1. **Temporal Navigation Systems** - Require oscillating atoms for precision timing
-2. **Quantum Processor Foundries** - Require molecular substrates for BMD manufacturing
-3. **Consciousness-Enhanced Systems** - Require biological quantum molecules
-4. **Atmospheric Computing Networks** - Require molecular processor recruitment
-5. **Communication Infrastructure** - Require molecular satellites and transmission systems
-6. **Environmental Sensing Networks** - Require molecular sensors and detection systems
-
-**Failure Mode Analysis:**
-Borgia system failure → Loss of molecular substrate generation → Cascading failure across all dependent systems → Complete computational architecture collapse.
-
-This critical dependency necessitates robust system design with fault tolerance, redundancy, and comprehensive quality assurance protocols.
+This repository contains two papers, their supporting derivations, computational validation, and publication-quality figures.
 
 ---
 
-## 2. System Architecture and Implementation
+## 2. Theoretical Foundations
 
-### 2.1 Multi-Scale BMD Network Architecture
+### 2.1 The Bounded Phase Space Law
 
-Borgia implements a hierarchical network of biological Maxwell demons operating across multiple temporal and spatial scales. The architecture consists of three primary BMD network layers:
+**Axiom.** All persistent dynamical systems occupy bounded regions of phase space with finite Liouville measure, and these bounded regions admit hierarchical partitioning into distinguishable subregions.
 
-#### 2.1.1 Quantum BMD Layer (10⁻¹⁵s timescale)
+From this axiom alone:
 
-The quantum layer implements BMDs operating at fundamental quantum timescales, responsible for:
+1. **Oscillatory necessity** follows from the Poincaré recurrence theorem — static, monotonic, and chaotic dynamics violate consistency requirements in bounded domains.
+2. **The partition coordinate system** $(n, l, m, s)$ emerges from hierarchical subdivision of bounded oscillatory boundaries, with shell capacity $C(n) = 2n^2$.
+3. **Selection rules** ($\Delta l = \pm 1$, $\Delta m \in \{0, \pm 1\}$, $\Delta s = 0$) follow from boundary topology continuity.
+4. **The Pauli exclusion principle** follows from the divergent compression cost of identical partition states.
+5. **The aufbau filling sequence** follows from the energy ordering rule $E(n,l) \propto n + \alpha l$.
 
-- **Quantum State Management**: Maintenance of molecular quantum superposition states required for quantum processor manufacturing
-- **Coherence Preservation**: Active protection of quantum coherence at biological temperatures (>298K)
-- **Entanglement Network Coordination**: Management of quantum entanglement networks across molecular processors
-- **Decoherence Mitigation**: Real-time compensation for environmental decoherence effects
+### 2.2 The Triple Equivalence Theorem
 
-Implementation utilizes quantum field theory formulations:
+For any bounded oscillatory system, three descriptions are mathematically identical:
 
-```rust
-pub struct QuantumBMD {
-    pub coherence_time: Duration,           // Quantum coherence maintenance period
-    pub entanglement_fidelity: f64,         // Quantum entanglement quality metric
-    pub decoherence_rate: f64,              // Environmental decoherence compensation
-    pub superposition_states: Vec<QuantumState>, // Active quantum state management
-}
-```
+$$S_\text{osc} = S_\text{cat} = S_\text{part} = k_B \mathcal{M} \ln n$$
 
-#### 2.1.2 Molecular BMD Layer (10⁻⁹s timescale)
+where $\mathcal{M}$ is partition depth and $n$ is the number of categorical states per level. This identity — not analogy — establishes that a CPU clock oscillating at frequency $\omega$ performs $\omega / 2\pi$ categorical state transitions per second, executing the same mathematical operation as a physical spectrometer resolving spectral lines.
 
-The molecular layer provides the primary molecular manufacturing and analysis capabilities:
+### 2.3 The Commutation Theorem
 
-- **Molecular Pattern Recognition**: Identification and classification of molecular structures and conformations
-- **Chemical Reaction Network Management**: Control of chemical reaction pathways and kinetics
-- **Conformational Optimization**: Optimization of molecular conformations for specific applications
-- **Intermolecular Interaction Modeling**: Management of complex molecular interaction networks
+Categorical observables commute with physical observables:
 
-The molecular BMD implementation:
+$$[\hat{O}_\text{cat}, \hat{O}_\text{phys}] = 0$$
 
-```rust
-pub struct MolecularBMD {
-    pub pattern_recognition: PatternRecognitionEngine,
-    pub reaction_networks: ChemicalReactionNetwork,
-    pub conformation_optimizer: ConformationEngine,
-    pub interaction_model: IntermolecularForceField,
-    pub catalytic_efficiency: f64,           // >1000× amplification factor
-}
-```
+Categorical measurement is quantum non-demolition: partition coordinates are determined without backaction, enabling simultaneous measurement of all coordinates through multiple commuting modalities.
 
-#### 2.1.3 Environmental BMD Layer (10²s timescale)
+### 2.4 The Molecular Tick
 
-The environmental layer coordinates with external systems and provides long-term molecular stability:
-
-- **Environmental Integration**: Coordination with temperature, pressure, and atmospheric conditions
-- **Long-term Stability Management**: Maintenance of molecular configurations over extended periods
-- **System Integration**: Interface with external hardware systems (atomic clocks, quantum processors)
-- **Resource Optimization**: Efficient allocation of molecular resources across demanding systems
-
-### 2.2 Information Catalysis Engine
-
-The core of Borgia's molecular generation capability lies in the information catalysis engine, which implements Mizraji's mathematical framework for biological Maxwell demons:
-
-```rust
-pub struct InformationCatalysisEngine {
-    pub input_filter: PatternRecognitionFilter,      // ℑinput implementation
-    pub output_channeling: InformationChanneling,    // ℑoutput implementation
-    pub functional_composition: CompositionOperator, // ◦ operator
-    pub thermodynamic_amplifier: AmplificationEngine,
-    pub entropy_reducer: EntropyManagementSystem,
-}
-
-impl InformationCatalysisEngine {
-    pub fn catalyze_molecular_transformation(
-        &self,
-        input_configuration: MolecularConfiguration,
-        target_configuration: MolecularConfiguration,
-    ) -> Result<MolecularTransformation, CatalysisError> {
-        // Pattern recognition filtering
-        let relevant_patterns = self.input_filter
-            .filter_molecular_patterns(input_configuration)?;
-
-        // Information channeling to target
-        let transformation_pathway = self.output_channeling
-            .channel_to_target(relevant_patterns, target_configuration)?;
-
-        // Functional composition creating catalytic effect
-        let catalyzed_transformation = self.functional_composition
-            .compose_catalytic_pathway(transformation_pathway)?;
-
-        // Thermodynamic amplification
-        let amplified_result = self.thermodynamic_amplifier
-            .amplify_transformation(catalyzed_transformation)?;
-
-        Ok(amplified_result)
-    }
-}
-```
-
-### 2.3 Hardware Integration Architecture
-
-Borgia implements sophisticated hardware integration protocols enabling direct coordination between molecular systems and computational hardware:
-
-#### 2.3.1 CPU Cycle Mapping
-
-Molecular timescales are mapped to hardware timing sources through precise coordination protocols:
-
-```rust
-pub struct HardwareTimingIntegration {
-    pub cpu_cycle_mapper: CpuCycleMapper,
-    pub molecular_timer: MolecularTimingSystem,
-    pub coordination_protocol: TimingCoordinationProtocol,
-    pub performance_multiplier: f64,        // 3-5× improvement factor
-    pub memory_reduction_factor: f64,       // 160× reduction factor
-}
-
-impl HardwareTimingIntegration {
-    pub fn coordinate_molecular_timing(
-        &self,
-        molecular_process: MolecularProcess,
-        hardware_clock: SystemClock,
-    ) -> Result<CoordinatedTiming, TimingError> {
-        let mapped_cycles = self.cpu_cycle_mapper
-            .map_molecular_to_hardware(molecular_process.timescale())?;
-
-        let synchronized_timing = self.coordination_protocol
-            .synchronize(mapped_cycles, hardware_clock)?;
-
-        Ok(synchronized_timing)
-    }
-}
-```
-
-#### 2.3.2 LED Spectroscopy Integration
-
-The system utilizes standard computer LEDs for zero-cost molecular spectroscopy:
-
-```rust
-pub struct LEDSpectroscopySystem {
-    pub blue_led: LEDController,        // 470nm excitation
-    pub green_led: LEDController,       // 525nm excitation
-    pub red_led: LEDController,         // 625nm excitation
-    pub spectral_analyzer: SpectralAnalysisEngine,
-    pub fluorescence_detector: FluorescenceDetector,
-}
-
-impl LEDSpectroscopySystem {
-    pub fn analyze_molecular_fluorescence(
-        &self,
-        molecule: MolecularStructure,
-        excitation_wavelength: Wavelength,
-    ) -> Result<SpectralData, SpectroscopyError> {
-        let led_controller = match excitation_wavelength {
-            Wavelength::Blue => &self.blue_led,
-            Wavelength::Green => &self.green_led,
-            Wavelength::Red => &self.red_led,
-        };
-
-        led_controller.excite_molecule(molecule)?;
-        let fluorescence_data = self.fluorescence_detector.detect()?;
-        self.spectral_analyzer.analyze(fluorescence_data)
-    }
-}
-```
-
-### 2.4 Dual-Functionality Molecular Architecture
-
-Every virtual molecule generated by Borgia implements dual clock/processor functionality as a fundamental architectural requirement. This is not an optional feature but a core design principle ensuring universal computational compatibility.
-
-#### 2.4.1 Oscillatory-Computational Molecule Design
-
-```rust
-pub struct DualFunctionalityMolecule {
-    pub oscillatory_properties: OscillatoryProperties,
-    pub computational_properties: ComputationalProperties,
-    pub temporal_precision: TemporalPrecision,
-    pub processing_capacity: ProcessingCapacity,
-    pub recursive_enhancement_capability: RecursiveEnhancement,
-}
-
-pub struct OscillatoryProperties {
-    pub base_frequency: f64,                    // Fundamental oscillation frequency
-    pub frequency_stability: f64,               // Frequency stability coefficient
-    pub phase_coherence: f64,                   // Phase coherence maintenance
-    pub amplitude_control: AmplitudeController, // Amplitude management system
-}
-
-pub struct ComputationalProperties {
-    pub instruction_set: MolecularInstructionSet,
-    pub memory_capacity: usize,                 // Information storage capacity
-    pub processing_rate: f64,                   // Operations per second
-    pub parallel_processing: bool,              // Parallel computation capability
-}
-
-impl DualFunctionalityMolecule {
-    pub fn execute_as_clock(&self, precision_target: f64) -> TemporalMeasurement {
-        // Clock functionality utilizing oscillatory properties
-        self.oscillatory_properties.generate_temporal_reference(precision_target)
-    }
-
-    pub fn execute_as_processor(&self, computation: Computation) -> ComputationResult {
-        // Processor functionality utilizing computational properties
-        self.computational_properties.execute_computation(computation)
-    }
-
-    pub fn recursive_enhance(&mut self, other_molecules: &[Self]) -> EnhancementResult {
-        // Recursive enhancement when combined with other dual-functionality molecules
-        let combined_frequency = self.calculate_combined_frequency(other_molecules);
-        let combined_processing = self.calculate_combined_processing(other_molecules);
-
-        self.temporal_precision = combined_frequency * self.recursive_enhancement_capability;
-        self.processing_capacity = combined_processing * self.recursive_enhancement_capability;
-
-        EnhancementResult::new(self.temporal_precision, self.processing_capacity)
-    }
-}
-```
-
-#### 2.4.2 Universal Molecule-Processor Conversion
-
-Any generated molecule can be dynamically reconfigured between clock-dominant and processor-dominant operational modes while maintaining both capabilities:
-
-```rust
-pub enum OperationalMode {
-    ClockDominant {
-        precision_priority: f64,
-        processing_allocation: f64,    // Percentage of capacity allocated to processing
-    },
-    ProcessorDominant {
-        processing_priority: f64,
-        timing_allocation: f64,        // Percentage of capacity allocated to timing
-    },
-    Balanced {
-        clock_processing_ratio: f64,   // Balance between clock and processor functions
-    },
-}
-
-impl DualFunctionalityMolecule {
-    pub fn configure_operational_mode(&mut self, mode: OperationalMode) -> ConfigurationResult {
-        match mode {
-            OperationalMode::ClockDominant { precision_priority, processing_allocation } => {
-                self.optimize_for_temporal_precision(precision_priority);
-                self.allocate_processing_capacity(processing_allocation);
-            },
-            OperationalMode::ProcessorDominant { processing_priority, timing_allocation } => {
-                self.optimize_for_computation(processing_priority);
-                self.allocate_timing_capacity(timing_allocation);
-            },
-            OperationalMode::Balanced { clock_processing_ratio } => {
-                self.balance_capabilities(clock_processing_ratio);
-            },
-        }
-
-        ConfigurationResult::new(self.current_configuration())
-    }
-}
-```
-
-### 2.5 Virtual Molecule Generation Engine
-
-The core molecular generation engine provides on-demand virtual molecules for downstream systems, with every molecule implementing mandatory dual clock/processor functionality:
-
-```rust
-pub struct VirtualMoleculeGenerator {
-    pub molecular_database: MolecularDatabase,
-    pub bmd_networks: MultiscaleBMDNetworks,
-    pub synthesis_engine: MolecularSynthesisEngine,
-    pub quality_control: MolecularQualityControl,
-    pub on_demand_cache: MolecularCache,
-}
-
-impl VirtualMoleculeGenerator {
-    pub fn generate_molecules_on_demand(
-        &mut self,
-        requirements: MolecularRequirements,
-        quantity: u64,
-        timescale: TimeScale,
-    ) -> Result<Vec<DualFunctionalityMolecule>, GenerationError> {
-        // BMD-guided molecular design with mandatory dual functionality
-        let design_parameters = self.bmd_networks
-            .optimize_molecular_design(requirements)?;
-
-        // Ensure dual clock/processor functionality in design
-        let dual_functionality_parameters = design_parameters
-            .enforce_dual_functionality()?;
-
-        // High-throughput synthesis
-        let synthesized_molecules = self.synthesis_engine
-            .synthesize_dual_functionality_batch(dual_functionality_parameters, quantity)?;
-
-        // Critical quality control validation - dual functionality must be verified
-        let validated_molecules = self.quality_control
-            .validate_dual_functionality_specifications(synthesized_molecules)?;
-
-        // Verify clock and processor capabilities for each molecule
-        for molecule in &validated_molecules {
-            self.verify_clock_functionality(&molecule)?;
-            self.verify_processor_functionality(&molecule)?;
-            self.verify_recursive_enhancement_capability(&molecule)?;
-        }
-
-        // Cache for future requests
-        self.on_demand_cache.store(validated_molecules.clone());
-
-        Ok(validated_molecules)
-    }
-
-    pub fn verify_clock_functionality(
-        &self,
-        molecule: &DualFunctionalityMolecule,
-    ) -> Result<ClockVerification, VerificationError> {
-        let frequency_stability = molecule.oscillatory_properties.frequency_stability;
-        let phase_coherence = molecule.oscillatory_properties.phase_coherence;
-
-        if frequency_stability < self.minimum_clock_stability {
-            return Err(VerificationError::InsufficientClockStability);
-        }
-
-        if phase_coherence < self.minimum_phase_coherence {
-            return Err(VerificationError::InsufficientPhaseCoherence);
-        }
-
-        Ok(ClockVerification::Passed)
-    }
-
-    pub fn verify_processor_functionality(
-        &self,
-        molecule: &DualFunctionalityMolecule,
-    ) -> Result<ProcessorVerification, VerificationError> {
-        let processing_rate = molecule.computational_properties.processing_rate;
-        let memory_capacity = molecule.computational_properties.memory_capacity;
-
-        if processing_rate < self.minimum_processing_rate {
-            return Err(VerificationError::InsufficientProcessingRate);
-        }
-
-        if memory_capacity < self.minimum_memory_capacity {
-            return Err(VerificationError::InsufficientMemoryCapacity);
-        }
-
-        Ok(ProcessorVerification::Passed)
-    }
-
-    pub fn generate_oscillating_atoms_for_clock(
-        &mut self,
-        clock_requirements: AtomicClockRequirements,
-    ) -> Result<Vec<OscillatingAtom>, GenerationError> {
-        // Specialized generation for Masunda temporal navigator
-        let oscillation_parameters = clock_requirements.extract_oscillation_params();
-        let atomic_species = self.generate_atomic_species(oscillation_parameters)?;
-
-        Ok(atomic_species.into_iter()
-            .map(|atom| OscillatingAtom::new(atom, oscillation_parameters))
-            .collect())
-    }
-
-    pub fn generate_bmd_substrates_for_foundry(
-        &mut self,
-        foundry_requirements: FoundrySubstrateRequirements,
-    ) -> Result<Vec<BMDSubstrate>, GenerationError> {
-        // Specialized generation for Buhera foundry
-        let substrate_specifications = foundry_requirements.extract_substrate_specs();
-        let molecular_substrates = self.synthesize_bmd_substrates(substrate_specifications)?;
-
-        Ok(molecular_substrates)
-    }
-}
-```
+The absorption-emission interval $\tau_\text{em} = 1/A_{ki}$, where $A_{ki}$ is the Einstein A coefficient, constitutes a categorical tick — one complete cycle of the partition operation distinguishing excited from ground state. This tick is intrinsic: no external clock is required. Nested hierarchies of ticks with decreasing $\tau_\text{em}$ form tree structures. Trees become networks through harmonic proximity: when $\omega_i / \omega_j = p/q$ (low-order rational), nodes share harmonic edges. Closed loops in the resulting network constitute virtual resonant cavities where light circulates without walls.
 
 ---
 
-## 3. Noise-Enhanced Processing and Environmental Simulation
+## 3. Papers
 
-### 3.1 Natural Environment Simulation
+### Paper 1: Spectroscopic Derivation of the Chemical Elements
 
-Borgia implements sophisticated noise-enhanced processing that simulates natural environmental conditions where molecular solutions emerge above background noise. This approach recognizes that natural systems operate in noisy environments and have evolved to utilize noise for enhanced performance:
+> **Full title:** *Spectroscopic Derivation of the Chemical Elements: Atomic Structure and Virtual Instrumentation from Bounded Phase Space Geometry*
+>
+> **Location:** [`dmitri/publications/atomic-derivation/`](dmitri/publications/atomic-derivation/)
 
-```rust
-pub struct NoiseEnhancedProcessor {
-    pub noise_generator: NaturalNoiseGenerator,
-    pub signal_detector: SignalDetectionEngine,
-    pub emergence_analyzer: SolutionEmergenceAnalyzer,
-    pub snr_threshold: f64,                    // 3:1 signal-to-noise ratio
-}
+Derives the periodic table and the virtual spectrometer from bounded phase space. Nine elements spanning all blocks and periods (H, C, Na, Si, Cl, Ar, Ca, Fe, Gd) are derived from first principles and validated against NIST experimental data with zero adjustable parameters.
 
-impl NoiseEnhancedProcessor {
-    pub fn process_with_natural_noise(
-        &self,
-        molecular_system: MolecularSystem,
-        noise_level: NoiseLevel,
-    ) -> Result<ProcessedMolecularSystem, ProcessingError> {
-        // Generate natural noise patterns
-        let environmental_noise = self.noise_generator
-            .generate_natural_noise(noise_level)?;
+**Validation results** ([`results/`](dmitri/publications/atomic-derivation/results/)):
 
-        // Apply noise to molecular system
-        let noisy_system = molecular_system.apply_noise(environmental_noise)?;
+| Category | Result |
+|---|---|
+| Shell capacity $C(n) = 2n^2$ | 7/7 exact |
+| Electron configurations | 9/9 exact match |
+| Ground-state term symbols | 9/9 exact match |
+| Cross-validation (4 modalities) | 132/132 agreements |
+| Hydrogen spectral lines (Rydberg) | Mean error 0.04% |
 
-        // Detect emergent solutions above noise floor
-        let emergent_solutions = self.signal_detector
-            .detect_signals_above_noise(noisy_system, self.snr_threshold)?;
+**Figures** ([`figures/`](dmitri/publications/atomic-derivation/figures/)): 7 panels, 28 charts total.
 
-        // Analyze solution emergence patterns
-        let emergence_analysis = self.emergence_analyzer
-            .analyze_emergence_patterns(emergent_solutions)?;
+<div align="center">
+  <img src="dmitri/publications/atomic-derivation/figures/panel_2_partition_geometry.png" alt="Partition Geometry" width="100%"/>
+  <br/><em>Panel 2 — Partition geometry: 3D nested shells, C(n) = 2n² validation, aufbau filling order, selection rules.</em>
+</div>
 
-        Ok(ProcessedMolecularSystem::new(emergence_analysis))
-    }
-}
-```
+<br/>
 
-### 3.2 Screen Pixel to Chemical Modification
-
-The system implements a novel interface converting screen pixel RGB changes to chemical structure modifications, enabling real-time molecular manipulation through visual interfaces:
-
-```rust
-pub struct PixelToChemicalInterface {
-    pub pixel_monitor: ScreenPixelMonitor,
-    pub rgb_decoder: RGBToChemicalDecoder,
-    pub molecular_modifier: MolecularStructureModifier,
-    pub real_time_processor: RealTimeProcessor,
-}
-
-impl PixelToChemicalInterface {
-    pub fn convert_pixel_changes_to_molecular_modifications(
-        &self,
-        pixel_changes: PixelChangeEvent,
-    ) -> Result<MolecularModification, ConversionError> {
-        // Extract RGB values from pixel changes
-        let rgb_data = self.pixel_monitor.extract_rgb_data(pixel_changes)?;
-
-        // Decode RGB to chemical parameters
-        let chemical_parameters = self.rgb_decoder.decode_rgb_to_chemistry(rgb_data)?;
-
-        // Apply molecular modifications
-        let molecular_modification = self.molecular_modifier
-            .apply_chemical_modifications(chemical_parameters)?;
-
-        Ok(molecular_modification)
-    }
-}
-```
+<div align="center">
+  <img src="dmitri/publications/atomic-derivation/figures/panel_7_hydrogen_spectral.png" alt="Hydrogen Spectral Validation" width="100%"/>
+  <br/><em>Panel 7 — Hydrogen spectral validation: 3D energy levels, derived vs NIST wavelengths, emission spectrum, residuals.</em>
+</div>
 
 ---
 
-## 4. Integration with Downstream Systems
+### Paper 2: Harmonic Molecular Resonator
 
-### 4.1 Masunda Temporal Navigator Integration
+> **Full title:** *Harmonic Molecular Resonator: Self-Clocking Networks from Absorption-Emission Intervals in Bounded Phase Space*
+>
+> **Location:** [`dmitri/publications/molecular-resonator/`](dmitri/publications/molecular-resonator/)
 
-Borgia provides specialized molecular substrates for the Masunda Temporal Navigator's ultra-precision atomic clock requirements:
+Derives harmonic molecular networks with circulating light. Six molecules ($\text{H}_2$, CO, $\text{H}_2\text{O}$, $\text{CO}_2$, $\text{CH}_4$, $\text{C}_6\text{H}_6$) are validated against NIST spectroscopic data, demonstrating exact harmonic structure, closed-loop formation, and circulation periods consistent with known intervals.
 
-```rust
-pub struct MasundaTemporalIntegration {
-    pub oscillating_atom_generator: OscillatingAtomGenerator,
-    pub precision_requirements: PrecisionRequirements,  // 10^-30 to 10^-50 seconds
-    pub temporal_coordination: TemporalCoordinationProtocol,
-}
+**Validation results** ([`results/`](dmitri/publications/molecular-resonator/results/)):
 
-impl MasundaTemporalIntegration {
-    pub fn provide_oscillating_atoms_for_temporal_navigation(
-        &self,
-        precision_target: f64,
-        atom_count: u64,
-    ) -> Result<Vec<UltraPrecisionAtom>, TemporalError> {
-        let oscillation_specs = OscillationSpecification {
-            precision: precision_target,
-            stability: PrecisionStability::UltraHigh,
-            count: atom_count,
-            coordination_protocol: self.temporal_coordination.clone(),
-        };
+| Category | Result |
+|---|---|
+| Tick hierarchy construction | 6/6 pass |
+| Harmonic edge identification | 22 edges, all within tolerance |
+| Closed-loop detection | 11 cross-branch loops |
+| Circulation periods | 11/11 exact match |
+| Self-consistency | Max deviation 1.63% |
 
-        self.oscillating_atom_generator.generate_ultra_precision_atoms(oscillation_specs)
-    }
-}
-```
+**Figures** ([`figures/`](dmitri/publications/molecular-resonator/figures/)): 6 panels, 24 charts total.
 
-### 4.2 Buhera Foundry Integration
+<div align="center">
+  <img src="dmitri/publications/molecular-resonator/figures/panel_4_circulation.png" alt="Circulation" width="100%"/>
+  <br/><em>Panel 4 — Light circulation: 3D loop topology, circulation periods, beat frequency spectrum, phase accumulation.</em>
+</div>
 
-The system provides molecular substrates for biological Maxwell demon processor manufacturing:
+<br/>
 
-```rust
-pub struct BuheraFoundryIntegration {
-    pub bmd_substrate_synthesizer: BMDSubstrateSynthesizer,
-    pub protein_generator: ProteinGenerator,
-    pub molecular_assembly_controller: MolecularAssemblyController,
-}
-
-impl BuheraFoundryIntegration {
-    pub fn provide_bmd_manufacturing_substrates(
-        &self,
-        processor_specifications: ProcessorSpecifications,
-    ) -> Result<BMDManufacturingSubstrates, FoundryError> {
-        // Generate pattern recognition proteins
-        let recognition_proteins = self.protein_generator
-            .generate_pattern_recognition_proteins(processor_specifications.patterns)?;
-
-        // Generate information channeling networks
-        let channeling_networks = self.bmd_substrate_synthesizer
-            .synthesize_information_channeling_networks(processor_specifications.channels)?;
-
-        // Assemble complete substrate package
-        let complete_substrates = self.molecular_assembly_controller
-            .assemble_complete_substrate_package(recognition_proteins, channeling_networks)?;
-
-        Ok(complete_substrates)
-    }
-}
-```
-
-### 4.3 Kambuzuma Integration
-
-Borgia provides biological molecules for Kambuzuma's quantum processing requirements:
-
-```rust
-pub struct KambuzumaIntegration {
-    pub biological_quantum_generator: BiologicalQuantumMoleculeGenerator,
-    pub membrane_synthesizer: PhospholipidMembraneSynthesizer,
-    pub quantum_coherence_maintainer: QuantumCoherenceMaintainer,
-}
-
-impl KambuzumaIntegration {
-    pub fn provide_biological_quantum_molecules(
-        &self,
-        quantum_requirements: QuantumProcessingRequirements,
-    ) -> Result<BiologicalQuantumMolecules, QuantumError> {
-        // Generate quantum-coherent biological molecules
-        let quantum_molecules = self.biological_quantum_generator
-            .generate_quantum_coherent_molecules(quantum_requirements)?;
-
-        // Synthesize phospholipid membranes for quantum tunneling
-        let quantum_membranes = self.membrane_synthesizer
-            .synthesize_quantum_tunneling_membranes(quantum_requirements.membrane_specs)?;
-
-        // Ensure quantum coherence maintenance
-        let coherence_maintained_molecules = self.quantum_coherence_maintainer
-            .maintain_quantum_coherence(quantum_molecules, quantum_membranes)?;
-
-        Ok(coherence_maintained_molecules)
-    }
-}
-```
+<div align="center">
+  <img src="dmitri/publications/molecular-resonator/figures/panel_3_harmonic_network.png" alt="Harmonic Network" width="100%"/>
+  <br/><em>Panel 3 — Harmonic network: 3D network topology, deviation distribution, rational approximation quality, complexity scaling.</em>
+</div>
 
 ---
 
-## 5. Experimental Methodology and Validation
+## 4. Supporting Derivations
 
-### 5.1 Experimental Design and Validation Protocol
+The [`dmitri/derivations/`](dmitri/derivations/) directory contains the complete mathematical foundations, each as a self-contained LaTeX document:
 
-The Borgia framework underwent comprehensive experimental validation using standardized molecular datasets and rigorous statistical analysis protocols. Validation experiments were conducted across multiple independent trials with controlled environmental conditions.
-
-**Dataset Composition:**
-- Total molecular structures analyzed: 200+ compounds
-- Dataset sources: Agrafiotis (3.1%), Ahmed (51.7%), Hann (41.3%), Walters (3.8%)
-- Spectral data: 70 real instrument spectra (UV-Vis, chromatography)
-- Virtual spectra generated: 10 per molecular system
-- Statistical validation: 95% confidence intervals, power analysis
-
-**Experimental Conditions:**
-- Temperature: 298 ± 2 K (biological temperature range)
-- Hardware platforms: Linux, Windows, macOS
-- LED wavelengths: 470nm (blue), 525nm (green), 625nm (red)
-- Timing precision: CPU cycle-level synchronization
-- Noise conditions: Natural environment simulation (3:1 SNR)
-
-**Validation Metrics:**
-- Performance benchmarking against traditional methods
-- Statistical significance testing (p-values, effect sizes)
-- Cross-domain transfer learning validation
-- Hardware resource utilization analysis
-- Information preservation and reconstruction accuracy
-
-### 5.2 Comprehensive Experimental Validation Results
-
-#### 5.1.1 Hardware-Based Computer Vision Performance Metrics
-
-Comprehensive validation across molecular identification tasks demonstrates significant performance improvements over traditional methods:
-
-| Analysis Type | Traditional Time | Hardware-CV Time | Speedup | Accuracy Improvement |
-|---------------|------------------|------------------|---------|---------------------|
-| Small molecule ID | 45.7 s | 0.020 s | 2,285× | +156% |
-| Protein analysis | 12.3 min | 0.158 s | 4,670× | +234% |
-| Complex mixture | 2.7 hr | 0.132 s | 73,636× | +312% |
-| Real-time monitoring | 15.4 min | 0.021 s | 44,000× | +423% |
-
-#### 5.1.2 Cross-Domain Chemical Analysis Performance
-
-Chemical analysis validation across diverse molecular domains:
-
-| Chemical Application | Traditional Methods | Hardware-CV | Improvement |
-|---------------------|-------------------|-------------|-------------|
-| Drug Classification | 92.1% | 98.4% | +6.3% |
-| Natural Product ID | 89.3% | 96.7% | +7.4% |
-| Material Property Prediction | 91.8% | 97.9% | +6.1% |
-| Environmental Fate Prediction | 87.5% | 95.2% | +7.7% |
-| Toxicity Assessment | 85.9% | 94.6% | +8.7% |
-| Synthetic Route Planning | 88.7% | 96.1% | +7.4% |
-| **Average Performance** | **89.2%** | **96.5%** | **+7.3%** |
-
-#### 5.1.3 Statistical Validation Results
-
-Rigorous statistical analysis confirms system performance across multiple validation metrics:
-
-**Hypothesis Testing Results:**
-- Correlation vs zero: p=0.0357 (statistically significant)
-- Peak F1 vs random: p=6.40e-60 (highly significant)
-- RMSE vs unity: p=5.02e-27 (highly significant)
-- LED ANOVA: p=0.2425 (consistent across wavelengths)
-
-**Performance Confidence Intervals (95%):**
-- Correlation coefficient: 0.0166 ± 0.0077
-- Peak F1 score: 0.0553 ± 0.0048
-- RMSE: 0.4369 ± 0.0322
-
-**Effect Size Analysis:**
-- Peak detection: Cohen's d = -6.848 (large effect)
-- Signal enhancement: 3.7-5.8 dB SNR improvement
-- Pattern recognition: 342 rigid matches vs 345 fuzzy matches (+6.2% improvement)
-
-#### 5.1.4 Hardware Resource Utilization
-
-Hardware integration demonstrates superior resource efficiency:
-
-| Resource | Traditional | Hardware-Integrated | Improvement |
-|----------|-------------|-------------------|-------------|
-| CPU utilization | 85.4% | 26.7% | 68.7% reduction |
-| Memory usage | 2.34 GB | 14.8 MB | 157× reduction |
-| Timing accuracy | ±10 μs | ±0.1 μs | 100× improvement |
-| Equipment cost | $10K-$100K | $0 | 100% reduction |
-| Storage requirements | 234 TB | 0 TB | 100% elimination |
-| Processing cores | 128 | 16 | 87.5% reduction |
-
-#### 5.1.5 Spectroscopic Validation Results
-
-LED spectroscopy system validation across molecular targets:
-
-| Molecular Target | Traditional Accuracy | LED Accuracy | Coherence Time | Cost Reduction |
-|------------------|---------------------|--------------|----------------|----------------|
-| Flavoproteins | 78.3% | 94.7% | 247 fs | 100% |
-| Chlorophyll analogs | 82.1% | 96.2% | 189 fs | 100% |
-| Cytochromes | 75.6% | 91.8% | 203 fs | 100% |
-| Heme groups | 79.4% | 93.5% | 234 fs | 100% |
-
-#### 5.1.6 Cross-Domain Transfer Learning Performance
-
-Framework enables effective transfer learning across molecular domains:
-
-| Source Domain | Target Domain | Direct Transfer | Fine-Tuned |
-|---------------|---------------|----------------|------------|
-| Drug compounds | Natural products | 84.7% | 96.3% |
-| Materials | Environmental chemistry | 81.2% | 93.8% |
-| Biochemical | Synthetic chemistry | 87.4% | 97.1% |
-| Spectroscopic | Property prediction | 89.1% | 98.2% |
-| Drug discovery | Toxicology | 85.6% | 95.7% |
-
-#### 5.1.7 Information Preservation and Reconstruction
-
-Validation of bijective mapping and molecular reconstruction capabilities:
-
-**Reconstruction Accuracy Metrics:**
-- Structural reconstruction: 97.8% ± 1.2%
-- Spectroscopic reconstruction: 96.4% ± 1.8%
-- Activity reconstruction: 95.9% ± 2.1%
-- Overall reconstruction accuracy: 96.7% ± 1.7%
-
-**Molecular Pattern Recognition:**
-- Dataset coverage: 70 real spectra analyzed
-- Peak detection performance: Mean F1 = 0.055
-- Spectral correlation: Mean = 0.027
-- RMSE analysis: Mean = 0.435
-
-#### 5.1.8 Thermodynamic Amplification Validation
-
-Extensive validation confirms theoretical predictions of >1000× thermodynamic amplification factors:
-
-| Parameter | Theoretical Prediction | Measured Performance | Validation Status |
-|-----------|----------------------|---------------------|-------------------|
-| Amplification Factor | >1000× | 1247 ± 156× | ✓ Confirmed |
-| Information Catalysis Efficiency | >95% | 97.3 ± 1.2% | ✓ Confirmed |
-| Quantum Coherence Time | >100μs | 247 ± 23μs | ✓ Exceeded |
-| Molecular Generation Rate | >10⁶ molecules/sec | 2.3×10⁶ molecules/sec | ✓ Exceeded |
-| Energy Efficiency | <kBT ln(2) per bit | 0.73×kBT ln(2) per bit | ✓ Exceeded |
-
-#### 5.1.9 Hardware Integration Performance
-
-Hardware integration demonstrates significant computational improvements:
-
-| Integration Aspect | Performance Improvement | Memory Reduction | Validation Method |
-|-------------------|------------------------|------------------|-------------------|
-| CPU Cycle Mapping | 3.2× ± 0.4× | 157× ± 12× | Benchmark testing |
-| LED Spectroscopy | Zero-cost operation | N/A | Hardware validation |
-| Timing Coordination | 4.7× ± 0.6× | 163× ± 18× | Real-time monitoring |
-| Molecular Synchronization | 2.8× ± 0.3× | 142× ± 15× | Temporal analysis |
-
-#### 5.1.10 Noise Enhancement Validation
-
-Natural environment simulation demonstrates solution emergence above noise floor:
-
-```
-Signal-to-Noise Ratio Analysis:
-├── Natural Conditions: 3.2:1 ± 0.4:1 (solutions emerge reliably)
-├── Laboratory Isolation: 1.8:1 ± 0.3:1 (solutions often fail to emerge)
-├── Enhanced Noise Conditions: 4.1:1 ± 0.5:1 (enhanced solution emergence)
-└── Controlled Noise Optimization: 5.3:1 ± 0.6:1 (optimal performance)
-```
-
-#### 5.1.11 Computational Complexity Validation
-
-Experimental confirmation of theoretical complexity reduction:
-
-**Traditional vs Hardware-Based Complexity:**
-- Traditional computational complexity: O(e^n)
-- Hardware-based complexity: O(log S₀)
-- Memory scaling: O(N²) → O(1)
-- Processing time reduction: 2,340-73,565× improvement
-
-**Statistical Power Analysis:**
-- Current sample size: n=70
-- Observed power: 55.83%
-- Cohen's d: 0.2560
-- Recommended sample size for 80% power: n=120
-
-### 5.3 Reproducibility and Data Availability
-
-**Experimental Reproducibility:**
-All experimental results are fully reproducible using the provided codebase and standardized datasets. Validation protocols include:
-
-- Standardized molecular datasets (publicly available)
-- Controlled experimental conditions with documented parameters
-- Statistical analysis scripts with complete methodology
-- Hardware validation protocols for multiple platforms
-- Cross-validation procedures with independent test sets
-
-**Data Availability:**
-- Raw spectral data: Available in `gonfanolier/public/spectra/`
-- Molecular datasets: SMARTS patterns from standard cheminformatics databases
-- Validation results: Complete statistical analysis outputs
-- Performance benchmarks: Timing and accuracy measurements
-- Hardware integration data: Platform-specific performance metrics
-
-**Code Availability:**
-- Complete source code: MIT License (https://github.com/fullscreen-triangle/borgia)
-- Validation scripts: Automated testing and benchmarking
-- Statistical analysis: R/Python scripts for result reproduction
-- Hardware integration: Platform-specific optimization code
-- Documentation: Comprehensive API and usage examples
-
-**Validation Standards:**
-- Statistical significance: p < 0.05 for all reported improvements
-- Effect size reporting: Cohen's d for all performance comparisons
-- Confidence intervals: 95% CI for all quantitative measurements
-- Cross-validation: Independent test sets for all accuracy claims
-- Hardware verification: Multi-platform validation across operating systems
+| Derivation | Description |
+|---|---|
+| `bounded-phase-space.tex` | The axiom, $C(n) = 2n^2$, selection rules, all physics derived from boundedness |
+| `gas-computing.tex` | Gas IS computer: $T$ = processing rate, $PV = Nk_BT$ as computation conservation |
+| `trajectory-completion-mechanism.tex` | $O(x) = C(x) = P(x)$: observation, computation, and processing are identical |
+| `ion-trajectory-completion-mechanism.tex` | Partition Lagrangian, all four mass analyzers unified, mass = memory |
+| `trans-planckian-counting.tex` | Five enhancement mechanisms, $\mathcal{E}_\text{total} = 10^{121}$, commutation theorem |
+| `categorical-state-counting.tex` | Categorical state enumeration in bounded systems |
+| `categorical-thermodynamics.tex` | Thermodynamic laws as partition geometry consequences |
+| `partitioning-lagrange.tex` | Lagrangian mechanics from partition operations |
+| `single-particle-ideal-gas.tex` | Single-particle ideal gas from bounded phase space |
+| `ion-journey.tex` | Complete ion trajectory decomposition |
+| `ion-thermodynamic-regimes.tex` | Ion behavior across thermodynamic regimes |
+| `partition-depth-limits.tex` | Resolution limits from partition depth |
+| `quantupartite-single-ion-observatory.tex` | Single-ion measurement as partition readout |
+| `super-oxide-dismutase.tex` | Biological validation: SOD enzyme from partition structure |
 
 ---
 
-## 6. Trajectory Completion Cheminformatics
+## 5. Computational Validation
 
-### 6.1 Bounded Phase Space and Triple Equivalence
-
-The trajectory completion framework establishes a rigorous mathematical foundation for molecular encoding through the Bounded Phase Space Law: any finite physical system with bounded energy occupies a compact region of phase space, admitting only countably many distinguishable states. This observation leads to the Triple Equivalence Theorem, which proves the mathematical identity:
-
-```
-Oscillatory Dynamics ≡ Categorical Partitions ≡ Bounded Phase Space
-```
-
-The equivalence demonstrates that oscillatory representations, partition-based encodings, and phase space analysis are not merely analogous but mathematically identical descriptions. A system evolving through N phase-distinct configurations generates the same entropy as a partition of depth log(N) or an oscillator completing N periods.
-
-### 6.2 Entropy Coordinate Space
-
-Molecular structures are mapped to entropy coordinates S = [0,1]³ with components:
-
-- **S_k** (Kinetic entropy): Derived from molecular connectivity and structural complexity
-- **S_t** (Topological entropy): Computed from ring systems and branching patterns
-- **S_e** (Electronic entropy): Determined by electronegativity variance and hybridization
-
-The partition coordinate system (n, ℓ, m, s) encodes molecular features with capacity C(n) = 2n², where n denotes the principal partition level. This structure ensures every syntactically valid molecule maps to a unique fixed point in S-space, with validation confirming 258 molecules encoded without collision.
-
-### 6.3 Penultimate State Theory
-
-Penultimate states constitute the immediate pre-images of fixed points under trajectory evolution. These states occupy a three-cell neighborhood structure {c_{i-1}, c_i, c_{i+1}} in the partition lattice, serving as actionable identification points where molecular identity can be determined before trajectory completion. Experimental validation demonstrates 100% three-cell structure validity across all tested molecules, with noisy trajectory simulations confirming convergence to fixed points from penultimate neighborhoods.
-
-### 6.4 Trans-Planckian Categorical Resolution
-
-The categorical temporal resolution follows the formula:
-
-```
-τ_cat = 2π / (N × ⟨ω⟩)
-```
-
-Where N denotes oscillator count and ⟨ω⟩ the average angular frequency. For molecular systems with N = 1950 vibrational modes at infrared frequencies (~10¹⁴ rad/s), this yields categorical resolution τ_cat ≈ 10⁻⁵⁰ s—six orders of magnitude below the Planck time t_P = 5.39 × 10⁻⁴⁴ s.
-
-This sub-Planckian resolution does not violate fundamental physics because:
-1. No single measurement achieves sub-Planckian precision
-2. Resolution emerges from accumulated phase differences across the oscillator ensemble
-3. Information derives from relative phase relationships, not absolute temporal measurements
-
-### 6.5 Time-State Identity
-
-The Time-State Identity establishes that elapsed time IS accumulated categorical state distinctions:
-
-```
-dM/dt = 1/⟨τ_p⟩
-```
-
-Where M denotes the categorical state count and ⟨τ_p⟩ the characteristic period. The entropy-state relationship S = k_B ln(M) follows directly, connecting thermodynamic entropy to categorical state counting. Validation confirms linear M(t) scaling with slopes matching inverse period predictions.
-
-### 6.6 Validation Results
-
-Comprehensive validation using 258 molecular SMARTS patterns and 6 spectral measurements confirms:
-
-| Validation Metric | Result | Theoretical Prediction |
-|-------------------|--------|------------------------|
-| Unique fixed points | 258/258 | All molecules distinct |
-| Three-cell validity | 100% | Penultimate neighborhoods valid |
-| Cross-prediction accuracy | 99.5% | Information preservation |
-| Trans-Planckian ratio | 10⁻⁷ × t_P | Sub-Planckian accessible |
-| State accumulation | Linear in time | Time-State Identity confirmed |
-
----
-
-## 7. Emission-Strobed Dual-Mode Vibrational Spectroscopy (ESDVS)
-
-### 7.1 Dual-Mode Spectroscopic Framework
-
-Emission-Strobed Dual-Mode Vibrational Spectroscopy (ESDVS) combines Raman and infrared measurements synchronized to molecular emission events, exploiting symmetry-based mutual exclusion for complementary information acquisition. For molecules with center of inversion, the mutual exclusion rule forbids simultaneous Raman and IR activity for any vibrational mode, ensuring the two techniques probe orthogonal subspaces.
-
-### 7.2 Mutual Exclusion Validation
-
-Experimental validation using CH4+ (Td symmetry) at 4 K demonstrates:
-
-- **Raman modes**: 4 active modes (a₁, e, f₂ symmetries) at 1297, 1521, 2987, 3145 cm⁻¹
-- **IR modes**: 2 active modes (f₂ symmetry) at 1306, 3157 cm⁻¹
-- **Expected overlap**: 2 modes (triply-degenerate f₂ appearing in both spectra)
-- **Strict violation metric**: 0.000 (no unexpected coincidences)
-
-Cross-prediction accuracy between mode sets reaches 99.53% average (99.89% IR-from-Raman, 99.17% Raman-from-IR), validating mutual exclusion as an information-preserving bijective transformation.
-
-### 7.3 Ternary State Trajectory Reconstruction
-
-Electronic state populations evolve through ternary configurations |0⟩ (ground), |1⟩ (natural), |2⟩ (excited) governed by coupled rate equations:
-
-```
-dc₂/dt = -c₂/τ_em - c₂/τ_vib
-dc₁/dt = c₂/τ_vib - c₁/τ_vib
-dc₀/dt = c₂/τ_em + c₁/τ_vib
-```
-
-With emission lifetime τ_em = 850 ps and vibrational relaxation τ_vib = 100 ps. Trajectory reconstruction achieves average fidelity 0.983, enabling ternary-encoded molecular fingerprinting from transient electronic tomography.
-
-### 7.4 Dual-Mode Enhancement
-
-Simultaneous Raman + IR operation yields enhancement factor:
-
-```
-Enhancement = τ_single / τ_dual = 1.50×
-```
-
-This 50% resolution improvement derives from:
-- Information gain: 1.00 bit (100% improvement over single-mode average)
-- Effective oscillator count increase through complementary mode fusion
-- Redundancy fraction 0.33 (accounting for f₂ overlap)
-
-### 7.5 Categorical State Accumulation
-
-State counting comparison across operational modes:
-
-| Mode | Categorical States (1 s integration) | Temporal Resolution |
-|------|-------------------------------------|---------------------|
-| Raman-only | 2.68 × 10¹⁴ | 4.97 × 10⁻²⁹ s |
-| IR-only | 1.34 × 10¹⁴ | 4.97 × 10⁻²⁹ s |
-| Dual-mode | 4.02 × 10¹⁴ | 3.32 × 10⁻²⁹ s |
-| Categorical | 1.00 × 10⁵⁰ | 1.00 × 10⁻⁵⁰ s |
-
-Dual-mode state count equals the sum of independent channels (M_dual = M_Raman + M_IR), confirming additive information accumulation from complementary mode sets.
-
-### 7.6 Regime Classification
-
-Resolution regime analysis places ESDVS measurements in distinct temporal domains:
-
-- **Categorical resolution**: Sub-Planckian regime (τ < t_P)
-- **Raman/IR resolution**: Trans-Planckian attosecond regime (10⁻¹⁸ s < τ < t_P)
-- **Dual-mode resolution**: Trans-Planckian regime with 33% improvement
-
-The sub-Planckian categorical resolution emerges from ensemble phase accumulation without violating quantum mechanical uncertainty or general relativistic constraints.
-
----
-
-## 8. Turbulance Compiler Integration
-
-### 6.1 Domain-Specific Language for Molecular Dynamics
-
-Borgia integrates with the Turbulance compiler, a domain-specific language for compiling molecular dynamics equations into executable code:
-
-```rust
-pub struct TurbulanceCompiler {
-    pub molecular_equation_parser: MolecularEquationParser,
-    pub probabilistic_branching_engine: ProbabilisticBranchingEngine,
-    pub quantum_state_manager: QuantumStateManager,
-    pub executable_generator: ExecutableCodeGenerator,
-}
-
-impl TurbulanceCompiler {
-    pub fn compile_molecular_dynamics(
-        &self,
-        molecular_equations: MolecularDynamicsEquations,
-    ) -> Result<ExecutableMolecularCode, CompilationError> {
-        // Parse molecular dynamics equations
-        let parsed_equations = self.molecular_equation_parser
-            .parse_equations(molecular_equations)?;
-
-        // Generate probabilistic branching for quantum effects
-        let probabilistic_branches = self.probabilistic_branching_engine
-            .generate_quantum_branches(parsed_equations)?;
-
-        // Manage quantum state evolution
-        let quantum_managed_code = self.quantum_state_manager
-            .integrate_quantum_management(probabilistic_branches)?;
-
-        // Generate executable code
-        let executable_code = self.executable_generator
-            .generate_executable(quantum_managed_code)?;
-
-        Ok(executable_code)
-    }
-}
-```
-
-### 6.2 Probabilistic Molecular Navigation
-
-The compiler enables predetermined molecular navigation through chemical space, eliminating stochastic search inefficiencies:
-
-```rust
-pub struct PredeterminedMolecularNavigation {
-    pub chemical_space_map: ChemicalSpaceMap,
-    pub bmd_guidance_system: BMDGuidanceSystem,
-    pub deterministic_pathfinder: DeterministicPathfinder,
-}
-
-impl PredeterminedMolecularNavigation {
-    pub fn navigate_to_target_molecule(
-        &self,
-        current_configuration: MolecularConfiguration,
-        target_configuration: MolecularConfiguration,
-    ) -> Result<MolecularNavigationPath, NavigationError> {
-        // Map current position in chemical space
-        let current_position = self.chemical_space_map
-            .locate_configuration(current_configuration)?;
-
-        // BMD-guided pathfinding (non-random)
-        let guided_path = self.bmd_guidance_system
-            .guide_molecular_transformation(current_position, target_configuration)?;
-
-        // Deterministic path optimization
-        let optimized_path = self.deterministic_pathfinder
-            .optimize_transformation_path(guided_path)?;
-
-        Ok(optimized_path)
-    }
-}
-```
-
----
-
-## 9. Quality Control and Validation Protocols
-
-### 7.1 Molecular Quality Assurance
-
-Comprehensive quality control ensures molecular specifications meet downstream system requirements:
-
-```rust
-pub struct MolecularQualityControl {
-    pub structural_validator: StructuralValidator,
-    pub functional_tester: FunctionalTester,
-    pub quantum_coherence_verifier: QuantumCoherenceVerifier,
-    pub bmd_efficiency_analyzer: BMDEfficiencyAnalyzer,
-}
-
-impl MolecularQualityControl {
-    pub fn validate_molecular_batch(
-        &self,
-        molecular_batch: Vec<VirtualMolecule>,
-        specifications: QualitySpecifications,
-    ) -> Result<ValidatedMolecularBatch, QualityControlError> {
-        let mut validated_molecules = Vec::new();
-
-        for molecule in molecular_batch {
-            // Structural validation
-            let structural_validity = self.structural_validator
-                .validate_structure(molecule.structure())?;
-
-            // Functional testing
-            let functional_validity = self.functional_tester
-                .test_molecular_function(molecule.function())?;
-
-            // Quantum coherence verification
-            let quantum_validity = self.quantum_coherence_verifier
-                .verify_quantum_properties(molecule.quantum_state())?;
-
-            // BMD efficiency analysis
-            let bmd_efficiency = self.bmd_efficiency_analyzer
-                .analyze_bmd_compatibility(molecule.bmd_properties())?;
-
-            if structural_validity && functional_validity &&
-               quantum_validity && bmd_efficiency > specifications.min_bmd_efficiency {
-                validated_molecules.push(molecule);
-            }
-        }
-
-        Ok(ValidatedMolecularBatch::new(validated_molecules))
-    }
-}
-```
-
-### 7.2 System Integration Testing
-
-Comprehensive testing validates integration with downstream systems:
-
-```rust
-pub struct SystemIntegrationTester {
-    pub masunda_integration_test: MasundaIntegrationTest,
-    pub buhera_integration_test: BuheraIntegrationTest,
-    pub kambuzuma_integration_test: KambuzumaIntegrationTest,
-}
-
-impl SystemIntegrationTester {
-    pub fn validate_complete_system_integration(
-        &self,
-    ) -> Result<SystemIntegrationReport, IntegrationError> {
-        // Test Masunda temporal navigator integration
-        let masunda_results = self.masunda_integration_test
-            .test_oscillating_atom_provision()?;
-
-        // Test Buhera foundry integration
-        let buhera_results = self.buhera_integration_test
-            .test_bmd_substrate_provision()?;
-
-        // Test Kambuzuma integration
-        let kambuzuma_results = self.kambuzuma_integration_test
-            .test_biological_quantum_molecule_provision()?;
-
-        Ok(SystemIntegrationReport::new(
-            masunda_results,
-            buhera_results,
-            kambuzuma_results,
-        ))
-    }
-}
-```
-
----
-
-## 10. Research Impact and Applications
-
-### 8.1 Breakthrough Contributions to Computational Chemistry
-
-Borgia represents the first computational implementation of Eduardo Mizraji's biological Maxwell demons theory with experimental validation of theoretical predictions. The key research contributions include:
-
-1. **Mathematical Validation of Information Catalysis**: First computational proof that information can act as a catalyst in molecular transformations without being consumed
-2. **Thermodynamic Amplification Verification**: Experimental confirmation of >1000× amplification factors through coordinated BMD networks
-3. **Multi-Scale BMD Coordination**: Demonstration of hierarchical BMD networks operating across quantum, molecular, and environmental timescales
-4. **Hardware-Molecular Integration**: First successful integration of molecular timescales with computational hardware timing systems
-5. **Noise-Enhanced Molecular Processing**: Validation that natural noisy environments enhance rather than degrade molecular solution emergence
-
-### 8.2 Applications in Drug Discovery and Molecular Design
-
-The framework enables revolutionary approaches to pharmaceutical research:
-
-- **Predetermined Drug Design**: BMD-guided navigation through chemical space eliminates random molecular exploration
-- **On-Demand Molecular Libraries**: Instant generation of molecular candidates for specific therapeutic targets
-- **Noise-Enhanced Drug Screening**: Natural environment simulation improves drug candidate identification
-- **Multi-Scale Integration**: Coordination of molecular effects across quantum, cellular, and physiological scales
-
-### 8.3 Enabling Technology for Advanced Systems
-
-Borgia serves as the fundamental molecular workhorse enabling:
-
-- **Ultra-Precision Temporal Systems**: Providing oscillating atoms for 10⁻³⁰ to 10⁻⁵⁰ second precision atomic clocks
-- **Biological Quantum Processor Manufacturing**: Supplying molecular substrates for BMD-based virtual processor fabrication
-- **Consciousness-Enhanced Computation**: Generating biological molecules for quantum-coherent consciousness interfaces
-- **Environmental Molecular Engineering**: Large-scale molecular system coordination and optimization
-
----
-
-## 11. Installation and Usage
-
-### 9.1 System Requirements
+Both papers include Python validation scripts that derive all claimed results and persist them as JSON:
 
 ```bash
-# Hardware Requirements
-- CPU: Multi-core processor with high-resolution timing support
-- Memory: 16GB RAM minimum (32GB recommended for large molecular batches)
-- GPU: Optional, for accelerated molecular dynamics calculations
-- LED Display: Standard computer monitor with RGB LED backlight (for spectroscopy)
+# Paper 1 — derives 9 elements, compares against NIST
+python dmitri/publications/atomic-derivation/validate_spectroscopic_derivation.py
 
-# Software Dependencies
-- Rust 1.70+ with Cargo
-- CUDA Toolkit (optional, for GPU acceleration)
-- Python 3.8+ (for Turbulance compiler integration)
-- OpenBLAS or Intel MKL (for linear algebra operations)
+# Paper 2 — constructs harmonic networks for 6 molecules, validates topology
+python dmitri/publications/molecular-resonator/validate_harmonic_resonator.py
+
+# Generate publication figures
+python dmitri/publications/atomic-derivation/generate_panels.py
+python dmitri/publications/molecular-resonator/generate_panels.py
 ```
 
-### 9.2 Installation Process
+All validation results are saved to `results/` subdirectories as structured JSON. Zero adjustable parameters are used throughout — all predictions follow deterministically from the Bounded Phase Space Law and known physical constants ($\hbar$, $e$, $m_e$, $\epsilon_0$, $c$, $k_B$).
 
-```bash
-# Clone the repository
-git clone https://github.com/fullscreen-triangle/borgia.git
-cd borgia
+**Requirements:** Python 3.9+, NumPy, Matplotlib.
 
-# Install dependencies
-cargo build --release
+---
 
-# Optional: Enable GPU acceleration
-cargo build --release --features="cuda-acceleration"
+## 6. Repository Structure
 
-# Optional: Enable advanced BMD features
-cargo build --release --features="advanced-bmd,quantum-coherence,hardware-integration"
-
-# Verify installation
-cargo test --release
 ```
-
-### 9.3 Basic Usage Examples
-
-#### 9.3.1 On-Demand Molecular Generation
-
-```rust
-use borgia::{
-    VirtualMoleculeGenerator,
-    MolecularRequirements,
-    TimeScale,
-    MultiscaleBMDNetworks
-};
-
-fn generate_molecules_for_atomic_clock() -> Result<(), Box<dyn std::error::Error>> {
-    let mut generator = VirtualMoleculeGenerator::new();
-
-    // Configure requirements for Masunda temporal navigator
-    let requirements = MolecularRequirements {
-        oscillation_frequency: Some(9.192_631_770e9), // Cesium-133 frequency
-        quantum_coherence_time: Some(Duration::from_micros(247)),
-        precision_target: 1e-30, // 10^-30 second precision
-        count: 1_000_000,
-    };
-
-    // Generate oscillating atoms
-    let oscillating_atoms = generator.generate_molecules_on_demand(
-        requirements,
-        1_000_000,
-        TimeScale::Quantum
-    )?;
-
-    println!("Generated {} oscillating atoms for temporal navigation",
-             oscillating_atoms.len());
-
-    Ok(())
-}
-```
-
-#### 9.3.2 BMD Substrate Manufacturing
-
-```rust
-use borgia::{
-    BMDSubstrateSynthesizer,
-    ProcessorSpecifications,
-    PatternRecognitionRequirements,
-    InformationChannelingRequirements
-};
-
-fn synthesize_bmd_substrates() -> Result<(), Box<dyn std::error::Error>> {
-    let synthesizer = BMDSubstrateSynthesizer::new();
-
-    // Configure BMD processor specifications
-    let specs = ProcessorSpecifications {
-        patterns: PatternRecognitionRequirements {
-            recognition_accuracy: 0.999,
-            response_time: Duration::from_micros(10),
-            pattern_count: 10_000,
-        },
-        channels: InformationChannelingRequirements {
-            throughput: 1_000_000, // operations per second
-            fidelity: 0.95,
-            amplification_factor: 1000.0,
-        },
-        quantum_coherence: true,
-        biological_compatibility: true,
-    };
-
-    // Synthesize BMD substrates
-    let substrates = synthesizer.synthesize_bmd_substrates(specs)?;
-
-    println!("Synthesized {} BMD substrates for quantum processor manufacturing",
-             substrates.len());
-
-    Ok(())
-}
-```
-
-#### 9.3.3 Multi-Scale BMD Network Coordination
-
-```rust
-use borgia::{
-    IntegratedBMDSystem,
-    BMDScale,
-    CoordinationProtocol
-};
-
-fn execute_multiscale_analysis() -> Result<(), Box<dyn std::error::Error>> {
-    let mut system = IntegratedBMDSystem::new();
-
-    // Define molecular targets
-    let molecules = vec![
-        "CCO".to_string(),                    // Ethanol
-        "CC(=O)O".to_string(),               // Acetic acid
-        "c1ccc(cc1)O".to_string(),           // Phenol
-        "C1=CC=C(C=C1)N".to_string(),        // Aniline
-    ];
-
-    // Execute cross-scale BMD analysis
-    let result = system.execute_cross_scale_analysis(
-        molecules,
-        vec![
-            BMDScale::Quantum,      // 10^-15s timescale
-            BMDScale::Molecular,    // 10^-9s timescale
-            BMDScale::Environmental // 10^2s timescale
-        ]
-    )?;
-
-    println!("Cross-scale analysis completed:");
-    println!("- Quantum coherence: {:.2}%", result.quantum_coherence * 100.0);
-    println!("- Molecular efficiency: {:.2}%", result.molecular_efficiency * 100.0);
-    println!("- Environmental stability: {:.2}%", result.environmental_stability * 100.0);
-    println!("- Thermodynamic amplification: {:.1}×", result.amplification_factor);
-
-    Ok(())
-}
-```
-
-#### 9.3.4 Hardware Integration
-
-```rust
-use borgia::{
-    HardwareIntegration,
-    LEDSpectroscopySystem,
-    TimingCoordination,
-    MolecularSystem
-};
-
-fn integrate_with_hardware() -> Result<(), Box<dyn std::error::Error>> {
-    let hardware = HardwareIntegration::new();
-
-    // Initialize LED spectroscopy
-    let spectroscopy = LEDSpectroscopySystem::new()?;
-
-    // Coordinate molecular timing with CPU cycles
-    let molecular_system = MolecularSystem::new();
-    let timing_coordination = hardware.coordinate_molecular_timing(
-        molecular_system,
-        TimingCoordination::CpuCycles
-    )?;
-
-    // Perform zero-cost molecular spectroscopy
-    let spectral_data = spectroscopy.analyze_molecular_fluorescence(
-        molecular_system.target_molecule(),
-        LED_Wavelength::Blue // 470nm excitation
-    )?;
-
-    println!("Hardware integration successful:");
-    println!("- Performance improvement: {:.1}×", timing_coordination.performance_gain);
-    println!("- Memory reduction: {:.1}×", timing_coordination.memory_reduction);
-    println!("- Spectroscopy cost: $0.00 (utilizing existing hardware)");
-
-    Ok(())
-}
+borgia/
+├── dmitri/
+│   ├── derivations/                    # 14 foundational LaTeX derivations
+│   └── publications/
+│       ├── atomic-derivation/          # Paper 1
+│       │   ├── spectroscopic-derivation-of-elements.tex
+│       │   ├── references.bib
+│       │   ├── validate_spectroscopic_derivation.py
+│       │   ├── generate_panels.py
+│       │   ├── results/                # 7 JSON validation files
+│       │   └── figures/                # 7 panels (28 charts)
+│       └── molecular-resonator/        # Paper 2
+│           ├── harmonic-molecular-resonator.tex
+│           ├── references.bib
+│           ├── validate_harmonic_resonator.py
+│           ├── generate_panels.py
+│           ├── results/                # 6 JSON validation files
+│           └── figures/                # 6 panels (24 charts)
+├── archdiocese/                        # Extended validation framework
+│   ├── src/                            # Validation source code
+│   ├── results/                        # Prior validation results
+│   └── publication/                    # Emission-strobe and ensemble papers
+├── src/                                # Rust core engine
+├── assets/img/                         # Logo and static assets
+└── README.md
 ```
 
 ---
 
-## 12. Future Directions and Development Roadmap
+## 7. Falsifiable Predictions
 
-### 10.1 Short-term Development Goals (1-2 years)
+The framework makes concrete, falsifiable predictions. A single counterexample in any category would refute the entire theory.
 
-1. **Enhanced BMD Network Scaling**: Expansion of multi-scale BMD networks to support larger molecular systems and more complex coordination protocols
-2. **Advanced Hardware Integration**: Extended hardware timing integration with additional timing sources and improved synchronization protocols
-3. **Optimized Molecular Generation**: Performance improvements for large-scale molecular generation with reduced computational overhead
-4. **Extended Turbulance Compiler**: Enhanced domain-specific language features for more complex molecular dynamics compilation
+### From Paper 1 (Atomic Structure)
 
-### 10.2 Medium-term Research Directions (2-5 years)
+1. $C(n) = 2n^2$ is exact for all principal quantum numbers $n$. Any deviation falsifies the framework.
+2. Electron configurations follow deterministically from $C(n) = 2n^2$ and $E \propto n + \alpha l$. No element should violate this beyond known exceptions (Cr, Cu, etc.) attributable to $d$-shell stabilization.
+3. All four virtual spectrometer modalities must yield identical partition coordinates (Commutation Theorem).
+4. The computer must reproduce the same measurement as a physical spectrometer: $O(x) = C(x) = P(x)$.
 
-1. **Quantum Error Correction for BMDs**: Implementation of quantum error correction protocols for biological Maxwell demon networks
-2. **Consciousness-Enhanced Molecular Design**: Integration with advanced consciousness interfaces for intuitive molecular manipulation
-3. **Environmental Molecular Engineering**: Large-scale coordination of molecular systems for environmental applications
-4. **Advanced Temporal Integration**: Enhanced coordination with ultra-precision temporal systems and quantum clocks
+### From Paper 2 (Molecular Networks)
 
-### 10.3 Long-term Vision (5+ years)
-
-1. **Universal Molecular Manufacturing**: Complete integration with global molecular manufacturing networks
-2. **Consciousness-Molecular Interface**: Direct consciousness-driven molecular manipulation and design
-3. **Cosmic-Scale Molecular Coordination**: Integration with space-based molecular systems and cosmic temporal networks
-4. **Quantum-Biological Computing Convergence**: Full convergence of quantum computing with biological Maxwell demon networks
+5. Vibrational frequency ratios of bounded molecules must approximate low-order rationals within tolerance $\delta < 0.05$.
+6. Any molecule with $\geq 3$ vibrational modes must form a connected harmonic network.
+7. Closed loops must satisfy the constructive interference condition.
+8. Circulation periods are determined by partition structure alone — no free parameters.
+9. Partition coordinates measured from different entry points in the network must agree (entry-point independence).
 
 ---
 
-## 13. Critical System Considerations
+## 8. Relation to Prior Work
 
-### 11.1 Cascade Failure Analysis
-
-Borgia operates as the foundational molecular substrate provider for all downstream computational architectures. The dual clock/processor nature of every generated molecule creates critical dependencies across the entire system ecosystem.
-
-**Failure Propagation Chain:**
-```
-Borgia Molecular Generation Failure
-    ↓
-Loss of Dual-Functionality Molecules
-    ↓
-Simultaneous Loss of:
-    • Clock/Timing Precision Capabilities
-    • Computational Processing Power
-    ↓
-Downstream System Failures:
-    • Temporal Navigation Systems → Loss of ultra-precision timing
-    • Quantum Processor Foundries → Loss of BMD substrate supply
-    • Atmospheric Computing Networks → Loss of molecular processor recruitment
-    • Communication Infrastructure → Loss of molecular satellites/towers
-    • Environmental Sensing → Loss of molecular sensors
-    • Consciousness-Enhanced Systems → Loss of biological quantum molecules
-    ↓
-Complete Computational Architecture Collapse
-```
-
-**Critical Dependency Matrix:**
-Every downstream system depends on Borgia for both timing and processing functionality simultaneously. This dual dependency means partial failures are not tolerated - molecules must function as both clocks and processors or the entire architecture fails.
-
-### 11.2 Quality Assurance Requirements
-
-Given the critical nature of system dependencies, quality assurance operates under zero-tolerance failure protocols:
-
-**Mandatory Verification Protocols:**
-1. **Dual Functionality Verification** - Every molecule must pass both clock and processor functionality tests
-2. **Recursive Enhancement Capability** - Molecules must demonstrate recursive amplification when combined
-3. **Operational Mode Flexibility** - Molecules must support dynamic reconfiguration between operational modes
-4. **Environmental Stability** - Molecules must maintain functionality across required environmental conditions
-5. **Integration Compatibility** - Molecules must interface correctly with all downstream systems
-
-**Failure Tolerance: Zero**
-Any molecule failing to meet dual functionality requirements is rejected. Partial functionality is not acceptable due to cascade failure implications.
-
-### 11.3 System Robustness Requirements
-
-**Redundancy Implementation:**
-- Multiple independent BMD networks for critical path molecular generation
-- Distributed synthesis engines with failover capabilities
-- Real-time quality monitoring with immediate error detection
-- Backup molecular cache systems with validated molecule reserves
-
-**Performance Monitoring:**
-- Continuous verification of molecular dual functionality
-- Real-time monitoring of downstream system molecular requirements
-- Predictive failure detection based on molecular performance degradation
-- Automatic system reconfiguration in response to molecular performance issues
-
-## 14. Conclusions and Scientific Impact
-
-Borgia represents a fundamental contribution to computational chemistry and molecular manufacturing, providing a practical implementation of Eduardo Mizraji's biological Maxwell demons theory with comprehensive experimental validation. The framework serves as the molecular substrate generator enabling temporal navigation systems, quantum processor manufacturing, and consciousness-enhanced computation through on-demand virtual molecular generation. The trajectory completion cheminformatics module establishes rigorous mathematical foundations through the Bounded Phase Space Law and Triple Equivalence Theorem, while ESDVS validation demonstrates practical implementation with 99.53% cross-prediction accuracy and trans-Planckian categorical resolution.
-
-### 12.1 Key Scientific Achievements
-
-**Experimental Validation of Theoretical Predictions:**
-1. **Information Catalysis Theory**: First computational proof with experimental verification of 1247 ± 156× thermodynamic amplification factors (exceeding theoretical >1000× prediction)
-2. **Hardware-Computer Vision Integration**: Demonstrated 2,285-73,636× processing speed improvements with 156-423% accuracy enhancements across molecular identification tasks
-3. **Cross-Domain Performance**: Average 7.3% improvement in chemical analysis accuracy across drug classification (98.4%), natural product identification (96.7%), and material property prediction (97.9%)
-4. **Statistical Significance**: Rigorous validation with p < 0.05 for all performance improvements, large effect sizes (Cohen's d = -6.848 for peak detection), and 95% confidence intervals
-
-**Hardware Integration Breakthroughs:**
-1. **Resource Efficiency**: 68.7% CPU utilization reduction, 157× memory reduction, 100× timing accuracy improvement
-2. **Cost Elimination**: Complete elimination of specialized equipment costs ($10K-$100K → $0) through standard computer hardware utilization
-3. **Zero-Cost Spectroscopy**: LED-based molecular analysis with 94.7% accuracy for flavoproteins, 96.2% for chlorophyll analogs
-4. **Multi-Platform Validation**: Consistent performance across Linux, Windows, and macOS platforms
-
-**Information Preservation and Reconstruction:**
-1. **Bijective Mapping Validation**: 96.7% ± 1.7% overall reconstruction accuracy across structural (97.8%), spectroscopic (96.4%), and activity (95.9%) domains
-2. **Complexity Reduction**: Experimental confirmation of O(e^n) → O(log S₀) complexity reduction with logarithmic memory scaling
-3. **Cross-Domain Transfer Learning**: 96.3% accuracy in drug-to-natural product transfer, 97.1% in biochemical-to-synthetic chemistry transfer
-
-### 12.2 Scientific Rigor and Reproducibility
-
-**Methodological Standards:**
-- Standardized molecular datasets with balanced representation (Ahmed 51.7%, Hann 41.3%, Agrafiotis 3.1%, Walters 3.8%)
-- Controlled experimental conditions (298 ± 2 K, standardized LED wavelengths, CPU cycle synchronization)
-- Statistical power analysis (n=70, observed power 55.83%, Cohen's d = 0.2560)
-- Cross-validation with independent test sets and 95% confidence intervals
-
-**Data and Code Availability:**
-- Complete source code under MIT License with comprehensive documentation
-- Raw spectral data and validation results publicly available
-- Automated testing and benchmarking scripts for result reproduction
-- Multi-platform hardware validation protocols
-
-### 12.3 Paradigm Transformation Impact
-
-The framework establishes Borgia as the foundational technology enabling the next generation of molecular manufacturing, temporal engineering, and consciousness-integrated computation. Through its implementation of biological Maxwell demons, the system transcends traditional computational chemistry limitations and enables deterministic navigation through chemical space with experimental validation of theoretical predictions.
-
-**Transformative Capabilities:**
-1. **Deterministic Molecular Design**: BMD-guided navigation eliminating stochastic search inefficiencies
-2. **Hardware-Molecular Convergence**: Direct integration of molecular timescales with computational hardware
-3. **Universal Applicability**: Framework applicable across drug discovery, materials science, environmental chemistry, and chemical education
-4. **Noise-Enhanced Processing**: Natural environment simulation improving solution emergence (3.2:1 ± 0.4:1 SNR)
-
-### 12.4 Future Research Directions
-
-**Immediate Development (1-2 years):**
-- Enhanced BMD network scaling for larger molecular systems
-- Advanced hardware integration with additional timing sources
-- Optimized molecular generation with reduced computational overhead
-- Extended cross-domain validation studies
-
-**Long-term Vision (5+ years):**
-- Universal molecular manufacturing integration
-- Consciousness-molecular interface development
-- Cosmic-scale molecular coordination systems
-- Quantum-biological computing convergence
-
-The framework's success in validating theoretical predictions while achieving practical performance improvements demonstrates the profound potential of biological Maxwell demon implementation for transforming computational chemistry and molecular manufacturing. Future development will focus on scaling these capabilities while maintaining the framework's core advantages: deterministic molecular navigation, thermodynamic amplification, and seamless integration with advanced temporal and consciousness-enhanced computational architectures.
+The `archdiocese/` directory contains an extended validation framework developed prior to the current publications, including emission-strobed dual-mode vibrational spectroscopy (ESDVS), ensemble virtual spectrometry, and thermodynamic validation of the ideal gas law from bounded phase space. The `src/` directory contains the original Rust implementation of the core engine. These components provided the empirical and computational foundations on which the present theoretical papers are built.
 
 ---
 
-## References
+## License
 
-[1] Mizraji, E. "Biological Maxwell Demons and Information Processing in Cellular Systems." *Journal of Theoretical Biology* 247.3 (2007): 612-625.
-
-[2] Sterling, P., & Laughlin, S. "Principles of Neural Design." MIT Press (2015).
-
-[3] Bennett, C. H. "The Thermodynamics of Computation—A Review." *International Journal of Theoretical Physics* 21.12 (1982): 905-940.
-
-[4] Landauer, R. "Irreversibility and Heat Generation in the Computing Process." *IBM Journal of Research and Development* 5.3 (1961): 183-191.
-
-[5] Vedral, V. "Living in a Quantum World." *Scientific American* 304.6 (2011): 38-43.
-
-[6] Ball, P. "Physics of Life: The Dawn of Quantum Biology." *Nature* 474.7351 (2011): 272-274.
-
-[7] Lloyd, S. "Ultimate Physical Limits to Computation." *Nature* 406.6799 (2000): 1047-1054.
-
-[8] Tegmark, M. "Importance of Quantum Decoherence in Brain Processes." *Physical Review E* 61.4 (2000): 4194-4206.
-
-[9] Sachikonye, K. F. "On the Mathematical Necessity of Oscillatory Reality: A Foundational Framework for Cosmological Self-Generation." *ArXiv Preprint* (2024).
-
-[10] Sachikonye, K. F. "The Buhera Virtual Processor Foundry: Manufacturing Biological Quantum Processors." *Technical Report* (2024).
+This work is presented for scientific evaluation. Please cite the constituent papers when referencing specific results.
 
 ---
 
-**Corresponding Author**: Kundai Farai Sachikonye
-**Institution**: Independent Research
-**Email**: [research contact]
-**ORCID**: [ORCID identifier]
-
----
-
-*Borgia Framework © 2024. Released under MIT License. Source code available at: https://github.com/fullscreen-triangle/borgia*
+<div align="center">
+  <em>The molecule IS the resonator. The resonator IS the clock. The clock IS the measurement.</em>
+</div>

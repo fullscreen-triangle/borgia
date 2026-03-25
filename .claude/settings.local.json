@@ -15,7 +15,9 @@
       "Bash(python validate_harmonic_resonator.py)",
       "Bash(python -c \":*)",
       "Bash(python dmitri/publications/molecular-resonator/validate_harmonic_resonator.py)",
-      "Bash(python dmitri/publications/atomic-derivation/validate_spectroscopic_derivation.py)"
+      "Bash(python dmitri/publications/atomic-derivation/validate_spectroscopic_derivation.py)",
+      "Bash(python categorical_compound_database.py)",
+      "Bash(python generate_panels.py)"
     ]
   }
 }

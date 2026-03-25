@@ -1,0 +1,188 @@
+{
+  "H2O": {
+    "depth_3": {
+      "prefix": "202",
+      "n_matches": 6,
+      "matches": [
+        "O3",
+        "NO2",
+        "PH3",
+        "CH4",
+        "SO2",
+        "H2O"
+      ]
+    },
+    "depth_6": {
+      "prefix": "202222",
+      "n_matches": 1,
+      "matches": [
+        "H2O"
+      ]
+    },
+    "depth_9": {
+      "prefix": "202222112",
+      "n_matches": 1,
+      "matches": [
+        "H2O"
+      ]
+    },
+    "depth_12": {
+      "prefix": "202222112122",
+      "n_matches": 1,
+      "matches": [
+        "H2O"
+      ]
+    }
+  },
+  "CH4": {
+    "depth_3": {
+      "prefix": "202",
+      "n_matches": 6,
+      "matches": [
+        "O3",
+        "NO2",
+        "PH3",
+        "CH4",
+        "SO2",
+        "H2O"
+      ]
+    },
+    "depth_6": {
+      "prefix": "202220",
+      "n_matches": 4,
+      "matches": [
+        "NO2",
+        "PH3",
+        "CH4",
+        "SO2"
+      ]
+    },
+    "depth_9": {
+      "prefix": "202220110",
+      "n_matches": 2,
+      "matches": [
+        "PH3",
+        "CH4"
+      ]
+    },
+    "depth_12": {
+      "prefix": "202220110210",
+      "n_matches": 1,
+      "matches": [
+        "CH4"
+      ]
+    }
+  },
+  "CO2": {
+    "depth_3": {
+      "prefix": "212",
+      "n_matches": 7,
+      "matches": [
+        "CS2",
+        "OCS",
+        "CO2",
+        "CCl4",
+        "CF4",
+        "C2H6",
+        "CH3F"
+      ]
+    },
+    "depth_6": {
+      "prefix": "212200",
+      "n_matches": 4,
+      "matches": [
+        "CO2",
+        "CCl4",
+        "CF4",
+        "C2H6"
+      ]
+    },
+    "depth_9": {
+      "prefix": "212200020",
+      "n_matches": 2,
+      "matches": [
+        "CO2",
+        "CCl4"
+      ]
+    },
+    "depth_12": {
+      "prefix": "212200020000",
+      "n_matches": 1,
+      "matches": [
+        "CO2"
+      ]
+    }
+  },
+  "C2H6": {
+    "depth_3": {
+      "prefix": "212",
+      "n_matches": 7,
+      "matches": [
+        "CS2",
+        "OCS",
+        "CO2",
+        "CCl4",
+        "CF4",
+        "C2H6",
+        "CH3F"
+      ]
+    },
+    "depth_6": {
+      "prefix": "212200",
+      "n_matches": 4,
+      "matches": [
+        "CO2",
+        "CCl4",
+        "CF4",
+        "C2H6"
+      ]
+    },
+    "depth_9": {
+      "prefix": "212200120",
+      "n_matches": 1,
+      "matches": [
+        "C2H6"
+      ]
+    },
+    "depth_12": {
+      "prefix": "212200120210",
+      "n_matches": 1,
+      "matches": [
+        "C2H6"
+      ]
+    }
+  },
+  "HCl": {
+    "depth_3": {
+      "prefix": "110",
+      "n_matches": 3,
+      "matches": [
+        "HI",
+        "HBr",
+        "HCl"
+      ]
+    },
+    "depth_6": {
+      "prefix": "110220",
+      "n_matches": 2,
+      "matches": [
+        "HBr",
+        "HCl"
+      ]
+    },
+    "depth_9": {
+      "prefix": "110220210",
+      "n_matches": 1,
+      "matches": [
+        "HCl"
+      ]
+    },
+    "depth_12": {
+      "prefix": "110220210200",
+      "n_matches": 1,
+      "matches": [
+        "HCl"
+      ]
+    }
+  }
+}

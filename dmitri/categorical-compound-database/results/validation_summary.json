@@ -1,0 +1,147 @@
+{
+  "chemical_group_validation": {
+    "Halomethanes": {
+      "members": [
+        "CH3F",
+        "CH3Cl",
+        "CH3Br"
+      ],
+      "mean_intra_similarity": 3.0,
+      "mean_inter_similarity": 1.694,
+      "intra_inter_ratio": 1.77,
+      "cohesion": "PASS"
+    },
+    "Hydrogen halides": {
+      "members": [
+        "HF",
+        "HCl",
+        "HBr",
+        "HI"
+      ],
+      "mean_intra_similarity": 2.0,
+      "mean_inter_similarity": 0.457,
+      "intra_inter_ratio": 4.375,
+      "cohesion": "PASS"
+    },
+    "Homonuclear diatomics": {
+      "members": [
+        "H2",
+        "D2",
+        "N2",
+        "O2",
+        "F2",
+        "Cl2"
+      ],
+      "mean_intra_similarity": 0.667,
+      "mean_inter_similarity": 0.611,
+      "intra_inter_ratio": 1.091,
+      "cohesion": "PASS"
+    },
+    "Small hydrocarbons": {
+      "members": [
+        "CH4",
+        "C2H2",
+        "C2H4",
+        "C2H6"
+      ],
+      "mean_intra_similarity": 1.667,
+      "mean_inter_similarity": 1.707,
+      "intra_inter_ratio": 0.976,
+      "cohesion": "MARGINAL"
+    },
+    "Linear triatomics": {
+      "members": [
+        "CO2",
+        "CS2",
+        "N2O",
+        "OCS"
+      ],
+      "mean_intra_similarity": 3.667,
+      "mean_inter_similarity": 1.5,
+      "intra_inter_ratio": 2.444,
+      "cohesion": "PASS"
+    },
+    "Bent triatomics": {
+      "members": [
+        "H2O",
+        "SO2",
+        "NO2",
+        "O3",
+        "H2S"
+      ],
+      "mean_intra_similarity": 3.7,
+      "mean_inter_similarity": 1.018,
+      "intra_inter_ratio": 3.636,
+      "cohesion": "PASS"
+    }
+  },
+  "oscillation_counting_analysis": {
+    "concept": "Each trit is one refinement step: observe which third of the remaining interval the value falls in. This is equivalent to counting oscillations of a ternary oscillator and recording the phase. k trits = k observations = k oscillation-counting operations.",
+    "resolution_per_depth": {
+      "3": {
+        "trits_per_dimension": 1,
+        "resolution_per_axis": 0.33333333,
+        "total_cells": 27,
+        "observations_needed": 3
+      },
+      "6": {
+        "trits_per_dimension": 2,
+        "resolution_per_axis": 0.11111111,
+        "total_cells": 729,
+        "observations_needed": 6
+      },
+      "9": {
+        "trits_per_dimension": 3,
+        "resolution_per_axis": 0.03703704,
+        "total_cells": 19683,
+        "observations_needed": 9
+      },
+      "12": {
+        "trits_per_dimension": 4,
+        "resolution_per_axis": 0.01234568,
+        "total_cells": 531441,
+        "observations_needed": 12
+      },
+      "15": {
+        "trits_per_dimension": 5,
+        "resolution_per_axis": 0.00411523,
+        "total_cells": 14348907,
+        "observations_needed": 15
+      },
+      "18": {
+        "trits_per_dimension": 6,
+        "resolution_per_axis": 0.00137174,
+        "total_cells": 387420489,
+        "observations_needed": 18
+      }
+    },
+    "complexity_comparison": {
+      "Brute-force fingerprint (Tanimoto)": {
+        "operations": 39936,
+        "description": "39936 operations per query (N=39, d=1024)"
+      },
+      "Trie lookup (depth 6)": {
+        "operations": 6,
+        "description": "6 operations per query"
+      },
+      "Trie lookup (depth 9)": {
+        "operations": 9,
+        "description": "9 operations per query"
+      },
+      "Trie lookup (depth 12)": {
+        "operations": 12,
+        "description": "12 operations per query"
+      },
+      "Trie lookup (depth 18)": {
+        "operations": 18,
+        "description": "18 operations per query"
+      }
+    },
+    "speedup_at_depth_12": {
+      "brute_force_ops": 39936,
+      "trie_ops": 12,
+      "ratio": 3328.0,
+      "interpretation": "Trie search at depth 12 is ~3328x fewer operations than brute-force fingerprint comparison over 39 compounds."
+    }
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "depth_3": {
+    "total_cells": 9,
+    "multi_occupancy_cells": 8,
+    "clusters": {
+      "020": [
+        "F2",
+        "Cl2"
+      ],
+      "110": [
+        "HI",
+        "HBr",
+        "HCl"
+      ],
+      "120": [
+        "O2",
+        "NO",
+        "CO",
+        "N2"
+      ],
+      "201": [
+        "H2S",
+        "H2CO"
+      ],
+      "202": [
+        "O3",
+        "NO2",
+        "PH3",
+        "CH4",
+        "SO2",
+        "H2O"
+      ],
+      "210": [
+        "D2",
+        "H2",
+        "HF"
+      ],
+      "211": [
+        "N2O",
+        "HCN",
+        "C2H2",
+        "SiH4",
+        "NH3",
+        "C2H4",
+        "CH3OH",
+        "CH3Cl",
+        "C6H6",
+        "CH3Br",
+        "HCOOH"
+      ],
+      "212": [
+        "CS2",
+        "OCS",
+        "CO2",
+        "CCl4",
+        "CF4",
+        "C2H6",
+        "CH3F"
+      ]
+    }
+  },
+  "depth_6": {
+    "total_cells": 27,
+    "multi_occupancy_cells": 8,
+    "clusters": {
+      "110220": [
+        "HBr",
+        "HCl"
+      ],
+      "120000": [
+        "O2",
+        "NO"
+      ],
+      "120100": [
+        "CO",
+        "N2"
+      ],
+      "202220": [
+        "NO2",
+        "PH3",
+        "CH4",
+        "SO2"
+      ],
+      "211202": [
+        "C2H4",
+        "CH3OH"
+      ],
+      "211212": [
+        "C6H6",
+        "CH3Br"
+      ],
+      "212110": [
+        "CS2",
+        "OCS"
+      ],
+      "212200": [
+        "CO2",
+        "CCl4",
+        "CF4",
+        "C2H6"
+      ]
+    }
+  },
+  "depth_9": {
+    "total_cells": 35,
+    "multi_occupancy_cells": 4,
+    "clusters": {
+      "202220110": [
+        "PH3",
+        "CH4"
+      ],
+      "211202121": [
+        "C2H4",
+        "CH3OH"
+      ],
+      "212110200": [
+        "CS2",
+        "OCS"
+      ],
+      "212200020": [
+        "CO2",
+        "CCl4"
+      ]
+    }
+  },
+  "depth_12": {
+    "total_cells": 39,
+    "multi_occupancy_cells": 0,
+    "clusters": {}
+  }
+}
