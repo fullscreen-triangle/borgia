@@ -28,7 +28,7 @@ The central claim is twofold. First, the structure of chemical elements — elec
 
 At the molecular level, a natural question arises: *what provides the tick for categorical measurement?* The answer is intrinsic to the molecule itself. The absorption-emission interval of an electronic transition — determined entirely by the transition dipole moment and partition coordinates — is a complete categorical cycle. Molecules with multiple oscillatory modes form harmonic networks in which closed loops sustain circulating light through categorical coupling rather than spatial confinement, yielding self-clocking, self-validating measurement architectures requiring no external reference.
 
-This repository contains two papers, their supporting derivations, computational validation, and publication-quality figures.
+This repository contains three papers, their supporting derivations, computational validation, and publication-quality figures.
 
 ---
 
@@ -138,6 +138,40 @@ Derives harmonic molecular networks with circulating light. Six molecules ($\tex
 
 ---
 
+### Paper 3: Categorical Compound Database
+
+> **Full title:** *Categorical Compound Database: Oscillation-Counted Molecular Identification Through Ternary Phase Space Addressing*
+>
+> **Location:** [`dmitri/publications/categorical-compound-database/`](dmitri/publications/categorical-compound-database/)
+
+Self-contained paper that derives a new molecular database paradigm from bounded phase space geometry. Molecules are encoded as ternary addresses in 3D S-entropy space $(S_k, S_t, S_e)$ computed from vibrational spectra. Search reduces to trie traversal — $O(k)$ independent of database size — with built-in fuzzy matching via prefix truncation. Each trit is one oscillation-counting observation.
+
+**Validation results** ([`results/`](dmitri/categorical-compound-database/results/)):
+
+| Category | Result |
+|---|---|
+| Compounds encoded | 39 (NIST CCCBDB) |
+| Unique resolution | Depth 12 (all 39 distinct) |
+| Chemical family cohesion | 5/6 families pass ($R > 1$) |
+| Trie vs brute-force speedup | 3,328× at depth 12 |
+| Projected PubChem speedup | $> 10^9$× |
+
+**Figures** ([`figures/`](dmitri/publications/categorical-compound-database/figures/)): 4 panels, 16 charts total.
+
+<div align="center">
+  <img src="dmitri/publications/categorical-compound-database/figures/panel_1_sentropy_space.png" alt="S-Entropy Space" width="100%"/>
+  <br/><em>Panel 1 — S-entropy compound space: 3D scatter of 39 compounds, S_k distribution, S_t vs S_k correlation, S_e sorted distribution.</em>
+</div>
+
+<br/>
+
+<div align="center">
+  <img src="dmitri/publications/categorical-compound-database/figures/panel_3_fuzzy_search.png" alt="Fuzzy Search" width="100%"/>
+  <br/><em>Panel 3 — Fuzzy search: 3D query cell, search narrowing cascade, 39×39 similarity matrix, chemical group cohesion.</em>
+</div>
+
+---
+
 ## 4. Supporting Derivations
 
 The [`dmitri/derivations/`](dmitri/derivations/) directory contains the complete mathematical foundations, each as a self-contained LaTeX document:
@@ -197,13 +231,23 @@ borgia/
 │       │   ├── generate_panels.py
 │       │   ├── results/                # 7 JSON validation files
 │       │   └── figures/                # 7 panels (28 charts)
-│       └── molecular-resonator/        # Paper 2
-│           ├── harmonic-molecular-resonator.tex
+│       ├── molecular-resonator/        # Paper 2
+│       │   ├── harmonic-molecular-resonator.tex
+│       │   ├── references.bib
+│       │   ├── validate_harmonic_resonator.py
+│       │   ├── generate_panels.py
+│       │   ├── results/                # 6 JSON validation files
+│       │   └── figures/                # 6 panels (24 charts)
+│       └── categorical-compound-database/  # Paper 3
+│           ├── categorical-compound-database.tex
 │           ├── references.bib
-│           ├── validate_harmonic_resonator.py
-│           ├── generate_panels.py
 │           ├── results/                # 6 JSON validation files
-│           └── figures/                # 6 panels (24 charts)
+│           └── figures/                # 4 panels (16 charts)
+├── dmitri/categorical-compound-database/   # CCD implementation
+│   ├── categorical_compound_database.py
+│   ├── generate_panels.py
+│   ├── results/                        # 6 JSON result files
+│   └── figures/                        # 4 panels
 ├── archdiocese/                        # Extended validation framework
 │   ├── src/                            # Validation source code
 │   ├── results/                        # Prior validation results

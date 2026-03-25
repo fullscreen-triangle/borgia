@@ -17,7 +17,17 @@
       "Bash(python dmitri/publications/molecular-resonator/validate_harmonic_resonator.py)",
       "Bash(python dmitri/publications/atomic-derivation/validate_spectroscopic_derivation.py)",
       "Bash(python categorical_compound_database.py)",
-      "Bash(python generate_panels.py)"
+      "Bash(python generate_panels.py)",
+      "Bash(while read:*)",
+      "Bash(do if:*)",
+      "Bash(then echo:*)",
+      "Bash(fi)",
+      "Bash(done)",
+      "Bash(grep -c '\\\\\\\\\\\\\\\\section' \"c:/Users/kunda/Documents/bioinformatics/borgia/dmitri/publications/categorical-compound-database/categorical-compound-database.tex\")",
+      "Bash(grep -c '\\\\\\\\\\\\\\\\subsection' \"c:/Users/kunda/Documents/bioinformatics/borgia/dmitri/publications/categorical-compound-database/categorical-compound-database.tex\")",
+      "Bash(grep -c '\\\\\\\\\\\\\\\\begin{theorem}' \"c:/Users/kunda/Documents/bioinformatics/borgia/dmitri/publications/categorical-compound-database/categorical-compound-database.tex\")",
+      "Bash(grep -c '\\\\\\\\\\\\\\\\begin{proof}' \"c:/Users/kunda/Documents/bioinformatics/borgia/dmitri/publications/categorical-compound-database/categorical-compound-database.tex\")",
+      "Bash(grep -c '\\\\\\\\\\\\\\\\begin{table}' \"c:/Users/kunda/Documents/bioinformatics/borgia/dmitri/publications/categorical-compound-database/categorical-compound-database.tex\")"
     ]
   }
 }
