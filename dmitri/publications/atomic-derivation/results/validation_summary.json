@@ -1,0 +1,59 @@
+{
+  "timestamp": "2026-03-25T05:26:31.620590+00:00",
+  "title": "Spectroscopic Derivation of the Chemical Elements -- Validation Summary",
+  "paper": "Paper 1: Deriving the periodic table via computer-as-instrument",
+  "elements_validated": [
+    "H",
+    "C",
+    "Na",
+    "Si",
+    "Cl",
+    "Ar",
+    "Ca",
+    "Fe",
+    "Gd"
+  ],
+  "num_elements": 9,
+  "categories": {
+    "shell_capacity": {
+      "pass_count": 7,
+      "total": 7,
+      "all_pass": true
+    },
+    "electron_configurations": {
+      "pass_count": 9,
+      "total": 9,
+      "all_pass": true
+    },
+    "term_symbols": {
+      "pass_count": 9,
+      "total": 9,
+      "all_pass": true
+    },
+    "ionization_energies": {
+      "mean_pct_error": 141.65,
+      "median_pct_error": 80.09,
+      "max_pct_error": 337.05,
+      "within_20pct": 2,
+      "total": 9
+    },
+    "cross_validation": {
+      "total_agreements": 132,
+      "total_checks": 132,
+      "all_pass": true
+    },
+    "hydrogen_spectral_lines": {
+      "mean_pct_error": 0.039502,
+      "max_pct_error": 0.053655,
+      "all_within_0.1pct": true,
+      "total": 6
+    }
+  },
+  "physical_constants": {
+    "R_infinity_m-1": 10973731.568539,
+    "E_H_eV": 13.605693,
+    "h_Js": 6.62607015e-34,
+    "c_ms-1": 299792458.0,
+    "k_B_JK-1": 1.380649e-23
+  }
+}

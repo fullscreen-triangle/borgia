@@ -10,7 +10,12 @@
       "Bash(grep -v '.jpg$')",
       "Bash(grep -v '.svg$')",
       "Bash(wc -l /c/Users/kunda/Documents/bioinformatics/borgia/demos/borgia_tests/*.py)",
-      "Bash(find /c/Users/kunda/Documents/bioinformatics/borgia -type f \\\\\\(-name *.json -o -name *.csv \\\\\\) -path */public/*)"
+      "Bash(find /c/Users/kunda/Documents/bioinformatics/borgia -type f \\\\\\(-name *.json -o -name *.csv \\\\\\) -path */public/*)",
+      "Bash(python validate_spectroscopic_derivation.py)",
+      "Bash(python validate_harmonic_resonator.py)",
+      "Bash(python -c \":*)",
+      "Bash(python dmitri/publications/molecular-resonator/validate_harmonic_resonator.py)",
+      "Bash(python dmitri/publications/atomic-derivation/validate_spectroscopic_derivation.py)"
     ]
   }
 }
