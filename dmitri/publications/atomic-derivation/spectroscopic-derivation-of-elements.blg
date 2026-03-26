@@ -1,0 +1,50 @@
+This is BibTeX, Version 0.99e
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: spectroscopic-derivation-of-elements.aux
+Reallocating 'name_of_file' (item size: 1) to 9 items.
+The style file: plainnat.bst
+Reallocating 'name_of_file' (item size: 1) to 11 items.
+Database file #1: references.bib
+Warning--empty journal in madelung1936
+You've used 25 entries,
+            2773 wiz_defined-function locations,
+            748 strings with 8225 characters,
+and the built_in function-call counts, 9600 in all, are:
+= -- 857
+> -- 390
+< -- 23
++ -- 142
+- -- 117
+* -- 706
+:= -- 1499
+add.period$ -- 77
+call.type$ -- 25
+change.case$ -- 110
+chr.to.int$ -- 25
+cite$ -- 51
+duplicate$ -- 500
+empty$ -- 911
+format.name$ -- 148
+if$ -- 1995
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 33
+newline$ -- 135
+num.names$ -- 100
+pop$ -- 239
+preamble$ -- 1
+purify$ -- 89
+quote$ -- 0
+skip$ -- 336
+stack$ -- 0
+substring$ -- 391
+swap$ -- 28
+text.length$ -- 2
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 230
+warning$ -- 1
+while$ -- 103
+width$ -- 0
+write$ -- 334
+(There was 1 warning)

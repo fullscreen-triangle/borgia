@@ -27,7 +27,11 @@
       "Bash(grep -c '\\\\\\\\\\\\\\\\subsection' \"c:/Users/kunda/Documents/bioinformatics/borgia/dmitri/publications/categorical-compound-database/categorical-compound-database.tex\")",
       "Bash(grep -c '\\\\\\\\\\\\\\\\begin{theorem}' \"c:/Users/kunda/Documents/bioinformatics/borgia/dmitri/publications/categorical-compound-database/categorical-compound-database.tex\")",
       "Bash(grep -c '\\\\\\\\\\\\\\\\begin{proof}' \"c:/Users/kunda/Documents/bioinformatics/borgia/dmitri/publications/categorical-compound-database/categorical-compound-database.tex\")",
-      "Bash(grep -c '\\\\\\\\\\\\\\\\begin{table}' \"c:/Users/kunda/Documents/bioinformatics/borgia/dmitri/publications/categorical-compound-database/categorical-compound-database.tex\")"
+      "Bash(grep -c '\\\\\\\\\\\\\\\\begin{table}' \"c:/Users/kunda/Documents/bioinformatics/borgia/dmitri/publications/categorical-compound-database/categorical-compound-database.tex\")",
+      "Bash(node -e \"const p=require\\(''./package.json''\\); console.log\\(Object.keys\\(p.dependencies\\).join\\('', ''\\)\\)\")",
+      "Bash(curl -s -L https://codesandbox.io/p/sandbox/n60qg?file=%2Fsrc%2FApp.js)",
+      "Bash(curl -s -L https://codesandbox.io/api/v1/sandboxes/n60qg)",
+      "Bash(npx next:*)"
     ]
   }
 }

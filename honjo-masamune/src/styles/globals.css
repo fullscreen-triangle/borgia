@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html, body, #__next {
+  width: 100%;
+  min-height: 100vh;
+  background: #0a0a0a;
+  color: #e5e5e5;
+}
+
+/* Lenis smooth scroll */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 3px;
+}
+
+/* Section styling */
+.section-reveal {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.section-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* D3 chart base styling */
+.d3-chart text {
+  fill: #a0a0a0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+}
+
+.d3-chart .axis line,
+.d3-chart .axis path {
+  stroke: #333;
+}
+
+.d3-chart .grid line {
+  stroke: #1a1a1a;
+}

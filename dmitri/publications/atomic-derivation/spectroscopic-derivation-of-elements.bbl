@@ -1,0 +1,159 @@
+\begin{thebibliography}{25}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Bohr(1913)]{bohr1913}
+Niels Bohr.
+\newblock On the constitution of atoms and molecules.
+\newblock \emph{Philosophical Magazine}, 26\penalty0 (151):\penalty0 1--25,
+  1913.
+
+\bibitem[Boltzmann(1877)]{boltzmann1877}
+Ludwig Boltzmann.
+\newblock {\"U}ber die {B}eziehung zwischen dem zweiten {H}auptsatze der
+  mechanischen {W}{\"a}rmetheorie und der {W}ahrscheinlichkeitsrechnung
+  respektive den {S}{\"a}tzen {\"u}ber das {W}{\"a}rmegleichgewicht.
+\newblock \emph{Wiener Berichte}, 76:\penalty0 373--435, 1877.
+
+\bibitem[Braginsky et~al.(1980)Braginsky, Vorontsov, and Thorne]{braginsky1980}
+V.~B. Braginsky, Y.~I. Vorontsov, and K.~S. Thorne.
+\newblock Quantum nondemolition measurements.
+\newblock \emph{Science}, 209\penalty0 (4456):\penalty0 547--557, 1980.
+
+\bibitem[Caves et~al.(1980)Caves, Thorne, Drever, Sandberg, and
+  Zimmermann]{caves1980}
+Carlton~M. Caves, Kip~S. Thorne, Ronald W.~P. Drever, Vernon~D. Sandberg, and
+  Mark Zimmermann.
+\newblock On the measurement of a weak classical force coupled to a
+  quantum-mechanical oscillator. {I}. {I}ssues of principle.
+\newblock \emph{Reviews of Modern Physics}, 52\penalty0 (2):\penalty0 341--392,
+  1980.
+
+\bibitem[Griffiths and Schroeter(2018)]{griffiths2018}
+David~J. Griffiths and Darrell~F. Schroeter.
+\newblock \emph{Introduction to Quantum Mechanics}.
+\newblock Cambridge University Press, 3 edition, 2018.
+
+\bibitem[Hall(2015)]{hall2015}
+Brian~C. Hall.
+\newblock \emph{Lie Groups, Lie Algebras, and Representations}, volume 222 of
+  \emph{Graduate Texts in Mathematics}.
+\newblock Springer, 2 edition, 2015.
+
+\bibitem[Herzberg(1944)]{herzberg1944}
+Gerhard Herzberg.
+\newblock \emph{Atomic Spectra and Atomic Structure}.
+\newblock Dover Publications, New York, 1944.
+
+\bibitem[Hund(1925)]{hund1925}
+Friedrich Hund.
+\newblock Zur {D}eutung verwickelter {S}pektren, insbesondere der {E}lemente
+  {S}kandium bis {N}ickel.
+\newblock \emph{Zeitschrift f{\"u}r Physik}, 33:\penalty0 345--371, 1925.
+
+\bibitem[Kac(1947)]{kac1947}
+Mark Kac.
+\newblock On the notion of recurrence in discrete stochastic processes.
+\newblock \emph{Bulletin of the American Mathematical Society}, 53\penalty0
+  (10):\penalty0 1002--1010, 1947.
+
+\bibitem[Koopman(1931)]{koopman1931}
+B.~O. Koopman.
+\newblock Hamiltonian systems and transformation in {H}ilbert space.
+\newblock \emph{Proceedings of the National Academy of Sciences}, 17\penalty0
+  (5):\penalty0 315--318, 1931.
+
+\bibitem[Kramida et~al.(2023)Kramida, Ralchenko, Reader, and {NIST ASD
+  Team}]{nist_asd}
+A.~Kramida, Yu. Ralchenko, J.~Reader, and {NIST ASD Team}.
+\newblock {NIST} atomic spectra database (ver.~5.11).
+\newblock National Institute of Standards and Technology, Gaithersburg, MD,
+  2023.
+\newblock URL \url{https://physics.nist.gov/asd}.
+\newblock Accessed: 2026-03-24.
+
+\bibitem[Landau and Lifshitz(1976)]{landau1976}
+L.~D. Landau and E.~M. Lifshitz.
+\newblock \emph{Mechanics}, volume~1 of \emph{Course of Theoretical Physics}.
+\newblock Pergamon Press, 3 edition, 1976.
+
+\bibitem[Landauer(1961)]{landauer1961}
+Rolf Landauer.
+\newblock Irreversibility and heat generation in the computing process.
+\newblock \emph{IBM Journal of Research and Development}, 5\penalty0
+  (3):\penalty0 183--191, 1961.
+
+\bibitem[Long(2002)]{long2002}
+Derek~A. Long.
+\newblock \emph{The Raman Effect: A Unified Treatment of the Theory of Raman
+  Scattering by Molecules}.
+\newblock John Wiley \& Sons, 2002.
+
+\bibitem[Madelung(1936)]{madelung1936}
+Erwin Madelung.
+\newblock Die mathematischen {H}ilfsmittel des {P}hysikers.
+\newblock 1936.
+
+\bibitem[Nakahara(2003)]{nakahara2003}
+Mikio Nakahara.
+\newblock \emph{Geometry, Topology and Physics}.
+\newblock CRC Press, 2 edition, 2003.
+
+\bibitem[Pauli(1925)]{pauli1925}
+Wolfgang Pauli.
+\newblock {\"U}ber den {Z}usammenhang des {A}bschlusses der {E}lektronengruppen
+  im {A}tom mit der {K}omplexstruktur der {S}pektren.
+\newblock \emph{Zeitschrift f{\"u}r Physik}, 31\penalty0 (1):\penalty0
+  765--783, 1925.
+
+\bibitem[Planck(1901)]{planck1901}
+Max Planck.
+\newblock {\"U}ber das {G}esetz der {E}nergieverteilung im {N}ormalspectrum.
+\newblock \emph{Annalen der Physik}, 309\penalty0 (3):\penalty0 553--563, 1901.
+
+\bibitem[Poincar{\'e}(1890)]{poincare1890}
+Henri Poincar{\'e}.
+\newblock Sur le probl{\`e}me des trois corps et les {\'e}quations de la
+  dynamique.
+\newblock \emph{Acta Mathematica}, 13:\penalty0 1--270, 1890.
+
+\bibitem[Rydberg(1890)]{rydberg1890}
+Johannes~R. Rydberg.
+\newblock On the structure of the line-spectra of the chemical elements.
+\newblock \emph{Philosophical Magazine}, 29\penalty0 (179):\penalty0 331--337,
+  1890.
+
+\bibitem[Sakurai and Napolitano(2017)]{sakurai2017}
+J.~J. Sakurai and Jim Napolitano.
+\newblock \emph{Modern Quantum Mechanics}.
+\newblock Cambridge University Press, 2 edition, 2017.
+
+\bibitem[Schwarz(2010)]{schwarz2010}
+W.~H.~Eugen Schwarz.
+\newblock The full story of the electron configurations of the transition
+  elements.
+\newblock \emph{Journal of Chemical Education}, 87\penalty0 (4):\penalty0
+  444--448, 2010.
+
+\bibitem[Shannon(1948)]{shannon1948}
+Claude~E. Shannon.
+\newblock A mathematical theory of communication.
+\newblock \emph{Bell System Technical Journal}, 27\penalty0 (3):\penalty0
+  379--423, 1948.
+
+\bibitem[Wigner(1959)]{wigner1959}
+Eugene~P. Wigner.
+\newblock \emph{Group Theory and Its Application to the Quantum Mechanics of
+  Atomic Spectra}.
+\newblock Academic Press, New York, 1959.
+
+\bibitem[Wilson et~al.(1955)Wilson, Decius, and Cross]{wilson1955}
+E.~Bright Wilson, J.~C. Decius, and Paul~C. Cross.
+\newblock \emph{Molecular Vibrations: The Theory of Infrared and Raman
+  Vibrational Spectra}.
+\newblock McGraw-Hill, New York, 1955.
+
+\end{thebibliography}

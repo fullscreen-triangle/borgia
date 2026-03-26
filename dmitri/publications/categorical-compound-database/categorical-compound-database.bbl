@@ -1,0 +1,188 @@
+\begin{thebibliography}{25}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Bajusz et~al.(2015)Bajusz, R{\'a}cz, and H{\'e}berger]{bajusz2015}
+D{\'a}vid Bajusz, Anita R{\'a}cz, and K{\'a}roly H{\'e}berger.
+\newblock Why is {T}animoto index an appropriate choice for fingerprint-based
+  similarity calculations?
+\newblock \emph{Journal of Cheminformatics}, 7:\penalty0 20, 2015.
+\newblock \doi{10.1186/s13321-015-0069-3}.
+
+\bibitem[Bohr(1913)]{bohr1913}
+Niels Bohr.
+\newblock On the constitution of atoms and molecules.
+\newblock \emph{Philosophical Magazine}, 26\penalty0 (151):\penalty0 1--25,
+  1913.
+\newblock \doi{10.1080/14786441308634955}.
+
+\bibitem[Born and Oppenheimer(1927)]{born1927}
+Max Born and J.~Robert Oppenheimer.
+\newblock Zur {Q}uantentheorie der {M}olekeln.
+\newblock \emph{Annalen der Physik}, 389\penalty0 (20):\penalty0 457--484,
+  1927.
+\newblock \doi{10.1002/andp.19273892002}.
+
+\bibitem[Brusentsov(1962)]{brusentsov1962}
+Nikolai~P. Brusentsov.
+\newblock An experience in the design of a ternary digital computer.
+\newblock \emph{Soviet Physics Doklady}, 7:\penalty0 89--91, 1962.
+\newblock Originally published as ``Setun'' ternary computer project, Moscow
+  State University.
+
+\bibitem[Fermi(1931)]{fermi1931}
+Enrico Fermi.
+\newblock {\"U}ber den {R}amaneffekt des {K}ohlendioxyds.
+\newblock \emph{Zeitschrift f{\"u}r Physik}, 71\penalty0 (3--4):\penalty0
+  250--259, 1931.
+\newblock \doi{10.1007/BF01341712}.
+
+\bibitem[Fredkin(1960)]{fredkin1960}
+Edward Fredkin.
+\newblock Trie memory.
+\newblock \emph{Communications of the ACM}, 3\penalty0 (9):\penalty0 490--499,
+  1960.
+\newblock \doi{10.1145/367390.367400}.
+
+\bibitem[Herzberg(1945)]{herzberg1945}
+Gerhard Herzberg.
+\newblock \emph{Molecular Spectra and Molecular Structure. {II}. {I}nfrared and
+  {R}aman Spectra of Polyatomic Molecules}.
+\newblock Van Nostrand, New York, 1945.
+
+\bibitem[Indyk and Motwani(1998)]{indyk1998}
+Piotr Indyk and Rajeev Motwani.
+\newblock Approximate nearest neighbors: Towards removing the curse of
+  dimensionality.
+\newblock In \emph{Proceedings of the 30th Annual ACM Symposium on Theory of
+  Computing (STOC '98)}, pages 604--613. ACM, 1998.
+\newblock \doi{10.1145/276698.276876}.
+
+\bibitem[Johnson(2022)]{johnson2022}
+Russell~D. Johnson, III.
+\newblock {NIST} computational chemistry comparison and benchmark database,
+  {NIST} standard reference database number 101, release 22.
+\newblock National Institute of Standards and Technology, Gaithersburg, MD,
+  2022.
+\newblock URL \url{https://cccbdb.nist.gov/}.
+\newblock Accessed: 2025.
+
+\bibitem[Kac(1947)]{kac1947}
+Mark Kac.
+\newblock On the notion of recurrence in discrete stochastic processes.
+\newblock \emph{Bulletin of the American Mathematical Society}, 53\penalty0
+  (10):\penalty0 1002--1010, 1947.
+\newblock \doi{10.1090/S0002-9904-1947-08927-8}.
+
+\bibitem[Kim et~al.(2023)Kim, Chen, Cheng, Gindulyte, He, He, Li, Shoemaker,
+  Thiessen, Yu, Zaslavsky, Zhang, and Bolton]{kim2023}
+Sunghwan Kim, Jie Chen, Tiejun Cheng, Asta Gindulyte, Jia He, Siqian He,
+  Qingliang Li, Benjamin~A. Shoemaker, Paul~A. Thiessen, Bo~Yu, Leonid
+  Zaslavsky, Jian Zhang, and Evan~E. Bolton.
+\newblock {PubChem} 2023 update.
+\newblock \emph{Nucleic Acids Research}, 51\penalty0 (D1):\penalty0
+  D1373--D1380, 2023.
+\newblock \doi{10.1093/nar/gkac956}.
+
+\bibitem[Knuth(1998)]{knuth1998}
+Donald~E. Knuth.
+\newblock \emph{The Art of Computer Programming, Volume 3: Sorting and
+  Searching}.
+\newblock Addison-Wesley, Reading, MA, 2nd edition, 1998.
+\newblock ISBN 978-0-201-89685-5.
+
+\bibitem[Koopman(1931)]{koopman1931}
+Bernard~O. Koopman.
+\newblock Hamiltonian systems and transformation in {H}ilbert space.
+\newblock \emph{Proceedings of the National Academy of Sciences}, 17\penalty0
+  (5):\penalty0 315--318, 1931.
+\newblock \doi{10.1073/pnas.17.5.315}.
+
+\bibitem[Linstrom and Mallard(2023)]{linstrom2023}
+Peter~J. Linstrom and William~G. Mallard.
+\newblock {NIST} chemistry {WebBook}, {NIST} standard reference database number
+  69.
+\newblock National Institute of Standards and Technology, Gaithersburg, MD,
+  2023.
+\newblock URL \url{https://webbook.nist.gov/chemistry/}.
+\newblock Accessed: 2025.
+
+\bibitem[Morgan(1965)]{morgan1965}
+Harry~L. Morgan.
+\newblock The generation of a unique machine description for chemical
+  structures---{A} technique developed at chemical abstracts service.
+\newblock \emph{Journal of Chemical Documentation}, 5\penalty0 (2):\penalty0
+  107--113, 1965.
+\newblock \doi{10.1021/c160017a018}.
+
+\bibitem[Planck(1901)]{planck1901}
+Max Planck.
+\newblock {\"U}ber das {G}esetz der {E}nergieverteilung im {N}ormalspectrum.
+\newblock \emph{Annalen der Physik}, 309\penalty0 (3):\penalty0 553--563, 1901.
+\newblock \doi{10.1002/andp.19013090310}.
+
+\bibitem[Poincar{\'e}(1890)]{poincare1890}
+Henri Poincar{\'e}.
+\newblock Sur le probl{\`e}me des trois corps et les {\'e}quations de la
+  dynamique.
+\newblock \emph{Acta Mathematica}, 13:\penalty0 1--270, 1890.
+\newblock \doi{10.1007/BF02392506}.
+
+\bibitem[Riniker and Landrum(2013)]{riniker2013}
+Sereina Riniker and Gregory~A. Landrum.
+\newblock Open-source platform to benchmark fingerprints for ligand-based
+  virtual screening.
+\newblock \emph{Journal of Cheminformatics}, 5:\penalty0 26, 2013.
+\newblock \doi{10.1186/1758-2946-5-26}.
+
+\bibitem[Rogers and Hahn(2010)]{rogers2010}
+David Rogers and Mathew Hahn.
+\newblock Extended-connectivity fingerprints.
+\newblock \emph{Journal of Chemical Information and Modeling}, 50\penalty0
+  (5):\penalty0 742--754, 2010.
+\newblock \doi{10.1021/ci100050t}.
+
+\bibitem[Shannon(1948)]{shannon1948}
+Claude~E. Shannon.
+\newblock A mathematical theory of communication.
+\newblock \emph{The Bell System Technical Journal}, 27\penalty0 (3):\penalty0
+  379--423, 1948.
+\newblock \doi{10.1002/j.1538-7305.1948.tb01338.x}.
+
+\bibitem[Shimanouchi(1972)]{shimanouchi1972}
+Takehiko Shimanouchi.
+\newblock Tables of molecular vibrational frequencies consolidated volume {I}.
+\newblock Technical Report NSRDS-NBS 39, National Bureau of Standards, 1972.
+
+\bibitem[von Neumann(1945)]{vonneumann1945}
+John von Neumann.
+\newblock First draft of a report on the {EDVAC}.
+\newblock Technical report, Moore School of Electrical Engineering, University
+  of Pennsylvania, 1945.
+\newblock Contract No.~W-670-ORD-4926.
+
+\bibitem[Weininger(1988)]{weininger1988}
+David Weininger.
+\newblock {SMILES}, a chemical language and information system. 1.
+  {I}ntroduction to methodology and encoding rules.
+\newblock \emph{Journal of Chemical Information and Computer Sciences},
+  28\penalty0 (1):\penalty0 31--36, 1988.
+\newblock \doi{10.1021/ci00057a005}.
+
+\bibitem[Willett et~al.(1998)Willett, Barnard, and Downs]{willett1998}
+Peter Willett, John~M. Barnard, and Geoffrey~M. Downs.
+\newblock Chemical similarity searching.
+\newblock \emph{Journal of Chemical Information and Computer Sciences},
+  38\penalty0 (6):\penalty0 983--996, 1998.
+\newblock \doi{10.1021/ci9800211}.
+
+\bibitem[Wilson et~al.(1955)Wilson, Decius, and Cross]{wilson1955}
+Edgar~Bright Wilson, Jr., John~C. Decius, and Paul~C. Cross.
+\newblock \emph{Molecular Vibrations: The Theory of Infrared and {R}aman
+  Vibrational Spectra}.
+\newblock McGraw-Hill, New York, 1955.
+
+\end{thebibliography}
