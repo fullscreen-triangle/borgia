@@ -32,7 +32,8 @@
       "Bash(curl -s -L https://codesandbox.io/p/sandbox/n60qg?file=%2Fsrc%2FApp.js)",
       "Bash(curl -s -L https://codesandbox.io/api/v1/sandboxes/n60qg)",
       "Bash(npx next:*)",
-      "Bash(python generate_composition_panels.py)"
+      "Bash(python generate_composition_panels.py)",
+      "Bash(du -sh \"c:/Users/kunda/Documents/bioinformatics/borgia/honjo-masamune/public/models/\"*.glb)"
     ]
   }
 }

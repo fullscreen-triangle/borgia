@@ -59,6 +59,7 @@ const Navbar = () => {
 
         {/* Desktop Nav - visible by default, hidden at lg (1023px) and below */}
         <div className="flex items-center gap-8 lg:hidden">
+          <NavLink href="/resolution" title="Resolution" />
           <NavLink href="/framework" title="Framework" />
           <NavLink href="/database" title="Database" />
           <NavLink href="/consulting" title="Consulting" />
@@ -94,6 +95,7 @@ const Navbar = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
+            <MobileNavLink href="/resolution" title="Resolution" toggle={toggle} />
             <MobileNavLink href="/framework" title="Framework" toggle={toggle} />
             <MobileNavLink href="/database" title="Database" toggle={toggle} />
             <MobileNavLink href="/consulting" title="Consulting" toggle={toggle} />

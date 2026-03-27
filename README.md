@@ -16,7 +16,7 @@
 
 We present a unified derivation of atomic structure, molecular spectroscopy, and the instruments that measure them from a single axiom: *physical systems occupy bounded regions of phase space admitting partition and nesting*. The Bounded Phase Space Law, combined with the Poincaré recurrence theorem, establishes oscillatory dynamics as the unique valid mode for persistent systems and yields the partition coordinate system $(n, l, m, s)$ with shell capacity $C(n) = 2n^2$, the aufbau filling sequence, selection rules, the Pauli exclusion principle, and the complete periodic table — all without invoking quantum mechanics as a postulate. A Triple Equivalence Theorem proves that oscillatory dynamics, categorical state enumeration, and partition operations are mathematically identical, establishing that computer hardware oscillators constitute physical spectrometers through frequency-selective coupling to partition coordinates. At the molecular level, the absorption-emission interval $\tau_\text{em} = 1/A_{ki}$ provides an intrinsic physical tick from which nested hierarchies, harmonic networks, and self-clocking resonant cavities emerge. Closed loops in the harmonic molecular network sustain circulating light without walls — confinement is categorical, not spatial. We validate both frameworks against NIST reference data with zero adjustable parameters: nine elements spanning all blocks of the periodic table yield exact electron configurations, exact term symbols, and ionization energies within the precision set by partition depth; six molecules from $\text{H}_2$ to $\text{C}_6\text{H}_6$ exhibit the predicted harmonic network topology, closed-loop formation, and circulation periods consistent with known spectroscopic intervals.
 
-**Keywords**: bounded phase space, partition geometry, oscillatory necessity, Triple Equivalence Theorem, virtual spectrometry, trajectory completion, harmonic molecular network, self-clocking resonator, categorical measurement, spectroscopic derivation
+**Keywords**: bounded phase space, partition geometry, oscillatory necessity, Triple Equivalence Theorem, virtual spectrometry, trajectory completion, harmonic molecular network, self-clocking resonator, categorical measurement, spectroscopic derivation, composition-inflation, trans-Planckian resolution, categorical angular units, Planck depth
 
 ---
 
@@ -65,6 +65,31 @@ Categorical measurement is quantum non-demolition: partition coordinates are det
 ### 2.4 The Molecular Tick
 
 The absorption-emission interval $\tau_\text{em} = 1/A_{ki}$, where $A_{ki}$ is the Einstein A coefficient, constitutes a categorical tick — one complete cycle of the partition operation distinguishing excited from ground state. This tick is intrinsic: no external clock is required. Nested hierarchies of ticks with decreasing $\tau_\text{em}$ form tree structures. Trees become networks through harmonic proximity: when $\omega_i / \omega_j = p/q$ (low-order rational), nodes share harmonic edges. Closed loops in the resulting network constitute virtual resonant cavities where light circulates without walls.
+
+### 2.5 Composition-Inflation
+
+A bounded oscillatory system with $n$ oscillation cycles in $d$-dimensional S-entropy space produces not $n$ but
+
+$$T(n,d) = d \cdot (d+1)^{n-1}$$
+
+categorically distinguishable trajectories. This exponential growth arises from integer compositions (ordered partitions) of $n$, each labeled by one of $d$ entropy dimensions. For $d = 3$ (S-entropy space): $T(n) = 3 \cdot 4^{n-1}$.
+
+The angular resolution $\Delta\theta = 2\pi / T(n,d)$ is dimensionless and therefore not subject to the Planck time constraint. **56 oscillation cycles of caesium-133** produce $3.8 \times 10^{33}$ distinguishable trajectories — exceeding the number of Planck-time intervals in one caesium period. Not by ticking faster, but by exploiting the combinatorial richness of trajectory structure within the same ticks.
+
+### 2.6 Angular Reformulation of Constants
+
+In categorical angular units, fundamental constants reduce to geometry plus counting:
+
+| Constant | SI expression | Categorical angular expression |
+|---|---|---|
+| $c$ | $299{,}792{,}458$ m/s | $2\pi$ rad/tick |
+| $\hbar$ | $1.055 \times 10^{-34}$ J·s | $E_\text{tick} / (2\pi)$ |
+| $k_B$ | $1.381 \times 10^{-23}$ J/K | $E_\text{tick} / \ln(d+1)$ |
+| $m_0$ | $\hbar\omega_0/c^2$ | $E_\text{tick} \cdot \nu_0 / (4\pi^2)$ |
+| $t_P$ | $\sqrt{\hbar G/c^5}$ | $\sqrt{E_\text{tick} \cdot G} / (2\pi)^3$ |
+| $G$ | $6.674 \times 10^{-11}$ m³/(kg·s²) | **irreducible** |
+
+Six of seven fundamental constants dissolve into tick counts, factors of $2\pi$, tick energy, and entropy space dimensionality. Only the gravitational constant $G$ remains irreducible — the sole external input coupling partition depth to spatial curvature.
 
 ---
 
@@ -192,6 +217,7 @@ The [`dmitri/derivations/`](dmitri/derivations/) directory contains the complete
 | `partition-depth-limits.tex` | Resolution limits from partition depth |
 | `quantupartite-single-ion-observatory.tex` | Single-ion measurement as partition readout |
 | `super-oxide-dismutase.tex` | Biological validation: SOD enzyme from partition structure |
+| `composition-inflation.tex` | $T(n,d) = d \cdot (d+1)^{n-1}$: exponential trajectory count, Planck depth $n_P = 56$, angular constant reformulation, $G$ as sole irreducible constant |
 
 ---
 
@@ -222,7 +248,7 @@ All validation results are saved to `results/` subdirectories as structured JSON
 ```
 borgia/
 ├── dmitri/
-│   ├── derivations/                    # 14 foundational LaTeX derivations
+│   ├── derivations/                    # 15 foundational LaTeX derivations
 │   └── publications/
 │       ├── atomic-derivation/          # Paper 1
 │       │   ├── spectroscopic-derivation-of-elements.tex
@@ -278,6 +304,13 @@ The framework makes concrete, falsifiable predictions. A single counterexample i
 8. Circulation periods are determined by partition structure alone — no free parameters.
 9. Partition coordinates measured from different entry points in the network must agree (entry-point independence).
 
+### From Composition-Inflation (Trans-Planckian Resolution)
+
+10. A bounded oscillatory system with $n$ cycles in $d$-dimensional entropy space must produce $d \cdot (d+1)^{n-1}$ distinguishable trajectories, not $n$.
+11. The Planck depth for any oscillator must satisfy $n_P = 1 + \lceil\log_{d+1}(\tau / (d \cdot t_P))\rceil$, yielding $n_P \in [48, 57]$ for all realisable oscillators in $d = 3$.
+12. Six of seven fundamental constants must reduce to tick counts, factors of $2\pi$, and tick energy. Only $G$ must remain irreducible.
+13. Angular resolution $\Delta\theta = 2\pi / T(n,d)$ must have no Planck lower bound, since it is dimensionless.
+
 ---
 
 ## 8. Relation to Prior Work
@@ -293,5 +326,6 @@ This work is presented for scientific evaluation. Please cite the constituent pa
 ---
 
 <div align="center">
-  <em>The molecule IS the resonator. The resonator IS the clock. The clock IS the measurement.</em>
+  <em>The molecule IS the resonator. The resonator IS the clock. The clock IS the measurement.<br/>
+  56 ticks. That is all it takes.</em>
 </div>
