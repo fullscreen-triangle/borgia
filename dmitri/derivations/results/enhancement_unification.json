@@ -1,0 +1,31 @@
+{
+  "mechanisms": [
+    {
+      "name": "Ternary encoding",
+      "log10_enhancement": 3.52
+    },
+    {
+      "name": "Multi-modal synthesis",
+      "log10_enhancement": 5.0
+    },
+    {
+      "name": "Harmonic coincidence",
+      "log10_enhancement": 3.0
+    },
+    {
+      "name": "Poincar\u00e9 computing",
+      "log10_enhancement": 66.0
+    },
+    {
+      "name": "Continuous refinement",
+      "log10_enhancement": 43.43
+    }
+  ],
+  "target_log10": 120.95,
+  "sum_mechanisms_log10": 120.95,
+  "exact_n": 201.10112028795265,
+  "rounded_n": 201,
+  "log10_T_at_rounded_n": 120.88911952031214,
+  "log10_T_at_201": 120.88911952031214,
+  "n_is_approximately_201": true
+}

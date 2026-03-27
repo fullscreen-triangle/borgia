@@ -1,0 +1,51 @@
+{
+  "results": [
+    {
+      "oscillator": "Caesium-133",
+      "frequency_Hz": 9192631770.0,
+      "period_s": 1.0878277570776665e-10,
+      "tau_over_tP": 2.0177664964667109e+33,
+      "n_P": 56,
+      "T_at_n_P": 3.894222643901121e+33,
+      "physical_time_s": 6.091835439634933e-09
+    },
+    {
+      "oscillator": "Hydrogen maser",
+      "frequency_Hz": 1420405751.0,
+      "period_s": 7.040241841431407e-10,
+      "tau_over_tP": 1.3058651999122664e+34,
+      "n_P": 57,
+      "T_at_n_P": 1.5576890575604483e+34,
+      "physical_time_s": 4.0129378496159015e-08
+    },
+    {
+      "oscillator": "Strontium optical",
+      "frequency_Hz": 429000000000000.0,
+      "period_s": 2.331002331002331e-15,
+      "tau_over_tP": 4.323679347287058e+28,
+      "n_P": 48,
+      "T_at_n_P": 5.942112188569825e+28,
+      "physical_time_s": 1.1188811188811188e-13
+    },
+    {
+      "oscillator": "Molecular H2 vib",
+      "frequency_Hz": 132000000000000.0,
+      "period_s": 7.575757575757575e-15,
+      "tau_over_tP": 1.4051957878682936e+29,
+      "n_P": 49,
+      "T_at_n_P": 2.37684487542793e+29,
+      "physical_time_s": 3.712121212121212e-13
+    },
+    {
+      "oscillator": "CPU 3 GHz",
+      "frequency_Hz": 3000000000.0,
+      "period_s": 3.333333333333333e-10,
+      "tau_over_tP": 6.182861466620492e+33,
+      "n_P": 57,
+      "T_at_n_P": 1.5576890575604483e+34,
+      "physical_time_s": 1.9e-08
+    }
+  ],
+  "caesium_n_P_is_56": true,
+  "all_in_range_36_72": true
+}

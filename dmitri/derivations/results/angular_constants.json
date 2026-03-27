@@ -1,0 +1,107 @@
+{
+  "phase_per_tick": {
+    "omega_Cs_times_tau_Cs": 6.283185307179585,
+    "two_pi": 6.283185307179586,
+    "residual": 8.881784197001252e-16,
+    "pass": true
+  },
+  "hbar_from_E_tick": {
+    "E_tick_J": 6.091102297113866e-24,
+    "E_tick_over_2pi": 9.694290394640704e-25,
+    "hbar_times_nu": 9.694290388700827e-25,
+    "relative_residual": 6.127191789193626e-10,
+    "pass_E_tick_identity": true,
+    "h_over_2pi": 1.0545718176461565e-34,
+    "hbar_SI": 1.054571817e-34,
+    "hbar_residual": 6.127192735425578e-10,
+    "pass_hbar_definition": true
+  },
+  "mass_angular": {
+    "E_electron_J": 8.187105776823886e-14,
+    "omega_Compton_rad_s": 7.76344071105011e+20,
+    "nu_Compton_Hz": 1.2355899645644838e+20,
+    "m_e_recovered_kg": 9.1093837015e-31,
+    "m_e_SI_kg": 9.1093837015e-31,
+    "relative_residual": 0.0,
+    "pass": true
+  },
+  "planck_time_decomposition": {
+    "hbar_G_over_c5": 2.906553824864503e-87,
+    "t_P_from_formula": 5.391246446661944e-44,
+    "t_P_tabulated": 5.391247e-44,
+    "relative_residual": 1.0263637643497652e-07,
+    "pass_formula": true,
+    "t_P_substituted": 5.391246448313604e-44,
+    "substitution_residual": 1.0233001689628717e-07,
+    "pass_substitution": true
+  },
+  "reduction_table": [
+    {
+      "constant": "c",
+      "SI_value": 299792458.0,
+      "angular_expression": "2\u03c0 rad/tick",
+      "factors_of_2pi": 1,
+      "resolved": true
+    },
+    {
+      "constant": "\u210f",
+      "SI_value": 1.054571817e-34,
+      "angular_expression": "E_tick / (2\u03c0 \u00b7 \u03bd_Cs)",
+      "factors_of_2pi": 1,
+      "resolved": true
+    },
+    {
+      "constant": "k_B",
+      "SI_value": 1.380649e-23,
+      "angular_expression": "E_tick / ln(4)",
+      "categorical_value": 4.393801538796774e-24,
+      "ratio_to_SI": 0.3182417499883587,
+      "factors_of_2pi": 0,
+      "resolved": true
+    },
+    {
+      "constant": "m_e",
+      "SI_value": 9.1093837015e-31,
+      "angular_expression": "\u210f \u03c9_Compton / c\u00b2",
+      "factors_of_2pi": 2,
+      "resolved": true
+    },
+    {
+      "constant": "E_0",
+      "SI_value": 8.187105776823886e-14,
+      "angular_expression": "\u210f \u00b7 \u03c9_Compton = E_tick \u00b7 (\u03bd_Compton/\u03bd_Cs)",
+      "factors_of_2pi": 0,
+      "resolved": true
+    },
+    {
+      "constant": "t_P",
+      "SI_value": 5.391247e-44,
+      "angular_expression": "\u221a(E_tick\u00b7G / (2\u03c0 \u03bd_Cs \u00b7 c\u2075))",
+      "factors_of_2pi": 3,
+      "resolved": false
+    },
+    {
+      "constant": "G",
+      "SI_value": 6.6743e-11,
+      "angular_expression": "IRREDUCIBLE",
+      "factors_of_2pi": 0,
+      "resolved": false
+    }
+  ],
+  "G_irreducibility": {
+    "dimensional_proof": "b=-1 for kg, b=3/2 for m: contradiction",
+    "irreducible": true,
+    "categorical_residual": 6.6743e-11,
+    "pass": true
+  },
+  "all_pass": true,
+  "individual": {
+    "7a_phase_per_tick": true,
+    "7b_E_tick_identity": true,
+    "7b_hbar_definition": true,
+    "7c_mass_angular": true,
+    "7d_planck_time_formula": true,
+    "7d_planck_time_substitution": true,
+    "7f_G_irreducible": true
+  }
+}

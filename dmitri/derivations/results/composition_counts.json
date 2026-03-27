@@ -1,0 +1,125 @@
+{
+  "results": [
+    {
+      "n": 1,
+      "expected_2^(n-1)": 1,
+      "computed": 1,
+      "match": true
+    },
+    {
+      "n": 2,
+      "expected_2^(n-1)": 2,
+      "computed": 2,
+      "match": true
+    },
+    {
+      "n": 3,
+      "expected_2^(n-1)": 4,
+      "computed": 4,
+      "match": true
+    },
+    {
+      "n": 4,
+      "expected_2^(n-1)": 8,
+      "computed": 8,
+      "match": true
+    },
+    {
+      "n": 5,
+      "expected_2^(n-1)": 16,
+      "computed": 16,
+      "match": true
+    },
+    {
+      "n": 6,
+      "expected_2^(n-1)": 32,
+      "computed": 32,
+      "match": true
+    },
+    {
+      "n": 7,
+      "expected_2^(n-1)": 64,
+      "computed": 64,
+      "match": true
+    },
+    {
+      "n": 8,
+      "expected_2^(n-1)": 128,
+      "computed": 128,
+      "match": true
+    },
+    {
+      "n": 9,
+      "expected_2^(n-1)": 256,
+      "computed": 256,
+      "match": true
+    },
+    {
+      "n": 10,
+      "expected_2^(n-1)": 512,
+      "computed": 512,
+      "match": true
+    },
+    {
+      "n": 11,
+      "expected_2^(n-1)": 1024,
+      "computed": 1024,
+      "match": true
+    },
+    {
+      "n": 12,
+      "expected_2^(n-1)": 2048,
+      "computed": 2048,
+      "match": true
+    },
+    {
+      "n": 13,
+      "expected_2^(n-1)": 4096,
+      "computed": 4096,
+      "match": true
+    },
+    {
+      "n": 14,
+      "expected_2^(n-1)": 8192,
+      "computed": 8192,
+      "match": true
+    },
+    {
+      "n": 15,
+      "expected_2^(n-1)": 16384,
+      "computed": 16384,
+      "match": true
+    },
+    {
+      "n": 16,
+      "expected_2^(n-1)": 32768,
+      "computed": 32768,
+      "match": true
+    },
+    {
+      "n": 17,
+      "expected_2^(n-1)": 65536,
+      "computed": 65536,
+      "match": true
+    },
+    {
+      "n": 18,
+      "expected_2^(n-1)": 131072,
+      "computed": 131072,
+      "match": true
+    },
+    {
+      "n": 19,
+      "expected_2^(n-1)": 262144,
+      "computed": 262144,
+      "match": true
+    },
+    {
+      "n": 20,
+      "expected_2^(n-1)": 524288,
+      "computed": 524288,
+      "match": true
+    }
+  ],
+  "all_pass": true
+}

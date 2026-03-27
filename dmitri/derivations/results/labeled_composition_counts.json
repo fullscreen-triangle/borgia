@@ -1,0 +1,425 @@
+{
+  "results": [
+    {
+      "n": 1,
+      "d": 2,
+      "closed_form": 2,
+      "summation": 2,
+      "match": true
+    },
+    {
+      "n": 2,
+      "d": 2,
+      "closed_form": 6,
+      "summation": 6,
+      "match": true
+    },
+    {
+      "n": 3,
+      "d": 2,
+      "closed_form": 18,
+      "summation": 18,
+      "match": true
+    },
+    {
+      "n": 4,
+      "d": 2,
+      "closed_form": 54,
+      "summation": 54,
+      "match": true
+    },
+    {
+      "n": 5,
+      "d": 2,
+      "closed_form": 162,
+      "summation": 162,
+      "match": true
+    },
+    {
+      "n": 6,
+      "d": 2,
+      "closed_form": 486,
+      "summation": 486,
+      "match": true
+    },
+    {
+      "n": 7,
+      "d": 2,
+      "closed_form": 1458,
+      "summation": 1458,
+      "match": true
+    },
+    {
+      "n": 8,
+      "d": 2,
+      "closed_form": 4374,
+      "summation": 4374,
+      "match": true
+    },
+    {
+      "n": 9,
+      "d": 2,
+      "closed_form": 13122,
+      "summation": 13122,
+      "match": true
+    },
+    {
+      "n": 10,
+      "d": 2,
+      "closed_form": 39366,
+      "summation": 39366,
+      "match": true
+    },
+    {
+      "n": 11,
+      "d": 2,
+      "closed_form": 118098,
+      "summation": 118098,
+      "match": true
+    },
+    {
+      "n": 12,
+      "d": 2,
+      "closed_form": 354294,
+      "summation": 354294,
+      "match": true
+    },
+    {
+      "n": 13,
+      "d": 2,
+      "closed_form": 1062882,
+      "summation": 1062882,
+      "match": true
+    },
+    {
+      "n": 14,
+      "d": 2,
+      "closed_form": 3188646,
+      "summation": 3188646,
+      "match": true
+    },
+    {
+      "n": 15,
+      "d": 2,
+      "closed_form": 9565938,
+      "summation": 9565938,
+      "match": true
+    },
+    {
+      "n": 16,
+      "d": 2,
+      "closed_form": 28697814,
+      "summation": 28697814,
+      "match": true
+    },
+    {
+      "n": 17,
+      "d": 2,
+      "closed_form": 86093442,
+      "summation": 86093442,
+      "match": true
+    },
+    {
+      "n": 18,
+      "d": 2,
+      "closed_form": 258280326,
+      "summation": 258280326,
+      "match": true
+    },
+    {
+      "n": 19,
+      "d": 2,
+      "closed_form": 774840978,
+      "summation": 774840978,
+      "match": true
+    },
+    {
+      "n": 20,
+      "d": 2,
+      "closed_form": 2324522934,
+      "summation": 2324522934,
+      "match": true
+    },
+    {
+      "n": 1,
+      "d": 3,
+      "closed_form": 3,
+      "summation": 3,
+      "match": true
+    },
+    {
+      "n": 2,
+      "d": 3,
+      "closed_form": 12,
+      "summation": 12,
+      "match": true
+    },
+    {
+      "n": 3,
+      "d": 3,
+      "closed_form": 48,
+      "summation": 48,
+      "match": true
+    },
+    {
+      "n": 4,
+      "d": 3,
+      "closed_form": 192,
+      "summation": 192,
+      "match": true
+    },
+    {
+      "n": 5,
+      "d": 3,
+      "closed_form": 768,
+      "summation": 768,
+      "match": true
+    },
+    {
+      "n": 6,
+      "d": 3,
+      "closed_form": 3072,
+      "summation": 3072,
+      "match": true
+    },
+    {
+      "n": 7,
+      "d": 3,
+      "closed_form": 12288,
+      "summation": 12288,
+      "match": true
+    },
+    {
+      "n": 8,
+      "d": 3,
+      "closed_form": 49152,
+      "summation": 49152,
+      "match": true
+    },
+    {
+      "n": 9,
+      "d": 3,
+      "closed_form": 196608,
+      "summation": 196608,
+      "match": true
+    },
+    {
+      "n": 10,
+      "d": 3,
+      "closed_form": 786432,
+      "summation": 786432,
+      "match": true
+    },
+    {
+      "n": 11,
+      "d": 3,
+      "closed_form": 3145728,
+      "summation": 3145728,
+      "match": true
+    },
+    {
+      "n": 12,
+      "d": 3,
+      "closed_form": 12582912,
+      "summation": 12582912,
+      "match": true
+    },
+    {
+      "n": 13,
+      "d": 3,
+      "closed_form": 50331648,
+      "summation": 50331648,
+      "match": true
+    },
+    {
+      "n": 14,
+      "d": 3,
+      "closed_form": 201326592,
+      "summation": 201326592,
+      "match": true
+    },
+    {
+      "n": 15,
+      "d": 3,
+      "closed_form": 805306368,
+      "summation": 805306368,
+      "match": true
+    },
+    {
+      "n": 16,
+      "d": 3,
+      "closed_form": 3221225472,
+      "summation": 3221225472,
+      "match": true
+    },
+    {
+      "n": 17,
+      "d": 3,
+      "closed_form": 12884901888,
+      "summation": 12884901888,
+      "match": true
+    },
+    {
+      "n": 18,
+      "d": 3,
+      "closed_form": 51539607552,
+      "summation": 51539607552,
+      "match": true
+    },
+    {
+      "n": 19,
+      "d": 3,
+      "closed_form": 206158430208,
+      "summation": 206158430208,
+      "match": true
+    },
+    {
+      "n": 20,
+      "d": 3,
+      "closed_form": 824633720832,
+      "summation": 824633720832,
+      "match": true
+    },
+    {
+      "n": 1,
+      "d": 4,
+      "closed_form": 4,
+      "summation": 4,
+      "match": true
+    },
+    {
+      "n": 2,
+      "d": 4,
+      "closed_form": 20,
+      "summation": 20,
+      "match": true
+    },
+    {
+      "n": 3,
+      "d": 4,
+      "closed_form": 100,
+      "summation": 100,
+      "match": true
+    },
+    {
+      "n": 4,
+      "d": 4,
+      "closed_form": 500,
+      "summation": 500,
+      "match": true
+    },
+    {
+      "n": 5,
+      "d": 4,
+      "closed_form": 2500,
+      "summation": 2500,
+      "match": true
+    },
+    {
+      "n": 6,
+      "d": 4,
+      "closed_form": 12500,
+      "summation": 12500,
+      "match": true
+    },
+    {
+      "n": 7,
+      "d": 4,
+      "closed_form": 62500,
+      "summation": 62500,
+      "match": true
+    },
+    {
+      "n": 8,
+      "d": 4,
+      "closed_form": 312500,
+      "summation": 312500,
+      "match": true
+    },
+    {
+      "n": 9,
+      "d": 4,
+      "closed_form": 1562500,
+      "summation": 1562500,
+      "match": true
+    },
+    {
+      "n": 10,
+      "d": 4,
+      "closed_form": 7812500,
+      "summation": 7812500,
+      "match": true
+    },
+    {
+      "n": 11,
+      "d": 4,
+      "closed_form": 39062500,
+      "summation": 39062500,
+      "match": true
+    },
+    {
+      "n": 12,
+      "d": 4,
+      "closed_form": 195312500,
+      "summation": 195312500,
+      "match": true
+    },
+    {
+      "n": 13,
+      "d": 4,
+      "closed_form": 976562500,
+      "summation": 976562500,
+      "match": true
+    },
+    {
+      "n": 14,
+      "d": 4,
+      "closed_form": 4882812500,
+      "summation": 4882812500,
+      "match": true
+    },
+    {
+      "n": 15,
+      "d": 4,
+      "closed_form": 24414062500,
+      "summation": 24414062500,
+      "match": true
+    },
+    {
+      "n": 16,
+      "d": 4,
+      "closed_form": 122070312500,
+      "summation": 122070312500,
+      "match": true
+    },
+    {
+      "n": 17,
+      "d": 4,
+      "closed_form": 610351562500,
+      "summation": 610351562500,
+      "match": true
+    },
+    {
+      "n": 18,
+      "d": 4,
+      "closed_form": 3051757812500,
+      "summation": 3051757812500,
+      "match": true
+    },
+    {
+      "n": 19,
+      "d": 4,
+      "closed_form": 15258789062500,
+      "summation": 15258789062500,
+      "match": true
+    },
+    {
+      "n": 20,
+      "d": 4,
+      "closed_form": 76293945312500,
+      "summation": 76293945312500,
+      "match": true
+    }
+  ],
+  "all_pass": true
+}

@@ -1,0 +1,13 @@
+{
+  "checks": {
+    "composition_count_2^(n-1)": true,
+    "labeled_T(n,d)_formula": true,
+    "caesium_n_P_is_56": true,
+    "all_n_P_in_36_72": true,
+    "angular_crossing_at_56": true,
+    "enhancement_n_approx_201": true,
+    "exponential_dominates_linear": true,
+    "angular_constants_all_pass": true
+  },
+  "overall_pass": true
+}
