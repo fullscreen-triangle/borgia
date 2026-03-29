@@ -33,7 +33,8 @@
       "Bash(curl -s -L https://codesandbox.io/api/v1/sandboxes/n60qg)",
       "Bash(npx next:*)",
       "Bash(python generate_composition_panels.py)",
-      "Bash(du -sh \"c:/Users/kunda/Documents/bioinformatics/borgia/honjo-masamune/public/models/\"*.glb)"
+      "Bash(du -sh \"c:/Users/kunda/Documents/bioinformatics/borgia/honjo-masamune/public/models/\"*.glb)",
+      "WebFetch(domain:raw.githubusercontent.com)"
     ]
   }
 }

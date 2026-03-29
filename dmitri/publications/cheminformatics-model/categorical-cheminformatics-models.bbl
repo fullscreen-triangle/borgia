@@ -1,0 +1,163 @@
+\begin{thebibliography}{20}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Bajusz et~al.(2015)Bajusz, R{\'a}cz, and H{\'e}berger]{bajusz2015}
+D{\'a}vid Bajusz, Anita R{\'a}cz, and K{\'a}roly H{\'e}berger.
+\newblock Why is {T}animoto index an appropriate choice for fingerprint-based
+  similarity calculations?
+\newblock \emph{Journal of Cheminformatics}, 7\penalty0 (1):\penalty0 20, 2015.
+\newblock \doi{10.1186/s13321-015-0069-3}.
+
+\bibitem[Cherkasov et~al.(2014)Cherkasov, Muratov, Fourches, Varnek, Baskin,
+  Cronin, Dearden, Gramatica, Martin, Todeschini, Consonni, Kuz'min, Cramer,
+  Benigni, Yang, Rathman, Terfloth, Gasteiger, Richard, and
+  Tropsha]{cherkasov2014}
+Artem Cherkasov, Eugene~N. Muratov, Denis Fourches, Alexandre Varnek, Igor~I.
+  Baskin, Mark Cronin, John Dearden, Paola Gramatica, Yvonne~C. Martin, Roberto
+  Todeschini, Viviana Consonni, Victor~E. Kuz'min, Richard Cramer, Romualdo
+  Benigni, Chihae Yang, James Rathman, Lothar Terfloth, Johann Gasteiger, Ann
+  Richard, and Alexander Tropsha.
+\newblock Qsar modeling: Where have you been? where are you going to?
+\newblock \emph{Journal of Medicinal Chemistry}, 57\penalty0 (12):\penalty0
+  4977--5010, 2014.
+\newblock \doi{10.1021/jm4004285}.
+
+\bibitem[Duvenaud et~al.(2015)Duvenaud, Maclaurin, Iparraguirre, Bombarell,
+  Hirzel, Aspuru-Guzik, and Adams]{duvenaud2015}
+David~K. Duvenaud, Dougal Maclaurin, Jorge Iparraguirre, Rafael Bombarell,
+  Timothy Hirzel, Al{\'a}n Aspuru-Guzik, and Ryan~P. Adams.
+\newblock Convolutional networks on graphs for learning molecular fingerprints.
+\newblock In \emph{Advances in Neural Information Processing Systems},
+  volume~28, 2015.
+
+\bibitem[Elton et~al.(2019)Elton, Boukouvalas, Fuge, and Chung]{elton2019}
+Daniel~C. Elton, Zois Boukouvalas, Mark~D. Fuge, and Peter~W. Chung.
+\newblock Deep learning for molecular design---a review of the state of the
+  art.
+\newblock \emph{Molecular Systems Design \& Engineering}, 4\penalty0
+  (4):\penalty0 828--849, 2019.
+\newblock \doi{10.1039/C9ME00039A}.
+
+\bibitem[Eyring(1935)]{eyring1935}
+Henry Eyring.
+\newblock The activated complex in chemical reactions.
+\newblock \emph{The Journal of Chemical Physics}, 3\penalty0 (2):\penalty0
+  107--115, 1935.
+\newblock \doi{10.1063/1.1749604}.
+
+\bibitem[Gilmer et~al.(2017)Gilmer, Schoenholz, Riley, Vinyals, and
+  Dahl]{gilmer2017}
+Justin Gilmer, Samuel~S. Schoenholz, Patrick~F. Riley, Oriol Vinyals, and
+  George~E. Dahl.
+\newblock Neural message passing for quantum chemistry.
+\newblock In \emph{International Conference on Machine Learning}, pages
+  1263--1272, 2017.
+
+\bibitem[Gou et~al.(2021)Gou, Yu, Maybank, and Tao]{gou2021}
+Jianping Gou, Baosheng Yu, Stephen~J. Maybank, and Dacheng Tao.
+\newblock Knowledge distillation: A survey.
+\newblock \emph{International Journal of Computer Vision}, 129\penalty0
+  (6):\penalty0 1789--1819, 2021.
+\newblock \doi{10.1007/s11263-021-01453-z}.
+
+\bibitem[Hinton et~al.(2015)Hinton, Vinyals, and Dean]{hinton2015}
+Geoffrey Hinton, Oriol Vinyals, and Jeff Dean.
+\newblock Distilling the knowledge in a neural network.
+\newblock In \emph{NIPS Deep Learning and Representation Learning Workshop},
+  2015.
+
+\bibitem[Johnson(2022)]{johnson2022}
+III Johnson, Russell~D.
+\newblock {NIST} computational chemistry comparison and benchmark database,
+  {NIST} standard reference database number 101, 2022.
+\newblock URL \url{http://cccbdb.nist.gov/}.
+\newblock Release 22, May 2022.
+
+\bibitem[Johnson et~al.(2019)Johnson, Douze, and J{\'e}gou]{johnson2019}
+Jeff Johnson, Matthijs Douze, and Herv{\'e} J{\'e}gou.
+\newblock Billion-scale similarity search with {GPUs}.
+\newblock \emph{IEEE Transactions on Big Data}, 7\penalty0 (3):\penalty0
+  535--547, 2019.
+\newblock \doi{10.1109/TBDATA.2019.2921572}.
+
+\bibitem[Riniker and Landrum(2013)]{riniker2013}
+Sereina Riniker and Gregory~A. Landrum.
+\newblock Open-source platform to benchmark fingerprints for ligand-based
+  virtual screening.
+\newblock \emph{Journal of Cheminformatics}, 5\penalty0 (1):\penalty0 26, 2013.
+\newblock \doi{10.1186/1758-2946-5-26}.
+
+\bibitem[Rogers and Hahn(2010)]{rogers2010}
+David Rogers and Mathew Hahn.
+\newblock Extended-connectivity fingerprints.
+\newblock \emph{Journal of Chemical Information and Modeling}, 50\penalty0
+  (5):\penalty0 742--754, 2010.
+\newblock \doi{10.1021/ci100050t}.
+
+\bibitem[Sachikonye(2025{\natexlab{a}})]{sachikonye2025a}
+Kundai~Farai Sachikonye.
+\newblock Spectroscopic derivation of the chemical elements: Atomic structure
+  and virtual instrumentation from bounded phase space geometry.
+\newblock 2025{\natexlab{a}}.
+\newblock Manuscript in preparation.
+
+\bibitem[Sachikonye(2025{\natexlab{b}})]{sachikonye2025b}
+Kundai~Farai Sachikonye.
+\newblock Harmonic molecular resonator: Reflexive clock networks from
+  absorption-emission intervals in bounded phase space.
+\newblock 2025{\natexlab{b}}.
+\newblock Manuscript in preparation.
+
+\bibitem[Sachikonye(2025{\natexlab{c}})]{sachikonye2025c}
+Kundai~Farai Sachikonye.
+\newblock Categorical compound database: Oscillation-counted molecular
+  identification through ternary phase space addressing.
+\newblock 2025{\natexlab{c}}.
+\newblock Manuscript in preparation.
+
+\bibitem[Sachikonye(2025{\natexlab{d}})]{sachikonye2025d}
+Kundai~Farai Sachikonye.
+\newblock Composition-inflation in bounded phase space: Exponential categorical
+  resolution from integer compositions in $d$-dimensional entropy space.
+\newblock 2025{\natexlab{d}}.
+\newblock Manuscript in preparation.
+
+\bibitem[Schwaller et~al.(2019)Schwaller, Laino, Gaudin, Bolgar, Hunter, Bekas,
+  and Lee]{schwaller2019}
+Philippe Schwaller, Teodoro Laino, Th{\'e}ophile Gaudin, Peter Bolgar,
+  Christopher~A. Hunter, Costas Bekas, and Alpha~A. Lee.
+\newblock Molecular transformer: A model for uncertainty-calibrated chemical
+  reaction prediction.
+\newblock \emph{ACS Central Science}, 5\penalty0 (9):\penalty0 1572--1583,
+  2019.
+\newblock \doi{10.1021/acscentsci.9b00576}.
+
+\bibitem[Shoichet(2004)]{shoichet2004}
+Brian~K. Shoichet.
+\newblock Virtual screening of chemical libraries.
+\newblock \emph{Nature}, 432\penalty0 (7019):\penalty0 862--865, 2004.
+\newblock \doi{10.1038/nature03197}.
+
+\bibitem[Willett et~al.(1998)Willett, Barnard, and Downs]{willett1998}
+Peter Willett, John~M. Barnard, and Geoffrey~M. Downs.
+\newblock Chemical similarity searching.
+\newblock \emph{Journal of Chemical Information and Computer Sciences},
+  38\penalty0 (6):\penalty0 983--996, 1998.
+\newblock \doi{10.1021/ci9800211}.
+
+\bibitem[Yang et~al.(2019)Yang, Swanson, Jin, Coley, Eiden, Gao, Guzman-Perez,
+  Hopper, Kelley, Mathea, Palmer, Settels, Jaakkola, Jensen, and
+  Barzilay]{yang2019}
+Kevin Yang, Kyle Swanson, Wengong Jin, Connor Coley, Philipp Eiden, Hua Gao,
+  Angel Guzman-Perez, Timothy Hopper, Brian Kelley, Miriam Mathea, Andrew
+  Palmer, Volker Settels, Tommi Jaakkola, Klavs Jensen, and Regina Barzilay.
+\newblock Analyzing learned molecular representations for property prediction.
+\newblock \emph{Journal of Chemical Information and Modeling}, 59\penalty0
+  (8):\penalty0 3370--3388, 2019.
+\newblock \doi{10.1021/acs.jcim.9b00237}.
+
+\end{thebibliography}

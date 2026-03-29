@@ -1,0 +1,53 @@
+This is BibTeX, Version 0.99e
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: categorical-cheminformatics-models.aux
+Reallocating 'name_of_file' (item size: 1) to 9 items.
+The style file: plainnat.bst
+Reallocating 'name_of_file' (item size: 1) to 11 items.
+Database file #1: references.bib
+Warning--empty journal in sachikonye2025a
+Warning--empty journal in sachikonye2025b
+Warning--empty journal in sachikonye2025c
+Warning--empty journal in sachikonye2025d
+You've used 20 entries,
+            2773 wiz_defined-function locations,
+            716 strings with 9128 characters,
+and the built_in function-call counts, 11044 in all, are:
+= -- 949
+> -- 811
+< -- 11
++ -- 278
+- -- 255
+* -- 988
+:= -- 1747
+add.period$ -- 77
+call.type$ -- 20
+change.case$ -- 145
+chr.to.int$ -- 17
+cite$ -- 44
+duplicate$ -- 422
+empty$ -- 778
+format.name$ -- 279
+if$ -- 2245
+int.to.chr$ -- 4
+int.to.str$ -- 1
+missing$ -- 19
+newline$ -- 125
+num.names$ -- 80
+pop$ -- 278
+preamble$ -- 1
+purify$ -- 125
+quote$ -- 0
+skip$ -- 342
+stack$ -- 0
+substring$ -- 366
+swap$ -- 35
+text.length$ -- 2
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 220
+warning$ -- 4
+while$ -- 85
+width$ -- 0
+write$ -- 291
+(There were 4 warnings)
