@@ -89,6 +89,10 @@ export default function Licensing() {
                 <h3 className="text-xl font-bold text-white mb-3">
                   S-Entropy Encoding Method
                 </h3>
+                <div className="mb-4">
+                  <p className="text-2xl font-bold text-white">&euro;15,000<span className="text-neutral-500 text-sm font-normal"> / year</span></p>
+                  <p className="text-neutral-500 text-xs mt-1">Per-seat license, minimum 1 year</p>
+                </div>
                 <p className="text-neutral-400 text-base leading-relaxed mb-6 flex-grow">
                   License the encoding protocol: vibrational frequencies mapped
                   to{" "}
@@ -98,6 +102,24 @@ export default function Licensing() {
                   coordinates. Integrate directly into existing spectral
                   analysis software.
                 </p>
+                <ul className="text-neutral-400 text-sm space-y-2 mb-6">
+                  <li className="flex items-start gap-2">
+                    <span className="text-neutral-600 mt-0.5">&#x2713;</span>
+                    <span>S-entropy coordinate computation</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-neutral-600 mt-0.5">&#x2713;</span>
+                    <span>Ternary string generation</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-neutral-600 mt-0.5">&#x2713;</span>
+                    <span>Python &amp; Rust reference implementations</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-neutral-600 mt-0.5">&#x2713;</span>
+                    <span>Email support</span>
+                  </li>
+                </ul>
                 <div className="border-t border-neutral-800 pt-4">
                   <p className="text-sm text-neutral-500 tracking-wide uppercase mb-2">
                     Suitable For
@@ -116,12 +138,38 @@ export default function Licensing() {
                 <h3 className="text-xl font-bold text-white mb-3">
                   Categorical Database Architecture
                 </h3>
+                <div className="mb-4">
+                  <p className="text-2xl font-bold text-white">&euro;45,000<span className="text-neutral-500 text-sm font-normal"> / year</span></p>
+                  <p className="text-neutral-500 text-xs mt-1">Site license, includes all seats</p>
+                </div>
                 <p className="text-neutral-400 text-base leading-relaxed mb-6 flex-grow">
                   License the ternary trie data structure and search algorithm.{" "}
                   <span className="text-neutral-200">O(k)</span> search
                   independent of database size. Includes encoding, trie
                   construction, fuzzy search, and property-based retrieval.
                 </p>
+                <ul className="text-neutral-400 text-sm space-y-2 mb-6">
+                  <li className="flex items-start gap-2">
+                    <span className="text-neutral-600 mt-0.5">&#x2713;</span>
+                    <span>Everything in Encoding tier</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-neutral-600 mt-0.5">&#x2713;</span>
+                    <span>Ternary trie construction &amp; traversal</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-neutral-600 mt-0.5">&#x2713;</span>
+                    <span>Fuzzy search via prefix truncation</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-neutral-600 mt-0.5">&#x2713;</span>
+                    <span>Property-constrained retrieval</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-neutral-600 mt-0.5">&#x2713;</span>
+                    <span>Priority support &amp; quarterly reviews</span>
+                  </li>
+                </ul>
                 <div className="border-t border-neutral-800 pt-4">
                   <p className="text-sm text-neutral-500 tracking-wide uppercase mb-2">
                     Suitable For
@@ -133,17 +181,30 @@ export default function Licensing() {
               </div>
 
               {/* Tier 3 */}
-              <div className="bg-neutral-900/50 border border-[#58E6D9]/20 rounded-xl p-8 flex flex-col">
+              <div className="bg-neutral-900/50 border border-[#58E6D9]/20 rounded-xl p-8 flex flex-col relative overflow-hidden">
+                <div className="absolute top-4 right-4 px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-widest bg-[#58E6D9]/10 text-[#58E6D9] border border-[#58E6D9]/20">
+                  Enterprise
+                </div>
                 <div className="w-10 h-10 border border-[#58E6D9]/40 rounded-lg flex items-center justify-center mb-6">
                   <div className="w-4 h-4 bg-[#58E6D9]/35 rounded-sm" />
                 </div>
                 <h3 className="text-xl font-bold text-white mb-3">
                   Full Framework License
                 </h3>
+                <div className="mb-4">
+                  <p className="text-2xl font-bold text-white">Custom<span className="text-neutral-500 text-sm font-normal"> pricing</span></p>
+                  <p className="text-neutral-500 text-xs mt-1">Multi-year agreements, volume discounts</p>
+                </div>
                 <p className="text-neutral-400 text-base leading-relaxed mb-4 flex-grow">
                   Complete bounded phase space framework including:
                 </p>
                 <ul className="text-neutral-300 text-sm space-y-2 mb-6 flex-grow">
+                  <li className="flex items-start gap-2">
+                    <span className="text-[#58E6D9] mt-1.5 block w-1 h-1 rounded-full bg-[#58E6D9]/60 flex-shrink-0" />
+                    <span>
+                      Everything in Database tier
+                    </span>
+                  </li>
                   <li className="flex items-start gap-2">
                     <span className="text-[#58E6D9] mt-1.5 block w-1 h-1 rounded-full bg-[#58E6D9]/60 flex-shrink-0" />
                     <span>
@@ -158,11 +219,15 @@ export default function Licensing() {
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-[#58E6D9] mt-1.5 block w-1 h-1 rounded-full bg-[#58E6D9]/60 flex-shrink-0" />
-                    <span>Categorical compound database</span>
+                    <span>Composition-inflation resolution enhancement</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-[#58E6D9] mt-1.5 block w-1 h-1 rounded-full bg-[#58E6D9]/60 flex-shrink-0" />
-                    <span>All validation code and datasets</span>
+                    <span>All validation code, datasets, and derivations</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-[#58E6D9] mt-1.5 block w-1 h-1 rounded-full bg-[#58E6D9]/60 flex-shrink-0" />
+                    <span>Dedicated technical liaison &amp; on-site training</span>
                   </li>
                 </ul>
                 <div className="border-t border-neutral-800 pt-4">
@@ -173,6 +238,94 @@ export default function Licensing() {
                     Research institutions, national laboratories, instrument
                     manufacturers
                   </p>
+                </div>
+              </div>
+            </div>
+
+            {/* API Access Pricing */}
+            <div className="mt-16">
+              <h3 className="text-2xl font-bold text-white tracking-tight mb-3">
+                API Access
+              </h3>
+              <p className="text-neutral-400 text-base leading-relaxed mb-8 max-w-2xl">
+                Programmatic access to the Categorical Compound Database for
+                encoding, search, identification, and property prediction.
+              </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {/* API Tier 1 */}
+                <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6">
+                  <p className="text-sm text-neutral-500 uppercase tracking-wider mb-2 font-semibold">Researcher</p>
+                  <p className="text-2xl font-bold text-white mb-1">&euro;0<span className="text-neutral-500 text-sm font-normal"> / month</span></p>
+                  <p className="text-neutral-500 text-xs mb-4">Academic &amp; non-commercial use</p>
+                  <ul className="text-neutral-400 text-sm space-y-2">
+                    <li className="flex items-start gap-2">
+                      <span className="text-neutral-600 mt-0.5">&#x2713;</span>
+                      <span>1,000 requests / month</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-neutral-600 mt-0.5">&#x2713;</span>
+                      <span>/encode and /search endpoints</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-neutral-600 mt-0.5">&#x2713;</span>
+                      <span>39-compound reference set</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-neutral-600 mt-0.5">&#x2713;</span>
+                      <span>Community support</span>
+                    </li>
+                  </ul>
+                </div>
+
+                {/* API Tier 2 */}
+                <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6">
+                  <p className="text-sm text-neutral-500 uppercase tracking-wider mb-2 font-semibold">Professional</p>
+                  <p className="text-2xl font-bold text-white mb-1">&euro;500<span className="text-neutral-500 text-sm font-normal"> / month</span></p>
+                  <p className="text-neutral-500 text-xs mb-4">Commercial use, production workloads</p>
+                  <ul className="text-neutral-400 text-sm space-y-2">
+                    <li className="flex items-start gap-2">
+                      <span className="text-neutral-600 mt-0.5">&#x2713;</span>
+                      <span>100,000 requests / month</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-neutral-600 mt-0.5">&#x2713;</span>
+                      <span>All endpoints including /identify and /predict</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-neutral-600 mt-0.5">&#x2713;</span>
+                      <span>Extended compound database</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-neutral-600 mt-0.5">&#x2713;</span>
+                      <span>Email support, 48h response</span>
+                    </li>
+                  </ul>
+                </div>
+
+                {/* API Tier 3 */}
+                <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6">
+                  <p className="text-sm text-neutral-500 uppercase tracking-wider mb-2 font-semibold">Enterprise</p>
+                  <p className="text-2xl font-bold text-white mb-1">&euro;3,000<span className="text-neutral-500 text-sm font-normal"> / month</span></p>
+                  <p className="text-neutral-500 text-xs mb-4">Unlimited, SLA-backed, dedicated</p>
+                  <ul className="text-neutral-400 text-sm space-y-2">
+                    <li className="flex items-start gap-2">
+                      <span className="text-neutral-600 mt-0.5">&#x2713;</span>
+                      <span>Unlimited requests</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-neutral-600 mt-0.5">&#x2713;</span>
+                      <span>All endpoints + batch processing</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-neutral-600 mt-0.5">&#x2713;</span>
+                      <span>Custom compound ingestion</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-neutral-600 mt-0.5">&#x2713;</span>
+                      <span>99.9% SLA, dedicated support, on-premise option</span>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>

@@ -966,36 +966,40 @@ function ApiEndpoint({ method, path, description, request, response }) {
 
 function Section({ children, className = "" }) {
   const ref = useRef();
+  const [visible, setVisible] = useState(true);
 
   useEffect(() => {
-    let gsapInstance, ScrollTriggerPlugin;
     let ctx;
 
     const init = async () => {
       try {
-        gsapInstance = (await import("gsap")).default;
-        ScrollTriggerPlugin = (await import("gsap/dist/ScrollTrigger")).ScrollTrigger;
-        gsapInstance.registerPlugin(ScrollTriggerPlugin);
+        const gsapModule = await import("gsap");
+        const gsapInstance = gsapModule.default || gsapModule.gsap;
+        const { ScrollTrigger } = await import("gsap/dist/ScrollTrigger");
+        gsapInstance.registerPlugin(ScrollTrigger);
 
-        ctx = gsapInstance.context(() => {
-          gsapInstance.from(ref.current, {
-            y: 50,
-            opacity: 0,
-            duration: 1,
-            ease: "power3.out",
-            scrollTrigger: {
-              trigger: ref.current,
-              start: "top 85%",
-              toggleActions: "play none none none",
-            },
-          });
-        });
-      } catch (e) {
-        // Fallback: just show the section
         if (ref.current) {
-          ref.current.style.opacity = 1;
-          ref.current.style.transform = "none";
+          setVisible(false);
+          ctx = gsapInstance.context(() => {
+            gsapInstance.fromTo(
+              ref.current,
+              { y: 50, opacity: 0 },
+              {
+                y: 0,
+                opacity: 1,
+                duration: 1,
+                ease: "power3.out",
+                scrollTrigger: {
+                  trigger: ref.current,
+                  start: "top 85%",
+                  toggleActions: "play none none none",
+                },
+              }
+            );
+          });
         }
+      } catch (e) {
+        setVisible(true);
       }
     };
 
@@ -1007,7 +1011,7 @@ function Section({ children, className = "" }) {
   }, []);
 
   return (
-    <section ref={ref} className={`opacity-0 ${className}`}>
+    <section ref={ref} className={className} style={{ opacity: visible ? 1 : 0 }}>
       {children}
     </section>
   );
