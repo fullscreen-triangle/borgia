@@ -1,0 +1,533 @@
+{
+  "observation_quality": {
+    "H2": {
+      "formula": "H\u2082",
+      "partition_sharpness": 0.000471,
+      "noise_level": 0.0,
+      "phase_coherence": 0.998418,
+      "observation_quality": 0.999998
+    },
+    "D2": {
+      "formula": "D\u2082",
+      "partition_sharpness": 0.016151,
+      "noise_level": 0.0,
+      "phase_coherence": 0.994414,
+      "observation_quality": 1.0
+    },
+    "N2": {
+      "formula": "N\u2082",
+      "partition_sharpness": 0.018462,
+      "noise_level": 0.015873,
+      "phase_coherence": 0.994971,
+      "observation_quality": 0.537697
+    },
+    "O2": {
+      "formula": "O\u2082",
+      "partition_sharpness": 0.015544,
+      "noise_level": 0.004787,
+      "phase_coherence": 0.995043,
+      "observation_quality": 0.764538
+    },
+    "F2": {
+      "formula": "F\u2082",
+      "partition_sharpness": 0.012279,
+      "noise_level": 0.0,
+      "phase_coherence": 0.994559,
+      "observation_quality": 1.0
+    },
+    "Cl2": {
+      "formula": "Cl\u2082",
+      "partition_sharpness": 0.011359,
+      "noise_level": 0.010078,
+      "phase_coherence": 0.994272,
+      "observation_quality": 0.529873
+    },
+    "CO": {
+      "formula": "CO",
+      "partition_sharpness": 0.019517,
+      "noise_level": 0.003275,
+      "phase_coherence": 0.994875,
+      "observation_quality": 0.856293
+    },
+    "NO": {
+      "formula": "NO",
+      "partition_sharpness": 0.023275,
+      "noise_level": 0.0,
+      "phase_coherence": 0.994391,
+      "observation_quality": 1.0
+    },
+    "HF": {
+      "formula": "HF",
+      "partition_sharpness": 0.003604,
+      "noise_level": 0.0,
+      "phase_coherence": 0.996591,
+      "observation_quality": 1.0
+    },
+    "HCl": {
+      "formula": "HCl",
+      "partition_sharpness": 0.016092,
+      "noise_level": 0.015873,
+      "phase_coherence": 0.994814,
+      "observation_quality": 0.503433
+    },
+    "HBr": {
+      "formula": "HBr",
+      "partition_sharpness": 0.016853,
+      "noise_level": 0.006299,
+      "phase_coherence": 0.995032,
+      "observation_quality": 0.72793
+    },
+    "HI": {
+      "formula": "HI",
+      "partition_sharpness": 0.025002,
+      "noise_level": 0.0,
+      "phase_coherence": 0.994303,
+      "observation_quality": 1.0
+    },
+    "H2O": {
+      "formula": "H\u2082O",
+      "partition_sharpness": 0.015078,
+      "noise_level": 0.0,
+      "phase_coherence": 0.990564,
+      "observation_quality": 1.0
+    },
+    "CO2": {
+      "formula": "CO\u2082",
+      "partition_sharpness": 0.042841,
+      "noise_level": 0.015873,
+      "phase_coherence": 0.985007,
+      "observation_quality": 0.729656
+    },
+    "SO2": {
+      "formula": "SO\u2082",
+      "partition_sharpness": 0.015008,
+      "noise_level": 0.003275,
+      "phase_coherence": 0.98608,
+      "observation_quality": 0.820858
+    },
+    "NO2": {
+      "formula": "NO\u2082",
+      "partition_sharpness": 0.025763,
+      "noise_level": 0.013857,
+      "phase_coherence": 0.983782,
+      "observation_quality": 0.650248
+    },
+    "O3": {
+      "formula": "O\u2083",
+      "partition_sharpness": 0.002909,
+      "noise_level": 0.0,
+      "phase_coherence": 0.99097,
+      "observation_quality": 1.0
+    },
+    "H2S": {
+      "formula": "H\u2082S",
+      "partition_sharpness": 0.026156,
+      "noise_level": 0.019904,
+      "phase_coherence": 0.989637,
+      "observation_quality": 0.567866
+    },
+    "HCN": {
+      "formula": "HCN",
+      "partition_sharpness": 0.035049,
+      "noise_level": 0.008818,
+      "phase_coherence": 0.987977,
+      "observation_quality": 0.798977
+    },
+    "N2O": {
+      "formula": "N\u2082O",
+      "partition_sharpness": 0.041646,
+      "noise_level": 0.015873,
+      "phase_coherence": 0.985243,
+      "observation_quality": 0.724039
+    },
+    "CS2": {
+      "formula": "CS\u2082",
+      "partition_sharpness": 0.019554,
+      "noise_level": 0.0,
+      "phase_coherence": 0.986807,
+      "observation_quality": 1.0
+    },
+    "OCS": {
+      "formula": "OCS",
+      "partition_sharpness": 0.020301,
+      "noise_level": 0.01033,
+      "phase_coherence": 0.985619,
+      "observation_quality": 0.662759
+    },
+    "NH3": {
+      "formula": "NH\u2083",
+      "partition_sharpness": 0.028465,
+      "noise_level": 0.015873,
+      "phase_coherence": 0.989995,
+      "observation_quality": 0.642004
+    },
+    "H2CO": {
+      "formula": "H\u2082CO",
+      "partition_sharpness": 0.059903,
+      "noise_level": 0.018644,
+      "phase_coherence": 0.981531,
+      "observation_quality": 0.762633
+    },
+    "PH3": {
+      "formula": "PH\u2083",
+      "partition_sharpness": 0.03338,
+      "noise_level": 0.010834,
+      "phase_coherence": 0.987469,
+      "observation_quality": 0.754966
+    },
+    "CH4": {
+      "formula": "CH\u2084",
+      "partition_sharpness": 0.040785,
+      "noise_level": 0.002268,
+      "phase_coherence": 0.987296,
+      "observation_quality": 0.94733
+    },
+    "CCl4": {
+      "formula": "CCl\u2084",
+      "partition_sharpness": 0.014809,
+      "noise_level": 0.007307,
+      "phase_coherence": 0.990289,
+      "observation_quality": 0.66961
+    },
+    "SiH4": {
+      "formula": "SiH\u2084",
+      "partition_sharpness": 0.031592,
+      "noise_level": 0.015873,
+      "phase_coherence": 0.9903,
+      "observation_quality": 0.665587
+    },
+    "CF4": {
+      "formula": "CF\u2084",
+      "partition_sharpness": 0.020251,
+      "noise_level": 0.010834,
+      "phase_coherence": 0.981042,
+      "observation_quality": 0.651467
+    },
+    "C2H2": {
+      "formula": "C\u2082H\u2082",
+      "partition_sharpness": 0.043972,
+      "noise_level": 0.028723,
+      "phase_coherence": 0.989591,
+      "observation_quality": 0.604888
+    },
+    "C2H4": {
+      "formula": "C\u2082H\u2084",
+      "partition_sharpness": 0.075107,
+      "noise_level": 0.025195,
+      "phase_coherence": 0.985637,
+      "observation_quality": 0.748808
+    },
+    "C2H6": {
+      "formula": "C\u2082H\u2086",
+      "partition_sharpness": 0.073101,
+      "noise_level": 0.016377,
+      "phase_coherence": 0.979208,
+      "observation_quality": 0.816972
+    },
+    "CH3OH": {
+      "formula": "CH\u2083OH",
+      "partition_sharpness": 0.068669,
+      "noise_level": 0.015873,
+      "phase_coherence": 0.979971,
+      "observation_quality": 0.812248
+    },
+    "C6H6": {
+      "formula": "C\u2086H\u2086",
+      "partition_sharpness": 0.058414,
+      "noise_level": 0.0,
+      "phase_coherence": 0.979611,
+      "observation_quality": 1.0
+    },
+    "CH3F": {
+      "formula": "CH\u2083F",
+      "partition_sharpness": 0.065499,
+      "noise_level": 0.001764,
+      "phase_coherence": 0.981802,
+      "observation_quality": 0.97378
+    },
+    "CH3Cl": {
+      "formula": "CH\u2083Cl",
+      "partition_sharpness": 0.052094,
+      "noise_level": 0.02318,
+      "phase_coherence": 0.984436,
+      "observation_quality": 0.692062
+    },
+    "CH3Br": {
+      "formula": "CH\u2083Br",
+      "partition_sharpness": 0.062407,
+      "noise_level": 0.003527,
+      "phase_coherence": 0.982631,
+      "observation_quality": 0.946502
+    },
+    "HCOOH": {
+      "formula": "HCOOH",
+      "partition_sharpness": 0.078355,
+      "noise_level": 0.031746,
+      "phase_coherence": 0.974168,
+      "observation_quality": 0.711663
+    },
+    "N2O4": {
+      "formula": "N\u2082O\u2084",
+      "partition_sharpness": 0.085687,
+      "noise_level": 0.021164,
+      "phase_coherence": 0.974837,
+      "observation_quality": 0.80193
+    }
+  },
+  "interference_similarity": [
+    {
+      "pair": [
+        "H2O",
+        "H2S"
+      ],
+      "interference_visibility": 0.5,
+      "s_entropy_distance": 0.020373,
+      "shared_prefix_depth": 10
+    },
+    {
+      "pair": [
+        "H2O",
+        "CO2"
+      ],
+      "interference_visibility": 0.5,
+      "s_entropy_distance": 0.142122,
+      "shared_prefix_depth": 1
+    },
+    {
+      "pair": [
+        "HF",
+        "HCl"
+      ],
+      "interference_visibility": 0.5,
+      "s_entropy_distance": 0.037449,
+      "shared_prefix_depth": 4
+    },
+    {
+      "pair": [
+        "HF",
+        "C6H6"
+      ],
+      "interference_visibility": 0.5,
+      "s_entropy_distance": 1.004256,
+      "shared_prefix_depth": 2
+    },
+    {
+      "pair": [
+        "CH4",
+        "SiH4"
+      ],
+      "interference_visibility": 0.5,
+      "s_entropy_distance": 0.061756,
+      "shared_prefix_depth": 1
+    },
+    {
+      "pair": [
+        "CH4",
+        "CO2"
+      ],
+      "interference_visibility": 0.500227,
+      "s_entropy_distance": 0.22499,
+      "shared_prefix_depth": 1
+    },
+    {
+      "pair": [
+        "CH3F",
+        "CH3Cl"
+      ],
+      "interference_visibility": 0.507498,
+      "s_entropy_distance": 0.124581,
+      "shared_prefix_depth": 4
+    },
+    {
+      "pair": [
+        "N2",
+        "O2"
+      ],
+      "interference_visibility": 0.5,
+      "s_entropy_distance": 0.006617,
+      "shared_prefix_depth": 10
+    },
+    {
+      "pair": [
+        "C2H4",
+        "C2H6"
+      ],
+      "interference_visibility": 0.50447,
+      "s_entropy_distance": 0.034669,
+      "shared_prefix_depth": 5
+    },
+    {
+      "pair": [
+        "CO",
+        "NO"
+      ],
+      "interference_visibility": 0.5,
+      "s_entropy_distance": 0.001185,
+      "shared_prefix_depth": 16
+    }
+  ],
+  "self_similarity": [
+    {
+      "compound": "H2",
+      "visibility": 0.500007
+    },
+    {
+      "compound": "D2",
+      "visibility": 0.502021
+    },
+    {
+      "compound": "N2",
+      "visibility": 0.502333
+    },
+    {
+      "compound": "O2",
+      "visibility": 0.501623
+    },
+    {
+      "compound": "F2",
+      "visibility": 0.501141
+    },
+    {
+      "compound": "Cl2",
+      "visibility": 0.501017
+    },
+    {
+      "compound": "CO",
+      "visibility": 0.502679
+    },
+    {
+      "compound": "NO",
+      "visibility": 0.50421
+    },
+    {
+      "compound": "HF",
+      "visibility": 0.500088
+    },
+    {
+      "compound": "HCl",
+      "visibility": 0.501851
+    },
+    {
+      "compound": "HBr",
+      "visibility": 0.501913
+    },
+    {
+      "compound": "HI",
+      "visibility": 0.50491
+    },
+    {
+      "compound": "H2O",
+      "visibility": 0.501392
+    },
+    {
+      "compound": "CO2",
+      "visibility": 0.505542
+    },
+    {
+      "compound": "SO2",
+      "visibility": 0.50075
+    },
+    {
+      "compound": "NO2",
+      "visibility": 0.502195
+    },
+    {
+      "compound": "O3",
+      "visibility": 0.500055
+    },
+    {
+      "compound": "H2S",
+      "visibility": 0.502889
+    },
+    {
+      "compound": "HCN",
+      "visibility": 0.503481
+    },
+    {
+      "compound": "N2O",
+      "visibility": 0.506143
+    },
+    {
+      "compound": "CS2",
+      "visibility": 0.501522
+    },
+    {
+      "compound": "OCS",
+      "visibility": 0.501337
+    },
+    {
+      "compound": "NH3",
+      "visibility": 0.502076
+    },
+    {
+      "compound": "H2CO",
+      "visibility": 0.507281
+    },
+    {
+      "compound": "PH3",
+      "visibility": 0.504625
+    },
+    {
+      "compound": "CH4",
+      "visibility": 0.504391
+    },
+    {
+      "compound": "CCl4",
+      "visibility": 0.50128
+    },
+    {
+      "compound": "SiH4",
+      "visibility": 0.50494
+    },
+    {
+      "compound": "CF4",
+      "visibility": 0.501118
+    },
+    {
+      "compound": "C2H2",
+      "visibility": 0.50484
+    },
+    {
+      "compound": "C2H4",
+      "visibility": 0.508607
+    },
+    {
+      "compound": "C2H6",
+      "visibility": 0.510108
+    },
+    {
+      "compound": "CH3OH",
+      "visibility": 0.508594
+    },
+    {
+      "compound": "C6H6",
+      "visibility": 0.506299
+    },
+    {
+      "compound": "CH3F",
+      "visibility": 0.511162
+    },
+    {
+      "compound": "CH3Cl",
+      "visibility": 0.506628
+    },
+    {
+      "compound": "CH3Br",
+      "visibility": 0.507472
+    },
+    {
+      "compound": "HCOOH",
+      "visibility": 0.508743
+    },
+    {
+      "compound": "N2O4",
+      "visibility": 0.511757
+    }
+  ],
+  "cross_similarity_statistics": {
+    "mean_self_visibility": 0.504077,
+    "min_self_visibility": 0.500007,
+    "mean_cross_visibility": 0.50122,
+    "self_cross_gap": 0.002858
+  }
+}

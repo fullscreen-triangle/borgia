@@ -62,6 +62,7 @@ const Navbar = () => {
           <NavLink href="/resolution" title="Resolution" />
           <NavLink href="/framework" title="Framework" />
           <NavLink href="/database" title="Database" />
+          <NavLink href="/tools" title="Tools" />
           <NavLink href="/consulting" title="Consulting" />
           <NavLink href="/licensing" title="Licensing" />
           <NavLink href="/research" title="Research" />
@@ -98,6 +99,7 @@ const Navbar = () => {
             <MobileNavLink href="/resolution" title="Resolution" toggle={toggle} />
             <MobileNavLink href="/framework" title="Framework" toggle={toggle} />
             <MobileNavLink href="/database" title="Database" toggle={toggle} />
+            <MobileNavLink href="/tools" title="Tools" toggle={toggle} />
             <MobileNavLink href="/consulting" title="Consulting" toggle={toggle} />
             <MobileNavLink href="/licensing" title="Licensing" toggle={toggle} />
             <MobileNavLink href="/research" title="Research" toggle={toggle} />

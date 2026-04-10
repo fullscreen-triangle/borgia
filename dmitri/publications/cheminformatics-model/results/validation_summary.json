@@ -1,0 +1,41 @@
+{
+  "total_compounds": 39,
+  "model_i": {
+    "unique_at_depth_12": 35,
+    "speedup_at_depth_12": 3328.0
+  },
+  "model_ii": {
+    "families_pass": 5,
+    "families_total": 6,
+    "ultrametric": true
+  },
+  "model_iii": {
+    "num_compounds": 39,
+    "mean_absolute_percent_error": 49.7,
+    "median_percent_error": 23.29,
+    "max_percent_error": 232.2,
+    "num_within_5pct": 3,
+    "num_within_10pct": 6
+  },
+  "model_iv": {
+    "total_reactions": 15,
+    "correct": 15,
+    "accuracy": 1.0
+  },
+  "model_v": {
+    "mean_self_visibility": 0.504077,
+    "min_self_visibility": 0.500007,
+    "mean_cross_visibility": 0.50122,
+    "self_cross_gap": 0.002858
+  },
+  "model_vi": {
+    "final_accuracy": 1.0,
+    "final_loss": 0.0888,
+    "final_sharpness": 0.807,
+    "final_coherence": 0.7936,
+    "converged_at_epoch": 3,
+    "total_epochs": 50,
+    "accuracy_improvement": 0.7
+  },
+  "elapsed_seconds": 2.23
+}

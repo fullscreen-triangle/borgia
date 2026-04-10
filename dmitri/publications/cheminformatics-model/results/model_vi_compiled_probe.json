@@ -1,0 +1,377 @@
+{
+  "training_config": {
+    "num_queries": 20,
+    "operation_vocabulary": [
+      "identify",
+      "similar",
+      "predict",
+      "react",
+      "threshold"
+    ],
+    "num_trainable_parameters": 614400,
+    "frozen_parameters": 66000000,
+    "lora_rank": 8,
+    "epochs": 50
+  },
+  "training_history": [
+    {
+      "epoch": 0,
+      "loss": 0.8977,
+      "accuracy": 0.3,
+      "partition_sharpness": 0.5576,
+      "phase_coherence": 0.5557
+    },
+    {
+      "epoch": 1,
+      "loss": 0.6636,
+      "accuracy": 0.5,
+      "partition_sharpness": 0.6299,
+      "phase_coherence": 0.6504
+    },
+    {
+      "epoch": 2,
+      "loss": 0.664,
+      "accuracy": 0.5,
+      "partition_sharpness": 0.6345,
+      "phase_coherence": 0.6333
+    },
+    {
+      "epoch": 3,
+      "loss": 0.2102,
+      "accuracy": 0.9,
+      "partition_sharpness": 0.7496,
+      "phase_coherence": 0.7671
+    },
+    {
+      "epoch": 4,
+      "loss": 0.323,
+      "accuracy": 0.8,
+      "partition_sharpness": 0.7251,
+      "phase_coherence": 0.7266
+    },
+    {
+      "epoch": 5,
+      "loss": 0.2024,
+      "accuracy": 0.9,
+      "partition_sharpness": 0.7748,
+      "phase_coherence": 0.769
+    },
+    {
+      "epoch": 6,
+      "loss": 0.1456,
+      "accuracy": 0.95,
+      "partition_sharpness": 0.7896,
+      "phase_coherence": 0.7859
+    },
+    {
+      "epoch": 7,
+      "loss": 0.0821,
+      "accuracy": 1.0,
+      "partition_sharpness": 0.8293,
+      "phase_coherence": 0.7938
+    },
+    {
+      "epoch": 8,
+      "loss": 0.09,
+      "accuracy": 1.0,
+      "partition_sharpness": 0.7981,
+      "phase_coherence": 0.809
+    },
+    {
+      "epoch": 9,
+      "loss": 0.0874,
+      "accuracy": 1.0,
+      "partition_sharpness": 0.8138,
+      "phase_coherence": 0.7873
+    },
+    {
+      "epoch": 10,
+      "loss": 0.0876,
+      "accuracy": 1.0,
+      "partition_sharpness": 0.8061,
+      "phase_coherence": 0.809
+    },
+    {
+      "epoch": 11,
+      "loss": 0.0883,
+      "accuracy": 1.0,
+      "partition_sharpness": 0.8041,
+      "phase_coherence": 0.8081
+    },
+    {
+      "epoch": 12,
+      "loss": 0.0915,
+      "accuracy": 1.0,
+      "partition_sharpness": 0.8011,
+      "phase_coherence": 0.7844
+    },
+    {
+      "epoch": 13,
+      "loss": 0.0927,
+      "accuracy": 1.0,
+      "partition_sharpness": 0.7905,
+      "phase_coherence": 0.805
+    },
+    {
+      "epoch": 14,
+      "loss": 0.0884,
+      "accuracy": 1.0,
+      "partition_sharpness": 0.8108,
+      "phase_coherence": 0.787
+    },
+    {
+      "epoch": 15,
+      "loss": 0.0938,
+      "accuracy": 1.0,
+      "partition_sharpness": 0.7959,
+      "phase_coherence": 0.7777
+    },
+    {
+      "epoch": 16,
+      "loss": 0.088,
+      "accuracy": 1.0,
+      "partition_sharpness": 0.8052,
+      "phase_coherence": 0.8071
+    },
+    {
+      "epoch": 17,
+      "loss": 0.0897,
+      "accuracy": 1.0,
+      "partition_sharpness": 0.8008,
+      "phase_coherence": 0.8032
+    },
+    {
+      "epoch": 18,
+      "loss": 0.0911,
+      "accuracy": 1.0,
+      "partition_sharpness": 0.795,
+      "phase_coherence": 0.807
+    },
+    {
+      "epoch": 19,
+      "loss": 0.0918,
+      "accuracy": 1.0,
+      "partition_sharpness": 0.791,
+      "phase_coherence": 0.8121
+    },
+    {
+      "epoch": 20,
+      "loss": 0.0903,
+      "accuracy": 1.0,
+      "partition_sharpness": 0.7967,
+      "phase_coherence": 0.8097
+    },
+    {
+      "epoch": 21,
+      "loss": 0.0899,
+      "accuracy": 1.0,
+      "partition_sharpness": 0.806,
+      "phase_coherence": 0.7855
+    },
+    {
+      "epoch": 22,
+      "loss": 0.0935,
+      "accuracy": 1.0,
+      "partition_sharpness": 0.7856,
+      "phase_coherence": 0.8107
+    },
+    {
+      "epoch": 23,
+      "loss": 0.0932,
+      "accuracy": 1.0,
+      "partition_sharpness": 0.794,
+      "phase_coherence": 0.789
+    },
+    {
+      "epoch": 24,
+      "loss": 0.0927,
+      "accuracy": 1.0,
+      "partition_sharpness": 0.7902,
+      "phase_coherence": 0.8055
+    },
+    {
+      "epoch": 25,
+      "loss": 0.088,
+      "accuracy": 1.0,
+      "partition_sharpness": 0.802,
+      "phase_coherence": 0.8169
+    },
+    {
+      "epoch": 26,
+      "loss": 0.0907,
+      "accuracy": 1.0,
+      "partition_sharpness": 0.7938,
+      "phase_coherence": 0.814
+    },
+    {
+      "epoch": 27,
+      "loss": 0.0902,
+      "accuracy": 1.0,
+      "partition_sharpness": 0.8071,
+      "phase_coherence": 0.7797
+    },
+    {
+      "epoch": 28,
+      "loss": 0.0898,
+      "accuracy": 1.0,
+      "partition_sharpness": 0.8007,
+      "phase_coherence": 0.8025
+    },
+    {
+      "epoch": 29,
+      "loss": 0.0875,
+      "accuracy": 1.0,
+      "partition_sharpness": 0.8125,
+      "phase_coherence": 0.7904
+    },
+    {
+      "epoch": 30,
+      "loss": 0.0919,
+      "accuracy": 1.0,
+      "partition_sharpness": 0.802,
+      "phase_coherence": 0.7776
+    },
+    {
+      "epoch": 31,
+      "loss": 0.0916,
+      "accuracy": 1.0,
+      "partition_sharpness": 0.7933,
+      "phase_coherence": 0.8069
+    },
+    {
+      "epoch": 32,
+      "loss": 0.0903,
+      "accuracy": 1.0,
+      "partition_sharpness": 0.806,
+      "phase_coherence": 0.782
+    },
+    {
+      "epoch": 33,
+      "loss": 0.0916,
+      "accuracy": 1.0,
+      "partition_sharpness": 0.7993,
+      "phase_coherence": 0.7894
+    },
+    {
+      "epoch": 34,
+      "loss": 0.0942,
+      "accuracy": 1.0,
+      "partition_sharpness": 0.7922,
+      "phase_coherence": 0.7848
+    },
+    {
+      "epoch": 35,
+      "loss": 0.0947,
+      "accuracy": 1.0,
+      "partition_sharpness": 0.7884,
+      "phase_coherence": 0.7904
+    },
+    {
+      "epoch": 36,
+      "loss": 0.0917,
+      "accuracy": 1.0,
+      "partition_sharpness": 0.7908,
+      "phase_coherence": 0.8137
+    },
+    {
+      "epoch": 37,
+      "loss": 0.0948,
+      "accuracy": 1.0,
+      "partition_sharpness": 0.788,
+      "phase_coherence": 0.7909
+    },
+    {
+      "epoch": 38,
+      "loss": 0.1004,
+      "accuracy": 1.0,
+      "partition_sharpness": 0.7707,
+      "phase_coherence": 0.7867
+    },
+    {
+      "epoch": 39,
+      "loss": 0.0878,
+      "accuracy": 1.0,
+      "partition_sharpness": 0.8105,
+      "phase_coherence": 0.794
+    },
+    {
+      "epoch": 40,
+      "loss": 0.0892,
+      "accuracy": 1.0,
+      "partition_sharpness": 0.8017,
+      "phase_coherence": 0.8063
+    },
+    {
+      "epoch": 41,
+      "loss": 0.1011,
+      "accuracy": 1.0,
+      "partition_sharpness": 0.773,
+      "phase_coherence": 0.7726
+    },
+    {
+      "epoch": 42,
+      "loss": 0.0855,
+      "accuracy": 1.0,
+      "partition_sharpness": 0.8135,
+      "phase_coherence": 0.8077
+    },
+    {
+      "epoch": 43,
+      "loss": 0.0932,
+      "accuracy": 1.0,
+      "partition_sharpness": 0.789,
+      "phase_coherence": 0.8044
+    },
+    {
+      "epoch": 44,
+      "loss": 0.0936,
+      "accuracy": 1.0,
+      "partition_sharpness": 0.7942,
+      "phase_coherence": 0.7843
+    },
+    {
+      "epoch": 45,
+      "loss": 0.0953,
+      "accuracy": 1.0,
+      "partition_sharpness": 0.785,
+      "phase_coherence": 0.7944
+    },
+    {
+      "epoch": 46,
+      "loss": 0.0911,
+      "accuracy": 1.0,
+      "partition_sharpness": 0.793,
+      "phase_coherence": 0.813
+    },
+    {
+      "epoch": 47,
+      "loss": 0.0983,
+      "accuracy": 1.0,
+      "partition_sharpness": 0.7802,
+      "phase_coherence": 0.7789
+    },
+    {
+      "epoch": 48,
+      "loss": 0.0902,
+      "accuracy": 1.0,
+      "partition_sharpness": 0.802,
+      "phase_coherence": 0.7953
+    },
+    {
+      "epoch": 49,
+      "loss": 0.0888,
+      "accuracy": 1.0,
+      "partition_sharpness": 0.807,
+      "phase_coherence": 0.7936
+    }
+  ],
+  "convergence": {
+    "final_accuracy": 1.0,
+    "final_loss": 0.0888,
+    "final_sharpness": 0.807,
+    "final_coherence": 0.7936,
+    "converged_at_epoch": 3,
+    "total_epochs": 50,
+    "accuracy_improvement": 0.7
+  }
+}

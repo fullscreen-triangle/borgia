@@ -1,0 +1,83 @@
+{
+  "family_cohesion": {
+    "Halomethanes": {
+      "members": [
+        "CH3F",
+        "CH3Cl",
+        "CH3Br"
+      ],
+      "mean_intra_similarity": 5.0,
+      "mean_inter_similarity": 2.546,
+      "intra_inter_ratio": 1.964,
+      "cohesion": "PASS"
+    },
+    "Hydrogen halides": {
+      "members": [
+        "HF",
+        "HCl",
+        "HBr",
+        "HI"
+      ],
+      "mean_intra_similarity": 6.0,
+      "mean_inter_similarity": 1.736,
+      "intra_inter_ratio": 3.457,
+      "cohesion": "PASS"
+    },
+    "Homonuclear diatomics": {
+      "members": [
+        "H2",
+        "D2",
+        "N2",
+        "O2",
+        "F2",
+        "Cl2"
+      ],
+      "mean_intra_similarity": 3.8,
+      "mean_inter_similarity": 1.722,
+      "intra_inter_ratio": 2.206,
+      "cohesion": "PASS"
+    },
+    "Small hydrocarbons": {
+      "members": [
+        "CH4",
+        "C2H2",
+        "C2H4",
+        "C2H6"
+      ],
+      "mean_intra_similarity": 2.333,
+      "mean_inter_similarity": 2.436,
+      "intra_inter_ratio": 0.958,
+      "cohesion": "MARGINAL"
+    },
+    "Linear triatomics": {
+      "members": [
+        "CO2",
+        "CS2",
+        "N2O",
+        "OCS"
+      ],
+      "mean_intra_similarity": 4.5,
+      "mean_inter_similarity": 2.343,
+      "intra_inter_ratio": 1.921,
+      "cohesion": "PASS"
+    },
+    "Bent triatomics": {
+      "members": [
+        "H2O",
+        "SO2",
+        "NO2",
+        "O3",
+        "H2S"
+      ],
+      "mean_intra_similarity": 6.1,
+      "mean_inter_similarity": 1.335,
+      "intra_inter_ratio": 4.568,
+      "cohesion": "PASS"
+    }
+  },
+  "ultrametric_validation": {
+    "total_triples": 9139,
+    "violations": 0,
+    "is_ultrametric": true
+  }
+}

@@ -1,0 +1,324 @@
+{
+  "predictions": [
+    {
+      "compound": "H2",
+      "formula": "H\u2082",
+      "zpve_nist_kj_mol": 26.32,
+      "zpve_predicted_kj_mol": 18.11,
+      "absolute_error_kj_mol": 8.22,
+      "percent_error": 31.21
+    },
+    {
+      "compound": "D2",
+      "formula": "D\u2082",
+      "zpve_nist_kj_mol": 17.91,
+      "zpve_predicted_kj_mol": 24.29,
+      "absolute_error_kj_mol": 6.38,
+      "percent_error": 35.63
+    },
+    {
+      "compound": "N2",
+      "formula": "N\u2082",
+      "zpve_nist_kj_mol": 13.94,
+      "zpve_predicted_kj_mol": 11.13,
+      "absolute_error_kj_mol": 2.81,
+      "percent_error": 20.14
+    },
+    {
+      "compound": "O2",
+      "formula": "O\u2082",
+      "zpve_nist_kj_mol": 9.45,
+      "zpve_predicted_kj_mol": 12.43,
+      "absolute_error_kj_mol": 2.98,
+      "percent_error": 31.56
+    },
+    {
+      "compound": "F2",
+      "formula": "F\u2082",
+      "zpve_nist_kj_mol": 5.34,
+      "zpve_predicted_kj_mol": 11.33,
+      "absolute_error_kj_mol": 6.0,
+      "percent_error": 112.4
+    },
+    {
+      "compound": "Cl2",
+      "formula": "Cl\u2082",
+      "zpve_nist_kj_mol": 3.35,
+      "zpve_predicted_kj_mol": 10.91,
+      "absolute_error_kj_mol": 7.56,
+      "percent_error": 225.84
+    },
+    {
+      "compound": "CO",
+      "formula": "CO",
+      "zpve_nist_kj_mol": 12.82,
+      "zpve_predicted_kj_mol": 10.41,
+      "absolute_error_kj_mol": 2.41,
+      "percent_error": 18.8
+    },
+    {
+      "compound": "NO",
+      "formula": "NO",
+      "zpve_nist_kj_mol": 11.22,
+      "zpve_predicted_kj_mol": 12.21,
+      "absolute_error_kj_mol": 0.99,
+      "percent_error": 8.79
+    },
+    {
+      "compound": "HF",
+      "formula": "HF",
+      "zpve_nist_kj_mol": 23.67,
+      "zpve_predicted_kj_mol": 16.76,
+      "absolute_error_kj_mol": 6.91,
+      "percent_error": 29.19
+    },
+    {
+      "compound": "HCl",
+      "formula": "HCl",
+      "zpve_nist_kj_mol": 17.26,
+      "zpve_predicted_kj_mol": 15.42,
+      "absolute_error_kj_mol": 1.84,
+      "percent_error": 10.68
+    },
+    {
+      "compound": "HBr",
+      "formula": "HBr",
+      "zpve_nist_kj_mol": 15.31,
+      "zpve_predicted_kj_mol": 16.34,
+      "absolute_error_kj_mol": 1.03,
+      "percent_error": 6.73
+    },
+    {
+      "compound": "HI",
+      "formula": "HI",
+      "zpve_nist_kj_mol": 13.34,
+      "zpve_predicted_kj_mol": 15.95,
+      "absolute_error_kj_mol": 2.62,
+      "percent_error": 19.62
+    },
+    {
+      "compound": "H2O",
+      "formula": "H\u2082O",
+      "zpve_nist_kj_mol": 53.88,
+      "zpve_predicted_kj_mol": 32.43,
+      "absolute_error_kj_mol": 21.45,
+      "percent_error": 39.8
+    },
+    {
+      "compound": "CO2",
+      "formula": "CO\u2082",
+      "zpve_nist_kj_mol": 26.34,
+      "zpve_predicted_kj_mol": 23.58,
+      "absolute_error_kj_mol": 2.76,
+      "percent_error": 10.48
+    },
+    {
+      "compound": "SO2",
+      "formula": "SO\u2082",
+      "zpve_nist_kj_mol": 18.13,
+      "zpve_predicted_kj_mol": 42.42,
+      "absolute_error_kj_mol": 24.29,
+      "percent_error": 133.99
+    },
+    {
+      "compound": "NO2",
+      "formula": "NO\u2082",
+      "zpve_nist_kj_mol": 22.04,
+      "zpve_predicted_kj_mol": 40.24,
+      "absolute_error_kj_mol": 18.19,
+      "percent_error": 82.55
+    },
+    {
+      "compound": "O3",
+      "formula": "O\u2083",
+      "zpve_nist_kj_mol": 17.02,
+      "zpve_predicted_kj_mol": 56.35,
+      "absolute_error_kj_mol": 39.33,
+      "percent_error": 231.04
+    },
+    {
+      "compound": "H2S",
+      "formula": "H\u2082S",
+      "zpve_nist_kj_mol": 38.42,
+      "zpve_predicted_kj_mol": 31.61,
+      "absolute_error_kj_mol": 6.82,
+      "percent_error": 17.74
+    },
+    {
+      "compound": "HCN",
+      "formula": "HCN",
+      "zpve_nist_kj_mol": 36.61,
+      "zpve_predicted_kj_mol": 34.47,
+      "absolute_error_kj_mol": 2.14,
+      "percent_error": 5.86
+    },
+    {
+      "compound": "N2O",
+      "formula": "N\u2082O",
+      "zpve_nist_kj_mol": 24.51,
+      "zpve_predicted_kj_mol": 23.7,
+      "absolute_error_kj_mol": 0.81,
+      "percent_error": 3.31
+    },
+    {
+      "compound": "CS2",
+      "formula": "CS\u2082",
+      "zpve_nist_kj_mol": 15.49,
+      "zpve_predicted_kj_mol": 21.79,
+      "absolute_error_kj_mol": 6.3,
+      "percent_error": 40.69
+    },
+    {
+      "compound": "OCS",
+      "formula": "OCS",
+      "zpve_nist_kj_mol": 20.58,
+      "zpve_predicted_kj_mol": 16.99,
+      "absolute_error_kj_mol": 3.59,
+      "percent_error": 17.46
+    },
+    {
+      "compound": "NH3",
+      "formula": "NH\u2083",
+      "zpve_nist_kj_mol": 55.97,
+      "zpve_predicted_kj_mol": 16.92,
+      "absolute_error_kj_mol": 39.06,
+      "percent_error": 69.78
+    },
+    {
+      "compound": "H2CO",
+      "formula": "H\u2082CO",
+      "zpve_nist_kj_mol": 67.52,
+      "zpve_predicted_kj_mol": 49.77,
+      "absolute_error_kj_mol": 17.75,
+      "percent_error": 26.29
+    },
+    {
+      "compound": "PH3",
+      "formula": "PH\u2083",
+      "zpve_nist_kj_mol": 40.44,
+      "zpve_predicted_kj_mol": 53.02,
+      "absolute_error_kj_mol": 12.58,
+      "percent_error": 31.11
+    },
+    {
+      "compound": "CH4",
+      "formula": "CH\u2084",
+      "zpve_nist_kj_mol": 52.49,
+      "zpve_predicted_kj_mol": 41.72,
+      "absolute_error_kj_mol": 10.77,
+      "percent_error": 20.52
+    },
+    {
+      "compound": "CCl4",
+      "formula": "CCl\u2084",
+      "zpve_nist_kj_mol": 12.47,
+      "zpve_predicted_kj_mol": 41.41,
+      "absolute_error_kj_mol": 28.94,
+      "percent_error": 232.2
+    },
+    {
+      "compound": "SiH4",
+      "formula": "SiH\u2084",
+      "zpve_nist_kj_mol": 36.44,
+      "zpve_predicted_kj_mol": 64.79,
+      "absolute_error_kj_mol": 28.35,
+      "percent_error": 77.81
+    },
+    {
+      "compound": "CF4",
+      "formula": "CF\u2084",
+      "zpve_nist_kj_mol": 19.49,
+      "zpve_predicted_kj_mol": 44.21,
+      "absolute_error_kj_mol": 24.72,
+      "percent_error": 126.82
+    },
+    {
+      "compound": "C2H2",
+      "formula": "C\u2082H\u2082",
+      "zpve_nist_kj_mol": 59.68,
+      "zpve_predicted_kj_mol": 47.77,
+      "absolute_error_kj_mol": 11.91,
+      "percent_error": 19.96
+    },
+    {
+      "compound": "C2H4",
+      "formula": "C\u2082H\u2084",
+      "zpve_nist_kj_mol": 129.82,
+      "zpve_predicted_kj_mol": 113.69,
+      "absolute_error_kj_mol": 16.13,
+      "percent_error": 12.42
+    },
+    {
+      "compound": "C2H6",
+      "formula": "C\u2082H\u2086",
+      "zpve_nist_kj_mol": 113.87,
+      "zpve_predicted_kj_mol": 112.67,
+      "absolute_error_kj_mol": 1.2,
+      "percent_error": 1.05
+    },
+    {
+      "compound": "CH3OH",
+      "formula": "CH\u2083OH",
+      "zpve_nist_kj_mol": 119.75,
+      "zpve_predicted_kj_mol": 120.65,
+      "absolute_error_kj_mol": 0.9,
+      "percent_error": 0.75
+    },
+    {
+      "compound": "C6H6",
+      "formula": "C\u2086H\u2086",
+      "zpve_nist_kj_mol": 44.87,
+      "zpve_predicted_kj_mol": 55.32,
+      "absolute_error_kj_mol": 10.45,
+      "percent_error": 23.29
+    },
+    {
+      "compound": "CH3F",
+      "formula": "CH\u2083F",
+      "zpve_nist_kj_mol": 84.09,
+      "zpve_predicted_kj_mol": 36.75,
+      "absolute_error_kj_mol": 47.33,
+      "percent_error": 56.29
+    },
+    {
+      "compound": "CH3Cl",
+      "formula": "CH\u2083Cl",
+      "zpve_nist_kj_mol": 80.74,
+      "zpve_predicted_kj_mol": 63.93,
+      "absolute_error_kj_mol": 16.81,
+      "percent_error": 20.82
+    },
+    {
+      "compound": "CH3Br",
+      "formula": "CH\u2083Br",
+      "zpve_nist_kj_mol": 79.42,
+      "zpve_predicted_kj_mol": 61.46,
+      "absolute_error_kj_mol": 17.96,
+      "percent_error": 22.61
+    },
+    {
+      "compound": "HCOOH",
+      "formula": "HCOOH",
+      "zpve_nist_kj_mol": 81.72,
+      "zpve_predicted_kj_mol": 63.05,
+      "absolute_error_kj_mol": 18.66,
+      "percent_error": 22.84
+    },
+    {
+      "compound": "N2O4",
+      "formula": "N\u2082O\u2084",
+      "zpve_nist_kj_mol": 54.1,
+      "zpve_predicted_kj_mol": 75.78,
+      "absolute_error_kj_mol": 21.68,
+      "percent_error": 40.07
+    }
+  ],
+  "summary": {
+    "num_compounds": 39,
+    "mean_absolute_percent_error": 49.7,
+    "median_percent_error": 23.29,
+    "max_percent_error": 232.2,
+    "num_within_5pct": 3,
+    "num_within_10pct": 6
+  }
+}

@@ -1,0 +1,305 @@
+{
+  "depth_resolution": [
+    {
+      "depth": 3,
+      "unique_compounds": 0,
+      "total_compounds": 39,
+      "unique_fraction": 0.0,
+      "num_collision_groups": 4,
+      "collisions": {
+        "210": [
+          "H2",
+          "D2",
+          "HF",
+          "HCl",
+          "HBr",
+          "HI"
+        ],
+        "220": [
+          "N2",
+          "O2",
+          "F2",
+          "Cl2",
+          "CO",
+          "NO"
+        ],
+        "202": [
+          "H2O",
+          "SO2",
+          "NO2",
+          "O3",
+          "H2S",
+          "H2CO",
+          "PH3",
+          "CH4"
+        ],
+        "212": [
+          "CO2",
+          "HCN",
+          "N2O",
+          "CS2",
+          "OCS",
+          "NH3",
+          "CCl4",
+          "SiH4",
+          "CF4",
+          "C2H2",
+          "C2H4",
+          "C2H6",
+          "CH3OH",
+          "C6H6",
+          "CH3F",
+          "CH3Cl",
+          "CH3Br",
+          "HCOOH",
+          "N2O4"
+        ]
+      }
+    },
+    {
+      "depth": 6,
+      "unique_compounds": 5,
+      "total_compounds": 39,
+      "unique_fraction": 0.1282,
+      "num_collision_groups": 10,
+      "collisions": {
+        "210210": [
+          "D2",
+          "HF"
+        ],
+        "220200": [
+          "N2",
+          "O2",
+          "F2",
+          "CO",
+          "NO"
+        ],
+        "210220": [
+          "HCl",
+          "HBr",
+          "HI"
+        ],
+        "202222": [
+          "H2O",
+          "SO2",
+          "NO2",
+          "H2S"
+        ],
+        "212202": [
+          "CO2",
+          "NH3",
+          "CCl4",
+          "CF4",
+          "C2H6",
+          "CH3F"
+        ],
+        "212112": [
+          "HCN",
+          "CS2",
+          "OCS"
+        ],
+        "202221": [
+          "H2CO",
+          "PH3",
+          "CH4"
+        ],
+        "212201": [
+          "SiH4",
+          "C2H4",
+          "CH3OH"
+        ],
+        "212212": [
+          "C6H6",
+          "CH3Cl",
+          "CH3Br"
+        ],
+        "212222": [
+          "HCOOH",
+          "N2O4"
+        ]
+      }
+    },
+    {
+      "depth": 9,
+      "unique_compounds": 21,
+      "total_compounds": 39,
+      "unique_fraction": 0.5385,
+      "num_collision_groups": 7,
+      "collisions": {
+        "220200210": [
+          "N2",
+          "O2",
+          "F2",
+          "CO",
+          "NO"
+        ],
+        "210220200": [
+          "HCl",
+          "HBr"
+        ],
+        "202222112": [
+          "H2O",
+          "H2S"
+        ],
+        "212202022": [
+          "CO2",
+          "NH3",
+          "CCl4"
+        ],
+        "212112202": [
+          "CS2",
+          "OCS"
+        ],
+        "202221111": [
+          "PH3",
+          "CH4"
+        ],
+        "212201122": [
+          "C2H4",
+          "CH3OH"
+        ]
+      }
+    },
+    {
+      "depth": 12,
+      "unique_compounds": 35,
+      "total_compounds": 39,
+      "unique_fraction": 0.8974,
+      "num_collision_groups": 1,
+      "collisions": {
+        "220200210200": [
+          "O2",
+          "F2",
+          "CO",
+          "NO"
+        ]
+      }
+    },
+    {
+      "depth": 15,
+      "unique_compounds": 36,
+      "total_compounds": 39,
+      "unique_fraction": 0.9231,
+      "num_collision_groups": 1,
+      "collisions": {
+        "220200210200220": [
+          "O2",
+          "CO",
+          "NO"
+        ]
+      }
+    },
+    {
+      "depth": 18,
+      "unique_compounds": 39,
+      "total_compounds": 39,
+      "unique_fraction": 1.0,
+      "num_collision_groups": 0,
+      "collisions": {}
+    }
+  ],
+  "speedup_analysis": [
+    {
+      "depth": 3,
+      "N": 39,
+      "d": 1024,
+      "fingerprint_ops": 39936,
+      "trie_ops": 3,
+      "speedup": 13312.0
+    },
+    {
+      "depth": 6,
+      "N": 39,
+      "d": 1024,
+      "fingerprint_ops": 39936,
+      "trie_ops": 6,
+      "speedup": 6656.0
+    },
+    {
+      "depth": 9,
+      "N": 39,
+      "d": 1024,
+      "fingerprint_ops": 39936,
+      "trie_ops": 9,
+      "speedup": 4437.3
+    },
+    {
+      "depth": 12,
+      "N": 39,
+      "d": 1024,
+      "fingerprint_ops": 39936,
+      "trie_ops": 12,
+      "speedup": 3328.0
+    },
+    {
+      "depth": 15,
+      "N": 39,
+      "d": 1024,
+      "fingerprint_ops": 39936,
+      "trie_ops": 15,
+      "speedup": 2662.4
+    },
+    {
+      "depth": 18,
+      "N": 39,
+      "d": 1024,
+      "fingerprint_ops": 39936,
+      "trie_ops": 18,
+      "speedup": 2218.7
+    },
+    {
+      "depth": 12,
+      "N": 1000000,
+      "d": 1024,
+      "fingerprint_ops": 1024000000,
+      "trie_ops": 12,
+      "speedup": 85333333.33333333,
+      "scale": "projected"
+    },
+    {
+      "depth": 18,
+      "N": 1000000,
+      "d": 1024,
+      "fingerprint_ops": 1024000000,
+      "trie_ops": 18,
+      "speedup": 56888888.88888889,
+      "scale": "projected"
+    },
+    {
+      "depth": 12,
+      "N": 10000000,
+      "d": 1024,
+      "fingerprint_ops": 10240000000,
+      "trie_ops": 12,
+      "speedup": 853333333.3333334,
+      "scale": "projected"
+    },
+    {
+      "depth": 18,
+      "N": 10000000,
+      "d": 1024,
+      "fingerprint_ops": 10240000000,
+      "trie_ops": 18,
+      "speedup": 568888888.8888888,
+      "scale": "projected"
+    },
+    {
+      "depth": 12,
+      "N": 100000000,
+      "d": 1024,
+      "fingerprint_ops": 102400000000,
+      "trie_ops": 12,
+      "speedup": 8533333333.333333,
+      "scale": "projected"
+    },
+    {
+      "depth": 18,
+      "N": 100000000,
+      "d": 1024,
+      "fingerprint_ops": 102400000000,
+      "trie_ops": 18,
+      "speedup": 5688888888.888889,
+      "scale": "projected"
+    }
+  ]
+}

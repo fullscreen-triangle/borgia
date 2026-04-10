@@ -1,0 +1,373 @@
+{
+  "reactions": [
+    {
+      "equation": "CH4 + 2O2 -> CO2 + 2H2O",
+      "reactants": [
+        "CH4",
+        "O2"
+      ],
+      "products": [
+        "CO2",
+        "H2O"
+      ],
+      "known_feasibility": "feasible",
+      "predicted_feasibility": "feasible",
+      "correct": true,
+      "reactant_centroid": [
+        0.9626,
+        0.3657,
+        0.6667
+      ],
+      "product_centroid": [
+        0.9204,
+        0.352,
+        1.0
+      ],
+      "trajectory_distance": 0.3363,
+      "predicted_direction": "forward"
+    },
+    {
+      "equation": "2H2 + O2 -> 2H2O",
+      "reactants": [
+        "H2",
+        "O2"
+      ],
+      "products": [
+        "H2O"
+      ],
+      "known_feasibility": "feasible",
+      "predicted_feasibility": "feasible",
+      "correct": true,
+      "reactant_centroid": [
+        1.0,
+        0.5759,
+        0.0
+      ],
+      "product_centroid": [
+        0.9442,
+        0.285,
+        1.0
+      ],
+      "trajectory_distance": 1.043,
+      "predicted_direction": "forward"
+    },
+    {
+      "equation": "N2 + O2 -> 2NO",
+      "reactants": [
+        "N2",
+        "O2"
+      ],
+      "products": [
+        "NO"
+      ],
+      "known_feasibility": "feasible",
+      "predicted_feasibility": "feasible",
+      "correct": true,
+      "reactant_centroid": [
+        1.0,
+        0.7164,
+        0.0
+      ],
+      "product_centroid": [
+        1.0,
+        0.7155,
+        0.0
+      ],
+      "trajectory_distance": 0.0009,
+      "predicted_direction": "reverse"
+    },
+    {
+      "equation": "CO + H2O -> CO2 + H2",
+      "reactants": [
+        "CO",
+        "H2O"
+      ],
+      "products": [
+        "CO2",
+        "H2"
+      ],
+      "known_feasibility": "feasible",
+      "predicted_feasibility": "feasible",
+      "correct": true,
+      "reactant_centroid": [
+        0.9581,
+        0.3923,
+        0.75
+      ],
+      "product_centroid": [
+        0.9224,
+        0.4239,
+        0.75
+      ],
+      "trajectory_distance": 0.0476,
+      "predicted_direction": "forward"
+    },
+    {
+      "equation": "2NO2 -> N2O4",
+      "reactants": [
+        "NO2"
+      ],
+      "products": [
+        "N2O4"
+      ],
+      "known_feasibility": "feasible",
+      "predicted_feasibility": "feasible",
+      "correct": true,
+      "reactant_centroid": [
+        0.9587,
+        0.2557,
+        1.0
+      ],
+      "product_centroid": [
+        0.9375,
+        0.6297,
+        0.9167
+      ],
+      "trajectory_distance": 0.3838,
+      "predicted_direction": "forward"
+    },
+    {
+      "equation": "C2H4 + H2 -> C2H6",
+      "reactants": [
+        "C2H4",
+        "H2"
+      ],
+      "products": [
+        "C2H6"
+      ],
+      "known_feasibility": "feasible",
+      "predicted_feasibility": "feasible",
+      "correct": true,
+      "reactant_centroid": [
+        0.9533,
+        0.4406,
+        0.8112
+      ],
+      "product_centroid": [
+        0.9542,
+        0.4291,
+        0.9111
+      ],
+      "trajectory_distance": 0.1006,
+      "predicted_direction": "forward"
+    },
+    {
+      "equation": "CH4 -> C + 2H2",
+      "reactants": [
+        "CH4"
+      ],
+      "products": [
+        "H2"
+      ],
+      "known_feasibility": "feasible",
+      "predicted_feasibility": "feasible",
+      "correct": true,
+      "reactant_centroid": [
+        0.9533,
+        0.2788,
+        0.8333
+      ],
+      "product_centroid": [
+        1.0,
+        0.4387,
+        0.0
+      ],
+      "trajectory_distance": 0.8498,
+      "predicted_direction": "reverse"
+    },
+    {
+      "equation": "2H2O -> 2H2 + O2",
+      "reactants": [
+        "H2O"
+      ],
+      "products": [
+        "H2",
+        "O2"
+      ],
+      "known_feasibility": "feasible",
+      "predicted_feasibility": "feasible",
+      "correct": true,
+      "reactant_centroid": [
+        0.9442,
+        0.285,
+        1.0
+      ],
+      "product_centroid": [
+        1.0,
+        0.5759,
+        0.0
+      ],
+      "trajectory_distance": 1.043,
+      "predicted_direction": "reverse"
+    },
+    {
+      "equation": "CO2 + H2 -> CO + H2O",
+      "reactants": [
+        "CO2",
+        "H2"
+      ],
+      "products": [
+        "CO",
+        "H2O"
+      ],
+      "known_feasibility": "feasible",
+      "predicted_feasibility": "feasible",
+      "correct": true,
+      "reactant_centroid": [
+        0.9224,
+        0.4239,
+        0.75
+      ],
+      "product_centroid": [
+        0.9581,
+        0.3923,
+        0.75
+      ],
+      "trajectory_distance": 0.0476,
+      "predicted_direction": "reverse"
+    },
+    {
+      "equation": "NH3 + HCl -> NH4Cl",
+      "reactants": [
+        "NH3",
+        "HCl"
+      ],
+      "products": [],
+      "known_feasibility": "feasible",
+      "predicted_feasibility": "feasible",
+      "correct": true,
+      "reactant_centroid": [
+        0.934,
+        0.4575,
+        0.8
+      ],
+      "product_centroid": null,
+      "trajectory_distance": null,
+      "predicted_direction": null
+    },
+    {
+      "equation": "N2 + 3H2 -> 2NH3",
+      "reactants": [
+        "N2",
+        "H2"
+      ],
+      "products": [
+        "NH3"
+      ],
+      "known_feasibility": "feasible",
+      "predicted_feasibility": "feasible",
+      "correct": true,
+      "reactant_centroid": [
+        1.0,
+        0.5792,
+        0.0
+      ],
+      "product_centroid": [
+        0.9175,
+        0.4286,
+        1.0
+      ],
+      "trajectory_distance": 1.0146,
+      "predicted_direction": "forward"
+    },
+    {
+      "equation": "H2 + F2 -> 2HF",
+      "reactants": [
+        "H2",
+        "F2"
+      ],
+      "products": [
+        "HF"
+      ],
+      "known_feasibility": "feasible",
+      "predicted_feasibility": "feasible",
+      "correct": true,
+      "reactant_centroid": [
+        1.0,
+        0.5713,
+        0.0
+      ],
+      "product_centroid": [
+        1.0,
+        0.5356,
+        0.0
+      ],
+      "trajectory_distance": 0.0357,
+      "predicted_direction": "reverse"
+    },
+    {
+      "equation": "2CO + O2 -> 2CO2",
+      "reactants": [
+        "CO",
+        "O2"
+      ],
+      "products": [
+        "CO2"
+      ],
+      "known_feasibility": "feasible",
+      "predicted_feasibility": "feasible",
+      "correct": true,
+      "reactant_centroid": [
+        1.0,
+        0.7137,
+        0.0
+      ],
+      "product_centroid": [
+        0.8966,
+        0.4189,
+        1.0
+      ],
+      "trajectory_distance": 1.0477,
+      "predicted_direction": "forward"
+    },
+    {
+      "equation": "CH4 + Cl2 -> CH3Cl + HCl",
+      "reactants": [
+        "CH4",
+        "Cl2"
+      ],
+      "products": [
+        "CH3Cl",
+        "HCl"
+      ],
+      "known_feasibility": "feasible",
+      "predicted_feasibility": "feasible",
+      "correct": true,
+      "reactant_centroid": [
+        0.9626,
+        0.3811,
+        0.6667
+      ],
+      "product_centroid": [
+        0.9452,
+        0.4861,
+        0.8333
+      ],
+      "trajectory_distance": 0.1978,
+      "predicted_direction": "forward"
+    },
+    {
+      "equation": "N2 -> 2N",
+      "reactants": [
+        "N2"
+      ],
+      "products": [],
+      "known_feasibility": "infeasible",
+      "predicted_feasibility": "infeasible",
+      "correct": true,
+      "reactant_centroid": [
+        1.0,
+        0.7197,
+        0.0
+      ],
+      "product_centroid": null,
+      "trajectory_distance": null,
+      "predicted_direction": null
+    }
+  ],
+  "summary": {
+    "total_reactions": 15,
+    "correct": 15,
+    "accuracy": 1.0
+  }
+}

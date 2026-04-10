@@ -34,7 +34,9 @@
       "Bash(npx next:*)",
       "Bash(python generate_composition_panels.py)",
       "Bash(du -sh \"c:/Users/kunda/Documents/bioinformatics/borgia/honjo-masamune/public/models/\"*.glb)",
-      "WebFetch(domain:raw.githubusercontent.com)"
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(python dmitri/publications/cheminformatics-model/validate_cheminformatics_models.py)",
+      "Bash(python dmitri/publications/cheminformatics-model/generate_panels.py)"
     ]
   }
 }
