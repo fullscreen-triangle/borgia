@@ -5,10 +5,13 @@
  * No backend. No API. No database. Just shaders and geometry.
  *
  * Instruments:
- *   I.  Partition Observation — GPU fragment shader observes molecular state
- *   II. Interference Similarity — interference of two observation textures
+ *   I.   Partition Observation — GPU fragment shader observes molecular state
+ *   II.  Interference Similarity — interference of two observation textures
  *   III. Harmonic Network — vibrational mode network with closed loops
- *   IV. Property Prediction — ZPVE via S-entropy interpolation
+ *   IV.  Property Prediction — ZPVE via S-entropy interpolation
+ *   V.   Loop Fingerprint — cavity fingerprint from closed harmonic loops
+ *   VI.  3D Structure — GLB molecular model with loop overlay + shape entropy
+ *   VII. Docking — depth buffer + spectral interference docking
  */
 import { useState, useMemo, useCallback } from "react";
 import Head from "next/head";
@@ -19,6 +22,8 @@ import {
   sharedPrefixDepth,
   computeHarmonicNetwork,
   computeZPVE,
+  computeLoopFingerprint,
+  loopFingerprintDistance,
   predictProperty,
   encodeAllCompounds,
   COMPOUNDS,
@@ -27,12 +32,16 @@ import {
 // Dynamic imports for client-only components (WebGL + D3)
 const PartitionObserver = dynamic(() => import("@/components/PartitionObserver"), { ssr: false });
 const HarmonicNetwork = dynamic(() => import("@/components/HarmonicNetwork"), { ssr: false });
+const MoleculeViewer3D = dynamic(() => import("@/components/MoleculeViewer3D"), { ssr: false });
+const DockingInstrument = dynamic(() => import("@/components/DockingInstrument"), { ssr: false });
 
 const TYPE_COLORS = {
   diatomic: "#3b82f6",
   triatomic: "#22c55e",
   tetra: "#f97316",
   poly: "#ef4444",
+  amino_acid: "#a855f7",
+  custom: "#6b7280",
 };
 
 export default function Tools() {
@@ -88,10 +97,29 @@ export default function Tools() {
     return predictProperty(molA, refs, (r) => r.zpve, 5);
   }, [molA, db, compoundKeys]);
 
+  // Shape entropy state (from GLB normals)
+  const [shapeEntropyA, setShapeEntropyA] = useState(null);
+
+  // Loop fingerprint rankings
+  const loopRankings = useMemo(() => {
+    if (!molA?.loopFP) return [];
+    return compoundKeys
+      .filter((k) => k !== molA.key)
+      .map((k) => ({
+        key: k,
+        ...db[k],
+        loopDist: loopFingerprintDistance(molA.loopFP, db[k].loopFP),
+      }))
+      .sort((a, b) => a.loopDist - b.loopDist);
+  }, [molA, db, compoundKeys]);
+
   const tabs = [
     { id: "observe", label: "Observation" },
     { id: "interfere", label: "Interference" },
     { id: "network", label: "Network" },
+    { id: "fingerprint", label: "Fingerprint" },
+    { id: "structure", label: "3D Structure" },
+    { id: "docking", label: "Docking" },
     { id: "predict", label: "Properties" },
   ];
 
@@ -340,6 +368,210 @@ export default function Tools() {
                     <span className="text-[#f97316] font-mono">{molA.S_e.toFixed(4)}</span>
                   </div>
                 </div>
+              </div>
+            )}
+
+            {/* V. Loop Fingerprint */}
+            {activeTab === "fingerprint" && molA && (
+              <div>
+                <h2 className="text-lg font-bold text-white mb-1">
+                  Instrument V: Loop (Cavity) Fingerprint
+                </h2>
+                <p className="text-neutral-500 text-sm mb-4">
+                  Closed loops in the harmonic network = virtual resonant cavities.
+                  The fingerprint encodes cavity count, Q-factors, and circulation frequencies.
+                </p>
+
+                {/* Fingerprint summary */}
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
+                  <div className="bg-neutral-800/50 rounded-lg p-4 border border-neutral-700">
+                    <div className="text-neutral-500 text-xs uppercase tracking-wider mb-1">Cavities</div>
+                    <div className="text-2xl font-bold text-[#58E6D9] font-mono">{molA.loopFP.nLoops}</div>
+                  </div>
+                  <div className="bg-neutral-800/50 rounded-lg p-4 border border-neutral-700">
+                    <div className="text-neutral-500 text-xs uppercase tracking-wider mb-1">Mean Q-factor</div>
+                    <div className="text-2xl font-bold text-white font-mono">
+                      {molA.loopFP.meanQ > 0 ? molA.loopFP.meanQ.toFixed(1) : "—"}
+                    </div>
+                  </div>
+                  <div className="bg-neutral-800/50 rounded-lg p-4 border border-neutral-700">
+                    <div className="text-neutral-500 text-xs uppercase tracking-wider mb-1">Mean Circ. Freq.</div>
+                    <div className="text-lg font-bold text-white font-mono">
+                      {molA.loopFP.meanCircFreq > 0 ? molA.loopFP.meanCircFreq.toExponential(2) : "—"}
+                    </div>
+                    <div className="text-neutral-600 text-xs">Hz</div>
+                  </div>
+                  <div className="bg-neutral-800/50 rounded-lg p-4 border border-neutral-700">
+                    <div className="text-neutral-500 text-xs uppercase tracking-wider mb-1">Mean Loop Size</div>
+                    <div className="text-2xl font-bold text-white font-mono">
+                      {molA.loopFP.meanSize > 0 ? molA.loopFP.meanSize.toFixed(1) : "—"}
+                    </div>
+                    <div className="text-neutral-600 text-xs">modes/loop</div>
+                  </div>
+                </div>
+
+                {/* Individual loops */}
+                {molA.loopFP.loops.length > 0 && (
+                  <div className="mb-6">
+                    <h3 className="text-sm font-semibold text-neutral-300 mb-2 uppercase tracking-wider">
+                      Detected cavities
+                    </h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+                      {molA.loopFP.loops.map((loop, i) => (
+                        <div key={i} className="bg-neutral-800/30 rounded-lg p-3 border border-neutral-800">
+                          <div className="flex items-center gap-2 mb-1">
+                            <div className="w-2 h-2 rounded-full bg-[#58E6D9]" />
+                            <span className="text-white text-sm font-medium">Loop {i + 1}</span>
+                            <span className="text-neutral-500 text-xs">({loop.nodes.length} modes)</span>
+                          </div>
+                          <div className="text-xs text-neutral-400 font-mono">
+                            modes: {loop.modes.join(", ")} cm⁻¹
+                          </div>
+                          <div className="text-xs text-neutral-400 font-mono">
+                            Q = {loop.Q.toFixed(1)} · f_circ = {loop.circFreq.toExponential(2)} Hz
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Fingerprint-based ranking */}
+                <h3 className="text-sm font-semibold text-neutral-300 mb-2 uppercase tracking-wider">
+                  Most similar by cavity fingerprint
+                </h3>
+                <div className="grid grid-cols-2 md:grid-cols-5 gap-2">
+                  {loopRankings.slice(0, 10).map((r, i) => (
+                    <div key={r.key} className="bg-neutral-800/50 rounded-lg p-3 border border-neutral-800">
+                      <div className="flex items-center gap-2 mb-1">
+                        <span className="text-neutral-600 text-xs">#{i + 1}</span>
+                        <span className="text-white text-sm font-medium">{r.name}</span>
+                      </div>
+                      <div className="text-xs text-neutral-500">
+                        loops: <span className="text-[#58E6D9] font-mono">{r.loopFP.nLoops}</span>
+                      </div>
+                      <div className="text-xs text-neutral-500">
+                        dist: <span className="font-mono">{r.loopDist.toFixed(4)}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* VI. 3D Structure */}
+            {activeTab === "structure" && molA && (
+              <div>
+                <h2 className="text-lg font-bold text-white mb-1">
+                  Instrument VI: 3D Molecular Structure
+                </h2>
+                <p className="text-neutral-500 text-sm mb-4">
+                  GLB molecular model with harmonic loop overlay.
+                  Teal = modes participating in closed loops (virtual cavities).
+                  Shape entropy S_g computed from mesh normals.
+                </p>
+
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                  <MoleculeViewer3D
+                    mol={molA}
+                    width={500}
+                    height={400}
+                    onShapeEntropy={setShapeEntropyA}
+                  />
+                  <div className="space-y-4">
+                    {/* S-entropy + shape entropy (4D coordinates) */}
+                    <div className="bg-neutral-800/50 rounded-xl p-5 border border-neutral-700">
+                      <h3 className="text-sm font-semibold text-neutral-300 mb-3 uppercase tracking-wider">
+                        4D Categorical Coordinates
+                      </h3>
+                      <div className="space-y-3">
+                        {[
+                          { label: "S_k (knowledge)", value: molA.S_k, color: "#3b82f6" },
+                          { label: "S_t (temporal)", value: molA.S_t, color: "#22c55e" },
+                          { label: "S_e (evolution)", value: molA.S_e, color: "#f97316" },
+                          { label: "S_g (shape)", value: shapeEntropyA, color: "#a855f7" },
+                        ].map(({ label, value, color }) => (
+                          <div key={label}>
+                            <div className="flex justify-between text-sm mb-1">
+                              <span className="text-neutral-400">{label}</span>
+                              <span className="text-white font-mono">
+                                {value !== null && value !== undefined ? value.toFixed(4) : "—"}
+                              </span>
+                            </div>
+                            <div className="w-full h-1.5 bg-neutral-800 rounded-full overflow-hidden">
+                              <div
+                                className="h-full rounded-full transition-all duration-500"
+                                style={{
+                                  width: `${(value ?? 0) * 100}%`,
+                                  backgroundColor: color,
+                                }}
+                              />
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                      <p className="text-neutral-600 text-xs mt-3">
+                        {shapeEntropyA !== null
+                          ? "S_g extracted from GLB mesh normals (Gauss map entropy)"
+                          : "Load a GLB model to compute shape entropy S_g"}
+                      </p>
+                    </div>
+
+                    {/* Molecule info */}
+                    <div className="bg-neutral-800/50 rounded-xl p-5 border border-neutral-700">
+                      <h3 className="text-sm font-semibold text-neutral-300 mb-3 uppercase tracking-wider">
+                        Molecule
+                      </h3>
+                      <div className="space-y-2 text-sm">
+                        <div className="flex justify-between">
+                          <span className="text-neutral-400">Formula</span>
+                          <span className="text-white">{molA.name}</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-neutral-400">Type</span>
+                          <span className="text-white">{molA.type}</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-neutral-400">Modes</span>
+                          <span className="text-white font-mono">{molA.modes.length}</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-neutral-400">Cavities</span>
+                          <span className="text-[#58E6D9] font-mono">{molA.loopFP.nLoops}</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-neutral-400">ZPVE</span>
+                          <span className="text-white font-mono">{molA.zpve.toFixed(1)} kJ/mol</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <p className="text-neutral-600 text-xs mt-4">
+                  Place GLB models in <code className="text-neutral-500">public/models/molecules/</code> named
+                  by compound key (e.g., H2O.glb, C6H6.glb). Procedural representation shown when GLB is unavailable.
+                </p>
+              </div>
+            )}
+
+            {/* VII. Docking */}
+            {activeTab === "docking" && molA && molB && (
+              <div>
+                <h2 className="text-lg font-bold text-white mb-1">
+                  Instrument VII: Spectral Docking
+                </h2>
+                <p className="text-neutral-500 text-sm mb-4">
+                  Spatial proximity + spectral interference between {molA.name} and {molB.name}.
+                  Teal lines = harmonically compatible mode pairs. Adjust separation and rotation to scan poses.
+                </p>
+
+                <DockingInstrument molA={molA} molB={molB} width={900} height={400} />
+
+                <p className="text-neutral-600 text-xs mt-4">
+                  Docking score combines spectral complementarity (harmonic mode compatibility)
+                  with S-entropy distance. No force fields, no MD, no training data.
+                </p>
               </div>
             )}
 

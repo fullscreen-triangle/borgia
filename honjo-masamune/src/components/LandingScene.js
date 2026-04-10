@@ -47,7 +47,7 @@ export default function LandingScene() {
       />
       <pointLight position={[0, -3, 0]} intensity={0.3} color="#58E6D9" />
       <Suspense fallback={null}>
-        <BohrModel scale={0.5} position={[0, 0, 0]} />
+        <BohrModel scale={0.2} position={[0, 0, 0]} />
         <ContactShadows
           frames={1}
           rotation-x={Math.PI / 2}
