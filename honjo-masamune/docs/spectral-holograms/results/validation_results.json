@@ -1,0 +1,336 @@
+{
+  "CH4": {
+    "coupling_matrix": [
+      [
+        0.5,
+        0.46153846153846156,
+        -0.16653449643140364,
+        0.4984025559105431
+      ],
+      [
+        0.46153846153846156,
+        0.5,
+        -0.11281224818694602,
+        0.44635193133047213
+      ],
+      [
+        -0.16653449643140364,
+        -0.11281224818694602,
+        0.5,
+        -0.17952258828171236
+      ],
+      [
+        0.4984025559105431,
+        0.44635193133047213,
+        -0.17952258828171236,
+        0.5
+      ]
+    ],
+    "coupling_modes": [
+      "nu3_T2",
+      "nu4_T2",
+      "nu1_A1",
+      "nu2_E"
+    ],
+    "frequency_shifts": {
+      "nu3_T2": -12,
+      "nu4_T2": -8,
+      "nu1_A1": 70,
+      "nu2_E": -13
+    },
+    "huang_rhys": {
+      "nu3_T2": {
+        "ground_freq": 3157,
+        "excited_freq": 3145,
+        "shift": 12,
+        "huang_rhys_factor": 0.0009
+      },
+      "nu4_T2": {
+        "ground_freq": 1306,
+        "excited_freq": 1298,
+        "shift": 8,
+        "huang_rhys_factor": 0.001
+      },
+      "nu1_A1": {
+        "ground_freq": 2917,
+        "excited_freq": 2987,
+        "shift": 70,
+        "huang_rhys_factor": 0.0332
+      },
+      "nu2_E": {
+        "ground_freq": 1534,
+        "excited_freq": 1521,
+        "shift": 13,
+        "huang_rhys_factor": 0.0022
+      }
+    },
+    "cross_prediction": [
+      {
+        "mode": "nu3_T2",
+        "ground_freq": 3157,
+        "excited_freq": 3145,
+        "predicted_freq": 3145.0,
+        "error_pct": 0.0
+      },
+      {
+        "mode": "nu4_T2",
+        "ground_freq": 1306,
+        "excited_freq": 1298,
+        "predicted_freq": 1298.0,
+        "error_pct": 0.0
+      },
+      {
+        "mode": "nu1_A1",
+        "ground_freq": 2917,
+        "excited_freq": 2987,
+        "predicted_freq": 2987.0,
+        "error_pct": 0.0
+      },
+      {
+        "mode": "nu2_E",
+        "ground_freq": 1534,
+        "excited_freq": 1521,
+        "predicted_freq": 1521.0,
+        "error_pct": 0.0
+      }
+    ],
+    "cross_prediction_mean_error_pct": 0.0,
+    "categorical_resolution": {
+      "omega_sum_rad_s": 3365143524997266.5,
+      "delta_t_cat_s": 1.8671373926568822e-15,
+      "N_cat": 455242.34228445,
+      "I_cat_bits": 18.8,
+      "num_oscillators": 8
+    },
+    "trajectory_fidelity": {
+      "fidelity": 1.0,
+      "w0": 1.0,
+      "w2": 0.0,
+      "T_kelvin": 4.0,
+      "trajectory_c0": [
+        0.0,
+        0.000999500166624978,
+        0.001998001332666921,
+        0.0029955044966269995,
+        0.003992010656008516,
+        0.00498752080731768,
+        0.005982035946064723,
+        0.0069755570667648925,
+        0.007968085162939342,
+        0.008959621227116354,
+        0.009950166250831893,
+        0.010939721224631271,
+        0.011928287138069482,
+        0.012915864979712421,
+        0.013902455737138109,
+        0.014888060396937353,
+        0.015872679944714863,
+        0.016856315365090357,
+        0.017838967641699233,
+        0.018820637757194003
+      ],
+      "trajectory_c2": [
+        1.0,
+        0.999000499833375,
+        0.9980019986673331,
+        0.997004495503373,
+        0.9960079893439915,
+        0.9950124791926823,
+        0.9940179640539353,
+        0.9930244429332351,
+        0.9920319148370607,
+        0.9910403787728836,
+        0.9900498337491681,
+        0.9890602787753687,
+        0.9880717128619305,
+        0.9870841350202876,
+        0.9860975442628619,
+        0.9851119396030626,
+        0.9841273200552851,
+        0.9831436846349096,
+        0.9821610323583008,
+        0.981179362242806
+      ]
+    },
+    "symmetry_correlations": {
+      "2": 0.9909,
+      "3": 0.0311,
+      "4": 0.023,
+      "5": 0.023,
+      "6": 0.0311
+    },
+    "mutual_exclusion_violation": 0.0
+  },
+  "R6G": {
+    "coupling_matrix": [
+      [
+        0.5,
+        -0.14,
+        0.07106598984771574,
+        0.07106598984771574,
+        0.07106598984771574,
+        0.028548123980424143
+      ],
+      [
+        -0.14,
+        0.5,
+        -0.4,
+        -0.4,
+        -0.4,
+        -0.19230769230769232
+      ],
+      [
+        0.07106598984771574,
+        -0.4,
+        0.5,
+        0.5,
+        0.5,
+        0.3448275862068966
+      ],
+      [
+        0.07106598984771574,
+        -0.4,
+        0.5,
+        0.5,
+        0.5,
+        0.3448275862068966
+      ],
+      [
+        0.07106598984771574,
+        -0.4,
+        0.5,
+        0.5,
+        0.5,
+        0.3448275862068966
+      ],
+      [
+        0.028548123980424143,
+        -0.19230769230769232,
+        0.3448275862068966,
+        0.3448275862068966,
+        0.3448275862068966,
+        0.5
+      ]
+    ],
+    "coupling_modes": [
+      "CO_stretch",
+      "CC_stretch",
+      "CH_bend",
+      "ring_breath",
+      "CO_bend",
+      "ring_deform"
+    ],
+    "frequency_shifts": {
+      "CO_stretch": -70,
+      "CC_stretch": 10,
+      "CH_bend": -5,
+      "ring_breath": -5,
+      "CO_bend": -5,
+      "ring_deform": -2
+    },
+    "stokes_shift": {
+      "absorption_cm": 18867.9,
+      "emission_cm": 17857.1,
+      "stokes_shift_cm": 1010.8,
+      "vibrational_component_cm": 16.2,
+      "solvent_component_cm": 994.6,
+      "reorganisation_energy_cm": 505.4,
+      "reorganisation_energy_kcal": 1.445
+    },
+    "huang_rhys": {
+      "CO_stretch": {
+        "ground_freq": 1650,
+        "excited_freq": 1580,
+        "shift": 70,
+        "huang_rhys_factor": 0.0607
+      },
+      "CC_stretch": {
+        "ground_freq": 1500,
+        "excited_freq": 1510,
+        "shift": 10,
+        "huang_rhys_factor": 0.0013
+      },
+      "CH_bend": {
+        "ground_freq": 1350,
+        "excited_freq": 1345,
+        "shift": 5,
+        "huang_rhys_factor": 0.0004
+      },
+      "ring_breath": {
+        "ground_freq": 1180,
+        "excited_freq": 1175,
+        "shift": 5,
+        "huang_rhys_factor": 0.0004
+      },
+      "CO_bend": {
+        "ground_freq": 620,
+        "excited_freq": 615,
+        "shift": 5,
+        "huang_rhys_factor": 0.0008
+      },
+      "ring_deform": {
+        "ground_freq": 450,
+        "excited_freq": 448,
+        "shift": 2,
+        "huang_rhys_factor": 0.0002
+      }
+    },
+    "categorical_resolution": {
+      "omega_sum_rad_s": 2528425498798673.5,
+      "delta_t_cat_s": 2.485018961470253e-15,
+      "N_cat": 1609645.6654936,
+      "I_cat_bits": 20.62,
+      "num_oscillators": 12
+    },
+    "symmetry_correlations": {
+      "2": 0.9897,
+      "3": 0.0338,
+      "4": 0.0281,
+      "5": 0.0281,
+      "6": 0.0336
+    }
+  },
+  "autocatalytic_gain": {
+    "history": [
+      {
+        "modality": 1,
+        "I_k_enhanced": 16.9,
+        "I_total": 16.9,
+        "burden": 0.7132,
+        "enhancement_factor": 1.69
+      },
+      {
+        "modality": 2,
+        "I_k_enhanced": 14.92,
+        "I_total": 31.82,
+        "burden": 0.5292,
+        "enhancement_factor": 1.492
+      },
+      {
+        "modality": 3,
+        "I_k_enhanced": 13.65,
+        "I_total": 45.47,
+        "burden": 0.4027,
+        "enhancement_factor": 1.365
+      },
+      {
+        "modality": 4,
+        "I_k_enhanced": 12.78,
+        "I_total": 58.25,
+        "burden": 0.3119,
+        "enhancement_factor": 1.278
+      },
+      {
+        "modality": 5,
+        "I_k_enhanced": 12.15,
+        "I_total": 70.4,
+        "burden": 0.2446,
+        "enhancement_factor": 1.215
+      }
+    ],
+    "I_total_autocatalytic": 70.4,
+    "I_total_independent": 50.0,
+    "enhancement_ratio": 1.408,
+    "beta": 0.69
+  }
+}

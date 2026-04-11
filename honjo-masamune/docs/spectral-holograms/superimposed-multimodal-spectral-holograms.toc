@@ -1,0 +1,51 @@
+\contentsline {part}{I\hspace {1em}Foundations}{4}{part.1}%
+\contentsline {section}{\numberline {1}Introduction}{4}{section.1}%
+\contentsline {section}{\numberline {2}Bounded Phase Space and Oscillatory Necessity}{5}{section.2}%
+\contentsline {section}{\numberline {3}S-Entropy Coordinate Space}{6}{section.3}%
+\contentsline {section}{\numberline {4}Emission-Triggered Temporal Separation}{7}{section.4}%
+\contentsline {section}{\numberline {5}Spectroscopic Measurement as Ternary Projection}{9}{section.5}%
+\contentsline {part}{II\hspace {1em}The Spectral Hologram}{10}{part.2}%
+\contentsline {section}{\numberline {6}Superposition and the Complete State Function}{10}{section.6}%
+\contentsline {section}{\numberline {7}Vibrational Coupling Matrix}{11}{section.7}%
+\contentsline {section}{\numberline {8}Franck--Condon Extraction}{12}{section.8}%
+\contentsline {section}{\numberline {9}Stokes Shift Decomposition}{14}{section.9}%
+\contentsline {section}{\numberline {10}Diffraction Pattern and Molecular Symmetry}{15}{section.10}%
+\contentsline {part}{III\hspace {1em}Enhancement Mechanisms}{16}{part.3}%
+\contentsline {section}{\numberline {11}Categorical Temporal Resolution}{16}{section.11}%
+\contentsline {section}{\numberline {12}Autocatalytic Information Gain}{17}{section.12}%
+\contentsline {section}{\numberline {13}Hardware Gas Law for Spectroscopy}{19}{section.13}%
+\contentsline {part}{IV\hspace {1em}Implementation}{20}{part.4}%
+\contentsline {section}{\numberline {14}GPU Shader Pipeline}{20}{section.14}%
+\contentsline {subsection}{\numberline {14.1}Pass 1: Temporal Separation}{21}{subsection.14.1}%
+\contentsline {subsection}{\numberline {14.2}Pass 2: Weighted Superposition}{21}{subsection.14.2}%
+\contentsline {subsection}{\numberline {14.3}Pass 3: 2D FFT Diffraction}{22}{subsection.14.3}%
+\contentsline {subsection}{\numberline {14.4}Pass 4: Multi-Modal Categorical Synthesis}{23}{subsection.14.4}%
+\contentsline {subsection}{\numberline {14.5}Pass 5: Trajectory Completion}{24}{subsection.14.5}%
+\contentsline {section}{\numberline {15}Interactive Hologram Viewer}{25}{section.15}%
+\contentsline {part}{V\hspace {1em}Validation}{25}{part.5}%
+\contentsline {section}{\numberline {16}Validation on CH$_4^+$}{26}{section.16}%
+\contentsline {subsection}{\numberline {16.1}System Parameters}{26}{subsection.16.1}%
+\contentsline {subsection}{\numberline {16.2}Temporal Separation}{26}{subsection.16.2}%
+\contentsline {subsection}{\numberline {16.3}Cross-Prediction Accuracy}{26}{subsection.16.3}%
+\contentsline {subsection}{\numberline {16.4}Mutual Exclusion Validation}{27}{subsection.16.4}%
+\contentsline {subsection}{\numberline {16.5}Ternary Trajectory Fidelity}{27}{subsection.16.5}%
+\contentsline {subsection}{\numberline {16.6}Categorical Resolution}{27}{subsection.16.6}%
+\contentsline {subsection}{\numberline {16.7}Diffraction Symmetry}{27}{subsection.16.7}%
+\contentsline {section}{\numberline {17}Validation on Rhodamine 6G}{28}{section.17}%
+\contentsline {subsection}{\numberline {17.1}System Parameters}{28}{subsection.17.1}%
+\contentsline {subsection}{\numberline {17.2}Ground-State IR Spectrum}{28}{subsection.17.2}%
+\contentsline {subsection}{\numberline {17.3}Excited-State Raman Spectrum}{28}{subsection.17.3}%
+\contentsline {subsection}{\numberline {17.4}Vibrational Coupling Matrix}{28}{subsection.17.4}%
+\contentsline {subsection}{\numberline {17.5}Stokes Shift and Reorganisation Energy}{29}{subsection.17.5}%
+\contentsline {subsection}{\numberline {17.6}Huang--Rhys Factor}{29}{subsection.17.6}%
+\contentsline {subsection}{\numberline {17.7}Diffraction Symmetry}{29}{subsection.17.7}%
+\contentsline {subsection}{\numberline {17.8}Summary of Validation}{29}{subsection.17.8}%
+\contentsline {part}{VI\hspace {1em}Discussion and Conclusion}{29}{part.6}%
+\contentsline {section}{\numberline {18}Discussion}{30}{section.18}%
+\contentsline {subsection}{\numberline {18.1}What Has Been Derived}{30}{subsection.18.1}%
+\contentsline {subsection}{\numberline {18.2}Six Quantities Inaccessible to Single-State Measurement}{30}{subsection.18.2}%
+\contentsline {subsection}{\numberline {18.3}Enhancement Factors}{30}{subsection.18.3}%
+\contentsline {subsection}{\numberline {18.4}Comparison with Conventional Methods}{31}{subsection.18.4}%
+\contentsline {subsection}{\numberline {18.5}The Empty Dictionary Principle}{31}{subsection.18.5}%
+\contentsline {subsection}{\numberline {18.6}Limitations}{31}{subsection.18.6}%
+\contentsline {section}{\numberline {19}Conclusion}{32}{section.19}%

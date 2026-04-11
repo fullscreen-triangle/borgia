@@ -646,176 +646,79 @@ The near-universality of $\nP \approx 50$--$60$ is a striking feature. All oscil
 
 
 %==============================================================================
-\section{Five Enhancement Mechanisms from First Principles}
+\section{Unification of Enhancement Mechanisms}
 \label{sec:unification}
 %==============================================================================
 
-The composition-inflation formula $T(n,d) = d \cdot (d+1)^{n-1}$ provides the total distinguishable trajectory count. We now show that this single formula decomposes into five structurally distinct enhancement mechanisms, each derivable from the axioms and theorems established in Sections~\ref{sec:compositions}--\ref{sec:angular}. These are not cited from external work; they are derived here as corollaries of composition-inflation.
+In prior work~\cite{sachikonye2025trans}, five trans-Planckian enhancement mechanisms were identified, each contributing multiplicatively to the total enhancement factor. We now demonstrate that all five are special cases of composition-inflation.
 
-\subsection{Mechanism 1: Ternary Encoding Enhancement}
+\subsection{The Five Mechanisms}
 
-The first mechanism follows directly from the dimensional structure of the composition-inflation formula.
+The previously identified mechanisms and their enhancement factors are:
 
-\begin{proposition}[Ternary Enhancement]
-\label{prop:ternary}
-For a $d$-dimensional entropy space, ternary encoding ($d = 3$) provides an enhancement factor over binary encoding ($d = 1$) of:
+\begin{enumerate}[label=\textbf{M\arabic*}:]
+\item \textbf{Ternary encoding} ($10^{3.52}$): The S-entropy space has $d = 3$ dimensions, and each dimension admits ternary subdivision. This produces $3^n$ states at depth $n$ in a single dimension.
+\item \textbf{Multi-modal synthesis} ($10^{5}$): Combining five independent measurement modalities (mass, charge, frequency, intensity, phase) multiplies the state count.
+\item \textbf{Harmonic coincidence} ($10^{3}$): Rational frequency relationships between oscillatory modes create coincidence patterns that increase distinguishability.
+\item \textbf{Poincar\'{e} computing} ($10^{66}$): Trajectory completion in bounded phase space generates a combinatorial explosion of distinguishable recurrence patterns~\cite{poincare1890}.
+\item \textbf{Continuous refinement} ($10^{43.43}$): Non-halting dynamics continuously subdivide entropy space, accumulating resolution with each cycle.
+\end{enumerate}
+
+The total previously computed enhancement is:
 \begin{equation}
-\mathcal{E}_{\mathrm{ternary}} = \frac{T(n, 3)}{T(n, 1)} = \frac{3 \cdot 4^{n-1}}{1 \cdot 2^{n-1}} = 3 \cdot 2^{n-1}.
-\end{equation}
-\end{proposition}
-
-\begin{proof}
-By Definition~\ref{def:labeled_comp} (Labeled Composition), each step in a composition is assigned to one of $d$ dimensions. For $d = 1$, there is no labeling choice (every step refines the single dimension), giving $T(n,1) = 1 \cdot 2^{n-1}$ (compositions only, no inflation). For $d = 3$, each step has 3 labeling options, giving $T(n,3) = 3 \cdot 4^{n-1}$. The ratio is the enhancement from having three independent entropy dimensions rather than one.
-\end{proof}
-
-\textbf{Numerical evaluation.} For $N_{\mathrm{trits}} = 20$ (the typical floating-point precision depth):
-\begin{equation}
-\mathcal{E}_{\mathrm{ternary}} = \left(\frac{3}{2}\right)^{20} = \frac{3^{20}}{2^{20}} \approx 3325 \approx 10^{3.52}.
+E_{\mathrm{total}} = 10^{3.52} \times 10^{5} \times 10^{3} \times 10^{66} \times 10^{43.43} = 10^{120.95}.
 \end{equation}
 
-\textbf{Physical origin.} The three S-entropy dimensions $(\Sk, \St, \Se)$ arise from three independent properties of bounded oscillatory systems: the distribution of energy across modes (knowledge), the span of timescales (temporal), and the density of harmonic relationships (evolution). These are independent because $\Sk$ depends on frequency \emph{ratios} (normalised distribution), $\St$ depends on frequency \emph{range} (max/min), and $\Se$ depends on frequency \emph{relationships} (rational approximation quality). No two can be computed from the third.
-
-\subsection{Mechanism 2: Multi-Modal Synthesis Enhancement}
-
-\begin{proposition}[Multi-Modal Enhancement]
-\label{prop:multimodal}
-For $K$ independent measurement modalities, each providing $N_c$ spectral channels, the enhancement factor from cross-modal correlations is:
-\begin{equation}
-\mathcal{E}_{\mathrm{multi}} = N_c^{K/2} \cdot \binom{K}{2}^{1/2}.
-\end{equation}
-\end{proposition}
-
-\begin{proof}
-Each measurement modality observes the same bounded oscillatory system through a different coupling mechanism. By the Commutation Theorem (Theorem~\ref{thm:nondem}), categorical measurements are non-demolition: observing through one modality does not disturb the state accessible to another. Therefore, information from different modalities is \emph{independent}.
-
-Each modality provides $N_c$ spectral channels. Pairwise cross-correlations between modalities $i$ and $j$ yield $N_c^2$ correlation coefficients. For $K$ modalities, there are $\binom{K}{2} = K(K-1)/2$ independent pairs. The total independent measurements number $N_c^K \cdot \binom{K}{2}$.
-
-By standard statistical averaging ($\sqrt{N}$ scaling for $N$ independent measurements):
-\begin{equation}
-\mathcal{E}_{\mathrm{multi}} = \sqrt{N_c^K \cdot \binom{K}{2}} = N_c^{K/2} \cdot \binom{K}{2}^{1/2}. \qedhere
-\end{equation}
-\end{proof}
-
-\textbf{Connection to composition-inflation.} In the composition-inflation formula, the $d^k$ factor counts the number of ways to assign dimensional labels to $k$ parts. Each measurement modality corresponds to an independent labeling scheme---a different way of assigning the same oscillation cycles to entropy dimensions. The multi-modal count is therefore a subset of the total labeled composition count, specifically the subcount arising from physically realizable label assignments.
-
-\textbf{Numerical evaluation.} For $K = 5$ modalities (UV-visible, infrared, Raman, fluorescence, mass spectrometry) with $N_c = 10^3$ channels each, accounting for redundancy between modalities:
-\begin{equation}
-\mathcal{E}_{\mathrm{multi}} \approx 10^5.
-\end{equation}
-
-\subsection{Mechanism 3: Harmonic Coincidence Enhancement}
-
-\begin{proposition}[Harmonic Coincidence Enhancement]
-\label{prop:harmonic}
-For $N$ oscillatory modes with frequencies $\{\omega_i\}$, the number of distinguishable harmonic coincidence patterns provides an enhancement:
-\begin{equation}
-\mathcal{E}_{\mathrm{harm}} = \prod_{(i,j) \in E_{\mathrm{harm}}} \eta_{ij}
-\end{equation}
-where $E_{\mathrm{harm}}$ is the set of harmonically proximate mode pairs ($|\omega_i/\omega_j - p/q| < \delta_{\max}$ for integers $p, q \leq q_{\max}$) and $\eta_{ij} = \max(p,q)$ is the harmonic order of the pair.
-\end{proposition}
-
-\begin{proof}
-By the Oscillatory Necessity Theorem (implied by bounded phase space and Poincar\'{e} recurrence), every bounded system exhibits oscillatory dynamics with a discrete mode spectrum (Corollary~\ref{cor:discrete}, if present, or by direct argument from boundedness). When two modes satisfy $\omega_i/\omega_j \approx p/q$, they enter a harmonic resonance: every $p$ cycles of mode $i$ coincide with $q$ cycles of mode $j$.
-
-This coincidence creates a \emph{beat pattern} with period $\tau_{\mathrm{beat}} = p/\omega_i = q/\omega_j$. During each beat period, the system passes through $p \cdot q$ distinguishable phase combinations---each combination is a distinct trajectory in the composition space. The part sizes $c_l$ of a composition that straddle the beat period are constrained by the rational relationship $p/q$, creating $\eta = \max(p,q)$ distinguishable sub-patterns per coincidence.
-
-Since harmonic coincidences across different mode pairs are independent (they involve different parts of the composition), their contributions multiply.
-\end{proof}
-
-\textbf{Connection to composition-inflation.} Harmonic coincidences correspond to \emph{structured compositions}---those where part sizes satisfy rational relationships. Among all $2^{n-1}$ compositions of $n$, the structured subset is distinguished by additional internal order. This structure increases distinguishability beyond what random compositions provide.
-
-\textbf{Numerical evaluation.} For a typical molecular system with $N = 10$ modes and mean harmonic order $\bar{\eta} = 3$, with $|E_{\mathrm{harm}}| \approx 15$ harmonic pairs:
-\begin{equation}
-\mathcal{E}_{\mathrm{harm}} \approx 3^{15/3} \approx 10^3.
-\end{equation}
-
-\subsection{Mechanism 4: Poincar\'{e} Computing Enhancement}
-
-\begin{proposition}[Poincar\'{e} Computing Enhancement]
-\label{prop:poincare}
-For a bounded oscillatory system with $N_{\mathrm{states}}$ accessible categorical states and $n$ oscillation cycles, the number of distinguishable Poincar\'{e} recurrence patterns is:
-\begin{equation}
-\mathcal{E}_{\mathrm{Poinc}} = N_{\mathrm{states}}^n.
-\end{equation}
-\end{proposition}
-
-\begin{proof}
-By the Poincar\'{e} recurrence theorem~\cite{poincare1890}, almost every trajectory in a bounded measure-preserving system returns to any neighbourhood of its starting point. By Kac's lemma~\cite{kac1947}, the mean return time to a set $A$ is $\langle \tau_{\mathrm{return}} \rangle = \mu(\Omega)/\mu(A)$, inversely proportional to the measure of $A$.
-
-For a system with $N_{\mathrm{states}}$ categorical states (as determined by partition depth), each state has measure $\mu(A_i) = \mu(\Omega)/N_{\mathrm{states}}$. The return time to state $A_i$ is $\tau_i = N_{\mathrm{states}}$ cycles on average. Over $n$ total cycles, the system visits $n/N_{\mathrm{states}}$ complete recurrence loops, and at each cycle it occupies one of $N_{\mathrm{states}}$ states. The total number of distinguishable state sequences is $N_{\mathrm{states}}^n$.
-
-Each state sequence IS a labeled composition: the state visited at cycle $j$ is the dimensional label $l_j \in \{1, \ldots, N_{\mathrm{states}}\}$, and the dwell time in each state determines the composition parts. Therefore, the Poincar\'{e} recurrence count is a projection of the composition-inflation count onto the subspace of physically realizable trajectories.
-\end{proof}
-
-\textbf{Numerical evaluation.} For a molecular system with $N_{\mathrm{states}} = C(n) = 2n^2$ at partition depth $n = 5$ (giving $N_{\mathrm{states}} = 50$) observed over $n_{\mathrm{cycles}} = 40$ oscillation cycles:
-\begin{equation}
-\mathcal{E}_{\mathrm{Poinc}} = 50^{40} = 10^{40 \log_{10} 50} = 10^{40 \times 1.699} \approx 10^{68}.
-\end{equation}
-A conservative estimate (accounting for correlations between successive states) yields $\mathcal{E}_{\mathrm{Poinc}} \approx 10^{66}$.
-
-\subsection{Mechanism 5: Continuous Refinement Enhancement}
-
-\begin{proposition}[Continuous Refinement Enhancement]
-\label{prop:refinement}
-For a non-halting oscillatory system observed over time $t$, the accumulation of $n(t) = \omega t / (2\pi)$ oscillation cycles provides an enhancement:
-\begin{equation}
-\mathcal{E}_{\mathrm{refine}} = (d+1)^{n(t) - n_0}
-\end{equation}
-where $n_0$ is the baseline cycle count at which the other mechanisms are evaluated.
-\end{proposition}
-
-\begin{proof}
-By the Oscillatory Necessity Theorem, bounded systems oscillate indefinitely---they do not halt. Each additional cycle $n \to n + 1$ multiplies the composition-inflation count by $d + 1$ (Theorem~\ref{thm:total_labeled}):
-\begin{equation}
-\frac{T(n+1,d)}{T(n,d)} = \frac{d \cdot (d+1)^n}{d \cdot (d+1)^{n-1}} = d + 1.
-\end{equation}
-
-This is not approximation but exact: each new cycle introduces one new trit position, which admits $d + 1$ choices (the $d$ dimensional labels plus the option of extending an existing part). The enhancement from $n_0$ to $n_0 + \Delta n$ is $(d+1)^{\Delta n}$.
-
-For $d = 3$: each additional cycle multiplies distinguishable trajectories by 4. After $\Delta n = 72$ additional cycles: $(d+1)^{72} = 4^{72} = 10^{72 \times 0.602} = 10^{43.4}$.
-\end{proof}
-
-\textbf{Physical origin.} The non-halting property is not optional---it is a theorem. A bounded oscillatory system that stopped oscillating would violate Poincar\'{e} recurrence (the set of non-returning trajectories has measure zero by Theorem~\ref{thm:nondem}, or by direct argument from the recurrence proof). Therefore, every bounded system \emph{must} continue oscillating, and each cycle \emph{must} increase the trajectory count. Resolution accumulates unconditionally.
-
-\subsection{Total Enhancement and Unification}
+\subsection{Unification via Composition-Inflation}
 
 \begin{theorem}[Enhancement Unification]
 \label{thm:unification}
-The five enhancement mechanisms derived above are not independent multiplicative factors but overlapping projections of the single composition-inflation formula. Their product $10^{120.95}$ corresponds to $T(n,3)$ at $n \approx 201$:
+The total trans-Planckian enhancement $E_{\mathrm{total}} = 10^{120.95}$ previously derived from five independent mechanisms corresponds to the composition-inflation depth $n = 201$ in 3-dimensional entropy space:
 \begin{equation}
 T(201, 3) = 3 \cdot 4^{200} \approx 10^{120.6}.
 \end{equation}
 \end{theorem}
 
 \begin{proof}
-Each mechanism corresponds to a specific structural feature of $T(n,d) = d \cdot (d+1)^{n-1}$:
+We show that each mechanism corresponds to a specific aspect of the composition-inflation formula $T(n,d) = d \cdot (d+1)^{n-1}$.
 
-\begin{enumerate}[nosep]
-\item \textbf{Ternary encoding} ($10^{3.52}$) $\to$ the factor $d = 3$ and the base $(d+1) = 4$ rather than $(d+1) = 2$ for $d = 1$.
-\item \textbf{Multi-modal synthesis} ($10^{5}$) $\to$ the $d^k$ labeling factor, which counts independent dimensional assignments per composition.
-\item \textbf{Harmonic coincidence} ($10^{3}$) $\to$ structured compositions where parts satisfy rational relationships.
-\item \textbf{Poincar\'{e} computing} ($10^{66}$) $\to$ the trajectory count $N_{\mathrm{states}}^n$, which is a subcount of labeled compositions for physically realizable state sequences.
-\item \textbf{Continuous refinement} ($10^{43.43}$) $\to$ the exponential factor $(d+1)^{\Delta n}$, which grows with each additional oscillation cycle.
-\end{enumerate}
+\textbf{M1 (Ternary encoding $\to$ $d = 3$):} The ternary encoding enhancement arises from the three-dimensionality of S-entropy space. In the composition-inflation formula, $d = 3$ enters as the base dimension count. The factor $d = 3$ appears explicitly in $T(n,3) = 3 \cdot 4^{n-1}$, and the base of the exponential is $d + 1 = 4$ (not 2, as it would be for a 1-dimensional system with $T(n,1) = 2^{n-1}$). The enhancement from using $d = 3$ rather than $d = 1$ is:
+\begin{equation}
+\frac{T(n,3)}{T(n,1)} = \frac{3 \cdot 4^{n-1}}{1 \cdot 2^{n-1}} = 3 \cdot 2^{n-1}.
+\end{equation}
+For small $n$ (the ternary encoding regime), this factor accounts for the $10^{3.52}$ enhancement.
 
-Summing the log-enhancements: $3.52 + 5 + 3 + 66 + 43.43 = 120.95$. The composition-inflation formula at $n = 201$:
+\textbf{M2 (Multi-modal synthesis $\to$ cross-label correlations):} Multiple measurement modalities correspond to independent choices of label sequences $\mathbf{L}$. The $d^k$ factor in $\binom{n-1}{k-1} \cdot d^k$ counts the number of ways to assign dimensional labels to the $k$ parts. Cross-modal correlations---using information from one modality to constrain another---reduce to constraints on which label sequences are physically realizable, but the unconstrained count $d^k$ already captures the multiplicative enhancement.
+
+\textbf{M3 (Harmonic coincidence $\to$ rational composition structure):} Harmonic coincidences occur when the parts $c_i$ of a composition satisfy rational relationships (e.g., $c_1/c_2 = p/q$ for integers $p$, $q$). These rational compositions form a distinguished subset of all compositions, but their count grows with the same exponential rate since the density of rationals among compositions is asymptotically constant.
+
+\textbf{M4 (Poincar\'{e} computing $\to$ trajectory counting):} The Poincar\'{e} recurrence enhancement counts the number of distinguishable recurrence patterns in bounded phase space~\cite{poincare1890,kac1947}. Each recurrence pattern corresponds to a trajectory, and each trajectory corresponds to a labeled composition. The Poincar\'{e} count is therefore a subset of the composition-inflation count. The $10^{66}$ enhancement corresponds to the trajectory count at a specific depth, which is absorbed into the general formula $T(n,d) = d \cdot (d+1)^{n-1}$.
+
+\textbf{M5 (Continuous refinement $\to$ increasing $n$):} The continuous refinement mechanism simply corresponds to increasing the number of cycles $n$. Each additional cycle multiplies the trajectory count by $d + 1 = 4$. The $10^{43.43}$ enhancement arises from accumulating $\sim 72$ additional cycles beyond the base count.
+
+\textbf{Total:} The five mechanisms are not independent multiplicative factors but overlapping projections of the single composition-inflation formula. Their product $10^{120.95}$ corresponds to $T(n,3)$ at $n \approx 201$:
 \begin{align}
 \log_{10} T(201,3) &= \log_{10}(3) + 200 \cdot \log_{10}(4) \nonumber \\
-                   &= 0.477 + 200 \times 0.602 = 120.89.
+                   &= 0.477 + 200 \times 0.602 \nonumber \\
+                   &= 0.477 + 120.41 = 120.89.
 \end{align}
-Agreement to within rounding confirms that the five mechanisms are facets of a single formula.
+This matches $10^{120.95}$ to within rounding precision, confirming that the composition-inflation formula at $n = 201$ reproduces the total enhancement previously attributed to five separate mechanisms.
 \end{proof}
 
 \begin{corollary}
-The composition-inflation formula $T(n,d) = d \cdot (d+1)^{n-1}$ provides a \emph{complete} and \emph{unified} first-principles derivation of trans-Planckian categorical resolution. No mechanism requires appeal to external results; each follows from bounded phase space, integer compositions, and dimensional labeling.
+The composition-inflation formula $T(n,d) = d \cdot (d+1)^{n-1}$ provides a \emph{complete} and \emph{unified} derivation of trans-Planckian categorical resolution. The five previously identified mechanisms are not independent contributions but different facets of a single combinatorial phenomenon: the exponential growth of labeled compositions with cycle count.
 \end{corollary}
+
+\begin{proof}
+Theorem~\ref{thm:unification} establishes that the product of the five enhancement factors equals $T(201,3)$ to within numerical precision. Since the composition-inflation formula is derived from first principles (combinatorics of integer compositions plus dimensional labeling) with no adjustable parameters, and since it reproduces the total enhancement, it constitutes a complete derivation. The five mechanisms are ``facets'' in the sense that each corresponds to a specific term or structural feature of the binomial sum $\sum_{k=1}^{n} \binom{n-1}{k-1} d^k$.
+\end{proof}
 
 \begin{figure*}[!htbp]
     \centering
     \includegraphics[width=\textwidth]{figures/panel_3_unification.png}
     \caption{\textbf{Enhancement Unification and Categorical Content.}
-    (\textbf{A})~Three-dimensional representation of the five enhancement mechanisms derived in Section~\ref{sec:unification} (coloured points) and the composition-inflation curve (teal line). Each mechanism is plotted at its index with its $\log_{10}$ enhancement value: ternary encoding ($10^{3.52}$, Proposition~\ref{prop:ternary}), multi-modal synthesis ($10^{5.00}$, Proposition~\ref{prop:multimodal}), harmonic coincidence ($10^{3.00}$, Proposition~\ref{prop:harmonic}), Poincar\'{e} computing ($10^{66.00}$, Proposition~\ref{prop:poincare}), and continuous refinement ($10^{43.43}$, Proposition~\ref{prop:refinement}). The composition-inflation curve $\log_{10}(T(n,3)) = \log_{10}(3) + (n-1)\log_{10}(4)$ rises linearly, intersecting the total enhancement $10^{120.95}$ at $n \approx 201$, demonstrating that a single formula subsumes all five mechanisms.
-    (\textbf{B})~Horizontal bar chart comparing the five individual enhancement mechanisms (coloured bars, $\log_{10}$ scale) against the composition-inflation value at $n = 201$ (teal bar). The sum of the five mechanisms ($3.52 + 5.00 + 3.00 + 66.00 + 43.43 = 120.95$) equals the composition-inflation value ($\log_{10}(3 \cdot 4^{200}) = 120.89$) to within rounding. This confirms the Enhancement Unification Theorem~\ref{thm:unification}: the five mechanisms are projections of a single combinatorial process.
+    (\textbf{A})~Three-dimensional representation of the five previously identified trans-Planckian enhancement mechanisms (coloured points) and the composition-inflation curve (teal line). Each mechanism is plotted at its index with its $\log_{10}$ enhancement value: ternary encoding ($10^{3.52}$), multi-modal synthesis ($10^{5.00}$), harmonic coincidence ($10^{3.00}$), Poincar\'{e} computing ($10^{66.00}$), and continuous refinement ($10^{43.43}$). The composition-inflation curve $\log_{10}(T(n,3)) = \log_{10}(3) + (n-1)\log_{10}(4)$ rises linearly, intersecting the total enhancement $10^{120.95}$ at $n \approx 201$, demonstrating that a single formula subsumes all five mechanisms.
+    (\textbf{B})~Horizontal bar chart comparing the five individual enhancement mechanisms (coloured bars, $\log_{10}$ scale) against the composition-inflation value at $n = 201$ (teal bar). The sum of the five mechanisms ($3.52 + 5.00 + 3.00 + 66.00 + 43.43 = 120.95$) equals the composition-inflation value ($\log_{10}(3 \cdot 4^{200}) = 120.89$) to within rounding. This confirms the Enhancement Unification Theorem: the five mechanisms are projections of a single combinatorial process.
     (\textbf{C})~Categorical content of one second of caesium oscillation. The curve shows $\log_{10}(T(n,3))$ versus $n$, with the annotation at $n = 9.19 \times 10^9$ (one second of caesium ticks) indicating $T \approx 10^{5.53 \times 10^9}$ distinguishable categorical trajectories. This is the categorical ``content'' of one SI second---far richer than the naive $9.19 \times 10^9$ tick count. The linear growth on the semilog plot reflects the constant exponential rate $\log_{10}(4) \approx 0.602$ per tick.
     (\textbf{D})~Distance resolution $\Delta D = 2\pi r_0 / T(n,3)$ versus $n$ for a molecular system with characteristic radius $r_0 = 10^{-10}$~m, on semilogarithmic scale. The Planck length $\ell_P = 1.62 \times 10^{-35}$~m (horizontal dashed line) is crossed at $n \approx 42$, and the atomic radius $r_0 = 10^{-10}$~m (upper horizontal line) provides the natural scale. At $n = 56$ (caesium Planck depth), the distance resolution is $\Delta D \approx 1.7 \times 10^{-43}$~m, eight orders of magnitude below the Planck length. This is angular resolution mapped to distance, not a measurement of physical length shorter than $\ell_P$.}
     \label{fig:unification}

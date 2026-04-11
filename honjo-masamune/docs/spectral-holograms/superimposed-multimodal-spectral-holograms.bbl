@@ -1,0 +1,177 @@
+\begin{thebibliography}{28}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Albrecht(1961)]{albrecht1961}
+Andreas~C. Albrecht.
+\newblock On the theory of {R}aman intensities.
+\newblock \emph{The Journal of Chemical Physics}, 34\penalty0 (5):\penalty0
+  1476--1484, 1961.
+
+\bibitem[Arnold(1989)]{arnold1989}
+Vladimir~I. Arnold.
+\newblock \emph{Mathematical Methods of Classical Mechanics}.
+\newblock Springer-Verlag, New York, 2nd edition, 1989.
+
+\bibitem[Boltzmann(1877)]{boltzmann1877}
+Ludwig Boltzmann.
+\newblock {\"U}ber die {B}eziehung zwischen dem zweiten {H}auptsatze der
+  mechanischen {W}{\"a}rmetheorie und der {W}ahrscheinlichkeitsrechnung
+  respektive den {S}{\"a}tzen {\"u}ber das {W}{\"a}rmegleichgewicht.
+\newblock \emph{Wiener Berichte}, 76:\penalty0 373--435, 1877.
+
+\bibitem[Born and Wolf(1999)]{bornwolf1999}
+Max Born and Emil Wolf.
+\newblock \emph{Principles of Optics}.
+\newblock Cambridge University Press, Cambridge, 7th edition, 1999.
+
+\bibitem[Condon(1928)]{condon1928}
+Edward~U. Condon.
+\newblock Nuclear motions associated with electron transitions in diatomic
+  molecules.
+\newblock \emph{Physical Review}, 32\penalty0 (6):\penalty0 858--872, 1928.
+
+\bibitem[Cooley and Tukey(1965)]{cooleytukey1965}
+James~W. Cooley and John~W. Tukey.
+\newblock An algorithm for the machine calculation of complex {F}ourier series.
+\newblock \emph{Mathematics of Computation}, 19\penalty0 (90):\penalty0
+  297--301, 1965.
+
+\bibitem[Cotton(1990)]{cotton1990}
+F.~Albert Cotton.
+\newblock \emph{Chemical Applications of Group Theory}.
+\newblock Wiley-Interscience, New York, 3rd edition, 1990.
+
+\bibitem[Duschinsky(1937)]{duschinsky1937}
+Franz Duschinsky.
+\newblock On the interpretation of electronic spectra of polyatomic molecules.
+\newblock \emph{Acta Physicochimica URSS}, 7:\penalty0 551--566, 1937.
+
+\bibitem[Einstein(1917)]{einstein1917}
+Albert Einstein.
+\newblock Zur {Q}uantentheorie der {S}trahlung.
+\newblock \emph{Physikalische Zeitschrift}, 18:\penalty0 121--128, 1917.
+
+\bibitem[Fermi(1931)]{fermi1931}
+Enrico Fermi.
+\newblock {\"U}ber den {R}amaneffekt des {K}ohlendioxyds.
+\newblock \emph{Zeitschrift f{\"u}r Physik}, 71\penalty0 (3--4):\penalty0
+  250--259, 1931.
+
+\bibitem[Franck(1926)]{franck1926}
+James Franck.
+\newblock Elementary processes of photochemical reactions.
+\newblock \emph{Transactions of the Faraday Society}, 21:\penalty0 536--542,
+  1926.
+
+\bibitem[Harris and Bertolucci(1989)]{harris2003}
+Daniel~C. Harris and Michael~D. Bertolucci.
+\newblock \emph{Symmetry and Spectroscopy: An Introduction to Vibrational and
+  Electronic Spectroscopy}.
+\newblock Dover, New York, 1989.
+
+\bibitem[Herzberg(1945)]{herzberg1945}
+Gerhard Herzberg.
+\newblock \emph{Molecular Spectra and Molecular Structure. {II}. {I}nfrared and
+  {R}aman Spectra of Polyatomic Molecules}.
+\newblock Van Nostrand, New York, 1945.
+
+\bibitem[Hilborn(1982)]{hilborn1982}
+Robert~C. Hilborn.
+\newblock Einstein coefficients, cross sections, f values, dipole moments, and
+  all that.
+\newblock \emph{American Journal of Physics}, 50\penalty0 (11):\penalty0
+  982--986, 1982.
+
+\bibitem[Huang and Rhys(1950)]{huangrhys1950}
+Kun Huang and Avril Rhys.
+\newblock Theory of light absorption and non-radiative transitions in
+  {F}-centres.
+\newblock \emph{Proceedings of the Royal Society of London. Series A},
+  204\penalty0 (1078):\penalty0 406--423, 1950.
+
+\bibitem[Johnson(2022)]{johnson2022}
+III Johnson, Russell~D.
+\newblock {NIST} computational chemistry comparison and benchmark database,
+  {NIST} standard reference database number 101.
+\newblock \url{https://cccbdb.nist.gov/}, 2022.
+\newblock Release 22, May 2022.
+
+\bibitem[Kim et~al.(2023)]{kim2023}
+Sunghwan Kim et~al.
+\newblock {PubChem} 2023 update.
+\newblock \emph{Nucleic Acids Research}, 51\penalty0 (D1):\penalty0
+  D1373--D1380, 2023.
+
+\bibitem[Kubin and Fletcher(1982)]{kubin1982}
+Robert~F. Kubin and Aaron~N. Fletcher.
+\newblock Fluorescence quantum yields of some rhodamine dyes.
+\newblock \emph{Journal of Luminescence}, 27\penalty0 (4):\penalty0 455--462,
+  1982.
+
+\bibitem[Landauer(1961)]{landauer1961}
+Rolf Landauer.
+\newblock Irreversibility and heat generation in the computing process.
+\newblock \emph{IBM Journal of Research and Development}, 5\penalty0
+  (3):\penalty0 183--191, 1961.
+
+\bibitem[Long(2002)]{long2002}
+Derek~A. Long.
+\newblock \emph{The {R}aman Effect: A Unified Treatment of the Theory of
+  {R}aman Scattering by Molecules}.
+\newblock Wiley, Chichester, 2002.
+
+\bibitem[Magde et~al.(2002)Magde, Wong, and Seybold]{magde1999}
+Douglas Magde, Roger Wong, and Paul~G. Seybold.
+\newblock Fluorescence quantum yields and their relation to lifetimes of
+  rhodamine {6G} and fluorescein in nine solvents: Improved absolute standards
+  for quantum yields.
+\newblock \emph{Photochemistry and Photobiology}, 75\penalty0 (4):\penalty0
+  327--334, 2002.
+
+\bibitem[Marcus(1956)]{marcus1956}
+Rudolph~A. Marcus.
+\newblock On the theory of oxidation-reduction reactions involving electron
+  transfer. {I}.
+\newblock \emph{The Journal of Chemical Physics}, 24\penalty0 (5):\penalty0
+  966--978, 1956.
+
+\bibitem[Oka(1980)]{oka1980}
+Takeshi Oka.
+\newblock Observation of the infrared spectrum of {H}$_3^+$.
+\newblock \emph{Physical Review Letters}, 45\penalty0 (7):\penalty0 531--534,
+  1980.
+
+\bibitem[Poincar{\'e}(1890)]{poincare1890}
+Henri Poincar{\'e}.
+\newblock Sur le probl{\`e}me des trois corps et les {\'e}quations de la
+  dynamique.
+\newblock \emph{Acta Mathematica}, 13:\penalty0 1--270, 1890.
+
+\bibitem[Raman and Krishnan(1928)]{raman1928}
+C.~V. Raman and K.~S. Krishnan.
+\newblock A new type of secondary radiation.
+\newblock \emph{Nature}, 121\penalty0 (3048):\penalty0 501--502, 1928.
+
+\bibitem[Shannon(1948)]{shannon1948}
+Claude~E. Shannon.
+\newblock A mathematical theory of communication.
+\newblock \emph{Bell System Technical Journal}, 27\penalty0 (3):\penalty0
+  379--423, 1948.
+
+\bibitem[Stokes(1852)]{stokes1852}
+George~Gabriel Stokes.
+\newblock On the change of refrangibility of light.
+\newblock \emph{Philosophical Transactions of the Royal Society of London},
+  142:\penalty0 463--562, 1852.
+
+\bibitem[Wilson et~al.(1955)Wilson, Decius, and Cross]{wilson1955}
+Edgar~Bright Wilson, Jr., John~Courtney Decius, and Paul~C. Cross.
+\newblock \emph{Molecular Vibrations: The Theory of Infrared and {R}aman
+  Vibrational Spectra}.
+\newblock McGraw-Hill, New York, 1955.
+
+\end{thebibliography}
