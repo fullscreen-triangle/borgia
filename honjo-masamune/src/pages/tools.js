@@ -34,6 +34,7 @@ const PartitionObserver = dynamic(() => import("@/components/PartitionObserver")
 const HarmonicNetwork = dynamic(() => import("@/components/HarmonicNetwork"), { ssr: false });
 const MoleculeViewer3D = dynamic(() => import("@/components/MoleculeViewer3D"), { ssr: false });
 const DockingInstrument = dynamic(() => import("@/components/DockingInstrument"), { ssr: false });
+const SpectralHologram = dynamic(() => import("@/components/SpectralHologram"), { ssr: false });
 
 const TYPE_COLORS = {
   diatomic: "#3b82f6",
@@ -120,6 +121,7 @@ export default function Tools() {
     { id: "fingerprint", label: "Fingerprint" },
     { id: "structure", label: "3D Structure" },
     { id: "docking", label: "Docking" },
+    { id: "hologram", label: "Hologram" },
     { id: "predict", label: "Properties" },
   ];
 
@@ -572,6 +574,22 @@ export default function Tools() {
                   Docking score combines spectral complementarity (harmonic mode compatibility)
                   with S-entropy distance. No force fields, no MD, no training data.
                 </p>
+              </div>
+            )}
+
+            {/* VIII. Spectral Hologram */}
+            {activeTab === "hologram" && molA && (
+              <div>
+                <h2 className="text-lg font-bold text-white mb-1">
+                  Instrument VIII: Spectral Hologram
+                </h2>
+                <p className="text-neutral-500 text-sm mb-4">
+                  Three-state superposition of {molA.name}: ground (IR), excited (Raman),
+                  and emission spectra combined into a complete phase space hologram.
+                  Adjust weights to explore cross-state structure. Diffraction pattern
+                  via 2D FFT reveals molecular symmetry.
+                </p>
+                <SpectralHologram mol={molA} />
               </div>
             )}
 
