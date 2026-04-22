@@ -1,0 +1,143 @@
+{
+  "framework": "Bounded Phase Space (BPS)",
+  "framework_version": "1.0.0",
+  "timestamp_utc": "2026-04-21T08:03:31.581722+00:00",
+  "battery": "2_partition_extinction",
+  "superconductors": [
+    {
+      "element": "Al",
+      "Theta_D_K": 428,
+      "N0V": 0.18,
+      "Tc_predicted_K": 1.87,
+      "Tc_measured_K": 1.2,
+      "error_pct": 55.81,
+      "gap_ratio_BCS": 3.528,
+      "gap_ratio_measured": 3.4
+    },
+    {
+      "element": "Sn",
+      "Theta_D_K": 200,
+      "N0V": 0.25,
+      "Tc_predicted_K": 4.139,
+      "Tc_measured_K": 3.72,
+      "error_pct": 11.27,
+      "gap_ratio_BCS": 3.528,
+      "gap_ratio_measured": 3.5
+    },
+    {
+      "element": "In",
+      "Theta_D_K": 108,
+      "N0V": 0.29,
+      "Tc_predicted_K": 3.881,
+      "Tc_measured_K": 3.41,
+      "error_pct": 13.81,
+      "gap_ratio_BCS": 3.528,
+      "gap_ratio_measured": 3.6
+    },
+    {
+      "element": "Hg",
+      "Theta_D_K": 71.9,
+      "N0V": 0.35,
+      "Tc_predicted_K": 4.666,
+      "Tc_measured_K": 4.15,
+      "error_pct": 12.44,
+      "gap_ratio_BCS": 3.528,
+      "gap_ratio_measured": 4.6
+    },
+    {
+      "element": "Pb",
+      "Theta_D_K": 105,
+      "N0V": 0.39,
+      "Tc_predicted_K": 9.135,
+      "Tc_measured_K": 7.2,
+      "error_pct": 26.87,
+      "gap_ratio_BCS": 3.528,
+      "gap_ratio_measured": 4.3
+    },
+    {
+      "element": "Nb",
+      "Theta_D_K": 275,
+      "N0V": 0.32,
+      "Tc_predicted_K": 13.653,
+      "Tc_measured_K": 9.25,
+      "error_pct": 47.6,
+      "gap_ratio_BCS": 3.528,
+      "gap_ratio_measured": 3.8
+    },
+    {
+      "element": "V",
+      "Theta_D_K": 399,
+      "N0V": 0.24,
+      "Tc_predicted_K": 6.99,
+      "Tc_measured_K": 5.4,
+      "error_pct": 29.45,
+      "gap_ratio_BCS": 3.528,
+      "gap_ratio_measured": 3.5
+    }
+  ],
+  "bcs_universal_ratio": 3.528,
+  "superfluid_He4": {
+    "T_lambda_predicted_K": 3.1328,
+    "T_lambda_measured_K": 2.172,
+    "error_pct": 44.24
+  },
+  "bec": [
+    {
+      "species": "Rb-87",
+      "m_amu": 86.909,
+      "n_m3": 1e+20,
+      "Tc_predicted_nK": 398.33,
+      "Tc_measured_nK": 170.0,
+      "error_pct": 134.31
+    },
+    {
+      "species": "Na-23",
+      "m_amu": 22.99,
+      "n_m3": 1e+20,
+      "Tc_predicted_nK": 1505.81,
+      "Tc_measured_nK": 2000.0,
+      "error_pct": -24.71
+    }
+  ],
+  "wiedemann_franz": {
+    "L_pred": 2.4430045090736666e-08,
+    "records": [
+      {
+        "element": "Ag",
+        "L_predicted_W_Ohm_per_K2": 2.4430045090736666e-08,
+        "L_measured_W_Ohm_per_K2": 2.3100000000000002e-08,
+        "error_pct": 5.76
+      },
+      {
+        "element": "Au",
+        "L_predicted_W_Ohm_per_K2": 2.4430045090736666e-08,
+        "L_measured_W_Ohm_per_K2": 2.3500000000000002e-08,
+        "error_pct": 3.96
+      },
+      {
+        "element": "Cu",
+        "L_predicted_W_Ohm_per_K2": 2.4430045090736666e-08,
+        "L_measured_W_Ohm_per_K2": 2.23e-08,
+        "error_pct": 9.55
+      },
+      {
+        "element": "Al",
+        "L_predicted_W_Ohm_per_K2": 2.4430045090736666e-08,
+        "L_measured_W_Ohm_per_K2": 2.2000000000000002e-08,
+        "error_pct": 11.05
+      },
+      {
+        "element": "W",
+        "L_predicted_W_Ohm_per_K2": 2.4430045090736666e-08,
+        "L_measured_W_Ohm_per_K2": 3.04e-08,
+        "error_pct": -19.64
+      },
+      {
+        "element": "Pb",
+        "L_predicted_W_Ohm_per_K2": 2.4430045090736666e-08,
+        "L_measured_W_Ohm_per_K2": 2.64e-08,
+        "error_pct": -7.46
+      }
+    ]
+  }
+}
