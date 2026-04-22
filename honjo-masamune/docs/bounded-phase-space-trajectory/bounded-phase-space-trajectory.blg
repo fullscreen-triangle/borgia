@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99e
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: bounded-phase-space-trajectory.aux
+Reallocating 'name_of_file' (item size: 1) to 9 items.
+The style file: plainnat.bst
+Reallocating 'name_of_file' (item size: 1) to 11 items.
+Database file #1: references.bib
+You've used 60 entries,
+            2773 wiz_defined-function locations,
+            938 strings with 11700 characters,
+and the built_in function-call counts, 23731 in all, are:
+= -- 2173
+> -- 939
+< -- 55
++ -- 340
+- -- 279
+* -- 1745
+:= -- 3660
+add.period$ -- 180
+call.type$ -- 60
+change.case$ -- 265
+chr.to.int$ -- 59
+cite$ -- 120
+duplicate$ -- 1210
+empty$ -- 2251
+format.name$ -- 369
+if$ -- 4968
+int.to.chr$ -- 2
+int.to.str$ -- 1
+missing$ -- 75
+newline$ -- 308
+num.names$ -- 240
+pop$ -- 537
+preamble$ -- 1
+purify$ -- 213
+quote$ -- 0
+skip$ -- 837
+stack$ -- 0
+substring$ -- 1144
+swap$ -- 71
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 580
+warning$ -- 0
+while$ -- 263
+width$ -- 0
+write$ -- 785

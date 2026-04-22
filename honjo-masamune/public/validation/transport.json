@@ -1,0 +1,175 @@
+{
+  "framework": "Bounded Phase Space (BPS)",
+  "framework_version": "1.0.0",
+  "timestamp_utc": "2026-04-21T08:03:31.581722+00:00",
+  "battery": "4_transport",
+  "resistivity": [
+    {
+      "element": "Cu",
+      "n_m3": 8.47e+28,
+      "tau_s": 2.484076433121019e-14,
+      "rho_predicted_Ohm_m": 1.6866300868867322e-08,
+      "rho_measured_Ohm_m": 1.68e-08,
+      "error_pct": 0.39
+    },
+    {
+      "element": "Ag",
+      "n_m3": 5.86e+28,
+      "tau_s": 3.741007194244605e-14,
+      "rho_predicted_Ohm_m": 1.61875845106168e-08,
+      "rho_measured_Ohm_m": 1.59e-08,
+      "error_pct": 1.81
+    },
+    {
+      "element": "Au",
+      "n_m3": 5.9e+28,
+      "tau_s": 2.5714285714285712e-14,
+      "rho_predicted_Ohm_m": 2.3390619886820082e-08,
+      "rho_measured_Ohm_m": 2.35e-08,
+      "error_pct": -0.47
+    },
+    {
+      "element": "Al",
+      "n_m3": 1.81e+29,
+      "tau_s": 7.389162561576354e-15,
+      "rho_predicted_Ohm_m": 2.6533492127966298e-08,
+      "rho_measured_Ohm_m": 2.65e-08,
+      "error_pct": 0.13
+    }
+  ],
+  "thermal_conductivity": [
+    {
+      "element": "Cu",
+      "kappa_predicted_W_per_mK": 434.54,
+      "kappa_measured_W_per_mK": 401,
+      "error_pct": 8.36
+    },
+    {
+      "element": "Ag",
+      "kappa_predicted_W_per_mK": 452.76,
+      "kappa_measured_W_per_mK": 429,
+      "error_pct": 5.54
+    },
+    {
+      "element": "Au",
+      "kappa_predicted_W_per_mK": 313.33,
+      "kappa_measured_W_per_mK": 318,
+      "error_pct": -1.47
+    },
+    {
+      "element": "Al",
+      "kappa_predicted_W_per_mK": 276.22,
+      "kappa_measured_W_per_mK": 237,
+      "error_pct": 16.55
+    }
+  ],
+  "viscosity": [
+    {
+      "liquid": "water",
+      "tau_c_s": 3.5e-12,
+      "g_Pa": 220000000.0,
+      "mu_predicted_Pa_s": 0.00077,
+      "mu_measured_Pa_s": 0.00089,
+      "error_pct": -13.48
+    },
+    {
+      "liquid": "ethanol",
+      "tau_c_s": 5e-12,
+      "g_Pa": 230000000.0,
+      "mu_predicted_Pa_s": 0.00115,
+      "mu_measured_Pa_s": 0.00108,
+      "error_pct": 6.48
+    },
+    {
+      "liquid": "glycerol",
+      "tau_c_s": 1e-09,
+      "g_Pa": 1490000000.0,
+      "mu_predicted_Pa_s": 1.49,
+      "mu_measured_Pa_s": 1.412,
+      "error_pct": 5.52
+    },
+    {
+      "liquid": "mercury",
+      "tau_c_s": 1e-13,
+      "g_Pa": 15300000000.0,
+      "mu_predicted_Pa_s": 0.0015300000000000001,
+      "mu_measured_Pa_s": 0.00154,
+      "error_pct": -0.65
+    }
+  ],
+  "diffusion": [
+    {
+      "solute": "water-in-water",
+      "r_m": 1.4e-10,
+      "mu_Pa_s": 0.00089,
+      "D_predicted_m2_s": 1.752665068174656e-09,
+      "D_measured_m2_s": 2.3e-09,
+      "error_pct": -23.8
+    },
+    {
+      "solute": "ethanol-in-water",
+      "r_m": 2.2e-10,
+      "mu_Pa_s": 0.00089,
+      "D_predicted_m2_s": 1.1153323161111449e-09,
+      "D_measured_m2_s": 1.24e-09,
+      "error_pct": -10.05
+    },
+    {
+      "solute": "glucose-in-water",
+      "r_m": 3.7e-10,
+      "mu_Pa_s": 0.00089,
+      "D_predicted_m2_s": 6.631705663363562e-10,
+      "D_measured_m2_s": 6.7e-10,
+      "error_pct": -1.02
+    },
+    {
+      "solute": "caffeine-in-water",
+      "r_m": 3.3e-10,
+      "mu_Pa_s": 0.00089,
+      "D_predicted_m2_s": 7.435548774074299e-10,
+      "D_measured_m2_s": 6.3e-10,
+      "error_pct": 18.02
+    }
+  ],
+  "wiedemann_franz": {
+    "L_pred": 2.4430045090736666e-08,
+    "records": [
+      {
+        "element": "Ag",
+        "L_measured": 2.31e-08,
+        "L_predicted": 2.4430045090736666e-08,
+        "error_pct": 5.76
+      },
+      {
+        "element": "Au",
+        "L_measured": 2.35e-08,
+        "L_predicted": 2.4430045090736666e-08,
+        "error_pct": 3.96
+      },
+      {
+        "element": "Cu",
+        "L_measured": 2.23e-08,
+        "L_predicted": 2.4430045090736666e-08,
+        "error_pct": 9.55
+      },
+      {
+        "element": "Al",
+        "L_measured": 2.2e-08,
+        "L_predicted": 2.4430045090736666e-08,
+        "error_pct": 11.05
+      },
+      {
+        "element": "W",
+        "L_measured": 3.04e-08,
+        "L_predicted": 2.4430045090736666e-08,
+        "error_pct": -19.64
+      },
+      {
+        "element": "Pb",
+        "L_measured": 2.64e-08,
+        "L_predicted": 2.4430045090736666e-08,
+        "error_pct": -7.46
+      }
+    ]
+  }
+}

@@ -15,7 +15,9 @@ const Footer = () => {
             <h4 className="text-neutral-300 font-semibold text-sm mb-4 uppercase tracking-wider">Navigate</h4>
             <div className="flex flex-col gap-2">
               <Link href="/framework" className="text-neutral-500 hover:text-[#58E6D9] text-sm transition-colors">Framework</Link>
+              <Link href="/validation" className="text-neutral-500 hover:text-[#58E6D9] text-sm transition-colors">Validation</Link>
               <Link href="/database" className="text-neutral-500 hover:text-[#58E6D9] text-sm transition-colors">Database</Link>
+              <Link href="/tools" className="text-neutral-500 hover:text-[#58E6D9] text-sm transition-colors">Tools</Link>
               <Link href="/consulting" className="text-neutral-500 hover:text-[#58E6D9] text-sm transition-colors">Consulting</Link>
               <Link href="/licensing" className="text-neutral-500 hover:text-[#58E6D9] text-sm transition-colors">Licensing</Link>
               <Link href="/research" className="text-neutral-500 hover:text-[#58E6D9] text-sm transition-colors">Research</Link>

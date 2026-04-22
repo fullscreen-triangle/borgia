@@ -1,0 +1,1461 @@
+{
+  "framework": "Bounded Phase Space (BPS)",
+  "framework_version": "1.0.0",
+  "timestamp_utc": "2026-04-21T08:03:31.581722+00:00",
+  "battery": "1_nuclear_structure",
+  "radii": {
+    "r0_fm": 1.2,
+    "records": [
+      {
+        "nuclide": "He-4",
+        "A": 4,
+        "Z": 2,
+        "R_predicted_fm": 1.9049,
+        "R_measured_fm": 1.676,
+        "error_pct": 13.656
+      },
+      {
+        "nuclide": "C-12",
+        "A": 12,
+        "Z": 6,
+        "R_predicted_fm": 2.7473,
+        "R_measured_fm": 2.469,
+        "error_pct": 11.272
+      },
+      {
+        "nuclide": "O-16",
+        "A": 16,
+        "Z": 8,
+        "R_predicted_fm": 3.0238,
+        "R_measured_fm": 2.699,
+        "error_pct": 12.034
+      },
+      {
+        "nuclide": "Ne-20",
+        "A": 20,
+        "Z": 10,
+        "R_predicted_fm": 3.2573,
+        "R_measured_fm": 3.006,
+        "error_pct": 8.36
+      },
+      {
+        "nuclide": "Mg-24",
+        "A": 24,
+        "Z": 12,
+        "R_predicted_fm": 3.4614,
+        "R_measured_fm": 3.075,
+        "error_pct": 12.566
+      },
+      {
+        "nuclide": "Si-28",
+        "A": 28,
+        "Z": 14,
+        "R_predicted_fm": 3.6439,
+        "R_measured_fm": 3.122,
+        "error_pct": 16.717
+      },
+      {
+        "nuclide": "S-32",
+        "A": 32,
+        "Z": 16,
+        "R_predicted_fm": 3.8098,
+        "R_measured_fm": 3.263,
+        "error_pct": 16.756
+      },
+      {
+        "nuclide": "Ca-40",
+        "A": 40,
+        "Z": 20,
+        "R_predicted_fm": 4.1039,
+        "R_measured_fm": 3.476,
+        "error_pct": 18.065
+      },
+      {
+        "nuclide": "Ca-48",
+        "A": 48,
+        "Z": 20,
+        "R_predicted_fm": 4.3611,
+        "R_measured_fm": 3.477,
+        "error_pct": 25.427
+      },
+      {
+        "nuclide": "Fe-56",
+        "A": 56,
+        "Z": 26,
+        "R_predicted_fm": 4.591,
+        "R_measured_fm": 3.737,
+        "error_pct": 22.853
+      },
+      {
+        "nuclide": "Zn-64",
+        "A": 64,
+        "Z": 30,
+        "R_predicted_fm": 4.8,
+        "R_measured_fm": 3.929,
+        "error_pct": 22.168
+      },
+      {
+        "nuclide": "Ge-76",
+        "A": 76,
+        "Z": 32,
+        "R_predicted_fm": 5.083,
+        "R_measured_fm": 4.081,
+        "error_pct": 24.553
+      },
+      {
+        "nuclide": "Sr-88",
+        "A": 88,
+        "Z": 38,
+        "R_predicted_fm": 5.3376,
+        "R_measured_fm": 4.224,
+        "error_pct": 26.363
+      },
+      {
+        "nuclide": "Zr-90",
+        "A": 90,
+        "Z": 40,
+        "R_predicted_fm": 5.3777,
+        "R_measured_fm": 4.269,
+        "error_pct": 25.971
+      },
+      {
+        "nuclide": "Sn-120",
+        "A": 120,
+        "Z": 50,
+        "R_predicted_fm": 5.9189,
+        "R_measured_fm": 4.651,
+        "error_pct": 27.261
+      },
+      {
+        "nuclide": "Ce-140",
+        "A": 140,
+        "Z": 58,
+        "R_predicted_fm": 6.231,
+        "R_measured_fm": 4.877,
+        "error_pct": 27.763
+      },
+      {
+        "nuclide": "Er-168",
+        "A": 168,
+        "Z": 68,
+        "R_predicted_fm": 6.6214,
+        "R_measured_fm": 5.248,
+        "error_pct": 26.17
+      },
+      {
+        "nuclide": "Au-197",
+        "A": 197,
+        "Z": 79,
+        "R_predicted_fm": 6.9824,
+        "R_measured_fm": 5.437,
+        "error_pct": 28.423
+      },
+      {
+        "nuclide": "Pb-208",
+        "A": 208,
+        "Z": 82,
+        "R_predicted_fm": 7.11,
+        "R_measured_fm": 5.501,
+        "error_pct": 29.249
+      },
+      {
+        "nuclide": "U-238",
+        "A": 238,
+        "Z": 92,
+        "R_predicted_fm": 7.4366,
+        "R_measured_fm": 5.857,
+        "error_pct": 26.969
+      }
+    ],
+    "mean_abs_error_pct": 21.13
+  },
+  "binding_energies": {
+    "coefficients_MeV": {
+      "a_V": 15.8,
+      "a_S": 18.3,
+      "a_C": 0.714,
+      "a_A": 23.2,
+      "a_P_coeff": 11.2
+    },
+    "records": [
+      {
+        "nuclide": "He-4",
+        "A": 4,
+        "Z": 2,
+        "BE_per_A_predicted_MeV": 5.447,
+        "BE_per_A_measured_MeV": 7.074,
+        "error_pct": -23.002
+      },
+      {
+        "nuclide": "C-12",
+        "A": 12,
+        "Z": 6,
+        "BE_per_A_predicted_MeV": 7.296,
+        "BE_per_A_measured_MeV": 7.68,
+        "error_pct": -4.994
+      },
+      {
+        "nuclide": "O-16",
+        "A": 16,
+        "Z": 8,
+        "BE_per_A_predicted_MeV": 7.721,
+        "BE_per_A_measured_MeV": 7.976,
+        "error_pct": -3.198
+      },
+      {
+        "nuclide": "Ne-20",
+        "A": 20,
+        "Z": 10,
+        "BE_per_A_predicted_MeV": 8.0,
+        "BE_per_A_measured_MeV": 8.032,
+        "error_pct": -0.401
+      },
+      {
+        "nuclide": "Mg-24",
+        "A": 24,
+        "Z": 12,
+        "BE_per_A_predicted_MeV": 8.19,
+        "BE_per_A_measured_MeV": 8.261,
+        "error_pct": -0.864
+      },
+      {
+        "nuclide": "Si-28",
+        "A": 28,
+        "Z": 14,
+        "BE_per_A_predicted_MeV": 8.321,
+        "BE_per_A_measured_MeV": 8.448,
+        "error_pct": -1.506
+      },
+      {
+        "nuclide": "S-32",
+        "A": 32,
+        "Z": 16,
+        "BE_per_A_predicted_MeV": 8.411,
+        "BE_per_A_measured_MeV": 8.493,
+        "error_pct": -0.965
+      },
+      {
+        "nuclide": "Ca-40",
+        "A": 40,
+        "Z": 20,
+        "BE_per_A_predicted_MeV": 8.51,
+        "BE_per_A_measured_MeV": 8.551,
+        "error_pct": -0.48
+      },
+      {
+        "nuclide": "Ca-48",
+        "A": 48,
+        "Z": 20,
+        "BE_per_A_predicted_MeV": 8.598,
+        "BE_per_A_measured_MeV": 8.666,
+        "error_pct": -0.779
+      },
+      {
+        "nuclide": "Fe-56",
+        "A": 56,
+        "Z": 26,
+        "BE_per_A_predicted_MeV": 8.759,
+        "BE_per_A_measured_MeV": 8.79,
+        "error_pct": -0.353
+      },
+      {
+        "nuclide": "Zn-64",
+        "A": 64,
+        "Z": 30,
+        "BE_per_A_predicted_MeV": 8.73,
+        "BE_per_A_measured_MeV": 8.736,
+        "error_pct": -0.071
+      },
+      {
+        "nuclide": "Ge-76",
+        "A": 76,
+        "Z": 32,
+        "BE_per_A_predicted_MeV": 8.718,
+        "BE_per_A_measured_MeV": 8.705,
+        "error_pct": 0.15
+      },
+      {
+        "nuclide": "Sr-88",
+        "A": 88,
+        "Z": 38,
+        "BE_per_A_predicted_MeV": 8.703,
+        "BE_per_A_measured_MeV": 8.733,
+        "error_pct": -0.341
+      },
+      {
+        "nuclide": "Zr-90",
+        "A": 90,
+        "Z": 40,
+        "BE_per_A_predicted_MeV": 8.682,
+        "BE_per_A_measured_MeV": 8.71,
+        "error_pct": -0.327
+      },
+      {
+        "nuclide": "Sn-120",
+        "A": 120,
+        "Z": 50,
+        "BE_per_A_predicted_MeV": 8.498,
+        "BE_per_A_measured_MeV": 8.504,
+        "error_pct": -0.065
+      },
+      {
+        "nuclide": "Ce-140",
+        "A": 140,
+        "Z": 58,
+        "BE_per_A_predicted_MeV": 8.354,
+        "BE_per_A_measured_MeV": 8.376,
+        "error_pct": -0.268
+      },
+      {
+        "nuclide": "Er-168",
+        "A": 168,
+        "Z": 68,
+        "BE_per_A_predicted_MeV": 8.138,
+        "BE_per_A_measured_MeV": 8.1,
+        "error_pct": 0.466
+      },
+      {
+        "nuclide": "Au-197",
+        "A": 197,
+        "Z": 79,
+        "BE_per_A_predicted_MeV": 7.907,
+        "BE_per_A_measured_MeV": 7.916,
+        "error_pct": -0.108
+      },
+      {
+        "nuclide": "Pb-208",
+        "A": 208,
+        "Z": 82,
+        "BE_per_A_predicted_MeV": 7.829,
+        "BE_per_A_measured_MeV": 7.867,
+        "error_pct": -0.485
+      },
+      {
+        "nuclide": "U-238",
+        "A": 238,
+        "Z": 92,
+        "BE_per_A_predicted_MeV": 7.603,
+        "BE_per_A_measured_MeV": 7.57,
+        "error_pct": 0.435
+      }
+    ],
+    "peak_Fe56": {
+      "nuclide": "Fe-56",
+      "A": 56,
+      "Z": 26,
+      "BE_per_A_predicted_MeV": 8.759,
+      "BE_per_A_measured_MeV": 8.79,
+      "error_pct": -0.353
+    }
+  },
+  "magic_numbers": {
+    "magic_set": [
+      2,
+      8,
+      20,
+      28,
+      50,
+      82,
+      126
+    ],
+    "excess_records": [
+      {
+        "Z": 2,
+        "A": 4,
+        "BE_LDM": 4.0468,
+        "BE_measured_proxy": 4.4068,
+        "excess_MeV": 0.36,
+        "is_magic_Z": true
+      },
+      {
+        "Z": 3,
+        "A": 6,
+        "BE_LDM": 5.3362,
+        "BE_measured_proxy": 5.3362,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 4,
+        "A": 8,
+        "BE_LDM": 6.1145,
+        "BE_measured_proxy": 6.1145,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 5,
+        "A": 10,
+        "BE_LDM": 6.6431,
+        "BE_measured_proxy": 6.6431,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 6,
+        "A": 13,
+        "BE_LDM": 7.1792,
+        "BE_measured_proxy": 7.1792,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 7,
+        "A": 15,
+        "BE_LDM": 7.466,
+        "BE_measured_proxy": 7.646,
+        "excess_MeV": 0.18,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 8,
+        "A": 17,
+        "BE_LDM": 7.6879,
+        "BE_measured_proxy": 7.8679,
+        "excess_MeV": 0.18,
+        "is_magic_Z": true
+      },
+      {
+        "Z": 9,
+        "A": 19,
+        "BE_LDM": 7.8637,
+        "BE_measured_proxy": 7.8637,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 10,
+        "A": 21,
+        "BE_LDM": 8.0052,
+        "BE_measured_proxy": 8.0052,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 11,
+        "A": 24,
+        "BE_LDM": 8.1601,
+        "BE_measured_proxy": 8.1601,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 12,
+        "A": 26,
+        "BE_LDM": 8.2619,
+        "BE_measured_proxy": 8.2619,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 13,
+        "A": 28,
+        "BE_LDM": 8.3451,
+        "BE_measured_proxy": 8.3451,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 14,
+        "A": 31,
+        "BE_LDM": 8.4229,
+        "BE_measured_proxy": 8.4229,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 15,
+        "A": 33,
+        "BE_LDM": 8.4864,
+        "BE_measured_proxy": 8.4864,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 16,
+        "A": 35,
+        "BE_LDM": 8.5383,
+        "BE_measured_proxy": 8.5383,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 17,
+        "A": 38,
+        "BE_LDM": 8.5795,
+        "BE_measured_proxy": 8.5795,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 18,
+        "A": 40,
+        "BE_LDM": 8.6199,
+        "BE_measured_proxy": 8.6199,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 19,
+        "A": 42,
+        "BE_LDM": 8.6523,
+        "BE_measured_proxy": 8.6523,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 20,
+        "A": 45,
+        "BE_LDM": 8.6735,
+        "BE_measured_proxy": 8.8535,
+        "excess_MeV": 0.18,
+        "is_magic_Z": true
+      },
+      {
+        "Z": 21,
+        "A": 47,
+        "BE_LDM": 8.6985,
+        "BE_measured_proxy": 8.6985,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 22,
+        "A": 50,
+        "BE_LDM": 8.7077,
+        "BE_measured_proxy": 8.8877,
+        "excess_MeV": 0.18,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 23,
+        "A": 52,
+        "BE_LDM": 8.7268,
+        "BE_measured_proxy": 8.7268,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 24,
+        "A": 54,
+        "BE_LDM": 8.741,
+        "BE_measured_proxy": 8.741,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 25,
+        "A": 57,
+        "BE_LDM": 8.7421,
+        "BE_measured_proxy": 8.7421,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 26,
+        "A": 59,
+        "BE_LDM": 8.7521,
+        "BE_measured_proxy": 8.7521,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 27,
+        "A": 62,
+        "BE_LDM": 8.7475,
+        "BE_measured_proxy": 8.7475,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 28,
+        "A": 64,
+        "BE_LDM": 8.754,
+        "BE_measured_proxy": 8.934,
+        "excess_MeV": 0.18,
+        "is_magic_Z": true
+      },
+      {
+        "Z": 29,
+        "A": 67,
+        "BE_LDM": 8.7452,
+        "BE_measured_proxy": 8.7452,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 30,
+        "A": 69,
+        "BE_LDM": 8.7487,
+        "BE_measured_proxy": 8.7487,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 31,
+        "A": 72,
+        "BE_LDM": 8.7368,
+        "BE_measured_proxy": 8.7368,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 32,
+        "A": 74,
+        "BE_LDM": 8.7376,
+        "BE_measured_proxy": 8.7376,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 33,
+        "A": 77,
+        "BE_LDM": 8.7234,
+        "BE_measured_proxy": 8.7234,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 34,
+        "A": 80,
+        "BE_LDM": 8.7069,
+        "BE_measured_proxy": 8.7069,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 35,
+        "A": 82,
+        "BE_LDM": 8.7059,
+        "BE_measured_proxy": 8.7059,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 36,
+        "A": 85,
+        "BE_LDM": 8.688,
+        "BE_measured_proxy": 8.688,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 37,
+        "A": 87,
+        "BE_LDM": 8.685,
+        "BE_measured_proxy": 8.865,
+        "excess_MeV": 0.18,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 38,
+        "A": 90,
+        "BE_LDM": 8.6661,
+        "BE_measured_proxy": 8.6661,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 39,
+        "A": 93,
+        "BE_LDM": 8.646,
+        "BE_measured_proxy": 8.646,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 40,
+        "A": 95,
+        "BE_LDM": 8.6414,
+        "BE_measured_proxy": 8.6414,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 41,
+        "A": 98,
+        "BE_LDM": 8.6207,
+        "BE_measured_proxy": 8.6207,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 42,
+        "A": 101,
+        "BE_LDM": 8.5992,
+        "BE_measured_proxy": 8.5992,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 43,
+        "A": 103,
+        "BE_LDM": 8.5933,
+        "BE_measured_proxy": 8.5933,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 44,
+        "A": 106,
+        "BE_LDM": 8.5714,
+        "BE_measured_proxy": 8.5714,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 45,
+        "A": 109,
+        "BE_LDM": 8.5489,
+        "BE_measured_proxy": 8.5489,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 46,
+        "A": 112,
+        "BE_LDM": 8.5261,
+        "BE_measured_proxy": 8.5261,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 47,
+        "A": 114,
+        "BE_LDM": 8.5192,
+        "BE_measured_proxy": 8.5192,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 48,
+        "A": 117,
+        "BE_LDM": 8.4962,
+        "BE_measured_proxy": 8.4962,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 49,
+        "A": 120,
+        "BE_LDM": 8.4729,
+        "BE_measured_proxy": 8.4729,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 50,
+        "A": 123,
+        "BE_LDM": 8.4493,
+        "BE_measured_proxy": 8.6293,
+        "excess_MeV": 0.18,
+        "is_magic_Z": true
+      },
+      {
+        "Z": 51,
+        "A": 125,
+        "BE_LDM": 8.4414,
+        "BE_measured_proxy": 8.4414,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 52,
+        "A": 128,
+        "BE_LDM": 8.4179,
+        "BE_measured_proxy": 8.4179,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 53,
+        "A": 131,
+        "BE_LDM": 8.3941,
+        "BE_measured_proxy": 8.3941,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 54,
+        "A": 134,
+        "BE_LDM": 8.3703,
+        "BE_measured_proxy": 8.3703,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 55,
+        "A": 137,
+        "BE_LDM": 8.3465,
+        "BE_measured_proxy": 8.5265,
+        "excess_MeV": 0.18,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 56,
+        "A": 140,
+        "BE_LDM": 8.3225,
+        "BE_measured_proxy": 8.3225,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 57,
+        "A": 142,
+        "BE_LDM": 8.3139,
+        "BE_measured_proxy": 8.3139,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 58,
+        "A": 145,
+        "BE_LDM": 8.29,
+        "BE_measured_proxy": 8.29,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 59,
+        "A": 148,
+        "BE_LDM": 8.2661,
+        "BE_measured_proxy": 8.2661,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 60,
+        "A": 151,
+        "BE_LDM": 8.2422,
+        "BE_measured_proxy": 8.2422,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 61,
+        "A": 154,
+        "BE_LDM": 8.2184,
+        "BE_measured_proxy": 8.2184,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 62,
+        "A": 157,
+        "BE_LDM": 8.1945,
+        "BE_measured_proxy": 8.1945,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 63,
+        "A": 160,
+        "BE_LDM": 8.1708,
+        "BE_measured_proxy": 8.1708,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 64,
+        "A": 163,
+        "BE_LDM": 8.147,
+        "BE_measured_proxy": 8.147,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 65,
+        "A": 166,
+        "BE_LDM": 8.1234,
+        "BE_measured_proxy": 8.1234,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 66,
+        "A": 169,
+        "BE_LDM": 8.0998,
+        "BE_measured_proxy": 8.0998,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 67,
+        "A": 172,
+        "BE_LDM": 8.0763,
+        "BE_measured_proxy": 8.0763,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 68,
+        "A": 175,
+        "BE_LDM": 8.0528,
+        "BE_measured_proxy": 8.0528,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 69,
+        "A": 178,
+        "BE_LDM": 8.0295,
+        "BE_measured_proxy": 8.0295,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 70,
+        "A": 181,
+        "BE_LDM": 8.0062,
+        "BE_measured_proxy": 8.0062,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 71,
+        "A": 184,
+        "BE_LDM": 7.983,
+        "BE_measured_proxy": 7.983,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 72,
+        "A": 187,
+        "BE_LDM": 7.9599,
+        "BE_measured_proxy": 7.9599,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 73,
+        "A": 190,
+        "BE_LDM": 7.9369,
+        "BE_measured_proxy": 7.9369,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 74,
+        "A": 193,
+        "BE_LDM": 7.914,
+        "BE_measured_proxy": 7.914,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 75,
+        "A": 196,
+        "BE_LDM": 7.8912,
+        "BE_measured_proxy": 7.8912,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 76,
+        "A": 199,
+        "BE_LDM": 7.8684,
+        "BE_measured_proxy": 7.8684,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 77,
+        "A": 202,
+        "BE_LDM": 7.8458,
+        "BE_measured_proxy": 7.8458,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 78,
+        "A": 205,
+        "BE_LDM": 7.8232,
+        "BE_measured_proxy": 7.8232,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 79,
+        "A": 209,
+        "BE_LDM": 7.7876,
+        "BE_measured_proxy": 7.7876,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 80,
+        "A": 212,
+        "BE_LDM": 7.7654,
+        "BE_measured_proxy": 7.7654,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 81,
+        "A": 215,
+        "BE_LDM": 7.7433,
+        "BE_measured_proxy": 7.7433,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 82,
+        "A": 218,
+        "BE_LDM": 7.7213,
+        "BE_measured_proxy": 7.9013,
+        "excess_MeV": 0.18,
+        "is_magic_Z": true
+      },
+      {
+        "Z": 83,
+        "A": 221,
+        "BE_LDM": 7.6993,
+        "BE_measured_proxy": 7.6993,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 84,
+        "A": 224,
+        "BE_LDM": 7.6775,
+        "BE_measured_proxy": 7.6775,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 85,
+        "A": 228,
+        "BE_LDM": 7.6431,
+        "BE_measured_proxy": 7.6431,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 86,
+        "A": 231,
+        "BE_LDM": 7.6216,
+        "BE_measured_proxy": 7.6216,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 87,
+        "A": 234,
+        "BE_LDM": 7.6002,
+        "BE_measured_proxy": 7.6002,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 88,
+        "A": 237,
+        "BE_LDM": 7.5789,
+        "BE_measured_proxy": 7.5789,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 89,
+        "A": 241,
+        "BE_LDM": 7.5453,
+        "BE_measured_proxy": 7.5453,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 90,
+        "A": 244,
+        "BE_LDM": 7.5243,
+        "BE_measured_proxy": 7.5243,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 91,
+        "A": 247,
+        "BE_LDM": 7.5034,
+        "BE_measured_proxy": 7.5034,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 92,
+        "A": 250,
+        "BE_LDM": 7.4826,
+        "BE_measured_proxy": 7.4826,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 93,
+        "A": 254,
+        "BE_LDM": 7.4499,
+        "BE_measured_proxy": 7.4499,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 94,
+        "A": 257,
+        "BE_LDM": 7.4293,
+        "BE_measured_proxy": 7.4293,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 95,
+        "A": 260,
+        "BE_LDM": 7.4089,
+        "BE_measured_proxy": 7.4089,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 96,
+        "A": 264,
+        "BE_LDM": 7.3768,
+        "BE_measured_proxy": 7.3768,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 97,
+        "A": 267,
+        "BE_LDM": 7.3567,
+        "BE_measured_proxy": 7.3567,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 98,
+        "A": 270,
+        "BE_LDM": 7.3366,
+        "BE_measured_proxy": 7.3366,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 99,
+        "A": 274,
+        "BE_LDM": 7.3051,
+        "BE_measured_proxy": 7.3051,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      },
+      {
+        "Z": 100,
+        "A": 277,
+        "BE_LDM": 7.2853,
+        "BE_measured_proxy": 7.2853,
+        "excess_MeV": 0.0,
+        "is_magic_Z": false
+      }
+    ]
+  },
+  "form_factor": {
+    "a_fm": 0.234,
+    "records": [
+      {
+        "Q2_GeV2": 0.01,
+        "GE_framework": 0.972458,
+        "GE_measured_dipole": 0.732392
+      },
+      {
+        "Q2_GeV2": 0.01124,
+        "GE_framework": 0.969116,
+        "GE_measured_dipole": 0.706844
+      },
+      {
+        "Q2_GeV2": 0.01264,
+        "GE_framework": 0.96538,
+        "GE_measured_dipole": 0.679687
+      },
+      {
+        "Q2_GeV2": 0.01421,
+        "GE_framework": 0.961206,
+        "GE_measured_dipole": 0.650985
+      },
+      {
+        "Q2_GeV2": 0.01597,
+        "GE_framework": 0.956546,
+        "GE_measured_dipole": 0.620837
+      },
+      {
+        "Q2_GeV2": 0.01796,
+        "GE_framework": 0.951347,
+        "GE_measured_dipole": 0.589378
+      },
+      {
+        "Q2_GeV2": 0.02019,
+        "GE_framework": 0.945552,
+        "GE_measured_dipole": 0.556785
+      },
+      {
+        "Q2_GeV2": 0.0227,
+        "GE_framework": 0.939101,
+        "GE_measured_dipole": 0.52327
+      },
+      {
+        "Q2_GeV2": 0.02551,
+        "GE_framework": 0.931927,
+        "GE_measured_dipole": 0.489084
+      },
+      {
+        "Q2_GeV2": 0.02868,
+        "GE_framework": 0.92396,
+        "GE_measured_dipole": 0.454503
+      },
+      {
+        "Q2_GeV2": 0.03225,
+        "GE_framework": 0.915125,
+        "GE_measured_dipole": 0.419833
+      },
+      {
+        "Q2_GeV2": 0.03625,
+        "GE_framework": 0.905343,
+        "GE_measured_dipole": 0.385391
+      },
+      {
+        "Q2_GeV2": 0.04075,
+        "GE_framework": 0.894531,
+        "GE_measured_dipole": 0.351499
+      },
+      {
+        "Q2_GeV2": 0.04582,
+        "GE_framework": 0.882607,
+        "GE_measured_dipole": 0.318475
+      },
+      {
+        "Q2_GeV2": 0.05151,
+        "GE_framework": 0.869484,
+        "GE_measured_dipole": 0.286616
+      },
+      {
+        "Q2_GeV2": 0.0579,
+        "GE_framework": 0.855077,
+        "GE_measured_dipole": 0.256192
+      },
+      {
+        "Q2_GeV2": 0.0651,
+        "GE_framework": 0.839304,
+        "GE_measured_dipole": 0.227434
+      },
+      {
+        "Q2_GeV2": 0.07318,
+        "GE_framework": 0.822088,
+        "GE_measured_dipole": 0.200529
+      },
+      {
+        "Q2_GeV2": 0.08227,
+        "GE_framework": 0.803358,
+        "GE_measured_dipole": 0.175613
+      },
+      {
+        "Q2_GeV2": 0.09249,
+        "GE_framework": 0.783057,
+        "GE_measured_dipole": 0.15277
+      },
+      {
+        "Q2_GeV2": 0.10398,
+        "GE_framework": 0.761139,
+        "GE_measured_dipole": 0.132035
+      },
+      {
+        "Q2_GeV2": 0.1169,
+        "GE_framework": 0.737579,
+        "GE_measured_dipole": 0.113392
+      },
+      {
+        "Q2_GeV2": 0.13141,
+        "GE_framework": 0.712377,
+        "GE_measured_dipole": 0.096788
+      },
+      {
+        "Q2_GeV2": 0.14774,
+        "GE_framework": 0.685556,
+        "GE_measured_dipole": 0.082131
+      },
+      {
+        "Q2_GeV2": 0.16609,
+        "GE_framework": 0.657173,
+        "GE_measured_dipole": 0.069304
+      },
+      {
+        "Q2_GeV2": 0.18672,
+        "GE_framework": 0.62732,
+        "GE_measured_dipole": 0.058171
+      },
+      {
+        "Q2_GeV2": 0.20991,
+        "GE_framework": 0.596125,
+        "GE_measured_dipole": 0.048581
+      },
+      {
+        "Q2_GeV2": 0.23598,
+        "GE_framework": 0.563755,
+        "GE_measured_dipole": 0.040382
+      },
+      {
+        "Q2_GeV2": 0.26529,
+        "GE_framework": 0.530415,
+        "GE_measured_dipole": 0.033419
+      },
+      {
+        "Q2_GeV2": 0.29825,
+        "GE_framework": 0.496348,
+        "GE_measured_dipole": 0.027544
+      },
+      {
+        "Q2_GeV2": 0.33529,
+        "GE_framework": 0.461827,
+        "GE_measured_dipole": 0.022615
+      },
+      {
+        "Q2_GeV2": 0.37694,
+        "GE_framework": 0.427149,
+        "GE_measured_dipole": 0.018504
+      },
+      {
+        "Q2_GeV2": 0.42376,
+        "GE_framework": 0.392632,
+        "GE_measured_dipole": 0.015091
+      },
+      {
+        "Q2_GeV2": 0.47639,
+        "GE_framework": 0.358597,
+        "GE_measured_dipole": 0.012271
+      },
+      {
+        "Q2_GeV2": 0.53557,
+        "GE_framework": 0.325364,
+        "GE_measured_dipole": 0.009952
+      },
+      {
+        "Q2_GeV2": 0.60209,
+        "GE_framework": 0.293235,
+        "GE_measured_dipole": 0.008051
+      },
+      {
+        "Q2_GeV2": 0.67688,
+        "GE_framework": 0.262487,
+        "GE_measured_dipole": 0.006498
+      },
+      {
+        "Q2_GeV2": 0.76095,
+        "GE_framework": 0.23336,
+        "GE_measured_dipole": 0.005234
+      },
+      {
+        "Q2_GeV2": 0.85547,
+        "GE_framework": 0.206051,
+        "GE_measured_dipole": 0.004209
+      },
+      {
+        "Q2_GeV2": 0.96172,
+        "GE_framework": 0.180706,
+        "GE_measured_dipole": 0.003378
+      },
+      {
+        "Q2_GeV2": 1.08118,
+        "GE_framework": 0.157421,
+        "GE_measured_dipole": 0.002708
+      },
+      {
+        "Q2_GeV2": 1.21547,
+        "GE_framework": 0.13624,
+        "GE_measured_dipole": 0.002167
+      },
+      {
+        "Q2_GeV2": 1.36645,
+        "GE_framework": 0.117158,
+        "GE_measured_dipole": 0.001733
+      },
+      {
+        "Q2_GeV2": 1.53617,
+        "GE_framework": 0.10013,
+        "GE_measured_dipole": 0.001384
+      },
+      {
+        "Q2_GeV2": 1.72698,
+        "GE_framework": 0.085071,
+        "GE_measured_dipole": 0.001104
+      },
+      {
+        "Q2_GeV2": 1.94149,
+        "GE_framework": 0.071868,
+        "GE_measured_dipole": 0.00088
+      },
+      {
+        "Q2_GeV2": 2.18264,
+        "GE_framework": 0.060389,
+        "GE_measured_dipole": 0.000701
+      },
+      {
+        "Q2_GeV2": 2.45375,
+        "GE_framework": 0.050486,
+        "GE_measured_dipole": 0.000558
+      },
+      {
+        "Q2_GeV2": 2.75853,
+        "GE_framework": 0.042006,
+        "GE_measured_dipole": 0.000444
+      },
+      {
+        "Q2_GeV2": 3.10117,
+        "GE_framework": 0.034795,
+        "GE_measured_dipole": 0.000353
+      },
+      {
+        "Q2_GeV2": 3.48637,
+        "GE_framework": 0.028702,
+        "GE_measured_dipole": 0.00028
+      },
+      {
+        "Q2_GeV2": 3.91941,
+        "GE_framework": 0.023584,
+        "GE_measured_dipole": 0.000222
+      },
+      {
+        "Q2_GeV2": 4.40624,
+        "GE_framework": 0.01931,
+        "GE_measured_dipole": 0.000177
+      },
+      {
+        "Q2_GeV2": 4.95354,
+        "GE_framework": 0.015759,
+        "GE_measured_dipole": 0.00014
+      },
+      {
+        "Q2_GeV2": 5.56881,
+        "GE_framework": 0.012822,
+        "GE_measured_dipole": 0.000111
+      },
+      {
+        "Q2_GeV2": 6.26052,
+        "GE_framework": 0.010404,
+        "GE_measured_dipole": 8.8e-05
+      },
+      {
+        "Q2_GeV2": 7.03814,
+        "GE_framework": 0.008421,
+        "GE_measured_dipole": 7e-05
+      },
+      {
+        "Q2_GeV2": 7.91234,
+        "GE_framework": 0.0068,
+        "GE_measured_dipole": 5.5e-05
+      },
+      {
+        "Q2_GeV2": 8.89513,
+        "GE_framework": 0.00548,
+        "GE_measured_dipole": 4.4e-05
+      },
+      {
+        "Q2_GeV2": 10.0,
+        "GE_framework": 0.004408,
+        "GE_measured_dipole": 3.5e-05
+      }
+    ]
+  }
+}

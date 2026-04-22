@@ -1,0 +1,352 @@
+\begin{thebibliography}{60}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Anderson et~al.(1995)Anderson, Ensher, Matthews, Wieman, and
+  Cornell]{andersonetal1995}
+M.~H. Anderson, J.~R. Ensher, M.~R. Matthews, C.~E. Wieman, and E.~A. Cornell.
+\newblock Observation of {Bose}--{Einstein} condensation in a dilute atomic
+  vapor.
+\newblock \emph{Science}, 269\penalty0 (5221):\penalty0 198--201, 1995.
+
+\bibitem[Arfken and Weber(2005)]{arfkenweber2005}
+G.~B. Arfken and H.~J. Weber.
+\newblock \emph{Mathematical Methods for Physicists}.
+\newblock Elsevier, 6 edition, 2005.
+
+\bibitem[Ashcroft and Mermin(1976)]{ashcroftmermin1976}
+N.~W. Ashcroft and N.~D. Mermin.
+\newblock \emph{Solid State Physics}.
+\newblock Holt, Rinehart and Winston, 1976.
+
+\bibitem[Audi et~al.(2017)Audi, Kondev, Wang, Huang, and Naimi]{audi2017}
+G.~Audi, F.~G. Kondev, M.~Wang, W.~J. Huang, and S.~Naimi.
+\newblock The {AME2016} atomic mass evaluation.
+\newblock \emph{Chinese Physics C}, 41\penalty0 (3):\penalty0 030001, 2017.
+
+\bibitem[Birkhoff(1931)]{birkhoff1931}
+G.~D. Birkhoff.
+\newblock Proof of the ergodic theorem.
+\newblock \emph{Proceedings of the National Academy of Sciences}, 17\penalty0
+  (12):\penalty0 656--660, 1931.
+
+\bibitem[Bohr and Mottelson(1969)]{bohrmottelson1969}
+A.~Bohr and B.~R. Mottelson.
+\newblock \emph{Nuclear Structure, Vol. 1: Single-Particle Motion}.
+\newblock W. A. Benjamin, 1969.
+
+\bibitem[Bohr(1913)]{bohr1913}
+N.~Bohr.
+\newblock On the constitution of atoms and molecules.
+\newblock \emph{Philosophical Magazine}, 26\penalty0 (151):\penalty0 1--25,
+  1913.
+
+\bibitem[Boltzmann(1877)]{boltzmann1877}
+L.~Boltzmann.
+\newblock \"uber die beziehung zwischen dem zweiten hauptsatze der mechanischen
+  w\"armetheorie und der wahrscheinlichkeitsrechnung.
+\newblock \emph{Wiener Berichte}, 76:\penalty0 373--435, 1877.
+
+\bibitem[Bose(1924)]{bose1924}
+S.~N. Bose.
+\newblock Plancks gesetz und lichtquantenhypothese.
+\newblock \emph{Zeitschrift f\"ur Physik}, 26:\penalty0 178--181, 1924.
+
+\bibitem[Chapman(1916)]{chapman1916}
+S.~Chapman.
+\newblock On the law of distribution of molecular velocities, and on the theory
+  of viscosity and thermal conduction, in a non-uniform simple monatomic gas.
+\newblock \emph{Philosophical Transactions of the Royal Society A},
+  216:\penalty0 279--348, 1916.
+
+\bibitem[Compton(1923)]{compton1923}
+A.~H. Compton.
+\newblock A quantum theory of the scattering of x-rays by light elements.
+\newblock \emph{Physical Review}, 21\penalty0 (5):\penalty0 483--502, 1923.
+
+\bibitem[Davisson and Germer(1927)]{davissongermer1927}
+C.~Davisson and L.~H. Germer.
+\newblock Diffraction of electrons by a crystal of nickel.
+\newblock \emph{Physical Review}, 30\penalty0 (6):\penalty0 705--740, 1927.
+
+\bibitem[Dirac(1928)]{dirac1928}
+P.~A.~M. Dirac.
+\newblock The quantum theory of the electron.
+\newblock \emph{Proceedings of the Royal Society A}, 117\penalty0
+  (778):\penalty0 610--624, 1928.
+
+\bibitem[Drude(1900)]{drude1900}
+P.~Drude.
+\newblock Zur elektronentheorie der metalle.
+\newblock \emph{Annalen der Physik}, 306\penalty0 (3):\penalty0 566--613, 1900.
+
+\bibitem[Einstein(1905{\natexlab{a}})]{einstein1905photoelectric}
+A.~Einstein.
+\newblock \"uber einen die erzeugung und verwandlung des lichtes betreffenden
+  heuristischen gesichtspunkt.
+\newblock \emph{Annalen der Physik}, 322\penalty0 (6):\penalty0 132--148,
+  1905{\natexlab{a}}.
+
+\bibitem[Einstein(1905{\natexlab{b}})]{einstein1905relativity}
+A.~Einstein.
+\newblock Zur elektrodynamik bewegter k\"orper.
+\newblock \emph{Annalen der Physik}, 322\penalty0 (10):\penalty0 891--921,
+  1905{\natexlab{b}}.
+
+\bibitem[Einstein(1906)]{einstein1906}
+A.~Einstein.
+\newblock Eine neue bestimmung der molek\"uldimensionen.
+\newblock \emph{Annalen der Physik}, 324\penalty0 (2):\penalty0 289--306, 1906.
+
+\bibitem[Einstein(1917)]{einstein1917}
+A.~Einstein.
+\newblock Zum quantensatz von sommerfeld und epstein.
+\newblock \emph{Verhandlungen der Deutschen Physikalischen Gesellschaft},
+  19:\penalty0 82--92, 1917.
+
+\bibitem[Franck and Hertz(1914)]{franckhertz1914}
+J.~Franck and G.~Hertz.
+\newblock \"uber zusammenst\"o{\ss}e zwischen elektronen und den molek\"ulen
+  des quecksilberdampfes und die ionisierungsspannung desselben.
+\newblock \emph{Verhandlungen der Deutschen Physikalischen Gesellschaft},
+  16:\penalty0 457--467, 1914.
+
+\bibitem[Friedman and Kendall(1972)]{friedman1972}
+J.~I. Friedman and H.~W. Kendall.
+\newblock Deep inelastic electron scattering.
+\newblock \emph{Annual Review of Nuclear Science}, 22:\penalty0 203--254, 1972.
+
+\bibitem[Geiger and Marsden(1909)]{geigermarsden1909}
+H.~Geiger and E.~Marsden.
+\newblock On a diffuse reflection of the $\alpha$-particles.
+\newblock \emph{Proceedings of the Royal Society A}, 82:\penalty0 495--500,
+  1909.
+
+\bibitem[Gerlach and Stern(1922)]{gerlach1922}
+W.~Gerlach and O.~Stern.
+\newblock Der experimentelle nachweis der richtungsquantelung im magnetfeld.
+\newblock \emph{Zeitschrift f\"ur Physik}, 9\penalty0 (1):\penalty0 349--352,
+  1922.
+
+\bibitem[Griffiths and Schroeter(2018)]{griffiths2018}
+D.~J. Griffiths and D.~F. Schroeter.
+\newblock \emph{Introduction to Quantum Mechanics}.
+\newblock Cambridge University Press, 3 edition, 2018.
+
+\bibitem[Halmos(1950)]{halmos1950}
+P.~R. Halmos.
+\newblock \emph{Measure Theory}.
+\newblock D. Van Nostrand, 1950.
+
+\bibitem[Haxel et~al.(1949)Haxel, Jensen, and Suess]{haxeljensensuess1949}
+O.~Haxel, J.~H.~D. Jensen, and H.~E. Suess.
+\newblock On the ``magic numbers'' in nuclear structure.
+\newblock \emph{Physical Review}, 75\penalty0 (11):\penalty0 1766, 1949.
+
+\bibitem[Heisenberg(1927)]{heisenberg1927}
+W.~Heisenberg.
+\newblock \"uber den anschaulichen inhalt der quantentheoretischen kinematik
+  und mechanik.
+\newblock \emph{Zeitschrift f\"ur Physik}, 43\penalty0 (3--4):\penalty0
+  172--198, 1927.
+
+\bibitem[Herzberg(1944)]{herzberg1944}
+G.~Herzberg.
+\newblock \emph{Atomic Spectra and Atomic Structure}.
+\newblock Dover Publications, New York, 1944.
+
+\bibitem[Hofstadter(1956)]{hofstadter1956}
+R.~Hofstadter.
+\newblock Electron scattering and nuclear structure.
+\newblock \emph{Reviews of Modern Physics}, 28\penalty0 (3):\penalty0 214--254,
+  1956.
+
+\bibitem[Hofstadter and McAllister(1955)]{hofstadtermcallister1955}
+R.~Hofstadter and R.~W. McAllister.
+\newblock Electron scattering from the proton.
+\newblock \emph{Physical Review}, 98\penalty0 (1):\penalty0 217--218, 1955.
+
+\bibitem[Kac(1947)]{kac1947}
+M.~Kac.
+\newblock On the notion of recurrence in discrete stochastic processes.
+\newblock \emph{Bulletin of the American Mathematical Society}, 53\penalty0
+  (10):\penalty0 1002--1010, 1947.
+
+\bibitem[Kamerlingh~Onnes(1911)]{onnes1911}
+H.~Kamerlingh~Onnes.
+\newblock The resistance of pure mercury at helium temperatures.
+\newblock \emph{Communications from the Physical Laboratory at the University
+  of Leiden}, 120b:\penalty0 1479--1481, 1911.
+
+\bibitem[Kapitza(1938)]{kapitza1938}
+P.~L. Kapitza.
+\newblock Viscosity of liquid helium below the $\lambda$-point.
+\newblock \emph{Nature}, 141:\penalty0 74, 1938.
+
+\bibitem[Koopman(1931)]{koopman1931}
+B.~O. Koopman.
+\newblock Hamiltonian systems and transformations in hilbert space.
+\newblock \emph{Proceedings of the National Academy of Sciences}, 17\penalty0
+  (5):\penalty0 315--318, 1931.
+
+\bibitem[Kramida et~al.(2022)Kramida, Ralchenko, Reader, and {NIST ASD
+  Team}]{nistasd}
+A.~Kramida, Yu. Ralchenko, J.~Reader, and {NIST ASD Team}.
+\newblock {NIST} atomic spectra database (version 5.10).
+\newblock National Institute of Standards and Technology, Gaithersburg, MD,
+  2022.
+
+\bibitem[Krane(1988)]{krane1988}
+K.~S. Krane.
+\newblock \emph{Introductory Nuclear Physics}.
+\newblock John Wiley and Sons, New York, 1988.
+
+\bibitem[Landau and Lifshitz(1976)]{landaulifshitz1}
+L.~D. Landau and E.~M. Lifshitz.
+\newblock \emph{Mechanics}.
+\newblock Pergamon Press, Oxford, 3 edition, 1976.
+
+\bibitem[Landau and Lifshitz(1980)]{landaulifshitz5}
+L.~D. Landau and E.~M. Lifshitz.
+\newblock \emph{Statistical Physics, Part 1}.
+\newblock Pergamon Press, Oxford, 3 edition, 1980.
+
+\bibitem[Landauer(1961)]{landauer1961}
+R.~Landauer.
+\newblock Irreversibility and heat generation in the computing process.
+\newblock \emph{IBM Journal of Research and Development}, 5\penalty0
+  (3):\penalty0 183--191, 1961.
+
+\bibitem[Mayer(1949)]{mayer1949}
+M.~G. Mayer.
+\newblock On closed shells in nuclei. ii.
+\newblock \emph{Physical Review}, 75\penalty0 (12):\penalty0 1969--1970, 1949.
+
+\bibitem[Millikan(1913)]{millikan1913}
+R.~A. Millikan.
+\newblock On the elementary electrical charge and the avogadro constant.
+\newblock \emph{Physical Review}, 2\penalty0 (2):\penalty0 109--143, 1913.
+
+\bibitem[Moseley(1913)]{moseley1913}
+H.~G.~J. Moseley.
+\newblock The high-frequency spectra of the elements.
+\newblock \emph{Philosophical Magazine}, 26\penalty0 (156):\penalty0
+  1024--1034, 1913.
+
+\bibitem[Nakahara(2003)]{nakahara2003}
+M.~Nakahara.
+\newblock \emph{Geometry, Topology and Physics}.
+\newblock Institute of Physics Publishing, Bristol, 2 edition, 2003.
+
+\bibitem[Pauli(1925)]{pauli1925}
+W.~Pauli.
+\newblock \"uber den zusammenhang des abschlusses der elektronengruppen im atom
+  mit der komplexstruktur der spektren.
+\newblock \emph{Zeitschrift f\"ur Physik}, 31\penalty0 (1):\penalty0 765--783,
+  1925.
+
+\bibitem[Reed and Simon(1980)]{reed1980}
+M.~Reed and B.~Simon.
+\newblock \emph{Methods of Modern Mathematical Physics I: Functional Analysis}.
+\newblock Academic Press, 2 edition, 1980.
+
+\bibitem[Rudin(1987)]{rudin1987}
+W.~Rudin.
+\newblock \emph{Real and Complex Analysis}.
+\newblock McGraw-Hill, 3 edition, 1987.
+
+\bibitem[Rutherford(1911)]{rutherford1911}
+E.~Rutherford.
+\newblock The scattering of $\alpha$ and $\beta$ particles by matter and the
+  structure of the atom.
+\newblock \emph{Philosophical Magazine}, 21\penalty0 (125):\penalty0 669--688,
+  1911.
+
+\bibitem[Rydberg(1890)]{rydberg1890}
+J.~R. Rydberg.
+\newblock Recherches sur la constitution des spectres d'\'emission des
+  \'el\'ements chimiques.
+\newblock \emph{Kongliga Svenska Vetenskaps-Akademiens Handlingar}, 23\penalty0
+  (11):\penalty0 1--155, 1890.
+
+\bibitem[Sakurai and Napolitano(2017)]{sakurai2017}
+J.~J. Sakurai and J.~Napolitano.
+\newblock \emph{Modern Quantum Mechanics}.
+\newblock Cambridge University Press, 2 edition, 2017.
+
+\bibitem[Shannon(1948)]{shannon1948}
+C.~E. Shannon.
+\newblock A mathematical theory of communication.
+\newblock \emph{Bell System Technical Journal}, 27\penalty0 (3):\penalty0
+  379--423, 1948.
+
+\bibitem[Slater(1930)]{slater1930}
+J.~C. Slater.
+\newblock Atomic shielding constants.
+\newblock \emph{Physical Review}, 36\penalty0 (1):\penalty0 57--64, 1930.
+
+\bibitem[Sommerfeld(1915)]{sommerfeld1915}
+A.~Sommerfeld.
+\newblock Zur theorie der balmerschen serie.
+\newblock \emph{Sitzungsberichte der M\"unchener Akademie der Wissenschaften},
+  pages 425--458, 1915.
+
+\bibitem[Sommerfeld(1927)]{sommerfeld1927}
+A.~Sommerfeld.
+\newblock Zur elektronentheorie der metalle auf grund der fermischen statistik.
+\newblock \emph{Zeitschrift f\"ur Physik}, 47:\penalty0 1--32, 1927.
+
+\bibitem[Stern(1921)]{stern1921}
+O.~Stern.
+\newblock Ein weg zur experimentellen pr\"ufung der richtungsquantelung im
+  magnetfeld.
+\newblock \emph{Zeitschrift f\"ur Physik}, 7\penalty0 (1):\penalty0 249--253,
+  1921.
+
+\bibitem[Tiesinga et~al.(2021)Tiesinga, Mohr, Newell, and Taylor]{codata2018}
+E.~Tiesinga, P.~J. Mohr, D.~B. Newell, and B.~N. Taylor.
+\newblock {CODATA} recommended values of the fundamental physical constants:
+  2018.
+\newblock \emph{Reviews of Modern Physics}, 93\penalty0 (2):\penalty0 025010,
+  2021.
+
+\bibitem[Uhlenbeck and Goudsmit(1925)]{uhlenbeckgoudsmit1925}
+G.~E. Uhlenbeck and S.~Goudsmit.
+\newblock Ersetzung der hypothese vom unmechanischen zwang durch eine forderung
+  bez\"uglich des inneren verhaltens jedes einzelnen elektrons.
+\newblock \emph{Naturwissenschaften}, 13\penalty0 (47):\penalty0 953--954,
+  1925.
+
+\bibitem[von Ignatowsky(1910)]{ignatowsky1910}
+W.~von Ignatowsky.
+\newblock Einige allgemeine bemerkungen zum relativit\"atsprinzip.
+\newblock \emph{Physikalische Zeitschrift}, 11:\penalty0 972--976, 1910.
+
+\bibitem[Walters(1982)]{walters1982}
+P.~Walters.
+\newblock \emph{An Introduction to Ergodic Theory}.
+\newblock Springer, New York, 1982.
+
+\bibitem[Wigner(1959)]{wigner1959}
+E.~P. Wigner.
+\newblock \emph{Group Theory and Its Application to the Quantum Mechanics of
+  Atomic Spectra}.
+\newblock Academic Press, 1959.
+
+\bibitem[Wilson et~al.(1955)Wilson, Decius, and Cross]{wilsondeciuscross1955}
+E.~B. Wilson, J.~C. Decius, and P.~C. Cross.
+\newblock \emph{Molecular Vibrations: The Theory of Infrared and Raman
+  Vibrational Spectra}.
+\newblock McGraw-Hill, New York, 1955.
+
+\bibitem[Zeeman(1897)]{zeeman1897}
+P.~Zeeman.
+\newblock On the influence of magnetism on the nature of the light emitted by a
+  substance.
+\newblock \emph{Philosophical Magazine}, 43\penalty0 (262):\penalty0 226--239,
+  1897.
+
+\end{thebibliography}

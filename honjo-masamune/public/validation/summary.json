@@ -1,0 +1,24 @@
+{
+  "framework": "Bounded Phase Space (BPS)",
+  "framework_version": "1.0.0",
+  "timestamp_utc": "2026-04-21T08:03:31.581722+00:00",
+  "axioms": 1,
+  "batteries_run": 8,
+  "panels_rendered": 8,
+  "summary_stats": {
+    "n_points": 142,
+    "mean_abs_error_pct": 52.6394161613525,
+    "median_abs_error_pct": 11.033701540450759
+  },
+  "nuclear_radii_mean_abs_error_pct": 21.13,
+  "Fe56_BE_per_A_predicted_MeV": 8.759,
+  "Fe56_BE_per_A_measured_MeV": 8.79,
+  "superfluid_He4": {
+    "T_lambda_predicted_K": 3.1328,
+    "T_lambda_measured_K": 2.172,
+    "error_pct": 44.24
+  },
+  "wiedemann_franz_L_pred": 2.4430045090736666e-08,
+  "compton_wavelength_pm": 2.4263,
+  "autocatalytic_ratio": 2.077
+}

@@ -35,6 +35,8 @@ const HarmonicNetwork = dynamic(() => import("@/components/HarmonicNetwork"), { 
 const MoleculeViewer3D = dynamic(() => import("@/components/MoleculeViewer3D"), { ssr: false });
 const DockingInstrument = dynamic(() => import("@/components/DockingInstrument"), { ssr: false });
 const SpectralHologram = dynamic(() => import("@/components/SpectralHologram"), { ssr: false });
+const ChromatographyInstrument = dynamic(() => import("@/components/ChromatographyInstrument"), { ssr: false });
+const AtomicExplorer = dynamic(() => import("@/components/AtomicExplorer"), { ssr: false });
 
 const TYPE_COLORS = {
   diatomic: "#3b82f6",
@@ -123,6 +125,8 @@ export default function Tools() {
     { id: "docking", label: "Docking" },
     { id: "hologram", label: "Hologram" },
     { id: "predict", label: "Properties" },
+    { id: "chromatography", label: "Retention" },
+    { id: "atomic", label: "Atomic" },
   ];
 
   return (
@@ -668,6 +672,36 @@ export default function Tools() {
                     ))}
                   </div>
                 </div>
+              </div>
+            )}
+
+            {/* IX. Chromatography Retention */}
+            {activeTab === "chromatography" && (
+              <div>
+                <h2 className="text-lg font-bold text-white mb-1">
+                  Instrument IX: Chromatography Retention
+                </h2>
+                <p className="text-neutral-500 text-sm mb-4">
+                  Predicts C18 (reverse-phase) and HILIC (hydrophilic) retention times directly from
+                  partition coordinates (n, ℓ, m). The column IS the projection operator —
+                  no force field, no training data, no calibration.
+                </p>
+                <ChromatographyInstrument />
+              </div>
+            )}
+
+            {/* X. Atomic Explorer */}
+            {activeTab === "atomic" && (
+              <div>
+                <h2 className="text-lg font-bold text-white mb-1">
+                  Instrument X: Partition Atomic Explorer
+                </h2>
+                <p className="text-neutral-500 text-sm mb-4">
+                  Given Z, derives the electronic configuration from the partition selection rules
+                  (Δℓ = ±1, Δm ∈ {"{0, ±1}"}, Δs = 0) and shell capacity C(n) = 2n². The periodic
+                  table falls out — no shell model is postulated.
+                </p>
+                <AtomicExplorer />
               </div>
             )}
           </div>
