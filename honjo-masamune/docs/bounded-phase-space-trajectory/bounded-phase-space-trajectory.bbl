@@ -1,4 +1,4 @@
-\begin{thebibliography}{60}
+\begin{thebibliography}{77}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -55,12 +55,24 @@ S.~N. Bose.
 \newblock Plancks gesetz und lichtquantenhypothese.
 \newblock \emph{Zeitschrift f\"ur Physik}, 26:\penalty0 178--181, 1924.
 
+\bibitem[Brans and Dicke(1961)]{brans1961}
+C.~Brans and R.~H. Dicke.
+\newblock {M}ach's principle and a relativistic theory of gravitation.
+\newblock \emph{Physical Review}, 124:\penalty0 925--935, 1961.
+\newblock \doi{10.1103/PhysRev.124.925}.
+
 \bibitem[Chapman(1916)]{chapman1916}
 S.~Chapman.
 \newblock On the law of distribution of molecular velocities, and on the theory
   of viscosity and thermal conduction, in a non-uniform simple monatomic gas.
 \newblock \emph{Philosophical Transactions of the Royal Society A},
   216:\penalty0 279--348, 1916.
+
+\bibitem[Collaboration(2020)]{planck2018}
+Planck Collaboration.
+\newblock Planck 2018 results. vi. cosmological parameters.
+\newblock \emph{Astronomy \& Astrophysics}, 641:\penalty0 A6, 2020.
+\newblock \doi{10.1051/0004-6361/201833910}.
 
 \bibitem[Compton(1923)]{compton1923}
 A.~H. Compton.
@@ -72,11 +84,22 @@ C.~Davisson and L.~H. Germer.
 \newblock Diffraction of electrons by a crystal of nickel.
 \newblock \emph{Physical Review}, 30\penalty0 (6):\penalty0 705--740, 1927.
 
+\bibitem[Debye and H\"uckel(1923)]{debye1923theory}
+P.~Debye and E.~H\"uckel.
+\newblock Zur theorie der elektrolyte.
+\newblock \emph{Physikalische Zeitschrift}, 24:\penalty0 185--206, 1923.
+
 \bibitem[Dirac(1928)]{dirac1928}
 P.~A.~M. Dirac.
 \newblock The quantum theory of the electron.
 \newblock \emph{Proceedings of the Royal Society A}, 117\penalty0
   (778):\penalty0 610--624, 1928.
+
+\bibitem[Dirac(1937)]{dirac1937}
+P.~A.~M. Dirac.
+\newblock The cosmological constants.
+\newblock \emph{Nature}, 139:\penalty0 323, 1937.
+\newblock \doi{10.1038/139323a0}.
 
 \bibitem[Drude(1900)]{drude1900}
 P.~Drude.
@@ -106,6 +129,24 @@ A.~Einstein.
 \newblock Zum quantensatz von sommerfeld und epstein.
 \newblock \emph{Verhandlungen der Deutschen Physikalischen Gesellschaft},
   19:\penalty0 82--92, 1917.
+
+\bibitem[Einstein(1924)]{einstein1924quantentheorie}
+A.~Einstein.
+\newblock Quantentheorie des einatomigen idealen gases.
+\newblock \emph{Sitzungsberichte der Preussischen Akademie der Wissenschaften},
+  pages 261--267, 1924.
+
+\bibitem[Famaey and McGaugh(2012)]{famaey2012}
+B.~Famaey and S.~S. McGaugh.
+\newblock Modified {N}ewtonian dynamics ({MOND}): Observational phenomenology
+  and relativistic extensions.
+\newblock \emph{Living Reviews in Relativity}, 15:\penalty0 10, 2012.
+\newblock \doi{10.12942/lrr-2012-10}.
+
+\bibitem[Fermi(1926)]{fermi1926quantisierung}
+E.~Fermi.
+\newblock Zur quantelung des idealen einatomigen gases.
+\newblock \emph{Zeitschrift f\"ur Physik}, 36:\penalty0 902--912, 1926.
 
 \bibitem[Franck and Hertz(1914)]{franckhertz1914}
 J.~Franck and G.~Hertz.
@@ -158,6 +199,13 @@ G.~Herzberg.
 \newblock \emph{Atomic Spectra and Atomic Structure}.
 \newblock Dover Publications, New York, 1944.
 
+\bibitem[Hofmann et~al.(2010)Hofmann, M\"uller, and Biskupek]{hofmann2010}
+F.~Hofmann, J.~M\"uller, and L.~Biskupek.
+\newblock Lunar laser ranging test of the {N}ordtvedt parameter and a possible
+  variation in the gravitational constant.
+\newblock \emph{Astronomy \& Astrophysics}, 522:\penalty0 L5, 2010.
+\newblock \doi{10.1051/0004-6361/201015659}.
+
 \bibitem[Hofstadter(1956)]{hofstadter1956}
 R.~Hofstadter.
 \newblock Electron scattering and nuclear structure.
@@ -168,6 +216,12 @@ R.~Hofstadter.
 R.~Hofstadter and R.~W. McAllister.
 \newblock Electron scattering from the proton.
 \newblock \emph{Physical Review}, 98\penalty0 (1):\penalty0 217--218, 1955.
+
+\bibitem[J\"uttner(1911)]{juttner1911maxwell}
+F.~J\"uttner.
+\newblock Das {M}axwellsche gesetz der geschwindigkeitsverteilung in der
+  relativtheorie.
+\newblock \emph{Annalen der Physik}, 339:\penalty0 856--882, 1911.
 
 \bibitem[Kac(1947)]{kac1947}
 M.~Kac.
@@ -185,6 +239,12 @@ H.~Kamerlingh~Onnes.
 P.~L. Kapitza.
 \newblock Viscosity of liquid helium below the $\lambda$-point.
 \newblock \emph{Nature}, 141:\penalty0 74, 1938.
+
+\bibitem[Kleinert(2009)]{kleinertbook}
+H.~Kleinert.
+\newblock \emph{Path Integrals in Quantum Mechanics, Statistics, Polymer
+  Physics, and Financial Markets}.
+\newblock World Scientific, 5 edition, 2009.
 
 \bibitem[Koopman(1931)]{koopman1931}
 B.~O. Koopman.
@@ -225,6 +285,27 @@ M.~G. Mayer.
 \newblock On closed shells in nuclei. ii.
 \newblock \emph{Physical Review}, 75\penalty0 (12):\penalty0 1969--1970, 1949.
 
+\bibitem[McGaugh(2011)]{mcgaugh2011}
+S.~S. McGaugh.
+\newblock Novel test of {MOND} with gas-rich galaxies.
+\newblock \emph{Physical Review Letters}, 106\penalty0 (12):\penalty0 121303,
+  2011.
+\newblock \doi{10.1103/PhysRevLett.106.121303}.
+
+\bibitem[McGaugh et~al.(2016)McGaugh, Lelli, and Schombert]{mcgaugh2016}
+S.~S. McGaugh, F.~Lelli, and J.~M. Schombert.
+\newblock Radial acceleration relation in rotationally supported galaxies.
+\newblock \emph{Physical Review Letters}, 117\penalty0 (20):\penalty0 201101,
+  2016.
+\newblock \doi{10.1103/PhysRevLett.117.201101}.
+
+\bibitem[Milgrom(1983)]{milgrom1983}
+M.~Milgrom.
+\newblock A modification of the {N}ewtonian dynamics as a possible alternative
+  to the hidden mass hypothesis.
+\newblock \emph{Astrophysical Journal}, 270:\penalty0 365--370, 1983.
+\newblock \doi{10.1086/161130}.
+
 \bibitem[Millikan(1913)]{millikan1913}
 R.~A. Millikan.
 \newblock On the elementary electrical charge and the avogadro constant.
@@ -253,6 +334,14 @@ M.~Reed and B.~Simon.
 \newblock \emph{Methods of Modern Mathematical Physics I: Functional Analysis}.
 \newblock Academic Press, 2 edition, 1980.
 
+\bibitem[Rubin et~al.(1980)Rubin, Ford, and Thonnard]{rubin1980}
+V.~C. Rubin, W.~K. Ford, and N.~Thonnard.
+\newblock Rotational properties of 21 {SC} galaxies with a large range of
+  luminosities and radii, from {NGC} 4605 ($r=4$~kpc) to {UGC} 2885
+  ($r=122$~kpc).
+\newblock \emph{Astrophysical Journal}, 238:\penalty0 471--487, 1980.
+\newblock \doi{10.1086/158003}.
+
 \bibitem[Rudin(1987)]{rudin1987}
 W.~Rudin.
 \newblock \emph{Real and Complex Analysis}.
@@ -276,6 +365,14 @@ J.~R. Rydberg.
 J.~J. Sakurai and J.~Napolitano.
 \newblock \emph{Modern Quantum Mechanics}.
 \newblock Cambridge University Press, 2 edition, 2017.
+
+\bibitem[Scolnic et~al.(2018)]{scolnic2018}
+D.~M. Scolnic et~al.
+\newblock The complete light-curve sample of spectroscopically confirmed
+  {SN}e~{I}a from {P}an-{STARRS}1 and cosmological constraints from the
+  combined {P}antheon sample.
+\newblock \emph{Astrophysical Journal}, 859\penalty0 (2):\penalty0 101, 2018.
+\newblock \doi{10.3847/1538-4357/aab9bb}.
 
 \bibitem[Shannon(1948)]{shannon1948}
 C.~E. Shannon.
@@ -306,12 +403,25 @@ O.~Stern.
 \newblock \emph{Zeitschrift f\"ur Physik}, 7\penalty0 (1):\penalty0 249--253,
   1921.
 
+\bibitem[Synge(1957)]{synge1957relativistic}
+J.~L. Synge.
+\newblock The relativistic gas.
+\newblock \emph{Monograph}, 1957.
+
 \bibitem[Tiesinga et~al.(2021)Tiesinga, Mohr, Newell, and Taylor]{codata2018}
 E.~Tiesinga, P.~J. Mohr, D.~B. Newell, and B.~N. Taylor.
 \newblock {CODATA} recommended values of the fundamental physical constants:
   2018.
 \newblock \emph{Reviews of Modern Physics}, 93\penalty0 (2):\penalty0 025010,
   2021.
+
+\bibitem[Touboul et~al.(2017)]{touboul2017}
+P.~Touboul et~al.
+\newblock {MICROSCOPE} mission: First results of a space test of the
+  equivalence principle.
+\newblock \emph{Physical Review Letters}, 119\penalty0 (23):\penalty0 231101,
+  2017.
+\newblock \doi{10.1103/PhysRevLett.119.231101}.
 
 \bibitem[Uhlenbeck and Goudsmit(1925)]{uhlenbeckgoudsmit1925}
 G.~E. Uhlenbeck and S.~Goudsmit.

@@ -38,7 +38,10 @@
       "Bash(python dmitri/publications/cheminformatics-model/validate_cheminformatics_models.py)",
       "Bash(python dmitri/publications/cheminformatics-model/generate_panels.py)",
       "Bash(grep -n \"\\\\\\\\\\\\\\\\begin{theorem}\" honjo-masamune/docs/mass-transfer/sources/ion-trajectory-completion.tex)",
-      "Bash(python validate_bounded_phase_space.py)"
+      "Bash(python validate_bounded_phase_space.py)",
+      "Bash(timeout 60 bibtex bounded-phase-space-trajectory)",
+      "Bash(timeout 90 pdflatex -interaction=nonstopmode bounded-phase-space-trajectory.tex)",
+      "Bash(python validate_bps_extended.py)"
     ]
   }
 }

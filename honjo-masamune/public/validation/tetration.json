@@ -1,0 +1,64 @@
+{
+  "framework": "Bounded Phase Space (BPS) Extended",
+  "framework_version": "1.1.0",
+  "timestamp_utc": "2026-04-22T21:02:53.935167+00:00",
+  "battery": "12_tetration",
+  "tetration_curves": {
+    "2": [
+      1.0,
+      2.0,
+      4.0,
+      16.0,
+      65536.0,
+      1e+308
+    ],
+    "3": [
+      1.0,
+      3.0,
+      27.0,
+      7625597484987.0,
+      1e+308,
+      1e+308
+    ],
+    "4": [
+      1.0,
+      4.0,
+      256.0,
+      1.3407807929942597e+154,
+      1e+308,
+      1e+308
+    ],
+    "10": [
+      1.0,
+      10.0,
+      10000000000.0,
+      1e+308,
+      1e+308,
+      1e+308
+    ]
+  },
+  "t_range": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "known_large_numbers_loglog10": {
+    "Googol (1e100)": 2.0,
+    "Googolplex (1e10^100)": 100.0,
+    "Graham's Number": 10000000000000.0,
+    "TREE(3)": 1000000000000000.0,
+    "N_max = (10^84) ^^ (10^80)": 1e+80
+  },
+  "heat_death": {
+    "N_particles": 1e+80,
+    "n_configs_per_particle": 10000.0,
+    "n_base_total": 2e+84,
+    "N_observers": 1e+80,
+    "N_max_exponent_level": "(10^84) uparrow uparrow (10^80)",
+    "margolus_levitin_Nops_bound": 1e+120,
+    "holographic_Imax_bits": 1e+122
+  }
+}

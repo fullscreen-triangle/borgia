@@ -1,0 +1,106 @@
+{
+  "framework": "Bounded Phase Space (BPS) Extended",
+  "framework_version": "1.1.0",
+  "timestamp_utc": "2026-04-22T21:02:53.935167+00:00",
+  "battery": "9_propagation_lag",
+  "transitions": [
+    {
+      "transition": "Hydrogen Lyman-alpha",
+      "E_eV": 10.2,
+      "tau_p_s": 4.054576173454764e-16,
+      "wavelength_m": 1.216e-07,
+      "c_predicted_m_s": 299908041.67427653,
+      "c_measured_m_s": 299792458.0,
+      "error_pct": 0.0385545637297289
+    },
+    {
+      "transition": "Hydrogen Balmer-alpha",
+      "E_eV": 1.89,
+      "tau_p_s": 2.1881839666263804e-15,
+      "wavelength_m": 6.563e-07,
+      "c_predicted_m_s": 299929078.18068266,
+      "c_measured_m_s": 299792458.0,
+      "error_pct": 0.04557158695521925
+    },
+    {
+      "transition": "Sodium D line",
+      "E_eV": 2.1,
+      "tau_p_s": 1.9693655699637423e-15,
+      "wavelength_m": 5.893e-07,
+      "c_predicted_m_s": 299233422.6757349,
+      "c_measured_m_s": 299792458.0,
+      "error_pct": -0.18647411212230108
+    },
+    {
+      "transition": "Optical (2 eV)",
+      "E_eV": 2.0,
+      "tau_p_s": 2.0678338484619295e-15,
+      "wavelength_m": 6.2e-07,
+      "c_predicted_m_s": 299830666.01852983,
+      "c_measured_m_s": 299792458.0,
+      "error_pct": 0.012744823130217759
+    },
+    {
+      "transition": "Hydrogen Lyman-beta",
+      "E_eV": 12.09,
+      "tau_p_s": 3.42073424063181e-16,
+      "wavelength_m": 1.025e-07,
+      "c_predicted_m_s": 299643271.8522683,
+      "c_measured_m_s": 299792458.0,
+      "error_pct": -0.04976314238422949
+    },
+    {
+      "transition": "Hydrogen Paschen-alpha",
+      "E_eV": 0.661,
+      "tau_p_s": 6.256683353893886e-15,
+      "wavelength_m": 1.875e-06,
+      "c_predicted_m_s": 299679541.69089955,
+      "c_measured_m_s": 299792458.0,
+      "error_pct": -0.03766482647820616
+    }
+  ],
+  "em_spectrum": [
+    {
+      "band": "Radio",
+      "tau_p_s": 1e-06,
+      "freq_Hz": 1000000.0,
+      "E_photon_eV": 4.135667696923859e-09
+    },
+    {
+      "band": "Microwave",
+      "tau_p_s": 1e-10,
+      "freq_Hz": 10000000000.0,
+      "E_photon_eV": 4.135667696923858e-05
+    },
+    {
+      "band": "Infrared",
+      "tau_p_s": 1e-13,
+      "freq_Hz": 10000000000000.0,
+      "E_photon_eV": 0.04135667696923859
+    },
+    {
+      "band": "Visible",
+      "tau_p_s": 1e-15,
+      "freq_Hz": 500000000000000.0,
+      "E_photon_eV": 4.135667696923859
+    },
+    {
+      "band": "UV",
+      "tau_p_s": 1e-16,
+      "freq_Hz": 1e+16,
+      "E_photon_eV": 41.356676969238585
+    },
+    {
+      "band": "X-ray",
+      "tau_p_s": 1e-18,
+      "freq_Hz": 1e+18,
+      "E_photon_eV": 4135.667696923859
+    },
+    {
+      "band": "Gamma",
+      "tau_p_s": 1e-21,
+      "freq_Hz": 1e+21,
+      "E_photon_eV": 4135667.6969238594
+    }
+  ]
+}

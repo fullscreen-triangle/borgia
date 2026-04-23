@@ -1,0 +1,16 @@
+{
+  "framework": "Bounded Phase Space (BPS) Extended",
+  "framework_version": "1.1.0",
+  "timestamp_utc": "2026-04-22T21:02:53.935167+00:00",
+  "axioms": 1,
+  "extended_batteries_run": 4,
+  "panels_rendered": 4,
+  "anchor_predictions": {
+    "c_from_lyman_alpha_m_s": 299908041.67427653,
+    "T_cat_at_M_2e6_uK": 38.5,
+    "mfp_N2_STP_nm": 63.226659538894225,
+    "adiabatic_Pf_error_pct": 0.3121855011841708,
+    "dark_ratio_plateau": 5.469387755102041,
+    "tetration_C2_log10": 8.4e+85
+  }
+}

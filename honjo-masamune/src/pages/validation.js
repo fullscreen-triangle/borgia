@@ -15,6 +15,10 @@ const BATTERIES = [
   { key: "transport", label: "Transport", color: "#22c55e" },
   { key: "atomic", label: "Atomic structure", color: "#ef4444" },
   { key: "chromatography", label: "Chromatography", color: "#58E6D9" },
+  { key: "propagation_lag", label: "Propagation lag (c)", color: "#fbbf24" },
+  { key: "universal_eos", label: "Universal EOS", color: "#ec4899" },
+  { key: "dark_ratio", label: "Dark sector ratio", color: "#6366f1" },
+  { key: "tetration", label: "Categorical enumeration", color: "#14b8a6" },
 ];
 
 // Extract every (predicted, measured, error_pct) record from a battery JSON

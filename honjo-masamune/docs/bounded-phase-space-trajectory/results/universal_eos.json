@@ -1,0 +1,90 @@
+{
+  "framework": "Bounded Phase Space (BPS) Extended",
+  "framework_version": "1.1.0",
+  "timestamp_utc": "2026-04-22T21:02:53.935167+00:00",
+  "battery": "10_universal_eos",
+  "single_particle": [
+    {
+      "T_phys_K": 77,
+      "partition_depth_M": 2000000.0,
+      "T_cat_K": 3.85e-05,
+      "T_cat_uK": 38.5,
+      "PV_over_kBTcat_predicted": 1.0
+    },
+    {
+      "T_phys_K": 300,
+      "partition_depth_M": 10000.0,
+      "T_cat_K": 0.03,
+      "T_cat_uK": 30000.0,
+      "PV_over_kBTcat_predicted": 1.0
+    },
+    {
+      "T_phys_K": 4.2,
+      "partition_depth_M": 1000.0,
+      "T_cat_K": 0.004200000000000001,
+      "T_cat_uK": 4200.000000000001,
+      "PV_over_kBTcat_predicted": 1.0
+    },
+    {
+      "T_phys_K": 1.0,
+      "partition_depth_M": 100.0,
+      "T_cat_K": 0.01,
+      "T_cat_uK": 10000.0,
+      "PV_over_kBTcat_predicted": 1.0
+    }
+  ],
+  "regimes": [
+    {
+      "regime": "Ideal gas",
+      "S_predicted": 1.0,
+      "S_measured": 1.0,
+      "note": "uncorrelated limit",
+      "error_pct": 0.0
+    },
+    {
+      "regime": "Plasma",
+      "S_predicted": 0.9666666666666667,
+      "S_measured": 0.967,
+      "note": "Gamma=0.1 Debye-Huckel",
+      "error_pct": -0.034470872113060665
+    },
+    {
+      "regime": "Degenerate Fermi",
+      "S_predicted": 2.0,
+      "S_measured": 1.96,
+      "note": "E_F/(kB T) = 5, zero-T limit",
+      "error_pct": 2.040816326530614
+    },
+    {
+      "regime": "Relativistic",
+      "S_predicted": 1.08,
+      "S_measured": 1.06,
+      "note": "k_BT = 0.5 m c^2, Juttner",
+      "error_pct": 1.8867924528301903
+    },
+    {
+      "regime": "BEC (T/Tc=0.5)",
+      "S_predicted": 0.513,
+      "S_measured": 0.51,
+      "note": "zeta(5/2)/zeta(3/2) x (T/Tc)^{3/2}",
+      "error_pct": 0.5882352941176475
+    }
+  ],
+  "adiabatic": {
+    "gamma": 1.6666666666666667,
+    "V0": 1.0,
+    "Vf": 2.0,
+    "Pf_predicted_atm": 0.3149802624737183,
+    "Pf_measured_atm": 0.314,
+    "Tf_predicted_K": 188.98815748423098,
+    "Tf_measured_K": 188.7,
+    "Pf_error_pct": 0.3121855011841708,
+    "Tf_error_pct": 0.15270666890884638
+  },
+  "mean_free_path": {
+    "species": "N2",
+    "mfp_predicted_nm": 63.226659538894225,
+    "mfp_measured_nm": 64.0,
+    "error_pct": -1.2083444704777735
+  }
+}
