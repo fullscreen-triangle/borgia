@@ -1,0 +1,16 @@
+{
+  "framework": "Bounded Phase Space (BPS) Instrument Validation",
+  "framework_version": "1.2.0",
+  "timestamp_utc": "2026-04-26T01:12:10.214842+00:00",
+  "axioms": 1,
+  "instrument_batteries_run": 2,
+  "panels_rendered": 2,
+  "anchor_predictions": {
+    "hmr_self_consistency_mean_pct": 2.4571225156494023,
+    "hmr_total_edges": 27,
+    "smsh_ch4_cross_pred_pct": 99.32427890269982,
+    "smsh_r6g_stokes_pred_cm": 1011.0,
+    "smsh_r6g_marcus_pred_cm": 505.5,
+    "smsh_mutual_exclusion_violations": 0.0
+  }
+}

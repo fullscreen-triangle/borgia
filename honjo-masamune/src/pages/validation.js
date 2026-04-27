@@ -19,6 +19,9 @@ const BATTERIES = [
   { key: "universal_eos", label: "Universal EOS", color: "#ec4899" },
   { key: "dark_ratio", label: "Dark sector ratio", color: "#6366f1" },
   { key: "tetration", label: "Categorical enumeration", color: "#14b8a6" },
+  { key: "harmonic_resonator", label: "Harmonic resonator", color: "#f43f5e" },
+  { key: "spectral_hologram", label: "Spectral hologram", color: "#8b5cf6" },
+  { key: "mmvs", label: "Virtual spectrometer", color: "#06b6d4" },
 ];
 
 // Extract every (predicted, measured, error_pct) record from a battery JSON

@@ -1,0 +1,303 @@
+{
+  "framework": "Bounded Phase Space (BPS) Instrument Validation",
+  "framework_version": "1.2.0",
+  "timestamp_utc": "2026-04-26T01:12:10.214842+00:00",
+  "battery": "13_harmonic_molecular_resonator",
+  "molecules": [
+    {
+      "molecule": "H2",
+      "n_modes": 1,
+      "n_harmonic_edges": 0,
+      "network_density": 0.0,
+      "mean_delta": 0.0,
+      "cycle_rank": 0,
+      "loop_period_ps": null,
+      "self_consistency_pct": null,
+      "edges": []
+    },
+    {
+      "molecule": "CO",
+      "n_modes": 1,
+      "n_harmonic_edges": 0,
+      "network_density": 0.0,
+      "mean_delta": 0.0,
+      "cycle_rank": 0,
+      "loop_period_ps": null,
+      "self_consistency_pct": null,
+      "edges": []
+    },
+    {
+      "molecule": "H2O",
+      "n_modes": 3,
+      "n_harmonic_edges": 3,
+      "network_density": 1.0,
+      "mean_delta": 0.017624828421347077,
+      "cycle_rank": 1,
+      "loop_period_ps": 0.36854579179665176,
+      "self_consistency_pct": 1.768298240816707,
+      "edges": [
+        {
+          "i": 0,
+          "j": 1,
+          "ratio": 2.2927899686520377,
+          "p": 7,
+          "q": 3,
+          "delta": 0.017375727720555352
+        },
+        {
+          "i": 0,
+          "j": 2,
+          "ratio": 0.9736421725239617,
+          "p": 1,
+          "q": 1,
+          "delta": 0.02635782747603832
+        },
+        {
+          "i": 1,
+          "j": 2,
+          "ratio": 0.424653887113951,
+          "p": 3,
+          "q": 7,
+          "delta": 0.009140930067447558
+        }
+      ]
+    },
+    {
+      "molecule": "CO2",
+      "n_modes": 3,
+      "n_harmonic_edges": 3,
+      "network_density": 1.0,
+      "mean_delta": 0.004613434023728861,
+      "cycle_rank": 1,
+      "loop_period_ps": 0.10274720757157313,
+      "self_consistency_pct": 0.07501875468867217,
+      "edges": [
+        {
+          "i": 0,
+          "j": 1,
+          "ratio": 1.9985007496251874,
+          "p": 2,
+          "q": 1,
+          "delta": 0.0007496251874062887
+        },
+        {
+          "i": 0,
+          "j": 2,
+          "ratio": 0.56747552149851,
+          "p": 4,
+          "q": 7,
+          "delta": 0.006917837377607455
+        },
+        {
+          "i": 1,
+          "j": 2,
+          "ratio": 0.2839506172839506,
+          "p": 2,
+          "q": 7,
+          "delta": 0.006172839506172839
+        }
+      ]
+    },
+    {
+      "molecule": "CH4",
+      "n_modes": 4,
+      "n_harmonic_edges": 6,
+      "network_density": 1.0,
+      "mean_delta": 0.020438430636835325,
+      "cycle_rank": 3,
+      "loop_period_ps": 0.3718479079257914,
+      "self_consistency_pct": 5.176551251285567,
+      "edges": [
+        {
+          "i": 0,
+          "j": 1,
+          "ratio": 1.9015645371577574,
+          "p": 2,
+          "q": 1,
+          "delta": 0.04921773142112129
+        },
+        {
+          "i": 0,
+          "j": 2,
+          "ratio": 0.9662139781384564,
+          "p": 1,
+          "q": 1,
+          "delta": 0.03378602186154356
+        },
+        {
+          "i": 0,
+          "j": 3,
+          "ratio": 2.2335375191424194,
+          "p": 9,
+          "q": 4,
+          "delta": 0.00731665815892472
+        },
+        {
+          "i": 1,
+          "j": 2,
+          "ratio": 0.5081152699569393,
+          "p": 1,
+          "q": 2,
+          "delta": 0.016230539913878683
+        },
+        {
+          "i": 1,
+          "j": 3,
+          "ratio": 1.1745788667687596,
+          "p": 7,
+          "q": 6,
+          "delta": 0.006781885801793841
+        },
+        {
+          "i": 2,
+          "j": 3,
+          "ratio": 2.311638591117917,
+          "p": 7,
+          "q": 3,
+          "delta": 0.00929774666374986
+        }
+      ]
+    },
+    {
+      "molecule": "C6H6",
+      "n_modes": 6,
+      "n_harmonic_edges": 15,
+      "network_density": 1.0,
+      "mean_delta": 0.01863715177202754,
+      "cycle_rank": 10,
+      "loop_period_ps": 0.05512311661444831,
+      "self_consistency_pct": 2.8086218158066623,
+      "edges": [
+        {
+          "i": 0,
+          "j": 1,
+          "ratio": 3.086693548387097,
+          "p": 3,
+          "q": 1,
+          "delta": 0.02889784946236566
+        },
+        {
+          "i": 0,
+          "j": 2,
+          "ratio": 3.0316831683168317,
+          "p": 3,
+          "q": 1,
+          "delta": 0.01056105610561057
+        },
+        {
+          "i": 0,
+          "j": 3,
+          "ratio": 1.918546365914787,
+          "p": 2,
+          "q": 1,
+          "delta": 0.0407268170426065
+        },
+        {
+          "i": 0,
+          "j": 4,
+          "ratio": 0.9980443285528031,
+          "p": 1,
+          "q": 1,
+          "delta": 0.001955671447196883
+        },
+        {
+          "i": 0,
+          "j": 5,
+          "ratio": 4.330975954738331,
+          "p": 9,
+          "q": 2,
+          "delta": 0.03756089894703764
+        },
+        {
+          "i": 1,
+          "j": 2,
+          "ratio": 0.9821782178217822,
+          "p": 1,
+          "q": 1,
+          "delta": 0.017821782178217838
+        },
+        {
+          "i": 1,
+          "j": 3,
+          "ratio": 0.6215538847117794,
+          "p": 5,
+          "q": 8,
+          "delta": 0.005513784461152938
+        },
+        {
+          "i": 1,
+          "j": 4,
+          "ratio": 0.32333767926988266,
+          "p": 1,
+          "q": 3,
+          "delta": 0.029986962190351962
+        },
+        {
+          "i": 1,
+          "j": 5,
+          "ratio": 1.4031117397454032,
+          "p": 7,
+          "q": 5,
+          "delta": 0.002222671246716601
+        },
+        {
+          "i": 2,
+          "j": 3,
+          "ratio": 0.6328320802005013,
+          "p": 5,
+          "q": 8,
+          "delta": 0.012531328320802082
+        },
+        {
+          "i": 2,
+          "j": 4,
+          "ratio": 0.32920469361147325,
+          "p": 1,
+          "q": 3,
+          "delta": 0.012385919165580184
+        },
+        {
+          "i": 2,
+          "j": 5,
+          "ratio": 1.4285714285714286,
+          "p": 10,
+          "q": 7,
+          "delta": 0.0
+        },
+        {
+          "i": 3,
+          "j": 4,
+          "ratio": 0.5202086049543677,
+          "p": 1,
+          "q": 2,
+          "delta": 0.04041720990873543
+        },
+        {
+          "i": 3,
+          "j": 5,
+          "ratio": 2.257425742574257,
+          "p": 9,
+          "q": 4,
+          "delta": 0.0033003300330032045
+        },
+        {
+          "i": 4,
+          "j": 5,
+          "ratio": 4.33946251768034,
+          "p": 9,
+          "q": 2,
+          "delta": 0.035674996071035636
+        }
+      ]
+    }
+  ],
+  "n_total_harmonic_edges": 27,
+  "mean_self_consistency_pct": 2.4571225156494023,
+  "consequences_validated": [
+    "cons:discretemodes (rational ratios across 6 molecules)",
+    "cons:tripleent (oscillation = categorical = partition)",
+    "cons:oscillatory (closed loops = Poincare recurrence)",
+    "cons:partitionalgebra (network density bounded)",
+    "cons:quantumnumbers (entry-point invariance)"
+  ]
+}

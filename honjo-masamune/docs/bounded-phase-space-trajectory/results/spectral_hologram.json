@@ -1,0 +1,64 @@
+{
+  "framework": "Bounded Phase Space (BPS) Instrument Validation",
+  "framework_version": "1.2.0",
+  "timestamp_utc": "2026-04-26T01:12:10.214842+00:00",
+  "battery": "14_spectral_hologram",
+  "ch4_plus": {
+    "point_group": "Td",
+    "n_modes": 4,
+    "ground_modes_cm": [
+      2917,
+      1534,
+      3019,
+      1306
+    ],
+    "excited_modes_cm": [
+      2900,
+      1500,
+      3000,
+      1290
+    ],
+    "cross_prediction_accuracy": 0.9932427890269981,
+    "cross_talk_eta": 0.04329411764705882,
+    "categorical_resolution_s": 3.800867082932453e-15,
+    "mutual_exclusion_violation": 0.0,
+    "trajectory_fidelity_predicted": 0.983,
+    "trajectory_fidelity_measured": 0.981
+  },
+  "rhodamine_6g": {
+    "point_group": "C2",
+    "n_modes": 5,
+    "ground_modes_cm": [
+      1650,
+      1500,
+      1350,
+      1180,
+      620
+    ],
+    "excited_modes_cm": [
+      1580,
+      1510,
+      1340,
+      1178,
+      622
+    ],
+    "cross_prediction_accuracy": 0.9874546156238554,
+    "stokes_shift_predicted_cm": 1011.0,
+    "stokes_shift_measured_cm": 1015.0,
+    "stokes_error_pct": -0.39408866995073893,
+    "marcus_lambda_predicted_cm": 505.5,
+    "marcus_lambda_measured_cm": 507.5,
+    "marcus_error_pct": -0.39408866995073893,
+    "huang_rhys_predicted": 0.4,
+    "huang_rhys_measured": 0.38,
+    "mutual_exclusion_violation": 0.0
+  },
+  "snr_scaling_exponent": 0.69,
+  "consequences_validated": [
+    "cons:tripleent (S = oscillation = categorical = partition)",
+    "cons:discretemodes (three orthogonal hologram projections)",
+    "cons:quantumnumbers (S-entropy sufficiency Fisher-Neyman)",
+    "cons:partitionalgebra (mutual exclusion 0.000)",
+    "cons:spaceemergence (point-group recovery from FFT)"
+  ]
+}

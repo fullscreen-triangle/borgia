@@ -41,7 +41,9 @@
       "Bash(python validate_bounded_phase_space.py)",
       "Bash(timeout 60 bibtex bounded-phase-space-trajectory)",
       "Bash(timeout 90 pdflatex -interaction=nonstopmode bounded-phase-space-trajectory.tex)",
-      "Bash(python validate_bps_extended.py)"
+      "Bash(python validate_bps_extended.py)",
+      "Bash(python validate_bps_instruments.py)",
+      "Bash(python validate_bps_mmvs.py)"
     ]
   }
 }

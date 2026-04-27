@@ -76,268 +76,284 @@
 \contentsline {section}{\numberline {23}The Universal Propagation Bound $c$}{31}{section.23}%
 \contentsline {section}{\numberline {24}Categorical Limit for $c$}{32}{section.24}%
 \contentsline {subsection}{\numberline {24.1}Numerical value of $c$ from a single transition}{32}{subsection.24.1}%
-\contentsline {section}{\numberline {25}Lorentz Invariance from Oscillatory Universality}{33}{section.25}%
-\contentsline {subsection}{\numberline {25.1}The identification of $c$ with the speed of light}{34}{subsection.25.1}%
-\contentsline {subsection}{\numberline {25.2}Massless modes saturate $c$}{34}{subsection.25.2}%
-\contentsline {section}{\numberline {26}Positive Rest Frequency}{34}{section.26}%
-\contentsline {subsection}{\numberline {26.1}The rest frame and localisation}{35}{subsection.26.1}%
-\contentsline {subsection}{\numberline {26.2}Compton wavelength}{35}{subsection.26.2}%
-\contentsline {section}{\numberline {27}Massive Dispersion Relation}{35}{section.27}%
-\contentsline {subsection}{\numberline {27.1}Phase velocity vs. group velocity}{35}{subsection.27.1}%
-\contentsline {subsection}{\numberline {27.2}Time-independent dispersion}{35}{subsection.27.2}%
-\contentsline {section}{\numberline {28}Inertial Mass $m_{0}=\hbar \omega _{0}/c^{2}$}{35}{section.28}%
-\contentsline {subsection}{\numberline {28.1}Inertial mass across physical regimes}{36}{subsection.28.1}%
-\contentsline {subsection}{\numberline {28.2}Why mass is positive}{36}{subsection.28.2}%
-\contentsline {section}{\numberline {29}Loschmidt Principle and Entropy Increase}{36}{section.29}%
-\contentsline {subsection}{\numberline {29.1}Third law of thermodynamics}{37}{subsection.29.1}%
-\contentsline {section}{\numberline {30}Mass as Accumulated Non-Actualisation}{37}{section.30}%
-\contentsline {subsection}{\numberline {30.1}Non-actualisation rate as physical property}{38}{subsection.30.1}%
-\contentsline {section}{\numberline {31}The Relation $E=mc^{2}$}{38}{section.31}%
-\contentsline {subsection}{\numberline {31.1}Weight and mass}{39}{subsection.31.1}%
-\contentsline {subsection}{\numberline {31.2}Consequences for gravity}{39}{subsection.31.2}%
-\contentsline {section}{\numberline {32}Equivalence of Inertial and Gravitational Mass}{39}{section.32}%
-\contentsline {section}{\numberline {33}Extended Interpretation of Mass--Energy}{39}{section.33}%
-\contentsline {subsection}{\numberline {33.1}Decomposition of energy into rest and kinetic}{39}{subsection.33.1}%
-\contentsline {subsection}{\numberline {33.2}Photon as massless limit}{39}{subsection.33.2}%
-\contentsline {subsection}{\numberline {33.3}Binding energy reduces mass}{40}{subsection.33.3}%
-\contentsline {section}{\numberline {34}Charge Emergence}{40}{section.34}%
-\contentsline {subsection}{\numberline {34.1}The five arguments compared}{40}{subsection.34.1}%
-\contentsline {subsection}{\numberline {34.2}Observational test: discharge of a neutral body}{41}{subsection.34.2}%
-\contentsline {section}{\numberline {35}Exact Quantisation of Charge}{41}{section.35}%
-\contentsline {section}{Appendix to Part II}{41}{section*.30}%
-\contentsline {subsection}{\numberline {35.1}On the scalar--vector decomposition}{41}{subsection.35.1}%
-\contentsline {subsection}{\numberline {35.2}On the gauge structure}{41}{subsection.35.2}%
-\contentsline {subsection}{\numberline {35.3}On the dimensional analysis}{41}{subsection.35.3}%
-\contentsline {part}{Part III --- Consequences for Aggregate Systems}{42}{part*.31}%
-\contentsline {section}{Prelude to Part III}{42}{section*.32}%
-\contentsline {section}{\numberline {36}Categorical Thermodynamic Variables}{42}{section.36}%
-\contentsline {subsection}{\numberline {36.1}Relation to conventional thermodynamic variables}{42}{subsection.36.1}%
-\contentsline {subsection}{\numberline {36.2}Emergence of thermodynamic concepts}{42}{subsection.36.2}%
-\contentsline {section}{\numberline {37}Triple Equivalence of Entropies}{43}{section.37}%
-\contentsline {section}{\numberline {38}Ideal Gas Law at All $N\geq 1$}{43}{section.38}%
-\contentsline {subsection}{\numberline {38.1}Extensions to non-ideal gases}{44}{subsection.38.1}%
-\contentsline {section}{\numberline {39}Bounded Maxwell--Boltzmann Distribution}{44}{section.39}%
-\contentsline {subsection}{\numberline {39.1}Thermal distribution and black-body radiation}{44}{subsection.39.1}%
-\contentsline {subsection}{\numberline {39.2}The Stefan--Boltzmann law}{45}{subsection.39.2}%
-\contentsline {section}{\numberline {40}Universal Transport Formula}{45}{section.40}%
-\contentsline {section}{\numberline {41}Partition Extinction}{45}{section.41}%
-\contentsline {subsection}{\numberline {41.1}Examples of transport reductions}{46}{subsection.41.1}%
-\contentsline {section}{\numberline {42}Wiedemann--Franz Law}{47}{section.42}%
-\contentsline {section}{\numberline {43}Single-Particle Ideal Gas Law}{47}{section.43}%
-\contentsline {section}{\numberline {44}Heat--Entropy Decoupling on Product Phase Space}{48}{section.44}%
-\contentsline {section}{\numberline {45}Universal Equation of State Across Thermodynamic Regimes}{48}{section.45}%
-\contentsline {section}{\numberline {46}Equilibrium as Poincar\'e Recurrence}{49}{section.46}%
-\contentsline {section}{Appendix to Part III}{49}{section*.34}%
-\contentsline {subsection}{\numberline {46.1}Consistency with Clausius}{49}{subsection.46.1}%
-\contentsline {subsection}{\numberline {46.2}Consistency with Gibbs}{49}{subsection.46.2}%
-\contentsline {subsection}{\numberline {46.3}Consistency with the fluctuation--dissipation theorem}{49}{subsection.46.3}%
-\contentsline {subsection}{\numberline {46.4}Consistency with Onsager reciprocity}{50}{subsection.46.4}%
-\contentsline {part}{Part IV --- Consequences for Atomic and Nuclear Structure}{51}{part*.35}%
-\contentsline {subsection}{\numberline {46.5}Stokes--Einstein relation}{51}{subsection.46.5}%
-\contentsline {subsection}{\numberline {46.6}Bose--Einstein condensation}{51}{subsection.46.6}%
-\contentsline {subsection}{\numberline {46.7}Superconductivity}{51}{subsection.46.7}%
-\contentsline {section}{Prelude to Part IV}{51}{section*.36}%
-\contentsline {section}{\numberline {47}Continuous Embedding of the Partition Hierarchy}{51}{section.47}%
-\contentsline {subsection}{\numberline {47.1}Why the branching base is $b=3$}{52}{subsection.47.1}%
-\contentsline {subsection}{\numberline {47.2}Fisher information metric}{52}{subsection.47.2}%
-\contentsline {section}{\numberline {48}Virtual Substates and Path Opacity}{52}{section.48}%
-\contentsline {section}{\numberline {49}Sub-Nucleon Structure}{52}{section.49}%
-\contentsline {subsection}{\numberline {49.1}Examples of virtual substates}{53}{subsection.49.1}%
-\contentsline {subsection}{\numberline {49.2}Quantitative predictions about sub-nucleon structure}{53}{subsection.49.2}%
-\contentsline {section}{\numberline {50}The Nucleon as a Bounded Oscillatory System}{53}{section.50}%
-\contentsline {subsection}{\numberline {50.1}Observational and theoretical status of the nucleon}{53}{subsection.50.1}%
-\contentsline {subsection}{\numberline {50.2}Nucleon mass prediction}{54}{subsection.50.2}%
-\contentsline {subsection}{\numberline {50.3}The proton and the neutron}{54}{subsection.50.3}%
-\contentsline {subsection}{\numberline {50.4}Proton lifetime}{54}{subsection.50.4}%
-\contentsline {section}{\numberline {51}Nucleon Radius}{54}{section.51}%
-\contentsline {section}{\numberline {52}Exponential Charge Profile}{54}{section.52}%
-\contentsline {section}{\numberline {53}Nuclear Radius $R=r_{0}A^{1/3}$}{55}{section.53}%
-\contentsline {subsection}{\numberline {53.1}Beyond the simple scaling}{55}{subsection.53.1}%
-\contentsline {section}{\numberline {54}Nuclear Binding from Composition}{55}{section.54}%
-\contentsline {subsection}{\numberline {54.1}Alpha and beta decay}{56}{subsection.54.1}%
-\contentsline {section}{\numberline {55}Magic Numbers}{56}{section.55}%
-\contentsline {subsection}{\numberline {55.1}Nuclear density}{57}{subsection.55.1}%
-\contentsline {subsection}{\numberline {55.2}Isotope chart}{57}{subsection.55.2}%
-\contentsline {section}{\numberline {56}Emergence of Coulomb's Law}{57}{section.56}%
-\contentsline {subsection}{\numberline {56.1}The Coulomb envelope outside the nucleus}{58}{subsection.56.1}%
-\contentsline {subsection}{\numberline {56.2}Inside the nucleus}{58}{subsection.56.2}%
-\contentsline {section}{\numberline {57}Atomic Shell Structure and the Aufbau Principle}{58}{section.57}%
-\contentsline {subsection}{\numberline {57.1}The Madelung rule}{60}{subsection.57.1}%
-\contentsline {subsection}{\numberline {57.2}Representative ground-state term symbols}{60}{subsection.57.2}%
-\contentsline {subsection}{\numberline {57.3}Excited-state configurations}{60}{subsection.57.3}%
-\contentsline {subsection}{\numberline {57.4}Multi-electron atoms: configuration interactions and LS coupling}{60}{subsection.57.4}%
-\contentsline {section}{\numberline {58}Shielding and Effective Nuclear Charge}{61}{section.58}%
-\contentsline {subsection}{\numberline {58.1}Worked examples of $Z_{\text {eff}}$}{61}{subsection.58.1}%
-\contentsline {subsection}{\numberline {58.2}Trends across the periodic table}{61}{subsection.58.2}%
-\contentsline {subsection}{\numberline {58.3}Numerical comparison of shielding predictions}{61}{subsection.58.3}%
-\contentsline {section}{\numberline {59}Atomic Emptiness}{61}{section.59}%
-\contentsline {section}{Epilogue to Parts I--IV}{62}{section*.38}%
-\contentsline {paragraph}{The triad $E=\hbar \omega $, $p=\hbar k$, $E=mc^{2}$.}{62}{section*.39}%
-\contentsline {paragraph}{Charge, mass, and partition boundary.}{62}{section*.40}%
-\contentsline {paragraph}{The second law and the Loschmidt principle.}{62}{section*.41}%
-\contentsline {paragraph}{Lorentz invariance and the universal propagation bound.}{62}{section*.42}%
-\contentsline {paragraph}{Magic numbers and the periodic table.}{62}{section*.43}%
-\contentsline {section}{Appendix to Part IV}{62}{section*.44}%
-\contentsline {subsection}{\numberline {59.1}Hund's rules as Consequences}{62}{subsection.59.1}%
-\contentsline {subsection}{\numberline {59.2}Configuration interactions}{63}{subsection.59.2}%
-\contentsline {subsection}{\numberline {59.3}Ionisation energies across the periodic table}{63}{subsection.59.3}%
-\contentsline {part}{Part V --- Gravitation, Cosmology, and Framework Closure}{65}{part*.46}%
-\contentsline {section}{Prelude to Part V}{65}{section*.47}%
-\contentsline {section}{\numberline {60}Dimensional Reduction of the SI System}{65}{section.60}%
-\contentsline {paragraph}{Time.}{66}{section*.48}%
-\contentsline {paragraph}{Length.}{66}{section*.49}%
-\contentsline {paragraph}{Mass.}{66}{section*.50}%
-\contentsline {paragraph}{Electric current.}{66}{section*.51}%
-\contentsline {paragraph}{Thermodynamic temperature.}{66}{section*.52}%
-\contentsline {paragraph}{Amount of substance.}{66}{section*.53}%
-\contentsline {paragraph}{Luminous intensity.}{66}{section*.54}%
-\contentsline {section}{\numberline {61}Composition Inflation}{67}{section.61}%
-\contentsline {section}{\numberline {62}Three Independent Routes to Newton's Constant}{68}{section.62}%
-\contentsline {subsection}{\numberline {62.1}Route I: oscillation-ratio between coupled bounded oscillators}{68}{subsection.62.1}%
-\contentsline {subsection}{\numberline {62.2}Route II: category fixed-point under the scale-negation operator}{68}{subsection.62.2}%
-\contentsline {subsection}{\numberline {62.3}Route III: partition-density ratio}{69}{subsection.62.3}%
-\contentsline {subsection}{\numberline {62.4}Convergence of the three routes}{69}{subsection.62.4}%
-\contentsline {section}{\numberline {63}Numerical Verification of the Three Routes}{70}{section.63}%
-\contentsline {paragraph}{Reproducing CODATA.}{70}{section*.58}%
-\contentsline {paragraph}{Benchmark summary.}{70}{section*.59}%
-\contentsline {section}{\numberline {64}Cosmological Consequences of a Partition-Density-Dependent $G$}{70}{section.64}%
-\contentsline {subsection}{\numberline {64.1}Galaxy rotation curves and the MOND acceleration scale}{71}{subsection.64.1}%
-\contentsline {subsection}{\numberline {64.2}Cosmic acceleration and the dark-energy equation of state}{71}{subsection.64.2}%
-\contentsline {subsection}{\numberline {64.3}Equivalence principle}{72}{subsection.64.3}%
-\contentsline {section}{\numberline {65}Experimental Protocol for $G$ via Partition Counts}{72}{section.65}%
-\contentsline {subsection}{\numberline {65.1}Primary test}{72}{subsection.65.1}%
-\contentsline {subsection}{\numberline {65.2}Secondary tests}{72}{subsection.65.2}%
-\contentsline {subsection}{\numberline {65.3}Falsification conditions}{72}{subsection.65.3}%
-\contentsline {section}{\numberline {66}Relation to Prior Frameworks}{72}{section.66}%
-\contentsline {section}{\numberline {67}The Observation Boundary and the Dark Sector}{73}{section.67}%
-\contentsline {subsection}{\numberline {67.1}Categorical enumeration at heat death}{73}{subsection.67.1}%
-\contentsline {subsection}{\numberline {67.2}The $\infty -x$ structure}{73}{subsection.67.2}%
-\contentsline {subsection}{\numberline {67.3}The observation boundary $\odot $}{74}{subsection.67.3}%
-\contentsline {section}{Epilogue to Part V}{74}{section*.61}%
-\contentsline {part}{Part VI --- Empirical Tests of the Axiom}{76}{part*.62}%
-\contentsline {paragraph}{Scope of the empirical Part.}{76}{section*.63}%
-\contentsline {paragraph}{Method of comparison.}{76}{section*.64}%
-\contentsline {paragraph}{What is not included.}{76}{section*.65}%
-\contentsline {section}{Prelude to Part VI}{76}{section*.66}%
-\contentsline {section}{\numberline {68}Rutherford (1911): Thin-Foil $\alpha $-Particle Scattering}{76}{section.68}%
-\contentsline {subsection}{\numberline {68.1}The experiment in brief}{76}{subsection.68.1}%
-\contentsline {subsection}{\numberline {68.2}Historical observation}{76}{subsection.68.2}%
-\contentsline {subsection}{\numberline {68.3}The observation we ask the reader to consider carefully}{77}{subsection.68.3}%
-\contentsline {subsection}{\numberline {68.4}The deduced prediction}{77}{subsection.68.4}%
-\contentsline {subsection}{\numberline {68.5}The structural point}{78}{subsection.68.5}%
-\contentsline {subsection}{\numberline {68.6}Numerical comparison}{78}{subsection.68.6}%
-\contentsline {subsection}{\numberline {68.7}Why the binary character of the distribution matters}{78}{subsection.68.7}%
-\contentsline {subsection}{\numberline {68.8}The historical receptions}{79}{subsection.68.8}%
-\contentsline {subsection}{\numberline {68.9}What is deduced from the Rutherford observation alone}{79}{subsection.68.9}%
-\contentsline {subsection}{\numberline {68.10}The single instrument of the derivation}{79}{subsection.68.10}%
-\contentsline {subsection}{\numberline {68.11}A consistency check: the classical limit}{80}{subsection.68.11}%
-\contentsline {subsection}{\numberline {68.12}Subsequent precision Rutherford experiments}{80}{subsection.68.12}%
-\contentsline {section}{\numberline {69}Hofstadter (1955): Proton Form Factor}{80}{section.69}%
-\contentsline {subsection}{\numberline {69.1}Numerical table}{80}{subsection.69.1}%
-\contentsline {subsection}{\numberline {69.2}Structural interpretation}{80}{subsection.69.2}%
-\contentsline {section}{\numberline {70}Hofstadter (1956): Nuclear Radii}{81}{section.70}%
-\contentsline {subsection}{\numberline {70.1}Table of measured nuclear radii}{81}{subsection.70.1}%
-\contentsline {section}{\numberline {71}Nuclear Binding Energy Curve}{81}{section.71}%
-\contentsline {subsection}{\numberline {71.1}The Bethe--Weizs\"acker form}{81}{subsection.71.1}%
-\contentsline {section}{\numberline {72}Magic Numbers}{81}{section.72}%
-\contentsline {subsection}{\numberline {72.1}Doubly-magic nuclei}{81}{subsection.72.1}%
-\contentsline {subsection}{\numberline {72.2}Stability peaks in other indicators}{82}{subsection.72.2}%
-\contentsline {section}{\numberline {73}Millikan (1909): Charge Quantisation}{82}{section.73}%
-\contentsline {subsection}{\numberline {73.1}Structural interpretation}{82}{subsection.73.1}%
-\contentsline {section}{\numberline {74}Moseley (1913): Nuclear Charge}{82}{section.74}%
-\contentsline {subsection}{\numberline {74.1}Table of Moseley measurements}{82}{subsection.74.1}%
-\contentsline {subsection}{\numberline {74.2}Structural interpretation}{82}{subsection.74.2}%
-\contentsline {section}{\numberline {75}Einstein (1905): Photoelectric Effect}{83}{section.75}%
-\contentsline {subsection}{\numberline {75.1}Threshold frequencies}{83}{subsection.75.1}%
-\contentsline {section}{\numberline {76}Compton (1923): Photon Momentum}{83}{section.76}%
-\contentsline {subsection}{\numberline {76.1}Scattering angle data}{83}{subsection.76.1}%
-\contentsline {subsection}{\numberline {76.2}Structural interpretation}{83}{subsection.76.2}%
-\contentsline {section}{\numberline {77}Stern--Gerlach (1922): Binary Chirality}{83}{section.77}%
-\contentsline {subsection}{\numberline {77.1}The observational content}{85}{subsection.77.1}%
-\contentsline {subsection}{\numberline {77.2}Quantitative agreement}{85}{subsection.77.2}%
-\contentsline {section}{\numberline {78}Zeeman (1897): Orientation Splitting}{85}{section.78}%
-\contentsline {subsection}{\numberline {78.1}Normal Zeeman effect}{85}{subsection.78.1}%
-\contentsline {subsection}{\numberline {78.2}Anomalous Zeeman effect}{85}{subsection.78.2}%
-\contentsline {section}{\numberline {79}Franck--Hertz (1914): Discrete Atomic Transitions}{85}{section.79}%
-\contentsline {subsection}{\numberline {79.1}The current-voltage curve}{86}{subsection.79.1}%
-\contentsline {subsection}{\numberline {79.2}Modern extension}{86}{subsection.79.2}%
-\contentsline {section}{\numberline {80}Davisson--Germer (1927): Electron Diffraction}{86}{section.80}%
-\contentsline {subsection}{\numberline {80.1}The de Broglie wavelength}{86}{subsection.80.1}%
-\contentsline {subsection}{\numberline {80.2}Structural interpretation}{86}{subsection.80.2}%
-\contentsline {section}{\numberline {81}Deep-Inelastic Scattering}{86}{section.81}%
-\contentsline {subsection}{\numberline {81.1}Scaling}{86}{subsection.81.1}%
-\contentsline {subsection}{\numberline {81.2}Confinement}{87}{subsection.81.2}%
-\contentsline {section}{\numberline {82}Atomic Spectra: The Rydberg Formula}{87}{section.82}%
-\contentsline {subsection}{\numberline {82.1}Hydrogen Lyman and Balmer series}{87}{subsection.82.1}%
-\contentsline {subsection}{\numberline {82.2}Derivation of $R_{\infty }$ from the Axiom}{87}{subsection.82.2}%
-\contentsline {section}{\numberline {83}Partition Extinction: Superconductivity, Superfluidity, Bose--Einstein Condensation}{87}{section.83}%
-\contentsline {section}{\numberline {84}Transport Coefficients Across Metals and Fluids}{88}{section.84}%
-\contentsline {section}{\numberline {85}Atomic Ionisation Energies Across the Periodic Table}{88}{section.85}%
-\contentsline {section}{\numberline {86}Categorical Resolution and the Trans-Planckian Regime}{90}{section.86}%
-\contentsline {section}{\numberline {87}Virtual Multi-Modal Chromatography}{90}{section.87}%
-\contentsline {section}{\numberline {88}Numerical Derivation of the Speed of Light}{90}{section.88}%
-\contentsline {section}{\numberline {89}Universal Equation of State and Single-Particle Gas Law}{92}{section.89}%
-\contentsline {paragraph}{Single-particle gas law.}{92}{section*.73}%
-\contentsline {paragraph}{Five regime validations.}{92}{section*.74}%
-\contentsline {paragraph}{Adiabatic expansion.}{92}{section*.75}%
-\contentsline {paragraph}{Mean free path.}{92}{section*.76}%
-\contentsline {section}{\numberline {90}The Dark-to-Ordinary Matter Ratio}{92}{section.90}%
-\contentsline {section}{\numberline {91}Categorical Enumeration and the Observation Boundary}{92}{section.91}%
-\contentsline {section}{\numberline {92}Summary Table of Empirical Confirmations}{94}{section.92}%
-\contentsline {subsection}{\numberline {92.1}Quantitative validation across 7 physical domains}{94}{subsection.92.1}%
-\contentsline {subsection}{\numberline {92.2}Summary of predictions}{96}{subsection.92.2}%
-\contentsline {subsection}{\numberline {92.3}Prospects for further tests}{96}{subsection.92.3}%
-\contentsline {part}{Part VII --- Discussion}{98}{part*.81}%
-\contentsline {section}{Appendix to Part VI}{98}{section*.82}%
-\contentsline {subsection}{\numberline {92.4}What the empirical record shows}{98}{subsection.92.4}%
-\contentsline {subsection}{\numberline {92.5}The falsifiability ledger}{98}{subsection.92.5}%
-\contentsline {subsection}{\numberline {92.6}The structure of the empirical record}{98}{subsection.92.6}%
-\contentsline {section}{\numberline {93}Index of Consequences}{98}{section.93}%
-\contentsline {section}{\numberline {94}Scope and Limitations}{99}{section.94}%
-\contentsline {section}{\numberline {95}Parsimony}{100}{section.95}%
-\contentsline {paragraph}{Framework closure.}{100}{section*.83}%
-\contentsline {section}{\numberline {96}Attack Surface (Restatement)}{100}{section.96}%
-\contentsline {section}{\numberline {97}Falsifiable Predictions}{101}{section.97}%
-\contentsline {section}{\numberline {98}On the Deductive Method}{101}{section.98}%
-\contentsline {subsection}{\numberline {98.1}Economy of postulates}{102}{subsection.98.1}%
-\contentsline {section}{\numberline {99}Relationship to Other Deductive Programmes}{102}{section.99}%
-\contentsline {paragraph}{Noether 1918.}{102}{section*.84}%
-\contentsline {paragraph}{Wigner 1939.}{103}{section*.85}%
-\contentsline {paragraph}{Ignatowsky 1910; Einstein 1905.}{103}{section*.86}%
-\contentsline {paragraph}{'t Hooft dimensional reduction.}{103}{section*.87}%
-\contentsline {paragraph}{Bekenstein--Hawking entropy bounds.}{103}{section*.88}%
-\contentsline {paragraph}{Category-theoretic and topos-theoretic approaches.}{103}{section*.89}%
-\contentsline {section}{\numberline {100}Open Questions}{103}{section.100}%
-\contentsline {paragraph}{Numerical values of fundamental constants.}{103}{section*.90}%
-\contentsline {paragraph}{Spatial dimension.}{103}{section*.91}%
-\contentsline {paragraph}{Flavour and generation structure.}{103}{section*.92}%
-\contentsline {paragraph}{Field quantisation.}{103}{section*.93}%
-\contentsline {paragraph}{General relativity.}{103}{section*.94}%
-\contentsline {paragraph}{Quantum measurement.}{103}{section*.95}%
-\contentsline {section}{\numberline {101}Relation to Empirical Reproducibility}{104}{section.101}%
-\contentsline {section}{\numberline {102}The Logical Content of the Axiom Reconsidered}{104}{section.102}%
-\contentsline {paragraph}{Clause (i), boundedness.}{104}{section*.96}%
-\contentsline {paragraph}{Clause (ii), measure preservation.}{104}{section*.97}%
-\contentsline {paragraph}{Clause (iii), hierarchical partitionability.}{104}{section*.98}%
-\contentsline {paragraph}{The axiom as generator of observability.}{104}{section*.99}%
-\contentsline {section}{\numberline {103}Summary of Deductive Structure}{105}{section.103}%
-\contentsline {subsection}{\numberline {103.1}What was assumed}{105}{subsection.103.1}%
-\contentsline {subsection}{\numberline {103.2}What was derived}{105}{subsection.103.2}%
-\contentsline {subsection}{\numberline {103.3}What was compared to experiment}{106}{subsection.103.3}%
-\contentsline {section}{\numberline {104}Conclusion}{106}{section.104}%
-\contentsline {section}{\numberline {105}Deductive Flow Chart of the Paper}{106}{section.105}%
-\contentsline {section}{\numberline {A}Summary of the Deductive Structure}{108}{appendix.A}%
-\contentsline {section}{\numberline {B}Mathematical Notation and Conventions}{109}{appendix.B}%
-\contentsline {section}{\numberline {C}Glossary of Non-Standard Terms}{109}{appendix.C}%
-\contentsline {section}{\numberline {D}Further Commentary on Select Consequences}{110}{appendix.D}%
-\contentsline {subsection}{\numberline {D.1}On Consequence~\ref {cons:loschmidt} and the Arrow of Time}{110}{subsection.D.1}%
-\contentsline {subsection}{\numberline {D.2}On Consequence~\ref {cons:chargeemergence} and the Concept of Field}{110}{subsection.D.2}%
-\contentsline {subsection}{\numberline {D.3}On Consequence~\ref {cons:subnucleon} and Confinement}{110}{subsection.D.3}%
-\contentsline {section}{\numberline {E}On the Relationship Between Axiom and Observation}{111}{appendix.E}%
-\contentsline {section}{\numberline {F}Response to Anticipated Objections}{111}{appendix.F}%
-\contentsline {subsection}{\numberline {F.1}``The Axiom is trivial''}{111}{subsection.F.1}%
-\contentsline {subsection}{\numberline {F.2}``The proofs rely on standard results''}{112}{subsection.F.2}%
-\contentsline {subsection}{\numberline {F.3}``The framework does not predict new physics''}{112}{subsection.F.3}%
-\contentsline {subsection}{\numberline {F.4}``The philosophical interpretation is contentious''}{112}{subsection.F.4}%
-\contentsline {subsection}{\numberline {F.5}``The Axiom is too general to be useful''}{112}{subsection.F.5}%
-\contentsline {section}{\numberline {G}Final Remarks on Style and Intent}{112}{appendix.G}%
+\contentsline {section}{\numberline {25}Partition Lag and Undetermined Residue}{33}{section.25}%
+\contentsline {section}{\numberline {26}Lorentz Invariance from Oscillatory Universality}{34}{section.26}%
+\contentsline {subsection}{\numberline {26.1}The identification of $c$ with the speed of light}{35}{subsection.26.1}%
+\contentsline {subsection}{\numberline {26.2}Massless modes saturate $c$}{35}{subsection.26.2}%
+\contentsline {section}{\numberline {27}Positive Rest Frequency}{35}{section.27}%
+\contentsline {subsection}{\numberline {27.1}The rest frame and localisation}{36}{subsection.27.1}%
+\contentsline {subsection}{\numberline {27.2}Compton wavelength}{36}{subsection.27.2}%
+\contentsline {section}{\numberline {28}Massive Dispersion Relation}{36}{section.28}%
+\contentsline {subsection}{\numberline {28.1}Phase velocity vs. group velocity}{36}{subsection.28.1}%
+\contentsline {subsection}{\numberline {28.2}Time-independent dispersion}{36}{subsection.28.2}%
+\contentsline {section}{\numberline {29}Inertial Mass $m_{0}=\hbar \omega _{0}/c^{2}$}{36}{section.29}%
+\contentsline {subsection}{\numberline {29.1}Inertial mass across physical regimes}{37}{subsection.29.1}%
+\contentsline {subsection}{\numberline {29.2}Why mass is positive}{37}{subsection.29.2}%
+\contentsline {section}{\numberline {30}Loschmidt Principle and Entropy Increase}{37}{section.30}%
+\contentsline {subsection}{\numberline {30.1}Third law of thermodynamics}{38}{subsection.30.1}%
+\contentsline {section}{\numberline {31}Mass as Accumulated Non-Actualisation}{38}{section.31}%
+\contentsline {subsection}{\numberline {31.1}Non-actualisation rate as physical property}{39}{subsection.31.1}%
+\contentsline {section}{\numberline {32}The Relation $E=mc^{2}$}{39}{section.32}%
+\contentsline {subsection}{\numberline {32.1}Weight and mass}{40}{subsection.32.1}%
+\contentsline {subsection}{\numberline {32.2}Consequences for gravity}{40}{subsection.32.2}%
+\contentsline {section}{\numberline {33}Equivalence of Inertial and Gravitational Mass}{40}{section.33}%
+\contentsline {section}{\numberline {34}Extended Interpretation of Mass--Energy}{40}{section.34}%
+\contentsline {subsection}{\numberline {34.1}Decomposition of energy into rest and kinetic}{40}{subsection.34.1}%
+\contentsline {subsection}{\numberline {34.2}Photon as massless limit}{40}{subsection.34.2}%
+\contentsline {subsection}{\numberline {34.3}Binding energy reduces mass}{41}{subsection.34.3}%
+\contentsline {section}{\numberline {35}Charge Emergence}{41}{section.35}%
+\contentsline {subsection}{\numberline {35.1}The five arguments compared}{41}{subsection.35.1}%
+\contentsline {subsection}{\numberline {35.2}Observational test: discharge of a neutral body}{42}{subsection.35.2}%
+\contentsline {section}{\numberline {36}Exact Quantisation of Charge}{42}{section.36}%
+\contentsline {section}{Appendix to Part II}{42}{section*.30}%
+\contentsline {subsection}{\numberline {36.1}On the scalar--vector decomposition}{42}{subsection.36.1}%
+\contentsline {subsection}{\numberline {36.2}On the gauge structure}{42}{subsection.36.2}%
+\contentsline {subsection}{\numberline {36.3}On the dimensional analysis}{42}{subsection.36.3}%
+\contentsline {part}{Part III --- Consequences for Aggregate Systems}{43}{part*.31}%
+\contentsline {section}{Prelude to Part III}{43}{section*.32}%
+\contentsline {section}{\numberline {37}Categorical Thermodynamic Variables}{43}{section.37}%
+\contentsline {subsection}{\numberline {37.1}Relation to conventional thermodynamic variables}{43}{subsection.37.1}%
+\contentsline {subsection}{\numberline {37.2}Emergence of thermodynamic concepts}{43}{subsection.37.2}%
+\contentsline {section}{\numberline {38}Triple Equivalence of Entropies}{44}{section.38}%
+\contentsline {section}{\numberline {39}Ideal Gas Law at All $N\geq 1$}{44}{section.39}%
+\contentsline {subsection}{\numberline {39.1}Extensions to non-ideal gases}{45}{subsection.39.1}%
+\contentsline {section}{\numberline {40}Bounded Maxwell--Boltzmann Distribution}{45}{section.40}%
+\contentsline {subsection}{\numberline {40.1}Thermal distribution and black-body radiation}{45}{subsection.40.1}%
+\contentsline {subsection}{\numberline {40.2}The Stefan--Boltzmann law}{46}{subsection.40.2}%
+\contentsline {section}{\numberline {41}Universal Transport Formula}{46}{section.41}%
+\contentsline {section}{\numberline {42}Partition Extinction}{46}{section.42}%
+\contentsline {subsection}{\numberline {42.1}Examples of transport reductions}{47}{subsection.42.1}%
+\contentsline {section}{\numberline {43}Wiedemann--Franz Law}{48}{section.43}%
+\contentsline {section}{\numberline {44}Single-Particle Ideal Gas Law}{48}{section.44}%
+\contentsline {section}{\numberline {45}Heat--Entropy Decoupling on Product Phase Space}{49}{section.45}%
+\contentsline {section}{\numberline {46}Universal Equation of State Across Thermodynamic Regimes}{49}{section.46}%
+\contentsline {section}{\numberline {47}Equilibrium as Poincar\'e Recurrence}{50}{section.47}%
+\contentsline {section}{\numberline {48}Computer as Spectrometer}{50}{section.48}%
+\contentsline {section}{\numberline {49}Coincidence-Network Enhancement}{51}{section.49}%
+\contentsline {section}{Appendix to Part III}{52}{section*.34}%
+\contentsline {subsection}{\numberline {49.1}Consistency with Clausius}{52}{subsection.49.1}%
+\contentsline {subsection}{\numberline {49.2}Consistency with Gibbs}{52}{subsection.49.2}%
+\contentsline {subsection}{\numberline {49.3}Consistency with the fluctuation--dissipation theorem}{52}{subsection.49.3}%
+\contentsline {subsection}{\numberline {49.4}Consistency with Onsager reciprocity}{52}{subsection.49.4}%
+\contentsline {part}{Part IV --- Consequences for Atomic and Nuclear Structure}{53}{part*.35}%
+\contentsline {subsection}{\numberline {49.5}Stokes--Einstein relation}{53}{subsection.49.5}%
+\contentsline {subsection}{\numberline {49.6}Bose--Einstein condensation}{53}{subsection.49.6}%
+\contentsline {subsection}{\numberline {49.7}Superconductivity}{53}{subsection.49.7}%
+\contentsline {section}{Prelude to Part IV}{53}{section*.36}%
+\contentsline {section}{\numberline {50}Continuous Embedding of the Partition Hierarchy}{53}{section.50}%
+\contentsline {subsection}{\numberline {50.1}Why the branching base is $b=3$}{54}{subsection.50.1}%
+\contentsline {subsection}{\numberline {50.2}Fisher information metric}{54}{subsection.50.2}%
+\contentsline {section}{\numberline {51}Virtual Substates and Path Opacity}{54}{section.51}%
+\contentsline {section}{\numberline {52}Sub-Nucleon Structure}{54}{section.52}%
+\contentsline {subsection}{\numberline {52.1}Examples of virtual substates}{55}{subsection.52.1}%
+\contentsline {subsection}{\numberline {52.2}Quantitative predictions about sub-nucleon structure}{55}{subsection.52.2}%
+\contentsline {section}{\numberline {53}The Nucleon as a Bounded Oscillatory System}{55}{section.53}%
+\contentsline {subsection}{\numberline {53.1}Observational and theoretical status of the nucleon}{55}{subsection.53.1}%
+\contentsline {subsection}{\numberline {53.2}Nucleon mass prediction}{56}{subsection.53.2}%
+\contentsline {subsection}{\numberline {53.3}The proton and the neutron}{56}{subsection.53.3}%
+\contentsline {subsection}{\numberline {53.4}Proton lifetime}{56}{subsection.53.4}%
+\contentsline {section}{\numberline {54}Nucleon Radius}{56}{section.54}%
+\contentsline {section}{\numberline {55}Exponential Charge Profile}{56}{section.55}%
+\contentsline {section}{\numberline {56}Nuclear Radius $R=r_{0}A^{1/3}$}{57}{section.56}%
+\contentsline {subsection}{\numberline {56.1}Beyond the simple scaling}{57}{subsection.56.1}%
+\contentsline {section}{\numberline {57}Nuclear Binding from Composition}{57}{section.57}%
+\contentsline {subsection}{\numberline {57.1}Alpha and beta decay}{58}{subsection.57.1}%
+\contentsline {section}{\numberline {58}Magic Numbers}{58}{section.58}%
+\contentsline {subsection}{\numberline {58.1}Nuclear density}{59}{subsection.58.1}%
+\contentsline {subsection}{\numberline {58.2}Isotope chart}{59}{subsection.58.2}%
+\contentsline {section}{\numberline {59}Emergence of Coulomb's Law}{59}{section.59}%
+\contentsline {subsection}{\numberline {59.1}The Coulomb envelope outside the nucleus}{60}{subsection.59.1}%
+\contentsline {subsection}{\numberline {59.2}Inside the nucleus}{60}{subsection.59.2}%
+\contentsline {section}{\numberline {60}Atomic Shell Structure and the Aufbau Principle}{60}{section.60}%
+\contentsline {subsection}{\numberline {60.1}The Madelung rule}{62}{subsection.60.1}%
+\contentsline {subsection}{\numberline {60.2}Representative ground-state term symbols}{62}{subsection.60.2}%
+\contentsline {subsection}{\numberline {60.3}Excited-state configurations}{62}{subsection.60.3}%
+\contentsline {subsection}{\numberline {60.4}Multi-electron atoms: configuration interactions and LS coupling}{62}{subsection.60.4}%
+\contentsline {section}{\numberline {61}Shielding and Effective Nuclear Charge}{63}{section.61}%
+\contentsline {subsection}{\numberline {61.1}Refined shielding from partition-overlap integrals}{63}{subsection.61.1}%
+\contentsline {subsection}{\numberline {61.2}Worked examples of $Z_{\text {eff}}$}{63}{subsection.61.2}%
+\contentsline {subsection}{\numberline {61.3}Trends across the periodic table}{64}{subsection.61.3}%
+\contentsline {subsection}{\numberline {61.4}Numerical comparison of shielding predictions}{64}{subsection.61.4}%
+\contentsline {section}{\numberline {62}Atomic Emptiness}{64}{section.62}%
+\contentsline {section}{Epilogue to Parts I--IV}{64}{section*.38}%
+\contentsline {paragraph}{The triad $E=\hbar \omega $, $p=\hbar k$, $E=mc^{2}$.}{64}{section*.39}%
+\contentsline {paragraph}{Charge, mass, and partition boundary.}{64}{section*.40}%
+\contentsline {paragraph}{The second law and the Loschmidt principle.}{64}{section*.41}%
+\contentsline {paragraph}{Lorentz invariance and the universal propagation bound.}{65}{section*.42}%
+\contentsline {paragraph}{Magic numbers and the periodic table.}{65}{section*.43}%
+\contentsline {section}{Appendix to Part IV}{65}{section*.44}%
+\contentsline {subsection}{\numberline {62.1}Hund's rules as Consequences}{65}{subsection.62.1}%
+\contentsline {subsection}{\numberline {62.2}Configuration interactions}{65}{subsection.62.2}%
+\contentsline {subsection}{\numberline {62.3}Ionisation energies across the periodic table}{66}{subsection.62.3}%
+\contentsline {part}{Part V --- Gravitation, Cosmology, and Framework Closure}{68}{part*.46}%
+\contentsline {section}{Prelude to Part V}{68}{section*.47}%
+\contentsline {section}{\numberline {63}Dimensional Reduction of the SI System}{68}{section.63}%
+\contentsline {paragraph}{Time.}{68}{section*.48}%
+\contentsline {paragraph}{Length.}{68}{section*.49}%
+\contentsline {paragraph}{Mass.}{69}{section*.50}%
+\contentsline {paragraph}{Electric current.}{69}{section*.51}%
+\contentsline {paragraph}{Thermodynamic temperature.}{69}{section*.52}%
+\contentsline {paragraph}{Amount of substance.}{69}{section*.53}%
+\contentsline {paragraph}{Luminous intensity.}{69}{section*.54}%
+\contentsline {section}{\numberline {64}Composition Inflation}{69}{section.64}%
+\contentsline {section}{\numberline {65}Three Independent Routes to Newton's Constant}{70}{section.65}%
+\contentsline {subsection}{\numberline {65.1}Route I: oscillation-ratio between coupled bounded oscillators}{70}{subsection.65.1}%
+\contentsline {subsection}{\numberline {65.2}Route II: category fixed-point under the scale-negation operator}{71}{subsection.65.2}%
+\contentsline {subsection}{\numberline {65.3}Route III: partition-density ratio}{71}{subsection.65.3}%
+\contentsline {subsection}{\numberline {65.4}Convergence of the three routes}{72}{subsection.65.4}%
+\contentsline {section}{\numberline {66}Numerical Verification of the Three Routes}{72}{section.66}%
+\contentsline {paragraph}{Reproducing CODATA.}{73}{section*.58}%
+\contentsline {paragraph}{Benchmark summary.}{73}{section*.59}%
+\contentsline {section}{\numberline {67}Cosmological Consequences of a Partition-Density-Dependent $G$}{73}{section.67}%
+\contentsline {subsection}{\numberline {67.1}Galaxy rotation curves and the MOND acceleration scale}{73}{subsection.67.1}%
+\contentsline {subsection}{\numberline {67.2}Cosmic acceleration and the dark-energy equation of state}{74}{subsection.67.2}%
+\contentsline {subsection}{\numberline {67.3}Equivalence principle}{74}{subsection.67.3}%
+\contentsline {section}{\numberline {68}Experimental Protocol for $G$ via Partition Counts}{75}{section.68}%
+\contentsline {subsection}{\numberline {68.1}Primary test}{75}{subsection.68.1}%
+\contentsline {subsection}{\numberline {68.2}Secondary tests}{75}{subsection.68.2}%
+\contentsline {subsection}{\numberline {68.3}Falsification conditions}{75}{subsection.68.3}%
+\contentsline {section}{\numberline {69}Relation to Prior Frameworks}{75}{section.69}%
+\contentsline {section}{\numberline {70}The Observation Boundary and the Dark Sector}{75}{section.70}%
+\contentsline {subsection}{\numberline {70.1}Categorical enumeration at heat death}{76}{subsection.70.1}%
+\contentsline {subsection}{\numberline {70.2}The $\infty -x$ structure}{76}{subsection.70.2}%
+\contentsline {paragraph}{Coverage argument.}{77}{section*.61}%
+\contentsline {paragraph}{Shell-volume argument.}{77}{section*.62}%
+\contentsline {subsection}{\numberline {70.3}The observation boundary $\odot $}{77}{subsection.70.3}%
+\contentsline {subsection}{\numberline {70.4}Categorical exhaustion and cyclic evolution}{78}{subsection.70.4}%
+\contentsline {subsection}{\numberline {70.5}The categorical arrow of time}{78}{subsection.70.5}%
+\contentsline {section}{Epilogue to Part V}{78}{section*.63}%
+\contentsline {part}{Part VI --- Empirical Tests of the Axiom}{80}{part*.64}%
+\contentsline {paragraph}{Scope of the empirical Part.}{80}{section*.65}%
+\contentsline {paragraph}{Method of comparison.}{80}{section*.66}%
+\contentsline {paragraph}{What is not included.}{80}{section*.67}%
+\contentsline {section}{Prelude to Part VI}{80}{section*.68}%
+\contentsline {section}{\numberline {71}Rutherford (1911): Thin-Foil $\alpha $-Particle Scattering}{80}{section.71}%
+\contentsline {subsection}{\numberline {71.1}The experiment in brief}{80}{subsection.71.1}%
+\contentsline {subsection}{\numberline {71.2}Historical observation}{80}{subsection.71.2}%
+\contentsline {subsection}{\numberline {71.3}The observation we ask the reader to consider carefully}{81}{subsection.71.3}%
+\contentsline {subsection}{\numberline {71.4}The deduced prediction}{81}{subsection.71.4}%
+\contentsline {subsection}{\numberline {71.5}The structural point}{82}{subsection.71.5}%
+\contentsline {subsection}{\numberline {71.6}Numerical comparison}{82}{subsection.71.6}%
+\contentsline {subsection}{\numberline {71.7}Why the binary character of the distribution matters}{82}{subsection.71.7}%
+\contentsline {subsection}{\numberline {71.8}The historical receptions}{83}{subsection.71.8}%
+\contentsline {subsection}{\numberline {71.9}What is deduced from the Rutherford observation alone}{83}{subsection.71.9}%
+\contentsline {subsection}{\numberline {71.10}The single instrument of the derivation}{83}{subsection.71.10}%
+\contentsline {subsection}{\numberline {71.11}A consistency check: the classical limit}{84}{subsection.71.11}%
+\contentsline {subsection}{\numberline {71.12}Subsequent precision Rutherford experiments}{84}{subsection.71.12}%
+\contentsline {section}{\numberline {72}Hofstadter (1955): Proton Form Factor}{84}{section.72}%
+\contentsline {subsection}{\numberline {72.1}Numerical table}{84}{subsection.72.1}%
+\contentsline {subsection}{\numberline {72.2}Structural interpretation}{84}{subsection.72.2}%
+\contentsline {section}{\numberline {73}Hofstadter (1956): Nuclear Radii}{85}{section.73}%
+\contentsline {subsection}{\numberline {73.1}Table of measured nuclear radii}{85}{subsection.73.1}%
+\contentsline {section}{\numberline {74}Nuclear Binding Energy Curve}{85}{section.74}%
+\contentsline {subsection}{\numberline {74.1}The Bethe--Weizs\"acker form}{85}{subsection.74.1}%
+\contentsline {section}{\numberline {75}Magic Numbers}{85}{section.75}%
+\contentsline {subsection}{\numberline {75.1}Doubly-magic nuclei}{85}{subsection.75.1}%
+\contentsline {subsection}{\numberline {75.2}Stability peaks in other indicators}{86}{subsection.75.2}%
+\contentsline {section}{\numberline {76}Millikan (1909): Charge Quantisation}{86}{section.76}%
+\contentsline {subsection}{\numberline {76.1}Structural interpretation}{86}{subsection.76.1}%
+\contentsline {section}{\numberline {77}Moseley (1913): Nuclear Charge}{86}{section.77}%
+\contentsline {subsection}{\numberline {77.1}Table of Moseley measurements}{86}{subsection.77.1}%
+\contentsline {subsection}{\numberline {77.2}Structural interpretation}{86}{subsection.77.2}%
+\contentsline {section}{\numberline {78}Einstein (1905): Photoelectric Effect}{87}{section.78}%
+\contentsline {subsection}{\numberline {78.1}Threshold frequencies}{87}{subsection.78.1}%
+\contentsline {section}{\numberline {79}Compton (1923): Photon Momentum}{87}{section.79}%
+\contentsline {subsection}{\numberline {79.1}Scattering angle data}{87}{subsection.79.1}%
+\contentsline {subsection}{\numberline {79.2}Structural interpretation}{87}{subsection.79.2}%
+\contentsline {section}{\numberline {80}Stern--Gerlach (1922): Binary Chirality}{87}{section.80}%
+\contentsline {subsection}{\numberline {80.1}The observational content}{89}{subsection.80.1}%
+\contentsline {subsection}{\numberline {80.2}Quantitative agreement}{89}{subsection.80.2}%
+\contentsline {section}{\numberline {81}Zeeman (1897): Orientation Splitting}{89}{section.81}%
+\contentsline {subsection}{\numberline {81.1}Normal Zeeman effect}{89}{subsection.81.1}%
+\contentsline {subsection}{\numberline {81.2}Anomalous Zeeman effect}{89}{subsection.81.2}%
+\contentsline {section}{\numberline {82}Franck--Hertz (1914): Discrete Atomic Transitions}{89}{section.82}%
+\contentsline {subsection}{\numberline {82.1}The current-voltage curve}{90}{subsection.82.1}%
+\contentsline {subsection}{\numberline {82.2}Modern extension}{90}{subsection.82.2}%
+\contentsline {section}{\numberline {83}Davisson--Germer (1927): Electron Diffraction}{90}{section.83}%
+\contentsline {subsection}{\numberline {83.1}The de Broglie wavelength}{90}{subsection.83.1}%
+\contentsline {subsection}{\numberline {83.2}Structural interpretation}{90}{subsection.83.2}%
+\contentsline {section}{\numberline {84}Deep-Inelastic Scattering}{90}{section.84}%
+\contentsline {subsection}{\numberline {84.1}Scaling}{90}{subsection.84.1}%
+\contentsline {subsection}{\numberline {84.2}Confinement}{91}{subsection.84.2}%
+\contentsline {section}{\numberline {85}Atomic Spectra: The Rydberg Formula}{91}{section.85}%
+\contentsline {subsection}{\numberline {85.1}Hydrogen Lyman and Balmer series}{91}{subsection.85.1}%
+\contentsline {subsection}{\numberline {85.2}Derivation of $R_{\infty }$ from the Axiom}{91}{subsection.85.2}%
+\contentsline {section}{\numberline {86}Partition Extinction: Superconductivity, Superfluidity, Bose--Einstein Condensation}{91}{section.86}%
+\contentsline {section}{\numberline {87}Transport Coefficients Across Metals and Fluids}{92}{section.87}%
+\contentsline {section}{\numberline {88}Atomic Ionisation Energies Across the Periodic Table}{92}{section.88}%
+\contentsline {section}{\numberline {89}Categorical Resolution and the Trans-Planckian Regime}{94}{section.89}%
+\contentsline {section}{\numberline {90}Virtual Multi-Modal Chromatography}{94}{section.90}%
+\contentsline {section}{\numberline {91}Numerical Derivation of the Speed of Light}{94}{section.91}%
+\contentsline {section}{\numberline {92}Universal Equation of State and Single-Particle Gas Law}{96}{section.92}%
+\contentsline {paragraph}{Single-particle gas law.}{96}{section*.75}%
+\contentsline {paragraph}{Five regime validations.}{96}{section*.76}%
+\contentsline {paragraph}{Adiabatic expansion.}{96}{section*.77}%
+\contentsline {paragraph}{Mean free path.}{96}{section*.78}%
+\contentsline {section}{\numberline {93}The Dark-to-Ordinary Matter Ratio}{96}{section.93}%
+\contentsline {section}{\numberline {94}Categorical Enumeration and the Observation Boundary}{96}{section.94}%
+\contentsline {section}{\numberline {95}Instrument Validation: Harmonic Molecular Resonator}{98}{section.95}%
+\contentsline {section}{\numberline {96}Instrument Validation: Spectral Holography}{100}{section.96}%
+\contentsline {section}{\numberline {97}Instrument Validation: Multi-Modal Virtual Spectrometer}{100}{section.97}%
+\contentsline {section}{\numberline {98}Summary Table of Empirical Confirmations}{102}{section.98}%
+\contentsline {subsection}{\numberline {98.1}Quantitative validation across 7 physical domains}{102}{subsection.98.1}%
+\contentsline {subsection}{\numberline {98.2}Summary of predictions}{104}{subsection.98.2}%
+\contentsline {subsection}{\numberline {98.3}Prospects for further tests}{104}{subsection.98.3}%
+\contentsline {part}{Part VII --- Discussion}{106}{part*.86}%
+\contentsline {section}{Appendix to Part VI}{106}{section*.87}%
+\contentsline {subsection}{\numberline {98.4}What the empirical record shows}{106}{subsection.98.4}%
+\contentsline {subsection}{\numberline {98.5}The falsifiability ledger}{106}{subsection.98.5}%
+\contentsline {subsection}{\numberline {98.6}The structure of the empirical record}{106}{subsection.98.6}%
+\contentsline {section}{\numberline {99}Index of Consequences}{106}{section.99}%
+\contentsline {section}{\numberline {100}Scope and Limitations}{107}{section.100}%
+\contentsline {section}{\numberline {101}Parsimony}{108}{section.101}%
+\contentsline {paragraph}{Framework closure.}{108}{section*.88}%
+\contentsline {section}{\numberline {102}Attack Surface (Restatement)}{108}{section.102}%
+\contentsline {section}{\numberline {103}Falsifiable Predictions}{109}{section.103}%
+\contentsline {section}{\numberline {104}On the Deductive Method}{109}{section.104}%
+\contentsline {subsection}{\numberline {104.1}Economy of postulates}{110}{subsection.104.1}%
+\contentsline {section}{\numberline {105}Relationship to Other Deductive Programmes}{110}{section.105}%
+\contentsline {paragraph}{Noether 1918.}{110}{section*.89}%
+\contentsline {paragraph}{Wigner 1939.}{111}{section*.90}%
+\contentsline {paragraph}{Ignatowsky 1910; Einstein 1905.}{111}{section*.91}%
+\contentsline {paragraph}{'t Hooft dimensional reduction.}{111}{section*.92}%
+\contentsline {paragraph}{Bekenstein--Hawking entropy bounds.}{111}{section*.93}%
+\contentsline {paragraph}{Category-theoretic and topos-theoretic approaches.}{111}{section*.94}%
+\contentsline {section}{\numberline {106}Open Questions}{111}{section.106}%
+\contentsline {paragraph}{Numerical values of fundamental constants.}{111}{section*.95}%
+\contentsline {paragraph}{Spatial dimension.}{111}{section*.96}%
+\contentsline {paragraph}{Flavour and generation structure.}{111}{section*.97}%
+\contentsline {paragraph}{Field quantisation.}{111}{section*.98}%
+\contentsline {paragraph}{General relativity.}{111}{section*.99}%
+\contentsline {paragraph}{Quantum measurement.}{111}{section*.100}%
+\contentsline {section}{\numberline {107}Relation to Empirical Reproducibility}{112}{section.107}%
+\contentsline {section}{\numberline {108}The Logical Content of the Axiom Reconsidered}{112}{section.108}%
+\contentsline {paragraph}{Clause (i), boundedness.}{112}{section*.101}%
+\contentsline {paragraph}{Clause (ii), measure preservation.}{112}{section*.102}%
+\contentsline {paragraph}{Clause (iii), hierarchical partitionability.}{112}{section*.103}%
+\contentsline {paragraph}{The axiom as generator of observability.}{112}{section*.104}%
+\contentsline {section}{\numberline {109}Summary of Deductive Structure}{113}{section.109}%
+\contentsline {subsection}{\numberline {109.1}What was assumed}{113}{subsection.109.1}%
+\contentsline {subsection}{\numberline {109.2}What was derived}{113}{subsection.109.2}%
+\contentsline {subsection}{\numberline {109.3}What was compared to experiment}{114}{subsection.109.3}%
+\contentsline {section}{\numberline {110}Conclusion}{114}{section.110}%
+\contentsline {section}{\numberline {111}Deductive Flow Chart of the Paper}{114}{section.111}%
+\contentsline {section}{\numberline {A}Shell-Volume Derivation of the Dark/Ordinary Ratio}{116}{appendix.A}%
+\contentsline {subsection}{\numberline {A.1}Categorical distance and shell volume}{116}{subsection.A.1}%
+\contentsline {subsection}{\numberline {A.2}Pairing dynamics}{116}{subsection.A.2}%
+\contentsline {subsection}{\numberline {A.3}Numerical evaluation for $b=d=3$}{116}{subsection.A.3}%
+\contentsline {subsection}{\numberline {A.4}Finite-depth correction}{116}{subsection.A.4}%
+\contentsline {section}{\numberline {B}Summary of the Deductive Structure}{117}{appendix.B}%
+\contentsline {section}{\numberline {C}Mathematical Notation and Conventions}{118}{appendix.C}%
+\contentsline {section}{\numberline {D}Glossary of Non-Standard Terms}{118}{appendix.D}%
+\contentsline {section}{\numberline {E}Further Commentary on Select Consequences}{119}{appendix.E}%
+\contentsline {subsection}{\numberline {E.1}On Consequence~\ref {cons:loschmidt} and the Arrow of Time}{119}{subsection.E.1}%
+\contentsline {subsection}{\numberline {E.2}On Consequence~\ref {cons:chargeemergence} and the Concept of Field}{119}{subsection.E.2}%
+\contentsline {subsection}{\numberline {E.3}On Consequence~\ref {cons:subnucleon} and Confinement}{119}{subsection.E.3}%
+\contentsline {section}{\numberline {F}On the Relationship Between Axiom and Observation}{119}{appendix.F}%
+\contentsline {section}{\numberline {G}Response to Anticipated Objections}{120}{appendix.G}%
+\contentsline {subsection}{\numberline {G.1}``The Axiom is trivial''}{120}{subsection.G.1}%
+\contentsline {subsection}{\numberline {G.2}``The proofs rely on standard results''}{120}{subsection.G.2}%
+\contentsline {subsection}{\numberline {G.3}``The framework does not predict new physics''}{121}{subsection.G.3}%
+\contentsline {subsection}{\numberline {G.4}``The philosophical interpretation is contentious''}{121}{subsection.G.4}%
+\contentsline {subsection}{\numberline {G.5}``The Axiom is too general to be useful''}{121}{subsection.G.5}%
+\contentsline {section}{\numberline {H}Final Remarks on Style and Intent}{121}{appendix.H}%
