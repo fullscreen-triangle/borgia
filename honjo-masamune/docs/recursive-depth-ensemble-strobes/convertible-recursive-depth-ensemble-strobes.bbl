@@ -1,0 +1,52 @@
+\begin{thebibliography}{8}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Koopman(1931)]{koopman1931}
+B.~O. Koopman.
+\newblock Hamiltonian systems and transformations in {H}ilbert space.
+\newblock \emph{Proceedings of the National Academy of Sciences}, 17:\penalty0
+  315--318, 1931.
+
+\bibitem[Naimark(1964)]{naimark1964}
+M.~A. Naimark.
+\newblock \emph{Linear Representations of the {L}orentz Group}.
+\newblock Pergamon Press, 1964.
+
+\bibitem[Reed and Simon(1980)]{reed1980}
+M.~Reed and B.~Simon.
+\newblock \emph{Methods of Modern Mathematical Physics. {I}: Functional
+  Analysis}.
+\newblock Academic Press, revised and enlarged edition, 1980.
+
+\bibitem[Ritz(1908)]{ritz1908}
+W.~Ritz.
+\newblock On a new law of series spectra.
+\newblock \emph{Astrophysical Journal}, 28:\penalty0 237--243, 1908.
+
+\bibitem[Rudin(1987)]{rudin1987}
+W.~Rudin.
+\newblock \emph{Real and Complex Analysis}.
+\newblock McGraw-Hill, 3 edition, 1987.
+
+\bibitem[Rydberg(1890)]{rydberg1890}
+J.~R. Rydberg.
+\newblock On the structure of the line spectra of the chemical elements.
+\newblock \emph{Philosophical Magazine}, 29:\penalty0 331--337, 1890.
+
+\bibitem[Walters(1982)]{walters1982}
+P.~Walters.
+\newblock \emph{An Introduction to Ergodic Theory}, volume~79 of \emph{Graduate
+  Texts in Mathematics}.
+\newblock Springer-Verlag, 1982.
+
+\bibitem[Wigner(1959)]{wigner1959}
+E.~P. Wigner.
+\newblock \emph{Group Theory and Its Application to the Quantum Mechanics of
+  Atomic Spectra}.
+\newblock Academic Press, 1959.
+
+\end{thebibliography}

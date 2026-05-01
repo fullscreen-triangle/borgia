@@ -1,0 +1,31 @@
+{
+  "paper": "Strobe Instrumentation Validation",
+  "framework_version": "0.1.0",
+  "timestamp_utc": "2026-05-01T19:12:55.977917+00:00",
+  "gate_purity": [
+    {
+      "window": "W_Sk",
+      "rise_time_ps": 17.70913858987511,
+      "fall_time_ps": 14.919846074302685,
+      "plateau_ripple_pct": 0.01335023545262711,
+      "leakage_when_off_pct": 0.0017339876386832816,
+      "isolation_dB": 47.609540028637156
+    },
+    {
+      "window": "W_St",
+      "rise_time_ps": 26.37743149506079,
+      "fall_time_ps": 22.976169345788133,
+      "plateau_ripple_pct": 0.0935855048703917,
+      "leakage_when_off_pct": 0.0002505452212204359,
+      "isolation_dB": 56.01113876367472
+    },
+    {
+      "window": "W_Se",
+      "rise_time_ps": 24.754120305486673,
+      "fall_time_ps": 18.3463604454611,
+      "plateau_ripple_pct": 0.09492045919122581,
+      "leakage_when_off_pct": 0.0038006183580345026,
+      "isolation_dB": 44.20145738216182
+    }
+  ]
+}

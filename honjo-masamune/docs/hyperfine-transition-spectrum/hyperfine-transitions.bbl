@@ -1,4 +1,4 @@
-\begin{thebibliography}{19}
+\begin{thebibliography}{24}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -59,6 +59,12 @@ S.~G. Karshenboim.
 \newblock \emph{Physics Reports}, 422:\penalty0 1--63, 2005.
 \newblock \doi{10.1016/j.physrep.2005.08.008}.
 
+\bibitem[Koopman(1931)]{koopman1931}
+B.~O. Koopman.
+\newblock Hamiltonian systems and transformations in {H}ilbert space.
+\newblock \emph{Proceedings of the National Academy of Sciences}, 17:\penalty0
+  315--318, 1931.
+
 \bibitem[{Kramida, A. and Ralchenko, Yu. and Reader, J. and {NIST ASD
   Team}}(2023)]{nistasd2023}
 {Kramida, A. and Ralchenko, Yu. and Reader, J. and {NIST ASD Team}}.
@@ -78,13 +84,22 @@ V.~V. Kuznetsov, A.~Beidari, et~al.
   69.
 \newblock \url{https://webbook.nist.gov/chemistry/}, 2023.
 
-\bibitem[Sachikonye(2026)]{sachikonye2026bps}
-Kundai~Farai Sachikonye.
-\newblock On the universal consequences of bounded phase space: Measurable
-  nested hierarchy partitions in bounded regions of phase space of finite
-  liouville measure.
-\newblock \emph{Honjo-Masamune Research}, 2026.
-\newblock Companion paper.
+\bibitem[Naimark(1964)]{naimark1964}
+M.~A. Naimark.
+\newblock \emph{Linear Representations of the {L}orentz Group}.
+\newblock Pergamon Press, 1964.
+
+\bibitem[Poincar{\'e}(1890)]{poincare1890}
+H.~Poincar{\'e}.
+\newblock Sur le probl{\`e}me des trois corps et les {\'e}quations de la
+  dynamique.
+\newblock \emph{Acta Mathematica}, 13:\penalty0 1--270, 1890.
+
+\bibitem[Reed and Simon(1980)]{reed1980}
+M.~Reed and B.~Simon.
+\newblock \emph{Methods of Modern Mathematical Physics. {I}: Functional
+  Analysis}.
+\newblock Academic Press, revised and enlarged edition, 1980.
 
 \bibitem[Schmidt et~al.(1980)]{schmidt1980}
 V.~Schmidt et~al.
@@ -110,11 +125,23 @@ E.~Tiesinga, P.~J. Mohr, D.~B. Newell, and B.~N. Taylor.
   2024.
 \newblock \doi{10.1103/RevModPhys.93.025010}.
 
+\bibitem[Walters(1982)]{walters1982}
+P.~Walters.
+\newblock \emph{An Introduction to Ergodic Theory}, volume~79 of \emph{Graduate
+  Texts in Mathematics}.
+\newblock Springer-Verlag, 1982.
+
 \bibitem[Watson(1968)]{watson1968}
 J.~K.~G. Watson.
 \newblock Determination of centrifugal distortion coefficients of
   asymmetric-top molecules.
 \newblock \emph{Journal of Chemical Physics}, 46:\penalty0 1935--1949, 1968.
+
+\bibitem[Wigner(1959)]{wigner1959}
+E.~P. Wigner.
+\newblock \emph{Group Theory and Its Application to the Quantum Mechanics of
+  Atomic Spectra}.
+\newblock Academic Press, 1959.
 
 \bibitem[Wilson et~al.(1955)Wilson, Decius, and Cross]{wilsondeciuscross1955}
 E.~B. Wilson, J.~C. Decius, and P.~C. Cross.

@@ -49,7 +49,8 @@
       "Bash(python validate_recursive_strobes.py)",
       "Bash(grep -nE \"\\\\\\\\\\\\\\\\end\\\\{[a-z]+>\" \"c:/Users/kunda/Documents/bioinformatics/borgia/honjo-masamune/docs/recursive-depth-ensemble-strobes/convertible-recursive-depth-ensemble-strobes.tex\")",
       "Bash(sed -i 's/\\\\\\\\end{\\\\\\([a-z]\\\\+\\\\\\)>/\\\\\\\\end{\\\\1}/g' \"c:/Users/kunda/Documents/bioinformatics/borgia/honjo-masamune/docs/recursive-depth-ensemble-strobes/convertible-recursive-depth-ensemble-strobes.tex\")",
-      "Bash(grep -cE \"\\\\\\\\\\\\\\\\end\\\\{[a-z]+>\" \"c:/Users/kunda/Documents/bioinformatics/borgia/honjo-masamune/docs/recursive-depth-ensemble-strobes/convertible-recursive-depth-ensemble-strobes.tex\")"
+      "Bash(grep -cE \"\\\\\\\\\\\\\\\\end\\\\{[a-z]+>\" \"c:/Users/kunda/Documents/bioinformatics/borgia/honjo-masamune/docs/recursive-depth-ensemble-strobes/convertible-recursive-depth-ensemble-strobes.tex\")",
+      "Bash(grep -cE \"\\\\\\\\\\\\\\\\end\\\\{[a-z]+>\" \"c:/Users/kunda/Documents/bioinformatics/borgia/honjo-masamune/docs/hyperfine-transition-spectrum/hyperfine-transitions.tex\")"
     ]
   }
 }

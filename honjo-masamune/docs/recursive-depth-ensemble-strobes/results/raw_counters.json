@@ -1,0 +1,1127 @@
+{
+  "paper": "Strobe Instrumentation Validation",
+  "framework_version": "0.1.0",
+  "timestamp_utc": "2026-05-01T19:12:55.977917+00:00",
+  "raw_counters": [
+    {
+      "line": "H Ly-alpha",
+      "tau_abs_s": 1e-13,
+      "tau_em_s": 1.6e-09,
+      "T_int_s": 1e-08,
+      "windows": [
+        {
+          "name": "W_Sk",
+          "t_start_s": 0.0,
+          "t_end_s": 1e-13,
+          "duration_s": 1e-13,
+          "counters": [
+            {
+              "oscillator": "CPU clock",
+              "coord": "n",
+              "frequency_Hz": 3000000000.0,
+              "Q_factor": 1000000.0,
+              "expected_count": 0.00030000000000000003,
+              "observed_count": 0,
+              "noise_std": 0.017320808075688775
+            },
+            {
+              "oscillator": "Memory bus",
+              "coord": "l",
+              "frequency_Hz": 800000000.0,
+              "Q_factor": 500000.0,
+              "expected_count": 8e-05,
+              "observed_count": 0,
+              "noise_std": 0.00894438504708415
+            },
+            {
+              "oscillator": "LED frequency",
+              "coord": "m",
+              "frequency_Hz": 460000000000000.0,
+              "Q_factor": 100000000.0,
+              "expected_count": 46.0,
+              "observed_count": 46,
+              "noise_std": 6.786929983125268
+            },
+            {
+              "oscillator": "Refresh polar.",
+              "coord": "s",
+              "frequency_Hz": 64000.0,
+              "Q_factor": 10000.0,
+              "expected_count": 6.4e-09,
+              "observed_count": 0,
+              "noise_std": 8.000006400000001e-05
+            }
+          ]
+        },
+        {
+          "name": "W_St",
+          "t_start_s": 1e-13,
+          "t_end_s": 1.6e-09,
+          "duration_s": 1.5999e-09,
+          "counters": [
+            {
+              "oscillator": "CPU clock",
+              "coord": "n",
+              "frequency_Hz": 3000000000.0,
+              "Q_factor": 1000000.0,
+              "expected_count": 4.7997000000000005,
+              "observed_count": 3,
+              "noise_std": 2.195621463631172
+            },
+            {
+              "oscillator": "Memory bus",
+              "coord": "l",
+              "frequency_Hz": 800000000.0,
+              "Q_factor": 500000.0,
+              "expected_count": 1.27992,
+              "observed_count": 1,
+              "noise_std": 1.1331455742297247
+            },
+            {
+              "oscillator": "LED frequency",
+              "coord": "m",
+              "frequency_Hz": 460000000000000.0,
+              "Q_factor": 100000000.0,
+              "expected_count": 735954.0,
+              "observed_count": 735953,
+              "noise_std": 931.4730136489401
+            },
+            {
+              "oscillator": "Refresh polar.",
+              "coord": "s",
+              "frequency_Hz": 64000.0,
+              "Q_factor": 10000.0,
+              "expected_count": 0.00010239360000000001,
+              "observed_count": 0,
+              "noise_std": 0.010119996215831584
+            }
+          ]
+        },
+        {
+          "name": "W_Se",
+          "t_start_s": 1.6e-09,
+          "t_end_s": 1e-08,
+          "duration_s": 8.4e-09,
+          "counters": [
+            {
+              "oscillator": "CPU clock",
+              "coord": "n",
+              "frequency_Hz": 3000000000.0,
+              "Q_factor": 1000000.0,
+              "expected_count": 25.200000000000003,
+              "observed_count": 30,
+              "noise_std": 5.045160159204453
+            },
+            {
+              "oscillator": "Memory bus",
+              "coord": "l",
+              "frequency_Hz": 800000000.0,
+              "Q_factor": 500000.0,
+              "expected_count": 6.720000000000001,
+              "observed_count": 8,
+              "noise_std": 2.6017997945022917
+            },
+            {
+              "oscillator": "LED frequency",
+              "coord": "m",
+              "frequency_Hz": 460000000000000.0,
+              "Q_factor": 100000000.0,
+              "expected_count": 3864000.0000000005,
+              "observed_count": 3862529,
+              "noise_std": 2352.1059800488983
+            },
+            {
+              "oscillator": "Refresh polar.",
+              "coord": "s",
+              "frequency_Hz": 64000.0,
+              "Q_factor": 10000.0,
+              "expected_count": 0.0005376000000000001,
+              "observed_count": 0,
+              "noise_std": 0.023191578793903104
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "line": "H Balmer-alpha",
+      "tau_abs_s": 1e-12,
+      "tau_em_s": 1.6e-08,
+      "T_int_s": 8e-08,
+      "windows": [
+        {
+          "name": "W_Sk",
+          "t_start_s": 0.0,
+          "t_end_s": 1e-12,
+          "duration_s": 1e-12,
+          "counters": [
+            {
+              "oscillator": "CPU clock",
+              "coord": "n",
+              "frequency_Hz": 3000000000.0,
+              "Q_factor": 1000000.0,
+              "expected_count": 0.003,
+              "observed_count": 0,
+              "noise_std": 0.054775255750516616
+            },
+            {
+              "oscillator": "Memory bus",
+              "coord": "l",
+              "frequency_Hz": 800000000.0,
+              "Q_factor": 500000.0,
+              "expected_count": 0.0007999999999999999,
+              "observed_count": 0,
+              "noise_std": 0.0282854026183118
+            },
+            {
+              "oscillator": "LED frequency",
+              "coord": "m",
+              "frequency_Hz": 460000000000000.0,
+              "Q_factor": 100000000.0,
+              "expected_count": 460.0,
+              "observed_count": 455,
+              "noise_std": 21.493610589527215
+            },
+            {
+              "oscillator": "Refresh polar.",
+              "coord": "s",
+              "frequency_Hz": 64000.0,
+              "Q_factor": 10000.0,
+              "expected_count": 6.4e-08,
+              "observed_count": 0,
+              "noise_std": 0.00025298285281347035
+            }
+          ]
+        },
+        {
+          "name": "W_St",
+          "t_start_s": 1e-12,
+          "t_end_s": 1.6e-08,
+          "duration_s": 1.5999e-08,
+          "counters": [
+            {
+              "oscillator": "CPU clock",
+              "coord": "n",
+              "frequency_Hz": 3000000000.0,
+              "Q_factor": 1000000.0,
+              "expected_count": 47.997,
+              "observed_count": 52,
+              "noise_std": 6.975983720541545
+            },
+            {
+              "oscillator": "Memory bus",
+              "coord": "l",
+              "frequency_Hz": 800000000.0,
+              "Q_factor": 500000.0,
+              "expected_count": 12.799199999999999,
+              "observed_count": 13,
+              "noise_std": 3.5956977610813317
+            },
+            {
+              "oscillator": "LED frequency",
+              "coord": "m",
+              "frequency_Hz": 460000000000000.0,
+              "Q_factor": 100000000.0,
+              "expected_count": 7359540.0,
+              "observed_count": 7360487,
+              "noise_std": 3448.801212800603
+            },
+            {
+              "oscillator": "Refresh polar.",
+              "coord": "s",
+              "frequency_Hz": 64000.0,
+              "Q_factor": 10000.0,
+              "expected_count": 0.001023936,
+              "observed_count": 0,
+              "noise_std": 0.03200923934437451
+            }
+          ]
+        },
+        {
+          "name": "W_Se",
+          "t_start_s": 1.6e-08,
+          "t_end_s": 8e-08,
+          "duration_s": 6.4e-08,
+          "counters": [
+            {
+              "oscillator": "CPU clock",
+              "coord": "n",
+              "frequency_Hz": 3000000000.0,
+              "Q_factor": 1000000.0,
+              "expected_count": 192.0,
+              "observed_count": 215,
+              "noise_std": 14.048406460551018
+            },
+            {
+              "oscillator": "Memory bus",
+              "coord": "l",
+              "frequency_Hz": 800000000.0,
+              "Q_factor": 500000.0,
+              "expected_count": 51.2,
+              "observed_count": 52,
+              "noise_std": 7.227825262392829
+            },
+            {
+              "oscillator": "LED frequency",
+              "coord": "m",
+              "frequency_Hz": 460000000000000.0,
+              "Q_factor": 100000000.0,
+              "expected_count": 29440000.0,
+              "observed_count": 29436760,
+              "noise_std": 8369.863986500215
+            },
+            {
+              "oscillator": "Refresh polar.",
+              "coord": "s",
+              "frequency_Hz": 64000.0,
+              "Q_factor": 10000.0,
+              "expected_count": 0.004096000000000001,
+              "observed_count": 0,
+              "noise_std": 0.06404096000000001
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "line": "H 21cm hyperfine",
+      "tau_abs_s": 1e-09,
+      "tau_em_s": 350000000000000.0,
+      "T_int_s": 1750000000000000.0,
+      "windows": [
+        {
+          "name": "W_Sk",
+          "t_start_s": 0.0,
+          "t_end_s": 1e-09,
+          "duration_s": 1e-09,
+          "counters": [
+            {
+              "oscillator": "CPU clock",
+              "coord": "n",
+              "frequency_Hz": 3000000000.0,
+              "Q_factor": 1000000.0,
+              "expected_count": 3.0,
+              "observed_count": 3,
+              "noise_std": 1.735050807568877
+            },
+            {
+              "oscillator": "Memory bus",
+              "coord": "l",
+              "frequency_Hz": 800000000.0,
+              "Q_factor": 500000.0,
+              "expected_count": 0.8,
+              "observed_count": 0,
+              "noise_std": 0.8955585618498143
+            },
+            {
+              "oscillator": "LED frequency",
+              "coord": "m",
+              "frequency_Hz": 460000000000000.0,
+              "Q_factor": 100000000.0,
+              "expected_count": 460000.0,
+              "observed_count": 459707,
+              "noise_std": 724.2329983125268
+            },
+            {
+              "oscillator": "Refresh polar.",
+              "coord": "s",
+              "frequency_Hz": 64000.0,
+              "Q_factor": 10000.0,
+              "expected_count": 6.400000000000001e-05,
+              "observed_count": 0,
+              "noise_std": 0.00800064
+            }
+          ]
+        },
+        {
+          "name": "W_St",
+          "t_start_s": 1e-09,
+          "t_end_s": 350000000000000.0,
+          "duration_s": 350000000000000.0,
+          "counters": [
+            {
+              "oscillator": "CPU clock",
+              "coord": "n",
+              "frequency_Hz": 3000000000.0,
+              "Q_factor": 1000000.0,
+              "expected_count": 1.05e+24,
+              "observed_count": 1051101866377885771628544,
+              "noise_std": 1.0500000010246951e+21
+            },
+            {
+              "oscillator": "Memory bus",
+              "coord": "l",
+              "frequency_Hz": 800000000.0,
+              "Q_factor": 500000.0,
+              "expected_count": 2.8e+23,
+              "observed_count": 279835084583482939146240,
+              "noise_std": 3.959797979936169e+20
+            },
+            {
+              "oscillator": "LED frequency",
+              "coord": "m",
+              "frequency_Hz": 460000000000000.0,
+              "Q_factor": 100000000.0,
+              "expected_count": 1.61e+29,
+              "observed_count": 160988044888243888887861084160,
+              "noise_std": 1.6100000000401249e+25
+            },
+            {
+              "oscillator": "Refresh polar.",
+              "coord": "s",
+              "frequency_Hz": 64000.0,
+              "Q_factor": 10000.0,
+              "expected_count": 2.24e+19,
+              "observed_count": 22640233314548764672,
+              "noise_std": 2.2400000473286384e+17
+            }
+          ]
+        },
+        {
+          "name": "W_Se",
+          "t_start_s": 350000000000000.0,
+          "t_end_s": 1750000000000000.0,
+          "duration_s": 1400000000000000.0,
+          "counters": [
+            {
+              "oscillator": "CPU clock",
+              "coord": "n",
+              "frequency_Hz": 3000000000.0,
+              "Q_factor": 1000000.0,
+              "expected_count": 4.2e+24,
+              "observed_count": 4193065482521112261689344,
+              "noise_std": 4.2000000020493904e+21
+            },
+            {
+              "oscillator": "Memory bus",
+              "coord": "l",
+              "frequency_Hz": 800000000.0,
+              "Q_factor": 500000.0,
+              "expected_count": 1.12e+24,
+              "observed_count": 1120848076832864854867968,
+              "noise_std": 1.583919190916167e+21
+            },
+            {
+              "oscillator": "LED frequency",
+              "coord": "m",
+              "frequency_Hz": 460000000000000.0,
+              "Q_factor": 100000000.0,
+              "expected_count": 6.44e+29,
+              "observed_count": 643867051686677275416324997120,
+              "noise_std": 6.44000000008025e+25
+            },
+            {
+              "oscillator": "Refresh polar.",
+              "coord": "s",
+              "frequency_Hz": 64000.0,
+              "Q_factor": 10000.0,
+              "expected_count": 8.96e+19,
+              "observed_count": 89006705225390718976,
+              "noise_std": 8.960000094657276e+17
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "line": "H2 v=0->1",
+      "tau_abs_s": 1e-13,
+      "tau_em_s": 0.001,
+      "T_int_s": 0.005,
+      "windows": [
+        {
+          "name": "W_Sk",
+          "t_start_s": 0.0,
+          "t_end_s": 1e-13,
+          "duration_s": 1e-13,
+          "counters": [
+            {
+              "oscillator": "CPU clock",
+              "coord": "n",
+              "frequency_Hz": 3000000000.0,
+              "Q_factor": 1000000.0,
+              "expected_count": 0.00030000000000000003,
+              "observed_count": 0,
+              "noise_std": 0.017320808075688775
+            },
+            {
+              "oscillator": "Memory bus",
+              "coord": "l",
+              "frequency_Hz": 800000000.0,
+              "Q_factor": 500000.0,
+              "expected_count": 8e-05,
+              "observed_count": 0,
+              "noise_std": 0.00894438504708415
+            },
+            {
+              "oscillator": "LED frequency",
+              "coord": "m",
+              "frequency_Hz": 460000000000000.0,
+              "Q_factor": 100000000.0,
+              "expected_count": 46.0,
+              "observed_count": 58,
+              "noise_std": 6.786929983125268
+            },
+            {
+              "oscillator": "Refresh polar.",
+              "coord": "s",
+              "frequency_Hz": 64000.0,
+              "Q_factor": 10000.0,
+              "expected_count": 6.4e-09,
+              "observed_count": 0,
+              "noise_std": 8.000006400000001e-05
+            }
+          ]
+        },
+        {
+          "name": "W_St",
+          "t_start_s": 1e-13,
+          "t_end_s": 0.001,
+          "duration_s": 0.0009999999999,
+          "counters": [
+            {
+              "oscillator": "CPU clock",
+              "coord": "n",
+              "frequency_Hz": 3000000000.0,
+              "Q_factor": 1000000.0,
+              "expected_count": 2999999.9996999996,
+              "observed_count": 3003978,
+              "noise_std": 4732.050807182274
+            },
+            {
+              "oscillator": "Memory bus",
+              "coord": "l",
+              "frequency_Hz": 800000000.0,
+              "Q_factor": 500000.0,
+              "expected_count": 799999.99992,
+              "observed_count": 799635,
+              "noise_std": 2025.7980407405335
+            },
+            {
+              "oscillator": "LED frequency",
+              "coord": "m",
+              "frequency_Hz": 460000000000000.0,
+              "Q_factor": 100000000.0,
+              "expected_count": 459999999954.0,
+              "observed_count": 460026516079,
+              "noise_std": 46678232.993678614
+            },
+            {
+              "oscillator": "Refresh polar.",
+              "coord": "s",
+              "frequency_Hz": 64000.0,
+              "Q_factor": 10000.0,
+              "expected_count": 63.99999999359999,
+              "observed_count": 57,
+              "noise_std": 8.639999999535998
+            }
+          ]
+        },
+        {
+          "name": "W_Se",
+          "t_start_s": 0.001,
+          "t_end_s": 0.005,
+          "duration_s": 0.004,
+          "counters": [
+            {
+              "oscillator": "CPU clock",
+              "coord": "n",
+              "frequency_Hz": 3000000000.0,
+              "Q_factor": 1000000.0,
+              "expected_count": 12000000.0,
+              "observed_count": 11973582,
+              "noise_std": 15464.101615137755
+            },
+            {
+              "oscillator": "Memory bus",
+              "coord": "l",
+              "frequency_Hz": 800000000.0,
+              "Q_factor": 500000.0,
+              "expected_count": 3200000.0,
+              "observed_count": 3188615,
+              "noise_std": 6314.3377815937365
+            },
+            {
+              "oscillator": "LED frequency",
+              "coord": "m",
+              "frequency_Hz": 460000000000000.0,
+              "Q_factor": 100000000.0,
+              "expected_count": 1840000000000.0,
+              "observed_count": 1840071014112,
+              "noise_std": 185356465.99662507
+            },
+            {
+              "oscillator": "Refresh polar.",
+              "coord": "s",
+              "frequency_Hz": 64000.0,
+              "Q_factor": 10000.0,
+              "expected_count": 256.0,
+              "observed_count": 298,
+              "noise_std": 18.56
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "line": "H2 v=0->4",
+      "tau_abs_s": 1e-13,
+      "tau_em_s": 0.001,
+      "T_int_s": 0.005,
+      "windows": [
+        {
+          "name": "W_Sk",
+          "t_start_s": 0.0,
+          "t_end_s": 1e-13,
+          "duration_s": 1e-13,
+          "counters": [
+            {
+              "oscillator": "CPU clock",
+              "coord": "n",
+              "frequency_Hz": 3000000000.0,
+              "Q_factor": 1000000.0,
+              "expected_count": 0.00030000000000000003,
+              "observed_count": 0,
+              "noise_std": 0.017320808075688775
+            },
+            {
+              "oscillator": "Memory bus",
+              "coord": "l",
+              "frequency_Hz": 800000000.0,
+              "Q_factor": 500000.0,
+              "expected_count": 8e-05,
+              "observed_count": 0,
+              "noise_std": 0.00894438504708415
+            },
+            {
+              "oscillator": "LED frequency",
+              "coord": "m",
+              "frequency_Hz": 460000000000000.0,
+              "Q_factor": 100000000.0,
+              "expected_count": 46.0,
+              "observed_count": 59,
+              "noise_std": 6.786929983125268
+            },
+            {
+              "oscillator": "Refresh polar.",
+              "coord": "s",
+              "frequency_Hz": 64000.0,
+              "Q_factor": 10000.0,
+              "expected_count": 6.4e-09,
+              "observed_count": 0,
+              "noise_std": 8.000006400000001e-05
+            }
+          ]
+        },
+        {
+          "name": "W_St",
+          "t_start_s": 1e-13,
+          "t_end_s": 0.001,
+          "duration_s": 0.0009999999999,
+          "counters": [
+            {
+              "oscillator": "CPU clock",
+              "coord": "n",
+              "frequency_Hz": 3000000000.0,
+              "Q_factor": 1000000.0,
+              "expected_count": 2999999.9996999996,
+              "observed_count": 3000480,
+              "noise_std": 4732.050807182274
+            },
+            {
+              "oscillator": "Memory bus",
+              "coord": "l",
+              "frequency_Hz": 800000000.0,
+              "Q_factor": 500000.0,
+              "expected_count": 799999.99992,
+              "observed_count": 800512,
+              "noise_std": 2025.7980407405335
+            },
+            {
+              "oscillator": "LED frequency",
+              "coord": "m",
+              "frequency_Hz": 460000000000000.0,
+              "Q_factor": 100000000.0,
+              "expected_count": 459999999954.0,
+              "observed_count": 459993820820,
+              "noise_std": 46678232.993678614
+            },
+            {
+              "oscillator": "Refresh polar.",
+              "coord": "s",
+              "frequency_Hz": 64000.0,
+              "Q_factor": 10000.0,
+              "expected_count": 63.99999999359999,
+              "observed_count": 61,
+              "noise_std": 8.639999999535998
+            }
+          ]
+        },
+        {
+          "name": "W_Se",
+          "t_start_s": 0.001,
+          "t_end_s": 0.005,
+          "duration_s": 0.004,
+          "counters": [
+            {
+              "oscillator": "CPU clock",
+              "coord": "n",
+              "frequency_Hz": 3000000000.0,
+              "Q_factor": 1000000.0,
+              "expected_count": 12000000.0,
+              "observed_count": 11977810,
+              "noise_std": 15464.101615137755
+            },
+            {
+              "oscillator": "Memory bus",
+              "coord": "l",
+              "frequency_Hz": 800000000.0,
+              "Q_factor": 500000.0,
+              "expected_count": 3200000.0,
+              "observed_count": 3203167,
+              "noise_std": 6314.3377815937365
+            },
+            {
+              "oscillator": "LED frequency",
+              "coord": "m",
+              "frequency_Hz": 460000000000000.0,
+              "Q_factor": 100000000.0,
+              "expected_count": 1840000000000.0,
+              "observed_count": 1839982432757,
+              "noise_std": 185356465.99662507
+            },
+            {
+              "oscillator": "Refresh polar.",
+              "coord": "s",
+              "frequency_Hz": 64000.0,
+              "Q_factor": 10000.0,
+              "expected_count": 256.0,
+              "observed_count": 278,
+              "noise_std": 18.56
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "line": "H2O nu1 sym str",
+      "tau_abs_s": 1e-13,
+      "tau_em_s": 0.001,
+      "T_int_s": 0.005,
+      "windows": [
+        {
+          "name": "W_Sk",
+          "t_start_s": 0.0,
+          "t_end_s": 1e-13,
+          "duration_s": 1e-13,
+          "counters": [
+            {
+              "oscillator": "CPU clock",
+              "coord": "n",
+              "frequency_Hz": 3000000000.0,
+              "Q_factor": 1000000.0,
+              "expected_count": 0.00030000000000000003,
+              "observed_count": 0,
+              "noise_std": 0.017320808075688775
+            },
+            {
+              "oscillator": "Memory bus",
+              "coord": "l",
+              "frequency_Hz": 800000000.0,
+              "Q_factor": 500000.0,
+              "expected_count": 8e-05,
+              "observed_count": 0,
+              "noise_std": 0.00894438504708415
+            },
+            {
+              "oscillator": "LED frequency",
+              "coord": "m",
+              "frequency_Hz": 460000000000000.0,
+              "Q_factor": 100000000.0,
+              "expected_count": 46.0,
+              "observed_count": 45,
+              "noise_std": 6.786929983125268
+            },
+            {
+              "oscillator": "Refresh polar.",
+              "coord": "s",
+              "frequency_Hz": 64000.0,
+              "Q_factor": 10000.0,
+              "expected_count": 6.4e-09,
+              "observed_count": 0,
+              "noise_std": 8.000006400000001e-05
+            }
+          ]
+        },
+        {
+          "name": "W_St",
+          "t_start_s": 1e-13,
+          "t_end_s": 0.001,
+          "duration_s": 0.0009999999999,
+          "counters": [
+            {
+              "oscillator": "CPU clock",
+              "coord": "n",
+              "frequency_Hz": 3000000000.0,
+              "Q_factor": 1000000.0,
+              "expected_count": 2999999.9996999996,
+              "observed_count": 2998186,
+              "noise_std": 4732.050807182274
+            },
+            {
+              "oscillator": "Memory bus",
+              "coord": "l",
+              "frequency_Hz": 800000000.0,
+              "Q_factor": 500000.0,
+              "expected_count": 799999.99992,
+              "observed_count": 798197,
+              "noise_std": 2025.7980407405335
+            },
+            {
+              "oscillator": "LED frequency",
+              "coord": "m",
+              "frequency_Hz": 460000000000000.0,
+              "Q_factor": 100000000.0,
+              "expected_count": 459999999954.0,
+              "observed_count": 459944285192,
+              "noise_std": 46678232.993678614
+            },
+            {
+              "oscillator": "Refresh polar.",
+              "coord": "s",
+              "frequency_Hz": 64000.0,
+              "Q_factor": 10000.0,
+              "expected_count": 63.99999999359999,
+              "observed_count": 55,
+              "noise_std": 8.639999999535998
+            }
+          ]
+        },
+        {
+          "name": "W_Se",
+          "t_start_s": 0.001,
+          "t_end_s": 0.005,
+          "duration_s": 0.004,
+          "counters": [
+            {
+              "oscillator": "CPU clock",
+              "coord": "n",
+              "frequency_Hz": 3000000000.0,
+              "Q_factor": 1000000.0,
+              "expected_count": 12000000.0,
+              "observed_count": 11995358,
+              "noise_std": 15464.101615137755
+            },
+            {
+              "oscillator": "Memory bus",
+              "coord": "l",
+              "frequency_Hz": 800000000.0,
+              "Q_factor": 500000.0,
+              "expected_count": 3200000.0,
+              "observed_count": 3192549,
+              "noise_std": 6314.3377815937365
+            },
+            {
+              "oscillator": "LED frequency",
+              "coord": "m",
+              "frequency_Hz": 460000000000000.0,
+              "Q_factor": 100000000.0,
+              "expected_count": 1840000000000.0,
+              "observed_count": 1840277597094,
+              "noise_std": 185356465.99662507
+            },
+            {
+              "oscillator": "Refresh polar.",
+              "coord": "s",
+              "frequency_Hz": 64000.0,
+              "Q_factor": 10000.0,
+              "expected_count": 256.0,
+              "observed_count": 251,
+              "noise_std": 18.56
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "line": "H2O 2nu2 overtone",
+      "tau_abs_s": 1e-13,
+      "tau_em_s": 0.001,
+      "T_int_s": 0.005,
+      "windows": [
+        {
+          "name": "W_Sk",
+          "t_start_s": 0.0,
+          "t_end_s": 1e-13,
+          "duration_s": 1e-13,
+          "counters": [
+            {
+              "oscillator": "CPU clock",
+              "coord": "n",
+              "frequency_Hz": 3000000000.0,
+              "Q_factor": 1000000.0,
+              "expected_count": 0.00030000000000000003,
+              "observed_count": 0,
+              "noise_std": 0.017320808075688775
+            },
+            {
+              "oscillator": "Memory bus",
+              "coord": "l",
+              "frequency_Hz": 800000000.0,
+              "Q_factor": 500000.0,
+              "expected_count": 8e-05,
+              "observed_count": 0,
+              "noise_std": 0.00894438504708415
+            },
+            {
+              "oscillator": "LED frequency",
+              "coord": "m",
+              "frequency_Hz": 460000000000000.0,
+              "Q_factor": 100000000.0,
+              "expected_count": 46.0,
+              "observed_count": 56,
+              "noise_std": 6.786929983125268
+            },
+            {
+              "oscillator": "Refresh polar.",
+              "coord": "s",
+              "frequency_Hz": 64000.0,
+              "Q_factor": 10000.0,
+              "expected_count": 6.4e-09,
+              "observed_count": 0,
+              "noise_std": 8.000006400000001e-05
+            }
+          ]
+        },
+        {
+          "name": "W_St",
+          "t_start_s": 1e-13,
+          "t_end_s": 0.001,
+          "duration_s": 0.0009999999999,
+          "counters": [
+            {
+              "oscillator": "CPU clock",
+              "coord": "n",
+              "frequency_Hz": 3000000000.0,
+              "Q_factor": 1000000.0,
+              "expected_count": 2999999.9996999996,
+              "observed_count": 3001571,
+              "noise_std": 4732.050807182274
+            },
+            {
+              "oscillator": "Memory bus",
+              "coord": "l",
+              "frequency_Hz": 800000000.0,
+              "Q_factor": 500000.0,
+              "expected_count": 799999.99992,
+              "observed_count": 801489,
+              "noise_std": 2025.7980407405335
+            },
+            {
+              "oscillator": "LED frequency",
+              "coord": "m",
+              "frequency_Hz": 460000000000000.0,
+              "Q_factor": 100000000.0,
+              "expected_count": 459999999954.0,
+              "observed_count": 459990997802,
+              "noise_std": 46678232.993678614
+            },
+            {
+              "oscillator": "Refresh polar.",
+              "coord": "s",
+              "frequency_Hz": 64000.0,
+              "Q_factor": 10000.0,
+              "expected_count": 63.99999999359999,
+              "observed_count": 49,
+              "noise_std": 8.639999999535998
+            }
+          ]
+        },
+        {
+          "name": "W_Se",
+          "t_start_s": 0.001,
+          "t_end_s": 0.005,
+          "duration_s": 0.004,
+          "counters": [
+            {
+              "oscillator": "CPU clock",
+              "coord": "n",
+              "frequency_Hz": 3000000000.0,
+              "Q_factor": 1000000.0,
+              "expected_count": 12000000.0,
+              "observed_count": 12010124,
+              "noise_std": 15464.101615137755
+            },
+            {
+              "oscillator": "Memory bus",
+              "coord": "l",
+              "frequency_Hz": 800000000.0,
+              "Q_factor": 500000.0,
+              "expected_count": 3200000.0,
+              "observed_count": 3205647,
+              "noise_std": 6314.3377815937365
+            },
+            {
+              "oscillator": "LED frequency",
+              "coord": "m",
+              "frequency_Hz": 460000000000000.0,
+              "Q_factor": 100000000.0,
+              "expected_count": 1840000000000.0,
+              "observed_count": 1840077016096,
+              "noise_std": 185356465.99662507
+            },
+            {
+              "oscillator": "Refresh polar.",
+              "coord": "s",
+              "frequency_Hz": 64000.0,
+              "Q_factor": 10000.0,
+              "expected_count": 256.0,
+              "observed_count": 239,
+              "noise_std": 18.56
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "line": "H2O X->A UV",
+      "tau_abs_s": 1e-13,
+      "tau_em_s": 1e-13,
+      "T_int_s": 1e-08,
+      "windows": [
+        {
+          "name": "W_Sk",
+          "t_start_s": 0.0,
+          "t_end_s": 1e-13,
+          "duration_s": 1e-13,
+          "counters": [
+            {
+              "oscillator": "CPU clock",
+              "coord": "n",
+              "frequency_Hz": 3000000000.0,
+              "Q_factor": 1000000.0,
+              "expected_count": 0.00030000000000000003,
+              "observed_count": 0,
+              "noise_std": 0.017320808075688775
+            },
+            {
+              "oscillator": "Memory bus",
+              "coord": "l",
+              "frequency_Hz": 800000000.0,
+              "Q_factor": 500000.0,
+              "expected_count": 8e-05,
+              "observed_count": 0,
+              "noise_std": 0.00894438504708415
+            },
+            {
+              "oscillator": "LED frequency",
+              "coord": "m",
+              "frequency_Hz": 460000000000000.0,
+              "Q_factor": 100000000.0,
+              "expected_count": 46.0,
+              "observed_count": 44,
+              "noise_std": 6.786929983125268
+            },
+            {
+              "oscillator": "Refresh polar.",
+              "coord": "s",
+              "frequency_Hz": 64000.0,
+              "Q_factor": 10000.0,
+              "expected_count": 6.4e-09,
+              "observed_count": 0,
+              "noise_std": 8.000006400000001e-05
+            }
+          ]
+        },
+        {
+          "name": "W_St",
+          "t_start_s": 1e-13,
+          "t_end_s": 1e-13,
+          "duration_s": 1e-30,
+          "counters": [
+            {
+              "oscillator": "CPU clock",
+              "coord": "n",
+              "frequency_Hz": 3000000000.0,
+              "Q_factor": 1000000.0,
+              "expected_count": 3.0000000000000003e-21,
+              "observed_count": 0,
+              "noise_std": 5.477225575051961e-11
+            },
+            {
+              "oscillator": "Memory bus",
+              "coord": "l",
+              "frequency_Hz": 800000000.0,
+              "Q_factor": 500000.0,
+              "expected_count": 8e-22,
+              "observed_count": 0,
+              "noise_std": 2.8284271247463034e-11
+            },
+            {
+              "oscillator": "LED frequency",
+              "coord": "m",
+              "frequency_Hz": 460000000000000.0,
+              "Q_factor": 100000000.0,
+              "expected_count": 4.600000000000001e-16,
+              "observed_count": 0,
+              "noise_std": 2.144761058957322e-08
+            },
+            {
+              "oscillator": "Refresh polar.",
+              "coord": "s",
+              "frequency_Hz": 64000.0,
+              "Q_factor": 10000.0,
+              "expected_count": 6.4e-26,
+              "observed_count": 0,
+              "noise_std": 2.52982212813471e-13
+            }
+          ]
+        },
+        {
+          "name": "W_Se",
+          "t_start_s": 1e-13,
+          "t_end_s": 1e-08,
+          "duration_s": 9.9999e-09,
+          "counters": [
+            {
+              "oscillator": "CPU clock",
+              "coord": "n",
+              "frequency_Hz": 3000000000.0,
+              "Q_factor": 1000000.0,
+              "expected_count": 29.9997,
+              "observed_count": 30,
+              "noise_std": 5.507197888855321
+            },
+            {
+              "oscillator": "Memory bus",
+              "coord": "l",
+              "frequency_Hz": 800000000.0,
+              "Q_factor": 500000.0,
+              "expected_count": 7.9999199999999995,
+              "observed_count": 8,
+              "noise_std": 2.8397265779371104
+            },
+            {
+              "oscillator": "LED frequency",
+              "coord": "m",
+              "frequency_Hz": 460000000000000.0,
+              "Q_factor": 100000000.0,
+              "expected_count": 4599954.0,
+              "observed_count": 4598199,
+              "noise_std": 2604.7457351206176
+            },
+            {
+              "oscillator": "Refresh polar.",
+              "coord": "s",
+              "frequency_Hz": 64000.0,
+              "Q_factor": 10000.0,
+              "expected_count": 0.0006399936,
+              "observed_count": 0,
+              "noise_std": 0.0253044947259244
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

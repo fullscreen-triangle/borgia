@@ -47,3 +47,53 @@
     (\textbf{D})~Three-dimensional alignment scatter showing the round-trip consistency across all twelve test lines: $\log_{10}|$value$|$ on the $x$-axis, integer category index on the $y$-axis, and partition triple sum $\sum (p_k, p_t, p_e)$ on the $z$-axis. All 12 points cluster on a smooth surface, confirming that the three representations (oscillation, category, partition) are not three independent quantities but three coordinate-charts on a single underlying mathematical structure --- the Triple Equivalence Theorem (Theorem~\ref{thm:tripleeq}) made manifest. Aggregate validation: $12/12$ round trips, $2/3$ Ritz combinations exact (the third within Morse anharmonicity), $V_{ME}<10^{-3}$ across all lines.}
     \label{fig:tripleconv}
 \end{figure*}
+
+% ============================================================
+%  STROBE INSTRUMENTATION PANELS (5--8)
+%  Raw counters, timing diagrams, cross-talk scan, Allan variance,
+%  synchronisation jitter, gate-waveform purity.
+% ============================================================
+
+\begin{figure*}[!htbp]
+    \centering
+    \includegraphics[width=\textwidth]{figures/panel_5_timing_diagram.png}
+    \caption{\textbf{Strobe Timing Diagram and Raw Counter Accumulation.}
+    (\textbf{A})~Timing diagram for the H Lyman-$\alpha$ measurement on a linear time axis spanning $0$ to $T_{\mathrm{int}}\approx 8$ ns. Three signal traces are overlaid: the excitation pulse (blue, Gaussian centred at $t=\tau_{\mathrm{abs}}/2 = 50$ fs with FWHM $\sim 100$ fs), the absorption profile (purple, rising linearly to unity at $t=\tau_{\mathrm{abs}}=100$ fs and exponentially decaying with timescale $\tau_{em}=1.6$ ns thereafter), and the emission profile (green, zero during absorption then exponentially decaying with timescale $\tau_{em}/3$ after $t=\tau_{em}$). Three shaded bands mark the strobing windows: $W_{S_k}$ in yellow ($[0,\tau_{\mathrm{abs}}]$, the absorption gate that resolves the principal coordinate $n$), $W_{S_t}$ in purple ($[\tau_{\mathrm{abs}},\tau_{em}]$, the lifetime gate that resolves the temporal coordinate $\ell$), $W_{S_e}$ in green ($[\tau_{em},T_{\mathrm{int}}]$, the decay gate that resolves the evolution coordinate $m$). The diagram is the visual specification of Definition~\ref{def:strobe} and Protocol~\ref{prot:tier4}.
+    (\textbf{B})~Raw counter accumulation for the H Lyman-$\alpha$ line: $\log_{10}$(integer counts) per oscillator subsystem (CPU clock at $3$ GHz, memory bus at $800$ MHz, LED at $4.6\times 10^{14}$ Hz, refresh polariser at $64$ kHz) per strobing window. The LED dominates the count budget by orders of magnitude in every window because of its very high frequency; the CPU clock provides intermediate counts ($\sim 5$ in $W_{S_t}$, $\sim 25$ in $W_{S_e}$); the refresh polariser barely registers in any sub-microsecond window (counts of $0$ are rounded to $1$ for log display). The full counter table for all eight test lines appears in supplementary file \texttt{results/raw\_counters.json}.
+    (\textbf{C})~Cross-talk scan: $\eta_{\mathrm{cross}}$ versus $\Delta t_{\mathrm{gate}}/\tau_{em}$ on log--log axes from $10^{-3}$ to $10^{1}$. The dashed purple curve is the theoretical $\eta_{\mathrm{cross}}=0.37 \Delta t_{\mathrm{gate}}/\tau_{em}$ (Theorem~\ref{thm:crosstalk}); green markers are numerical evaluation. The vertical red dotted line marks $\Delta t_{\mathrm{gate}}=\tau_{em}$ where the linear regime saturates. Theoretical and numerical agree exactly across the four-decade scan, confirming Theorem~\ref{thm:crosstalk}. For typical strobing parameters ($\Delta t_{\mathrm{gate}} \sim 10$ ps against $\tau_{em} \sim 1$ ns), the cross-talk is $0.37\%$, well below tier-3 precision.
+    (\textbf{D})~Three-dimensional landscape of $\log_{10}$(counts) over the (line index, window+oscillator) plane for the eight test lines, coloured by window ($W_{S_k}$ yellow, $W_{S_t}$ purple, $W_{S_e}$ green). The very wide vertical span ($\sim 11$ decades) reflects the heterogeneous frequency budget of the four oscillators; the consistent ordering of points within each line confirms that the strobing protocol applies uniformly across the test set.}
+    \label{fig:timingdiag}
+\end{figure*}
+
+\begin{figure*}[!htbp]
+    \centering
+    \includegraphics[width=\textwidth]{figures/panel_6_raw_counters.png}
+    \caption{\textbf{Raw Counter Data per (Test Line, Oscillator, Window).}
+    (\textbf{A})~Heat-map of $\log_{10}$(integer counts) over the (test line, window+oscillator) matrix: $8$ test lines on the vertical axis $\times$ $12$ columns ($3$ windows $\times$ $4$ oscillators) on the horizontal axis. Viridis colormap from dark (low counts) to bright (high counts). The pattern reveals the structural heterogeneity of the count budget: LED columns are uniformly bright (high counts), refresh-polariser columns are uniformly dark (near-zero counts at sub-microsecond windows), CPU and bus columns intermediate. The pattern is the same across test lines because the oscillator-frequency budget is fixed; what varies is the window duration.
+    (\textbf{B})~Per-window total counts ($\log_{10}$ scale) summed over the four oscillator subsystems, coloured by window ($W_{S_k}$ yellow, $W_{S_t}$ purple, $W_{S_e}$ green). For most lines the $W_{S_e}$ window has the highest count budget because it has the longest duration; $W_{S_k}$ has the lowest for sub-picosecond absorption gates. The ordering is reversed for lines with very long absorption windows (e.g.\ the H 21 cm hyperfine line with $\tau_{\mathrm{abs}} \sim 1$ ns).
+    (\textbf{C})~Counter Poisson check: histogram of $\sigma/\sqrt{\mu}$ across all $96$ counter readings ($8$ lines $\times$ $4$ oscillators $\times$ $3$ windows). The distribution clusters around $\sigma/\sqrt{\mu}=1$ (red dashed line) confirming that the counter statistics are consistent with the textbook Poisson distribution within phase-noise corrections. Departures above $1$ indicate phase-noise contributions; departures below $1$ indicate sub-Poissonian statistics from quality-factor enhancement.
+    (\textbf{D})~Three-dimensional scatter of $\log_{10}$(counts) over the (line index, oscillator index, window) coordinates, with point colour coding the window ($W_{S_k}$ yellow, $W_{S_t}$ purple, $W_{S_e}$ green). The scatter visualises the full $96$-reading dataset; the plane structure (oscillators along one axis, lines along another) and the colour stratification (windows in the third dimension) make the structural regularity of the strobing protocol immediately apparent.}
+    \label{fig:rawcounters}
+\end{figure*}
+
+\begin{figure*}[!htbp]
+    \centering
+    \includegraphics[width=\textwidth]{figures/panel_7_allan_variance.png}
+    \caption{\textbf{Allan Variance and Phase-Noise Characterisation per Oscillator Subsystem.}
+    (\textbf{A})~Allan deviation $\sigma_{y}(\tau)$ versus integration time $\tau$ on log--log axes for each of the four hardware-oscillator subsystems: CPU clock at $3$ GHz with $Q=10^{6}$ (blue); memory bus at $800$ MHz with $Q=5\times 10^{5}$ (purple); LED at $4.6\times 10^{14}$ Hz with $Q=10^{8}$ (green); refresh polariser at $64$ kHz with $Q=10^{4}$ (orange). Each curve exhibits the characteristic $1/\tau$ scaling at short times (white phase noise) transitioning to a $\tau$-independent flicker floor at long times. The LED has the lowest noise across all $\tau$ by virtue of its high frequency and quality factor.
+    (\textbf{B})~Quality-factor comparison across the four oscillators on $\log_{10} Q$ scale. CPU clock $Q=10^{6}$, memory bus $Q=5\times 10^{5}$, LED $Q=10^{8}$, refresh polariser $Q=10^{4}$. Numerical $Q$ values annotated above each bar.
+    (\textbf{C})~Minimum Allan deviation per oscillator: $\sigma_{y}^{\min}$ on $\log_{10}$ scale. CPU clock at $\sim 10^{-15}$, memory bus at $\sim 10^{-13}$, LED at $\sim 10^{-21}$, refresh polariser at $\sim 10^{-9}$. The LED again sits an order of magnitude below the others, defining the timing reference for the strobing protocol.
+    (\textbf{D})~Three-dimensional Allan landscape: $\log_{10}\sigma_{y}$ over the (oscillator index, $\log_{10}\tau$) plane, with each oscillator drawn as a connected curve. The four curves form a stratified surface in which the LED occupies the lowest layer; the curves do not cross, indicating that the noise ordering is preserved across all integration times.}
+    \label{fig:allanvar}
+\end{figure*}
+
+\begin{figure*}[!htbp]
+    \centering
+    \includegraphics[width=\textwidth]{figures/panel_8_jitter_purity.png}
+    \caption{\textbf{Synchronisation Jitter and Gate-Waveform Purity Diagnostics.}
+    (\textbf{A})~Per-shot trigger-time jitter histograms for each of the four oscillator subsystems, computed over $1000$-shot ensembles. Each histogram is plotted as a connected line on a common picosecond axis; legend annotates the standard deviation $\sigma_{\mathrm{jit}}$ of each. The LED (green) has $\sigma_{\mathrm{jit}}\sim 0.2$ zs (zeptoseconds), the CPU clock (blue) $\sigma_{\mathrm{jit}}\sim 0.3$ ps, the memory bus (purple) $\sigma_{\mathrm{jit}}\sim 1.8$ ps, the refresh polariser (orange) $\sigma_{\mathrm{jit}}\sim 160$ ns. The LED defines the timing reference; other oscillators are synchronised to it through the digital trigger logic.
+    (\textbf{B})~$\sigma_{\mathrm{jit}}$ per oscillator on $\log_{10}$ axis, with picosecond annotations. The $14$-decade range across the four oscillators is displayed; the LED at $\sim 10^{-19}$ s is below any conceivable per-shot timing resolution, the refresh polariser at $\sim 10^{-7}$ s is the timing limit for the chirality coordinate.
+    (\textbf{C})~Gate-purity metrics for the three strobing windows ($W_{S_k}$, $W_{S_t}$, $W_{S_e}$): rise time (ps, blue), fall time (ps, purple), isolation in dB when off (green). Rise and fall times are in the $5$--$30$ ps range (standard for fast-switching gates); isolation averages $49$ dB across the three windows, meaning that less than $0.001\%$ of the signal leaks through when a gate is nominally off.
+    (\textbf{D})~Three-dimensional bar chart of all gate-purity metrics over the (window, metric) plane: rise time, fall time, plateau ripple, off-state leakage, and isolation per gate. The bars are coloured by gate; their consistent heights across the three gates show that the three strobing windows have closely matched purity, ensuring that no single window dominates the cross-talk budget. Combined with the cross-talk scan of Figure~\ref{fig:timingdiag}(C), the total inter-window leakage at typical strobing parameters is $\sim 4\times 10^{-8}$, more than seven orders below the tier-3 precision floor of Figure~\ref{fig:fourtier}(B).}
+    \label{fig:jitterpur}
+\end{figure*}

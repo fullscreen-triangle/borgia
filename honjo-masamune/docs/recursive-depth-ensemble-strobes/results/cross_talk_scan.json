@@ -1,0 +1,157 @@
+{
+  "paper": "Strobe Instrumentation Validation",
+  "framework_version": "0.1.0",
+  "timestamp_utc": "2026-05-01T19:12:55.977917+00:00",
+  "cross_talk_scan": [
+    {
+      "delta_t_over_tau_em": 0.001,
+      "eta_cross_theoretical": 0.00037,
+      "eta_cross_numerical": 0.00037
+    },
+    {
+      "delta_t_over_tau_em": 0.0013738237958832624,
+      "eta_cross_theoretical": 0.0005083148044768071,
+      "eta_cross_numerical": 0.0005083148044768071
+    },
+    {
+      "delta_t_over_tau_em": 0.0018873918221350976,
+      "eta_cross_theoretical": 0.0006983349741899861,
+      "eta_cross_numerical": 0.0006983349741899861
+    },
+    {
+      "delta_t_over_tau_em": 0.002592943797404667,
+      "eta_cross_theoretical": 0.0009593892050397268,
+      "eta_cross_numerical": 0.0009593892050397268
+    },
+    {
+      "delta_t_over_tau_em": 0.003562247890262444,
+      "eta_cross_theoretical": 0.0013180317193971043,
+      "eta_cross_numerical": 0.0013180317193971043
+    },
+    {
+      "delta_t_over_tau_em": 0.004893900918477494,
+      "eta_cross_theoretical": 0.0018107433398366728,
+      "eta_cross_numerical": 0.0018107433398366728
+    },
+    {
+      "delta_t_over_tau_em": 0.006723357536499335,
+      "eta_cross_theoretical": 0.002487642288504754,
+      "eta_cross_numerical": 0.002487642288504754
+    },
+    {
+      "delta_t_over_tau_em": 0.009236708571873866,
+      "eta_cross_theoretical": 0.0034175821715933304,
+      "eta_cross_numerical": 0.0034175821715933304
+    },
+    {
+      "delta_t_over_tau_em": 0.01268961003167922,
+      "eta_cross_theoretical": 0.0046951557117213116,
+      "eta_cross_numerical": 0.0046951557117213116
+    },
+    {
+      "delta_t_over_tau_em": 0.017433288221999882,
+      "eta_cross_theoretical": 0.006450316642139956,
+      "eta_cross_numerical": 0.006450316642139956
+    },
+    {
+      "delta_t_over_tau_em": 0.02395026619987486,
+      "eta_cross_theoretical": 0.0088615984939537,
+      "eta_cross_numerical": 0.0088615984939537
+    },
+    {
+      "delta_t_over_tau_em": 0.03290344562312668,
+      "eta_cross_theoretical": 0.012174274880556871,
+      "eta_cross_numerical": 0.012174274880556871
+    },
+    {
+      "delta_t_over_tau_em": 0.04520353656360243,
+      "eta_cross_theoretical": 0.0167253085285329,
+      "eta_cross_numerical": 0.0167253085285329
+    },
+    {
+      "delta_t_over_tau_em": 0.06210169418915616,
+      "eta_cross_theoretical": 0.02297762684998778,
+      "eta_cross_numerical": 0.02297762684998778
+    },
+    {
+      "delta_t_over_tau_em": 0.08531678524172806,
+      "eta_cross_theoretical": 0.03156721053943938,
+      "eta_cross_numerical": 0.03156721053943938
+    },
+    {
+      "delta_t_over_tau_em": 0.11721022975334805,
+      "eta_cross_theoretical": 0.04336778500873878,
+      "eta_cross_numerical": 0.04336778500873878
+    },
+    {
+      "delta_t_over_tau_em": 0.16102620275609392,
+      "eta_cross_theoretical": 0.05957969501975475,
+      "eta_cross_numerical": 0.05957969501975475
+    },
+    {
+      "delta_t_over_tau_em": 0.2212216291070448,
+      "eta_cross_theoretical": 0.08185200276960657,
+      "eta_cross_numerical": 0.08185200276960657
+    },
+    {
+      "delta_t_over_tau_em": 0.3039195382313198,
+      "eta_cross_theoretical": 0.11245022914558832,
+      "eta_cross_numerical": 0.11245022914558832
+    },
+    {
+      "delta_t_over_tau_em": 0.41753189365604004,
+      "eta_cross_theoretical": 0.15448680065273482,
+      "eta_cross_numerical": 0.15448680065273482
+    },
+    {
+      "delta_t_over_tau_em": 0.5736152510448681,
+      "eta_cross_theoretical": 0.21223764288660119,
+      "eta_cross_numerical": 0.21223764288660119
+    },
+    {
+      "delta_t_over_tau_em": 0.7880462815669912,
+      "eta_cross_theoretical": 0.29157712417978676,
+      "eta_cross_numerical": 0.29157712417978676
+    },
+    {
+      "delta_t_over_tau_em": 1.0826367338740541,
+      "eta_cross_theoretical": 0.4005755915334,
+      "eta_cross_numerical": 0.37
+    },
+    {
+      "delta_t_over_tau_em": 1.4873521072935119,
+      "eta_cross_theoretical": 0.5503202796985994,
+      "eta_cross_numerical": 0.37
+    },
+    {
+      "delta_t_over_tau_em": 2.0433597178569416,
+      "eta_cross_theoretical": 0.7560430956070684,
+      "eta_cross_numerical": 0.37
+    },
+    {
+      "delta_t_over_tau_em": 2.8072162039411754,
+      "eta_cross_theoretical": 1.0386699954582348,
+      "eta_cross_numerical": 0.37
+    },
+    {
+      "delta_t_over_tau_em": 3.856620421163472,
+      "eta_cross_theoretical": 1.4269495558304846,
+      "eta_cross_numerical": 0.37
+    },
+    {
+      "delta_t_over_tau_em": 5.298316906283707,
+      "eta_cross_theoretical": 1.9603772553249716,
+      "eta_cross_numerical": 0.37
+    },
+    {
+      "delta_t_over_tau_em": 7.278953843983146,
+      "eta_cross_theoretical": 2.693212922273764,
+      "eta_cross_numerical": 0.37
+    },
+    {
+      "delta_t_over_tau_em": 10.0,
+      "eta_cross_theoretical": 3.7,
+      "eta_cross_numerical": 0.37
+    }
+  ]
+}

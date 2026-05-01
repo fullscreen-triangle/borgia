@@ -189,10 +189,7 @@ Thumbs.db
 *.swo
 
 # Project specific
-/data/
 /models/
-/experiments/
-/results/
 /logs/
 *.h5
 *.pkl

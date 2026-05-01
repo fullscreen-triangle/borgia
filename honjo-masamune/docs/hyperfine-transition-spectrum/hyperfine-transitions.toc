@@ -1,43 +1,58 @@
-\contentsline {part}{Part 0 --- Method and Notation}{3}{part*.3}%
-\contentsline {section}{\numberline {1}Goal and Strategy}{3}{section.1}%
-\contentsline {section}{\numberline {2}The Two Derivation Routes}{3}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Established Method}{3}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Virtual Instrument Method}{3}{subsection.2.2}%
-\contentsline {paragraph}{Multi-Modal Virtual Spectrometer (MMVS)}{3}{section*.4}%
-\contentsline {paragraph}{Harmonic Molecular Resonator (HMR)}{3}{section*.5}%
-\contentsline {paragraph}{Spectral Hologram (SMSH)}{3}{section*.6}%
-\contentsline {subsection}{\numberline {2.3}Side-by-Side Template}{3}{subsection.2.3}%
-\contentsline {section}{\numberline {3}Reference Data Sources}{4}{section.3}%
-\contentsline {section}{\numberline {4}Notation}{4}{section.4}%
-\contentsline {part}{Part I --- The Hydrogen Atom}{5}{part*.7}%
-\contentsline {section}{\numberline {5}Lyman Series (UV)}{5}{section.5}%
-\contentsline {section}{\numberline {6}Balmer Series (Visible)}{5}{section.6}%
-\contentsline {section}{\numberline {7}Paschen, Brackett, and Pfund Series}{5}{section.7}%
-\contentsline {section}{\numberline {8}Hyperfine 21 cm Line}{6}{section.8}%
-\contentsline {section}{\numberline {9}Photoelectron Spectrum}{6}{section.9}%
-\contentsline {section}{\numberline {10}Fine Structure}{6}{section.10}%
-\contentsline {section}{\numberline {11}Composite Hydrogen Spectrum}{6}{section.11}%
-\contentsline {part}{Part II --- Molecular Hydrogen H_2}{8}{part*.9}%
-\contentsline {section}{\numberline {12}Vibrational Fundamental and Overtones}{8}{section.12}%
-\contentsline {section}{\numberline {13}Pure Rotational Spectrum}{8}{section.13}%
-\contentsline {section}{\numberline {14}Ro-vibrational Bands}{8}{section.14}%
-\contentsline {section}{\numberline {15}Lyman and Werner Bands (UV)}{8}{section.15}%
-\contentsline {section}{\numberline {16}Raman Spectrum}{9}{section.16}%
-\contentsline {section}{\numberline {17}Mass Spectrum}{9}{section.17}%
-\contentsline {section}{\numberline {18}Composite H$_{2}$ Spectrum}{9}{section.18}%
-\contentsline {part}{Part III --- Water (H_2O)}{9}{part*.11}%
-\contentsline {section}{\numberline {19}Vibrational Fundamentals}{9}{section.19}%
-\contentsline {section}{\numberline {20}Vibrational Overtones and Combinations}{9}{section.20}%
-\contentsline {section}{\numberline {21}Pure Rotational Spectrum (Asymmetric Top)}{9}{section.21}%
-\contentsline {section}{\numberline {22}Raman Spectrum}{11}{section.22}%
-\contentsline {section}{\numberline {23}Electronic UV}{11}{section.23}%
-\contentsline {section}{\numberline {24}$^{1}$H NMR}{11}{section.24}%
-\contentsline {section}{\numberline {25}Photoelectron Spectrum}{11}{section.25}%
-\contentsline {section}{\numberline {26}Mass Spectrum}{11}{section.26}%
-\contentsline {section}{\numberline {27}Composite H$_{2}$O Spectrum}{12}{section.27}%
-\contentsline {part}{Part IV --- Discussion}{12}{part*.13}%
-\contentsline {section}{\numberline {28}Cross-Modality Validation}{12}{section.28}%
-\contentsline {section}{\numberline {29}Where the Two Routes Differ in Interpretation}{12}{section.29}%
-\contentsline {section}{\numberline {30}Reproducibility}{15}{section.30}%
-\contentsline {section}{\numberline {31}Falsification Conditions}{15}{section.31}%
-\contentsline {section}{Conclusion}{16}{section*.16}%
+\contentsline {part}{Part 0 --- Method and Notation}{4}{part*.2}%
+\contentsline {section}{\numberline {1}Goal and Strategy}{4}{section.1}%
+\contentsline {section}{\numberline {2}The Two Derivation Routes}{4}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Established Method}{4}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}The Categorical Spectrometer}{4}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Side-by-Side Template}{5}{subsection.2.3}%
+\contentsline {section}{\numberline {3}The Bounded Phase Space Axiom}{5}{section.3}%
+\contentsline {section}{\numberline {4}Reference Data Sources}{6}{section.4}%
+\contentsline {section}{\numberline {5}Notation}{6}{section.5}%
+\contentsline {part}{Part I --- Measuring the Hydrogen Atom Into Existence}{7}{part*.3}%
+\contentsline {section}{\numberline {6}Lyman Series (UV)}{7}{section.6}%
+\contentsline {section}{\numberline {7}Balmer Series (Visible)}{7}{section.7}%
+\contentsline {section}{\numberline {8}Paschen, Brackett, and Pfund Series}{8}{section.8}%
+\contentsline {section}{\numberline {9}Hyperfine 21 cm Line}{8}{section.9}%
+\contentsline {section}{\numberline {10}Photoelectron Spectrum}{9}{section.10}%
+\contentsline {section}{\numberline {11}Fine Structure}{9}{section.11}%
+\contentsline {section}{\numberline {12}Composite Hydrogen Spectrum}{9}{section.12}%
+\contentsline {part}{Part II --- Measuring Molecular Hydrogen Into Existence}{11}{part*.5}%
+\contentsline {section}{\numberline {13}Vibrational Fundamental and Overtones}{11}{section.13}%
+\contentsline {section}{\numberline {14}Pure Rotational Spectrum}{11}{section.14}%
+\contentsline {section}{\numberline {15}Ro-vibrational Bands}{11}{section.15}%
+\contentsline {section}{\numberline {16}Lyman and Werner Bands (UV)}{12}{section.16}%
+\contentsline {section}{\numberline {17}Raman Spectrum}{12}{section.17}%
+\contentsline {section}{\numberline {18}Mass Spectrum}{12}{section.18}%
+\contentsline {section}{\numberline {19}Composite H$_{2}$ Spectrum}{12}{section.19}%
+\contentsline {part}{Part III --- Measuring Water Into Existence}{14}{part*.7}%
+\contentsline {section}{\numberline {20}Vibrational Fundamentals}{14}{section.20}%
+\contentsline {section}{\numberline {21}Vibrational Overtones and Combinations}{14}{section.21}%
+\contentsline {section}{\numberline {22}Pure Rotational Spectrum (Asymmetric Top)}{14}{section.22}%
+\contentsline {section}{\numberline {23}Raman Spectrum}{15}{section.23}%
+\contentsline {section}{\numberline {24}Electronic UV}{15}{section.24}%
+\contentsline {section}{\numberline {25}$^{1}$H NMR}{15}{section.25}%
+\contentsline {section}{\numberline {26}Photoelectron Spectrum}{15}{section.26}%
+\contentsline {section}{\numberline {27}Mass Spectrum}{16}{section.27}%
+\contentsline {section}{\numberline {28}Composite H$_{2}$O Spectrum}{16}{section.28}%
+\contentsline {part}{Part IV --- Methods}{17}{part*.9}%
+\contentsline {section}{\numberline {29}Measurement Protocol Overview}{17}{section.29}%
+\contentsline {subsection}{\numberline {29.1}The ``Measured Into Existence'' Framing}{17}{subsection.29.1}%
+\contentsline {section}{\numberline {30}Foundational Derivations}{18}{section.30}%
+\contentsline {subsection}{\numberline {30.1}Energy-Shell Formula $E_{n} = -R_{\infty } hc / n^{2}$}{18}{subsection.30.1}%
+\contentsline {subsection}{\numberline {30.2}Capacity Formula $C(n) = 2n^{2}$}{18}{subsection.30.2}%
+\contentsline {subsection}{\numberline {30.3}Multi-Modal Commutation}{18}{subsection.30.3}%
+\contentsline {section}{\numberline {31}Detailed Protocol per System}{18}{section.31}%
+\contentsline {subsection}{\numberline {31.1}Hydrogen Atom}{18}{subsection.31.1}%
+\contentsline {subsection}{\numberline {31.2}Molecular Hydrogen}{19}{subsection.31.2}%
+\contentsline {subsection}{\numberline {31.3}Water}{19}{subsection.31.3}%
+\contentsline {section}{\numberline {32}Cross-Validation Tables}{19}{section.32}%
+\contentsline {section}{\numberline {33}Error Analysis}{20}{section.33}%
+\contentsline {subsection}{\numberline {33.1}Aggregate Precision}{20}{subsection.33.1}%
+\contentsline {subsection}{\numberline {33.2}Systematic vs Statistical Components}{20}{subsection.33.2}%
+\contentsline {subsection}{\numberline {33.3}Zero Adjustable Parameters}{20}{subsection.33.3}%
+\contentsline {section}{\numberline {34}Numerical Implementation}{21}{section.34}%
+\contentsline {part}{Part V --- Cross-System Discussion}{22}{part*.13}%
+\contentsline {section}{\numberline {35}Cross-Modality Validation}{22}{section.35}%
+\contentsline {section}{\numberline {36}Where the Two Routes Differ in Interpretation}{22}{section.36}%
+\contentsline {section}{\numberline {37}Reproducibility}{23}{section.37}%
+\contentsline {section}{\numberline {38}Falsification Conditions}{23}{section.38}%
+\contentsline {section}{Conclusion}{24}{section*.16}%
