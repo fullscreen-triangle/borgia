@@ -43,7 +43,10 @@
       "Bash(timeout 90 pdflatex -interaction=nonstopmode bounded-phase-space-trajectory.tex)",
       "Bash(python validate_bps_extended.py)",
       "Bash(python validate_bps_instruments.py)",
-      "Bash(python validate_bps_mmvs.py)"
+      "Bash(python validate_bps_mmvs.py)",
+      "Bash(grep -nE \"\\\\\\\\\\\\\\\\end\\\\{[a-z]+>\" \"c:/Users/kunda/Documents/bioinformatics/borgia/honjo-masamune/docs/hyperfine-transition-spectrum/hyperfine-transitions.tex\")",
+      "Bash(python validate_spectra.py)",
+      "Bash(python validate_recursive_strobes.py)"
     ]
   }
 }

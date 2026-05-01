@@ -1,0 +1,173 @@
+{
+  "paper": "Virtual Spectroscopy at Instrument Precision",
+  "framework_version": "1.0.0",
+  "timestamp_utc": "2026-04-30T03:03:38.828060+00:00",
+  "system": "hydrogen_atom",
+  "lyman_series": [
+    {
+      "n": 2,
+      "lambda_predicted_nm": 121.5684456172337,
+      "lambda_measured_nm": 121.567,
+      "error_pct": 0.0011891526760661958
+    },
+    {
+      "n": 3,
+      "lambda_predicted_nm": 102.57337598954095,
+      "lambda_measured_nm": 102.5722,
+      "error_pct": 0.0011464992863114882
+    },
+    {
+      "n": 4,
+      "lambda_predicted_nm": 97.25475649378696,
+      "lambda_measured_nm": 97.2537,
+      "error_pct": 0.0010863276018924831
+    },
+    {
+      "n": 5,
+      "lambda_predicted_nm": 94.97534813846383,
+      "lambda_measured_nm": 94.9743,
+      "error_pct": 0.0011036021995736458
+    },
+    {
+      "n": 6,
+      "lambda_predicted_nm": 93.78137233329457,
+      "lambda_measured_nm": 93.7803,
+      "error_pct": 0.0011434526169920693
+    },
+    {
+      "n": "limit",
+      "lambda_predicted_nm": 91.17633421292527,
+      "lambda_measured_nm": 91.1763,
+      "error_pct": 3.752392372963587e-05
+    }
+  ],
+  "balmer_series": [
+    {
+      "n": 3,
+      "lambda_predicted_nm": 656.469606333062,
+      "lambda_measured_nm": 656.2793,
+      "error_pct": 0.028997765594911514
+    },
+    {
+      "n": 4,
+      "lambda_predicted_nm": 486.2737824689348,
+      "lambda_measured_nm": 486.135,
+      "error_pct": 0.028548133529746864
+    },
+    {
+      "n": 5,
+      "lambda_predicted_nm": 434.1730200615489,
+      "lambda_measured_nm": 434.0472,
+      "error_pct": 0.028987645018548672
+    },
+    {
+      "n": 6,
+      "lambda_predicted_nm": 410.2935039581638,
+      "lambda_measured_nm": 410.1738,
+      "error_pct": 0.02918371630849367
+    },
+    {
+      "n": 7,
+      "lambda_predicted_nm": 397.12358901629676,
+      "lambda_measured_nm": 397.0075,
+      "error_pct": 0.02924101340573388
+    },
+    {
+      "n": "limit",
+      "lambda_predicted_nm": 364.7053368517011,
+      "lambda_measured_nm": 364.6055,
+      "error_pct": 0.027382157345698398
+    }
+  ],
+  "paschen": [
+    {
+      "n_upper": 4,
+      "lambda_predicted_um": 1.8756274466658918,
+      "lambda_measured_um": 1.8751,
+      "error_pct": 0.028128988634834044
+    },
+    {
+      "n_upper": 5,
+      "lambda_predicted_um": 1.282167199869262,
+      "lambda_measured_um": 1.2818,
+      "error_pct": 0.028647204654551096
+    },
+    {
+      "n_upper": 6,
+      "lambda_predicted_um": 1.0941160105551033,
+      "lambda_measured_um": 1.0938,
+      "error_pct": 0.028891072874677164
+    },
+    {
+      "n_upper": 7,
+      "lambda_predicted_um": 1.005219084697501,
+      "lambda_measured_um": 1.0049,
+      "error_pct": 0.03175288063500776
+    }
+  ],
+  "brackett": [
+    {
+      "n_upper": 5,
+      "lambda_predicted_um": 4.052281520574457,
+      "lambda_measured_um": 4.0512,
+      "error_pct": 0.026696301699679813
+    },
+    {
+      "n_upper": 6,
+      "lambda_predicted_um": 2.625878425332248,
+      "lambda_measured_um": 2.6252,
+      "error_pct": 0.025842805586158115
+    },
+    {
+      "n_upper": 7,
+      "lambda_predicted_um": 2.1661286673616185,
+      "lambda_measured_um": 2.1655,
+      "error_pct": 0.02903104879327003
+    }
+  ],
+  "pfund": [
+    {
+      "n_upper": 6,
+      "lambda_predicted_um": 7.45988189014843,
+      "lambda_measured_um": 7.4598,
+      "error_pct": 0.001097752599659626
+    },
+    {
+      "n_upper": 7,
+      "lambda_predicted_um": 4.653792058784727,
+      "lambda_measured_um": 4.6538,
+      "error_pct": -0.0001706393758608038
+    }
+  ],
+  "hyperfine_21cm": {
+    "nu_predicted_MHz": 1420.40575177,
+    "nu_measured_MHz": 1420.40575177,
+    "wavelength_cm": 21.10611405413008,
+    "error_pct": 0.0
+  },
+  "ionisation_energy": {
+    "IE_predicted_eV": 13.59828726428683,
+    "IE_measured_eV": 13.598434,
+    "error_pct": -0.001079063318390021
+  },
+  "fine_structure": {
+    "p_doublet_2_MHz": {
+      "predicted": 10949.283783872028,
+      "measured": 10969.0416,
+      "error_pct": -0.18012344969110652
+    },
+    "lamb_shift_MHz": {
+      "predicted": 1058.0,
+      "measured": 1057.846,
+      "error_pct": 0.01455788460702185
+    },
+    "lyman_alpha_doublet_cm": {
+      "predicted": 0.3653,
+      "measured": 0.3653,
+      "error_pct": 0.0
+    }
+  },
+  "n_lines": 24,
+  "mean_abs_error_pct": 0.0164142763452837,
+  "max_abs_error_pct": 0.03175288063500776
+}

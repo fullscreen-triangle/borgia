@@ -1,0 +1,356 @@
+{
+  "paper": "Convertible Recursive-Depth Ensemble Strobes",
+  "framework_version": "0.1.0",
+  "alpha_autocatalytic": 0.67,
+  "timestamp_utc": "2026-05-01T13:41:52.735163+00:00",
+  "per_line": [
+    {
+      "system": "H",
+      "line": "Ly-alpha",
+      "unit": "nm",
+      "measured": 121.567,
+      "tier1_established": 121.567,
+      "tier2_single_virtual": 121.567,
+      "tier3_ensemble_refined": 121.54901920346404,
+      "tier4_recursive_strobed": 121.56813443375835,
+      "err_tier1_pct": 0.0,
+      "err_tier2_pct": 0.0,
+      "err_tier3_pct": 0.014790853221640353,
+      "err_tier4_pct": 0.0009331757453522056,
+      "ensemble_count": 50,
+      "recursive_depth": 3,
+      "n_subprojections": 27,
+      "n_total_measurements": 540,
+      "mutual_exclusion_V_ME": 0.0001274073112619609,
+      "triple_convertibility": {
+        "value": 121.567,
+        "category_index": 75,
+        "partition": [
+          25,
+          8,
+          42
+        ],
+        "round_trip_consistency": true
+      }
+    },
+    {
+      "system": "H",
+      "line": "H-alpha",
+      "unit": "nm",
+      "measured": 656.2793,
+      "tier1_established": 656.279,
+      "tier2_single_virtual": 656.279,
+      "tier3_ensemble_refined": 656.2551663091608,
+      "tier4_recursive_strobed": 656.3131432738649,
+      "err_tier1_pct": 4.571224477724357e-05,
+      "err_tier2_pct": 4.571224477724357e-05,
+      "err_tier3_pct": 0.0036773506095988924,
+      "err_tier4_pct": 0.005156840062579758,
+      "ensemble_count": 50,
+      "recursive_depth": 3,
+      "n_subprojections": 27,
+      "n_total_measurements": 540,
+      "mutual_exclusion_V_ME": 0.00011276177884307855,
+      "triple_convertibility": {
+        "value": 656.2793,
+        "category_index": 14,
+        "partition": [
+          4,
+          2,
+          8
+        ],
+        "round_trip_consistency": true
+      }
+    },
+    {
+      "system": "H",
+      "line": "Hyperfine 21cm",
+      "unit": "MHz",
+      "measured": 1420.40575177,
+      "tier1_established": 1420.40575,
+      "tier2_single_virtual": 1420.40575,
+      "tier3_ensemble_refined": 1420.5308325093904,
+      "tier4_recursive_strobed": 1420.3860607506108,
+      "err_tier1_pct": 1.2461229133648935e-07,
+      "err_tier2_pct": 1.2461229133648935e-07,
+      "err_tier3_pct": 0.008805986545356883,
+      "err_tier4_pct": 0.001386295385295286,
+      "ensemble_count": 50,
+      "recursive_depth": 3,
+      "n_subprojections": 27,
+      "n_total_measurements": 540,
+      "mutual_exclusion_V_ME": 0.0001368389022636686,
+      "triple_convertibility": {
+        "value": 1420.40575177,
+        "category_index": 1000,
+        "partition": [
+          333,
+          111,
+          556
+        ],
+        "round_trip_consistency": true
+      }
+    },
+    {
+      "system": "H",
+      "line": "Lamb shift",
+      "unit": "MHz",
+      "measured": 1057.846,
+      "tier1_established": 1058.0,
+      "tier2_single_virtual": 1058.0,
+      "tier3_ensemble_refined": 1057.6897285581015,
+      "tier4_recursive_strobed": 1057.8541356299413,
+      "err_tier1_pct": 0.01455788460702185,
+      "err_tier2_pct": 0.01455788460702185,
+      "err_tier3_pct": 0.014772607912543523,
+      "err_tier4_pct": 0.0007690750772142015,
+      "ensemble_count": 50,
+      "recursive_depth": 3,
+      "n_subprojections": 27,
+      "n_total_measurements": 540,
+      "mutual_exclusion_V_ME": 0.00010266654344404195,
+      "triple_convertibility": {
+        "value": 1057.846,
+        "category_index": 745,
+        "partition": [
+          248,
+          82,
+          415
+        ],
+        "round_trip_consistency": true
+      }
+    },
+    {
+      "system": "H2",
+      "line": "v=0->1 fundamental",
+      "unit": "cm-1",
+      "measured": 4161.166,
+      "tier1_established": 4161.0,
+      "tier2_single_virtual": 4161.0,
+      "tier3_ensemble_refined": 4160.830588305694,
+      "tier4_recursive_strobed": 4161.256031318869,
+      "err_tier1_pct": 0.0039892664700270876,
+      "err_tier2_pct": 0.0039892664700270876,
+      "err_tier3_pct": 0.00806052184186976,
+      "err_tier4_pct": 0.0021636079615321435,
+      "ensemble_count": 50,
+      "recursive_depth": 3,
+      "n_subprojections": 27,
+      "n_total_measurements": 540,
+      "mutual_exclusion_V_ME": 0.00014020818639338712,
+      "triple_convertibility": {
+        "value": 4161.166,
+        "category_index": 42,
+        "partition": [
+          14,
+          4,
+          24
+        ],
+        "round_trip_consistency": true
+      }
+    },
+    {
+      "system": "H2",
+      "line": "v=0->4 overtone",
+      "unit": "cm-1",
+      "measured": 15250.327,
+      "tier1_established": 15225.0,
+      "tier2_single_virtual": 15225.0,
+      "tier3_ensemble_refined": 15250.550618762802,
+      "tier4_recursive_strobed": 15249.636176726484,
+      "err_tier1_pct": 0.1660751274382465,
+      "err_tier2_pct": 0.1660751274382465,
+      "err_tier3_pct": 0.0014663211011953317,
+      "err_tier4_pct": 0.004529891546030321,
+      "ensemble_count": 50,
+      "recursive_depth": 3,
+      "n_subprojections": 27,
+      "n_total_measurements": 540,
+      "mutual_exclusion_V_ME": 0.00013547371270347994,
+      "triple_convertibility": {
+        "value": 15250.327,
+        "category_index": 153,
+        "partition": [
+          51,
+          17,
+          85
+        ],
+        "round_trip_consistency": true
+      }
+    },
+    {
+      "system": "H2",
+      "line": "Raman Q(0)",
+      "unit": "cm-1",
+      "measured": 4155.25,
+      "tier1_established": 4161.166,
+      "tier2_single_virtual": 4161.166,
+      "tier3_ensemble_refined": 4155.245514518409,
+      "tier4_recursive_strobed": 4155.202995156419,
+      "err_tier1_pct": 0.1423741050478351,
+      "err_tier2_pct": 0.1423741050478351,
+      "err_tier3_pct": 0.00010794733386832856,
+      "err_tier4_pct": 0.001131215777171232,
+      "ensemble_count": 50,
+      "recursive_depth": 3,
+      "n_subprojections": 27,
+      "n_total_measurements": 540,
+      "mutual_exclusion_V_ME": 0.0001148267353796199,
+      "triple_convertibility": {
+        "value": 4155.25,
+        "category_index": 42,
+        "partition": [
+          14,
+          4,
+          24
+        ],
+        "round_trip_consistency": true
+      }
+    },
+    {
+      "system": "H2",
+      "line": "Pure rot S(0)",
+      "unit": "cm-1",
+      "measured": 354.39,
+      "tier1_established": 354.4,
+      "tier2_single_virtual": 354.4,
+      "tier3_ensemble_refined": 354.3812592536815,
+      "tier4_recursive_strobed": 354.3563967224429,
+      "err_tier1_pct": 0.0028217500493780594,
+      "err_tier2_pct": 0.0028217500493780594,
+      "err_tier3_pct": 0.0024664201355835465,
+      "err_tier4_pct": 0.009482005010599323,
+      "ensemble_count": 50,
+      "recursive_depth": 3,
+      "n_subprojections": 27,
+      "n_total_measurements": 540,
+      "mutual_exclusion_V_ME": 0.0001476049301374116,
+      "triple_convertibility": {
+        "value": 354.39,
+        "category_index": 4,
+        "partition": [
+          1,
+          0,
+          3
+        ],
+        "round_trip_consistency": true
+      }
+    },
+    {
+      "system": "H2O",
+      "line": "nu1 sym str",
+      "unit": "cm-1",
+      "measured": 3657.05,
+      "tier1_established": 3657.05,
+      "tier2_single_virtual": 3657.05,
+      "tier3_ensemble_refined": 3657.0610446274195,
+      "tier4_recursive_strobed": 3656.9165412853467,
+      "err_tier1_pct": 0.0,
+      "err_tier2_pct": 0.0,
+      "err_tier3_pct": 0.00030200919919945473,
+      "err_tier4_pct": 0.003649354388193849,
+      "ensemble_count": 50,
+      "recursive_depth": 3,
+      "n_subprojections": 27,
+      "n_total_measurements": 540,
+      "mutual_exclusion_V_ME": 9.88219632242005e-05,
+      "triple_convertibility": {
+        "value": 3657.05,
+        "category_index": 37,
+        "partition": [
+          12,
+          4,
+          21
+        ],
+        "round_trip_consistency": true
+      }
+    },
+    {
+      "system": "H2O",
+      "line": "2*nu2 overtone",
+      "unit": "cm-1",
+      "measured": 3151.6,
+      "tier1_established": 3151.5,
+      "tier2_single_virtual": 3151.5,
+      "tier3_ensemble_refined": 3151.108679318984,
+      "tier4_recursive_strobed": 3151.4309096900984,
+      "err_tier1_pct": 0.0031729914963799038,
+      "err_tier2_pct": 0.0031729914963799038,
+      "err_tier3_pct": 0.015589563428610145,
+      "err_tier4_pct": 0.005365221154383443,
+      "ensemble_count": 50,
+      "recursive_depth": 3,
+      "n_subprojections": 27,
+      "n_total_measurements": 540,
+      "mutual_exclusion_V_ME": 0.00011109124929112546,
+      "triple_convertibility": {
+        "value": 3151.6,
+        "category_index": 32,
+        "partition": [
+          10,
+          4,
+          18
+        ],
+        "round_trip_consistency": true
+      }
+    },
+    {
+      "system": "H2O",
+      "line": "X->A UV",
+      "unit": "nm",
+      "measured": 166.5,
+      "tier1_established": 167.0,
+      "tier2_single_virtual": 167.0,
+      "tier3_ensemble_refined": 166.49266924454415,
+      "tier4_recursive_strobed": 166.50760418426916,
+      "err_tier1_pct": 0.3003003003003003,
+      "err_tier2_pct": 0.3003003003003003,
+      "err_tier3_pct": 0.004402856129642001,
+      "err_tier4_pct": 0.004567077639132259,
+      "ensemble_count": 50,
+      "recursive_depth": 3,
+      "n_subprojections": 27,
+      "n_total_measurements": 540,
+      "mutual_exclusion_V_ME": 0.00011663352241699988,
+      "triple_convertibility": {
+        "value": 166.5,
+        "category_index": 55,
+        "partition": [
+          18,
+          6,
+          31
+        ],
+        "round_trip_consistency": true
+      }
+    },
+    {
+      "system": "H2O",
+      "line": "1H NMR shift",
+      "unit": "ppm",
+      "measured": 4.79,
+      "tier1_established": 4.8,
+      "tier2_single_virtual": 4.8,
+      "tier3_ensemble_refined": 4.790174230710441,
+      "tier4_recursive_strobed": 4.790010899047871,
+      "err_tier1_pct": 0.2087682672233776,
+      "err_tier2_pct": 0.2087682672233776,
+      "err_tier3_pct": 0.003637384351593201,
+      "err_tier4_pct": 0.000227537533848156,
+      "ensemble_count": 50,
+      "recursive_depth": 3,
+      "n_subprojections": 27,
+      "n_total_measurements": 540,
+      "mutual_exclusion_V_ME": 0.00016440142064188393,
+      "triple_convertibility": {
+        "value": 4.79,
+        "category_index": 5,
+        "partition": [
+          1,
+          1,
+          3
+        ],
+        "round_trip_consistency": true
+      }
+    }
+  ]
+}

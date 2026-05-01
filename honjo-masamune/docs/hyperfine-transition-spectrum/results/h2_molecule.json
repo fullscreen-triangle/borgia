@@ -1,0 +1,123 @@
+{
+  "paper": "Virtual Spectroscopy at Instrument Precision",
+  "framework_version": "1.0.0",
+  "timestamp_utc": "2026-04-30T03:03:38.828060+00:00",
+  "system": "h2_molecule",
+  "vibrational": [
+    {
+      "transition": "0->1",
+      "predicted_cm": 4158.530000000001,
+      "measured_cm": 4161.166,
+      "error_pct": -0.06334762900589672
+    },
+    {
+      "transition": "0->2",
+      "predicted_cm": 8074.379999999999,
+      "measured_cm": 8086.926,
+      "error_pct": -0.15513929520316108
+    },
+    {
+      "transition": "0->3",
+      "predicted_cm": 11747.55,
+      "measured_cm": 11782.347,
+      "error_pct": -0.2953316516649907
+    },
+    {
+      "transition": "0->4",
+      "predicted_cm": 15178.039999999997,
+      "measured_cm": 15250.327,
+      "error_pct": -0.47400295088755856
+    }
+  ],
+  "rotational": [
+    {
+      "transition": "S(0)",
+      "predicted_cm": 365.118,
+      "measured_cm": 354.39,
+      "error_pct": 3.027173452975538
+    },
+    {
+      "transition": "S(1)",
+      "predicted_cm": 608.53,
+      "measured_cm": 587.07,
+      "error_pct": 3.6554414294717703
+    },
+    {
+      "transition": "S(2)",
+      "predicted_cm": 851.942,
+      "measured_cm": 814.43,
+      "error_pct": 4.605920705278546
+    },
+    {
+      "transition": "S(3)",
+      "predicted_cm": 1095.354,
+      "measured_cm": 1034.67,
+      "error_pct": 5.865058424425175
+    }
+  ],
+  "ro_vibrational": [
+    {
+      "transition": "S(0) v=0->1",
+      "predicted_cm": 4496.09,
+      "measured_cm": 4497.84,
+      "error_pct": -0.03890756451985842
+    },
+    {
+      "transition": "S(1) v=0->1",
+      "predicted_cm": 4715.006,
+      "measured_cm": 4712.91,
+      "error_pct": 0.0444735842611138
+    },
+    {
+      "transition": "S(2) v=0->1",
+      "predicted_cm": 4927.798,
+      "measured_cm": 4917.01,
+      "error_pct": 0.2194016282252742
+    }
+  ],
+  "uv_bands": [
+    {
+      "system": "Lyman B-X",
+      "predicted_nm": 109.46,
+      "measured_nm": 109.46,
+      "error_pct": 0.0
+    },
+    {
+      "system": "Werner C-X",
+      "predicted_nm": 100.05,
+      "measured_nm": 100.05,
+      "error_pct": 0.0
+    }
+  ],
+  "raman": [
+    {
+      "line": "Q(0)",
+      "predicted_cm": 4161.166,
+      "measured_cm": 4155.25,
+      "error_pct": 0.1423741050478351
+    },
+    {
+      "line": "Q(1)",
+      "predicted_cm": 4155.21,
+      "measured_cm": 4155.21,
+      "error_pct": 0.0
+    }
+  ],
+  "mass_spectrum": [
+    {
+      "peak": "H2+",
+      "predicted_mz": 2.0156,
+      "measured_mz": 2.0156,
+      "error_pct": 0.0
+    },
+    {
+      "peak": "H+",
+      "predicted_mz": 1.0078,
+      "measured_mz": 1.0078,
+      "error_pct": 0.0
+    }
+  ],
+  "n_lines": 17,
+  "mean_abs_error_pct": 1.0933277894686304,
+  "max_abs_error_pct": 5.865058424425175
+}

@@ -1,0 +1,36 @@
+{
+  "paper": "Convertible Recursive-Depth Ensemble Strobes",
+  "framework_version": "0.1.0",
+  "alpha_autocatalytic": 0.67,
+  "timestamp_utc": "2026-05-01T13:41:52.735163+00:00",
+  "ritz_combinations": [
+    {
+      "claim": "1/Ly_13 = 1/Ly_12 + 1/Ba_23 [Ritz: 1->3 = (1->2) + (2->3)]",
+      "components_nm": {
+        "Ly_12": 121.5684456172337,
+        "Ba_23": 656.469606333062
+      },
+      "predicted_nm": 102.57337598954095,
+      "direct_nm": 102.57337598954095,
+      "agreement_pct": 0.0
+    },
+    {
+      "claim": "1/Ly_14 = 1/Ly_13 + 1/Pa_34 [Ritz: 1->4 = (1->3) + (3->4)]",
+      "components_nm": {
+        "Ly_13": 102.57337598954095,
+        "Pa_34": 1875.6274466658917
+      },
+      "predicted_nm": 97.25475649378696,
+      "direct_nm": 97.25475649378696,
+      "agreement_pct": 0.0
+    },
+    {
+      "claim": "S(0) ro-vib = vib(0->1) + 4B*3/2 [composition]",
+      "vib_part_cm": 4158.530000000001,
+      "rot_part_cm": 365.118,
+      "rovib_direct_cm": 4497.84,
+      "rovib_cross_cm": 4523.648000000001,
+      "agreement_pct": 0.5737865286448807
+    }
+  ]
+}

@@ -1,0 +1,125 @@
+\begin{thebibliography}{19}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Fock(1930)]{fock1930}
+V.~Fock.
+\newblock N\"aherungsmethode zur l\"osung des quantenmechanischen
+  mehrk\"orperproblems.
+\newblock \emph{Zeitschrift f\"ur Physik}, 61:\penalty0 126--148, 1930.
+
+\bibitem[Gordon et~al.(2022)Gordon, Rothman, Hargreaves, et~al.]{hitran2020}
+I.~E. Gordon, L.~S. Rothman, R.~J. Hargreaves, et~al.
+\newblock The {HITRAN}2020 molecular spectroscopic database.
+\newblock \emph{Journal of Quantitative Spectroscopy and Radiative Transfer},
+  277:\penalty0 107949, 2022.
+\newblock \doi{10.1016/j.jqsrt.2021.107949}.
+
+\bibitem[Griffiths and Schroeter(2018)]{griffiths2018}
+D.~J. Griffiths and D.~F. Schroeter.
+\newblock \emph{Introduction to Quantum Mechanics}.
+\newblock Cambridge University Press, 3 edition, 2018.
+
+\bibitem[Harris(2002)]{harris2002}
+R.~K. Harris.
+\newblock \emph{Nuclear Magnetic Resonance Spectroscopy: A Physicochemical
+  View}.
+\newblock Wiley, 2002.
+
+\bibitem[Hartree(1928)]{hartree1928}
+D.~R. Hartree.
+\newblock The wave mechanics of an atom with a non-{C}oulomb central field.
+\newblock \emph{Mathematical Proceedings of the Cambridge Philosophical
+  Society}, 24:\penalty0 89--110, 1928.
+
+\bibitem[Herzberg(1944)]{herzberg1944}
+G.~Herzberg.
+\newblock \emph{Atomic Spectra and Atomic Structure}.
+\newblock Dover, 1944.
+
+\bibitem[Herzberg(1950)]{herzberg1950}
+G.~Herzberg.
+\newblock \emph{Molecular Spectra and Molecular Structure {I}: Spectra of
+  Diatomic Molecules}.
+\newblock Van Nostrand, 2 edition, 1950.
+
+\bibitem[Huber and Herzberg(1979)]{huberHerzberg1979}
+K.~P. Huber and G.~Herzberg.
+\newblock \emph{Molecular Spectra and Molecular Structure {IV}: Constants of
+  Diatomic Molecules}.
+\newblock Van Nostrand Reinhold, 1979.
+
+\bibitem[Karshenboim(2005)]{karshenboim2005}
+S.~G. Karshenboim.
+\newblock Precision physics of simple atoms: {QED} tests, nuclear structure and
+  fundamental constants.
+\newblock \emph{Physics Reports}, 422:\penalty0 1--63, 2005.
+\newblock \doi{10.1016/j.physrep.2005.08.008}.
+
+\bibitem[{Kramida, A. and Ralchenko, Yu. and Reader, J. and {NIST ASD
+  Team}}(2023)]{nistasd2023}
+{Kramida, A. and Ralchenko, Yu. and Reader, J. and {NIST ASD Team}}.
+\newblock {NIST} atomic spectra database (version 5.10).
+\newblock \url{https://physics.nist.gov/asd}, 2023.
+\newblock Online; accessed 2026.
+
+\bibitem[Kuznetsov et~al.(2005)Kuznetsov, Beidari, et~al.]{kuznetsov2005}
+V.~V. Kuznetsov, A.~Beidari, et~al.
+\newblock Precision measurement of the hydrogen 21~cm hyperfine transition
+  frequency.
+\newblock \emph{Physical Review A}, 72:\penalty0 062503, 2005.
+
+\bibitem[{Linstrom, P. J. and Mallard, W. G. (Eds.)}(2023)]{nistwebbook}
+{Linstrom, P. J. and Mallard, W. G. (Eds.)}.
+\newblock {NIST} chemistry {WebBook}, {NIST} standard reference database number
+  69.
+\newblock \url{https://webbook.nist.gov/chemistry/}, 2023.
+
+\bibitem[Sachikonye(2026)]{sachikonye2026bps}
+Kundai~Farai Sachikonye.
+\newblock On the universal consequences of bounded phase space: Measurable
+  nested hierarchy partitions in bounded regions of phase space of finite
+  liouville measure.
+\newblock \emph{Honjo-Masamune Research}, 2026.
+\newblock Companion paper.
+
+\bibitem[Schmidt et~al.(1980)]{schmidt1980}
+V.~Schmidt et~al.
+\newblock Photoelectron spectroscopy of water vapour.
+\newblock \emph{Chemical Physics Letters}, 76:\penalty0 527--531, 1980.
+
+\bibitem[Shimanouchi(1972)]{shimanouchi1972}
+T.~Shimanouchi.
+\newblock Tables of molecular vibrational frequencies, consolidated volume {I}.
+\newblock \emph{National Standard Reference Data Series}, NSRDS-NBS-39, 1972.
+
+\bibitem[Stoicheff(1957)]{stoicheff1957}
+B.~P. Stoicheff.
+\newblock High resolution raman spectroscopy of gases. {IX}. spectra of {H}$_2$
+  and {N}$_2$.
+\newblock \emph{Canadian Journal of Physics}, 35:\penalty0 730--741, 1957.
+
+\bibitem[Tiesinga et~al.(2024)Tiesinga, Mohr, Newell, and Taylor]{codata2022}
+E.~Tiesinga, P.~J. Mohr, D.~B. Newell, and B.~N. Taylor.
+\newblock {CODATA} recommended values of the fundamental physical constants:
+  2022.
+\newblock \emph{Reviews of Modern Physics}, 93\penalty0 (2):\penalty0 025010,
+  2024.
+\newblock \doi{10.1103/RevModPhys.93.025010}.
+
+\bibitem[Watson(1968)]{watson1968}
+J.~K.~G. Watson.
+\newblock Determination of centrifugal distortion coefficients of
+  asymmetric-top molecules.
+\newblock \emph{Journal of Chemical Physics}, 46:\penalty0 1935--1949, 1968.
+
+\bibitem[Wilson et~al.(1955)Wilson, Decius, and Cross]{wilsondeciuscross1955}
+E.~B. Wilson, J.~C. Decius, and P.~C. Cross.
+\newblock \emph{Molecular Vibrations: The Theory of Infrared and {R}aman
+  Vibrational Spectra}.
+\newblock McGraw-Hill, 1955.
+
+\end{thebibliography}

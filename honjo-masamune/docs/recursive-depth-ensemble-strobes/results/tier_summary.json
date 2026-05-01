@@ -1,0 +1,16 @@
+{
+  "paper": "Convertible Recursive-Depth Ensemble Strobes",
+  "framework_version": "0.1.0",
+  "alpha_autocatalytic": 0.67,
+  "timestamp_utc": "2026-05-01T13:41:52.735163+00:00",
+  "n_lines": 12,
+  "tier_means_abs_err_pct": {
+    "tier1": 0.07017546079080292,
+    "tier2": 0.07017546079080292,
+    "tier3": 0.006506651817558453,
+    "tier4": 0.0032801081067776808
+  },
+  "n_round_trip_pass": 12,
+  "n_lines_tested": 12,
+  "max_recursive_depth": 4
+}

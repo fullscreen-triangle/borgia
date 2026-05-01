@@ -1,0 +1,440 @@
+{
+  "paper": "Convertible Recursive-Depth Ensemble Strobes",
+  "framework_version": "0.1.0",
+  "alpha_autocatalytic": 0.67,
+  "timestamp_utc": "2026-05-01T13:41:52.735163+00:00",
+  "depth_scan": [
+    {
+      "system": "H",
+      "line": "Ly-alpha",
+      "depth_curve": [
+        {
+          "depth": 0,
+          "n_proj": 1,
+          "estimate": 121.567,
+          "error_pct": 0.0
+        },
+        {
+          "depth": 1,
+          "n_proj": 3,
+          "estimate": 121.56313061018832,
+          "error_pct": 0.003182927777825451
+        },
+        {
+          "depth": 2,
+          "n_proj": 9,
+          "estimate": 121.56194773257776,
+          "error_pct": 0.004155953031850178
+        },
+        {
+          "depth": 3,
+          "n_proj": 27,
+          "estimate": 121.5692992530138,
+          "error_pct": 0.0018913463471193885
+        },
+        {
+          "depth": 4,
+          "n_proj": 81,
+          "estimate": 121.57244915625326,
+          "error_pct": 0.004482430473124494
+        }
+      ]
+    },
+    {
+      "system": "H",
+      "line": "H-alpha",
+      "depth_curve": [
+        {
+          "depth": 0,
+          "n_proj": 1,
+          "estimate": 656.279,
+          "error_pct": 4.571224477724357e-05
+        },
+        {
+          "depth": 1,
+          "n_proj": 3,
+          "estimate": 656.316976060785,
+          "error_pct": 0.005740857708749103
+        },
+        {
+          "depth": 2,
+          "n_proj": 9,
+          "estimate": 656.2608847986967,
+          "error_pct": 0.0028060006316450005
+        },
+        {
+          "depth": 3,
+          "n_proj": 27,
+          "estimate": 656.2751073250753,
+          "error_pct": 0.0006388552746905596
+        },
+        {
+          "depth": 4,
+          "n_proj": 81,
+          "estimate": 656.2896318176976,
+          "error_pct": 0.0015743019317436267
+        }
+      ]
+    },
+    {
+      "system": "H",
+      "line": "Hyperfine 21cm",
+      "depth_curve": [
+        {
+          "depth": 0,
+          "n_proj": 1,
+          "estimate": 1420.40575,
+          "error_pct": 1.2461229133648935e-07
+        },
+        {
+          "depth": 1,
+          "n_proj": 3,
+          "estimate": 1420.380601610771,
+          "error_pct": 0.0017706320322698084
+        },
+        {
+          "depth": 2,
+          "n_proj": 9,
+          "estimate": 1420.3608388874331,
+          "error_pct": 0.003161975548954092
+        },
+        {
+          "depth": 3,
+          "n_proj": 27,
+          "estimate": 1420.4101762321486,
+          "error_pct": 0.0003114928352725801
+        },
+        {
+          "depth": 4,
+          "n_proj": 81,
+          "estimate": 1420.4277840157522,
+          "error_pct": 0.0015511233832085282
+        }
+      ]
+    },
+    {
+      "system": "H",
+      "line": "Lamb shift",
+      "depth_curve": [
+        {
+          "depth": 0,
+          "n_proj": 1,
+          "estimate": 1058.0,
+          "error_pct": 0.01455788460702185
+        },
+        {
+          "depth": 1,
+          "n_proj": 3,
+          "estimate": 1057.8837231194925,
+          "error_pct": 0.003566031302525284
+        },
+        {
+          "depth": 2,
+          "n_proj": 9,
+          "estimate": 1057.8856865649343,
+          "error_pct": 0.0037516391737833195
+        },
+        {
+          "depth": 3,
+          "n_proj": 27,
+          "estimate": 1057.7988351152055,
+          "error_pct": 0.004458577599620686
+        },
+        {
+          "depth": 4,
+          "n_proj": 81,
+          "estimate": 1057.843410066302,
+          "error_pct": 0.00024483088255671957
+        }
+      ]
+    },
+    {
+      "system": "H2",
+      "line": "v=0->1 fundamental",
+      "depth_curve": [
+        {
+          "depth": 0,
+          "n_proj": 1,
+          "estimate": 4161.0,
+          "error_pct": 0.0039892664700270876
+        },
+        {
+          "depth": 1,
+          "n_proj": 3,
+          "estimate": 4161.355307926274,
+          "error_pct": 0.004549396161403167
+        },
+        {
+          "depth": 2,
+          "n_proj": 9,
+          "estimate": 4161.352588096595,
+          "error_pct": 0.004484033960557867
+        },
+        {
+          "depth": 3,
+          "n_proj": 27,
+          "estimate": 4161.330517737896,
+          "error_pct": 0.003953645153688865
+        },
+        {
+          "depth": 4,
+          "n_proj": 81,
+          "estimate": 4161.195003286885,
+          "error_pct": 0.000696999035491482
+        }
+      ]
+    },
+    {
+      "system": "H2",
+      "line": "v=0->4 overtone",
+      "depth_curve": [
+        {
+          "depth": 0,
+          "n_proj": 1,
+          "estimate": 15225.0,
+          "error_pct": 0.1660751274382465
+        },
+        {
+          "depth": 1,
+          "n_proj": 3,
+          "estimate": 15248.948705576742,
+          "error_pct": 0.009037802423889683
+        },
+        {
+          "depth": 2,
+          "n_proj": 9,
+          "estimate": 15251.031663227013,
+          "error_pct": 0.004620643393508563
+        },
+        {
+          "depth": 3,
+          "n_proj": 27,
+          "estimate": 15250.353638396151,
+          "error_pct": 0.00017467426207720815
+        },
+        {
+          "depth": 4,
+          "n_proj": 81,
+          "estimate": 15250.227462108585,
+          "error_pct": 0.0006526934892215881
+        }
+      ]
+    },
+    {
+      "system": "H2",
+      "line": "Raman Q(0)",
+      "depth_curve": [
+        {
+          "depth": 0,
+          "n_proj": 1,
+          "estimate": 4161.166,
+          "error_pct": 0.1423741050478351
+        },
+        {
+          "depth": 1,
+          "n_proj": 3,
+          "estimate": 4155.366729791218,
+          "error_pct": 0.0028092122307430177
+        },
+        {
+          "depth": 2,
+          "n_proj": 9,
+          "estimate": 4155.20129434479,
+          "error_pct": 0.0011721474089439177
+        },
+        {
+          "depth": 3,
+          "n_proj": 27,
+          "estimate": 4155.315058280679,
+          "error_pct": 0.0015656887234052205
+        },
+        {
+          "depth": 4,
+          "n_proj": 81,
+          "estimate": 4155.026700856422,
+          "error_pct": 0.005373903942665441
+        }
+      ]
+    },
+    {
+      "system": "H2",
+      "line": "Pure rot S(0)",
+      "depth_curve": [
+        {
+          "depth": 0,
+          "n_proj": 1,
+          "estimate": 354.4,
+          "error_pct": 0.0028217500493780594
+        },
+        {
+          "depth": 1,
+          "n_proj": 3,
+          "estimate": 354.3088311027475,
+          "error_pct": 0.022903833983040214
+        },
+        {
+          "depth": 2,
+          "n_proj": 9,
+          "estimate": 354.4176791111576,
+          "error_pct": 0.007810353327583862
+        },
+        {
+          "depth": 3,
+          "n_proj": 27,
+          "estimate": 354.39946094615107,
+          "error_pct": 0.00266964252689973
+        },
+        {
+          "depth": 4,
+          "n_proj": 81,
+          "estimate": 354.3825019390221,
+          "error_pct": 0.0021157653934553225
+        }
+      ]
+    },
+    {
+      "system": "H2O",
+      "line": "nu1 sym str",
+      "depth_curve": [
+        {
+          "depth": 0,
+          "n_proj": 1,
+          "estimate": 3657.05,
+          "error_pct": 0.0
+        },
+        {
+          "depth": 1,
+          "n_proj": 3,
+          "estimate": 3657.4221520938836,
+          "error_pct": 0.010176292199543748
+        },
+        {
+          "depth": 2,
+          "n_proj": 9,
+          "estimate": 3657.2971714134633,
+          "error_pct": 0.006758764946147657
+        },
+        {
+          "depth": 3,
+          "n_proj": 27,
+          "estimate": 3657.0119299203443,
+          "error_pct": 0.001041005172362458
+        },
+        {
+          "depth": 4,
+          "n_proj": 81,
+          "estimate": 3656.9372572228667,
+          "error_pct": 0.003082888588711184
+        }
+      ]
+    },
+    {
+      "system": "H2O",
+      "line": "2*nu2 overtone",
+      "depth_curve": [
+        {
+          "depth": 0,
+          "n_proj": 1,
+          "estimate": 3151.5,
+          "error_pct": 0.0031729914963799038
+        },
+        {
+          "depth": 1,
+          "n_proj": 3,
+          "estimate": 3151.059487999678,
+          "error_pct": 0.017150399807145462
+        },
+        {
+          "depth": 2,
+          "n_proj": 9,
+          "estimate": 3151.4037623180047,
+          "error_pct": 0.0062266049624054905
+        },
+        {
+          "depth": 3,
+          "n_proj": 27,
+          "estimate": 3151.539190324312,
+          "error_pct": 0.0019294858385511648
+        },
+        {
+          "depth": 4,
+          "n_proj": 81,
+          "estimate": 3151.6250616608427,
+          "error_pct": 0.0007952043673932697
+        }
+      ]
+    },
+    {
+      "system": "H2O",
+      "line": "X->A UV",
+      "depth_curve": [
+        {
+          "depth": 0,
+          "n_proj": 1,
+          "estimate": 167.0,
+          "error_pct": 0.3003003003003003
+        },
+        {
+          "depth": 1,
+          "n_proj": 3,
+          "estimate": 166.50855641890064,
+          "error_pct": 0.005138990330714158
+        },
+        {
+          "depth": 2,
+          "n_proj": 9,
+          "estimate": 166.51212896787743,
+          "error_pct": 0.007284665391850055
+        },
+        {
+          "depth": 3,
+          "n_proj": 27,
+          "estimate": 166.49883249459455,
+          "error_pct": 0.0007012044477164294
+        },
+        {
+          "depth": 4,
+          "n_proj": 81,
+          "estimate": 166.50275111124873,
+          "error_pct": 0.0016523190683048116
+        }
+      ]
+    },
+    {
+      "system": "H2O",
+      "line": "1H NMR shift",
+      "depth_curve": [
+        {
+          "depth": 0,
+          "n_proj": 1,
+          "estimate": 4.8,
+          "error_pct": 0.2087682672233776
+        },
+        {
+          "depth": 1,
+          "n_proj": 3,
+          "estimate": 4.7906189002714195,
+          "error_pct": 0.01292067372483132
+        },
+        {
+          "depth": 2,
+          "n_proj": 9,
+          "estimate": 4.790120813115315,
+          "error_pct": 0.0025221944742073715
+        },
+        {
+          "depth": 3,
+          "n_proj": 27,
+          "estimate": 4.789891720487999,
+          "error_pct": 0.002260532609626244
+        },
+        {
+          "depth": 4,
+          "n_proj": 81,
+          "estimate": 4.789785447334504,
+          "error_pct": 0.004479178820379805
+        }
+      ]
+    }
+  ]
+}
