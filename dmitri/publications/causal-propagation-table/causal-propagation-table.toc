@@ -1,0 +1,44 @@
+\contentsline {part}{I\hspace {1em}Foundations}{2}{part.1}%
+\contentsline {section}{\numberline {1}Introduction}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}The question and the method}{2}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}What the paper builds}{2}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}The single fact}{2}{subsection.1.3}%
+\contentsline {section}{\numberline {2}The contact graph}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Graphs, cuts, and the medium}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Separation cost}{3}{subsection.2.2}%
+\contentsline {section}{\numberline {3}The floor, derived}{3}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Non-completability}{3}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Floor from non-completability}{4}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Individuation by negation}{4}{section.4}%
+\contentsline {subsection}{\numberline {4.1}No privileged vertex}{4}{subsection.4.1}%
+\contentsline {section}{\numberline {5}Identity is the invariant cut}{5}{section.5}%
+\contentsline {subsection}{\numberline {5.1}The intrinsic minimum cut}{5}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Identity is invariant and region-valued}{5}{subsection.5.2}%
+\contentsline {part}{II\hspace {1em}Propagation}{6}{part.2}%
+\contentsline {section}{\numberline {6}The residue is the next cut}{6}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Committed cuts and the record}{6}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Residue as causal propagator}{6}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Monotonicity and non-return}{6}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}The three readings of a residue}{7}{subsection.6.4}%
+\contentsline {section}{\numberline {7}Measurement and reaction are one operation}{7}{section.7}%
+\contentsline {subsection}{\numberline {7.1}The contact operation}{7}{subsection.7.1}%
+\contentsline {part}{III\hspace {1em}The Causal Propagation Table}{8}{part.3}%
+\contentsline {section}{\numberline {8}Alignment and accountability}{8}{section.8}%
+\contentsline {subsection}{\numberline {8.1}The alignment functional}{8}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Accountability}{9}{subsection.8.2}%
+\contentsline {section}{\numberline {9}Processes, propagations, and the table}{9}{section.9}%
+\contentsline {subsection}{\numberline {9.1}The process graph}{9}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Convergence and admissibility}{9}{subsection.9.2}%
+\contentsline {subsection}{\numberline {9.3}Path opacity}{10}{subsection.9.3}%
+\contentsline {subsection}{\numberline {9.4}Representation mobility}{10}{subsection.9.4}%
+\contentsline {subsection}{\numberline {9.5}The table}{11}{subsection.9.5}%
+\contentsline {section}{\numberline {10}The resting catalogue and the propagated table}{12}{section.10}%
+\contentsline {subsection}{\numberline {10.1}The resting cut}{12}{subsection.10.1}%
+\contentsline {part}{IV\hspace {1em}The Cut}{12}{part.4}%
+\contentsline {section}{\numberline {11}The one-use, self-blunting cut}{13}{section.11}%
+\contentsline {section}{\numberline {12}The master equivalence}{14}{section.12}%
+\contentsline {section}{\numberline {13}Discussion and scope}{14}{section.13}%
+\contentsline {subsection}{\numberline {13.1}What is proved, and at what level}{14}{subsection.13.1}%
+\contentsline {subsection}{\numberline {13.2}Honest limitations}{14}{subsection.13.2}%
+\contentsline {subsection}{\numberline {13.3}The picture in one statement}{15}{subsection.13.3}%
+\contentsline {section}{\numberline {14}Conclusion}{15}{section.14}%
