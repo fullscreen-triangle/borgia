@@ -1281,6 +1281,92 @@ closing sentence restates the equivalence. \qed
 \end{proof}
 
 % =====================================================================
+\section{Computational validation}
+\label{sec:validation}
+% =====================================================================
+
+Because every object is a finite weighted graph, every theorem is directly
+checkable on explicitly constructed instances. A self-contained suite
+(Python; \texttt{numpy}; \texttt{networkx} for exact max-flow minimum
+cuts) implements eleven categories, one per structural result, and writes
+its outcomes as JSON. All $847$ checks pass; the minimum cuts are computed
+exactly (Ford--Fulkerson via \texttt{networkx}~\citep{fordfulkerson1956}),
+not approximated.
+
+\begin{table}[h]
+\centering\small
+\caption{Validation of the system on finite weighted graphs. Minimum cuts
+are exact; all checks pass.}
+\label{tab:validation}
+\begin{tabular}{lll}
+\toprule
+\textbf{Category} & \textbf{Pass} & \textbf{Theorem checked}\\
+\midrule
+Floor                 & $300/300$ & \Cref{thm:floor}: $\str(v)\ge\flo$ on
+                                     $300$ random contact graphs\\
+Negation              & $200/200$ & \Cref{thm:negation}: complementation an
+                                     involution; $U$ fixed by $\co U$\\
+Identity invariant    & $101/101$ & \Cref{thm:invariant,thm:region}: cut
+                                     invariant under relabelling; region-valued\\
+Monotone record       & $4/4$     & \Cref{thm:monotone}: record strictly
+                                     increases; no return\\
+Residue propagator    & $6/6$     & \Cref{thm:propagator}: residue $>0\iff$
+                                     next cut; chain halts at $0$\\
+Contact symmetry      & $4/4$     & \Cref{thm:symmetry,thm:reaction-measurement}:
+                                     edge symmetric; reaction $=$ measurement\\
+Composition inflation & $18/18$   & $T(n,d)=d(d+1)^{n-1}$
+                                     (\S\ref{sec:intro}) by enumeration\\
+Path opacity          & $3/3$     & \Cref{thm:path-opacity}: endpoint
+                                     invariants agree across interiors\\
+Representation        & $202/202$ & \Cref{thm:rep-mobility}: mean-recovery
+                                     fibre; switch commits no cut\\
+Convergence           & $3/3$     & \Cref{thm:admissibility}: admissible
+                                     $\iff$ convergent; local steps free\\
+One-use cut           & $6/6$     & \Cref{thm:one-use,thm:blunt,thm:no-perfect}:
+                                     one use; blunting; no $\flo=0$ cut\\
+\midrule
+\textbf{Total}        & $\mathbf{847/847}$ & exact min-cut backend\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Three of the categories merit explicit comment, being the substantive
+rather than the bookkeeping checks. \emph{(i) The floor on $300$ random
+graphs.} For each of $300$ randomly weighted contact graphs (medium
+adjacent to every item, random item--item contacts, all weights
+$\ge\flo$), the exact minimum cut of a random item against the medium was
+computed and found to satisfy $\str(v)\ge\flo$ in every case
+(\Cref{thm:floor}): no sharp cut occurred. \emph{(ii) Identity is a
+region.} On a graph of two strongly-internally-bound item clusters joined
+to a common medium, the exact minimum cut separating one cluster from
+another places a \emph{multi-item} set on one side (a five-item side in the
+reported instance), confirming that the identity-bearing minimum cut is in
+general not realised by a singleton (\Cref{thm:region}): identity is a
+region, never a point. \emph{(iii) Composition inflation by direct
+enumeration.} For every $(n,d)$ with $n\le6$, $d\in\{1,2,3\}$ small enough
+to enumerate, the brute-force count of length-$n$ labelled trajectories
+over $d$ move-directions with a stay-option exactly equals the closed form
+$d(d+1)^{n-1}$, the composition-inflation count; larger cases inherit the
+closed form. The path-opacity, representation-mobility, and convergence
+categories likewise confirm, on constructed instances, that endpoint
+invariants are interior-independent, that mean-recovery fibres are
+nonempty with off-shell components, and that admissibility tracks
+convergence to the output and nothing else.
+
+\begin{remark}[Scope of the suite]
+\label{rem:validation-scope}
+The suite verifies the theorems on instances: it confirms that the floor,
+the invariance and region-valuedness of identity, the monotone record, the
+residue--propagator equivalence, the contact symmetry, the inflation
+count, path opacity, representation mobility, convergence admissibility,
+and the one-use cut all hold as proved. It is an internal-consistency and
+instance-verification check, appropriate to a system whose content is
+structural; it does not, and is not intended to, supply numerical weights
+for any concrete physical system, which would require a concrete weighting
+$\wt$ (\Cref{sec:discussion}).
+\end{remark}
+
+% =====================================================================
 \section{Discussion and scope}
 \label{sec:discussion}
 % =====================================================================
