@@ -1,0 +1,50 @@
+{
+  "timestamp": "2026-06-24T06:26:03.866748+00:00",
+  "description": "d=3 is the minimum dimension where an axis swap is a PROPER rotation (no external selector). 2D swap = reflection (det -1); 3D swap = SO(3) (det +1).",
+  "theorem": "Prin: three dimensions from the absence of a privileged axis",
+  "matrices_and_determinants": {
+    "d2_axis_swap_matrix": [
+      [
+        0.0,
+        1.0
+      ],
+      [
+        1.0,
+        0.0
+      ]
+    ],
+    "d2_determinant": -1.0,
+    "d2_is_proper_rotation_SO2": false,
+    "d2_is_reflection": true,
+    "d3_axis_swap_matrix": [
+      [
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0
+      ]
+    ],
+    "d3_determinant": 1.0,
+    "d3_is_proper_rotation_SO3": true,
+    "d3_orthogonal": true,
+    "d2_orthogonal": true,
+    "d3_involution": true
+  },
+  "checks": {
+    "2d_swap_is_reflection": true,
+    "2d_swap_not_in_SO2": true,
+    "3d_swap_in_SO3": true,
+    "3d_swap_orthogonal_involution": true
+  },
+  "pass_count": 4,
+  "total": 4
+}

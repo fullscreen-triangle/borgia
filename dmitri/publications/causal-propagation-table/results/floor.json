@@ -1,0 +1,83 @@
+{
+  "timestamp": "2026-06-24T06:32:43.756674+00:00",
+  "description": "Thm floor: separation cost sigma(v) >= beta > 0 for every item against the medium; no sharp (zero) cut.",
+  "theorem": "wt(cut) >= beta on all connected contact graphs",
+  "beta": 1.0,
+  "n_trials": 300,
+  "sample_trials": [
+    {
+      "n_items": 6,
+      "item": "v2",
+      "sep_cost": 1.689793,
+      "ge_floor": true
+    },
+    {
+      "n_items": 6,
+      "item": "v0",
+      "sep_cost": 13.870748,
+      "ge_floor": true
+    },
+    {
+      "n_items": 6,
+      "item": "v1",
+      "sep_cost": 14.991749,
+      "ge_floor": true
+    },
+    {
+      "n_items": 7,
+      "item": "v5",
+      "sep_cost": 18.976954,
+      "ge_floor": true
+    },
+    {
+      "n_items": 4,
+      "item": "v2",
+      "sep_cost": 7.781877,
+      "ge_floor": true
+    },
+    {
+      "n_items": 6,
+      "item": "v5",
+      "sep_cost": 7.763014,
+      "ge_floor": true
+    },
+    {
+      "n_items": 7,
+      "item": "v4",
+      "sep_cost": 15.299141,
+      "ge_floor": true
+    },
+    {
+      "n_items": 5,
+      "item": "v3",
+      "sep_cost": 13.016157,
+      "ge_floor": true
+    },
+    {
+      "n_items": 2,
+      "item": "v1",
+      "sep_cost": 6.298896,
+      "ge_floor": true
+    },
+    {
+      "n_items": 5,
+      "item": "v3",
+      "sep_cost": 10.046397,
+      "ge_floor": true
+    },
+    {
+      "n_items": 5,
+      "item": "v3",
+      "sep_cost": 11.045891,
+      "ge_floor": true
+    },
+    {
+      "n_items": 6,
+      "item": "v3",
+      "sep_cost": 5.126514,
+      "ge_floor": true
+    }
+  ],
+  "pass_count": 300,
+  "total": 300
+}

@@ -1,0 +1,60 @@
+{
+  "timestamp": "2026-06-24T06:26:03.862100+00:00",
+  "description": "Bond geometry = maximal angular separation (Thm geometry, grounded by Prin three-dimensions): 180/120/109.47 deg backbones; lone pairs compress.",
+  "theorem": "k interfaces -> maximal-separation config on the sphere",
+  "results": [
+    {
+      "molecule": "CO2",
+      "regions_k": 2,
+      "k_bonded": 2,
+      "k_lone": 0,
+      "ideal_symmetric_deg": 180.0,
+      "observed_deg": 180.0,
+      "deviation_deg": 0.0,
+      "symmetric_backbone_exact": true
+    },
+    {
+      "molecule": "BF3",
+      "regions_k": 3,
+      "k_bonded": 3,
+      "k_lone": 0,
+      "ideal_symmetric_deg": 120.0,
+      "observed_deg": 120.0,
+      "deviation_deg": 0.0,
+      "symmetric_backbone_exact": true
+    },
+    {
+      "molecule": "CH4",
+      "regions_k": 4,
+      "k_bonded": 4,
+      "k_lone": 0,
+      "ideal_symmetric_deg": 109.4712,
+      "observed_deg": 109.5,
+      "deviation_deg": 0.0288,
+      "symmetric_backbone_exact": true
+    },
+    {
+      "molecule": "NH3",
+      "regions_k": 4,
+      "k_bonded": 3,
+      "k_lone": 1,
+      "ideal_symmetric_deg": 109.4712,
+      "observed_deg": 107.0,
+      "deviation_deg": -2.4712,
+      "symmetric_backbone_exact": null
+    },
+    {
+      "molecule": "H2O",
+      "regions_k": 4,
+      "k_bonded": 2,
+      "k_lone": 2,
+      "ideal_symmetric_deg": 109.4712,
+      "observed_deg": 104.5,
+      "deviation_deg": -4.9712,
+      "symmetric_backbone_exact": null
+    }
+  ],
+  "symmetric_backbone_pass": 3,
+  "symmetric_backbone_total": 3,
+  "lone_pair_compression_monotone": true
+}

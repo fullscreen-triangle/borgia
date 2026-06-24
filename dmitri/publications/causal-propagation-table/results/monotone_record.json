@@ -1,0 +1,47 @@
+{
+  "timestamp": "2026-06-24T06:32:43.957412+00:00",
+  "description": "Thm monotone: committed record strictly increases; an 'undo' is a further committing cut (increments), so no process returns to a prior state.",
+  "theorem": "M strictly monotone; recurrence of config != return of state",
+  "event_log": [
+    {
+      "event": "cut",
+      "record_M": 1
+    },
+    {
+      "event": "cut",
+      "record_M": 2
+    },
+    {
+      "event": "cut",
+      "record_M": 3
+    },
+    {
+      "event": "undo",
+      "record_M": 4
+    },
+    {
+      "event": "cut",
+      "record_M": 5
+    },
+    {
+      "event": "undo",
+      "record_M": 6
+    },
+    {
+      "event": "undo",
+      "record_M": 7
+    },
+    {
+      "event": "cut",
+      "record_M": 8
+    }
+  ],
+  "checks": {
+    "record_strictly_increasing": true,
+    "undo_increments_not_decrements": true,
+    "resemblance_not_identity": true,
+    "no_return_to_prior_record": true
+  },
+  "pass_count": 4,
+  "total": 4
+}

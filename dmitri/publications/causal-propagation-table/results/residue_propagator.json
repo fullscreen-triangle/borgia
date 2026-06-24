@@ -1,0 +1,53 @@
+{
+  "timestamp": "2026-06-24T06:32:43.959619+00:00",
+  "description": "Thm propagator: residue beta_i>0 is necessary and sufficient for a distinct next cut; a process is a residue chain that halts where residue would vanish.",
+  "theorem": "residue>0 <=> next cut; chain halts if any residue=0",
+  "iff_checks": [
+    {
+      "residue": 0.0,
+      "state_changed": false,
+      "next_cut_possible": false,
+      "physically_allowed_by_floor": false,
+      "iff_holds": true
+    },
+    {
+      "residue": 0.5,
+      "state_changed": true,
+      "next_cut_possible": true,
+      "physically_allowed_by_floor": false,
+      "iff_holds": true
+    },
+    {
+      "residue": 1.0,
+      "state_changed": true,
+      "next_cut_possible": true,
+      "physically_allowed_by_floor": true,
+      "iff_holds": true
+    },
+    {
+      "residue": 2.0,
+      "state_changed": true,
+      "next_cut_possible": true,
+      "physically_allowed_by_floor": true,
+      "iff_holds": true
+    },
+    {
+      "residue": 5.0,
+      "state_changed": true,
+      "next_cut_possible": true,
+      "physically_allowed_by_floor": true,
+      "iff_holds": true
+    }
+  ],
+  "chain": [
+    1.0,
+    2.0,
+    3.0,
+    0.0,
+    5.0
+  ],
+  "chain_halt_index": 3,
+  "chain_halts_at_forbidden_zero": true,
+  "pass_count": 6,
+  "total": 6
+}

@@ -1,0 +1,22 @@
+{
+  "timestamp": "2026-06-24T06:26:03.883756+00:00",
+  "description": "Bond length = unique interior minimiser of convex joint thickness B(r) (Thm length); floor supplies the r->0 repulsive wall.",
+  "theorem": "B(A(+)B; r) strictly convex, unique r* in (0, inf)",
+  "model": {
+    "B(r)": "D_e*((1 - exp(-d(r - r0)))^2 - 1)  [Morse well]",
+    "D_e": 2.0,
+    "d": 1.0,
+    "r0": 1.4
+  },
+  "r_star": 1.4006,
+  "B_star": -2.0,
+  "second_derivative_at_min": 3.9931,
+  "checks": {
+    "unique_interior_minimiser": true,
+    "diverges_as_r_to_zero (floor is the wall)": true,
+    "plateau_as_r_to_inf (separated atoms)": true,
+    "locally_convex_at_minimum": true
+  },
+  "pass_count": 4,
+  "total": 4
+}

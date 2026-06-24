@@ -1,0 +1,120 @@
+{
+  "timestamp": "2026-06-24T06:32:43.972869+00:00",
+  "description": "Thm rep mobility: the mean-recovery fibre is nonempty and infinite (N>=2); components may be off-shell; switching commits no cut; admissibility is rep-independent (depends only on the mean).",
+  "theorem": "mean of representation = alignment; switch is free",
+  "n_trials": 200,
+  "mean_recovery_pass": 200,
+  "sample_results": [
+    {
+      "target_alignment": 0.698711,
+      "N": 3,
+      "components": [
+        4.5157,
+        0.2222,
+        -2.6418
+      ],
+      "mean": 0.698711429,
+      "mean_recovers_target": true,
+      "has_offshell_component": true
+    },
+    {
+      "target_alignment": 0.26889,
+      "N": 5,
+      "components": [
+        3.8757,
+        4.2351,
+        -4.6904,
+        1.451,
+        -3.527
+      ],
+      "mean": 0.268889607,
+      "mean_recovers_target": true,
+      "has_offshell_component": true
+    },
+    {
+      "target_alignment": 0.453002,
+      "N": 4,
+      "components": [
+        1.758,
+        1.4457,
+        -2.2818,
+        0.8901
+      ],
+      "mean": 0.453002071,
+      "mean_recovers_target": true,
+      "has_offshell_component": true
+    },
+    {
+      "target_alignment": 0.189766,
+      "N": 2,
+      "components": [
+        -0.2136,
+        0.5931
+      ],
+      "mean": 0.18976626,
+      "mean_recovers_target": true,
+      "has_offshell_component": true
+    },
+    {
+      "target_alignment": 0.04711,
+      "N": 6,
+      "components": [
+        3.098,
+        2.2383,
+        1.4363,
+        4.4189,
+        -1.9952,
+        -8.9136
+      ],
+      "mean": 0.047109921,
+      "mean_recovers_target": true,
+      "has_offshell_component": true
+    },
+    {
+      "target_alignment": 0.194343,
+      "N": 3,
+      "components": [
+        -1.8416,
+        1.8182,
+        0.6064
+      ],
+      "mean": 0.194343099,
+      "mean_recovers_target": true,
+      "has_offshell_component": true
+    },
+    {
+      "target_alignment": 0.10877,
+      "N": 6,
+      "components": [
+        1.8307,
+        4.3608,
+        3.853,
+        1.5222,
+        -0.1747,
+        -10.7396
+      ],
+      "mean": 0.108770398,
+      "mean_recovers_target": true,
+      "has_offshell_component": true
+    },
+    {
+      "target_alignment": 0.845137,
+      "N": 6,
+      "components": [
+        -2.354,
+        -0.3657,
+        -4.5025,
+        3.3942,
+        -3.9987,
+        12.8975
+      ],
+      "mean": 0.845137411,
+      "mean_recovers_target": true,
+      "has_offshell_component": true
+    }
+  ],
+  "switch_commits_no_cut": true,
+  "admissibility_representation_independent": true,
+  "pass_count": 202,
+  "total": 202
+}

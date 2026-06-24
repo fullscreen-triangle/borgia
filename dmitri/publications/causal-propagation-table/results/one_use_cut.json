@@ -1,0 +1,28 @@
+{
+  "timestamp": "2026-06-24T06:32:43.980862+00:00",
+  "description": "Thm one-use + blunt + no-perfect: a cut commits once, reduces the cutter's uncommitted capacity, increments the record; the perfect traceless repeatable cut (beta=0, record unchanged) is forbidden.",
+  "theorem": "Honjo Masamune: one-use, self-blunting; no beta=0 cut",
+  "capacity_before": [
+    "e1",
+    "e2",
+    "e3"
+  ],
+  "capacity_after": [
+    "e2",
+    "e3"
+  ],
+  "committed": [
+    "e1"
+  ],
+  "record_after": 1,
+  "checks": {
+    "one_use_capacity_reduced": true,
+    "record_incremented_by_cut": true,
+    "blunt_capacity_strictly_smaller": true,
+    "recommit_is_distinct_higher_record": true,
+    "no_perfect_cut_beta_zero_forbidden": true,
+    "no_perfect_cut_record_must_increase": true
+  },
+  "pass_count": 6,
+  "total": 6
+}

@@ -1,0 +1,71 @@
+{
+  "timestamp": "2026-06-24T06:32:43.953473+00:00",
+  "description": "Thm invariant: separation cost is isomorphism-invariant (label-independent). Thm region: the min-cut side is in general not a singleton -- identity is a region, never a point.",
+  "theorem": "min cut invariant under relabelling; cut value >= beta",
+  "invariance": {
+    "sample_trials": [
+      {
+        "item": "v1",
+        "cost_before": 9.237579,
+        "cost_after_relabel": 9.237579,
+        "invariant": true
+      },
+      {
+        "item": "v2",
+        "cost_before": 3.79203,
+        "cost_after_relabel": 3.79203,
+        "invariant": true
+      },
+      {
+        "item": "v0",
+        "cost_before": 3.708466,
+        "cost_after_relabel": 3.708466,
+        "invariant": true
+      },
+      {
+        "item": "v2",
+        "cost_before": 8.574152,
+        "cost_after_relabel": 8.574152,
+        "invariant": true
+      },
+      {
+        "item": "v1",
+        "cost_before": 1.258828,
+        "cost_after_relabel": 1.258828,
+        "invariant": true
+      },
+      {
+        "item": "v3",
+        "cost_before": 6.26584,
+        "cost_after_relabel": 6.26584,
+        "invariant": true
+      },
+      {
+        "item": "v0",
+        "cost_before": 10.248949,
+        "cost_after_relabel": 10.248949,
+        "invariant": true
+      },
+      {
+        "item": "v2",
+        "cost_before": 6.665527,
+        "cost_after_relabel": 6.665527,
+        "invariant": true
+      }
+    ],
+    "pass_count": 100,
+    "total": 100
+  },
+  "region_valued": {
+    "two_cluster_min_cut": 27.0,
+    "min_cut_side_items": [
+      "a1",
+      "a2",
+      "a3",
+      "b2",
+      "b3"
+    ],
+    "is_region_not_point": true,
+    "cheap_bridge_cut": false
+  }
+}

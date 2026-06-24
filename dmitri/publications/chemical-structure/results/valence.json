@@ -1,0 +1,137 @@
+{
+  "timestamp": "2026-06-24T06:26:03.832697+00:00",
+  "description": "Valence = min(vacancy, co-vacancy) (Thm valence) vs textbook common valence.",
+  "theorem": "valence = min(nu, Cap_v - nu); molecule stable at nu=0 all",
+  "results": [
+    {
+      "sym": "H",
+      "vacancy": 1,
+      "co_vacancy": 1,
+      "valence_derived": 1,
+      "valence_ref": 1,
+      "match": true
+    },
+    {
+      "sym": "He",
+      "vacancy": 0,
+      "co_vacancy": 2,
+      "valence_derived": 0,
+      "valence_ref": 0,
+      "match": true
+    },
+    {
+      "sym": "Li",
+      "vacancy": 7,
+      "co_vacancy": 1,
+      "valence_derived": 1,
+      "valence_ref": 1,
+      "match": true
+    },
+    {
+      "sym": "Be",
+      "vacancy": 6,
+      "co_vacancy": 2,
+      "valence_derived": 2,
+      "valence_ref": 2,
+      "match": true
+    },
+    {
+      "sym": "B",
+      "vacancy": 5,
+      "co_vacancy": 3,
+      "valence_derived": 3,
+      "valence_ref": 3,
+      "match": true
+    },
+    {
+      "sym": "C",
+      "vacancy": 4,
+      "co_vacancy": 4,
+      "valence_derived": 4,
+      "valence_ref": 4,
+      "match": true
+    },
+    {
+      "sym": "N",
+      "vacancy": 3,
+      "co_vacancy": 5,
+      "valence_derived": 3,
+      "valence_ref": 3,
+      "match": true
+    },
+    {
+      "sym": "O",
+      "vacancy": 2,
+      "co_vacancy": 6,
+      "valence_derived": 2,
+      "valence_ref": 2,
+      "match": true
+    },
+    {
+      "sym": "F",
+      "vacancy": 1,
+      "co_vacancy": 7,
+      "valence_derived": 1,
+      "valence_ref": 1,
+      "match": true
+    },
+    {
+      "sym": "Ne",
+      "vacancy": 0,
+      "co_vacancy": 8,
+      "valence_derived": 0,
+      "valence_ref": 0,
+      "match": true
+    },
+    {
+      "sym": "Na",
+      "vacancy": 7,
+      "co_vacancy": 1,
+      "valence_derived": 1,
+      "valence_ref": 1,
+      "match": true
+    },
+    {
+      "sym": "Si",
+      "vacancy": 4,
+      "co_vacancy": 4,
+      "valence_derived": 4,
+      "valence_ref": 4,
+      "match": true
+    },
+    {
+      "sym": "P",
+      "vacancy": 3,
+      "co_vacancy": 5,
+      "valence_derived": 3,
+      "valence_ref": 3,
+      "match": true
+    },
+    {
+      "sym": "S",
+      "vacancy": 2,
+      "co_vacancy": 6,
+      "valence_derived": 2,
+      "valence_ref": 2,
+      "match": true
+    },
+    {
+      "sym": "Cl",
+      "vacancy": 1,
+      "co_vacancy": 7,
+      "valence_derived": 1,
+      "valence_ref": 1,
+      "match": true
+    },
+    {
+      "sym": "Ar",
+      "vacancy": 0,
+      "co_vacancy": 8,
+      "valence_derived": 0,
+      "valence_ref": 0,
+      "match": true
+    }
+  ],
+  "pass_count": 16,
+  "total": 16
+}

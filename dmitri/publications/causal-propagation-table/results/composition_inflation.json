@@ -1,0 +1,135 @@
+{
+  "timestamp": "2026-06-24T06:32:43.964502+00:00",
+  "description": "Thm composition inflation: number of distinguishable length-n trajectories over d directions (with a 'stay' option) is d(d+1)^{n-1}, verified by direct enumeration.",
+  "theorem": "T(n,d) = d (d+1)^{n-1}",
+  "results": [
+    {
+      "n": 1,
+      "d": 1,
+      "closed_form": 1,
+      "enumerated": 1,
+      "match": true
+    },
+    {
+      "n": 1,
+      "d": 2,
+      "closed_form": 2,
+      "enumerated": 2,
+      "match": true
+    },
+    {
+      "n": 1,
+      "d": 3,
+      "closed_form": 3,
+      "enumerated": 3,
+      "match": true
+    },
+    {
+      "n": 2,
+      "d": 1,
+      "closed_form": 2,
+      "enumerated": 2,
+      "match": true
+    },
+    {
+      "n": 2,
+      "d": 2,
+      "closed_form": 6,
+      "enumerated": 6,
+      "match": true
+    },
+    {
+      "n": 2,
+      "d": 3,
+      "closed_form": 12,
+      "enumerated": 12,
+      "match": true
+    },
+    {
+      "n": 3,
+      "d": 1,
+      "closed_form": 4,
+      "enumerated": 4,
+      "match": true
+    },
+    {
+      "n": 3,
+      "d": 2,
+      "closed_form": 18,
+      "enumerated": 18,
+      "match": true
+    },
+    {
+      "n": 3,
+      "d": 3,
+      "closed_form": 48,
+      "enumerated": 48,
+      "match": true
+    },
+    {
+      "n": 4,
+      "d": 1,
+      "closed_form": 8,
+      "enumerated": 8,
+      "match": true
+    },
+    {
+      "n": 4,
+      "d": 2,
+      "closed_form": 54,
+      "enumerated": 54,
+      "match": true
+    },
+    {
+      "n": 4,
+      "d": 3,
+      "closed_form": 192,
+      "enumerated": 192,
+      "match": true
+    },
+    {
+      "n": 5,
+      "d": 1,
+      "closed_form": 16,
+      "enumerated": 16,
+      "match": true
+    },
+    {
+      "n": 5,
+      "d": 2,
+      "closed_form": 162,
+      "enumerated": 162,
+      "match": true
+    },
+    {
+      "n": 5,
+      "d": 3,
+      "closed_form": 768,
+      "enumerated": 768,
+      "match": true
+    },
+    {
+      "n": 6,
+      "d": 1,
+      "closed_form": 32,
+      "enumerated": 32,
+      "match": true
+    },
+    {
+      "n": 6,
+      "d": 2,
+      "closed_form": 486,
+      "enumerated": 486,
+      "match": true
+    },
+    {
+      "n": 6,
+      "d": 3,
+      "closed_form": 3072,
+      "enumerated": 3072,
+      "match": true
+    }
+  ],
+  "pass_count": 18,
+  "total": 18
+}

@@ -1,0 +1,143 @@
+{
+  "timestamp": "2026-06-24T06:26:03.857860+00:00",
+  "description": "Vacancy matching predicts molecular stoichiometry (Thm valence + examples): every constituent driven to nu=0 at minimum total thickness.",
+  "theorem": "stable molecule <=> all constituents closed (nu=0)",
+  "results": [
+    {
+      "molecule": "H2",
+      "central": "H",
+      "ligand": "H",
+      "nu_central": 1,
+      "nu_ligand": 1,
+      "formula_derived": [
+        2
+      ],
+      "formula_ref": [
+        2
+      ],
+      "note": "duet match",
+      "match": true
+    },
+    {
+      "molecule": "HCl",
+      "central": "Cl",
+      "ligand": "H",
+      "nu_central": 1,
+      "nu_ligand": 1,
+      "formula_derived": [
+        1,
+        1
+      ],
+      "formula_ref": [
+        1,
+        1
+      ],
+      "note": "1:1 octet/duet",
+      "match": true
+    },
+    {
+      "molecule": "NaCl",
+      "central": "Cl",
+      "ligand": "Na",
+      "nu_central": 1,
+      "nu_ligand": 7,
+      "formula_derived": [
+        1,
+        1
+      ],
+      "formula_ref": [
+        1,
+        1
+      ],
+      "note": "1:1 ionic",
+      "match": true
+    },
+    {
+      "molecule": "LiF",
+      "central": "F",
+      "ligand": "Li",
+      "nu_central": 1,
+      "nu_ligand": 7,
+      "formula_derived": [
+        1,
+        1
+      ],
+      "formula_ref": [
+        1,
+        1
+      ],
+      "note": "1:1 ionic",
+      "match": true
+    },
+    {
+      "molecule": "H2O",
+      "central": "O",
+      "ligand": "H",
+      "nu_central": 2,
+      "nu_ligand": 1,
+      "formula_derived": [
+        1,
+        2
+      ],
+      "formula_ref": [
+        1,
+        2
+      ],
+      "note": "2:1",
+      "match": true
+    },
+    {
+      "molecule": "NH3",
+      "central": "N",
+      "ligand": "H",
+      "nu_central": 3,
+      "nu_ligand": 1,
+      "formula_derived": [
+        1,
+        3
+      ],
+      "formula_ref": [
+        1,
+        3
+      ],
+      "note": "3:1",
+      "match": true
+    },
+    {
+      "molecule": "CH4",
+      "central": "C",
+      "ligand": "H",
+      "nu_central": 4,
+      "nu_ligand": 1,
+      "formula_derived": [
+        1,
+        4
+      ],
+      "formula_ref": [
+        1,
+        4
+      ],
+      "note": "4:1",
+      "match": true
+    },
+    {
+      "molecule": "CO2",
+      "central": "C",
+      "ligand": "O",
+      "nu_central": 4,
+      "nu_ligand": 2,
+      "formula_derived": [
+        1,
+        2
+      ],
+      "formula_ref": [
+        1,
+        2
+      ],
+      "note": "2 double bonds",
+      "match": true
+    }
+  ],
+  "pass_count": 8,
+  "total": 8
+}

@@ -1,0 +1,1375 @@
+{
+  "timestamp": "2026-06-24T06:26:03.842262+00:00",
+  "description": "Bond exists iff joint boundary thickness < separated (Thm bond): Delta>0 <=> bond. Reference: bond iff neither partner is a noble gas.",
+  "theorem": "A-B bonds <=> B(A(+)B) < B(A)+B(B) <=> shared vacancy > 0",
+  "model": {
+    "B0": 1.0,
+    "kappa": 1.0,
+    "phi": "phi(nu)=nu"
+  },
+  "results": [
+    {
+      "pair": "H-H",
+      "nu_a": 1,
+      "nu_b": 1,
+      "shared": 1,
+      "delta_thickness": 2.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "H-He",
+      "nu_a": 1,
+      "nu_b": 0,
+      "shared": 0,
+      "delta_thickness": 0.0,
+      "predicts_bond": false,
+      "ref_bond": false,
+      "match": true
+    },
+    {
+      "pair": "H-Li",
+      "nu_a": 1,
+      "nu_b": 7,
+      "shared": 1,
+      "delta_thickness": 2.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "H-Be",
+      "nu_a": 1,
+      "nu_b": 6,
+      "shared": 1,
+      "delta_thickness": 2.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "H-B",
+      "nu_a": 1,
+      "nu_b": 5,
+      "shared": 1,
+      "delta_thickness": 2.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "H-C",
+      "nu_a": 1,
+      "nu_b": 4,
+      "shared": 1,
+      "delta_thickness": 2.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "H-N",
+      "nu_a": 1,
+      "nu_b": 3,
+      "shared": 1,
+      "delta_thickness": 2.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "H-O",
+      "nu_a": 1,
+      "nu_b": 2,
+      "shared": 1,
+      "delta_thickness": 2.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "H-F",
+      "nu_a": 1,
+      "nu_b": 1,
+      "shared": 1,
+      "delta_thickness": 2.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "H-Ne",
+      "nu_a": 1,
+      "nu_b": 0,
+      "shared": 0,
+      "delta_thickness": 0.0,
+      "predicts_bond": false,
+      "ref_bond": false,
+      "match": true
+    },
+    {
+      "pair": "H-Na",
+      "nu_a": 1,
+      "nu_b": 7,
+      "shared": 1,
+      "delta_thickness": 2.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "H-Si",
+      "nu_a": 1,
+      "nu_b": 4,
+      "shared": 1,
+      "delta_thickness": 2.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "H-P",
+      "nu_a": 1,
+      "nu_b": 3,
+      "shared": 1,
+      "delta_thickness": 2.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "H-S",
+      "nu_a": 1,
+      "nu_b": 2,
+      "shared": 1,
+      "delta_thickness": 2.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "H-Cl",
+      "nu_a": 1,
+      "nu_b": 1,
+      "shared": 1,
+      "delta_thickness": 2.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "H-Ar",
+      "nu_a": 1,
+      "nu_b": 0,
+      "shared": 0,
+      "delta_thickness": 0.0,
+      "predicts_bond": false,
+      "ref_bond": false,
+      "match": true
+    },
+    {
+      "pair": "He-He",
+      "nu_a": 0,
+      "nu_b": 0,
+      "shared": 0,
+      "delta_thickness": 0.0,
+      "predicts_bond": false,
+      "ref_bond": false,
+      "match": true
+    },
+    {
+      "pair": "He-Li",
+      "nu_a": 0,
+      "nu_b": 7,
+      "shared": 0,
+      "delta_thickness": 0.0,
+      "predicts_bond": false,
+      "ref_bond": false,
+      "match": true
+    },
+    {
+      "pair": "He-Be",
+      "nu_a": 0,
+      "nu_b": 6,
+      "shared": 0,
+      "delta_thickness": 0.0,
+      "predicts_bond": false,
+      "ref_bond": false,
+      "match": true
+    },
+    {
+      "pair": "He-B",
+      "nu_a": 0,
+      "nu_b": 5,
+      "shared": 0,
+      "delta_thickness": 0.0,
+      "predicts_bond": false,
+      "ref_bond": false,
+      "match": true
+    },
+    {
+      "pair": "He-C",
+      "nu_a": 0,
+      "nu_b": 4,
+      "shared": 0,
+      "delta_thickness": 0.0,
+      "predicts_bond": false,
+      "ref_bond": false,
+      "match": true
+    },
+    {
+      "pair": "He-N",
+      "nu_a": 0,
+      "nu_b": 3,
+      "shared": 0,
+      "delta_thickness": 0.0,
+      "predicts_bond": false,
+      "ref_bond": false,
+      "match": true
+    },
+    {
+      "pair": "He-O",
+      "nu_a": 0,
+      "nu_b": 2,
+      "shared": 0,
+      "delta_thickness": 0.0,
+      "predicts_bond": false,
+      "ref_bond": false,
+      "match": true
+    },
+    {
+      "pair": "He-F",
+      "nu_a": 0,
+      "nu_b": 1,
+      "shared": 0,
+      "delta_thickness": 0.0,
+      "predicts_bond": false,
+      "ref_bond": false,
+      "match": true
+    },
+    {
+      "pair": "He-Ne",
+      "nu_a": 0,
+      "nu_b": 0,
+      "shared": 0,
+      "delta_thickness": 0.0,
+      "predicts_bond": false,
+      "ref_bond": false,
+      "match": true
+    },
+    {
+      "pair": "He-Na",
+      "nu_a": 0,
+      "nu_b": 7,
+      "shared": 0,
+      "delta_thickness": 0.0,
+      "predicts_bond": false,
+      "ref_bond": false,
+      "match": true
+    },
+    {
+      "pair": "He-Si",
+      "nu_a": 0,
+      "nu_b": 4,
+      "shared": 0,
+      "delta_thickness": 0.0,
+      "predicts_bond": false,
+      "ref_bond": false,
+      "match": true
+    },
+    {
+      "pair": "He-P",
+      "nu_a": 0,
+      "nu_b": 3,
+      "shared": 0,
+      "delta_thickness": 0.0,
+      "predicts_bond": false,
+      "ref_bond": false,
+      "match": true
+    },
+    {
+      "pair": "He-S",
+      "nu_a": 0,
+      "nu_b": 2,
+      "shared": 0,
+      "delta_thickness": 0.0,
+      "predicts_bond": false,
+      "ref_bond": false,
+      "match": true
+    },
+    {
+      "pair": "He-Cl",
+      "nu_a": 0,
+      "nu_b": 1,
+      "shared": 0,
+      "delta_thickness": 0.0,
+      "predicts_bond": false,
+      "ref_bond": false,
+      "match": true
+    },
+    {
+      "pair": "He-Ar",
+      "nu_a": 0,
+      "nu_b": 0,
+      "shared": 0,
+      "delta_thickness": 0.0,
+      "predicts_bond": false,
+      "ref_bond": false,
+      "match": true
+    },
+    {
+      "pair": "Li-Li",
+      "nu_a": 7,
+      "nu_b": 7,
+      "shared": 7,
+      "delta_thickness": 14.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "Li-Be",
+      "nu_a": 7,
+      "nu_b": 6,
+      "shared": 6,
+      "delta_thickness": 12.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "Li-B",
+      "nu_a": 7,
+      "nu_b": 5,
+      "shared": 5,
+      "delta_thickness": 10.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "Li-C",
+      "nu_a": 7,
+      "nu_b": 4,
+      "shared": 4,
+      "delta_thickness": 8.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "Li-N",
+      "nu_a": 7,
+      "nu_b": 3,
+      "shared": 3,
+      "delta_thickness": 6.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "Li-O",
+      "nu_a": 7,
+      "nu_b": 2,
+      "shared": 2,
+      "delta_thickness": 4.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "Li-F",
+      "nu_a": 7,
+      "nu_b": 1,
+      "shared": 1,
+      "delta_thickness": 2.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "Li-Ne",
+      "nu_a": 7,
+      "nu_b": 0,
+      "shared": 0,
+      "delta_thickness": 0.0,
+      "predicts_bond": false,
+      "ref_bond": false,
+      "match": true
+    },
+    {
+      "pair": "Li-Na",
+      "nu_a": 7,
+      "nu_b": 7,
+      "shared": 7,
+      "delta_thickness": 14.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "Li-Si",
+      "nu_a": 7,
+      "nu_b": 4,
+      "shared": 4,
+      "delta_thickness": 8.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "Li-P",
+      "nu_a": 7,
+      "nu_b": 3,
+      "shared": 3,
+      "delta_thickness": 6.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "Li-S",
+      "nu_a": 7,
+      "nu_b": 2,
+      "shared": 2,
+      "delta_thickness": 4.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "Li-Cl",
+      "nu_a": 7,
+      "nu_b": 1,
+      "shared": 1,
+      "delta_thickness": 2.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "Li-Ar",
+      "nu_a": 7,
+      "nu_b": 0,
+      "shared": 0,
+      "delta_thickness": 0.0,
+      "predicts_bond": false,
+      "ref_bond": false,
+      "match": true
+    },
+    {
+      "pair": "Be-Be",
+      "nu_a": 6,
+      "nu_b": 6,
+      "shared": 6,
+      "delta_thickness": 12.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "Be-B",
+      "nu_a": 6,
+      "nu_b": 5,
+      "shared": 5,
+      "delta_thickness": 10.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "Be-C",
+      "nu_a": 6,
+      "nu_b": 4,
+      "shared": 4,
+      "delta_thickness": 8.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "Be-N",
+      "nu_a": 6,
+      "nu_b": 3,
+      "shared": 3,
+      "delta_thickness": 6.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "Be-O",
+      "nu_a": 6,
+      "nu_b": 2,
+      "shared": 2,
+      "delta_thickness": 4.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "Be-F",
+      "nu_a": 6,
+      "nu_b": 1,
+      "shared": 1,
+      "delta_thickness": 2.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "Be-Ne",
+      "nu_a": 6,
+      "nu_b": 0,
+      "shared": 0,
+      "delta_thickness": 0.0,
+      "predicts_bond": false,
+      "ref_bond": false,
+      "match": true
+    },
+    {
+      "pair": "Be-Na",
+      "nu_a": 6,
+      "nu_b": 7,
+      "shared": 6,
+      "delta_thickness": 12.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "Be-Si",
+      "nu_a": 6,
+      "nu_b": 4,
+      "shared": 4,
+      "delta_thickness": 8.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "Be-P",
+      "nu_a": 6,
+      "nu_b": 3,
+      "shared": 3,
+      "delta_thickness": 6.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "Be-S",
+      "nu_a": 6,
+      "nu_b": 2,
+      "shared": 2,
+      "delta_thickness": 4.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "Be-Cl",
+      "nu_a": 6,
+      "nu_b": 1,
+      "shared": 1,
+      "delta_thickness": 2.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "Be-Ar",
+      "nu_a": 6,
+      "nu_b": 0,
+      "shared": 0,
+      "delta_thickness": 0.0,
+      "predicts_bond": false,
+      "ref_bond": false,
+      "match": true
+    },
+    {
+      "pair": "B-B",
+      "nu_a": 5,
+      "nu_b": 5,
+      "shared": 5,
+      "delta_thickness": 10.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "B-C",
+      "nu_a": 5,
+      "nu_b": 4,
+      "shared": 4,
+      "delta_thickness": 8.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "B-N",
+      "nu_a": 5,
+      "nu_b": 3,
+      "shared": 3,
+      "delta_thickness": 6.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "B-O",
+      "nu_a": 5,
+      "nu_b": 2,
+      "shared": 2,
+      "delta_thickness": 4.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "B-F",
+      "nu_a": 5,
+      "nu_b": 1,
+      "shared": 1,
+      "delta_thickness": 2.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "B-Ne",
+      "nu_a": 5,
+      "nu_b": 0,
+      "shared": 0,
+      "delta_thickness": 0.0,
+      "predicts_bond": false,
+      "ref_bond": false,
+      "match": true
+    },
+    {
+      "pair": "B-Na",
+      "nu_a": 5,
+      "nu_b": 7,
+      "shared": 5,
+      "delta_thickness": 10.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "B-Si",
+      "nu_a": 5,
+      "nu_b": 4,
+      "shared": 4,
+      "delta_thickness": 8.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "B-P",
+      "nu_a": 5,
+      "nu_b": 3,
+      "shared": 3,
+      "delta_thickness": 6.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "B-S",
+      "nu_a": 5,
+      "nu_b": 2,
+      "shared": 2,
+      "delta_thickness": 4.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "B-Cl",
+      "nu_a": 5,
+      "nu_b": 1,
+      "shared": 1,
+      "delta_thickness": 2.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "B-Ar",
+      "nu_a": 5,
+      "nu_b": 0,
+      "shared": 0,
+      "delta_thickness": 0.0,
+      "predicts_bond": false,
+      "ref_bond": false,
+      "match": true
+    },
+    {
+      "pair": "C-C",
+      "nu_a": 4,
+      "nu_b": 4,
+      "shared": 4,
+      "delta_thickness": 8.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "C-N",
+      "nu_a": 4,
+      "nu_b": 3,
+      "shared": 3,
+      "delta_thickness": 6.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "C-O",
+      "nu_a": 4,
+      "nu_b": 2,
+      "shared": 2,
+      "delta_thickness": 4.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "C-F",
+      "nu_a": 4,
+      "nu_b": 1,
+      "shared": 1,
+      "delta_thickness": 2.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "C-Ne",
+      "nu_a": 4,
+      "nu_b": 0,
+      "shared": 0,
+      "delta_thickness": 0.0,
+      "predicts_bond": false,
+      "ref_bond": false,
+      "match": true
+    },
+    {
+      "pair": "C-Na",
+      "nu_a": 4,
+      "nu_b": 7,
+      "shared": 4,
+      "delta_thickness": 8.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "C-Si",
+      "nu_a": 4,
+      "nu_b": 4,
+      "shared": 4,
+      "delta_thickness": 8.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "C-P",
+      "nu_a": 4,
+      "nu_b": 3,
+      "shared": 3,
+      "delta_thickness": 6.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "C-S",
+      "nu_a": 4,
+      "nu_b": 2,
+      "shared": 2,
+      "delta_thickness": 4.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "C-Cl",
+      "nu_a": 4,
+      "nu_b": 1,
+      "shared": 1,
+      "delta_thickness": 2.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "C-Ar",
+      "nu_a": 4,
+      "nu_b": 0,
+      "shared": 0,
+      "delta_thickness": 0.0,
+      "predicts_bond": false,
+      "ref_bond": false,
+      "match": true
+    },
+    {
+      "pair": "N-N",
+      "nu_a": 3,
+      "nu_b": 3,
+      "shared": 3,
+      "delta_thickness": 6.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "N-O",
+      "nu_a": 3,
+      "nu_b": 2,
+      "shared": 2,
+      "delta_thickness": 4.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "N-F",
+      "nu_a": 3,
+      "nu_b": 1,
+      "shared": 1,
+      "delta_thickness": 2.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "N-Ne",
+      "nu_a": 3,
+      "nu_b": 0,
+      "shared": 0,
+      "delta_thickness": 0.0,
+      "predicts_bond": false,
+      "ref_bond": false,
+      "match": true
+    },
+    {
+      "pair": "N-Na",
+      "nu_a": 3,
+      "nu_b": 7,
+      "shared": 3,
+      "delta_thickness": 6.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "N-Si",
+      "nu_a": 3,
+      "nu_b": 4,
+      "shared": 3,
+      "delta_thickness": 6.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "N-P",
+      "nu_a": 3,
+      "nu_b": 3,
+      "shared": 3,
+      "delta_thickness": 6.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "N-S",
+      "nu_a": 3,
+      "nu_b": 2,
+      "shared": 2,
+      "delta_thickness": 4.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "N-Cl",
+      "nu_a": 3,
+      "nu_b": 1,
+      "shared": 1,
+      "delta_thickness": 2.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "N-Ar",
+      "nu_a": 3,
+      "nu_b": 0,
+      "shared": 0,
+      "delta_thickness": 0.0,
+      "predicts_bond": false,
+      "ref_bond": false,
+      "match": true
+    },
+    {
+      "pair": "O-O",
+      "nu_a": 2,
+      "nu_b": 2,
+      "shared": 2,
+      "delta_thickness": 4.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "O-F",
+      "nu_a": 2,
+      "nu_b": 1,
+      "shared": 1,
+      "delta_thickness": 2.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "O-Ne",
+      "nu_a": 2,
+      "nu_b": 0,
+      "shared": 0,
+      "delta_thickness": 0.0,
+      "predicts_bond": false,
+      "ref_bond": false,
+      "match": true
+    },
+    {
+      "pair": "O-Na",
+      "nu_a": 2,
+      "nu_b": 7,
+      "shared": 2,
+      "delta_thickness": 4.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "O-Si",
+      "nu_a": 2,
+      "nu_b": 4,
+      "shared": 2,
+      "delta_thickness": 4.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "O-P",
+      "nu_a": 2,
+      "nu_b": 3,
+      "shared": 2,
+      "delta_thickness": 4.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "O-S",
+      "nu_a": 2,
+      "nu_b": 2,
+      "shared": 2,
+      "delta_thickness": 4.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "O-Cl",
+      "nu_a": 2,
+      "nu_b": 1,
+      "shared": 1,
+      "delta_thickness": 2.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "O-Ar",
+      "nu_a": 2,
+      "nu_b": 0,
+      "shared": 0,
+      "delta_thickness": 0.0,
+      "predicts_bond": false,
+      "ref_bond": false,
+      "match": true
+    },
+    {
+      "pair": "F-F",
+      "nu_a": 1,
+      "nu_b": 1,
+      "shared": 1,
+      "delta_thickness": 2.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "F-Ne",
+      "nu_a": 1,
+      "nu_b": 0,
+      "shared": 0,
+      "delta_thickness": 0.0,
+      "predicts_bond": false,
+      "ref_bond": false,
+      "match": true
+    },
+    {
+      "pair": "F-Na",
+      "nu_a": 1,
+      "nu_b": 7,
+      "shared": 1,
+      "delta_thickness": 2.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "F-Si",
+      "nu_a": 1,
+      "nu_b": 4,
+      "shared": 1,
+      "delta_thickness": 2.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "F-P",
+      "nu_a": 1,
+      "nu_b": 3,
+      "shared": 1,
+      "delta_thickness": 2.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "F-S",
+      "nu_a": 1,
+      "nu_b": 2,
+      "shared": 1,
+      "delta_thickness": 2.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "F-Cl",
+      "nu_a": 1,
+      "nu_b": 1,
+      "shared": 1,
+      "delta_thickness": 2.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "F-Ar",
+      "nu_a": 1,
+      "nu_b": 0,
+      "shared": 0,
+      "delta_thickness": 0.0,
+      "predicts_bond": false,
+      "ref_bond": false,
+      "match": true
+    },
+    {
+      "pair": "Ne-Ne",
+      "nu_a": 0,
+      "nu_b": 0,
+      "shared": 0,
+      "delta_thickness": 0.0,
+      "predicts_bond": false,
+      "ref_bond": false,
+      "match": true
+    },
+    {
+      "pair": "Ne-Na",
+      "nu_a": 0,
+      "nu_b": 7,
+      "shared": 0,
+      "delta_thickness": 0.0,
+      "predicts_bond": false,
+      "ref_bond": false,
+      "match": true
+    },
+    {
+      "pair": "Ne-Si",
+      "nu_a": 0,
+      "nu_b": 4,
+      "shared": 0,
+      "delta_thickness": 0.0,
+      "predicts_bond": false,
+      "ref_bond": false,
+      "match": true
+    },
+    {
+      "pair": "Ne-P",
+      "nu_a": 0,
+      "nu_b": 3,
+      "shared": 0,
+      "delta_thickness": 0.0,
+      "predicts_bond": false,
+      "ref_bond": false,
+      "match": true
+    },
+    {
+      "pair": "Ne-S",
+      "nu_a": 0,
+      "nu_b": 2,
+      "shared": 0,
+      "delta_thickness": 0.0,
+      "predicts_bond": false,
+      "ref_bond": false,
+      "match": true
+    },
+    {
+      "pair": "Ne-Cl",
+      "nu_a": 0,
+      "nu_b": 1,
+      "shared": 0,
+      "delta_thickness": 0.0,
+      "predicts_bond": false,
+      "ref_bond": false,
+      "match": true
+    },
+    {
+      "pair": "Ne-Ar",
+      "nu_a": 0,
+      "nu_b": 0,
+      "shared": 0,
+      "delta_thickness": 0.0,
+      "predicts_bond": false,
+      "ref_bond": false,
+      "match": true
+    },
+    {
+      "pair": "Na-Na",
+      "nu_a": 7,
+      "nu_b": 7,
+      "shared": 7,
+      "delta_thickness": 14.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "Na-Si",
+      "nu_a": 7,
+      "nu_b": 4,
+      "shared": 4,
+      "delta_thickness": 8.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "Na-P",
+      "nu_a": 7,
+      "nu_b": 3,
+      "shared": 3,
+      "delta_thickness": 6.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "Na-S",
+      "nu_a": 7,
+      "nu_b": 2,
+      "shared": 2,
+      "delta_thickness": 4.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "Na-Cl",
+      "nu_a": 7,
+      "nu_b": 1,
+      "shared": 1,
+      "delta_thickness": 2.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "Na-Ar",
+      "nu_a": 7,
+      "nu_b": 0,
+      "shared": 0,
+      "delta_thickness": 0.0,
+      "predicts_bond": false,
+      "ref_bond": false,
+      "match": true
+    },
+    {
+      "pair": "Si-Si",
+      "nu_a": 4,
+      "nu_b": 4,
+      "shared": 4,
+      "delta_thickness": 8.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "Si-P",
+      "nu_a": 4,
+      "nu_b": 3,
+      "shared": 3,
+      "delta_thickness": 6.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "Si-S",
+      "nu_a": 4,
+      "nu_b": 2,
+      "shared": 2,
+      "delta_thickness": 4.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "Si-Cl",
+      "nu_a": 4,
+      "nu_b": 1,
+      "shared": 1,
+      "delta_thickness": 2.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "Si-Ar",
+      "nu_a": 4,
+      "nu_b": 0,
+      "shared": 0,
+      "delta_thickness": 0.0,
+      "predicts_bond": false,
+      "ref_bond": false,
+      "match": true
+    },
+    {
+      "pair": "P-P",
+      "nu_a": 3,
+      "nu_b": 3,
+      "shared": 3,
+      "delta_thickness": 6.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "P-S",
+      "nu_a": 3,
+      "nu_b": 2,
+      "shared": 2,
+      "delta_thickness": 4.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "P-Cl",
+      "nu_a": 3,
+      "nu_b": 1,
+      "shared": 1,
+      "delta_thickness": 2.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "P-Ar",
+      "nu_a": 3,
+      "nu_b": 0,
+      "shared": 0,
+      "delta_thickness": 0.0,
+      "predicts_bond": false,
+      "ref_bond": false,
+      "match": true
+    },
+    {
+      "pair": "S-S",
+      "nu_a": 2,
+      "nu_b": 2,
+      "shared": 2,
+      "delta_thickness": 4.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "S-Cl",
+      "nu_a": 2,
+      "nu_b": 1,
+      "shared": 1,
+      "delta_thickness": 2.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "S-Ar",
+      "nu_a": 2,
+      "nu_b": 0,
+      "shared": 0,
+      "delta_thickness": 0.0,
+      "predicts_bond": false,
+      "ref_bond": false,
+      "match": true
+    },
+    {
+      "pair": "Cl-Cl",
+      "nu_a": 1,
+      "nu_b": 1,
+      "shared": 1,
+      "delta_thickness": 2.0,
+      "predicts_bond": true,
+      "ref_bond": true,
+      "match": true
+    },
+    {
+      "pair": "Cl-Ar",
+      "nu_a": 1,
+      "nu_b": 0,
+      "shared": 0,
+      "delta_thickness": 0.0,
+      "predicts_bond": false,
+      "ref_bond": false,
+      "match": true
+    },
+    {
+      "pair": "Ar-Ar",
+      "nu_a": 0,
+      "nu_b": 0,
+      "shared": 0,
+      "delta_thickness": 0.0,
+      "predicts_bond": false,
+      "ref_bond": false,
+      "match": true
+    }
+  ],
+  "pass_count": 136,
+  "total": 136,
+  "noble_gas_inertness_confirmed": true
+}

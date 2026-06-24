@@ -1,0 +1,54 @@
+{
+  "timestamp": "2026-06-24T06:32:43.982528+00:00",
+  "paper": "The Causal Propagation Table",
+  "min_cut_backend": "networkx",
+  "categories": {
+    "floor": {
+      "pass": 300,
+      "total": 300
+    },
+    "negation": {
+      "pass": 200,
+      "total": 200
+    },
+    "identity_invariant": {
+      "pass": 101,
+      "total": 101
+    },
+    "monotone_record": {
+      "pass": 4,
+      "total": 4
+    },
+    "residue_propagator": {
+      "pass": 6,
+      "total": 6
+    },
+    "contact_symmetry": {
+      "pass": 4,
+      "total": 4
+    },
+    "composition_inflation": {
+      "pass": 18,
+      "total": 18
+    },
+    "path_opacity": {
+      "pass": 3,
+      "total": 3
+    },
+    "representation": {
+      "pass": 202,
+      "total": 202
+    },
+    "convergence": {
+      "pass": 3,
+      "total": 3
+    },
+    "one_use_cut": {
+      "pass": 6,
+      "total": 6
+    }
+  },
+  "total_pass": 847,
+  "total_checks": 847,
+  "all_pass": true
+}

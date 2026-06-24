@@ -1,0 +1,37 @@
+{
+  "timestamp": "2026-06-24T06:26:03.887198+00:00",
+  "paper": "Why There Are Chemical Structures At All",
+  "categories": {
+    "shell_capacity": {
+      "pass": 23,
+      "total": 23
+    },
+    "valence": {
+      "pass": 16,
+      "total": 16
+    },
+    "bonding_criterion": {
+      "pass": 136,
+      "total": 136
+    },
+    "stoichiometry": {
+      "pass": 8,
+      "total": 8
+    },
+    "bond_geometry": {
+      "pass": 4,
+      "total": 4
+    },
+    "d3_axis_exchange": {
+      "pass": 4,
+      "total": 4
+    },
+    "bond_length": {
+      "pass": 4,
+      "total": 4
+    }
+  },
+  "total_pass": 195,
+  "total_checks": 195,
+  "all_pass": true
+}

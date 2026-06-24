@@ -1,0 +1,34 @@
+{
+  "timestamp": "2026-06-24T06:32:43.978241+00:00",
+  "description": "Thm admissibility: a propagation is admissible iff it converges to the output (terminal alignment at the floor); local steps are unconstrained; rejection is only on non-convergence.",
+  "theorem": "admissible <=> convergent to x*; local steps free",
+  "input": "v0",
+  "output": "v5",
+  "results": [
+    {
+      "case": "reaches_output",
+      "terminal_alignment": 0.018926,
+      "floor_alignment": 0.018926,
+      "admissible": true,
+      "expected": true,
+      "correct": true
+    },
+    {
+      "case": "terminates_elsewhere",
+      "terminal_alignment": 0.21898,
+      "floor_alignment": 0.018926,
+      "admissible": false,
+      "expected": false,
+      "correct": true
+    },
+    {
+      "case": "locally_arbitrary_interior_but_converges",
+      "note": "intermediate alignment does not enter terminal condition",
+      "admissible": true,
+      "expected": true,
+      "correct": true
+    }
+  ],
+  "pass_count": 3,
+  "total": 3
+}

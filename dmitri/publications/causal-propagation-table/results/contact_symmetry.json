@@ -1,0 +1,15 @@
+{
+  "timestamp": "2026-06-24T06:32:43.961766+00:00",
+  "description": "Thm symmetry + reaction=measurement: a contact is an unordered edge; instrument/sample and reaction/measurement are free labellings of one symmetric cut.",
+  "theorem": "contact edge symmetric; reaction step = measurement step",
+  "n_trials": 50,
+  "trials_passed": 50,
+  "checks": {
+    "edge_unordered (instrument<->sample swap is identity)": true,
+    "reaction_equals_measurement (same edge, same residue)": true,
+    "either_end_is_instrument": true,
+    "synthesis_equals_analysis (edge undirected)": true
+  },
+  "pass_count": 4,
+  "total": 4
+}

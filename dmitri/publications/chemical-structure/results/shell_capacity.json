@@ -1,0 +1,219 @@
+{
+  "timestamp": "2026-06-24T06:26:03.822513+00:00",
+  "description": "Shell capacity C(n)=2n^2 (Thm shellcap) and vacancy nu=Cap_v-q_v; vacancy=0 iff noble (closed shell).",
+  "theorem": "C(n)=2n^2; vacancy zero <=> closed shell <=> noble",
+  "capacity": {
+    "results": [
+      {
+        "n": 1,
+        "C_derived": 2,
+        "C_formula_2n2": 2,
+        "match": true
+      },
+      {
+        "n": 2,
+        "C_derived": 8,
+        "C_formula_2n2": 8,
+        "match": true
+      },
+      {
+        "n": 3,
+        "C_derived": 18,
+        "C_formula_2n2": 18,
+        "match": true
+      },
+      {
+        "n": 4,
+        "C_derived": 32,
+        "C_formula_2n2": 32,
+        "match": true
+      },
+      {
+        "n": 5,
+        "C_derived": 50,
+        "C_formula_2n2": 50,
+        "match": true
+      },
+      {
+        "n": 6,
+        "C_derived": 72,
+        "C_formula_2n2": 72,
+        "match": true
+      },
+      {
+        "n": 7,
+        "C_derived": 98,
+        "C_formula_2n2": 98,
+        "match": true
+      }
+    ],
+    "pass_count": 7,
+    "total": 7
+  },
+  "vacancy": {
+    "results": [
+      {
+        "sym": "H",
+        "qv": 1,
+        "cap": 2,
+        "vacancy": 1,
+        "valid_range": true,
+        "closed_shell": false,
+        "is_noble_ref": false,
+        "vacancy_zero_iff_noble": true
+      },
+      {
+        "sym": "He",
+        "qv": 2,
+        "cap": 2,
+        "vacancy": 0,
+        "valid_range": true,
+        "closed_shell": true,
+        "is_noble_ref": true,
+        "vacancy_zero_iff_noble": true
+      },
+      {
+        "sym": "Li",
+        "qv": 1,
+        "cap": 8,
+        "vacancy": 7,
+        "valid_range": true,
+        "closed_shell": false,
+        "is_noble_ref": false,
+        "vacancy_zero_iff_noble": true
+      },
+      {
+        "sym": "Be",
+        "qv": 2,
+        "cap": 8,
+        "vacancy": 6,
+        "valid_range": true,
+        "closed_shell": false,
+        "is_noble_ref": false,
+        "vacancy_zero_iff_noble": true
+      },
+      {
+        "sym": "B",
+        "qv": 3,
+        "cap": 8,
+        "vacancy": 5,
+        "valid_range": true,
+        "closed_shell": false,
+        "is_noble_ref": false,
+        "vacancy_zero_iff_noble": true
+      },
+      {
+        "sym": "C",
+        "qv": 4,
+        "cap": 8,
+        "vacancy": 4,
+        "valid_range": true,
+        "closed_shell": false,
+        "is_noble_ref": false,
+        "vacancy_zero_iff_noble": true
+      },
+      {
+        "sym": "N",
+        "qv": 5,
+        "cap": 8,
+        "vacancy": 3,
+        "valid_range": true,
+        "closed_shell": false,
+        "is_noble_ref": false,
+        "vacancy_zero_iff_noble": true
+      },
+      {
+        "sym": "O",
+        "qv": 6,
+        "cap": 8,
+        "vacancy": 2,
+        "valid_range": true,
+        "closed_shell": false,
+        "is_noble_ref": false,
+        "vacancy_zero_iff_noble": true
+      },
+      {
+        "sym": "F",
+        "qv": 7,
+        "cap": 8,
+        "vacancy": 1,
+        "valid_range": true,
+        "closed_shell": false,
+        "is_noble_ref": false,
+        "vacancy_zero_iff_noble": true
+      },
+      {
+        "sym": "Ne",
+        "qv": 8,
+        "cap": 8,
+        "vacancy": 0,
+        "valid_range": true,
+        "closed_shell": true,
+        "is_noble_ref": true,
+        "vacancy_zero_iff_noble": true
+      },
+      {
+        "sym": "Na",
+        "qv": 1,
+        "cap": 8,
+        "vacancy": 7,
+        "valid_range": true,
+        "closed_shell": false,
+        "is_noble_ref": false,
+        "vacancy_zero_iff_noble": true
+      },
+      {
+        "sym": "Si",
+        "qv": 4,
+        "cap": 8,
+        "vacancy": 4,
+        "valid_range": true,
+        "closed_shell": false,
+        "is_noble_ref": false,
+        "vacancy_zero_iff_noble": true
+      },
+      {
+        "sym": "P",
+        "qv": 5,
+        "cap": 8,
+        "vacancy": 3,
+        "valid_range": true,
+        "closed_shell": false,
+        "is_noble_ref": false,
+        "vacancy_zero_iff_noble": true
+      },
+      {
+        "sym": "S",
+        "qv": 6,
+        "cap": 8,
+        "vacancy": 2,
+        "valid_range": true,
+        "closed_shell": false,
+        "is_noble_ref": false,
+        "vacancy_zero_iff_noble": true
+      },
+      {
+        "sym": "Cl",
+        "qv": 7,
+        "cap": 8,
+        "vacancy": 1,
+        "valid_range": true,
+        "closed_shell": false,
+        "is_noble_ref": false,
+        "vacancy_zero_iff_noble": true
+      },
+      {
+        "sym": "Ar",
+        "qv": 8,
+        "cap": 8,
+        "vacancy": 0,
+        "valid_range": true,
+        "closed_shell": true,
+        "is_noble_ref": true,
+        "vacancy_zero_iff_noble": true
+      }
+    ],
+    "pass_count": 16,
+    "total": 16
+  }
+}
