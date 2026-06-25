@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex causal-propagation-table"] 1782288493.69617 "causal-propagation-table.aux" "causal-propagation-table.bbl" "causal-propagation-table" 1782288496.86356 0
+["bibtex causal-propagation-table"] 1782307924.48878 "causal-propagation-table.aux" "causal-propagation-table.bbl" "causal-propagation-table" 1782307934.40406 0
   "./references.bib" 1782280572 5308 98ed6fc7dc91efa1cb296f705102585c ""
   "C:/Users/kunda/AppData/Local/Programs/MiKTeX/bibtex/bst/natbib/plainnat.bst" 1284455456 26816 ffe5423d2019860bad9f54bc402fac15 ""
-  "causal-propagation-table.aux" 1782288495 18502 3b6adc60ea86a69c9e44acaea4fce25a "pdflatex"
+  "causal-propagation-table.aux" 1782307933 39363 a76dbf1c35da8490df90f4b20662680f "pdflatex"
   (generated)
   "causal-propagation-table.bbl"
   "causal-propagation-table.blg"
   (rewritten before read)
-["pdflatex"] 1782288494.17548 "c:/Users/kunda/Documents/bioinformatics/borgia/dmitri/publications/causal-propagation-table/causal-propagation-table.tex" "causal-propagation-table.pdf" "causal-propagation-table" 1782288496.86475 0
+["pdflatex"] 1782307924.81667 "c:/Users/kunda/Documents/bioinformatics/borgia/dmitri/publications/causal-propagation-table/causal-propagation-table.tex" "causal-propagation-table.pdf" "causal-propagation-table" 1782307934.40495 0
   "C:/Users/kunda/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1781801198 82188 90cd578fc3cfbdcc7c37bb6a895e60cf ""
   "C:/Users/kunda/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs10.tfm" 1777665913 688 37338d6ab346c2f1466b29e195316aa4 ""
   "C:/Users/kunda/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs5.tfm" 1777665914 684 3a51bd4fd9600428d5264cf25f04bb9a ""
@@ -167,12 +167,20 @@
   "C:/Users/kunda/AppData/Local/Programs/MiKTeX/tex/latex/tools/calc.sty" 1761901070 10374 2ffd4f27c7f90b8a300608069537743c ""
   "C:/Users/kunda/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/kunda/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
-  "c:/Users/kunda/Documents/bioinformatics/borgia/dmitri/publications/causal-propagation-table/causal-propagation-table.tex" 1782288493 68373 0c19e4075f9970ca257a1c6029beee1c ""
-  "causal-propagation-table.aux" 1782288495 18502 3b6adc60ea86a69c9e44acaea4fce25a "pdflatex"
-  "causal-propagation-table.bbl" 1782288494 1473 3690ea0c9c49013d5188e8ac092618ca "bibtex causal-propagation-table"
-  "causal-propagation-table.out" 1782288495 8020 17476136bcec903225d8a4eaa1057644 "pdflatex"
-  "causal-propagation-table.tex" 1782288493 68373 0c19e4075f9970ca257a1c6029beee1c ""
-  "causal-propagation-table.toc" 1782288495 3837 a70ef5114a08f7419276c3afb2ade886 "pdflatex"
+  "c:/Users/kunda/Documents/bioinformatics/borgia/dmitri/publications/causal-propagation-table/causal-propagation-table.tex" 1782307892 79221 860884d09001fed44e523480d3d0e445 ""
+  "causal-propagation-table.aux" 1782307933 39363 a76dbf1c35da8490df90f4b20662680f "pdflatex"
+  "causal-propagation-table.bbl" 1782307924 1473 3690ea0c9c49013d5188e8ac092618ca "bibtex causal-propagation-table"
+  "causal-propagation-table.out" 1782307933 8020 17476136bcec903225d8a4eaa1057644 "pdflatex"
+  "causal-propagation-table.tex" 1782307892 79221 860884d09001fed44e523480d3d0e445 ""
+  "causal-propagation-table.toc" 1782307933 3837 7fee3206d864a0126b35091f739d2184 "pdflatex"
+  "figures/panel_1_floor.png" 1782289955 634394 b67da9e75b08fff918dd1e452906728b ""
+  "figures/panel_2_negation.png" 1782289956 456204 43ba5dfc31613715dcbc18999911c162 ""
+  "figures/panel_3_identity.png" 1782289958 443968 f4c3686466673ed963448e669cd1a29f ""
+  "figures/panel_4_record_residue.png" 1782289959 401004 5ae0fc1ba404fe8eda15ea62dbcb5711 ""
+  "figures/panel_5_inflation.png" 1782289961 565327 18df7f0cbbaecc681b83237a14e7a73a ""
+  "figures/panel_6_opacity.png" 1782289962 418414 ebe56026c6e4115ec31cf4fa32e2bfb6 ""
+  "figures/panel_7_representation.png" 1782289964 494071 0356e3d6da2a934e2754d35a14f71250 ""
+  "figures/panel_8_convergence_cut.png" 1782289965 386423 908eadb7e513d1a809883ec1494f9257 ""
   (generated)
   "causal-propagation-table.aux"
   "causal-propagation-table.log"

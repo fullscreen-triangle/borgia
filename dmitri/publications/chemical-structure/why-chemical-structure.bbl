@@ -1,0 +1,58 @@
+\begin{thebibliography}{8}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Gillespie and Nyholm(1957)]{gillespie1957}
+R.~J. Gillespie and R.~S. Nyholm.
+\newblock Inorganic stereochemistry.
+\newblock \emph{Quarterly Reviews, Chemical Society}, 11\penalty0 (4):\penalty0
+  339--380, 1957.
+\newblock \doi{10.1039/qr9571100339}.
+
+\bibitem[Griffiths and Schroeter(2018)]{griffiths2018}
+D.~J. Griffiths and D.~F. Schroeter.
+\newblock \emph{Introduction to Quantum Mechanics}.
+\newblock Cambridge University Press, Cambridge, 3 edition, 2018.
+
+\bibitem[Langmuir(1919)]{langmuir1919}
+I.~Langmuir.
+\newblock The arrangement of electrons in atoms and molecules.
+\newblock \emph{Journal of the American Chemical Society}, 41\penalty0
+  (6):\penalty0 868--934, 1919.
+\newblock \doi{10.1021/ja02227a002}.
+
+\bibitem[Levine(2014)]{levine2014}
+I.~N. Levine.
+\newblock \emph{Quantum Chemistry}.
+\newblock Pearson, Boston, 7 edition, 2014.
+
+\bibitem[Lewis(1916)]{lewis1916}
+G.~N. Lewis.
+\newblock The atom and the molecule.
+\newblock \emph{Journal of the American Chemical Society}, 38\penalty0
+  (4):\penalty0 762--785, 1916.
+\newblock \doi{10.1021/ja02261a002}.
+
+\bibitem[Madelung(1936)]{madelung1936}
+E.~Madelung.
+\newblock Mathematische hilfsmittel des physikers.
+\newblock \emph{Springer, Berlin}, 1936.
+
+\bibitem[Pauli(1925)]{pauli1925}
+W.~Pauli.
+\newblock {\"U}ber den zusammenhang des abschlusses der elektronengruppen im
+  atom mit der komplexstruktur der spektren.
+\newblock \emph{Zeitschrift f{\"u}r Physik}, 31\penalty0 (1):\penalty0
+  765--783, 1925.
+\newblock \doi{10.1007/BF02980631}.
+
+\bibitem[Szabo and Ostlund(1996)]{szabo1996}
+A.~Szabo and N.~S. Ostlund.
+\newblock \emph{Modern Quantum Chemistry: Introduction to Advanced Electronic
+  Structure Theory}.
+\newblock Dover, Mineola, NY, 1996.
+
+\end{thebibliography}

@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex why-chemical-structure"] 1782288736.42372 "why-chemical-structure.aux" "why-chemical-structure.bbl" "why-chemical-structure" 1782288739.04829 0
+["bibtex why-chemical-structure"] 1782312492.42488 "why-chemical-structure.aux" "why-chemical-structure.bbl" "why-chemical-structure" 1782312504.86574 2
   "./references.bib" 1782274286 3273 319862feb684eaa7657c5b998632bf41 ""
   "C:/Users/kunda/AppData/Local/Programs/MiKTeX/bibtex/bst/natbib/plainnat.bst" 1284455456 26816 ffe5423d2019860bad9f54bc402fac15 ""
-  "why-chemical-structure.aux" 1782288738 7771 f92094241de1f2fe09c82872f0594999 "pdflatex"
+  "why-chemical-structure.aux" 1782312503 27145 73cf821c76e060969b2a20dc0d064d98 "pdflatex"
   (generated)
   "why-chemical-structure.bbl"
   "why-chemical-structure.blg"
   (rewritten before read)
-["pdflatex"] 1782288736.76506 "c:/Users/kunda/Documents/bioinformatics/borgia/dmitri/publications/chemical-structure/why-chemical-structure.tex" "why-chemical-structure.pdf" "why-chemical-structure" 1782288739.04918 0
+["pdflatex"] 1782312493.87028 "c:/Users/kunda/Documents/bioinformatics/borgia/dmitri/publications/chemical-structure/why-chemical-structure.tex" "why-chemical-structure.pdf" "why-chemical-structure" 1782312504.86653 2
   "C:/Users/kunda/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1781801198 82188 90cd578fc3cfbdcc7c37bb6a895e60cf ""
   "C:/Users/kunda/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs10.tfm" 1777665913 688 37338d6ab346c2f1466b29e195316aa4 ""
   "C:/Users/kunda/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs5.tfm" 1777665914 684 3a51bd4fd9600428d5264cf25f04bb9a ""
@@ -32,6 +32,8 @@
   "C:/Users/kunda/AppData/Local/Programs/MiKTeX/fonts/tfm/public/lm/ec-lmr10.tfm" 1256929440 12056 7e13df7fe4cbce21b072ba7c4f4deb6e ""
   "C:/Users/kunda/AppData/Local/Programs/MiKTeX/fonts/tfm/public/lm/ec-lmr12.tfm" 1256929440 12092 7b1546e2d096cfd5dcbd4049b0b1ec2e ""
   "C:/Users/kunda/AppData/Local/Programs/MiKTeX/fonts/tfm/public/lm/ec-lmr17.tfm" 1256929440 12156 ca1ae6a3c8564e89597f1f993fba1608 ""
+  "C:/Users/kunda/AppData/Local/Programs/MiKTeX/fonts/tfm/public/lm/ec-lmr6.tfm" 1256929440 12048 c1068d0f4772be9b0ec447692e1d6d82 ""
+  "C:/Users/kunda/AppData/Local/Programs/MiKTeX/fonts/tfm/public/lm/ec-lmr8.tfm" 1256929440 12064 9b9ade9f64cb32ce1d9a88d21fbd5c2d ""
   "C:/Users/kunda/AppData/Local/Programs/MiKTeX/fonts/tfm/public/lm/ec-lmri10.tfm" 1256929440 17148 9556e1b5f936b77a796f68d2d559ba99 ""
   "C:/Users/kunda/AppData/Local/Programs/MiKTeX/fonts/tfm/public/lm/ec-lmri7.tfm" 1256929440 17168 78a37e395d0470967cfda94332b0716a ""
   "C:/Users/kunda/AppData/Local/Programs/MiKTeX/fonts/tfm/public/lm/ec-lmri8.tfm" 1256929440 17152 c8240fef851c4991afefdae37a539ee1 ""
@@ -167,12 +169,20 @@
   "C:/Users/kunda/AppData/Local/Programs/MiKTeX/tex/latex/tools/calc.sty" 1761901070 10374 2ffd4f27c7f90b8a300608069537743c ""
   "C:/Users/kunda/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/kunda/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
-  "c:/Users/kunda/Documents/bioinformatics/borgia/dmitri/publications/chemical-structure/why-chemical-structure.tex" 1782288726 50141 b5052d4bb9c3d1c4ccd63d0699ad8026 ""
-  "why-chemical-structure.aux" 1782288738 7771 f92094241de1f2fe09c82872f0594999 "pdflatex"
-  "why-chemical-structure.bbl" 1782288736 2059 71a0076c6ba1af857115d7e72d851837 "bibtex why-chemical-structure"
-  "why-chemical-structure.out" 1782288738 4877 20bb1d4b221743cb2cf2118dc41ef3f6 "pdflatex"
-  "why-chemical-structure.tex" 1782288726 50141 b5052d4bb9c3d1c4ccd63d0699ad8026 ""
-  "why-chemical-structure.toc" 1782288738 2108 488ad01c6001c343bd253896772f05de "pdflatex"
+  "c:/Users/kunda/Documents/bioinformatics/borgia/dmitri/publications/chemical-structure/why-chemical-structure.tex" 1782312489 60637 aecae74bf8225a26cebd5dfc325f573e ""
+  "figures/panel_1_capacity.png" 1782289123 421006 9bd9b2171430c3537faf6b54d8f26c49 ""
+  "figures/panel_2_valence.png" 1782289125 506429 be8a8fa30db188fbd2aae820c602b6e4 ""
+  "figures/panel_3_bonding.png" 1782289128 464391 c6c7484ce516d37f8d8afec956f0e160 ""
+  "figures/panel_4_stoichiometry.png" 1782289129 422160 98f80d525a53d920a95cf74929dc6ce2 ""
+  "figures/panel_5_geometry.png" 1782289130 520499 4da842db4f1038e95914386e3f194828 ""
+  "figures/panel_6_dimension.png" 1782289131 523484 7c82fc55102f1831c7afeadc9a202b20 ""
+  "figures/panel_7_bondlength.png" 1782289132 563479 6888e2c171d2c030da9fb036b1462194 ""
+  "figures/panel_8_existence.png" 1782289134 504638 dc73a4c3fc5cca38fdeb6d6962385f51 ""
+  "why-chemical-structure.aux" 1782312503 27145 73cf821c76e060969b2a20dc0d064d98 "pdflatex"
+  "why-chemical-structure.bbl" 1782312492 0 d41d8cd98f00b204e9800998ecf8427e "bibtex why-chemical-structure"
+  "why-chemical-structure.out" 1782312503 4635 c466521bc08929d1f0aa91d388f0f894 "pdflatex"
+  "why-chemical-structure.tex" 1782312489 60637 aecae74bf8225a26cebd5dfc325f573e ""
+  "why-chemical-structure.toc" 1782312503 2069 fd2b5fa9628b62c1e1dca58b9e3bd684 "pdflatex"
   (generated)
   "why-chemical-structure.aux"
   "why-chemical-structure.log"
