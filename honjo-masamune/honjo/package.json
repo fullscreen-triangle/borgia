@@ -1,0 +1,27 @@
+{
+  "name": "@honjo/honjo",
+  "version": "0.1.0",
+  "description": "Honjo Masamune — a cut-primitive DSL for cheminformatics by individuation (TypeScript playground compiler).",
+  "license": "MIT",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "honjo": "dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "run": "node dist/cli.js",
+    "test": "node dist/test/run-tests.js",
+    "check": "tsc -p tsconfig.json --noEmit"
+  },
+  "files": [
+    "dist",
+    "src",
+    "examples"
+  ],
+  "devDependencies": {
+    "@types/node": "^26.0.1",
+    "typescript": "^5.4.0"
+  }
+}
