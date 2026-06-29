@@ -107,7 +107,32 @@ class Parser {
     const pos = this.pos();
     const name = this.expectIdent();
     this.expectOp(":=");
+    // `name := track ...`  parses the track as an expression (yield role optional)
+    if (this.isKw("track")) {
+      return { tag: "bind", name, value: this.parseTrackExpr(), pos };
+    }
     return { tag: "bind", name, value: this.parseExpr(), pos };
+  }
+
+  // track as an expression: track ident in expr [with reps ids] until <admit> [yield ident]
+  private parseTrackExpr(): Expr {
+    const pos = this.pos();
+    this.expectKw("track");
+    const item = this.expectIdent();
+    this.expectKw("in");
+    const process = this.parseExpr();
+    let reps: string[] | undefined;
+    if (this.isKw("with")) {
+      this.adv();
+      this.expectKw("reps");
+      reps = [this.expectIdent()];
+      while (this.isOp(",")) { this.adv(); reps.push(this.expectIdent()); }
+    }
+    this.expectKw("until");
+    const admit = this.parseAdmit();
+    let role: string | undefined;
+    if (this.isKw("yield")) { this.adv(); role = this.expectIdent(); }
+    return { tag: "trackExpr", item, process, reps, admit, role, pos };
   }
 
   private parseObserve(): Stmt {

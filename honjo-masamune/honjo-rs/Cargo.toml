@@ -1,0 +1,17 @@
+[package]
+name = "honjo"
+version = "0.1.0"
+edition = "2021"
+description = "Honjo Masamune — a cut-primitive DSL for cheminformatics by individuation (Rust reference compiler)."
+license = "MIT"
+
+[[bin]]
+name = "honjo"
+path = "src/main.rs"
+
+[lib]
+name = "honjo"
+path = "src/lib.rs"
+
+[profile.release]
+opt-level = 3

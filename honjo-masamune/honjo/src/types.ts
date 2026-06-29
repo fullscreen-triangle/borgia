@@ -97,6 +97,15 @@ export function check(program: Program): TypedProgram {
         const f = requirePositiveFloor(env.ambientFloor, e.pos);
         return { name: "Compound", floor: f };
       }
+      case "trackExpr": {
+        const it = env.vars.get(e.item);
+        if (!it) fail(`tracking unbound item '${e.item}'`, e.pos);
+        if (!CUT_LIKE.has(it.name)) fail("track expects an Atom/Compound item", e.pos);
+        checkExpr(e.process);
+        if (e.admit.kind === "cond") checkCond(e.admit.cond);
+        const f = requirePositiveFloor(env.ambientFloor, e.pos);
+        return { name: "Path", floor: f };
+      }
       case "call": {
         // stdlib / module calls are checked structurally: arguments must type,
         // result type is inferred from the verb name where known.

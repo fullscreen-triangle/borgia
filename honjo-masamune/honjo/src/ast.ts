@@ -11,7 +11,8 @@ export type Expr =
   | CutExpr
   | BondExpr
   | CloseExpr
-  | CallExpr;
+  | CallExpr
+  | TrackExpr;
 
 export interface NumLit { tag: "num"; value: number; floor?: number; pos: Pos; }
 export interface StrLit { tag: "str"; value: string; pos: Pos; }
@@ -47,7 +48,8 @@ export interface ExprStmt { tag: "exprStmt"; expr: Expr; pos: Pos; }
 export interface ObserveStmt { tag: "observe"; expr: Expr; as?: string; pos: Pos; }
 export interface AssertStmt { tag: "assert"; cond: Cond; emit?: string; pos: Pos; }
 
-// track x in P [with reps r1,...] until <admit> yield r
+// track x in P [with reps r1,...] until <admit> [yield r]
+// As a statement, `yield r` binds the result to r.
 export interface TrackStmt {
   tag: "track";
   item: string;
@@ -55,6 +57,17 @@ export interface TrackStmt {
   reps?: string[];
   admit: Admit;
   yieldName: string;
+  pos: Pos;
+}
+
+// track as an expression (RHS of a bind): `p := track x in P until converge [yield role]`
+export interface TrackExpr {
+  tag: "trackExpr";
+  item: string;
+  process: Expr;
+  reps?: string[];
+  admit: Admit;
+  role?: string;   // the `yield <role>` projection name (informational)
   pos: Pos;
 }
 export type Admit = { kind: "converge" } | { kind: "diverge" } | { kind: "cond"; cond: Cond };

@@ -119,6 +119,16 @@ class Lowering {
         this.instrs.push({ op: "Cls", dst, central, args, ty: "Compound", floor: this.floor });
         return dst;
       }
+      case "trackExpr": {
+        const itemReg = this.lookup(e.item);
+        const procReg = this.lowerExpr(e.process);
+        const dst = this.reg();
+        this.instrs.push({
+          op: "Prp", dst, item: itemReg, process: procReg,
+          reps: e.reps, admit: this.lowerAdmit(e.admit), ty: "Path", floor: this.floor,
+        });
+        return dst;
+      }
       case "call": {
         const args = e.args.map((a) => this.operand(a.value));
         const dst = this.reg();

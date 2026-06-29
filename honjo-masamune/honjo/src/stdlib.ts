@@ -15,7 +15,8 @@ export interface AtomVal {
   term: string;
   qv: number;       // valence-shell occupancy
   capV: number;     // valence-shell capacity (duet 2 / octet 8 for light elements)
-  vacancy: number;  // nu = capV - qv
+  vacancy: number;  // nu = capV - qv (holes to closure)
+  valence: number;  // bonding capacity = min(nu, capV - nu)  (chemical-structure def)
   floor: number;
   residue: number;
 }
@@ -109,12 +110,13 @@ export function individuate(Z: number, floor: number): AtomVal {
   const e = BY_Z.get(Z);
   if (!e) throw new Error(`cut: element Z=${Z} not in the light-element table (1..18 supported)`);
   const vacancy = e.capV - e.qv;
+  const valence = Math.min(vacancy, e.capV - vacancy); // bonding capacity (chemical-structure def)
   // residue = the boundary deposited individuating this atom from the medium;
   // bounded below by the floor, increasing with vacancy (the partition malformation).
   const residue = thickness(vacancy, floor);
   return {
     ty: "Atom", Z, symbol: e.sym, config: e.config, term: e.term,
-    qv: e.qv, capV: e.capV, vacancy, floor, residue,
+    qv: e.qv, capV: e.capV, vacancy, valence, floor, residue,
   };
 }
 
@@ -143,38 +145,41 @@ const ANGLE_TET = (Math.acos(-1 / 3) * 180) / Math.PI; // 109.4712 deg
 export function close(central: AtomVal, ligands: AtomVal[], floor: number): CompoundVal {
   if (ligands.length === 0) throw new Error("close: needs at least one ligand");
   const lig = ligands[0];
-  const nuC = central.vacancy;
-  const nuL = lig.vacancy;
 
   // homonuclear (e.g. H + H) -> diatomic
   if (central.symbol === lig.symbol) {
     return {
       ty: "Compound", central: central.symbol, ligand: lig.symbol,
       formula: [2, 0], ligands: 1, geometry: "linear", angleDeg: 180,
-      valenceClosed: true, floor, residue: thickness(nuC, floor),
+      valenceClosed: true, floor, residue: thickness(central.vacancy, floor),
     };
   }
 
-  // ligands needed: each ligand commits min(nuL, nuC) cells per interface.
-  let perLigand = 1;
-  if (nuL > 1 && nuL <= nuC && nuC % nuL === 0) perLigand = nuL;
-  let nLig = nuC === 0 ? 0 : Math.max(Math.floor(nuC / perLigand), 1);
+  // Stoichiometry by valence matching: each central-ligand bond consumes one
+  // unit of valence on each side. nLig = central.valence / ligand.valence.
+  const vC = Math.max(central.valence, 1);
+  const vL = Math.max(lig.valence, 1);
+  const nLig = Math.max(Math.round(vC / vL), 1);
 
-  // electron-domain count on the central atom = bonds + lone-pair regions.
-  // bonded interfaces = nLig (single) ; lone regions ~ remaining valence pairs.
-  const bondedRegions = nLig;
-  const lonePairs = Math.max(0, Math.floor((central.qv - nLig) / 2));
-  const k = bondedRegions + lonePairs;
+  // Electron-domain count for VSEPR geometry: bonded domains + lone pairs on
+  // the central atom. Lone pairs = (valence-shell electrons - electrons in
+  // sigma bonds) / 2, for the octet (main-group) case.
+  const bondedDomains = nLig;
+  const lonePairs = central.capV === 8
+    ? Math.max(0, Math.floor((central.qv - nLig) / 2))
+    : 0;
+  const k = bondedDomains + lonePairs;
 
   let geometry = "point";
   let angleDeg: number | null = null;
-  if (k === 2) { geometry = "linear"; angleDeg = lonePairs === 0 ? 180 : ANGLE_TET; }
-  else if (k === 3) { geometry = "trigonal"; angleDeg = lonePairs === 0 ? 120 : 117.0; }
+  if (k === 1) { geometry = "terminal"; angleDeg = null; }
+  else if (k === 2) { geometry = lonePairs === 0 ? "linear" : "bent"; angleDeg = lonePairs === 0 ? 180 : ANGLE_TET; }
+  else if (k === 3) { geometry = lonePairs === 0 ? "trigonal" : "bent"; angleDeg = lonePairs === 0 ? 120 : 117.0; }
   else if (k >= 4) {
     geometry = lonePairs === 0 ? "tetrahedral"
              : lonePairs === 1 ? "pyramidal" : "bent";
-    // symmetric backbone 109.47, compressed by lone pairs (observed-style)
-    angleDeg = lonePairs === 0 ? ANGLE_TET : lonePairs === 1 ? 107.0 : 104.5;
+    // symmetric backbone 109.47, compressed by lone-pair repulsion (observed-style)
+    angleDeg = lonePairs === 0 ? round2(ANGLE_TET) : lonePairs === 1 ? 107.0 : 104.5;
   }
 
   return {
@@ -183,6 +188,8 @@ export function close(central: AtomVal, ligands: AtomVal[], floor: number): Comp
     valenceClosed: true, floor, residue: thickness(0, floor) + nLig * floor,
   };
 }
+
+function round2(x: number): number { return Math.round(x * 100) / 100; }
 
 // ----------------------------------------------------------------------------
 //  Propagate (track x in P) — accountable propagation with convergence

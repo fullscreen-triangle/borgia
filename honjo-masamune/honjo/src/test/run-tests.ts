@@ -3,7 +3,7 @@
 // cut-count monotonicity.
 
 import { evaluate, compile } from "../index.js";
-import { AtomVal, CompoundVal, PathVal, BondVal } from "../stdlib.js";
+import { AtomVal, CompoundVal, PathVal, BondVal, shellCapacity } from "../stdlib.js";
 
 let pass = 0, fail = 0;
 const failures: string[] = [];
@@ -77,17 +77,21 @@ ok("positive floor accepted", (() => { compile(`floor 1.0\nC := cut 6`); return 
   ok("M monotone & >= individuations", r.cutCount >= 2, String(r.cutCount));
 }
 
-// ---- 7. shell capacity C(n)=2n^2 (via stdlib) ----
+// ---- 7. shell capacity C(n)=2n^2 (pure verb) ----
 {
-  // re-import to test the pure verb
-  // (validated separately: 2,8,18,32 for n=1..4)
+  ok("C(1)=2", shellCapacity(1) === 2);
+  ok("C(2)=8", shellCapacity(2) === 8);
+  ok("C(3)=18", shellCapacity(3) === 18);
+  ok("C(4)=32", shellCapacity(4) === 32);
 }
 
-// ---- 8. assert abort path ----
+// ---- 8. assert ok path; and stoichiometry NaCl is 1:1 ----
 {
-  const r = evaluate(`floor 1.0\nO := cut 8\nW := close O(H)\nassert W.valence == closed emit "no"`);
-  // close with a single ligand for O still closes valence by construction
+  const r = evaluate(`floor 1.0\nO := cut 8\nH := cut 1\nW := close O(H,H)\nassert W.valence == closed emit "no"`);
   ok("assert ok path", r.ok === true);
+  const r2 = evaluate(`floor 1.0\nNa := cut 11\nCl := cut 17\nS := close Na(Cl)`);
+  const S = r2.named["S"] as CompoundVal;
+  ok("NaCl 1:1", S.formula[0] === 1 && S.formula[1] === 1, JSON.stringify(S.formula));
 }
 
 // ---- 9. examples parse, type-check, and run ----
