@@ -13,7 +13,8 @@
     "build": "tsc -p tsconfig.json",
     "run": "node dist/cli.js",
     "test": "node dist/test/run-tests.js",
-    "check": "tsc -p tsconfig.json --noEmit"
+    "check": "tsc -p tsconfig.json --noEmit",
+    "bundle": "esbuild src/index.ts --bundle --format=esm --platform=browser --target=es2020 --outfile=../src/lib/honjo.js"
   },
   "files": [
     "dist",
@@ -22,6 +23,7 @@
   ],
   "devDependencies": {
     "@types/node": "^26.0.1",
+    "esbuild": "^0.28.1",
     "typescript": "^5.4.0"
   }
 }
