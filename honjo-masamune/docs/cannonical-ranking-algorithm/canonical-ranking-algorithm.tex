@@ -18,6 +18,7 @@
 \usepackage{microtype}
 \usepackage{xcolor}
 \usepackage{graphicx}
+\graphicspath{{figures/}}
 \usepackage[round,sort&compress]{natbib}
 \usepackage[colorlinks=true,linkcolor=blue!45!black,
             citecolor=blue!45!black,urlcolor=blue!45!black]{hyperref}
@@ -522,6 +523,26 @@ values, and they were fixed before comparison. The \emph{drug-like
 corpus} is thirty small organic structures for which no reference value
 is asserted---they are used only to measure coarseness and convergence.
 
+
+\begin{figure*}[!htbp]
+\centering
+\includegraphics[width=\textwidth]{panel_01_base_key.png}
+\caption{\textbf{The base cut key occupies a small, unevenly populated discrete
+space.} (\textbf{A})~Occupancy of the $(\sigma,\text{burial depth},\text{heavy
+degree})$ cells over the $237$ heavy atoms of the drug-like corpus, bar height
+the number of atoms and colour tracking it; twelve cells are occupied and one
+holds $93$ atoms. (\textbf{B})~The same atoms decomposed by burial depth within
+each of the two realised $\sigma$ levels: depth separates atoms that $\sigma$
+alone does not, which is why the key is a pair. (\textbf{C})~The
+$(\sigma,\text{depth})$ plane with marker area and colour proportional to
+occupancy, showing the seven distinct base keys and their unequal populations.
+(\textbf{D})~Distinct base keys divided by heavy atoms, one bar per molecule
+sorted ascending; the dashed line is the corpus mean $0.508$ and the dotted line
+the value $1.0$ a full ranking would require. The base key separates about half
+the atoms of a typical structure and is not a ranking on its own.}
+\label{fig:basekey}
+\end{figure*}
+
 \subsection{The base key is coarse}
 
 \begin{table}[htbp]
@@ -548,6 +569,25 @@ construction unnecessary: had the base key been near $1.0$, refinement
 would add nothing and the paper would have no subject. It also sets a
 limit---the base key alone is not a ranking, and any claim that a single
 minimum cut per atom suffices to canonicalise a structure is wrong.
+
+
+\begin{figure*}[!htbp]
+\centering
+\includegraphics[width=\textwidth]{panel_03_orbits.png}
+\caption{\textbf{Refinement recovers the automorphism orbit partition exactly.}
+(\textbf{A})~Cut classes against independently determined reference orbit counts
+for the eighteen symmetric molecules, coloured by heavy-atom count and jittered
+slightly so coincident points remain visible; all lie on the identity diagonal
+($18/18$). (\textbf{B})~Residual classes minus orbits per molecule for the cut
+refinement (green, identically zero) against the index tie-breaking control
+(red), which exceeds the orbit count by up to ten classes on the same molecules.
+(\textbf{C})~Atoms, orbits and classes in three dimensions with the identity line
+drawn; points coloured by rounds to stabilisation lie in the orbit plane and well
+below the atom-count diagonal. (\textbf{D})~Classes divided by atoms per
+molecule, sorted; values well below the dotted line at $1.0$ are molecules whose
+own symmetry the refinement declines to break.}
+\label{fig:orbits}
+\end{figure*}
 
 \subsection{Refinement recovers the orbit partition}
 
@@ -600,6 +640,26 @@ $\{$2 unsubstituted ring CH$\}$. In both cases the measurement was right
 and the reference was wrong, which is a weaker form of evidence than a
 correct prediction against a correct reference, and we mark it as such.
 
+
+\begin{figure*}[!htbp]
+\centering
+\includegraphics[width=\textwidth]{panel_02_refinement.png}
+\caption{\textbf{Refinement saturates quickly and lifts the class count without
+reaching one class per atom.} (\textbf{A})~Classes divided by atoms against
+refinement round, one line per molecule, symmetric corpus in red and drug-like
+in blue; every trajectory is non-decreasing and flat after its stabilisation
+round, and the symmetric molecules saturate at markedly lower values.
+(\textbf{B})~The same trajectories in three dimensions against heavy-atom count:
+the saturation level rises with size for the drug-like set while the symmetric
+set stays low regardless of size. (\textbf{C})~Rounds to stabilisation for the
+two corpora; the median over both is $2$ and the maximum is $4$.
+(\textbf{D})~Per molecule, the base-key ratio (orange) and the stable ratio
+(teal) joined by a grey segment, sorted by the stable value: the mean rises from
+$0.508$ to $0.827$, so refinement does substantial work and still leaves atoms
+unseparated.}
+\label{fig:refine}
+\end{figure*}
+
 \subsection{Refinement is necessary and sufficient in the measured range}
 
 \begin{table}[htbp]
@@ -622,6 +682,24 @@ Neither end of \Cref{tab:gain} is the whole construction. The base key
 does not separate enough atoms to rank a structure; the stable partition
 separates most of them, and the remainder are, on this corpus, atoms the
 molecule's own symmetry does not distinguish.
+
+
+\begin{figure*}[!htbp]
+\centering
+\includegraphics[width=\textwidth]{panel_04_control.png}
+\caption{\textbf{The negative control: breaking ties by atom index destroys the
+orbit structure.} (\textbf{A})~Classes produced against reference orbits for the
+cut refinement (green circles, on the diagonal) and for the index tie-breaking
+control (red triangles, above it). (\textbf{B})~Excess classes over the reference
+per molecule for both procedures; the control over-separates on $16$ of $18$
+molecules and the refinement on none. (\textbf{C})~Classes produced against
+heavy-atom count: the control tracks the atom-count diagonal, because an ordering
+must assign a distinct rank to every atom, while the refinement does not.
+(\textbf{D})~The two procedures in the (atoms, orbits, classes) space with a
+vertical segment joining each molecule's two outcomes; segment length is the
+control's over-separation.}
+\label{fig:control}
+\end{figure*}
 
 \subsection{Negative control}
 
@@ -663,6 +741,25 @@ a stronger test and we have not run it. Nothing here measures downstream
 retrieval performance.
 
 % =====================================================================
+
+\begin{figure*}[!htbp]
+\centering
+\includegraphics[width=\textwidth]{panel_05_classes.png}
+\caption{\textbf{Class structure of the stable partition.} (\textbf{A})~Atoms per
+class index for every molecule of the drug-like corpus, one row of bars per
+molecule ordered by size; most classes are singletons and the tall bars are the
+symmetric positions the refinement correctly declines to split.
+(\textbf{B})~Distribution of class sizes over the corpus: singletons dominate,
+with a smaller population of size-two classes and a few larger.
+(\textbf{C})~Stable classes against heavy-atom count, coloured by their ratio,
+with the identity diagonal drawn; molecules below the diagonal retain unbroken
+symmetry. (\textbf{D})~Burial depth against heavy degree for all $237$ atoms,
+jittered for visibility and coloured by $\sigma$; the two $\sigma$ levels
+separate cleanly in this plane, showing what the second component of the key
+contributes.}
+\label{fig:classes}
+\end{figure*}
+
 \section{Relation to existing methods}
 \label{sec:related}
 % =====================================================================

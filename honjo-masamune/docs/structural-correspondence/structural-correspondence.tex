@@ -18,6 +18,7 @@
 \usepackage{microtype}
 \usepackage{xcolor}
 \usepackage{graphicx}
+\graphicspath{{figures/}}
 \usepackage[round,sort&compress]{natbib}
 \usepackage[colorlinks=true,linkcolor=blue!45!black,
             citecolor=blue!45!black,urlcolor=blue!45!black]{hyperref}
@@ -383,6 +384,25 @@ size, different structural class). The annotations were fixed before
 measurement. \emph{Matched pairs}: eight pairs differing at one position.
 \emph{Drug-like set}: thirty structures, used only descriptively.
 
+
+\begin{figure*}[!htbp]
+\centering
+\includegraphics[width=\textwidth]{panel_01_radius.png}
+\caption{\textbf{Tolerance is a resolution parameter: the coarsest radius
+separates best.} (\textbf{A})~Mean class overlap against refinement radius for
+the \textsf{close} (green) and \textsf{far} (red) groups, with the shaded bands
+running to the minimum \textsf{close} and maximum \textsf{far} value; the bands
+are disjoint only at radius $0$. (\textbf{B})~The separation margin, minimum
+\textsf{close} minus maximum \textsf{far}, by radius: $+0.375$ at radius $0$ and
+exactly $0$ at radii $1$, $2$ and $3$. (\textbf{C})~Every annotated pair traced
+across all four radii in three dimensions, \textsf{close} in green and
+\textsf{far} in red; the \textsf{close} traces descend toward the \textsf{far}
+floor as radius grows. (\textbf{D})~Overlap at radius $1$ against overlap at
+radius $0$ for each pair, with the identity line; every \textsf{close} pair falls
+below the diagonal, and one falls to zero.}
+\label{fig:radius}
+\end{figure*}
+
 \subsection{The radius sweep}
 
 \begin{table}[htbp]
@@ -420,6 +440,25 @@ correct behaviour for a discriminating matcher and wrong behaviour for a
 tolerant one, which is the point of \Cref{lem:radius-order}: the two are
 the same dial turned opposite ways.
 \end{remark}
+
+
+\begin{figure*}[!htbp]
+\centering
+\includegraphics[width=\textwidth]{panel_02_separation.png}
+\caption{\textbf{Separation of the annotated groups at the working radius.}
+(\textbf{A})~Class overlap for the two groups with horizontal bars at the group
+means; the shaded band is the gap between the highest \textsf{far} value
+($0.125$) and the lowest \textsf{close} value ($0.500$), which no pair occupies.
+(\textbf{B})~Class overlap against element overlap per pair with the identity
+line: the two \textsf{far} points on the floor at element overlap $0.5$ and $1.0$
+are pairs an element-keyed comparison cannot distinguish and the cut class
+separates completely. (\textbf{C})~All ten pairs sorted by class overlap, with
+the two dashed lines marking the boundaries of the empty band.
+(\textbf{D})~Element overlap, class overlap and structure size in three
+dimensions, showing that the separation is not an artefact of the pairs having
+different sizes.}
+\label{fig:separation}
+\end{figure*}
 
 \subsection{Separation of bioisosteric from unrelated pairs}
 
@@ -467,6 +506,24 @@ different cut keys, and the two structures share no class at all. This is
 a case where the invariant discriminates exactly where element identity
 cannot, and it is the reason the 	extsf{far} group's element overlaps in
 \Cref{tab:pairs} are not uniformly small while its class overlaps are.
+
+
+\begin{figure*}[!htbp]
+\centering
+\includegraphics[width=\textwidth]{panel_03_correspondence.png}
+\caption{\textbf{Correspondence on matched pairs and its decay with radius.}
+(\textbf{A})~Coverage (teal) against the size bound $\min(n_1,n_2)/\max(n_1,n_2)$
+(grey) per pair, sorted; three of the eight pairs reach their ceiling, so raw
+coverage understates the match quality for pairs of unequal size.
+(\textbf{B})~Coverage against radius for each matched pair in three dimensions;
+every pair loses coverage monotonically as the labelling discriminates more.
+(\textbf{C})~Atoms matched against the atom count of the smaller structure, with
+the identity line and colour by coverage; points on the line are pairs in which
+every atom of the smaller structure found a correspondent. (\textbf{D})~Classes
+shared between the two structures of each pair at each radius, showing the same
+erosion from a different quantity.}
+\label{fig:corr}
+\end{figure*}
 
 \subsection{Correspondence on matched pairs}
 
@@ -540,6 +597,25 @@ structure enough that the corresponding atoms no longer share a key. A
 larger corpus would establish whether that pattern holds; six pairs
 cannot.
 
+
+\begin{figure*}[!htbp]
+\centering
+\includegraphics[width=\textwidth]{panel_04_control.png}
+\caption{\textbf{The rewiring control and the cross-element gain.}
+(\textbf{A})~Separation margin for the true structures ($+0.375$) and after
+rewiring the second structure of each pair at random while holding atom
+composition and edge count fixed ($-0.069$): the separation does not survive.
+(\textbf{B})~Group means before and after rewiring; the \textsf{close} mean
+collapses from $0.780$ to near the \textsf{far} value, while the \textsf{far}
+mean barely moves. (\textbf{C})~Margin over radius under both conditions in three
+dimensions: the true margin exists only at radius $0$ and the rewired margin is
+negative everywhere. (\textbf{D})~Pairings admitted per \textsf{close} pair split
+into same-element (blue) and cross-element (orange); the cross-element pairings,
+which an element-keyed matcher cannot make, total $4$ across the six pairs and
+occur in three of them.}
+\label{fig:rewire}
+\end{figure*}
+
 \subsection{Negative control}
 
 \begin{table}[htbp]
@@ -598,6 +674,24 @@ six \textsf{close} pairs, no statistical statement about the cross-element
 effect is warranted, and none is made.
 
 % =====================================================================
+
+\begin{figure*}[!htbp]
+\centering
+\includegraphics[width=\textwidth]{panel_05_matrix.png}
+\caption{\textbf{Class and element overlap over the drug-like set.}
+(\textbf{A})~Class-overlap matrix for all $\binom{30}{2}$ pairs of the drug-like
+corpus at radius $0$, structures in corpus order. (\textbf{B})~Element-overlap
+matrix for the same pairs on the same scale; the block structure differs
+visibly, so the two quantities are not proxies for one another.
+(\textbf{C})~Distributions of the two overlaps over the $406$ pairs with their
+means marked: class overlap is shifted toward lower values, because agreeing on
+composition is easier than agreeing on structural role. (\textbf{D})~Element
+overlap, class overlap and absolute size difference in three dimensions,
+coloured by class minus element overlap; points far from the diagonal plane are
+pairs on which the two criteria most disagree.}
+\label{fig:matrix}
+\end{figure*}
+
 \section{Relation to existing methods}
 \label{sec:related}
 % =====================================================================

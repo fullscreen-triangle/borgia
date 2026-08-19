@@ -8,19 +8,19 @@
 \contentsline {section}{\numberline {4}Validation}{5}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Method}{5}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}The radius sweep}{5}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Separation of bioisosteric from unrelated pairs}{5}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}Correspondence on matched pairs}{5}{subsection.4.4}%
-\contentsline {subsection}{\numberline {4.5}The weakest result: cross-element pairings}{7}{subsection.4.5}%
-\contentsline {subsection}{\numberline {4.6}Negative control}{7}{subsection.4.6}%
-\contentsline {subsection}{\numberline {4.7}Two experiment-design errors}{7}{subsection.4.7}%
-\contentsline {paragraph}{A control that could not fail.}{7}{section*.2}%
-\contentsline {paragraph}{A baseline that was not a baseline.}{7}{section*.3}%
-\contentsline {subsection}{\numberline {4.8}What the suite does not establish}{8}{subsection.4.8}%
-\contentsline {section}{\numberline {5}Relation to existing methods}{8}{section.5}%
-\contentsline {paragraph}{Maximum common substructure.}{8}{section*.4}%
-\contentsline {paragraph}{Substructure search.}{8}{section*.5}%
-\contentsline {paragraph}{Bioisostere databases.}{8}{section*.6}%
-\contentsline {paragraph}{Fingerprint similarity.}{8}{section*.7}%
-\contentsline {paragraph}{Colour refinement.}{8}{section*.8}%
-\contentsline {section}{\numberline {6}Limitations}{8}{section.6}%
-\contentsline {section}{\numberline {7}Conclusion}{9}{section.7}%
+\contentsline {subsection}{\numberline {4.3}Separation of bioisosteric from unrelated pairs}{6}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Correspondence on matched pairs}{8}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}The weakest result: cross-element pairings}{8}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}Negative control}{9}{subsection.4.6}%
+\contentsline {subsection}{\numberline {4.7}Two experiment-design errors}{9}{subsection.4.7}%
+\contentsline {paragraph}{A control that could not fail.}{9}{section*.2}%
+\contentsline {paragraph}{A baseline that was not a baseline.}{9}{section*.3}%
+\contentsline {subsection}{\numberline {4.8}What the suite does not establish}{9}{subsection.4.8}%
+\contentsline {section}{\numberline {5}Relation to existing methods}{9}{section.5}%
+\contentsline {paragraph}{Maximum common substructure.}{9}{section*.4}%
+\contentsline {paragraph}{Substructure search.}{9}{section*.5}%
+\contentsline {paragraph}{Bioisostere databases.}{10}{section*.6}%
+\contentsline {paragraph}{Fingerprint similarity.}{10}{section*.7}%
+\contentsline {paragraph}{Colour refinement.}{10}{section*.8}%
+\contentsline {section}{\numberline {6}Limitations}{10}{section.6}%
+\contentsline {section}{\numberline {7}Conclusion}{11}{section.7}%
