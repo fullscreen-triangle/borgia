@@ -243,3 +243,7 @@ secrets.toml
 scratch/
 sandbox/
 playground/
+
+# purpose: commit the lens (a decision about how to read this repo); ignore derived caches
+.purpose/*
+!.purpose/lens.toml

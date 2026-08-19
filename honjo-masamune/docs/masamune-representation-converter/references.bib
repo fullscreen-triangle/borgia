@@ -1,0 +1,675 @@
+% =====================================================================
+%  References for: Masamune --- A Verdict-Carrying Converter and Plan
+%  Language for Chemical Structure Representations
+%
+%  External literature only. No self-citation.
+% =====================================================================
+
+% ---------------------------------------------------------------------
+%  Line notations and their specifications
+% ---------------------------------------------------------------------
+
+@article{weininger1988smiles,
+  author  = {Weininger, David},
+  title   = {{SMILES}, a Chemical Language and Information System.
+             1. Introduction to Methodology and Encoding Rules},
+  journal = {Journal of Chemical Information and Computer Sciences},
+  volume  = {28},
+  number  = {1},
+  pages   = {31--36},
+  year    = {1988},
+  doi     = {10.1021/ci00057a005}
+}
+
+@article{weininger1989smiles2,
+  author  = {Weininger, David and Weininger, Arthur and
+             Weininger, Joseph L.},
+  title   = {{SMILES}. 2. Algorithm for Generation of Unique {SMILES}
+             Notation},
+  journal = {Journal of Chemical Information and Computer Sciences},
+  volume  = {29},
+  number  = {2},
+  pages   = {97--101},
+  year    = {1989},
+  doi     = {10.1021/ci00062a008}
+}
+
+@misc{opensmiles,
+  author       = {James, Craig A.},
+  title        = {{OpenSMILES} Specification},
+  howpublished = {Version 1.0},
+  year         = {2016},
+  note         = {\url{http://opensmiles.org/opensmiles.html}}
+}
+
+@misc{daylight_theory,
+  author       = {{Daylight Chemical Information Systems}},
+  title        = {Daylight Theory Manual},
+  year         = {2019},
+  note         = {\url{https://www.daylight.com/dayhtml/doc/theory/}}
+}
+
+@article{heller2015inchi,
+  author  = {Heller, Stephen R. and McNaught, Alan and Pletnev, Igor
+             and Stein, Stephen and Tchekhovskoi, Dmitrii},
+  title   = {{InChI}, the {IUPAC} International Chemical Identifier},
+  journal = {Journal of Cheminformatics},
+  volume  = {7},
+  pages   = {23},
+  year    = {2015},
+  doi     = {10.1186/s13321-015-0068-4}
+}
+
+@article{oboyle2012inchi,
+  author  = {O'Boyle, Noel M.},
+  title   = {Towards a Universal {SMILES} Representation --- A Standard
+             Method to Generate Canonical {SMILES} Based on the
+             {InChI}},
+  journal = {Journal of Cheminformatics},
+  volume  = {4},
+  pages   = {22},
+  year    = {2012},
+  doi     = {10.1186/1758-2946-4-22}
+}
+
+@article{krenn2020selfies,
+  author  = {Krenn, Mario and H{\"a}se, Florian and Nigam, AkshatKumar
+             and Friederich, Pascal and Aspuru-Guzik, Al{\'a}n},
+  title   = {Self-Referencing Embedded Strings ({SELFIES}): A 100\%
+             Robust Molecular String Representation},
+  journal = {Machine Learning: Science and Technology},
+  volume  = {1},
+  number  = {4},
+  pages   = {045024},
+  year    = {2020},
+  doi     = {10.1088/2632-2153/aba947}
+}
+
+% ---------------------------------------------------------------------
+%  Connection-table and structural file formats
+% ---------------------------------------------------------------------
+
+@article{dalby1992ctfile,
+  author  = {Dalby, Arthur and Nourse, James G. and Hounshell,
+             W. Douglas and Gushurst, Ann K. I. and Grier, David L.
+             and Leland, Burton A. and Laufer, John},
+  title   = {Description of Several Chemical Structure File Formats
+             Used by Computer Programs Developed at Molecular Design
+             Limited},
+  journal = {Journal of Chemical Information and Computer Sciences},
+  volume  = {32},
+  number  = {3},
+  pages   = {244--255},
+  year    = {1992},
+  doi     = {10.1021/ci00007a012}
+}
+
+@article{berman2000pdb,
+  author  = {Berman, Helen M. and Westbrook, John and Feng, Zukang and
+             Gilliland, Gary and Bhat, T. N. and Weissig, Helge and
+             Shindyalov, Ilya N. and Bourne, Philip E.},
+  title   = {The {Protein Data Bank}},
+  journal = {Nucleic Acids Research},
+  volume  = {28},
+  number  = {1},
+  pages   = {235--242},
+  year    = {2000},
+  doi     = {10.1093/nar/28.1.235}
+}
+
+@article{westbrook2022pdbx,
+  author  = {Westbrook, John D. and Young, Jasmine Y. and Shao, Chenghua
+             and Feng, Zukang and Guranovic, Vladimir and Lawson,
+             Catherine L. and Vallat, Brinda and Adams, Paul D. and
+             Berrisford, John M. and Bricogne, G{\'e}rard and others},
+  title   = {{PDBx/mmCIF} Ecosystem: Foundational Semantic Tools for
+             Structural Biology},
+  journal = {Journal of Molecular Biology},
+  volume  = {434},
+  number  = {11},
+  pages   = {167599},
+  year    = {2022},
+  doi     = {10.1016/j.jmb.2022.167599}
+}
+
+@article{hall1991cif,
+  author  = {Hall, Sydney R. and Allen, Frank H. and Brown, I. David},
+  title   = {The Crystallographic Information File ({CIF}): A New
+             Standard Archive File for Crystallography},
+  journal = {Acta Crystallographica Section A},
+  volume  = {47},
+  number  = {6},
+  pages   = {655--685},
+  year    = {1991},
+  doi     = {10.1107/S010876739101067X}
+}
+
+@article{murrayrust2011cml,
+  author  = {Murray-Rust, Peter and Rzepa, Henry S.},
+  title   = {{CML}: Evolution and Design},
+  journal = {Journal of Cheminformatics},
+  volume  = {3},
+  pages   = {44},
+  year    = {2011},
+  doi     = {10.1186/1758-2946-3-44}
+}
+
+% ---------------------------------------------------------------------
+%  Substructure query languages
+% ---------------------------------------------------------------------
+
+@misc{daylight_smarts,
+  author       = {{Daylight Chemical Information Systems}},
+  title        = {{SMARTS} --- A Language for Describing Molecular
+                  Patterns},
+  year         = {2019},
+  note         = {\url{https://www.daylight.com/dayhtml/doc/theory/theory.smarts.html}}
+}
+
+@article{ehrlich2011systematic,
+  author  = {Ehrlich, Hans-Christian and Rarey, Matthias},
+  title   = {Systematic Benchmark of Substructure Search in Molecular
+             Graphs --- From {Ullmann} to {VF2}},
+  journal = {Journal of Cheminformatics},
+  volume  = {4},
+  pages   = {13},
+  year    = {2012},
+  doi     = {10.1186/1758-2946-4-13}
+}
+
+% ---------------------------------------------------------------------
+%  Toolkits
+% ---------------------------------------------------------------------
+
+@misc{rdkit,
+  author       = {Landrum, Greg},
+  title        = {{RDKit}: Open-Source Cheminformatics},
+  year         = {2024},
+  note         = {\url{https://www.rdkit.org}}
+}
+
+@article{oboyle2011openbabel,
+  author  = {O'Boyle, Noel M. and Banck, Michael and James, Craig A.
+             and Morley, Chris and Vandermeersch, Tim and Hutchison,
+             Geoffrey R.},
+  title   = {{Open Babel}: An Open Chemical Toolbox},
+  journal = {Journal of Cheminformatics},
+  volume  = {3},
+  pages   = {33},
+  year    = {2011},
+  doi     = {10.1186/1758-2946-3-33}
+}
+
+@article{willighagen2017cdk,
+  author  = {Willighagen, Egon L. and Mayfield, John W. and Alvarsson,
+             Jonathan and Berg, Arvid and Carlsson, Lars and Jeliazkova,
+             Nina and Kuhn, Stefan and Pluskal, Tom{\'a}{\v s} and
+             Rojas-Chert{\'o}, Miquel and Spjuth, Ola and others},
+  title   = {The {Chemistry Development Kit} ({CDK}) v2.0: Atom Typing,
+             Depiction, Molecular Formulas, and Substructure Searching},
+  journal = {Journal of Cheminformatics},
+  volume  = {9},
+  pages   = {33},
+  year    = {2017},
+  doi     = {10.1186/s13321-017-0220-4}
+}
+
+% ---------------------------------------------------------------------
+%  Aromaticity, tautomers, normalisation: the known ambiguities
+% ---------------------------------------------------------------------
+
+@article{oboyle2012aromaticity,
+  author  = {O'Boyle, Noel M. and Sayle, Roger A.},
+  title   = {Comparing Structural Fingerprints Using a Literature-Based
+             Similarity Benchmark},
+  journal = {Journal of Cheminformatics},
+  volume  = {8},
+  pages   = {36},
+  year    = {2016},
+  doi     = {10.1186/s13321-016-0148-0}
+}
+
+@article{sayle2010sowhat,
+  author  = {Sayle, Roger A.},
+  title   = {So You Think You Understand Tautomerism?},
+  journal = {Journal of Computer-Aided Molecular Design},
+  volume  = {24},
+  number  = {6--7},
+  pages   = {485--496},
+  year    = {2010},
+  doi     = {10.1007/s10822-010-9329-5}
+}
+
+@article{warr2010tautomerism,
+  author  = {Warr, Wendy A.},
+  title   = {Tautomerism in Chemical Information Management Systems},
+  journal = {Journal of Computer-Aided Molecular Design},
+  volume  = {24},
+  number  = {6--7},
+  pages   = {497--520},
+  year    = {2010},
+  doi     = {10.1007/s10822-010-9338-4}
+}
+
+@article{fourches2010curation,
+  author  = {Fourches, Denis and Muratov, Eugene and Tropsha, Alexander},
+  title   = {Trust, but Verify: On the Importance of Chemical Structure
+             Curation in Cheminformatics and {QSAR} Modeling Research},
+  journal = {Journal of Chemical Information and Modeling},
+  volume  = {50},
+  number  = {7},
+  pages   = {1189--1204},
+  year    = {2010},
+  doi     = {10.1021/ci100176x}
+}
+
+@article{fourches2016curation2,
+  author  = {Fourches, Denis and Muratov, Eugene and Tropsha, Alexander},
+  title   = {Trust, but Verify {II}: A Practical Guide to
+             Chemogenomics Data Curation},
+  journal = {Journal of Chemical Information and Modeling},
+  volume  = {56},
+  number  = {7},
+  pages   = {1243--1252},
+  year    = {2016},
+  doi     = {10.1021/acs.jcim.6b00129}
+}
+
+@article{young2008errors,
+  author  = {Young, Douglas and Martin, Todd and Venkatapathy,
+             Raghuraman and Harten, Paul},
+  title   = {Are the Chemical Structures in Your {QSAR} Correct?},
+  journal = {QSAR \& Combinatorial Science},
+  volume  = {27},
+  number  = {11--12},
+  pages   = {1337--1345},
+  year    = {2008},
+  doi     = {10.1002/qsar.200810084}
+}
+
+@article{williams2012quality,
+  author  = {Williams, Antony J. and Ekins, Sean and Tkachenko, Valery},
+  title   = {Towards a Gold Standard: Regarding Quality in Public
+             Domain Chemistry Databases and Approaches to Improving
+             the Situation},
+  journal = {Drug Discovery Today},
+  volume  = {17},
+  number  = {13--14},
+  pages   = {685--701},
+  year    = {2012},
+  doi     = {10.1016/j.drudis.2012.02.013}
+}
+
+@article{akhondi2012consistency,
+  author  = {Akhondi, Saber A. and Kors, Jan A. and Muresan, Sorel},
+  title   = {Consistency of Systematic Chemical Identifiers within and
+             between Small-Molecule Databases},
+  journal = {Journal of Cheminformatics},
+  volume  = {4},
+  pages   = {35},
+  year    = {2012},
+  doi     = {10.1186/1758-2946-4-35}
+}
+
+% ---------------------------------------------------------------------
+%  Chemical databases and federation
+% ---------------------------------------------------------------------
+
+@article{kim2023pubchem,
+  author  = {Kim, Sunghwan and Chen, Jie and Cheng, Tiejun and
+             Gindulyte, Asta and He, Jia and He, Siqian and Li, Qingliang
+             and Shoemaker, Benjamin A. and Thiessen, Paul A. and
+             Yu, Bo and Zaslavsky, Leonid and Zhang, Jian and
+             Bolton, Evan E.},
+  title   = {{PubChem} 2023 Update},
+  journal = {Nucleic Acids Research},
+  volume  = {51},
+  number  = {D1},
+  pages   = {D1373--D1380},
+  year    = {2023},
+  doi     = {10.1093/nar/gkac956}
+}
+
+@article{zdrazil2024chembl,
+  author  = {Zdrazil, Barbara and Felix, Eloy and Hunter, Fiona and
+             Manners, Emma J. and Blackshaw, James and Corbett, Sybilla
+             and de Veij, Marleen and Ioannidis, Harris and
+             Lopez, David Mendez and Mosquera, Juan F. and others},
+  title   = {The {ChEMBL} Database in 2023: A Drug Discovery Platform
+             Spanning Multiple Bioactivity Data Types and Time Periods},
+  journal = {Nucleic Acids Research},
+  volume  = {52},
+  number  = {D1},
+  pages   = {D1180--D1192},
+  year    = {2024},
+  doi     = {10.1093/nar/gkad1004}
+}
+
+@article{hastings2016chebi,
+  author  = {Hastings, Janna and Owen, Gareth and Dekker, Adriano and
+             Ennis, Marcus and Kale, Namrata and Muthukrishnan,
+             Venkatesh and Turner, Steve and Swainston, Neil and
+             Mendes, Pedro and Steinbeck, Christoph},
+  title   = {{ChEBI} in 2016: Improved Services and an Expanding
+             Collection of Metabolites},
+  journal = {Nucleic Acids Research},
+  volume  = {44},
+  number  = {D1},
+  pages   = {D1214--D1219},
+  year    = {2016},
+  doi     = {10.1093/nar/gkv1031}
+}
+
+@article{groom2016csd,
+  author  = {Groom, Colin R. and Bruno, Ian J. and Lightfoot, Matthew P.
+             and Ward, Suzanna C.},
+  title   = {The {Cambridge Structural Database}},
+  journal = {Acta Crystallographica Section B},
+  volume  = {72},
+  number  = {2},
+  pages   = {171--179},
+  year    = {2016},
+  doi     = {10.1107/S2052520616003954}
+}
+
+@article{wilkinson2016fair,
+  author  = {Wilkinson, Mark D. and Dumontier, Michel and Aalbersberg,
+             IJsbrand Jan and Appleton, Gabrielle and Axton, Myles and
+             Baak, Arie and Blomberg, Niklas and Boiten, Jan-Willem and
+             da Silva Santos, Luiz Bonino and Bourne, Philip E. and
+             others},
+  title   = {The {FAIR} Guiding Principles for Scientific Data
+             Management and Stewardship},
+  journal = {Scientific Data},
+  volume  = {3},
+  pages   = {160018},
+  year    = {2016},
+  doi     = {10.1038/sdata.2016.18}
+}
+
+% ---------------------------------------------------------------------
+%  Valence, bonding, and structure theory (the chemistry being encoded)
+% ---------------------------------------------------------------------
+
+@article{lewis1916atom,
+  author  = {Lewis, Gilbert N.},
+  title   = {The Atom and the Molecule},
+  journal = {Journal of the American Chemical Society},
+  volume  = {38},
+  number  = {4},
+  pages   = {762--785},
+  year    = {1916},
+  doi     = {10.1021/ja02261a002}
+}
+
+@article{langmuir1919arrangement,
+  author  = {Langmuir, Irving},
+  title   = {The Arrangement of Electrons in Atoms and Molecules},
+  journal = {Journal of the American Chemical Society},
+  volume  = {41},
+  number  = {6},
+  pages   = {868--934},
+  year    = {1919},
+  doi     = {10.1021/ja02227a002}
+}
+
+@book{pauling1960nature,
+  author    = {Pauling, Linus},
+  title     = {The Nature of the Chemical Bond},
+  edition   = {3},
+  publisher = {Cornell University Press},
+  address   = {Ithaca, NY},
+  year      = {1960}
+}
+
+@article{gillespie1957vsepr,
+  author  = {Gillespie, Ronald J. and Nyholm, Ronald S.},
+  title   = {Inorganic Stereochemistry},
+  journal = {Quarterly Reviews, Chemical Society},
+  volume  = {11},
+  number  = {4},
+  pages   = {339--380},
+  year    = {1957},
+  doi     = {10.1039/QR9571100339}
+}
+
+% ---------------------------------------------------------------------
+%  Graph theory, cuts, flows
+% ---------------------------------------------------------------------
+
+@article{fordfulkerson1956,
+  author  = {Ford, L. R. and Fulkerson, D. R.},
+  title   = {Maximal Flow through a Network},
+  journal = {Canadian Journal of Mathematics},
+  volume  = {8},
+  pages   = {399--404},
+  year    = {1956},
+  doi     = {10.4153/CJM-1956-045-5}
+}
+
+@article{stoer1997simple,
+  author  = {Stoer, Mechthild and Wagner, Frank},
+  title   = {A Simple Min-Cut Algorithm},
+  journal = {Journal of the ACM},
+  volume  = {44},
+  number  = {4},
+  pages   = {585--591},
+  year    = {1997},
+  doi     = {10.1145/263867.263872}
+}
+
+@article{gomory1961multi,
+  author  = {Gomory, R. E. and Hu, T. C.},
+  title   = {Multi-Terminal Network Flows},
+  journal = {Journal of the Society for Industrial and Applied
+             Mathematics},
+  volume  = {9},
+  number  = {4},
+  pages   = {551--570},
+  year    = {1961},
+  doi     = {10.1137/0109047}
+}
+
+@book{diestel2017graph,
+  author    = {Diestel, Reinhard},
+  title     = {Graph Theory},
+  edition   = {5},
+  publisher = {Springer},
+  address   = {Berlin},
+  year      = {2017},
+  doi       = {10.1007/978-3-662-53622-3}
+}
+
+@book{cormen2009introduction,
+  author    = {Cormen, Thomas H. and Leiserson, Charles E. and
+               Rivest, Ronald L. and Stein, Clifford},
+  title     = {Introduction to Algorithms},
+  edition   = {3},
+  publisher = {MIT Press},
+  address   = {Cambridge, MA},
+  year      = {2009}
+}
+
+% ---------------------------------------------------------------------
+%  Language design, semantics, and compilation
+% ---------------------------------------------------------------------
+
+@book{pierce2002types,
+  author    = {Pierce, Benjamin C.},
+  title     = {Types and Programming Languages},
+  publisher = {MIT Press},
+  address   = {Cambridge, MA},
+  year      = {2002}
+}
+
+@article{mernik2005when,
+  author  = {Mernik, Marjan and Heering, Jan and Sloane, Anthony M.},
+  title   = {When and How to Develop Domain-Specific Languages},
+  journal = {ACM Computing Surveys},
+  volume  = {37},
+  number  = {4},
+  pages   = {316--344},
+  year    = {2005},
+  doi     = {10.1145/1118890.1118892}
+}
+
+@article{vandeursen2000domain,
+  author  = {van Deursen, Arie and Klint, Paul and Visser, Joost},
+  title   = {Domain-Specific Languages: An Annotated Bibliography},
+  journal = {ACM SIGPLAN Notices},
+  volume  = {35},
+  number  = {6},
+  pages   = {26--36},
+  year    = {2000},
+  doi     = {10.1145/352029.352035}
+}
+
+@misc{ebnf2017,
+  author       = {{International Organization for Standardization}},
+  title        = {{ISO/IEC} 14977:1996 --- Information Technology:
+                  Syntactic Metalanguage: Extended {BNF}},
+  year         = {1996},
+  note         = {Standard}
+}
+
+% ---------------------------------------------------------------------
+%  Nulls, missing information, and query semantics
+% ---------------------------------------------------------------------
+
+@article{codd1979extending,
+  author  = {Codd, E. F.},
+  title   = {Extending the Database Relational Model to Capture More
+             Meaning},
+  journal = {ACM Transactions on Database Systems},
+  volume  = {4},
+  number  = {4},
+  pages   = {397--434},
+  year    = {1979},
+  doi     = {10.1145/320107.320109}
+}
+
+@article{imielinski1984incomplete,
+  author  = {Imieli{\'n}ski, Tomasz and Lipski, Witold},
+  title   = {Incomplete Information in Relational Databases},
+  journal = {Journal of the ACM},
+  volume  = {31},
+  number  = {4},
+  pages   = {761--791},
+  year    = {1984},
+  doi     = {10.1145/1634.1886}
+}
+
+@article{libkin2016sql,
+  author  = {Libkin, Leonid},
+  title   = {{SQL}'s Three-Valued Logic and Certain Answers},
+  journal = {ACM Transactions on Database Systems},
+  volume  = {41},
+  number  = {1},
+  pages   = {1--28},
+  year    = {2016},
+  doi     = {10.1145/2877206}
+}
+
+@article{perez2009sparql,
+  author  = {P{\'e}rez, Jorge and Arenas, Marcelo and Gutierrez, Claudio},
+  title   = {Semantics and Complexity of {SPARQL}},
+  journal = {ACM Transactions on Database Systems},
+  volume  = {34},
+  number  = {3},
+  pages   = {1--45},
+  year    = {2009},
+  doi     = {10.1145/1567274.1567278}
+}
+
+@article{angles2017foundations,
+  author  = {Angles, Renzo and Arenas, Marcelo and Barcel{\'o}, Pablo
+             and Hogan, Aidan and Reutter, Juan and Vrgo{\v c}, Domagoj},
+  title   = {Foundations of Modern Query Languages for Graph Databases},
+  journal = {ACM Computing Surveys},
+  volume  = {50},
+  number  = {5},
+  pages   = {1--40},
+  year    = {2017},
+  doi     = {10.1145/3104031}
+}
+
+% ---------------------------------------------------------------------
+%  Provenance
+% ---------------------------------------------------------------------
+
+@article{buneman2001why,
+  author  = {Buneman, Peter and Khanna, Sanjeev and Tan, Wang-Chiew},
+  title   = {Why and Where: A Characterization of Data Provenance},
+  booktitle = {Database Theory --- ICDT 2001},
+  journal = {Lecture Notes in Computer Science},
+  volume  = {1973},
+  pages   = {316--330},
+  year    = {2001},
+  doi     = {10.1007/3-540-44503-X_20}
+}
+
+@article{cheney2009provenance,
+  author  = {Cheney, James and Chiticariu, Laura and Tan, Wang-Chiew},
+  title   = {Provenance in Databases: Why, How, and Where},
+  journal = {Foundations and Trends in Databases},
+  volume  = {1},
+  number  = {4},
+  pages   = {379--474},
+  year    = {2009},
+  doi     = {10.1561/1900000006}
+}
+
+@article{moreau2013prov,
+  author  = {Moreau, Luc and Groth, Paul},
+  title   = {Provenance: An Introduction to {PROV}},
+  journal = {Synthesis Lectures on the Semantic Web},
+  volume  = {3},
+  number  = {4},
+  pages   = {1--129},
+  year    = {2013},
+  doi     = {10.2200/S00528ED1V01Y201308WBE007}
+}
+
+% ---------------------------------------------------------------------
+%  Workflow and pipeline systems
+% ---------------------------------------------------------------------
+
+@article{koster2012snakemake,
+  author  = {K{\"o}ster, Johannes and Rahmann, Sven},
+  title   = {Snakemake --- A Scalable Bioinformatics Workflow Engine},
+  journal = {Bioinformatics},
+  volume  = {28},
+  number  = {19},
+  pages   = {2520--2522},
+  year    = {2012},
+  doi     = {10.1093/bioinformatics/bts480}
+}
+
+@article{ditommaso2017nextflow,
+  author  = {Di Tommaso, Paolo and Chatzou, Maria and Floden, Evan W.
+             and Barja, Pablo Prieto and Palumbo, Emilio and
+             Notredame, Cedric},
+  title   = {Nextflow Enables Reproducible Computational Workflows},
+  journal = {Nature Biotechnology},
+  volume  = {35},
+  number  = {4},
+  pages   = {316--319},
+  year    = {2017},
+  doi     = {10.1038/nbt.3820}
+}
+
+% ---------------------------------------------------------------------
+%  Reproducibility
+% ---------------------------------------------------------------------
+
+@article{sandve2013ten,
+  author  = {Sandve, Geir Kjetil and Nekrutenko, Anton and Taylor,
+             James and Hovig, Eivind},
+  title   = {Ten Simple Rules for Reproducible Computational Research},
+  journal = {PLoS Computational Biology},
+  volume  = {9},
+  number  = {10},
+  pages   = {e1003285},
+  year    = {2013},
+  doi     = {10.1371/journal.pcbi.1003285}
+}

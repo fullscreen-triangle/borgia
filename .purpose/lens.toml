@@ -1,0 +1,83 @@
+# borgia lens — tuned 2026-08-19. Measured decisions, not guesses:
+#
+# paths = src/** + docs/**  : this repo is 70% prose (10644 `section` + 2394
+#   `heading` of 18558 symbols, across 666 modules). The default all-paths lens
+#   did not finish `ckg lens` in 120s. Scoping to src+docs brings it to 0.18s.
+#
+# kinds = types only (no fn/def) : THE lever, confirmed by measurement here.
+#   with fn+def : 59 modules, e=1211, density 0.708, 93% in one component
+#   without     : 56 modules, e=  78, density 0.051, 84% in one component
+#   The 3 extra modules are not worth a near-complete graph. Cost of this
+#   choice: 1642 of 2863 path-admitted entries leave tau.
+#
+# split_camel_case : INERT on this index. The indexer lowercases names before
+#   the lens sees them, so `InformationCatalysisEngine` is already
+#   `informationcatalysisengine` and there is no boundary left to split on.
+#   Left true anyway; it costs nothing.
+#
+# stopwords : untouched. Top term spread is only 7% (4/56 modules) and every
+#   high-spread term is a symbol name, which stopwords cannot reach by design.
+
+# The term map is your instrument.
+#
+# The calculus is correct for ANY choice made here (thm:tau-agnostic), so
+# nothing below can make a determination unsound. What it decides is which
+# distinctions the graph can see — and therefore whether the graph can tell
+# your modules apart at all.
+#
+# Edit, then run `purpose ckg lens` to see what the choice did to the
+# structure, and `purpose ckg build` to induce the graph from it.
+#
+# There is deliberately no score to raise. A lens under which every module
+# draws identical distinctions induces among the highest floors while
+# discriminating worst. Read component sizes and term spread instead.
+
+[lens]
+granularity = "file"   # file | dir — one module per source file, or per directory
+floor = 1            # β; every contact carries at least this
+
+[include]
+kinds = ["struct", "trait", "enum", "class", "type"]
+# Which files contribute. Empty means all of them.
+# `*` stays within one path segment, `**` crosses them.
+paths = ["src/**", "docs/**"]
+# Which symbol kinds contribute. Comment out for all of them.
+# Known kinds: fn, struct, enum, trait, type, def, class, func, heading, section
+# kinds = ["fn", "struct", "trait", "heading"]
+
+[terms]
+min_len = 3                  # shortest prose token that counts as a distinction
+split_camel_case = true      # also emit the pieces of parseRequest, not only the whole
+prose_kinds = ["heading", "section"]  # names here are phrases to split, not identifiers
+
+# Tokens too common to distinguish anything. These apply to prose only: a
+# `fn over` still defines `over`, because that is a real distinction.
+# Add to this list from the TERM SPREAD section of `purpose ckg lens` — the
+# terms at the top of it are the ones putting everything in contact.
+stopwords = [
+  "the", "and", "not", "for", "with", "from", "that", "this",
+  "what", "when", "where", "which", "how", "why", "who", "are",
+  "was", "were", "has", "have", "had", "can", "will", "its",
+  "into", "out", "over", "than", "then", "there", "does", "did",
+  "you", "your", "our", "all", "any", "but", "use", "using",
+  "used", "via", "per", "about", "also",
+]
+
+# Rename a term wherever it appears, so two spellings become one distinction.
+[terms.alias]
+# "ckg" = "contact-knowledge-graph"
+
+# What a distinction is worth when telling two modules apart. Patterns match on
+# the KIND that contributed the term, first match wins, default 1.0.
+# A shared term is worth min(what each module gives it).
+[terms.weight]
+# "trait:*" = 3.0        # anything a trait declares weighs triple
+# "heading:*" = 0.5      # prose weighs half
+# "fn:parse" = 2.0       # one exact term from one kind
+
+[edges]
+# sum     — Σ min(weights) over shared terms; at unit weights, the shared count
+# count   — the shared count, ignoring weights entirely
+# jaccard — weighted Jaccard in (0,1]; needs a floor well below 1 or every
+#           contact clamps to β and the graph goes flat
+weight = "sum"

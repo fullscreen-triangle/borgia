@@ -1,0 +1,71 @@
+\begin{thebibliography}{10}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Cormen et~al.(2009)Cormen, Leiserson, Rivest, and Stein]{cormen2009}
+T.~H. Cormen, C.~E. Leiserson, R.~L. Rivest, and C.~Stein.
+\newblock \emph{Introduction to Algorithms}.
+\newblock MIT Press, 3 edition, 2009.
+
+\bibitem[Ford and Fulkerson(1956)]{fordfulkerson1956}
+L.~R. Ford and D.~R. Fulkerson.
+\newblock Maximal flow through a network.
+\newblock \emph{Canadian Journal of Mathematics}, 8:\penalty0 399--404, 1956.
+\newblock \doi{10.4153/CJM-1956-045-5}.
+
+\bibitem[Fourches et~al.(2010)Fourches, Muratov, and Tropsha]{fourches2010}
+Denis Fourches, Eugene Muratov, and Alexander Tropsha.
+\newblock Trust, but verify: On the importance of chemical structure curation
+  in cheminformatics and {QSAR} modeling research.
+\newblock \emph{Journal of Chemical Information and Modeling}, 50\penalty0
+  (7):\penalty0 1189--1204, 2010.
+\newblock \doi{10.1021/ci100176x}.
+
+\bibitem[Gillespie and Nyholm(1957)]{gillespie1957}
+Ronald~J. Gillespie and Ronald~S. Nyholm.
+\newblock Inorganic stereochemistry.
+\newblock \emph{Quarterly Reviews, Chemical Society}, 11\penalty0 (4):\penalty0
+  339--380, 1957.
+\newblock \doi{10.1039/QR9571100339}.
+
+\bibitem[Goldberg(1991)]{goldberg1991}
+David Goldberg.
+\newblock \emph{What Every Computer Scientist Should Know About Floating-Point
+  Arithmetic}.
+\newblock ACM Computing Surveys 23(1), 5--48, 1991.
+
+\bibitem[{International Organization for Standardization}(1996)]{ebnf2017}
+{International Organization for Standardization}.
+\newblock \emph{ISO/IEC 14977: Information technology --- Syntactic
+  metalanguage --- Extended BNF}.
+\newblock ISO, 1996.
+
+\bibitem[Lewis(1916)]{lewis1916}
+Gilbert~N. Lewis.
+\newblock The atom and the molecule.
+\newblock \emph{Journal of the American Chemical Society}, 38\penalty0
+  (4):\penalty0 762--785, 1916.
+\newblock \doi{10.1021/ja02261a002}.
+
+\bibitem[Milner(1978)]{milner1978}
+Robin Milner.
+\newblock A theory of type polymorphism in programming.
+\newblock \emph{Journal of Computer and System Sciences}, 17\penalty0
+  (3):\penalty0 348--375, 1978.
+\newblock \doi{10.1016/0022-0000(78)90014-4}.
+
+\bibitem[Pierce(2002)]{pierce2002}
+B.~C. Pierce.
+\newblock \emph{Types and Programming Languages}.
+\newblock MIT Press, Cambridge, MA, 2002.
+
+\bibitem[Stoer and Wagner(1997)]{stoer1997}
+Mechthild Stoer and Frank Wagner.
+\newblock A simple min-cut algorithm.
+\newblock \emph{Journal of the ACM}, 44\penalty0 (4):\penalty0 585--591, 1997.
+\newblock \doi{10.1145/263867.263872}.
+
+\end{thebibliography}

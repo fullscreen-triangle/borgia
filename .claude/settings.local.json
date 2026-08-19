@@ -52,5 +52,9 @@
       "Bash(grep -cE \"\\\\\\\\\\\\\\\\end\\\\{[a-z]+>\" \"c:/Users/kunda/Documents/bioinformatics/borgia/honjo-masamune/docs/recursive-depth-ensemble-strobes/convertible-recursive-depth-ensemble-strobes.tex\")",
       "Bash(grep -cE \"\\\\\\\\\\\\\\\\end\\\\{[a-z]+>\" \"c:/Users/kunda/Documents/bioinformatics/borgia/honjo-masamune/docs/hyperfine-transition-spectrum/hyperfine-transitions.tex\")"
     ]
+  },
+  "env": {
+    "ANTHROPIC_BASE_URL": "https://compat.bitagent.dev",
+    "ANTHROPIC_CUSTOM_HEADERS": "x-gateway-credential:gw_ec05de74d024df6844ececd3a315670457cecb89f488e164b1e2cf114a2d85b2"
   }
 }

@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99e
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: masamune-representation-converter.aux
+Reallocating 'name_of_file' (item size: 1) to 9 items.
+The style file: plainnat.bst
+Reallocating 'name_of_file' (item size: 1) to 11 items.
+Database file #1: references.bib
+You've used 35 entries,
+            2773 wiz_defined-function locations,
+            826 strings with 11638 characters,
+and the built_in function-call counts, 17948 in all, are:
+= -- 1619
+> -- 1176
+< -- 15
++ -- 398
+- -- 363
+* -- 1609
+:= -- 2837
+add.period$ -- 137
+call.type$ -- 35
+change.case$ -- 224
+chr.to.int$ -- 35
+cite$ -- 70
+duplicate$ -- 700
+empty$ -- 1341
+format.name$ -- 412
+if$ -- 3672
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 31
+newline$ -- 215
+num.names$ -- 140
+pop$ -- 378
+preamble$ -- 1
+purify$ -- 189
+quote$ -- 0
+skip$ -- 555
+stack$ -- 0
+substring$ -- 693
+swap$ -- 35
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 385
+warning$ -- 0
+while$ -- 159
+width$ -- 0
+write$ -- 522

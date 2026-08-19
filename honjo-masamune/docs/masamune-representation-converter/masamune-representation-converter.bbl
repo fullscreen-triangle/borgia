@@ -1,0 +1,274 @@
+\begin{thebibliography}{35}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Akhondi et~al.(2012)Akhondi, Kors, and
+  Muresan]{akhondi2012consistency}
+Saber~A. Akhondi, Jan~A. Kors, and Sorel Muresan.
+\newblock Consistency of systematic chemical identifiers within and between
+  small-molecule databases.
+\newblock \emph{Journal of Cheminformatics}, 4:\penalty0 35, 2012.
+\newblock \doi{10.1186/1758-2946-4-35}.
+
+\bibitem[Angles et~al.(2017)Angles, Arenas, Barcel{\'o}, Hogan, Reutter, and
+  Vrgo{\v c}]{angles2017foundations}
+Renzo Angles, Marcelo Arenas, Pablo Barcel{\'o}, Aidan Hogan, Juan Reutter, and
+  Domagoj Vrgo{\v c}.
+\newblock Foundations of modern query languages for graph databases.
+\newblock \emph{ACM Computing Surveys}, 50\penalty0 (5):\penalty0 1--40, 2017.
+\newblock \doi{10.1145/3104031}.
+
+\bibitem[Berman et~al.(2000)Berman, Westbrook, Feng, Gilliland, Bhat, Weissig,
+  Shindyalov, and Bourne]{berman2000pdb}
+Helen~M. Berman, John Westbrook, Zukang Feng, Gary Gilliland, T.~N. Bhat, Helge
+  Weissig, Ilya~N. Shindyalov, and Philip~E. Bourne.
+\newblock The {Protein Data Bank}.
+\newblock \emph{Nucleic Acids Research}, 28\penalty0 (1):\penalty0 235--242,
+  2000.
+\newblock \doi{10.1093/nar/28.1.235}.
+
+\bibitem[Buneman et~al.(2001)Buneman, Khanna, and Tan]{buneman2001why}
+Peter Buneman, Sanjeev Khanna, and Wang-Chiew Tan.
+\newblock Why and where: A characterization of data provenance.
+\newblock \emph{Lecture Notes in Computer Science}, 1973:\penalty0 316--330,
+  2001.
+\newblock \doi{10.1007/3-540-44503-X_20}.
+
+\bibitem[Cheney et~al.(2009)Cheney, Chiticariu, and Tan]{cheney2009provenance}
+James Cheney, Laura Chiticariu, and Wang-Chiew Tan.
+\newblock Provenance in databases: Why, how, and where.
+\newblock \emph{Foundations and Trends in Databases}, 1\penalty0 (4):\penalty0
+  379--474, 2009.
+\newblock \doi{10.1561/1900000006}.
+
+\bibitem[Codd(1979)]{codd1979extending}
+E.~F. Codd.
+\newblock Extending the database relational model to capture more meaning.
+\newblock \emph{ACM Transactions on Database Systems}, 4\penalty0 (4):\penalty0
+  397--434, 1979.
+\newblock \doi{10.1145/320107.320109}.
+
+\bibitem[Dalby et~al.(1992)Dalby, Nourse, Hounshell, Gushurst, Grier, Leland,
+  and Laufer]{dalby1992ctfile}
+Arthur Dalby, James~G. Nourse, W.~Douglas Hounshell, Ann K.~I. Gushurst,
+  David~L. Grier, Burton~A. Leland, and John Laufer.
+\newblock Description of several chemical structure file formats used by
+  computer programs developed at molecular design limited.
+\newblock \emph{Journal of Chemical Information and Computer Sciences},
+  32\penalty0 (3):\penalty0 244--255, 1992.
+\newblock \doi{10.1021/ci00007a012}.
+
+\bibitem[{Daylight Chemical Information Systems}(2019)]{daylight_smarts}
+{Daylight Chemical Information Systems}.
+\newblock {SMARTS} --- a language for describing molecular patterns, 2019.
+\newblock \url{https://www.daylight.com/dayhtml/doc/theory/theory.smarts.html}.
+
+\bibitem[Di~Tommaso et~al.(2017)Di~Tommaso, Chatzou, Floden, Barja, Palumbo,
+  and Notredame]{ditommaso2017nextflow}
+Paolo Di~Tommaso, Maria Chatzou, Evan~W. Floden, Pablo~Prieto Barja, Emilio
+  Palumbo, and Cedric Notredame.
+\newblock Nextflow enables reproducible computational workflows.
+\newblock \emph{Nature Biotechnology}, 35\penalty0 (4):\penalty0 316--319,
+  2017.
+\newblock \doi{10.1038/nbt.3820}.
+
+\bibitem[Ford and Fulkerson(1956)]{fordfulkerson1956}
+L.~R. Ford and D.~R. Fulkerson.
+\newblock Maximal flow through a network.
+\newblock \emph{Canadian Journal of Mathematics}, 8:\penalty0 399--404, 1956.
+\newblock \doi{10.4153/CJM-1956-045-5}.
+
+\bibitem[Fourches et~al.(2010)Fourches, Muratov, and
+  Tropsha]{fourches2010curation}
+Denis Fourches, Eugene Muratov, and Alexander Tropsha.
+\newblock Trust, but verify: On the importance of chemical structure curation
+  in cheminformatics and {QSAR} modeling research.
+\newblock \emph{Journal of Chemical Information and Modeling}, 50\penalty0
+  (7):\penalty0 1189--1204, 2010.
+\newblock \doi{10.1021/ci100176x}.
+
+\bibitem[Fourches et~al.(2016)Fourches, Muratov, and
+  Tropsha]{fourches2016curation2}
+Denis Fourches, Eugene Muratov, and Alexander Tropsha.
+\newblock Trust, but verify {II}: A practical guide to chemogenomics data
+  curation.
+\newblock \emph{Journal of Chemical Information and Modeling}, 56\penalty0
+  (7):\penalty0 1243--1252, 2016.
+\newblock \doi{10.1021/acs.jcim.6b00129}.
+
+\bibitem[Gomory and Hu(1961)]{gomory1961multi}
+R.~E. Gomory and T.~C. Hu.
+\newblock Multi-terminal network flows.
+\newblock \emph{Journal of the Society for Industrial and Applied Mathematics},
+  9\penalty0 (4):\penalty0 551--570, 1961.
+\newblock \doi{10.1137/0109047}.
+
+\bibitem[Heller et~al.(2015)Heller, McNaught, Pletnev, Stein, and
+  Tchekhovskoi]{heller2015inchi}
+Stephen~R. Heller, Alan McNaught, Igor Pletnev, Stephen Stein, and Dmitrii
+  Tchekhovskoi.
+\newblock {InChI}, the {IUPAC} international chemical identifier.
+\newblock \emph{Journal of Cheminformatics}, 7:\penalty0 23, 2015.
+\newblock \doi{10.1186/s13321-015-0068-4}.
+
+\bibitem[Imieli{\'n}ski and Lipski(1984)]{imielinski1984incomplete}
+Tomasz Imieli{\'n}ski and Witold Lipski.
+\newblock Incomplete information in relational databases.
+\newblock \emph{Journal of the ACM}, 31\penalty0 (4):\penalty0 761--791, 1984.
+\newblock \doi{10.1145/1634.1886}.
+
+\bibitem[{International Organization for Standardization}(1996)]{ebnf2017}
+{International Organization for Standardization}.
+\newblock {ISO/IEC} 14977:1996 --- information technology: Syntactic
+  metalanguage: Extended {BNF}, 1996.
+\newblock Standard.
+
+\bibitem[James(2016)]{opensmiles}
+Craig~A. James.
+\newblock {OpenSMILES} specification.
+\newblock Version 1.0, 2016.
+\newblock \url{http://opensmiles.org/opensmiles.html}.
+
+\bibitem[K{\"o}ster and Rahmann(2012)]{koster2012snakemake}
+Johannes K{\"o}ster and Sven Rahmann.
+\newblock Snakemake --- a scalable bioinformatics workflow engine.
+\newblock \emph{Bioinformatics}, 28\penalty0 (19):\penalty0 2520--2522, 2012.
+\newblock \doi{10.1093/bioinformatics/bts480}.
+
+\bibitem[Krenn et~al.(2020)Krenn, H{\"a}se, Nigam, Friederich, and
+  Aspuru-Guzik]{krenn2020selfies}
+Mario Krenn, Florian H{\"a}se, AkshatKumar Nigam, Pascal Friederich, and
+  Al{\'a}n Aspuru-Guzik.
+\newblock Self-referencing embedded strings ({SELFIES}): A 100\% robust
+  molecular string representation.
+\newblock \emph{Machine Learning: Science and Technology}, 1\penalty0
+  (4):\penalty0 045024, 2020.
+\newblock \doi{10.1088/2632-2153/aba947}.
+
+\bibitem[Landrum(2024)]{rdkit}
+Greg Landrum.
+\newblock {RDKit}: Open-source cheminformatics, 2024.
+\newblock \url{https://www.rdkit.org}.
+
+\bibitem[Libkin(2016)]{libkin2016sql}
+Leonid Libkin.
+\newblock {SQL}'s three-valued logic and certain answers.
+\newblock \emph{ACM Transactions on Database Systems}, 41\penalty0
+  (1):\penalty0 1--28, 2016.
+\newblock \doi{10.1145/2877206}.
+
+\bibitem[Mernik et~al.(2005)Mernik, Heering, and Sloane]{mernik2005when}
+Marjan Mernik, Jan Heering, and Anthony~M. Sloane.
+\newblock When and how to develop domain-specific languages.
+\newblock \emph{ACM Computing Surveys}, 37\penalty0 (4):\penalty0 316--344,
+  2005.
+\newblock \doi{10.1145/1118890.1118892}.
+
+\bibitem[Moreau and Groth(2013)]{moreau2013prov}
+Luc Moreau and Paul Groth.
+\newblock Provenance: An introduction to {PROV}.
+\newblock \emph{Synthesis Lectures on the Semantic Web}, 3\penalty0
+  (4):\penalty0 1--129, 2013.
+\newblock \doi{10.2200/S00528ED1V01Y201308WBE007}.
+
+\bibitem[Murray-Rust and Rzepa(2011)]{murrayrust2011cml}
+Peter Murray-Rust and Henry~S. Rzepa.
+\newblock {CML}: Evolution and design.
+\newblock \emph{Journal of Cheminformatics}, 3:\penalty0 44, 2011.
+\newblock \doi{10.1186/1758-2946-3-44}.
+
+\bibitem[O'Boyle(2012)]{oboyle2012inchi}
+Noel~M. O'Boyle.
+\newblock Towards a universal {SMILES} representation --- a standard method to
+  generate canonical {SMILES} based on the {InChI}.
+\newblock \emph{Journal of Cheminformatics}, 4:\penalty0 22, 2012.
+\newblock \doi{10.1186/1758-2946-4-22}.
+
+\bibitem[O'Boyle et~al.(2011)O'Boyle, Banck, James, Morley, Vandermeersch, and
+  Hutchison]{oboyle2011openbabel}
+Noel~M. O'Boyle, Michael Banck, Craig~A. James, Chris Morley, Tim
+  Vandermeersch, and Geoffrey~R. Hutchison.
+\newblock {Open Babel}: An open chemical toolbox.
+\newblock \emph{Journal of Cheminformatics}, 3:\penalty0 33, 2011.
+\newblock \doi{10.1186/1758-2946-3-33}.
+
+\bibitem[P{\'e}rez et~al.(2009)P{\'e}rez, Arenas, and
+  Gutierrez]{perez2009sparql}
+Jorge P{\'e}rez, Marcelo Arenas, and Claudio Gutierrez.
+\newblock Semantics and complexity of {SPARQL}.
+\newblock \emph{ACM Transactions on Database Systems}, 34\penalty0
+  (3):\penalty0 1--45, 2009.
+\newblock \doi{10.1145/1567274.1567278}.
+
+\bibitem[Stoer and Wagner(1997)]{stoer1997simple}
+Mechthild Stoer and Frank Wagner.
+\newblock A simple min-cut algorithm.
+\newblock \emph{Journal of the ACM}, 44\penalty0 (4):\penalty0 585--591, 1997.
+\newblock \doi{10.1145/263867.263872}.
+
+\bibitem[van Deursen et~al.(2000)van Deursen, Klint, and
+  Visser]{vandeursen2000domain}
+Arie van Deursen, Paul Klint, and Joost Visser.
+\newblock Domain-specific languages: An annotated bibliography.
+\newblock \emph{ACM SIGPLAN Notices}, 35\penalty0 (6):\penalty0 26--36, 2000.
+\newblock \doi{10.1145/352029.352035}.
+
+\bibitem[Weininger(1988)]{weininger1988smiles}
+David Weininger.
+\newblock {SMILES}, a chemical language and information system. 1. introduction
+  to methodology and encoding rules.
+\newblock \emph{Journal of Chemical Information and Computer Sciences},
+  28\penalty0 (1):\penalty0 31--36, 1988.
+\newblock \doi{10.1021/ci00057a005}.
+
+\bibitem[Weininger et~al.(1989)Weininger, Weininger, and
+  Weininger]{weininger1989smiles2}
+David Weininger, Arthur Weininger, and Joseph~L. Weininger.
+\newblock {SMILES}. 2. algorithm for generation of unique {SMILES} notation.
+\newblock \emph{Journal of Chemical Information and Computer Sciences},
+  29\penalty0 (2):\penalty0 97--101, 1989.
+\newblock \doi{10.1021/ci00062a008}.
+
+\bibitem[Westbrook et~al.(2022)Westbrook, Young, Shao, Feng, Guranovic, Lawson,
+  Vallat, Adams, Berrisford, Bricogne, et~al.]{westbrook2022pdbx}
+John~D. Westbrook, Jasmine~Y. Young, Chenghua Shao, Zukang Feng, Vladimir
+  Guranovic, Catherine~L. Lawson, Brinda Vallat, Paul~D. Adams, John~M.
+  Berrisford, G{\'e}rard Bricogne, et~al.
+\newblock {PDBx/mmCIF} ecosystem: Foundational semantic tools for structural
+  biology.
+\newblock \emph{Journal of Molecular Biology}, 434\penalty0 (11):\penalty0
+  167599, 2022.
+\newblock \doi{10.1016/j.jmb.2022.167599}.
+
+\bibitem[Williams et~al.(2012)Williams, Ekins, and
+  Tkachenko]{williams2012quality}
+Antony~J. Williams, Sean Ekins, and Valery Tkachenko.
+\newblock Towards a gold standard: Regarding quality in public domain chemistry
+  databases and approaches to improving the situation.
+\newblock \emph{Drug Discovery Today}, 17\penalty0 (13--14):\penalty0 685--701,
+  2012.
+\newblock \doi{10.1016/j.drudis.2012.02.013}.
+
+\bibitem[Willighagen et~al.(2017)Willighagen, Mayfield, Alvarsson, Berg,
+  Carlsson, Jeliazkova, Kuhn, Pluskal, Rojas-Chert{\'o}, Spjuth,
+  et~al.]{willighagen2017cdk}
+Egon~L. Willighagen, John~W. Mayfield, Jonathan Alvarsson, Arvid Berg, Lars
+  Carlsson, Nina Jeliazkova, Stefan Kuhn, Tom{\'a}{\v s} Pluskal, Miquel
+  Rojas-Chert{\'o}, Ola Spjuth, et~al.
+\newblock The {Chemistry Development Kit} ({CDK}) v2.0: Atom typing, depiction,
+  molecular formulas, and substructure searching.
+\newblock \emph{Journal of Cheminformatics}, 9:\penalty0 33, 2017.
+\newblock \doi{10.1186/s13321-017-0220-4}.
+
+\bibitem[Young et~al.(2008)Young, Martin, Venkatapathy, and
+  Harten]{young2008errors}
+Douglas Young, Todd Martin, Raghuraman Venkatapathy, and Paul Harten.
+\newblock Are the chemical structures in your {QSAR} correct?
+\newblock \emph{QSAR \& Combinatorial Science}, 27\penalty0 (11--12):\penalty0
+  1337--1345, 2008.
+\newblock \doi{10.1002/qsar.200810084}.
+
+\end{thebibliography}
