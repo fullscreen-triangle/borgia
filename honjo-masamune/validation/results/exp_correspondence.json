@@ -1,0 +1,521 @@
+{
+  "experiment": "B: substitution-tolerant structural correspondence",
+  "expectations": {
+    "B0_coarsest_radius_separates_best": true,
+    "B1_close_above_far": true,
+    "B1_ranges_disjoint": true,
+    "B2_element_matching_worse_on_isosteres": true,
+    "B3_mean_coverage_at_least": 0.7,
+    "B4_control_must_destroy_separation": true,
+    "B5_symmetric": true
+  },
+  "results": {
+    "B0_radius_sweep": {
+      "rows": [
+        {
+          "radius": 0,
+          "mean_close": 0.779762,
+          "mean_far": 0.050481,
+          "min_close": 0.5,
+          "max_far": 0.125,
+          "margin": 0.375
+        },
+        {
+          "radius": 1,
+          "mean_close": 0.473906,
+          "mean_far": 0.0,
+          "min_close": 0.0,
+          "max_far": 0.0,
+          "margin": 0.0
+        },
+        {
+          "radius": 2,
+          "mean_close": 0.260606,
+          "mean_far": 0.0,
+          "min_close": 0.0,
+          "max_far": 0.0,
+          "margin": 0.0
+        },
+        {
+          "radius": 3,
+          "mean_close": 0.179487,
+          "mean_far": 0.0,
+          "min_close": 0.0,
+          "max_far": 0.0,
+          "margin": 0.0
+        }
+      ],
+      "best_radius": 0,
+      "best_margin": 0.375,
+      "working_radius": 0,
+      "note": "refinement discriminates; tolerance is its opposite, so the coarsest radius should separate best",
+      "passed": true
+    },
+    "B1_isostere_separation": {
+      "rows": [
+        {
+          "a": "benzene",
+          "b": "pyridine",
+          "relation": "close",
+          "n_heavy_a": 6,
+          "n_heavy_b": 6,
+          "class_overlap": 0.714286,
+          "element_overlap": 0.714286
+        },
+        {
+          "a": "phenol",
+          "b": "aniline",
+          "relation": "close",
+          "n_heavy_a": 7,
+          "n_heavy_b": 7,
+          "class_overlap": 0.75,
+          "element_overlap": 0.75
+        },
+        {
+          "a": "phenol",
+          "b": "thiophenol",
+          "relation": "close",
+          "n_heavy_a": 7,
+          "n_heavy_b": 7,
+          "class_overlap": 1.0,
+          "element_overlap": 0.75
+        },
+        {
+          "a": "benzene",
+          "b": "pyrazine",
+          "relation": "close",
+          "n_heavy_a": 6,
+          "n_heavy_b": 6,
+          "class_overlap": 0.5,
+          "element_overlap": 0.5
+        },
+        {
+          "a": "pyridine",
+          "b": "pyrimidine",
+          "relation": "close",
+          "n_heavy_a": 6,
+          "n_heavy_b": 6,
+          "class_overlap": 0.714286,
+          "element_overlap": 0.714286
+        },
+        {
+          "a": "catechol",
+          "b": "resorcinol",
+          "relation": "close",
+          "n_heavy_a": 8,
+          "n_heavy_b": 8,
+          "class_overlap": 1.0,
+          "element_overlap": 1.0
+        },
+        {
+          "a": "benzene",
+          "b": "cyclohexane",
+          "relation": "far",
+          "n_heavy_a": 6,
+          "n_heavy_b": 6,
+          "class_overlap": 0.0,
+          "element_overlap": 1.0
+        },
+        {
+          "a": "ethanol",
+          "b": "benzene",
+          "relation": "far",
+          "n_heavy_a": 3,
+          "n_heavy_b": 6,
+          "class_overlap": 0.125,
+          "element_overlap": 0.285714
+        },
+        {
+          "a": "propane",
+          "b": "pyridine",
+          "relation": "far",
+          "n_heavy_a": 3,
+          "n_heavy_b": 6,
+          "class_overlap": 0.0,
+          "element_overlap": 0.5
+        },
+        {
+          "a": "acetone",
+          "b": "naphthalene",
+          "relation": "far",
+          "n_heavy_a": 4,
+          "n_heavy_b": 10,
+          "class_overlap": 0.076923,
+          "element_overlap": 0.272727
+        }
+      ],
+      "mean_close": 0.779762,
+      "mean_far": 0.050481,
+      "min_close": 0.5,
+      "max_far": 0.125,
+      "ranges_disjoint": true,
+      "separation_margin": 0.375,
+      "passed": true
+    },
+    "B2_cross_element_correspondence": {
+      "rows": [
+        {
+          "a": "benzene",
+          "b": "pyridine",
+          "cut_pairs": 5,
+          "element_pairs": 5,
+          "cross_element_pairs": 0,
+          "cut_coverage": 0.833333,
+          "element_coverage": 0.833333,
+          "gain": 0
+        },
+        {
+          "a": "phenol",
+          "b": "aniline",
+          "cut_pairs": 6,
+          "element_pairs": 5,
+          "cross_element_pairs": 1,
+          "cut_coverage": 0.857143,
+          "element_coverage": 0.714286,
+          "gain": 1
+        },
+        {
+          "a": "phenol",
+          "b": "thiophenol",
+          "cut_pairs": 7,
+          "element_pairs": 6,
+          "cross_element_pairs": 1,
+          "cut_coverage": 1.0,
+          "element_coverage": 0.857143,
+          "gain": 1
+        },
+        {
+          "a": "benzene",
+          "b": "pyrazine",
+          "cut_pairs": 4,
+          "element_pairs": 4,
+          "cross_element_pairs": 0,
+          "cut_coverage": 0.666667,
+          "element_coverage": 0.666667,
+          "gain": 0
+        },
+        {
+          "a": "pyridine",
+          "b": "pyrimidine",
+          "cut_pairs": 5,
+          "element_pairs": 5,
+          "cross_element_pairs": 0,
+          "cut_coverage": 0.833333,
+          "element_coverage": 0.833333,
+          "gain": 0
+        },
+        {
+          "a": "catechol",
+          "b": "resorcinol",
+          "cut_pairs": 8,
+          "element_pairs": 6,
+          "cross_element_pairs": 2,
+          "cut_coverage": 1.0,
+          "element_coverage": 0.75,
+          "gain": 2
+        }
+      ],
+      "n_close_pairs": 6,
+      "total_cross_element_pairs": 4,
+      "n_pairs_with_gain": 3,
+      "mean_cut_coverage": 0.865079,
+      "mean_element_coverage": 0.775794,
+      "note": "cross-element pairings are exactly what an element-keyed matcher cannot make; they are the tolerance, counted",
+      "passed": true
+    },
+    "B3_matched_pair_coverage": {
+      "rows": [
+        {
+          "a": "benzene",
+          "b": "toluene",
+          "n1": 6,
+          "n2": 7,
+          "matched": 5,
+          "coverage": 0.714286,
+          "classes_shared": 1,
+          "classes_a": 1,
+          "classes_b": 3
+        },
+        {
+          "a": "phenol",
+          "b": "cresol",
+          "n1": 7,
+          "n2": 8,
+          "matched": 6,
+          "coverage": 0.75,
+          "classes_shared": 2,
+          "classes_a": 2,
+          "classes_b": 3
+        },
+        {
+          "a": "benzoic",
+          "b": "salicylic",
+          "n1": 9,
+          "n2": 10,
+          "matched": 9,
+          "coverage": 0.9,
+          "classes_shared": 3,
+          "classes_a": 3,
+          "classes_b": 3
+        },
+        {
+          "a": "aniline",
+          "b": "phenol",
+          "n1": 7,
+          "n2": 7,
+          "matched": 6,
+          "coverage": 0.857143,
+          "classes_shared": 2,
+          "classes_a": 3,
+          "classes_b": 2
+        },
+        {
+          "a": "propanol",
+          "b": "butanol",
+          "n1": 4,
+          "n2": 5,
+          "matched": 4,
+          "coverage": 0.8,
+          "classes_shared": 3,
+          "classes_a": 3,
+          "classes_b": 3
+        },
+        {
+          "a": "glycine",
+          "b": "alanine",
+          "n1": 5,
+          "n2": 6,
+          "matched": 4,
+          "coverage": 0.666667,
+          "classes_shared": 4,
+          "classes_a": 5,
+          "classes_b": 6
+        },
+        {
+          "a": "phenylalanine",
+          "b": "tyrosine",
+          "n1": 12,
+          "n2": 13,
+          "matched": 12,
+          "coverage": 0.923077,
+          "classes_shared": 6,
+          "classes_a": 6,
+          "classes_b": 6
+        },
+        {
+          "a": "pyridine",
+          "b": "quinoline",
+          "n1": 6,
+          "n2": 10,
+          "matched": 6,
+          "coverage": 0.6,
+          "classes_shared": 2,
+          "classes_a": 2,
+          "classes_b": 2
+        }
+      ],
+      "mean_coverage": 0.776397,
+      "median_coverage": 0.775,
+      "min_coverage": 0.6,
+      "passed": true
+    },
+    "B4_negative_control": {
+      "mean_close_shuffled": 0.063099,
+      "mean_far_shuffled": 0.040549,
+      "separation_margin_shuffled": -0.068671,
+      "true_margin": 0.375,
+      "note": "rewiring the second structure at random, holding atom composition and edge count fixed, destroys the structural assignment; the separation margin should collapse",
+      "passed": true
+    },
+    "B5_symmetry": {
+      "rows": [
+        {
+          "a": "benzene",
+          "b": "toluene",
+          "ab": 5,
+          "ba": 5,
+          "symmetric": true
+        },
+        {
+          "a": "phenol",
+          "b": "cresol",
+          "ab": 6,
+          "ba": 6,
+          "symmetric": true
+        },
+        {
+          "a": "benzoic",
+          "b": "salicylic",
+          "ab": 9,
+          "ba": 9,
+          "symmetric": true
+        },
+        {
+          "a": "aniline",
+          "b": "phenol",
+          "ab": 6,
+          "ba": 6,
+          "symmetric": true
+        },
+        {
+          "a": "propanol",
+          "b": "butanol",
+          "ab": 4,
+          "ba": 4,
+          "symmetric": true
+        },
+        {
+          "a": "glycine",
+          "b": "alanine",
+          "ab": 4,
+          "ba": 4,
+          "symmetric": true
+        },
+        {
+          "a": "phenylalanine",
+          "b": "tyrosine",
+          "ab": 12,
+          "ba": 12,
+          "symmetric": true
+        },
+        {
+          "a": "pyridine",
+          "b": "quinoline",
+          "ab": 6,
+          "ba": 6,
+          "symmetric": true
+        }
+      ],
+      "all_symmetric": true,
+      "passed": true
+    },
+    "B6_druglike_grid": {
+      "n_pairs": 406,
+      "mean_class_overlap": 0.429434,
+      "mean_element_overlap": 0.564901,
+      "top_20_by_class_overlap": [
+        {
+          "a": "anisole",
+          "b": "cresol",
+          "class_overlap": 1.0,
+          "element_overlap": 1.0
+        },
+        {
+          "a": "catechol",
+          "b": "resorcinol",
+          "class_overlap": 1.0,
+          "element_overlap": 1.0
+        },
+        {
+          "a": "catechol",
+          "b": "hydroquinone",
+          "class_overlap": 1.0,
+          "element_overlap": 1.0
+        },
+        {
+          "a": "resorcinol",
+          "b": "hydroquinone",
+          "class_overlap": 1.0,
+          "element_overlap": 1.0
+        },
+        {
+          "a": "phenylalanine",
+          "b": "tyrosine",
+          "class_overlap": 0.923077,
+          "element_overlap": 0.923077
+        },
+        {
+          "a": "paracetamol",
+          "b": "salicylic",
+          "class_overlap": 0.909091,
+          "element_overlap": 0.75
+        },
+        {
+          "a": "paracetamol",
+          "b": "nitro-like",
+          "class_overlap": 0.909091,
+          "element_overlap": 0.909091
+        },
+        {
+          "a": "benzoic-acid",
+          "b": "salicylic",
+          "class_overlap": 0.9,
+          "element_overlap": 0.9
+        },
+        {
+          "a": "indole",
+          "b": "quinoline",
+          "class_overlap": 0.9,
+          "element_overlap": 0.9
+        },
+        {
+          "a": "benzoic-acid",
+          "b": "catechol",
+          "class_overlap": 0.888889,
+          "element_overlap": 0.888889
+        },
+        {
+          "a": "benzoic-acid",
+          "b": "resorcinol",
+          "class_overlap": 0.888889,
+          "element_overlap": 0.888889
+        },
+        {
+          "a": "benzoic-acid",
+          "b": "hydroquinone",
+          "class_overlap": 0.888889,
+          "element_overlap": 0.888889
+        },
+        {
+          "a": "indole",
+          "b": "catechol",
+          "class_overlap": 0.888889,
+          "element_overlap": 0.545455
+        },
+        {
+          "a": "indole",
+          "b": "resorcinol",
+          "class_overlap": 0.888889,
+          "element_overlap": 0.545455
+        },
+        {
+          "a": "indole",
+          "b": "hydroquinone",
+          "class_overlap": 0.888889,
+          "element_overlap": 0.545455
+        },
+        {
+          "a": "phenol",
+          "b": "catechol",
+          "class_overlap": 0.875,
+          "element_overlap": 0.875
+        },
+        {
+          "a": "phenol",
+          "b": "resorcinol",
+          "class_overlap": 0.875,
+          "element_overlap": 0.875
+        },
+        {
+          "a": "phenol",
+          "b": "hydroquinone",
+          "class_overlap": 0.875,
+          "element_overlap": 0.875
+        },
+        {
+          "a": "benzoic-acid",
+          "b": "paracetamol",
+          "class_overlap": 0.818182,
+          "element_overlap": 0.818182
+        },
+        {
+          "a": "quinoline",
+          "b": "salicylic",
+          "class_overlap": 0.818182,
+          "element_overlap": 0.538462
+        }
+      ]
+    }
+  },
+  "all_passed": true
+}

@@ -1,0 +1,140 @@
+\begin{thebibliography}{19}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Arvind et~al.(2015)Arvind, K{\"o}bler, Rattan, and
+  Verbitsky]{arvind2015}
+Vikraman Arvind, Johannes K{\"o}bler, Gaurav Rattan, and Oleg Verbitsky.
+\newblock On the power of color refinement.
+\newblock \emph{Fundamentals of Computation Theory}, 9210:\penalty0 339--350,
+  2015.
+\newblock \doi{10.1007/978-3-319-22177-9_26}.
+
+\bibitem[Babai(2016)]{babai2016}
+L{\'a}szl{\'o} Babai.
+\newblock Graph isomorphism in quasipolynomial time.
+\newblock \emph{Proceedings of the 48th Annual ACM Symposium on Theory of
+  Computing}, pages 684--697, 2016.
+\newblock \doi{10.1145/2897518.2897542}.
+
+\bibitem[Cai et~al.(1992)Cai, F{\"u}rer, and Immerman]{cai1992}
+Jin-Yi Cai, Martin F{\"u}rer, and Neil Immerman.
+\newblock An optimal lower bound on the number of variables for graph
+  identification.
+\newblock \emph{Combinatorica}, 12\penalty0 (4):\penalty0 389--410, 1992.
+\newblock \doi{10.1007/BF01305232}.
+
+\bibitem[Figueras(1993)]{figueras1993}
+John Figueras.
+\newblock Morgan revisited.
+\newblock \emph{Journal of Chemical Information and Computer Sciences},
+  33\penalty0 (5):\penalty0 717--718, 1993.
+\newblock \doi{10.1021/ci00015a009}.
+
+\bibitem[Ford and Fulkerson(1956)]{fordfulkerson1956}
+L.~R. Ford and D.~R. Fulkerson.
+\newblock Maximal flow through a network.
+\newblock \emph{Canadian Journal of Mathematics}, 8:\penalty0 399--404, 1956.
+\newblock \doi{10.4153/CJM-1956-045-5}.
+
+\bibitem[Glen et~al.(2006)Glen, Bender, Arnby, Carlsson, Boyer, and
+  Smith]{glen2006}
+Robert~C. Glen, Andreas Bender, Catrin~H. Arnby, Lars Carlsson, Scott Boyer,
+  and James Smith.
+\newblock Circular fingerprints: Flexible molecular descriptors with
+  applications from physical chemistry to {ADME}.
+\newblock \emph{IDrugs}, 9\penalty0 (3):\penalty0 199--204, 2006.
+
+\bibitem[Heller et~al.(2015)Heller, McNaught, Pletnev, Stein, and
+  Tchekhovskoi]{heller2015}
+Stephen~R. Heller, Alan McNaught, Igor Pletnev, Stephen Stein, and Dmitrii
+  Tchekhovskoi.
+\newblock {InChI}, the {IUPAC} international chemical identifier.
+\newblock \emph{Journal of Cheminformatics}, 7:\penalty0 23, 2015.
+\newblock \doi{10.1186/s13321-015-0068-4}.
+
+\bibitem[McKay(1981)]{mckay1981}
+Brendan~D. McKay.
+\newblock Practical graph isomorphism.
+\newblock \emph{Congressus Numerantium}, 30:\penalty0 45--87, 1981.
+
+\bibitem[McKay and Piperno(2014)]{mckay2014}
+Brendan~D. McKay and Adolfo Piperno.
+\newblock Practical graph isomorphism, {II}.
+\newblock \emph{Journal of Symbolic Computation}, 60:\penalty0 94--112, 2014.
+\newblock \doi{10.1016/j.jsc.2013.09.003}.
+
+\bibitem[Morgan(1965)]{morgan1965}
+H.~L. Morgan.
+\newblock The generation of a unique machine description for chemical
+  structures---a technique developed at chemical abstracts service.
+\newblock \emph{Journal of Chemical Documentation}, 5\penalty0 (2):\penalty0
+  107--113, 1965.
+\newblock \doi{10.1021/c160017a018}.
+
+\bibitem[O'Boyle and Sayle(2016)]{oboyle2016}
+Noel~M. O'Boyle and Roger~A. Sayle.
+\newblock Comparing structural fingerprints using a literature-based similarity
+  benchmark.
+\newblock \emph{Journal of Cheminformatics}, 8:\penalty0 36, 2016.
+\newblock \doi{10.1186/s13321-016-0148-0}.
+
+\bibitem[Orlin(2013)]{orlin2013}
+James~B. Orlin.
+\newblock Max flows in {O(nm)} time, or better.
+\newblock \emph{Proceedings of the 45th Annual ACM Symposium on Theory of
+  Computing}, pages 765--774, 2013.
+\newblock \doi{10.1145/2488608.2488705}.
+
+\bibitem[Riniker and Landrum(2013)]{riniker2013}
+Sereina Riniker and Gregory~A. Landrum.
+\newblock Open-source platform to benchmark fingerprints for ligand-based
+  virtual screening.
+\newblock \emph{Journal of Cheminformatics}, 5:\penalty0 26, 2013.
+\newblock \doi{10.1186/1758-2946-5-26}.
+
+\bibitem[Rogers and Hahn(2010)]{rogers2010}
+David Rogers and Mathew Hahn.
+\newblock Extended-connectivity fingerprints.
+\newblock \emph{Journal of Chemical Information and Modeling}, 50\penalty0
+  (5):\penalty0 742--754, 2010.
+\newblock \doi{10.1021/ci100050t}.
+
+\bibitem[Schneider et~al.(2015)Schneider, Sayle, and Landrum]{schneider2015}
+Nadine Schneider, Roger~A. Sayle, and Gregory~A. Landrum.
+\newblock Get your atoms in order---an open-source implementation of a novel
+  and robust molecular canonicalization algorithm.
+\newblock \emph{Journal of Chemical Information and Modeling}, 55\penalty0
+  (10):\penalty0 2111--2120, 2015.
+\newblock \doi{10.1021/acs.jcim.5b00543}.
+
+\bibitem[Stoer and Wagner(1997)]{stoer1997}
+Mechthild Stoer and Frank Wagner.
+\newblock A simple min-cut algorithm.
+\newblock \emph{Journal of the ACM}, 44\penalty0 (4):\penalty0 585--591, 1997.
+\newblock \doi{10.1145/263867.263872}.
+
+\bibitem[Weininger et~al.(1989)Weininger, Weininger, and
+  Weininger]{weininger1989}
+David Weininger, Arthur Weininger, and Joseph~L. Weininger.
+\newblock {SMILES}. 2. algorithm for generation of unique {SMILES} notation.
+\newblock \emph{Journal of Chemical Information and Computer Sciences},
+  29\penalty0 (2):\penalty0 97--101, 1989.
+\newblock \doi{10.1021/ci00062a008}.
+
+\bibitem[Weisfeiler and Leman(1968)]{weisfeiler1968}
+Boris Weisfeiler and Andrei Leman.
+\newblock The reduction of a graph to canonical form and the algebra which
+  appears therein.
+\newblock \emph{Nauchno-Technicheskaya Informatsia}, 2\penalty0 (9):\penalty0
+  12--16, 1968.
+
+\bibitem[Xu et~al.(2019)Xu, Hu, Leskovec, and Jegelka]{xu2019}
+Keyulu Xu, Weihua Hu, Jure Leskovec, and Stefanie Jegelka.
+\newblock How powerful are graph neural networks?
+\newblock \emph{International Conference on Learning Representations}, 2019.
+
+\end{thebibliography}

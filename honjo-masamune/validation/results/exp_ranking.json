@@ -1,0 +1,917 @@
+{
+  "experiment": "A: cut refinement as a canonical ranking",
+  "expectations": {
+    "A1_base_ratio_below": 0.7,
+    "A2_orbit_match_rate": 1.0,
+    "A3_no_over_separation": true,
+    "A4_median_rounds_at_most": 4,
+    "A5_control_must_over_separate": true
+  },
+  "results": {
+    "A1_base_coarseness": {
+      "rows": [
+        {
+          "name": "ethanol",
+          "n_heavy": 3,
+          "distinct_sigma": 2,
+          "distinct_base_key": 3,
+          "base_ratio": 1.0
+        },
+        {
+          "name": "acetic-acid",
+          "n_heavy": 4,
+          "distinct_sigma": 2,
+          "distinct_base_key": 4,
+          "base_ratio": 1.0
+        },
+        {
+          "name": "acetone",
+          "n_heavy": 4,
+          "distinct_sigma": 2,
+          "distinct_base_key": 3,
+          "base_ratio": 0.75
+        },
+        {
+          "name": "phenol",
+          "n_heavy": 7,
+          "distinct_sigma": 1,
+          "distinct_base_key": 2,
+          "base_ratio": 0.285714
+        },
+        {
+          "name": "aniline",
+          "n_heavy": 7,
+          "distinct_sigma": 1,
+          "distinct_base_key": 3,
+          "base_ratio": 0.428571
+        },
+        {
+          "name": "anisole",
+          "n_heavy": 8,
+          "distinct_sigma": 2,
+          "distinct_base_key": 3,
+          "base_ratio": 0.375
+        },
+        {
+          "name": "benzoic-acid",
+          "n_heavy": 9,
+          "distinct_sigma": 2,
+          "distinct_base_key": 3,
+          "base_ratio": 0.333333
+        },
+        {
+          "name": "aspirin",
+          "n_heavy": 13,
+          "distinct_sigma": 2,
+          "distinct_base_key": 4,
+          "base_ratio": 0.307692
+        },
+        {
+          "name": "paracetamol",
+          "n_heavy": 11,
+          "distinct_sigma": 2,
+          "distinct_base_key": 4,
+          "base_ratio": 0.363636
+        },
+        {
+          "name": "ibuprofen",
+          "n_heavy": 15,
+          "distinct_sigma": 2,
+          "distinct_base_key": 6,
+          "base_ratio": 0.4
+        },
+        {
+          "name": "styrene",
+          "n_heavy": 8,
+          "distinct_sigma": 2,
+          "distinct_base_key": 4,
+          "base_ratio": 0.5
+        },
+        {
+          "name": "indole",
+          "n_heavy": 9,
+          "distinct_sigma": 1,
+          "distinct_base_key": 2,
+          "base_ratio": 0.222222
+        },
+        {
+          "name": "quinoline",
+          "n_heavy": 10,
+          "distinct_sigma": 1,
+          "distinct_base_key": 2,
+          "base_ratio": 0.2
+        },
+        {
+          "name": "nicotinamide",
+          "n_heavy": 9,
+          "distinct_sigma": 2,
+          "distinct_base_key": 4,
+          "base_ratio": 0.444444
+        },
+        {
+          "name": "salicylic",
+          "n_heavy": 10,
+          "distinct_sigma": 2,
+          "distinct_base_key": 3,
+          "base_ratio": 0.3
+        },
+        {
+          "name": "catechol",
+          "n_heavy": 8,
+          "distinct_sigma": 1,
+          "distinct_base_key": 2,
+          "base_ratio": 0.25
+        },
+        {
+          "name": "resorcinol",
+          "n_heavy": 8,
+          "distinct_sigma": 1,
+          "distinct_base_key": 2,
+          "base_ratio": 0.25
+        },
+        {
+          "name": "hydroquinone",
+          "n_heavy": 8,
+          "distinct_sigma": 1,
+          "distinct_base_key": 2,
+          "base_ratio": 0.25
+        },
+        {
+          "name": "cresol",
+          "n_heavy": 8,
+          "distinct_sigma": 2,
+          "distinct_base_key": 3,
+          "base_ratio": 0.375
+        },
+        {
+          "name": "xylene-o",
+          "n_heavy": 8,
+          "distinct_sigma": 2,
+          "distinct_base_key": 3,
+          "base_ratio": 0.375
+        },
+        {
+          "name": "chlorobenzene",
+          "verdict": "malformed"
+        },
+        {
+          "name": "nitro-like",
+          "n_heavy": 10,
+          "distinct_sigma": 2,
+          "distinct_base_key": 4,
+          "base_ratio": 0.4
+        },
+        {
+          "name": "phenylalanine",
+          "n_heavy": 12,
+          "distinct_sigma": 2,
+          "distinct_base_key": 6,
+          "base_ratio": 0.5
+        },
+        {
+          "name": "tyrosine",
+          "n_heavy": 13,
+          "distinct_sigma": 2,
+          "distinct_base_key": 6,
+          "base_ratio": 0.461538
+        },
+        {
+          "name": "glycine",
+          "n_heavy": 5,
+          "distinct_sigma": 2,
+          "distinct_base_key": 5,
+          "base_ratio": 1.0
+        },
+        {
+          "name": "alanine",
+          "n_heavy": 6,
+          "distinct_sigma": 2,
+          "distinct_base_key": 6,
+          "base_ratio": 1.0
+        },
+        {
+          "name": "serine",
+          "n_heavy": 7,
+          "distinct_sigma": 2,
+          "distinct_base_key": 6,
+          "base_ratio": 0.857143
+        },
+        {
+          "name": "valine",
+          "n_heavy": 8,
+          "distinct_sigma": 2,
+          "distinct_base_key": 6,
+          "base_ratio": 0.75
+        },
+        {
+          "name": "propanol",
+          "n_heavy": 4,
+          "distinct_sigma": 2,
+          "distinct_base_key": 3,
+          "base_ratio": 0.75
+        },
+        {
+          "name": "butanol",
+          "n_heavy": 5,
+          "distinct_sigma": 2,
+          "distinct_base_key": 3,
+          "base_ratio": 0.6
+        }
+      ],
+      "mean_base_ratio": 0.507907,
+      "median_base_ratio": 0.4,
+      "max_base_ratio": 1.0,
+      "passed": true
+    },
+    "A2_orbit_agreement": {
+      "rows": [
+        {
+          "name": "benzene",
+          "smiles": "c1ccccc1",
+          "n_heavy": 6,
+          "reference_orbits": 1,
+          "cut_classes": 1,
+          "rounds": 1,
+          "history": [
+            1,
+            1
+          ],
+          "match": true,
+          "over_separated": false,
+          "under_separated": false
+        },
+        {
+          "name": "cyclohexane",
+          "smiles": "C1CCCCC1",
+          "n_heavy": 6,
+          "reference_orbits": 1,
+          "cut_classes": 1,
+          "rounds": 1,
+          "history": [
+            1,
+            1
+          ],
+          "match": true,
+          "over_separated": false,
+          "under_separated": false
+        },
+        {
+          "name": "ethane",
+          "smiles": "CC",
+          "n_heavy": 2,
+          "reference_orbits": 1,
+          "cut_classes": 1,
+          "rounds": 1,
+          "history": [
+            1,
+            1
+          ],
+          "match": true,
+          "over_separated": false,
+          "under_separated": false
+        },
+        {
+          "name": "naphthalene",
+          "smiles": "c1ccc2ccccc2c1",
+          "n_heavy": 10,
+          "reference_orbits": 3,
+          "cut_classes": 3,
+          "rounds": 2,
+          "history": [
+            2,
+            3,
+            3
+          ],
+          "match": true,
+          "over_separated": false,
+          "under_separated": false
+        },
+        {
+          "name": "anthracene",
+          "smiles": "c1ccc2cc3ccccc3cc2c1",
+          "n_heavy": 14,
+          "reference_orbits": 4,
+          "cut_classes": 4,
+          "rounds": 2,
+          "history": [
+            2,
+            4,
+            4
+          ],
+          "match": true,
+          "over_separated": false,
+          "under_separated": false
+        },
+        {
+          "name": "biphenyl",
+          "smiles": "c1ccc(cc1)c1ccccc1",
+          "n_heavy": 12,
+          "reference_orbits": 4,
+          "cut_classes": 4,
+          "rounds": 3,
+          "history": [
+            2,
+            3,
+            4,
+            4
+          ],
+          "match": true,
+          "over_separated": false,
+          "under_separated": false
+        },
+        {
+          "name": "p-xylene",
+          "smiles": "Cc1ccc(C)cc1",
+          "n_heavy": 8,
+          "reference_orbits": 3,
+          "cut_classes": 3,
+          "rounds": 1,
+          "history": [
+            3,
+            3
+          ],
+          "match": true,
+          "over_separated": false,
+          "under_separated": false
+        },
+        {
+          "name": "propane",
+          "smiles": "CCC",
+          "n_heavy": 3,
+          "reference_orbits": 2,
+          "cut_classes": 2,
+          "rounds": 1,
+          "history": [
+            2,
+            2
+          ],
+          "match": true,
+          "over_separated": false,
+          "under_separated": false
+        },
+        {
+          "name": "neopentane",
+          "smiles": "CC(C)(C)C",
+          "n_heavy": 5,
+          "reference_orbits": 2,
+          "cut_classes": 2,
+          "rounds": 1,
+          "history": [
+            2,
+            2
+          ],
+          "match": true,
+          "over_separated": false,
+          "under_separated": false
+        },
+        {
+          "name": "pyrazine",
+          "smiles": "c1cnccn1",
+          "n_heavy": 6,
+          "reference_orbits": 2,
+          "cut_classes": 2,
+          "rounds": 1,
+          "history": [
+            2,
+            2
+          ],
+          "match": true,
+          "over_separated": false,
+          "under_separated": false
+        },
+        {
+          "name": "pyridine",
+          "smiles": "c1ccncc1",
+          "n_heavy": 6,
+          "reference_orbits": 4,
+          "cut_classes": 4,
+          "rounds": 3,
+          "history": [
+            2,
+            3,
+            4,
+            4
+          ],
+          "match": true,
+          "over_separated": false,
+          "under_separated": false
+        },
+        {
+          "name": "toluene",
+          "smiles": "Cc1ccccc1",
+          "n_heavy": 7,
+          "reference_orbits": 5,
+          "cut_classes": 5,
+          "rounds": 3,
+          "history": [
+            3,
+            4,
+            5,
+            5
+          ],
+          "match": true,
+          "over_separated": false,
+          "under_separated": false
+        },
+        {
+          "name": "water-like",
+          "smiles": "O",
+          "n_heavy": 1,
+          "reference_orbits": 1,
+          "cut_classes": 1,
+          "rounds": 1,
+          "history": [
+            1,
+            1
+          ],
+          "match": true,
+          "over_separated": false,
+          "under_separated": false
+        },
+        {
+          "name": "methane",
+          "smiles": "C",
+          "n_heavy": 1,
+          "reference_orbits": 1,
+          "cut_classes": 1,
+          "rounds": 1,
+          "history": [
+            1,
+            1
+          ],
+          "match": true,
+          "over_separated": false,
+          "under_separated": false
+        },
+        {
+          "name": "ethylene",
+          "smiles": "C=C",
+          "n_heavy": 2,
+          "reference_orbits": 1,
+          "cut_classes": 1,
+          "rounds": 1,
+          "history": [
+            1,
+            1
+          ],
+          "match": true,
+          "over_separated": false,
+          "under_separated": false
+        },
+        {
+          "name": "acetylene",
+          "smiles": "C#C",
+          "n_heavy": 2,
+          "reference_orbits": 1,
+          "cut_classes": 1,
+          "rounds": 1,
+          "history": [
+            1,
+            1
+          ],
+          "match": true,
+          "over_separated": false,
+          "under_separated": false
+        },
+        {
+          "name": "p-benzoquinone",
+          "smiles": "O=C1C=CC(=O)C=C1",
+          "n_heavy": 8,
+          "reference_orbits": 3,
+          "cut_classes": 3,
+          "rounds": 1,
+          "history": [
+            3,
+            3
+          ],
+          "match": true,
+          "over_separated": false,
+          "under_separated": false
+        },
+        {
+          "name": "durene",
+          "smiles": "Cc1cc(C)c(C)cc1C",
+          "n_heavy": 10,
+          "reference_orbits": 3,
+          "cut_classes": 3,
+          "rounds": 1,
+          "history": [
+            3,
+            3
+          ],
+          "match": true,
+          "over_separated": false,
+          "under_separated": false
+        }
+      ],
+      "n": 18,
+      "matches": 18,
+      "match_rate": 1.0,
+      "passed": true
+    },
+    "A3_no_over_separation": {
+      "n_over_separated": 0,
+      "passed": true
+    },
+    "A4_convergence": {
+      "symmetric_rounds": [
+        1,
+        1,
+        1,
+        2,
+        2,
+        3,
+        1,
+        1,
+        1,
+        1,
+        3,
+        3,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "druglike_rounds": [
+        1,
+        1,
+        1,
+        3,
+        3,
+        3,
+        3,
+        4,
+        4,
+        3,
+        3,
+        4,
+        4,
+        3,
+        4,
+        2,
+        2,
+        2,
+        4,
+        2,
+        3,
+        3,
+        3,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2
+      ],
+      "median_rounds": 2,
+      "max_rounds": 4,
+      "passed": true
+    },
+    "A4b_refinement_gain": {
+      "rows": [
+        {
+          "name": "ethanol",
+          "n_heavy": 3,
+          "base_classes": 3,
+          "stable_classes": 3,
+          "final_ratio": 1.0
+        },
+        {
+          "name": "acetic-acid",
+          "n_heavy": 4,
+          "base_classes": 4,
+          "stable_classes": 4,
+          "final_ratio": 1.0
+        },
+        {
+          "name": "acetone",
+          "n_heavy": 4,
+          "base_classes": 3,
+          "stable_classes": 3,
+          "final_ratio": 0.75
+        },
+        {
+          "name": "phenol",
+          "n_heavy": 7,
+          "base_classes": 2,
+          "stable_classes": 5,
+          "final_ratio": 0.714286
+        },
+        {
+          "name": "aniline",
+          "n_heavy": 7,
+          "base_classes": 3,
+          "stable_classes": 5,
+          "final_ratio": 0.714286
+        },
+        {
+          "name": "anisole",
+          "n_heavy": 8,
+          "base_classes": 3,
+          "stable_classes": 6,
+          "final_ratio": 0.75
+        },
+        {
+          "name": "benzoic-acid",
+          "n_heavy": 9,
+          "base_classes": 3,
+          "stable_classes": 7,
+          "final_ratio": 0.777778
+        },
+        {
+          "name": "aspirin",
+          "n_heavy": 13,
+          "base_classes": 4,
+          "stable_classes": 13,
+          "final_ratio": 1.0
+        },
+        {
+          "name": "paracetamol",
+          "n_heavy": 11,
+          "base_classes": 4,
+          "stable_classes": 9,
+          "final_ratio": 0.818182
+        },
+        {
+          "name": "ibuprofen",
+          "n_heavy": 15,
+          "base_classes": 6,
+          "stable_classes": 12,
+          "final_ratio": 0.8
+        },
+        {
+          "name": "styrene",
+          "n_heavy": 8,
+          "base_classes": 4,
+          "stable_classes": 6,
+          "final_ratio": 0.75
+        },
+        {
+          "name": "indole",
+          "n_heavy": 9,
+          "base_classes": 2,
+          "stable_classes": 5,
+          "final_ratio": 0.555556
+        },
+        {
+          "name": "quinoline",
+          "n_heavy": 10,
+          "base_classes": 2,
+          "stable_classes": 10,
+          "final_ratio": 1.0
+        },
+        {
+          "name": "nicotinamide",
+          "n_heavy": 9,
+          "base_classes": 4,
+          "stable_classes": 9,
+          "final_ratio": 1.0
+        },
+        {
+          "name": "salicylic",
+          "n_heavy": 10,
+          "base_classes": 3,
+          "stable_classes": 10,
+          "final_ratio": 1.0
+        },
+        {
+          "name": "catechol",
+          "n_heavy": 8,
+          "base_classes": 2,
+          "stable_classes": 4,
+          "final_ratio": 0.5
+        },
+        {
+          "name": "resorcinol",
+          "n_heavy": 8,
+          "base_classes": 2,
+          "stable_classes": 5,
+          "final_ratio": 0.625
+        },
+        {
+          "name": "hydroquinone",
+          "n_heavy": 8,
+          "base_classes": 2,
+          "stable_classes": 3,
+          "final_ratio": 0.375
+        },
+        {
+          "name": "cresol",
+          "n_heavy": 8,
+          "base_classes": 3,
+          "stable_classes": 8,
+          "final_ratio": 1.0
+        },
+        {
+          "name": "xylene-o",
+          "n_heavy": 8,
+          "base_classes": 3,
+          "stable_classes": 4,
+          "final_ratio": 0.5
+        },
+        {
+          "name": "nitro-like",
+          "n_heavy": 10,
+          "base_classes": 4,
+          "stable_classes": 8,
+          "final_ratio": 0.8
+        },
+        {
+          "name": "phenylalanine",
+          "n_heavy": 12,
+          "base_classes": 6,
+          "stable_classes": 10,
+          "final_ratio": 0.833333
+        },
+        {
+          "name": "tyrosine",
+          "n_heavy": 13,
+          "base_classes": 6,
+          "stable_classes": 11,
+          "final_ratio": 0.846154
+        },
+        {
+          "name": "glycine",
+          "n_heavy": 5,
+          "base_classes": 5,
+          "stable_classes": 5,
+          "final_ratio": 1.0
+        },
+        {
+          "name": "alanine",
+          "n_heavy": 6,
+          "base_classes": 6,
+          "stable_classes": 6,
+          "final_ratio": 1.0
+        },
+        {
+          "name": "serine",
+          "n_heavy": 7,
+          "base_classes": 6,
+          "stable_classes": 7,
+          "final_ratio": 1.0
+        },
+        {
+          "name": "valine",
+          "n_heavy": 8,
+          "base_classes": 6,
+          "stable_classes": 7,
+          "final_ratio": 0.875
+        },
+        {
+          "name": "propanol",
+          "n_heavy": 4,
+          "base_classes": 3,
+          "stable_classes": 4,
+          "final_ratio": 1.0
+        },
+        {
+          "name": "butanol",
+          "n_heavy": 5,
+          "base_classes": 3,
+          "stable_classes": 5,
+          "final_ratio": 1.0
+        }
+      ],
+      "mean_final_ratio": 0.827054,
+      "mean_base_ratio": 0.507907
+    },
+    "A5_negative_control": {
+      "rows": [
+        {
+          "name": "benzene",
+          "n_heavy": 6,
+          "reference_orbits": 1,
+          "control_classes": 6,
+          "over_separated": true
+        },
+        {
+          "name": "cyclohexane",
+          "n_heavy": 6,
+          "reference_orbits": 1,
+          "control_classes": 6,
+          "over_separated": true
+        },
+        {
+          "name": "ethane",
+          "n_heavy": 2,
+          "reference_orbits": 1,
+          "control_classes": 2,
+          "over_separated": true
+        },
+        {
+          "name": "naphthalene",
+          "n_heavy": 10,
+          "reference_orbits": 3,
+          "control_classes": 10,
+          "over_separated": true
+        },
+        {
+          "name": "anthracene",
+          "n_heavy": 14,
+          "reference_orbits": 4,
+          "control_classes": 14,
+          "over_separated": true
+        },
+        {
+          "name": "biphenyl",
+          "n_heavy": 12,
+          "reference_orbits": 4,
+          "control_classes": 12,
+          "over_separated": true
+        },
+        {
+          "name": "p-xylene",
+          "n_heavy": 8,
+          "reference_orbits": 3,
+          "control_classes": 8,
+          "over_separated": true
+        },
+        {
+          "name": "propane",
+          "n_heavy": 3,
+          "reference_orbits": 2,
+          "control_classes": 3,
+          "over_separated": true
+        },
+        {
+          "name": "neopentane",
+          "n_heavy": 5,
+          "reference_orbits": 2,
+          "control_classes": 5,
+          "over_separated": true
+        },
+        {
+          "name": "pyrazine",
+          "n_heavy": 6,
+          "reference_orbits": 2,
+          "control_classes": 6,
+          "over_separated": true
+        },
+        {
+          "name": "pyridine",
+          "n_heavy": 6,
+          "reference_orbits": 4,
+          "control_classes": 6,
+          "over_separated": true
+        },
+        {
+          "name": "toluene",
+          "n_heavy": 7,
+          "reference_orbits": 5,
+          "control_classes": 7,
+          "over_separated": true
+        },
+        {
+          "name": "water-like",
+          "n_heavy": 1,
+          "reference_orbits": 1,
+          "control_classes": 1,
+          "over_separated": false
+        },
+        {
+          "name": "methane",
+          "n_heavy": 1,
+          "reference_orbits": 1,
+          "control_classes": 1,
+          "over_separated": false
+        },
+        {
+          "name": "ethylene",
+          "n_heavy": 2,
+          "reference_orbits": 1,
+          "control_classes": 2,
+          "over_separated": true
+        },
+        {
+          "name": "acetylene",
+          "n_heavy": 2,
+          "reference_orbits": 1,
+          "control_classes": 2,
+          "over_separated": true
+        },
+        {
+          "name": "p-benzoquinone",
+          "n_heavy": 8,
+          "reference_orbits": 3,
+          "control_classes": 8,
+          "over_separated": true
+        },
+        {
+          "name": "durene",
+          "n_heavy": 10,
+          "reference_orbits": 3,
+          "control_classes": 10,
+          "over_separated": true
+        }
+      ],
+      "n_over_separated": 16,
+      "n": 18,
+      "note": "index tie-breaking destroys the orbit structure, as a canonical ordering does; A2 is therefore not vacuous",
+      "passed": true
+    }
+  },
+  "all_passed": true
+}

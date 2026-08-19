@@ -1,0 +1,212 @@
+\begin{thebibliography}{28}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Arvind et~al.(2015)Arvind, K{\"o}bler, Rattan, and
+  Verbitsky]{arvind2015}
+Vikraman Arvind, Johannes K{\"o}bler, Gaurav Rattan, and Oleg Verbitsky.
+\newblock On the power of color refinement.
+\newblock \emph{Fundamentals of Computation Theory}, 9210:\penalty0 339--350,
+  2015.
+\newblock \doi{10.1007/978-3-319-22177-9_26}.
+
+\bibitem[Barrow and Burstall(1976)]{barrow1976}
+H.~G. Barrow and R.~M. Burstall.
+\newblock Subgraph isomorphism, matching relational structures and maximal
+  cliques.
+\newblock \emph{Information Processing Letters}, 4\penalty0 (4):\penalty0
+  83--84, 1976.
+\newblock \doi{10.1016/0020-0190(76)90049-1}.
+
+\bibitem[Bron and Kerbosch(1973)]{bron1973}
+Coen Bron and Joep Kerbosch.
+\newblock Algorithm 457: Finding all cliques of an undirected graph.
+\newblock \emph{Communications of the ACM}, 16\penalty0 (9):\penalty0 575--577,
+  1973.
+\newblock \doi{10.1145/362342.362367}.
+
+\bibitem[Brown and Jacoby(2006)]{brown2006}
+Nathan Brown and Edgar Jacoby.
+\newblock On scaffolds and hopping in medicinal chemistry.
+\newblock \emph{Mini-Reviews in Medicinal Chemistry}, 6\penalty0 (11):\penalty0
+  1217--1229, 2006.
+\newblock \doi{10.2174/138955706778742768}.
+
+\bibitem[Cao et~al.(2008)Cao, Jiang, and Girke]{cao2008}
+Yiqun Cao, Tao Jiang, and Thomas Girke.
+\newblock A maximum common substructure-based algorithm for searching and
+  predicting drug-like compounds.
+\newblock \emph{Bioinformatics}, 24\penalty0 (13):\penalty0 i366--i374, 2008.
+\newblock \doi{10.1093/bioinformatics/btn186}.
+
+\bibitem[Cordella et~al.(2004)Cordella, Foggia, Sansone, and
+  Vento]{cordella2004}
+Luigi~P. Cordella, Pasquale Foggia, Carlo Sansone, and Mario Vento.
+\newblock A (sub)graph isomorphism algorithm for matching large graphs.
+\newblock \emph{IEEE Transactions on Pattern Analysis and Machine
+  Intelligence}, 26\penalty0 (10):\penalty0 1367--1372, 2004.
+\newblock \doi{10.1109/TPAMI.2004.75}.
+
+\bibitem[Dalke and Hastings(2013)]{dalke2013}
+Andrew Dalke and Janna Hastings.
+\newblock {FMCS}: A novel algorithm for the multiple {MCS} problem.
+\newblock \emph{Journal of Cheminformatics}, 5\penalty0 (Suppl 1):\penalty0 O6,
+  2013.
+\newblock \doi{10.1186/1758-2946-5-S1-O6}.
+
+\bibitem[Ehrlich and Rarey(2011)]{ehrlich2011}
+Hans-Christian Ehrlich and Matthias Rarey.
+\newblock Maximum common subgraph isomorphism algorithms and their applications
+  in molecular science: A review.
+\newblock \emph{WIREs Computational Molecular Science}, 1\penalty0
+  (1):\penalty0 68--79, 2011.
+\newblock \doi{10.1002/wcms.5}.
+
+\bibitem[Ehrlich and Rarey(2012)]{ehrlich2012}
+Hans-Christian Ehrlich and Matthias Rarey.
+\newblock Systematic benchmark of substructure search in molecular
+  graphs---from {Ullmann} to {VF2}.
+\newblock \emph{Journal of Cheminformatics}, 4:\penalty0 13, 2012.
+\newblock \doi{10.1186/1758-2946-4-13}.
+
+\bibitem[Ford and Fulkerson(1956)]{fordfulkerson1956}
+L.~R. Ford and D.~R. Fulkerson.
+\newblock Maximal flow through a network.
+\newblock \emph{Canadian Journal of Mathematics}, 8:\penalty0 399--404, 1956.
+\newblock \doi{10.4153/CJM-1956-045-5}.
+
+\bibitem[Garey and Johnson(1979)]{garey1979}
+Michael~R. Garey and David~S. Johnson.
+\newblock Computers and intractability: A guide to the theory of
+  {NP}-completeness.
+\newblock \emph{W. H. Freeman}, 1979.
+
+\bibitem[Griffen et~al.(2011)Griffen, Leach, Robb, and Warner]{griffen2011}
+Ed~Griffen, Andrew~G. Leach, Graeme~R. Robb, and Daniel~J. Warner.
+\newblock Matched molecular pairs as a medicinal chemistry tool.
+\newblock \emph{Journal of Medicinal Chemistry}, 54\penalty0 (22):\penalty0
+  7739--7750, 2011.
+\newblock \doi{10.1021/jm200452d}.
+
+\bibitem[Hussain and Rea(2010)]{hussain2010}
+Jameed Hussain and Ceara Rea.
+\newblock Computationally efficient algorithm to identify matched molecular
+  pairs ({MMPs}) in large data sets.
+\newblock \emph{Journal of Chemical Information and Modeling}, 50\penalty0
+  (3):\penalty0 339--348, 2010.
+\newblock \doi{10.1021/ci900450m}.
+
+\bibitem[Ioannidis(2005)]{ioannidis2005}
+John P.~A. Ioannidis.
+\newblock Why most published research findings are false.
+\newblock \emph{PLoS Medicine}, 2\penalty0 (8):\penalty0 e124, 2005.
+\newblock \doi{10.1371/journal.pmed.0020124}.
+
+\bibitem[Maggiora et~al.(2014)Maggiora, Vogt, Stumpfe, and
+  Bajorath]{maggiora2014}
+Gerald Maggiora, Martin Vogt, Dagmar Stumpfe, and J{\"u}rgen Bajorath.
+\newblock Molecular similarity in medicinal chemistry.
+\newblock \emph{Journal of Medicinal Chemistry}, 57\penalty0 (8):\penalty0
+  3186--3204, 2014.
+\newblock \doi{10.1021/jm401411z}.
+
+\bibitem[Meanwell(2011)]{meanwell2011}
+Nicholas~A. Meanwell.
+\newblock Synopsis of some recent tactical application of bioisosteres in drug
+  design.
+\newblock \emph{Journal of Medicinal Chemistry}, 54\penalty0 (8):\penalty0
+  2529--2591, 2011.
+\newblock \doi{10.1021/jm1013693}.
+
+\bibitem[Patani and LaVoie(1996)]{patani1996}
+George~A. Patani and Edmond~J. LaVoie.
+\newblock Bioisosterism: A rational approach in drug design.
+\newblock \emph{Chemical Reviews}, 96\penalty0 (8):\penalty0 3147--3176, 1996.
+\newblock \doi{10.1021/cr950066q}.
+
+\bibitem[Raymond and Willett(2002)]{raymond2002}
+John~W. Raymond and Peter Willett.
+\newblock Maximum common subgraph isomorphism algorithms for the matching of
+  chemical structures.
+\newblock \emph{Journal of Computer-Aided Molecular Design}, 16\penalty0
+  (7):\penalty0 521--533, 2002.
+\newblock \doi{10.1023/A:1021271615909}.
+
+\bibitem[Raymond et~al.(2002)Raymond, Gardiner, and Willett]{raymond2002rascal}
+John~W. Raymond, Eleanor~J. Gardiner, and Peter Willett.
+\newblock {RASCAL}: Calculation of graph similarity using maximum common edge
+  subgraphs.
+\newblock \emph{The Computer Journal}, 45\penalty0 (6):\penalty0 631--644,
+  2002.
+\newblock \doi{10.1093/comjnl/45.6.631}.
+
+\bibitem[Rogers and Hahn(2010)]{rogers2010}
+David Rogers and Mathew Hahn.
+\newblock Extended-connectivity fingerprints.
+\newblock \emph{Journal of Chemical Information and Modeling}, 50\penalty0
+  (5):\penalty0 742--754, 2010.
+\newblock \doi{10.1021/ci100050t}.
+
+\bibitem[Schneider et~al.(1999)Schneider, Neidhart, Giller, and
+  Schmid]{schneider1999}
+Gisbert Schneider, Werner Neidhart, Thomas Giller, and Gerard Schmid.
+\newblock ``scaffold-hopping'' by topological pharmacophore search: A
+  contribution to virtual screening.
+\newblock \emph{Angewandte Chemie International Edition}, 38\penalty0
+  (19):\penalty0 2894--2896, 1999.
+\newblock
+  \doi{10.1002/(SICI)1521-3773(19991004)38:19<2894::AID-ANIE2894>3.0.CO;2-F}.
+
+\bibitem[Stoer and Wagner(1997)]{stoer1997}
+Mechthild Stoer and Frank Wagner.
+\newblock A simple min-cut algorithm.
+\newblock \emph{Journal of the ACM}, 44\penalty0 (4):\penalty0 585--591, 1997.
+\newblock \doi{10.1145/263867.263872}.
+
+\bibitem[Stumpfe and Bajorath(2012)]{stumpfe2012}
+Dagmar Stumpfe and J{\"u}rgen Bajorath.
+\newblock Exploring activity cliffs in medicinal chemistry.
+\newblock \emph{Journal of Medicinal Chemistry}, 55\penalty0 (7):\penalty0
+  2932--2942, 2012.
+\newblock \doi{10.1021/jm201706b}.
+
+\bibitem[Ullmann(1976)]{ullmann1976}
+Julian~R. Ullmann.
+\newblock An algorithm for subgraph isomorphism.
+\newblock \emph{Journal of the ACM}, 23\penalty0 (1):\penalty0 31--42, 1976.
+\newblock \doi{10.1145/321921.321925}.
+
+\bibitem[Weininger(1988)]{weininger1988}
+David Weininger.
+\newblock {SMILES}, a chemical language and information system. 1. introduction
+  to methodology and encoding rules.
+\newblock \emph{Journal of Chemical Information and Computer Sciences},
+  28\penalty0 (1):\penalty0 31--36, 1988.
+\newblock \doi{10.1021/ci00057a005}.
+
+\bibitem[Weisfeiler and Leman(1968)]{weisfeiler1968}
+Boris Weisfeiler and Andrei Leman.
+\newblock The reduction of a graph to canonical form and the algebra which
+  appears therein.
+\newblock \emph{Nauchno-Technicheskaya Informatsia}, 2\penalty0 (9):\penalty0
+  12--16, 1968.
+
+\bibitem[Willett et~al.(1998)Willett, Barnard, and Downs]{willett1998}
+Peter Willett, John~M. Barnard, and Geoffrey~M. Downs.
+\newblock Chemical similarity searching.
+\newblock \emph{Journal of Chemical Information and Computer Sciences},
+  38\penalty0 (6):\penalty0 983--996, 1998.
+\newblock \doi{10.1021/ci9800211}.
+
+\bibitem[Wirth et~al.(2013)Wirth, Zoete, Michielin, and Sauer]{wirth2013}
+Matthias Wirth, Vincent Zoete, Olivier Michielin, and Wolfgang H.~B. Sauer.
+\newblock {SwissBioisostere}: A database of molecular replacements for ligand
+  design.
+\newblock \emph{Nucleic Acids Research}, 41\penalty0 (D1):\penalty0
+  D1137--D1143, 2013.
+\newblock \doi{10.1093/nar/gks1059}.
+
+\end{thebibliography}
