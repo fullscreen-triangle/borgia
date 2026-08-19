@@ -1,0 +1,14 @@
+-- oxides.hj : committed cell counts distinguish a double interface
+--             from two singles
+floor 1.0
+
+C := cut 6
+O := cut 8
+H := cut 1
+
+CO2 := close C(O : 2, O : 2)   -- each C=O commits two cells
+observe CO2
+
+-- neon offers no cell: inert, not an empty compound
+Ne := cut 10
+X  := close Ne(H)

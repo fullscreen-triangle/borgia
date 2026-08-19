@@ -1,0 +1,10 @@
+-- refuse.hj : a program that declines to compute over convention
+floor 1.0
+
+-- the analysis turns on stated cell counts, so it will not accept a
+-- structure whose elements were largely supplied
+g := import graph "one.smi"
+       require supplied < 0.10
+       unless refuse
+
+observe g

@@ -1,0 +1,10 @@
+-- atoms.hj : the arity-one cut
+floor 1.0
+
+C  := cut 6
+N  := cut 7
+O  := cut 8
+Ne := cut 10        -- closed shell: vacancy 0
+
+observe C
+observe Ne

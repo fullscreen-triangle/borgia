@@ -1,0 +1,8 @@
+# one record per line: SMILES [optional label]
+CCO             ethanol
+O=C=O           carbon-dioxide
+c1ccccc1        benzene
+[CH3][CH2][OH]  ethanol-explicit
+CC(=O)O         acetic-acid
+N               ammonia
+[NH3]           ammonia-explicit
