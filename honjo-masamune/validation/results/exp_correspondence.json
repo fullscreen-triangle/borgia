@@ -390,9 +390,9 @@
       "passed": true
     },
     "B6_druglike_grid": {
-      "n_pairs": 406,
-      "mean_class_overlap": 0.429434,
-      "mean_element_overlap": 0.564901,
+      "n_pairs": 435,
+      "mean_class_overlap": 0.430499,
+      "mean_element_overlap": 0.561245,
       "top_20_by_class_overlap": [
         {
           "a": "anisole",

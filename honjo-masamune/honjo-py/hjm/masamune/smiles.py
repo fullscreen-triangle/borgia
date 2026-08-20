@@ -174,8 +174,11 @@ def parse(text: str) -> ParseResult:
             raise SmilesError(f"unexpected character {ch!r}", i)
 
         arom = sym in AROMATIC_LOWER
-        upper = sym.upper() if len(sym) == 1 else sym
-        if upper not in {x.upper() for x in ORGANIC_SUBSET}:
+        # normalise to the element's own casing: 'c' -> 'C', 'Cl' -> 'Cl'.
+        # Comparing an upper-cased two-letter symbol against the subset
+        # would reject 'Cl' and 'Br', which are in it.
+        upper = sym.capitalize() if len(sym) > 1 else sym.upper()
+        if upper not in ORGANIC_SUBSET:
             raise SmilesError(f"{sym!r} outside organic subset; use brackets", i)
 
         atom = PAtom(

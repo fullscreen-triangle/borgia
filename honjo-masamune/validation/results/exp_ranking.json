@@ -152,7 +152,10 @@
         },
         {
           "name": "chlorobenzene",
-          "verdict": "malformed"
+          "n_heavy": 7,
+          "distinct_sigma": 2,
+          "distinct_base_key": 3,
+          "base_ratio": 0.428571
         },
         {
           "name": "nitro-like",
@@ -218,8 +221,8 @@
           "base_ratio": 0.6
         }
       ],
-      "mean_base_ratio": 0.507907,
-      "median_base_ratio": 0.4,
+      "mean_base_ratio": 0.505262,
+      "median_base_ratio": 0.414285,
       "max_base_ratio": 1.0,
       "passed": true
     },
@@ -558,6 +561,7 @@
         3,
         3,
         3,
+        3,
         1,
         1,
         2,
@@ -565,7 +569,7 @@
         2,
         2
       ],
-      "median_rounds": 2,
+      "median_rounds": 2.0,
       "max_rounds": 4,
       "passed": true
     },
@@ -712,6 +716,13 @@
           "final_ratio": 0.5
         },
         {
+          "name": "chlorobenzene",
+          "n_heavy": 7,
+          "base_classes": 3,
+          "stable_classes": 5,
+          "final_ratio": 0.714286
+        },
+        {
           "name": "nitro-like",
           "n_heavy": 10,
           "base_classes": 4,
@@ -775,8 +786,8 @@
           "final_ratio": 1.0
         }
       ],
-      "mean_final_ratio": 0.827054,
-      "mean_base_ratio": 0.507907
+      "mean_final_ratio": 0.823295,
+      "mean_base_ratio": 0.505262
     },
     "A5_negative_control": {
       "rows": [

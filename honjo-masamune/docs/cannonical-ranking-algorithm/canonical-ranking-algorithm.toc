@@ -12,15 +12,15 @@
 \contentsline {subsection}{\numberline {4.4}Cost}{6}{subsection.4.4}%
 \contentsline {section}{\numberline {5}Validation}{6}{section.5}%
 \contentsline {subsection}{\numberline {5.1}Method}{6}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}The base key is coarse}{8}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}Refinement recovers the orbit partition}{8}{subsection.5.3}%
-\contentsline {subsection}{\numberline {5.4}Refinement is necessary and sufficient in the measured range}{8}{subsection.5.4}%
-\contentsline {subsection}{\numberline {5.5}Negative control}{8}{subsection.5.5}%
-\contentsline {subsection}{\numberline {5.6}What the suite does not establish}{10}{subsection.5.6}%
-\contentsline {section}{\numberline {6}Relation to existing methods}{10}{section.6}%
-\contentsline {paragraph}{Morgan and its descendants.}{10}{section*.2}%
-\contentsline {paragraph}{Colour refinement and graph isomorphism.}{10}{section*.3}%
-\contentsline {paragraph}{Fingerprints.}{11}{section*.4}%
-\contentsline {paragraph}{Canonical identifiers.}{11}{section*.5}%
-\contentsline {section}{\numberline {7}Limitations}{11}{section.7}%
-\contentsline {section}{\numberline {8}Conclusion}{12}{section.8}%
+\contentsline {subsection}{\numberline {5.2}The base key is coarse}{11}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Refinement recovers the orbit partition}{11}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Refinement is necessary and sufficient in the measured range}{11}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}Negative control}{12}{subsection.5.5}%
+\contentsline {subsection}{\numberline {5.6}What the suite does not establish}{12}{subsection.5.6}%
+\contentsline {section}{\numberline {6}Relation to existing methods}{12}{section.6}%
+\contentsline {paragraph}{Morgan and its descendants.}{12}{section*.2}%
+\contentsline {paragraph}{Colour refinement and graph isomorphism.}{12}{section*.3}%
+\contentsline {paragraph}{Fingerprints.}{12}{section*.4}%
+\contentsline {paragraph}{Canonical identifiers.}{13}{section*.5}%
+\contentsline {section}{\numberline {7}Limitations}{13}{section.7}%
+\contentsline {section}{\numberline {8}Conclusion}{13}{section.8}%
