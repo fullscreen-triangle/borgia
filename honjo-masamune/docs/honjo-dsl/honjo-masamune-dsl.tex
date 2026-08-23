@@ -15,6 +15,8 @@
 \usepackage{amsmath,amssymb,amsthm,mathtools}
 \usepackage{bm}
 \usepackage{mathrsfs}
+\usepackage{graphicx}
+\graphicspath{{figures/}}
 \usepackage{booktabs}
 \usepackage{array}
 \usepackage{enumitem}
@@ -1505,6 +1507,120 @@ theorem that \Cref{rem:equiv-honest} retracts. Excluding them is the
 honest form: the equivalence holds where its hypothesis holds, and the
 suite records which programs those are.
 \end{remark}
+
+% =====================================================================
+\section{The conformance suite, executed}
+\label{sec:conformance-run}
+% =====================================================================
+
+A conformance suite that has never been run is a list of intentions. We
+executed the eight items of \Cref{sec:impl} against the reference interpreter
+and record the outcome of each, together with two items whose first
+formulation could not have failed and which we therefore restated.
+
+\begin{table}[htbp]
+\centering\small
+\caption{The eight conformance items, executed. ``Programs'' counts
+those run for that item.}
+\label{tab:conformance}
+\begin{tabular}{@{}llr@{}}
+\toprule
+Item & Measured & Programs\\
+\midrule
+(C1) no sharp cut & $0$ sub-floor values & $20$\\
+(C2) provenance monotone & $0$ violations & $3$\\
+(C3) verdicts realised & $0$ value-bearing failures & $5$\\
+(C4) conflation control & $4$ distinct, $1$ wrapped & $4$\\
+(C5) cell counts distinguish & closed against unclosed & $2$\\
+(C6) delocalisation not a count & $0$ readable per-pair & $1$\\
+(C7) resolution gate & $2/2$ sub-resolution refused & $3$\\
+(C8) scope recorded & $1$ in scope, $2$ excluded & $3$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Two items that could not have failed}
+
+\begin{remark}[(C1) as first written was vacuous]
+\label{rem:c1-vacuous}
+(C1) asks that no program produce a value with $\res<\flo$. The
+implementation computes a residue as $\flo\times\nu$ under a
+$\max(\cdot,\flo)$ clamp, so a sub-floor value is not constructible and
+a test that looks for one cannot fail. Reporting it as passed would have
+been reporting the type of the value, not a property of the language.
+
+The informative question is how the residue \emph{responds} to the
+floor. We swept the floor over a sixteen-fold range,
+$\flo\in\{0.25,0.5,1,2,4\}$, for four atoms. The ratio $\res/\flo$ is
+constant per atom across the whole sweep---$1.0$ for hydrogen, $4.0$ for
+carbon, $2.0$ for oxygen, $1.0$ for neon---and no value fell below the
+floor in any of the $20$ runs. That is the content (C1) was reaching
+for: the floor is a resolution scale that the value is expressed in, not
+a truncation applied to a value computed independently of it. A
+truncation would show a ratio that moved with the floor.
+\end{remark}
+
+\begin{remark}[(C4) needed the right four programs]
+\label{rem:c4-programs}
+Our first four programs for (C4) included \hj{unclosed} and \hj{inert}.
+Both produce a verdict, but both also bind values: an unclosed compound
+still individuates its constituent atoms. Under the value-or-nothing
+wrapper they therefore report \emph{value}, and the wrapper returned two
+outcomes rather than one---not because the theorem is false but because
+two of the four programs were not failures.
+
+The four programs are now a sub-resolution floor, a parse error, an
+unbound reference, and an import refused on provenance. These are four
+genuinely distinct outcomes under the verdict interface---
+\textsf{refused}/\textsf{subfloor}, \textsf{parse-error},
+\textsf{unbound}, \textsf{refused}/verdict---and exactly one outcome,
+\emph{nothing}, under a value-or-nothing wrapper. \Cref{thm:conflation}
+is thereby non-vacuous on this implementation: the collapse is
+exhibited, not assumed.
+\end{remark}
+
+\subsection{What the executed items show}
+
+\paragraph{(C5).} The difference committed cells make is stronger than a
+differing field. \hj{close C(O : 2, O : 2)} closes carbon exactly:
+vacancy $0$, residue $4.0$, a compound is produced. \hj{close C(O : 1,
+O : 1)} produces \emph{no compound at all}---carbon retains residual
+vacancy $2$, and the program returns an \textsf{unclosed} verdict naming
+each open atom with its vacancy, commitment and residual. A
+connectivity-only model writes both as ``carbon bonded to two oxygens''
+and cannot express the difference.
+
+\paragraph{(C6).} The delocalised value for benzene carries
+\textsf{total\_cells} $=9$ over \textsf{n\_centres} $=6$. It also names
+a \textsf{per\_pair\_cells} field and holds it at null. We take naming
+the field and leaving it empty to be the stronger choice: a consumer
+sees the absence declared rather than inferring it from a missing key.
+What (C6) forbids is a \emph{readable} per-pair count, and none is
+readable.
+
+\paragraph{(C7) and (C8).} A floor declaration below the target's
+reported resolution is refused, and the refusal verdict carries both
+numbers---the declared $10^{-12}$ and the target's $10^{-9}$. Two of
+three probe programs were sub-resolution and both were refused. The
+in-scope set for \Cref{thm:target-equiv} is therefore a strict subset:
+one program of three. That the excluded programs are recorded as
+excluded, rather than run and their disagreement tolerated, is the
+discipline \Cref{rem:c8} asks for.
+
+\begin{remark}[A refused declaration leaves the ambient floor unchanged]
+\label{rem:ambient}
+Reading the declared floor back from the interpreter's ambient state
+after a refusal returns the previous value, not the refused one: the
+declaration did not take effect, which is what refusal means. The
+declared value lives in the refusal verdict. Our first harness read the
+ambient field and consequently scored every refusal as in scope, which
+would have reported (C8) as satisfied with an empty exclusion set. The
+verdict payload, not the interpreter state, is where a refused quantity
+is recorded.
+\end{remark}
+
+% ---- measured figures -------------------------------
+\input{figures/honjo-captions}
 
 % =====================================================================
 \section{What honjo does not do}

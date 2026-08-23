@@ -12,10 +12,11 @@
 \contentsline {section}{\numberline {6}Validation}{5}{section.6}%
 \contentsline {subsection}{\numberline {6.1}Method}{5}{subsection.6.1}%
 \contentsline {subsection}{\numberline {6.2}The extensive window is refuted}{5}{subsection.6.2}%
-\contentsline {subsection}{\numberline {6.3}The intensive window is unary on $\sigma $}{5}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.3}The intensive window is unary on $\sigma $}{6}{subsection.6.3}%
 \contentsline {subsection}{\numberline {6.4}Conservation}{6}{subsection.6.4}%
 \contentsline {subsection}{\numberline {6.5}Discrimination, order independence, scaling}{6}{subsection.6.5}%
-\contentsline {subsection}{\numberline {6.6}What the suite does not establish}{7}{subsection.6.6}%
+\contentsline {subsection}{\numberline {6.6}Transitivity, and why the check is weak}{7}{subsection.6.6}%
+\contentsline {subsection}{\numberline {6.7}What the suite does not establish}{7}{subsection.6.7}%
 \contentsline {section}{\numberline {7}Relation to existing methods}{7}{section.7}%
 \contentsline {paragraph}{Screening.}{7}{section*.3}%
 \contentsline {paragraph}{Canonical forms.}{7}{section*.4}%
@@ -23,4 +24,4 @@
 \contentsline {paragraph}{Maximum common substructure.}{7}{section*.6}%
 \contentsline {paragraph}{Capability-aware querying.}{7}{section*.7}%
 \contentsline {section}{\numberline {8}Limitations}{7}{section.8}%
-\contentsline {section}{\numberline {9}Conclusion}{8}{section.9}%
+\contentsline {section}{\numberline {9}Conclusion}{10}{section.9}%

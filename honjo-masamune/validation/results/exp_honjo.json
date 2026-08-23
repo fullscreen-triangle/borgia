@@ -1,0 +1,504 @@
+{
+  "experiment": "H: the honjo conformance suite, executed",
+  "expectations": {
+    "H1_no_sub_floor_value": true,
+    "H2_zero_provenance_violations": true,
+    "H3_no_value_bearing_failure": true,
+    "H4_four_distinct_one_wrapped": true,
+    "H5_cell_counts_differ": true,
+    "H6_no_per_pair_count": true,
+    "H7_resolution_gate_refuses": true,
+    "H8_out_of_scope_recorded": true
+  },
+  "results": {
+    "H1_no_sharp_cut": {
+      "rows": [
+        {
+          "atom": "H",
+          "z": 1,
+          "sweep": [
+            {
+              "floor": 0.25,
+              "residue": 0.25,
+              "ratio": 1.0,
+              "below_floor": false
+            },
+            {
+              "floor": 0.5,
+              "residue": 0.5,
+              "ratio": 1.0,
+              "below_floor": false
+            },
+            {
+              "floor": 1.0,
+              "residue": 1.0,
+              "ratio": 1.0,
+              "below_floor": false
+            },
+            {
+              "floor": 2.0,
+              "residue": 2.0,
+              "ratio": 1.0,
+              "below_floor": false
+            },
+            {
+              "floor": 4.0,
+              "residue": 4.0,
+              "ratio": 1.0,
+              "below_floor": false
+            }
+          ],
+          "distinct_ratios": [
+            1.0
+          ]
+        },
+        {
+          "atom": "C",
+          "z": 6,
+          "sweep": [
+            {
+              "floor": 0.25,
+              "residue": 1.0,
+              "ratio": 4.0,
+              "below_floor": false
+            },
+            {
+              "floor": 0.5,
+              "residue": 2.0,
+              "ratio": 4.0,
+              "below_floor": false
+            },
+            {
+              "floor": 1.0,
+              "residue": 4.0,
+              "ratio": 4.0,
+              "below_floor": false
+            },
+            {
+              "floor": 2.0,
+              "residue": 8.0,
+              "ratio": 4.0,
+              "below_floor": false
+            },
+            {
+              "floor": 4.0,
+              "residue": 16.0,
+              "ratio": 4.0,
+              "below_floor": false
+            }
+          ],
+          "distinct_ratios": [
+            4.0
+          ]
+        },
+        {
+          "atom": "O",
+          "z": 8,
+          "sweep": [
+            {
+              "floor": 0.25,
+              "residue": 0.5,
+              "ratio": 2.0,
+              "below_floor": false
+            },
+            {
+              "floor": 0.5,
+              "residue": 1.0,
+              "ratio": 2.0,
+              "below_floor": false
+            },
+            {
+              "floor": 1.0,
+              "residue": 2.0,
+              "ratio": 2.0,
+              "below_floor": false
+            },
+            {
+              "floor": 2.0,
+              "residue": 4.0,
+              "ratio": 2.0,
+              "below_floor": false
+            },
+            {
+              "floor": 4.0,
+              "residue": 8.0,
+              "ratio": 2.0,
+              "below_floor": false
+            }
+          ],
+          "distinct_ratios": [
+            2.0
+          ]
+        },
+        {
+          "atom": "Ne",
+          "z": 10,
+          "sweep": [
+            {
+              "floor": 0.25,
+              "residue": 0.25,
+              "ratio": 1.0,
+              "below_floor": false
+            },
+            {
+              "floor": 0.5,
+              "residue": 0.5,
+              "ratio": 1.0,
+              "below_floor": false
+            },
+            {
+              "floor": 1.0,
+              "residue": 1.0,
+              "ratio": 1.0,
+              "below_floor": false
+            },
+            {
+              "floor": 2.0,
+              "residue": 2.0,
+              "ratio": 1.0,
+              "below_floor": false
+            },
+            {
+              "floor": 4.0,
+              "residue": 4.0,
+              "ratio": 1.0,
+              "below_floor": false
+            }
+          ],
+          "distinct_ratios": [
+            1.0
+          ]
+        }
+      ],
+      "n_programs": 20,
+      "floors_swept": [
+        0.25,
+        0.5,
+        1.0,
+        2.0,
+        4.0
+      ],
+      "n_values_below_floor": 0,
+      "residue_over_floor": {
+        "H": [
+          1.0
+        ],
+        "C": [
+          4.0
+        ],
+        "O": [
+          2.0
+        ],
+        "Ne": [
+          1.0
+        ]
+      },
+      "ratio_constant_per_atom": true,
+      "note": "residue is floor x vacancy under a max(.., floor) clamp, so a sub-floor value is unconstructible and merely looking for one cannot fail.  What is measured instead is that residue/floor is constant per atom across a 16-fold floor sweep: the floor acts as a resolution scale rather than as a truncation applied afterwards",
+      "passed": true
+    },
+    "H2_provenance_monotone": {
+      "rows": [
+        {
+          "program": "all stated",
+          "status": "ok",
+          "tags_in_order": [
+            "stated",
+            "stated",
+            "stated"
+          ],
+          "max_tag": 0,
+          "violations": 0
+        },
+        {
+          "program": "imported, mixed",
+          "status": "ok",
+          "tags_in_order": [
+            "supplied"
+          ],
+          "max_tag": 1,
+          "violations": 0
+        },
+        {
+          "program": "derived from import",
+          "status": "ok",
+          "tags_in_order": [
+            "supplied"
+          ],
+          "max_tag": 1,
+          "violations": 0
+        }
+      ],
+      "n_programs": 3,
+      "n_violations": 0,
+      "note": "composition is maximum, so a supplied input can never yield a stated output; a weakening would be a laundering of convention into record",
+      "passed": true
+    },
+    "H4_conflation_control": {
+      "rows": [
+        {
+          "program": "sub-resolution floor",
+          "status": "refused",
+          "verdict_kinds": [
+            "subfloor"
+          ],
+          "n_bindings": 0,
+          "distinguisher": "refused|subfloor"
+        },
+        {
+          "program": "parse error",
+          "status": "parse-error",
+          "verdict_kinds": [],
+          "n_bindings": 0,
+          "distinguisher": "parse-error|"
+        },
+        {
+          "program": "unbound reference",
+          "status": "ok",
+          "verdict_kinds": [],
+          "n_bindings": 0,
+          "distinguisher": "ok|"
+        },
+        {
+          "program": "import refused on provenance",
+          "status": "refused",
+          "verdict_kinds": [
+            "verdict"
+          ],
+          "n_bindings": 0,
+          "distinguisher": "refused|verdict"
+        }
+      ],
+      "n_programs": 4,
+      "n_distinct_outcomes": 4,
+      "n_wrapped_outcomes": 1,
+      "wrapped_values": [
+        "nothing"
+      ],
+      "note": "four programs failing for four different reasons are four distinct outcomes under the verdict interface and one under a value-or-nothing interface.  That collapse is what makes the conflation theorem non-vacuous; without it the verdict apparatus would be unmotivated",
+      "passed": true
+    },
+    "H5_cell_counts_distinguish": {
+      "two_cells": {
+        "stoichiometry": "COO",
+        "vacancy": 0,
+        "closed": true,
+        "residue": 4.0
+      },
+      "one_cell": {
+        "stoichiometry": null,
+        "vacancy": null,
+        "closed": null,
+        "residue": null
+      },
+      "two_cells_compound_built": true,
+      "one_cell_compound_built": false,
+      "one_cell_verdicts": [
+        "unclosed"
+      ],
+      "one_cell_open_atoms": [
+        [
+          {
+            "symbol": "C",
+            "vacancy": 4,
+            "committed": 2,
+            "residual": 2
+          },
+          {
+            "symbol": "O",
+            "vacancy": 2,
+            "committed": 1,
+            "residual": 1
+          },
+          {
+            "symbol": "O",
+            "vacancy": 2,
+            "committed": 1,
+            "residual": 1
+          }
+        ]
+      ],
+      "differ": true,
+      "note": "the same atoms at the same stoichiometry give different outcomes when the committed cell counts differ: two cells per interface closes carbon exactly, one cell leaves residual vacancy and yields no compound.  A connectivity-only model writes both as the same graph",
+      "passed": true
+    },
+    "H6_deloc_sweep": {
+      "rows": [
+        {
+          "n_centres": 4,
+          "cells_asked": 5,
+          "total_cells": 5,
+          "residue": 5.0,
+          "per_pair_cells": null,
+          "per_pair_readable": false,
+          "built": true
+        },
+        {
+          "n_centres": 5,
+          "cells_asked": 7,
+          "total_cells": 7,
+          "residue": 7.0,
+          "per_pair_cells": null,
+          "per_pair_readable": false,
+          "built": true
+        },
+        {
+          "n_centres": 6,
+          "cells_asked": 6,
+          "total_cells": 6,
+          "residue": 6.0,
+          "per_pair_cells": null,
+          "per_pair_readable": false,
+          "built": true
+        },
+        {
+          "n_centres": 6,
+          "cells_asked": 9,
+          "total_cells": 9,
+          "residue": 9.0,
+          "per_pair_cells": null,
+          "per_pair_readable": false,
+          "built": true
+        },
+        {
+          "n_centres": 10,
+          "cells_asked": 15,
+          "total_cells": 15,
+          "residue": 15.0,
+          "per_pair_cells": null,
+          "per_pair_readable": false,
+          "built": true
+        }
+      ],
+      "n_systems": 5,
+      "n_per_pair_readable": 0,
+      "centre_counts_with_multiple_totals": {
+        "6": [
+          6,
+          9
+        ]
+      },
+      "note": "two systems with the same centre count and different totals show the total is not a function of the centres, so it cannot be unpacked into a per-pair count by dividing; and no system exposes a readable one",
+      "passed": true
+    },
+    "H6_deloc_not_a_count": {
+      "status": "ok",
+      "n_deloc_bindings": 1,
+      "keys_exposed": [
+        "cut_index",
+        "floor",
+        "members",
+        "n_centres",
+        "name",
+        "per_pair_cells",
+        "provenance",
+        "residue",
+        "total_cells",
+        "type"
+      ],
+      "per_pair_keys_named": [
+        "per_pair_cells"
+      ],
+      "per_pair_values_readable": [],
+      "n_readable_per_pair": 0,
+      "total_cells": [
+        9
+      ],
+      "n_centres": [
+        6
+      ],
+      "note": "the value carries a total over the system and holds every per-pair field at null.  Naming the field and leaving it null declares the absence rather than hiding it; what (C6) forbids is a readable count, and none is readable",
+      "passed": true
+    },
+    "H7_resolution_gate": {
+      "rows": [
+        {
+          "program": "floor above target eps",
+          "declared_floor": 1.0,
+          "ambient_floor_after": 1.0,
+          "target_resolution": 1e-09,
+          "sub_resolution": false,
+          "status": "ok",
+          "refused": false,
+          "in_scope_for_target_equivalence": true
+        },
+        {
+          "program": "floor below target eps",
+          "declared_floor": 1e-12,
+          "ambient_floor_after": 1.0,
+          "target_resolution": 1e-09,
+          "sub_resolution": true,
+          "status": "refused",
+          "refused": true,
+          "in_scope_for_target_equivalence": false
+        },
+        {
+          "program": "floor far below target",
+          "declared_floor": 1e-18,
+          "ambient_floor_after": 1.0,
+          "target_resolution": 1e-09,
+          "sub_resolution": true,
+          "status": "refused",
+          "refused": true,
+          "in_scope_for_target_equivalence": false
+        }
+      ],
+      "n_programs": 3,
+      "n_sub_resolution": 2,
+      "n_refused": 2,
+      "note": "a program asking for a distinction finer than the target can represent is refused with both numbers named",
+      "passed": true
+    },
+    "H8_target_equivalence_scope": {
+      "n_total": 3,
+      "n_in_scope": 1,
+      "n_excluded": 2,
+      "strict_subset": true,
+      "note": "sub-resolution programs are excluded from the equivalence claim rather than run and tolerated; reporting their disagreement as acceptable would assert the unconditional theorem the paper retracts",
+      "passed": true
+    },
+    "H3_verdict_realisation": {
+      "rows": [
+        {
+          "program": "atoms.hj",
+          "status": "ok",
+          "n_bindings": 4,
+          "cut_count": 4
+        },
+        {
+          "program": "benzene.hj",
+          "status": "ok",
+          "n_bindings": 7,
+          "cut_count": 7
+        },
+        {
+          "program": "oxides.hj",
+          "status": "ok",
+          "n_bindings": 5,
+          "cut_count": 6
+        },
+        {
+          "program": "refuse.hj",
+          "status": "refused",
+          "n_bindings": 0,
+          "cut_count": 0
+        },
+        {
+          "program": "water.hj",
+          "status": "ok",
+          "n_bindings": 3,
+          "cut_count": 4
+        }
+      ],
+      "n_programs": 5,
+      "statuses": [
+        "ok",
+        "refused"
+      ],
+      "value_bearing_failures": 0,
+      "note": "no failing program emits bindings; only a value-bearing outcome carries a value",
+      "passed": true
+    }
+  },
+  "all_passed": true
+}

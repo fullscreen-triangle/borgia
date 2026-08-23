@@ -1,0 +1,142 @@
+% =====================================================================
+%  Figure captions for: Masamune, a Verdict-Carrying Converter and Plan
+%  Language for Chemical Structure Representations
+%
+%  Every quantity quoted below is read from
+%  validation/results/exp_masamune.json.
+% =====================================================================
+
+\begin{figure*}[!htbp]
+    \centering
+    \includegraphics[width=\textwidth]{figures/panel_01_supplied.png}
+    \caption{\textbf{Across a $48$-structure corpus a mean of $73.4\%$ of
+    a SMILES-derived contact graph is supplied by convention rather than
+    stated by the record, and no structure falls below $50.0\%$.}
+    $\phi$ (\Cref{def:suppfrac}) ranges over the graph's own vertices and
+    contacts; medium edges are excluded, for the reason defect D2 gives
+    and panel~(\textbf{D}) measures.
+    (\textbf{A})~Distribution of $\phi$, with the corpus mean $0.734$
+    dashed and $0.500$ dotted. The distribution is tight --- standard
+    deviation $0.071$ --- and lies entirely above $0.5$. We had expected
+    the corpus to contain records stating everything the request needed,
+    giving $\phi=0$ exactly; it contains none, which
+    \Cref{rem:nozero} records as a fact about the format rather than
+    about the reader.
+    (\textbf{B})~$\phi$ against heavy-atom count, coloured by total atom
+    count. The cloud is close to flat: the supplied fraction is a property
+    of the notation's conventions rather than of molecular size, so it
+    does not wash out as structures grow.
+    (\textbf{C})~The corrected and uncorrected statistics for every
+    structure, joined per structure. Green points exclude medium edges and
+    red include them; the vertical segment is the inflation. The two point
+    clouds never cross, so the correction changes the value of $\phi$
+    everywhere without changing its ordering.
+    (\textbf{D})~The inflation itself, one bar per structure ordered by
+    heavy-atom count, with the mean $0.089$ dashed. It runs from $0.040$
+    to $0.167$ and is largest on the smallest molecules --- because every
+    medium edge is $\supplied$ by construction, including them makes
+    $\phi$ a quantity dominated by the target representation exactly where
+    the source record is shortest. That is defect D2 as a measurement
+    rather than as an argument.}
+    \label{fig:supplied}
+\end{figure*}
+
+\begin{figure*}[!htbp]
+    \centering
+    \includegraphics[width=\textwidth]{figures/panel_02_capability.png}
+    \caption{\textbf{Capability containment decides $19$ of $24$
+    format--request pairs before any record is read, and agrees with the
+    post-read outcome on all $24$.}
+    Each pair was checked twice: statically against the declared
+    capability set (\Cref{cor:static}), and again by attempting the
+    translation and inspecting the resulting label.
+    (\textbf{A})~Requests per format, split into those refused statically
+    and those a read may satisfy. The \textsf{inchi} row refuses all
+    eight, because no reader is implemented and the capability set is
+    empty --- an honest under-declaration, which \Cref{sec:capability}
+    argues is the safe direction to err in.
+    (\textbf{B})~Each pair as a bar over (format, features asked), with
+    height the number of asked-for features the format actually declares
+    and the dashed diagonal marking full service. A bar reaching the
+    diagonal is translatable; one short of it is refused. Height is
+    features \emph{declared} rather than features \emph{missing} because
+    the latter renders every satisfiable request as a zero-height,
+    invisible bar.
+    (\textbf{C})~Declared capability size per format: seven features for
+    SMILES, two for the coordinate-only reader, none for \textsf{inchi}.
+    The zero is drawn as an explicit floor tick so that a format declaring
+    nothing is legible as a measured zero rather than as an absent bar.
+    (\textbf{D})~Agreement between the static verdict and the post-read
+    outcome, over all $24$ pairs. The disagreement count is zero. The
+    direction that would matter is a static refusal of a request a read
+    would have satisfied, since that is the unsound one; there were
+    none.}
+    \label{fig:capability}
+\end{figure*}
+
+\begin{figure*}[!htbp]
+    \centering
+    \includegraphics[width=\textwidth]{figures/panel_03_disagreement.png}
+    \caption{\textbf{Ten molecules written two faithful ways yield ten
+    pairs of contact graphs that differ, while formula-level comparison
+    reports agreement on all ten.}
+    Each molecule is expressed once with a lower-case aromatic ring and
+    once in an alternating Kekul\'e assignment. Both translations state
+    exactly what their source states, so neither is a misreading.
+    (\textbf{A})~Delocalised contacts under each reading. The aromatic
+    form yields six per benzenoid ring (eleven for naphthalene); the
+    Kekul\'e form yields none, drawn as explicit floor ticks so the zeros
+    read as measured rather than missing. By \Cref{prop:deloc} neither
+    graph converts into the other without supplying a fact.
+    (\textbf{B})~The supplied fraction under each reading, joined per
+    molecule. The Kekul\'e form is lower in every case --- benzene gives
+    $0.750$ against $0.625$ --- because stating per-contact cell counts
+    removes them from what convention must supply. The gap is a
+    measurement of how much the aromatic notation leaves to the reader.
+    (\textbf{C})~What each comparison detects. A formula-level comparison
+    finds $0$ of $10$ differences; a cell-count comparison finds $10$ of
+    $10$. This is the paper's central practical claim in one measurement:
+    the disagreement is real and the conventional instrument is blind to
+    it, which is why \Cref{sec:disagreement} argues identity comparison is
+    the wrong tool here.
+    (\textbf{D})~The two readings in (total cells, delocalised contacts,
+    $\phi$) space, joined per molecule. The two clouds are disjoint on
+    every axis, and the connecting segments are all parallel: the
+    disagreement is systematic, not sporadic. Note that the measured
+    ratio is $10/10$ because these pairs were constructed to contain an
+    aromatic ring; \Cref{rem:tenten} states that this measures visibility
+    and not prevalence.}
+    \label{fig:disagreement}
+\end{figure*}
+
+\begin{figure*}[!htbp]
+    \centering
+    \includegraphics[width=\textwidth]{figures/panel_04_verdicts.png}
+    \caption{\textbf{Eight probes realise five distinct verdict labels,
+    and no failure verdict carries a value.}
+    (\textbf{A})~Labels realised by the probe set. \textsf{empty} appears
+    here only because of defect D4: the parser raised on empty input
+    before clause (V2) was reached, so \textsf{empty} was unreachable from
+    the SMILES path and an empty record was reported as
+    \textsf{malformed}. That is the conflation \Cref{thm:conflation}
+    identifies, occurring inside the implementation built to prevent it;
+    \Cref{rem:d4} gives the account.
+    (\textbf{B})~Probes by whether their label may carry a value, whether
+    the label is a failure, and whether a value was in fact carried. One
+    probe is value-bearing, seven are failures, and exactly one carried a
+    value --- the same one. The failure column is the population in which
+    a violation could occur, and it is empty.
+    (\textbf{C})~Each probe positioned by label, by whether its label may
+    carry a value, and by whether it did. Every bar sits at $\text{did
+    carry}=0$ except the single \textsf{translated} probe, and no bar sits
+    in the region (may carry $=0$, did carry $=1$) that would constitute a
+    violation. That region is empty by construction as well as by
+    measurement: the invariant is enforced in the verdict constructor, so
+    this panel confirms the constructor is reached rather than
+    establishing the property independently.
+    (\textbf{D})~Labels realised by these probes against those defined but
+    not probed. Five of twelve are exercised. The unexercised seven are
+    plan-level and honjo-level labels outside the translation path, and we
+    make no claim about them here.}
+    \label{fig:verdicts}
+\end{figure*}

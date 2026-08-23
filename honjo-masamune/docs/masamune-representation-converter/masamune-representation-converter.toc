@@ -1,7 +1,7 @@
 \contentsline {part}{I\hspace {1em}The Problem}{3}{part.1}%
 \contentsline {section}{\numberline {1}Introduction}{3}{section.1}%
 \contentsline {subsection}{\numberline {1.1}Six formats, one molecule, six different things said}{3}{subsection.1.1}%
-\contentsline {subsection}{\numberline {1.2}The problem is not conversion; it is what conversion hides}{3}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.2}The problem is not conversion; it is what conversion hides}{4}{subsection.1.2}%
 \contentsline {paragraph}{Errors become unattributable.}{4}{section*.2}%
 \contentsline {paragraph}{Agreement becomes uninformative.}{4}{section*.3}%
 \contentsline {paragraph}{Absence becomes invisible.}{4}{section*.4}%
@@ -10,7 +10,7 @@
 \contentsline {subsection}{\numberline {1.5}Contributions}{5}{subsection.1.5}%
 \contentsline {section}{\numberline {2}Related work and what is new}{5}{section.2}%
 \contentsline {paragraph}{Format conversion.}{5}{section*.5}%
-\contentsline {paragraph}{Canonicalisation.}{5}{section*.6}%
+\contentsline {paragraph}{Canonicalisation.}{6}{section*.6}%
 \contentsline {paragraph}{Curation.}{6}{section*.7}%
 \contentsline {paragraph}{Provenance in databases.}{6}{section*.8}%
 \contentsline {paragraph}{Nulls and missing information.}{6}{section*.9}%
@@ -44,9 +44,11 @@
 \contentsline {section}{\numberline {9}Reference implementation and a translation run}{17}{section.9}%
 \contentsline {subsection}{\numberline {9.1}The implementation}{17}{subsection.9.1}%
 \contentsline {subsection}{\numberline {9.2}The run}{17}{subsection.9.2}%
-\contentsline {subsection}{\numberline {9.3}The supplied fraction across formats}{17}{subsection.9.3}%
-\contentsline {subsection}{\numberline {9.4}The negative outcome}{18}{subsection.9.4}%
-\contentsline {subsection}{\numberline {9.5}Two formats, one molecule, undetected disagreement}{18}{subsection.9.5}%
-\contentsline {subsection}{\numberline {9.6}Defects found by implementing}{18}{subsection.9.6}%
-\contentsline {section}{\numberline {10}What Masamune does not do}{19}{section.10}%
-\contentsline {section}{\numberline {11}Conclusion}{20}{section.11}%
+\contentsline {subsection}{\numberline {9.3}The supplied fraction}{17}{subsection.9.3}%
+\contentsline {subsection}{\numberline {9.4}The medium-edge defect, measured}{18}{subsection.9.4}%
+\contentsline {subsection}{\numberline {9.5}Capability containment, measured}{18}{subsection.9.5}%
+\contentsline {subsection}{\numberline {9.6}Verdicts are distinct, and a failure carries no value}{18}{subsection.9.6}%
+\contentsline {subsection}{\numberline {9.7}Two formats, one molecule, undetected disagreement}{18}{subsection.9.7}%
+\contentsline {subsection}{\numberline {9.8}Defects found by implementing}{19}{subsection.9.8}%
+\contentsline {section}{\numberline {10}What Masamune does not do}{20}{section.10}%
+\contentsline {section}{\numberline {11}Conclusion}{24}{section.11}%

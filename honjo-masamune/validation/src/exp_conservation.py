@@ -25,6 +25,13 @@ Pre-registered expectations, written before the run:
   D5  NEGATIVE CONTROL.  A predicate keyed on a context-sensitive
       quantity (burial depth) must produce order-dependent partitions
       at corpus scale.  If it does not, D4 is not testing anything.
+  D6  CONSERVATION CONTROL.  D1 reports exact conservation, and a
+      quantity that never moves is indistinguishable in a results file
+      from one that is not being computed.  Transformations that are NOT
+      balanced -- oxidations, which remove hydrogens -- must therefore
+      shift the same quantity.  Expect a nonzero residual on every
+      unbalanced pair; make no prediction of magnitude.  Without this,
+      D1's eight zeros are not evidence.
 
 Every number written to the results file is measured.
 """
@@ -53,6 +60,7 @@ EXPECT = {
     "D3_classes_between_2_and_n_minus_1": True,
     "D4_partition_order_independent": True,
     "D5_control_must_be_order_dependent": True,
+    "D6_unbalanced_must_shift_sigma": True,
 }
 
 #: balanced transformations: same heavy-atom composition on both sides,
@@ -67,6 +75,18 @@ TRANSFORMATIONS = [
     ("ring open (oxetane-like)",   ["C1CCO1"],         ["C=CCO"]),
     ("catechol -> resorcinol",     ["Oc1ccccc1O"],     ["Oc1cccc(O)c1"]),
     ("ortho -> para xylene",       ["Cc1ccccc1C"],     ["Cc1ccc(C)cc1"]),
+]
+
+
+#: NOT balanced: each removes hydrogens, so each is an oxidation rather
+#: than a rearrangement.  These exist to show that the conserved quantity
+#: of D1 is capable of moving.
+UNBALANCED = [
+    ("1-propanol -> propanal",      ["CCCO"],     ["CCC=O"]),
+    ("ethanol -> acetaldehyde",     ["CCO"],      ["CC=O"]),
+    ("cyclohexane -> benzene",      ["C1CCCCC1"], ["c1ccccc1"]),
+    ("ethane -> ethene",            ["CC"],       ["C=C"]),
+    ("methanol -> formaldehyde",    ["CO"],       ["C=O"]),
 ]
 
 
@@ -256,6 +276,48 @@ def run() -> dict:
                 "partitions under different orders; D4 is therefore a "
                 "claim about the sigma key and not a tautology",
         "passed": len(set(ctrl_partitions)) > 1,
+    }
+
+    # --- D6: the conservation control ----------------------------------
+    ctrl = []
+    for name, react, prod in UNBALANCED:
+        gr = [g_of(x) for x in react]
+        gp = [g_of(x) for x in prod]
+        if any(x is None for x in gr + gp):
+            ctrl.append({"transformation": name, "error": "translation failed"})
+            continue
+        hr = sum(len([k for k, a in g.atoms.items() if a.z == 1]) for g in gr)
+        hp = sum(len([k for k, a in g.atoms.items() if a.z == 1]) for g in gp)
+        nr = sum(len(heavy_atoms(g)) for g in gr)
+        np_ = sum(len(heavy_atoms(g)) for g in gp)
+        sr = sum(total_sigma(g) for g in gr)
+        sp = sum(total_sigma(g) for g in gp)
+        dr = sum(total_depth(g) for g in gr)
+        dp = sum(total_depth(g) for g in gp)
+        ctrl.append({
+            "transformation": name,
+            "heavy_reactant": nr, "heavy_product": np_,
+            "hydrogens_reactant": hr, "hydrogens_product": hp,
+            "balanced": nr == np_ and hr == hp,
+            "sigma_reactant": round(sr, 6), "sigma_product": round(sp, 6),
+            "sigma_residual": round(sp - sr, 6),
+            "depth_residual": dp - dr,
+        })
+    good = [r for r in ctrl if "sigma_residual" in r]
+    moved = sum(1 for r in good if r["sigma_residual"] != 0)
+    out["results"]["D6_conservation_control"] = {
+        "rows": ctrl,
+        "n_unbalanced": len(good),
+        "n_with_nonzero_residual": moved,
+        "residuals": [r["sigma_residual"] for r in good],
+        "max_abs_residual": max((abs(r["sigma_residual"]) for r in good),
+                                default=0),
+        "note": "every one of these removes hydrogens, so none is a "
+                "rearrangement.  They exist because a quantity that never "
+                "moves is indistinguishable, in a results file, from one "
+                "that is not being computed; D1 is evidence only if this "
+                "is nonzero",
+        "passed": moved == len(good) and len(good) > 0,
     }
 
     out["all_passed"] = all(v.get("passed", True)

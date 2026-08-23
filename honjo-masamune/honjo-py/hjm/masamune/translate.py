@@ -56,6 +56,14 @@ def translate_smiles(
     if miss:
         return Verdict.unsupported(list(miss), list(cap.capability("smiles")))
 
+    # (V2) an empty record is EMPTY, not MALFORMED.  The parser raises on
+    # empty input, so testing it here is what keeps the two labels
+    # distinct: a record that says nothing is not a record that says
+    # something ill-formed, and conflating them is exactly the loss the
+    # verdict discipline exists to prevent.
+    if not text.strip():
+        return Verdict.empty(source_name)
+
     # (V1)
     try:
         p = smi.parse(text)

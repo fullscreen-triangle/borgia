@@ -21,6 +21,7 @@
 \usepackage{xcolor}
 \usepackage{listings}
 \usepackage{graphicx}
+\graphicspath{{figures/}}
 \usepackage[round,sort&compress]{natbib}
 \usepackage[colorlinks=true,linkcolor=blue!45!black,
             citecolor=blue!45!black,urlcolor=blue!45!black]{hyperref}
@@ -163,16 +164,17 @@ log, and we prove plan-level determinism and provenance monotonicity
 (\Cref{thm:plan-determinism,thm:prov-monotone}).
 
 We report a reference implementation written from this specification and
-a translation run over $1{,}000$ structures drawn from a public
-collection, in three formats. The run establishes the discipline's
-practical content: across the corpus, $61.4\%$ of vertices in the
-resulting graphs are $\supplied$ rather than $\stated$---a majority of
-the atoms in a typical translated structure are supplied by
-convention---and the supplied fraction varies from $0.0\%$ to $72.7\%$
-across formats of the same molecules. We report one negative outcome and
-three defects that writing the implementation exposed, including a case
-in which two formats of the same compound produce contact graphs that
-differ in a way no round-trip identity test detects. We state what
+a translation run over a $48$-structure corpus in two formats. The run
+establishes the discipline's practical content: a mean of $73.4\%$ of
+the elements of a SMILES-derived contact graph are $\supplied$ rather
+than $\stated$, with no structure below $50.0\%$---the majority of a
+translated structure is convention, not record. Capability containment
+decides $19$ of $24$ format--request pairs before any record is read,
+agreeing with the post-read outcome on all $24$. We report four defects
+that writing and running the implementation exposed, including a case in
+which two faithful representations of the same compound produce contact
+graphs that differ while every formula- and identity-level comparison
+reports agreement. We state what
 Masamune does not do: it does not adjudicate between conflicting
 sources, does not repair records, and does not compute chemistry.
 \end{abstract}
@@ -360,9 +362,9 @@ converter interface cannot represent it (\Cref{sec:verdicts}).
 (\Cref{sec:capability}).
 \item A plan language with grammar, operational semantics, and
 determinism and monotonicity theorems (\Cref{sec:plans,sec:semantics}).
-\item A reference implementation, a $1{,}000$-structure run across three
-formats, a reported negative outcome, and three specification defects
-found by implementing (\Cref{sec:implementation}).
+\item A reference implementation, a $48$-structure run across two
+formats, and four specification defects found by implementing and
+running it (\Cref{sec:implementation}).
 \end{enumerate}
 
 % =====================================================================
@@ -1436,118 +1438,193 @@ under-specifications were found this way and are recorded in
 
 \subsection{The run}
 
-The corpus is $1{,}000$ small organic structures drawn from a public
-collection, each available in three representations: a SMILES string, an
-SD record with explicit hydrogens and coordinates, and a coordinate-only
-record without a bond block. The three are translated independently and
-the resulting graphs and provenance maps compared. Because the same
-molecules are present in all three formats, the comparison isolates the
-effect of the \emph{format} from the effect of the \emph{molecule}.
+The corpus is $48$ structures: $30$ drug-like molecules and $18$ chosen
+for constitutional symmetry. Each is translated from SMILES, and a
+coordinate-only record is emitted from the resulting graph and
+translated back through the second reader, so the same molecules are
+seen through two readers of different declared capability. The
+comparison therefore isolates the effect of the \emph{format} from the
+effect of the \emph{molecule}.
 
-\subsection{The supplied fraction across formats}
+The corpus is small and was assembled by us. Every number below is a
+measurement over these $48$ structures and nothing is extrapolated to
+chemical space at large; the quantities are properties of a reader and a
+corpus, not constants of a notation.
+
+\subsection{The supplied fraction}
 
 \begin{table}[htbp]
 \centering\small
-\caption{Supplied fraction $\phi$ by source format over the same
-$1{,}000$ structures. ``Elements'' counts vertices and edges of the
-resulting contact graph.}
+\caption{Supplied fraction $\phi$ over the $48$-structure corpus.
+$\phi$ ranges over the graph's own vertices and contacts; medium edges
+are excluded (defect D2).}
 \label{tab:phi}
 \begin{tabular}{@{}lrrrr@{}}
 \toprule
-Format & mean $\phi$ & median $\phi$ & min & max\\
+Quantity & mean & median & min & max\\
 \midrule
-SD record (explicit H, coords) & $0.000$ & $0.000$ & $0.000$ & $0.000$\\
-SMILES & $0.614$ & $0.625$ & $0.333$ & $0.727$\\
-Coordinate-only (no bonds) & $0.508$ & $0.512$ & $0.471$ & $0.549$\\
+$\phi$, SMILES source & $0.734$ & $0.727$ & $0.500$ & $0.889$\\
+$\phi$, medium edges included & $0.824$ & --- & --- & ---\\
 \bottomrule
 \end{tabular}
 \end{table}
 
-The SMILES row is the substantive number. Across the corpus, a mean of
-$61.4\%$ of the elements of a graph translated from SMILES are
-$\supplied$ rather than $\stated$: the majority of a translated
-structure is convention, not record. This is not a criticism of SMILES,
-which is a compact notation that deliberately omits what a valence model
-recovers; it is a measurement of how much a downstream consumer is
-trusting when it treats a SMILES-derived graph as data.
+Across the corpus a mean of $73.4\%$ of the elements of a graph
+translated from SMILES are $\supplied$ rather than $\stated$, with a
+standard deviation of $0.071$ and no structure below $0.500$. The
+majority of a translated structure is convention, not record.
 
-The coordinate-only row measures a different silence: connectivity and
-cell counts are supplied by a distance-and-template convention while
-atoms and coordinates are stated, giving roughly half the elements
-$\supplied$.
+This is not a criticism of SMILES, which is a compact notation that
+deliberately omits what a valence model recovers. It is a measurement of
+how much a downstream consumer is trusting when it treats a
+SMILES-derived graph as data. The dominant contribution is hydrogen: the
+organic-subset convention supplies hydrogen vertices the string never
+writes, and each supplied vertex brings a supplied contact with it.
 
-The SD row is the control. Where a format states everything the request
-needs, $\phi=0$ exactly, for every structure. That the control is
-exactly zero rather than approximately zero is a check on the
-implementation: any non-zero value would indicate an element being
-supplied where the record stated it.
+\begin{remark}[No structure attained $\phi=0$]
+\label{rem:nozero}
+We expected the corpus to contain structures stating everything the
+request needed, giving $\phi=0$ exactly. None did: the minimum was
+$0.500$. Every SMILES record in this corpus omits at least half of what
+the contact graph ends up containing, because every one of these
+molecules has hydrogens and the notation states none of them explicitly.
+A control we intended to be exact turned out to be unreachable from this
+format, which is a fact about the format rather than about the
+implementation.
+\end{remark}
 
-\subsection{The negative outcome}
-\label{sec:negative}
+\subsection{The medium-edge defect, measured}
+\label{sec:d2measured}
 
-The plan of \Cref{ex:plan} was run against the SMILES corpus with the
-requirement \ms{element, connectivity, cellcount, stereo} and the
-threshold \ms{expect supplied < 0.25}, both stated in the plan text
-before execution.
+\Cref{def:suppfrac} excludes medium edges from the denominator. The
+justification is given there; the measurement is that including them
+raises the mean $\phi$ from $0.734$ to $0.824$, an inflation of $0.089$
+on average, ranging from $0.040$ to $0.167$ across structures. Because
+no source states a medium edge, every one of them is $\supplied$ by
+construction, so the uncorrected statistic mixes a property of the
+source record with a property of the target representation, and the
+mixture is largest exactly where the molecule is smallest.
 
-\emph{The threshold was not met for any structure in the corpus.} The
-minimum observed $\phi$ was $0.333$, against a required $<0.25$, so
-every translation was substituted to \textsf{incomplete} by
-\Cref{def:expectcheck} and the subsequent \ms{select} yielded the empty
-set. The plan's \ms{assert core.count > 100} then fired, halting with
-the declared message.
+\subsection{Capability containment, measured}
 
-We report this because it is the outcome the discipline exists to
-produce and because it was not the outcome we expected when the plan was
-written. The threshold $0.25$ was chosen as a plausible tolerance for
-``mostly stated'' before the supplied fractions were measured; the
-measurement shows that no SMILES-derived structure in this corpus is
-mostly stated in the sense the plan required. Two readings are
-available, and the run does not distinguish them: either the threshold
-was unreasonable for SMILES input, or SMILES is an unsuitable source for
-an analysis requiring stated cell counts. Both are decisions for the
-analyst, and the point of the machinery is that the plan surfaced the
-question instead of returning a result computed over supplied data.
+Every $(\text{format},\text{request})$ pair was checked twice: once
+statically against the declared capability set, and once by attempting
+the translation and inspecting the resulting label.
 
-\begin{remark}[Why this is reported here]
-\label{rem:report-negative}
-A converter whose worked examples all succeed has not been shown capable
-of refusing anything, and refusal is the property this specification
-claims. The run demonstrates that a plan can state a requirement in
-advance and return a verdict against its author.
+\begin{table}[htbp]
+\centering\small
+\caption{Static refusal against post-read outcome over three formats and
+eight requests.}
+\label{tab:cap}
+\begin{tabular}{@{}lr@{}}
+\toprule
+Quantity & Value\\
+\midrule
+Format--request pairs & $24$\\
+Refused statically, before any read & $19$\\
+Static verdict agrees with post-read & $24$\\
+Agreement & $1.000$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The two agree on all $24$ pairs, and $19$ of the $24$ are decided
+without reading a record at all. The direction that matters is the one
+that would be unsound: a static refusal of a request a read would have
+satisfied. There were none.
+
+\subsection{Verdicts are distinct, and a failure carries no value}
+
+Eight probe programs were run to exercise the label set, realising four
+distinct labels: \textsf{translated}, \textsf{malformed},
+\textsf{unsupported} and \textsf{incomplete}. No failure verdict carried
+a value in any probe. That invariant is additionally enforced at
+construction time, so the measurement confirms the constructor is
+reached rather than establishing the property independently---a point we
+make explicitly, because a test that cannot fail is not evidence.
+
+\begin{remark}[A fourth defect, found by this probe: D4]
+\label{rem:d4}
+The probe for the \textsf{empty} label returned \textsf{malformed}. The
+cause was an ordering defect: the parser raises on empty input, so
+clause (V1) fired before the (V2) check on an empty atom set was ever
+reached, and the \textsf{empty} label was unreachable from the SMILES
+path. A record that says nothing had been made indistinguishable from a
+record that says something ill-formed---precisely the conflation
+\Cref{thm:conflation} identifies. The reader now tests for an empty
+record before parsing.
+
+The defect had been frozen into the test suite: a test named
+\emph{malformed is distinct from empty} asserted that both inputs
+produce \textsf{malformed}, with a comment conceding that empty input
+fails to parse. The test name stated the requirement and the test body
+asserted its violation. It now checks that the two labels differ.
 \end{remark}
 
 \subsection{Two formats, one molecule, undetected disagreement}
 \label{sec:disagreement}
 
-The comparison across formats produced one finding we had not
-anticipated. For $37$ of the $1{,}000$ structures, the graphs obtained
-from the SMILES record and from the SD record differ, while every
-round-trip identity test we applied reports agreement.
+The comparison across representations produced the finding we had not
+anticipated. Ten molecules were expressed two ways, each faithful to its
+source: once with lower-case aromatic rings, and once in an alternating
+Kekul\'e assignment.
 
-The mechanism is delocalisation. The SMILES records write aromatic rings
-in lower case, which the reader translates to a delocalised marker over
-the ring's contacts (\Cref{def:bondattrs}). The SD records write the
-same rings in an alternating single/double Kekul\'e assignment, which the
-reader translates to per-contact cell counts of $1$ and $2$. Both
-translations are faithful: each states what its source states. The
-graphs differ in their edge attributes, and by \Cref{prop:deloc} neither
-is convertible into the other without supplying a fact.
+\begin{table}[htbp]
+\centering\small
+\caption{Aromatic against Kekul\'e representations of the same ten
+molecules.}
+\label{tab:disagree}
+\begin{tabular}{@{}lr@{}}
+\toprule
+Quantity & Value\\
+\midrule
+Molecule pairs & $10$\\
+Molecular formula agrees & $10$\\
+Contact graphs differ & $10$\\
+Differ while formula agrees & $10$\\
+Fraction undetected by identity & $1.000$\\
+\bottomrule
+\end{tabular}
+\end{table}
 
-Round-trip tests do not detect this because they compare a structure
-with itself after a cycle through one format, and the disagreement is
-between two formats. A canonical identifier does not detect it either,
-since canonicalisation normalises the distinction away by design
+For all ten the graphs differ and the molecular formula agrees, so an
+identity-level comparison reports agreement in every case
+(\Cref{tab:disagree}).
+
+The mechanism is delocalisation. A lower-case ring translates to a
+delocalised system over the ring's contacts: benzene yields six
+delocalised contacts carrying a total and no per-pair count. The
+Kekul\'e form translates to per-contact cell counts of $1$ and $2$ and
+zero delocalised contacts. Both translations are faithful---each states
+what its source states---and by \Cref{prop:deloc} neither is convertible
+into the other without supplying a fact. The supplied fractions differ
+too, and consistently: benzene gives $\phi=0.750$ aromatic against
+$0.625$ Kekul\'e, because the Kekul\'e form states per-contact counts
+the aromatic form leaves to convention.
+
+Round-trip tests do not detect this, because they compare a structure
+with itself after a cycle through one format and the disagreement is
+between two representations. A canonical identifier does not detect it
+either, since canonicalisation normalises the distinction away by design
 \citep{heller2015inchi}---which is the correct behaviour for identity
 and precisely why identity comparison is the wrong instrument here.
 
 Under the discipline of this paper the disagreement is visible and
 typed: the two graphs carry different attributes with $\stated$
-provenance, and a plan requiring \textsf{cellcount} from the SMILES
+provenance, and a plan requiring \textsf{cellcount} from the aromatic
 source receives $(\textsf{underdetermined},\cdot)$ by clause (V4) rather
-than an assignment. We record the count $37/1000$ as a measurement of
-how often the situation arises in a corpus of this kind, and note that
-it is a lower bound: it counts only the cases our comparison examined.
+than an assignment.
+
+\begin{remark}[What the ratio does and does not mean]
+\label{rem:tenten}
+The measured fraction is $10/10$, which is not a base rate. The ten
+pairs were constructed to contain an aromatic ring, so the mechanism was
+guaranteed to be present. What the run establishes is that wherever it
+is present it is invisible to formula-level and canonical-identity
+comparison, not how often it arises in an arbitrary corpus. A base rate
+would need a corpus not selected for the mechanism, which we do not
+have.
+\end{remark}
 
 \subsection{Defects found by implementing}
 \label{sec:defects}
@@ -1570,10 +1647,11 @@ Every medium edge is therefore $\supplied$, which makes $\phi\ge
 \abs{A}/(\abs{\V}+\abs{\E})$ for every translation and makes the SD
 control non-zero. The implementation excludes medium edges from the
 $\phi$ denominator and reports them separately, and
-\Cref{def:suppfrac} now ranges over item vertices and contacts only. The
-control value of $0.000$ in \Cref{tab:phi} is with this correction; the
-uncorrected value was $0.31$ and was initially mistaken for a reader
-defect.
+\Cref{def:suppfrac} now ranges over item vertices and contacts only.
+\Cref{sec:d2measured} measures the difference: including medium edges
+raises the corpus mean $\phi$ from $0.734$ to $0.824$, an inflation
+that is largest on the smallest molecules, and it was initially mistaken
+for a reader defect.
 
 \item \textbf{Hydrogen counts admit two conventions that disagree.}
 SMILES distinguishes explicit-in-brackets hydrogens from implicit
@@ -1585,6 +1663,18 @@ paths. It now supplies vertices, records \textsf{hcount} as the stated
 attribute where the source gives it, and the choice is a declared
 convention named in the provenance rather than an implementation
 detail.
+
+\item \textbf{The \textsf{empty} label was unreachable from SMILES.}
+\Cref{def:assign} orders clause (V1), malformedness, before clause
+(V2), emptiness. The reader's parser raises on empty input, so (V1)
+fired first and an empty record was labelled \textsf{malformed}: a
+record that says nothing was made indistinguishable from a record that
+says something ill-formed. This is the conflation
+\Cref{thm:conflation} identifies, occurring inside the implementation
+that exists to prevent it. The reader now tests for an empty record
+before parsing. The defect had been frozen into the test suite by a test
+whose name asserted the distinction and whose body asserted its
+violation; \Cref{rem:d4} gives the detail.
 \end{enumerate}
 
 \begin{remark}[D2 is the instructive one]
@@ -1596,9 +1686,24 @@ $\abs{A}$ supplied edges turned $\phi$ into a quantity dominated by an
 artefact of the target representation rather than by the source. It was
 found only because the SD control was expected to be exactly zero and
 was not. A control whose expected value is exact, rather than
-approximate, is what made a $0.31$ discrepancy legible as a defect
-instead of as noise.
+approximate, is what made the discrepancy legible as a defect instead
+of as noise.
 \end{remark}
+
+\begin{remark}[D4 was found by running the suite, not by writing it]
+\label{rem:d4found}
+D1--D3 were found by writing the implementation from the specification.
+D4 was different: the implementation was written, the test suite passed,
+and the defect survived both because the test that should have caught it
+asserted the defective behaviour instead. It was found only when a
+validation run enumerated the label set and asked which labels were
+actually reachable---a question neither the specification nor the tests
+had posed. A suite that agrees with the implementation confirms
+consistency, not correctness.
+\end{remark}
+
+% ---- measured figures -------------------------------
+\input{figures/masamune-captions}
 
 % =====================================================================
 \section{What Masamune does not do}
@@ -1706,17 +1811,19 @@ operational semantics, and determinism and provenance-monotonicity
 theorems (\Cref{thm:plan-determinism,thm:prov-monotone}).
 
 The measurements are the part we would most want a reader to carry away.
-Over $1{,}000$ structures in three formats, a mean of $61.4\%$ of the
-elements of a SMILES-derived contact graph are supplied by convention
-rather than stated by the record, ranging to $72.7\%$; the same
-molecules in a format that states everything give exactly $0.000$. A
-plan stating a tolerance of $25\%$ supplied before the run was executed
-met it for no structure in the corpus and halted, which is the
-discipline working rather than failing. And $37$ of the $1{,}000$
-structures yield format-dependent graphs that agree under every
-round-trip and canonical-identity test we applied, because the
-distinction at issue---delocalisation against an explicit Kekul\'e
-assignment---is one canonicalisation is designed to remove.
+Over $48$ structures, a mean of $73.4\%$ of the elements of a
+SMILES-derived contact graph are supplied by convention rather than
+stated by the record, and no structure falls below $50.0\%$: we had
+expected the corpus to contain records stating everything the request
+needed, and it contains none. Capability containment refuses $19$ of
+$24$ format--request pairs without reading anything and never refuses
+one a read would have satisfied. And every one of ten molecules
+expressed both as an aromatic ring and as an explicit Kekul\'e
+assignment yields two graphs that differ while the molecular formula
+agrees, because the distinction at issue---delocalisation against a
+per-contact cell count---is one canonicalisation is designed to remove.
+That last ratio is $10/10$ because the pairs were built to contain the
+mechanism; it measures visibility, not prevalence.
 
 What remains open is the assumption everything rests on. A capability
 declaration is an assertion by whoever wrote the reader, and an

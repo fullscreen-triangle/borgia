@@ -1,0 +1,1703 @@
+{
+  "experiment": "M: verdict-carrying translation, measured",
+  "expectations": {
+    "M1_smiles_phi_above_zero": true,
+    "M2_static_agrees_with_read": true,
+    "M3_no_value_bearing_failure": true,
+    "M4_disagreement_count_nonzero": true,
+    "M5_medium_inflates_phi": true
+  },
+  "results": {
+    "M1_supplied_fraction": {
+      "n_structures": 48,
+      "smiles_mean_phi": 0.734472,
+      "smiles_median_phi": 0.727273,
+      "smiles_min_phi": 0.5,
+      "smiles_max_phi": 0.888889,
+      "smiles_stdev_phi": 0.07137,
+      "n_exactly_zero": 0,
+      "rows": [
+        {
+          "molecule": "ethanol",
+          "n_atoms": 9,
+          "n_heavy": 3,
+          "smiles_phi": 0.823529,
+          "smiles_phi_with_medium": 0.884615,
+          "smiles_label": "translated",
+          "xyz_label": "incomplete",
+          "xyz_phi": 0.0,
+          "xyz_absent": [
+            "cellcount",
+            "connectivity"
+          ]
+        },
+        {
+          "molecule": "acetic-acid",
+          "n_atoms": 8,
+          "n_heavy": 4,
+          "smiles_phi": 0.666667,
+          "smiles_phi_with_medium": 0.782609,
+          "smiles_label": "translated",
+          "xyz_label": "incomplete",
+          "xyz_phi": 0.0,
+          "xyz_absent": [
+            "cellcount",
+            "connectivity"
+          ]
+        },
+        {
+          "molecule": "acetone",
+          "n_atoms": 10,
+          "n_heavy": 4,
+          "smiles_phi": 0.736842,
+          "smiles_phi_with_medium": 0.827586,
+          "smiles_label": "translated",
+          "xyz_label": "incomplete",
+          "xyz_phi": 0.0,
+          "xyz_absent": [
+            "cellcount",
+            "connectivity"
+          ]
+        },
+        {
+          "molecule": "phenol",
+          "n_atoms": 13,
+          "n_heavy": 7,
+          "smiles_phi": 0.730769,
+          "smiles_phi_with_medium": 0.820513,
+          "smiles_label": "translated",
+          "xyz_label": "incomplete",
+          "xyz_phi": 0.0,
+          "xyz_absent": [
+            "cellcount",
+            "connectivity"
+          ]
+        },
+        {
+          "molecule": "aniline",
+          "n_atoms": 14,
+          "n_heavy": 7,
+          "smiles_phi": 0.75,
+          "smiles_phi_with_medium": 0.833333,
+          "smiles_label": "translated",
+          "xyz_label": "incomplete",
+          "xyz_phi": 0.0,
+          "xyz_absent": [
+            "cellcount",
+            "connectivity"
+          ]
+        },
+        {
+          "molecule": "anisole",
+          "n_atoms": 16,
+          "n_heavy": 8,
+          "smiles_phi": 0.75,
+          "smiles_phi_with_medium": 0.833333,
+          "smiles_label": "translated",
+          "xyz_label": "incomplete",
+          "xyz_phi": 0.0,
+          "xyz_absent": [
+            "cellcount",
+            "connectivity"
+          ]
+        },
+        {
+          "molecule": "benzoic-acid",
+          "n_atoms": 15,
+          "n_heavy": 9,
+          "smiles_phi": 0.666667,
+          "smiles_phi_with_medium": 0.777778,
+          "smiles_label": "translated",
+          "xyz_label": "incomplete",
+          "xyz_phi": 0.0,
+          "xyz_absent": [
+            "cellcount",
+            "connectivity"
+          ]
+        },
+        {
+          "molecule": "aspirin",
+          "n_atoms": 21,
+          "n_heavy": 13,
+          "smiles_phi": 0.642857,
+          "smiles_phi_with_medium": 0.761905,
+          "smiles_label": "translated",
+          "xyz_label": "incomplete",
+          "xyz_phi": 0.0,
+          "xyz_absent": [
+            "cellcount",
+            "connectivity"
+          ]
+        },
+        {
+          "molecule": "paracetamol",
+          "n_atoms": 20,
+          "n_heavy": 11,
+          "smiles_phi": 0.7,
+          "smiles_phi_with_medium": 0.8,
+          "smiles_label": "translated",
+          "xyz_label": "incomplete",
+          "xyz_phi": 0.0,
+          "xyz_absent": [
+            "cellcount",
+            "connectivity"
+          ]
+        },
+        {
+          "molecule": "ibuprofen",
+          "n_atoms": 33,
+          "n_heavy": 15,
+          "smiles_phi": 0.757576,
+          "smiles_phi_with_medium": 0.838384,
+          "smiles_label": "translated",
+          "xyz_label": "incomplete",
+          "xyz_phi": 0.0,
+          "xyz_absent": [
+            "cellcount",
+            "connectivity"
+          ]
+        },
+        {
+          "molecule": "styrene",
+          "n_atoms": 16,
+          "n_heavy": 8,
+          "smiles_phi": 0.71875,
+          "smiles_phi_with_medium": 0.8125,
+          "smiles_label": "translated",
+          "xyz_label": "incomplete",
+          "xyz_phi": 0.0,
+          "xyz_absent": [
+            "cellcount",
+            "connectivity"
+          ]
+        },
+        {
+          "molecule": "indole",
+          "n_atoms": 16,
+          "n_heavy": 9,
+          "smiles_phi": 0.666667,
+          "smiles_phi_with_medium": 0.77551,
+          "smiles_label": "translated",
+          "xyz_label": "incomplete",
+          "xyz_phi": 0.0,
+          "xyz_absent": [
+            "cellcount",
+            "connectivity"
+          ]
+        },
+        {
+          "molecule": "quinoline",
+          "n_atoms": 17,
+          "n_heavy": 10,
+          "smiles_phi": 0.714286,
+          "smiles_phi_with_medium": 0.807692,
+          "smiles_label": "translated",
+          "xyz_label": "incomplete",
+          "xyz_phi": 0.0,
+          "xyz_absent": [
+            "cellcount",
+            "connectivity"
+          ]
+        },
+        {
+          "molecule": "nicotinamide",
+          "n_atoms": 15,
+          "n_heavy": 9,
+          "smiles_phi": 0.666667,
+          "smiles_phi_with_medium": 0.777778,
+          "smiles_label": "translated",
+          "xyz_label": "incomplete",
+          "xyz_phi": 0.0,
+          "xyz_absent": [
+            "cellcount",
+            "connectivity"
+          ]
+        },
+        {
+          "molecule": "salicylic",
+          "n_atoms": 16,
+          "n_heavy": 10,
+          "smiles_phi": 0.65625,
+          "smiles_phi_with_medium": 0.770833,
+          "smiles_label": "translated",
+          "xyz_label": "incomplete",
+          "xyz_phi": 0.0,
+          "xyz_absent": [
+            "cellcount",
+            "connectivity"
+          ]
+        },
+        {
+          "molecule": "catechol",
+          "n_atoms": 14,
+          "n_heavy": 8,
+          "smiles_phi": 0.714286,
+          "smiles_phi_with_medium": 0.809524,
+          "smiles_label": "translated",
+          "xyz_label": "incomplete",
+          "xyz_phi": 0.0,
+          "xyz_absent": [
+            "cellcount",
+            "connectivity"
+          ]
+        },
+        {
+          "molecule": "resorcinol",
+          "n_atoms": 14,
+          "n_heavy": 8,
+          "smiles_phi": 0.714286,
+          "smiles_phi_with_medium": 0.809524,
+          "smiles_label": "translated",
+          "xyz_label": "incomplete",
+          "xyz_phi": 0.0,
+          "xyz_absent": [
+            "cellcount",
+            "connectivity"
+          ]
+        },
+        {
+          "molecule": "hydroquinone",
+          "n_atoms": 14,
+          "n_heavy": 8,
+          "smiles_phi": 0.714286,
+          "smiles_phi_with_medium": 0.809524,
+          "smiles_label": "translated",
+          "xyz_label": "incomplete",
+          "xyz_phi": 0.0,
+          "xyz_absent": [
+            "cellcount",
+            "connectivity"
+          ]
+        },
+        {
+          "molecule": "cresol",
+          "n_atoms": 16,
+          "n_heavy": 8,
+          "smiles_phi": 0.75,
+          "smiles_phi_with_medium": 0.833333,
+          "smiles_label": "translated",
+          "xyz_label": "incomplete",
+          "xyz_phi": 0.0,
+          "xyz_absent": [
+            "cellcount",
+            "connectivity"
+          ]
+        },
+        {
+          "molecule": "xylene-o",
+          "n_atoms": 18,
+          "n_heavy": 8,
+          "smiles_phi": 0.777778,
+          "smiles_phi_with_medium": 0.851852,
+          "smiles_label": "translated",
+          "xyz_label": "incomplete",
+          "xyz_phi": 0.0,
+          "xyz_absent": [
+            "cellcount",
+            "connectivity"
+          ]
+        },
+        {
+          "molecule": "chlorobenzene",
+          "n_atoms": 12,
+          "n_heavy": 7,
+          "smiles_phi": 0.708333,
+          "smiles_phi_with_medium": 0.805556,
+          "smiles_label": "translated",
+          "xyz_label": "incomplete",
+          "xyz_phi": 0.0,
+          "xyz_absent": [
+            "cellcount",
+            "connectivity"
+          ]
+        },
+        {
+          "molecule": "nitro-like",
+          "n_atoms": 18,
+          "n_heavy": 10,
+          "smiles_phi": 0.694444,
+          "smiles_phi_with_medium": 0.796296,
+          "smiles_label": "translated",
+          "xyz_label": "incomplete",
+          "xyz_phi": 0.0,
+          "xyz_absent": [
+            "cellcount",
+            "connectivity"
+          ]
+        },
+        {
+          "molecule": "phenylalanine",
+          "n_atoms": 23,
+          "n_heavy": 12,
+          "smiles_phi": 0.717391,
+          "smiles_phi_with_medium": 0.811594,
+          "smiles_label": "translated",
+          "xyz_label": "incomplete",
+          "xyz_phi": 0.0,
+          "xyz_absent": [
+            "cellcount",
+            "connectivity"
+          ]
+        },
+        {
+          "molecule": "tyrosine",
+          "n_atoms": 24,
+          "n_heavy": 13,
+          "smiles_phi": 0.708333,
+          "smiles_phi_with_medium": 0.805556,
+          "smiles_label": "translated",
+          "xyz_label": "incomplete",
+          "xyz_phi": 0.0,
+          "xyz_absent": [
+            "cellcount",
+            "connectivity"
+          ]
+        },
+        {
+          "molecule": "glycine",
+          "n_atoms": 10,
+          "n_heavy": 5,
+          "smiles_phi": 0.684211,
+          "smiles_phi_with_medium": 0.793103,
+          "smiles_label": "translated",
+          "xyz_label": "incomplete",
+          "xyz_phi": 0.0,
+          "xyz_absent": [
+            "cellcount",
+            "connectivity"
+          ]
+        },
+        {
+          "molecule": "alanine",
+          "n_atoms": 13,
+          "n_heavy": 6,
+          "smiles_phi": 0.72,
+          "smiles_phi_with_medium": 0.815789,
+          "smiles_label": "translated",
+          "xyz_label": "incomplete",
+          "xyz_phi": 0.0,
+          "xyz_absent": [
+            "cellcount",
+            "connectivity"
+          ]
+        },
+        {
+          "molecule": "serine",
+          "n_atoms": 14,
+          "n_heavy": 7,
+          "smiles_phi": 0.703704,
+          "smiles_phi_with_medium": 0.804878,
+          "smiles_label": "translated",
+          "xyz_label": "incomplete",
+          "xyz_phi": 0.0,
+          "xyz_absent": [
+            "cellcount",
+            "connectivity"
+          ]
+        },
+        {
+          "molecule": "valine",
+          "n_atoms": 19,
+          "n_heavy": 8,
+          "smiles_phi": 0.756757,
+          "smiles_phi_with_medium": 0.839286,
+          "smiles_label": "translated",
+          "xyz_label": "incomplete",
+          "xyz_phi": 0.0,
+          "xyz_absent": [
+            "cellcount",
+            "connectivity"
+          ]
+        },
+        {
+          "molecule": "propanol",
+          "n_atoms": 12,
+          "n_heavy": 4,
+          "smiles_phi": 0.826087,
+          "smiles_phi_with_medium": 0.885714,
+          "smiles_label": "translated",
+          "xyz_label": "incomplete",
+          "xyz_phi": 0.0,
+          "xyz_absent": [
+            "cellcount",
+            "connectivity"
+          ]
+        },
+        {
+          "molecule": "butanol",
+          "n_atoms": 15,
+          "n_heavy": 5,
+          "smiles_phi": 0.827586,
+          "smiles_phi_with_medium": 0.886364,
+          "smiles_label": "translated",
+          "xyz_label": "incomplete",
+          "xyz_phi": 0.0,
+          "xyz_absent": [
+            "cellcount",
+            "connectivity"
+          ]
+        },
+        {
+          "molecule": "benzene",
+          "n_atoms": 12,
+          "n_heavy": 6,
+          "smiles_phi": 0.75,
+          "smiles_phi_with_medium": 0.833333,
+          "smiles_label": "translated",
+          "xyz_label": "incomplete",
+          "xyz_phi": 0.0,
+          "xyz_absent": [
+            "cellcount",
+            "connectivity"
+          ]
+        },
+        {
+          "molecule": "cyclohexane",
+          "n_atoms": 18,
+          "n_heavy": 6,
+          "smiles_phi": 0.833333,
+          "smiles_phi_with_medium": 0.888889,
+          "smiles_label": "translated",
+          "xyz_label": "incomplete",
+          "xyz_phi": 0.0,
+          "xyz_absent": [
+            "cellcount",
+            "connectivity"
+          ]
+        },
+        {
+          "molecule": "ethane",
+          "n_atoms": 8,
+          "n_heavy": 2,
+          "smiles_phi": 0.866667,
+          "smiles_phi_with_medium": 0.913043,
+          "smiles_label": "translated",
+          "xyz_label": "incomplete",
+          "xyz_phi": 0.0,
+          "xyz_absent": [
+            "cellcount",
+            "connectivity"
+          ]
+        },
+        {
+          "molecule": "naphthalene",
+          "n_atoms": 18,
+          "n_heavy": 10,
+          "smiles_phi": 0.72973,
+          "smiles_phi_with_medium": 0.818182,
+          "smiles_label": "translated",
+          "xyz_label": "incomplete",
+          "xyz_phi": 0.0,
+          "xyz_absent": [
+            "cellcount",
+            "connectivity"
+          ]
+        },
+        {
+          "molecule": "anthracene",
+          "n_atoms": 24,
+          "n_heavy": 14,
+          "smiles_phi": 0.72,
+          "smiles_phi_with_medium": 0.810811,
+          "smiles_label": "translated",
+          "xyz_label": "incomplete",
+          "xyz_phi": 0.0,
+          "xyz_absent": [
+            "cellcount",
+            "connectivity"
+          ]
+        },
+        {
+          "molecule": "biphenyl",
+          "n_atoms": 22,
+          "n_heavy": 12,
+          "smiles_phi": 0.733333,
+          "smiles_phi_with_medium": 0.820896,
+          "smiles_label": "translated",
+          "xyz_label": "incomplete",
+          "xyz_phi": 0.0,
+          "xyz_absent": [
+            "cellcount",
+            "connectivity"
+          ]
+        },
+        {
+          "molecule": "p-xylene",
+          "n_atoms": 18,
+          "n_heavy": 8,
+          "smiles_phi": 0.777778,
+          "smiles_phi_with_medium": 0.851852,
+          "smiles_label": "translated",
+          "xyz_label": "incomplete",
+          "xyz_phi": 0.0,
+          "xyz_absent": [
+            "cellcount",
+            "connectivity"
+          ]
+        },
+        {
+          "molecule": "propane",
+          "n_atoms": 11,
+          "n_heavy": 3,
+          "smiles_phi": 0.857143,
+          "smiles_phi_with_medium": 0.90625,
+          "smiles_label": "translated",
+          "xyz_label": "incomplete",
+          "xyz_phi": 0.0,
+          "xyz_absent": [
+            "cellcount",
+            "connectivity"
+          ]
+        },
+        {
+          "molecule": "neopentane",
+          "n_atoms": 17,
+          "n_heavy": 5,
+          "smiles_phi": 0.848485,
+          "smiles_phi_with_medium": 0.9,
+          "smiles_label": "translated",
+          "xyz_label": "incomplete",
+          "xyz_phi": 0.0,
+          "xyz_absent": [
+            "cellcount",
+            "connectivity"
+          ]
+        },
+        {
+          "molecule": "pyrazine",
+          "n_atoms": 10,
+          "n_heavy": 6,
+          "smiles_phi": 0.7,
+          "smiles_phi_with_medium": 0.8,
+          "smiles_label": "translated",
+          "xyz_label": "incomplete",
+          "xyz_phi": 0.0,
+          "xyz_absent": [
+            "cellcount",
+            "connectivity"
+          ]
+        },
+        {
+          "molecule": "pyridine",
+          "n_atoms": 11,
+          "n_heavy": 6,
+          "smiles_phi": 0.727273,
+          "smiles_phi_with_medium": 0.818182,
+          "smiles_label": "translated",
+          "xyz_label": "incomplete",
+          "xyz_phi": 0.0,
+          "xyz_absent": [
+            "cellcount",
+            "connectivity"
+          ]
+        },
+        {
+          "molecule": "toluene",
+          "n_atoms": 15,
+          "n_heavy": 7,
+          "smiles_phi": 0.766667,
+          "smiles_phi_with_medium": 0.844444,
+          "smiles_label": "translated",
+          "xyz_label": "incomplete",
+          "xyz_phi": 0.0,
+          "xyz_absent": [
+            "cellcount",
+            "connectivity"
+          ]
+        },
+        {
+          "molecule": "water-like",
+          "n_atoms": 3,
+          "n_heavy": 1,
+          "smiles_phi": 0.8,
+          "smiles_phi_with_medium": 0.875,
+          "smiles_label": "translated",
+          "xyz_label": "incomplete",
+          "xyz_phi": 0.0,
+          "xyz_absent": [
+            "cellcount",
+            "connectivity"
+          ]
+        },
+        {
+          "molecule": "methane",
+          "n_atoms": 5,
+          "n_heavy": 1,
+          "smiles_phi": 0.888889,
+          "smiles_phi_with_medium": 0.928571,
+          "smiles_label": "translated",
+          "xyz_label": "incomplete",
+          "xyz_phi": 0.0,
+          "xyz_absent": [
+            "cellcount",
+            "connectivity"
+          ]
+        },
+        {
+          "molecule": "ethylene",
+          "n_atoms": 6,
+          "n_heavy": 2,
+          "smiles_phi": 0.727273,
+          "smiles_phi_with_medium": 0.823529,
+          "smiles_label": "translated",
+          "xyz_label": "incomplete",
+          "xyz_phi": 0.0,
+          "xyz_absent": [
+            "cellcount",
+            "connectivity"
+          ]
+        },
+        {
+          "molecule": "acetylene",
+          "n_atoms": 4,
+          "n_heavy": 2,
+          "smiles_phi": 0.571429,
+          "smiles_phi_with_medium": 0.727273,
+          "smiles_label": "translated",
+          "xyz_label": "incomplete",
+          "xyz_phi": 0.0,
+          "xyz_absent": [
+            "cellcount",
+            "connectivity"
+          ]
+        },
+        {
+          "molecule": "p-benzoquinone",
+          "n_atoms": 12,
+          "n_heavy": 8,
+          "smiles_phi": 0.5,
+          "smiles_phi_with_medium": 0.666667,
+          "smiles_label": "translated",
+          "xyz_label": "incomplete",
+          "xyz_phi": 0.0,
+          "xyz_absent": [
+            "cellcount",
+            "connectivity"
+          ]
+        },
+        {
+          "molecule": "durene",
+          "n_atoms": 24,
+          "n_heavy": 10,
+          "smiles_phi": 0.791667,
+          "smiles_phi_with_medium": 0.861111,
+          "smiles_label": "translated",
+          "xyz_label": "incomplete",
+          "xyz_phi": 0.0,
+          "xyz_absent": [
+            "cellcount",
+            "connectivity"
+          ]
+        }
+      ],
+      "note": "phi excludes medium edges from the denominator (defect D2); M5 reports the uncorrected quantity",
+      "passed": true
+    },
+    "M5_medium_edge_defect": {
+      "mean_phi_corrected": 0.734472,
+      "mean_phi_with_medium": 0.823964,
+      "mean_inflation": 0.089492,
+      "max_inflation": 0.166667,
+      "min_inflation": 0.039682,
+      "note": "including medium edges makes phi a property of the target representation rather than of the source record; this is the quantity that made D2 visible",
+      "passed": true
+    },
+    "M2_capability_containment": {
+      "rows": [
+        {
+          "format": "smiles",
+          "required": [
+            "element"
+          ],
+          "n_required": 1,
+          "declared": [
+            "cellcount",
+            "charge",
+            "connectivity",
+            "delocalisation",
+            "element",
+            "hcount",
+            "isotope"
+          ],
+          "n_declared": 7,
+          "missing": [],
+          "static_refusal": false,
+          "label_after_read": "translated",
+          "consistent": true
+        },
+        {
+          "format": "smiles",
+          "required": [
+            "connectivity",
+            "element"
+          ],
+          "n_required": 2,
+          "declared": [
+            "cellcount",
+            "charge",
+            "connectivity",
+            "delocalisation",
+            "element",
+            "hcount",
+            "isotope"
+          ],
+          "n_declared": 7,
+          "missing": [],
+          "static_refusal": false,
+          "label_after_read": "translated",
+          "consistent": true
+        },
+        {
+          "format": "smiles",
+          "required": [
+            "cellcount",
+            "connectivity",
+            "element"
+          ],
+          "n_required": 3,
+          "declared": [
+            "cellcount",
+            "charge",
+            "connectivity",
+            "delocalisation",
+            "element",
+            "hcount",
+            "isotope"
+          ],
+          "n_declared": 7,
+          "missing": [],
+          "static_refusal": false,
+          "label_after_read": "translated",
+          "consistent": true
+        },
+        {
+          "format": "smiles",
+          "required": [
+            "connectivity",
+            "element",
+            "stereo"
+          ],
+          "n_required": 3,
+          "declared": [
+            "cellcount",
+            "charge",
+            "connectivity",
+            "delocalisation",
+            "element",
+            "hcount",
+            "isotope"
+          ],
+          "n_declared": 7,
+          "missing": [
+            "stereo"
+          ],
+          "static_refusal": true,
+          "label_after_read": "unsupported",
+          "consistent": true
+        },
+        {
+          "format": "smiles",
+          "required": [
+            "coords3d",
+            "element"
+          ],
+          "n_required": 2,
+          "declared": [
+            "cellcount",
+            "charge",
+            "connectivity",
+            "delocalisation",
+            "element",
+            "hcount",
+            "isotope"
+          ],
+          "n_declared": 7,
+          "missing": [
+            "coords3d"
+          ],
+          "static_refusal": true,
+          "label_after_read": "unsupported",
+          "consistent": true
+        },
+        {
+          "format": "smiles",
+          "required": [
+            "connectivity",
+            "coords3d",
+            "element"
+          ],
+          "n_required": 3,
+          "declared": [
+            "cellcount",
+            "charge",
+            "connectivity",
+            "delocalisation",
+            "element",
+            "hcount",
+            "isotope"
+          ],
+          "n_declared": 7,
+          "missing": [
+            "coords3d"
+          ],
+          "static_refusal": true,
+          "label_after_read": "unsupported",
+          "consistent": true
+        },
+        {
+          "format": "smiles",
+          "required": [
+            "conformer",
+            "element"
+          ],
+          "n_required": 2,
+          "declared": [
+            "cellcount",
+            "charge",
+            "connectivity",
+            "delocalisation",
+            "element",
+            "hcount",
+            "isotope"
+          ],
+          "n_declared": 7,
+          "missing": [
+            "conformer"
+          ],
+          "static_refusal": true,
+          "label_after_read": "unsupported",
+          "consistent": true
+        },
+        {
+          "format": "smiles",
+          "required": [
+            "provenance"
+          ],
+          "n_required": 1,
+          "declared": [
+            "cellcount",
+            "charge",
+            "connectivity",
+            "delocalisation",
+            "element",
+            "hcount",
+            "isotope"
+          ],
+          "n_declared": 7,
+          "missing": [
+            "provenance"
+          ],
+          "static_refusal": true,
+          "label_after_read": "unsupported",
+          "consistent": true
+        },
+        {
+          "format": "xyz",
+          "required": [
+            "element"
+          ],
+          "n_required": 1,
+          "declared": [
+            "coords3d",
+            "element"
+          ],
+          "n_declared": 2,
+          "missing": [],
+          "static_refusal": false,
+          "label_after_read": "incomplete",
+          "consistent": true
+        },
+        {
+          "format": "xyz",
+          "required": [
+            "connectivity",
+            "element"
+          ],
+          "n_required": 2,
+          "declared": [
+            "coords3d",
+            "element"
+          ],
+          "n_declared": 2,
+          "missing": [
+            "connectivity"
+          ],
+          "static_refusal": true,
+          "label_after_read": "unsupported",
+          "consistent": true
+        },
+        {
+          "format": "xyz",
+          "required": [
+            "cellcount",
+            "connectivity",
+            "element"
+          ],
+          "n_required": 3,
+          "declared": [
+            "coords3d",
+            "element"
+          ],
+          "n_declared": 2,
+          "missing": [
+            "cellcount",
+            "connectivity"
+          ],
+          "static_refusal": true,
+          "label_after_read": "unsupported",
+          "consistent": true
+        },
+        {
+          "format": "xyz",
+          "required": [
+            "connectivity",
+            "element",
+            "stereo"
+          ],
+          "n_required": 3,
+          "declared": [
+            "coords3d",
+            "element"
+          ],
+          "n_declared": 2,
+          "missing": [
+            "connectivity",
+            "stereo"
+          ],
+          "static_refusal": true,
+          "label_after_read": "unsupported",
+          "consistent": true
+        },
+        {
+          "format": "xyz",
+          "required": [
+            "coords3d",
+            "element"
+          ],
+          "n_required": 2,
+          "declared": [
+            "coords3d",
+            "element"
+          ],
+          "n_declared": 2,
+          "missing": [],
+          "static_refusal": false,
+          "label_after_read": "incomplete",
+          "consistent": true
+        },
+        {
+          "format": "xyz",
+          "required": [
+            "connectivity",
+            "coords3d",
+            "element"
+          ],
+          "n_required": 3,
+          "declared": [
+            "coords3d",
+            "element"
+          ],
+          "n_declared": 2,
+          "missing": [
+            "connectivity"
+          ],
+          "static_refusal": true,
+          "label_after_read": "unsupported",
+          "consistent": true
+        },
+        {
+          "format": "xyz",
+          "required": [
+            "conformer",
+            "element"
+          ],
+          "n_required": 2,
+          "declared": [
+            "coords3d",
+            "element"
+          ],
+          "n_declared": 2,
+          "missing": [
+            "conformer"
+          ],
+          "static_refusal": true,
+          "label_after_read": "unsupported",
+          "consistent": true
+        },
+        {
+          "format": "xyz",
+          "required": [
+            "provenance"
+          ],
+          "n_required": 1,
+          "declared": [
+            "coords3d",
+            "element"
+          ],
+          "n_declared": 2,
+          "missing": [
+            "provenance"
+          ],
+          "static_refusal": true,
+          "label_after_read": "unsupported",
+          "consistent": true
+        },
+        {
+          "format": "inchi",
+          "required": [
+            "element"
+          ],
+          "n_required": 1,
+          "declared": [],
+          "n_declared": 0,
+          "missing": [
+            "element"
+          ],
+          "static_refusal": true,
+          "label_after_read": "unsupported",
+          "consistent": true
+        },
+        {
+          "format": "inchi",
+          "required": [
+            "connectivity",
+            "element"
+          ],
+          "n_required": 2,
+          "declared": [],
+          "n_declared": 0,
+          "missing": [
+            "connectivity",
+            "element"
+          ],
+          "static_refusal": true,
+          "label_after_read": "unsupported",
+          "consistent": true
+        },
+        {
+          "format": "inchi",
+          "required": [
+            "cellcount",
+            "connectivity",
+            "element"
+          ],
+          "n_required": 3,
+          "declared": [],
+          "n_declared": 0,
+          "missing": [
+            "cellcount",
+            "connectivity",
+            "element"
+          ],
+          "static_refusal": true,
+          "label_after_read": "unsupported",
+          "consistent": true
+        },
+        {
+          "format": "inchi",
+          "required": [
+            "connectivity",
+            "element",
+            "stereo"
+          ],
+          "n_required": 3,
+          "declared": [],
+          "n_declared": 0,
+          "missing": [
+            "connectivity",
+            "element",
+            "stereo"
+          ],
+          "static_refusal": true,
+          "label_after_read": "unsupported",
+          "consistent": true
+        },
+        {
+          "format": "inchi",
+          "required": [
+            "coords3d",
+            "element"
+          ],
+          "n_required": 2,
+          "declared": [],
+          "n_declared": 0,
+          "missing": [
+            "coords3d",
+            "element"
+          ],
+          "static_refusal": true,
+          "label_after_read": "unsupported",
+          "consistent": true
+        },
+        {
+          "format": "inchi",
+          "required": [
+            "connectivity",
+            "coords3d",
+            "element"
+          ],
+          "n_required": 3,
+          "declared": [],
+          "n_declared": 0,
+          "missing": [
+            "connectivity",
+            "coords3d",
+            "element"
+          ],
+          "static_refusal": true,
+          "label_after_read": "unsupported",
+          "consistent": true
+        },
+        {
+          "format": "inchi",
+          "required": [
+            "conformer",
+            "element"
+          ],
+          "n_required": 2,
+          "declared": [],
+          "n_declared": 0,
+          "missing": [
+            "conformer",
+            "element"
+          ],
+          "static_refusal": true,
+          "label_after_read": "unsupported",
+          "consistent": true
+        },
+        {
+          "format": "inchi",
+          "required": [
+            "provenance"
+          ],
+          "n_required": 1,
+          "declared": [],
+          "n_declared": 0,
+          "missing": [
+            "provenance"
+          ],
+          "static_refusal": true,
+          "label_after_read": "unsupported",
+          "consistent": true
+        }
+      ],
+      "n_pairs": 24,
+      "n_consistent": 24,
+      "agreement": 1.0,
+      "n_refused_statically": 19,
+      "note": "a static refusal costs no record access; what is checked is that it never refuses what a read would have satisfied",
+      "passed": true
+    },
+    "M3_verdict_coverage": {
+      "rows": [
+        {
+          "probe": "well-formed smiles",
+          "label": "translated",
+          "carries_value": true,
+          "value_bearing_label": true,
+          "sound": true
+        },
+        {
+          "probe": "malformed smiles",
+          "label": "malformed",
+          "carries_value": false,
+          "value_bearing_label": false,
+          "sound": true
+        },
+        {
+          "probe": "empty smiles",
+          "label": "empty",
+          "carries_value": false,
+          "value_bearing_label": false,
+          "sound": true
+        },
+        {
+          "probe": "stereo token, no descriptor",
+          "label": "unsupported",
+          "carries_value": false,
+          "value_bearing_label": false,
+          "sound": true
+        },
+        {
+          "probe": "xyz, no bond block",
+          "label": "incomplete",
+          "carries_value": false,
+          "value_bearing_label": false,
+          "sound": true
+        },
+        {
+          "probe": "format with no reader",
+          "label": "unsupported",
+          "carries_value": false,
+          "value_bearing_label": false,
+          "sound": true
+        },
+        {
+          "probe": "unknown format",
+          "label": "unsupported",
+          "carries_value": false,
+          "value_bearing_label": false,
+          "sound": true
+        },
+        {
+          "probe": "outside organic subset",
+          "label": "malformed",
+          "carries_value": false,
+          "value_bearing_label": false,
+          "sound": true
+        }
+      ],
+      "labels_realised": [
+        "empty",
+        "incomplete",
+        "malformed",
+        "translated",
+        "unsupported"
+      ],
+      "label_counts": {
+        "translated": 1,
+        "malformed": 2,
+        "empty": 1,
+        "unsupported": 3,
+        "incomplete": 1
+      },
+      "n_labels_realised": 5,
+      "n_labels_defined": 12,
+      "value_bearing_failures": 0,
+      "note": "only a value-bearing label may carry a value; a failure carrying one is the conflation the design forbids",
+      "passed": true
+    },
+    "M4_format_disagreement": {
+      "rows": [
+        {
+          "molecule": "benzene",
+          "same_formula": true,
+          "same_cell_multiset": false,
+          "graphs_differ_but_formula_agrees": true,
+          "deloc_edges_aromatic": 6,
+          "deloc_edges_kekule": 0,
+          "cells_aromatic": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "cells_kekule": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2
+          ],
+          "phi_aromatic": 0.75,
+          "phi_kekule": 0.625
+        },
+        {
+          "molecule": "toluene",
+          "same_formula": true,
+          "same_cell_multiset": false,
+          "graphs_differ_but_formula_agrees": true,
+          "deloc_edges_aromatic": 6,
+          "deloc_edges_kekule": 0,
+          "cells_aromatic": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "cells_kekule": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2
+          ],
+          "phi_aromatic": 0.766667,
+          "phi_kekule": 0.666667
+        },
+        {
+          "molecule": "pyridine",
+          "same_formula": true,
+          "same_cell_multiset": false,
+          "graphs_differ_but_formula_agrees": true,
+          "deloc_edges_aromatic": 6,
+          "deloc_edges_kekule": 0,
+          "cells_aromatic": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "cells_kekule": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2
+          ],
+          "phi_aromatic": 0.727273,
+          "phi_kekule": 0.590909
+        },
+        {
+          "molecule": "naphthalene",
+          "same_formula": true,
+          "same_cell_multiset": false,
+          "graphs_differ_but_formula_agrees": true,
+          "deloc_edges_aromatic": 11,
+          "deloc_edges_kekule": 0,
+          "cells_aromatic": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "cells_kekule": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "phi_aromatic": 0.72973,
+          "phi_kekule": 0.594595
+        },
+        {
+          "molecule": "phenol",
+          "same_formula": true,
+          "same_cell_multiset": false,
+          "graphs_differ_but_formula_agrees": true,
+          "deloc_edges_aromatic": 6,
+          "deloc_edges_kekule": 0,
+          "cells_aromatic": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "cells_kekule": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2
+          ],
+          "phi_aromatic": 0.730769,
+          "phi_kekule": 0.615385
+        },
+        {
+          "molecule": "aniline",
+          "same_formula": true,
+          "same_cell_multiset": false,
+          "graphs_differ_but_formula_agrees": true,
+          "deloc_edges_aromatic": 6,
+          "deloc_edges_kekule": 0,
+          "cells_aromatic": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "cells_kekule": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2
+          ],
+          "phi_aromatic": 0.75,
+          "phi_kekule": 0.642857
+        },
+        {
+          "molecule": "p-xylene",
+          "same_formula": true,
+          "same_cell_multiset": false,
+          "graphs_differ_but_formula_agrees": true,
+          "deloc_edges_aromatic": 6,
+          "deloc_edges_kekule": 0,
+          "cells_aromatic": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "cells_kekule": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2
+          ],
+          "phi_aromatic": 0.777778,
+          "phi_kekule": 0.694444
+        },
+        {
+          "molecule": "pyrazine",
+          "same_formula": true,
+          "same_cell_multiset": false,
+          "graphs_differ_but_formula_agrees": true,
+          "deloc_edges_aromatic": 6,
+          "deloc_edges_kekule": 0,
+          "cells_aromatic": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "cells_kekule": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2
+          ],
+          "phi_aromatic": 0.7,
+          "phi_kekule": 0.55
+        },
+        {
+          "molecule": "chlorobenzene",
+          "same_formula": true,
+          "same_cell_multiset": false,
+          "graphs_differ_but_formula_agrees": true,
+          "deloc_edges_aromatic": 6,
+          "deloc_edges_kekule": 0,
+          "cells_aromatic": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "cells_kekule": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2
+          ],
+          "phi_aromatic": 0.708333,
+          "phi_kekule": 0.583333
+        },
+        {
+          "molecule": "styrene",
+          "same_formula": true,
+          "same_cell_multiset": false,
+          "graphs_differ_but_formula_agrees": true,
+          "deloc_edges_aromatic": 6,
+          "deloc_edges_kekule": 0,
+          "cells_aromatic": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2
+          ],
+          "cells_kekule": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2
+          ],
+          "phi_aromatic": 0.71875,
+          "phi_kekule": 0.625
+        }
+      ],
+      "n_pairs": 10,
+      "n_graphs_differ": 10,
+      "n_formula_agrees": 10,
+      "n_undetected_by_identity": 10,
+      "fraction_undetected": 1.0,
+      "note": "both translations are faithful.  A formula-level or canonical-identity comparison reports agreement, so the disagreement is invisible to it",
+      "passed": true
+    }
+  },
+  "all_passed": true
+}

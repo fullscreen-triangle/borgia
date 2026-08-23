@@ -5,7 +5,8 @@
     "D2_ratio_grows_linearly": true,
     "D3_classes_between_2_and_n_minus_1": true,
     "D4_partition_order_independent": true,
-    "D5_control_must_be_order_dependent": true
+    "D5_control_must_be_order_dependent": true,
+    "D6_unbalanced_must_shift_sigma": true
   },
   "results": {
     "D1_conservation": {
@@ -269,6 +270,82 @@
       "n_orders": 12,
       "n_distinct_partitions": 12,
       "note": "a key that reads accumulated context yields different partitions under different orders; D4 is therefore a claim about the sigma key and not a tautology",
+      "passed": true
+    },
+    "D6_conservation_control": {
+      "rows": [
+        {
+          "transformation": "1-propanol -> propanal",
+          "heavy_reactant": 4,
+          "heavy_product": 4,
+          "hydrogens_reactant": 8,
+          "hydrogens_product": 6,
+          "balanced": false,
+          "sigma_reactant": 39.0,
+          "sigma_product": 35.0,
+          "sigma_residual": -4.0,
+          "depth_residual": -4
+        },
+        {
+          "transformation": "ethanol -> acetaldehyde",
+          "heavy_reactant": 3,
+          "heavy_product": 3,
+          "hydrogens_reactant": 6,
+          "hydrogens_product": 4,
+          "balanced": false,
+          "sigma_reactant": 29.0,
+          "sigma_product": 25.0,
+          "sigma_residual": -4.0,
+          "depth_residual": -4
+        },
+        {
+          "transformation": "cyclohexane -> benzene",
+          "heavy_reactant": 6,
+          "heavy_product": 6,
+          "hydrogens_reactant": 12,
+          "hydrogens_product": 6,
+          "balanced": false,
+          "sigma_reactant": 60.0,
+          "sigma_product": 42.0,
+          "sigma_residual": -18.0,
+          "depth_residual": -12
+        },
+        {
+          "transformation": "ethane -> ethene",
+          "heavy_reactant": 2,
+          "heavy_product": 2,
+          "hydrogens_reactant": 6,
+          "hydrogens_product": 4,
+          "balanced": false,
+          "sigma_reactant": 24.0,
+          "sigma_product": 20.0,
+          "sigma_residual": -4.0,
+          "depth_residual": -4
+        },
+        {
+          "transformation": "methanol -> formaldehyde",
+          "heavy_reactant": 2,
+          "heavy_product": 2,
+          "hydrogens_reactant": 4,
+          "hydrogens_product": 2,
+          "balanced": false,
+          "sigma_reactant": 19.0,
+          "sigma_product": 15.0,
+          "sigma_residual": -4.0,
+          "depth_residual": -4
+        }
+      ],
+      "n_unbalanced": 5,
+      "n_with_nonzero_residual": 5,
+      "residuals": [
+        -4.0,
+        -4.0,
+        -18.0,
+        -4.0,
+        -4.0
+      ],
+      "max_abs_residual": 18.0,
+      "note": "every one of these removes hydrogens, so none is a rearrangement.  They exist because a quantity that never moves is indistinguishable, in a results file, from one that is not being computed; D1 is evidence only if this is nonzero",
       "passed": true
     }
   },

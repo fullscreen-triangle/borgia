@@ -213,11 +213,17 @@ def test_unsupported_request_carries_no_graph():
 
 
 def test_malformed_is_distinct_from_empty():
+    """A record that says nothing is not a record that says something
+    ill-formed.  The reader once returned MALFORMED for both, because the
+    parser raises on empty input before the (V2) check is reached; that
+    conflation is the defect this test now guards against."""
     bad = translate_smiles("C(")
     empty = translate_smiles("   ")
     assert bad.label is Label.MALFORMED
-    assert empty.label is Label.MALFORMED  # empty input fails to parse
+    assert empty.label is Label.EMPTY
+    assert bad.label is not empty.label
     assert bad.value is None
+    assert empty.value is None
 
 
 def test_plan_refuses_before_reading_on_capability():

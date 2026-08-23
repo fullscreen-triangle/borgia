@@ -699,6 +699,21 @@ rather than the asymptote. This was an error in the test, not a finding
 about the method.
 \end{remark}
 
+\subsection{Transitivity, and why the check is weak}
+
+\Cref{prop:equiv} needs transitivity, so the suite checks it: over the
+$10$ triples the pool admits, there were $0$ violations.
+
+We report this with its weakness stated. Once admissibility is a
+function of the candidate alone---which is what \Cref{cor:sigma-unary}
+establishes---transitivity follows as the kernel of a function, and a
+search for counterexamples cannot find one. The check therefore
+confirms that the implementation computes the function it is supposed
+to; it is not independent evidence for the proposition. The
+load-bearing measurement is order independence
+(\Cref{tab:round2}), because that is the property whose failure
+\Cref{tab:round1} actually exhibits.
+
 \subsection{What the suite does not establish}
 
 The candidate pool reduces to five distinct kinds after de-duplication by
@@ -708,6 +723,9 @@ our construction. The conservation corpus is eight hand-chosen
 rearrangements. The drug-like corpus is thirty structures assembled by
 us. No wall-clock timing is reported anywhere, and nothing here is tested
 against an endpoint outside the framework.
+
+% ---- measured figures -------------------------------
+\input{figures/unary-captions}
 
 % =====================================================================
 \section{Relation to existing methods}

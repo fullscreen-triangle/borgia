@@ -8,16 +8,16 @@
 \citation{westbrook2022pdbx}
 \citation{heller2015inchi}
 \citation{murrayrust2011cml}
-\citation{rdkit}
-\citation{oboyle2011openbabel}
-\citation{willighagen2017cdk}
 \@writefile{toc}{\contentsline {part}{I\hspace  {1em}The Problem}{3}{part.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{3}{section.1}\protected@file@percent }
 \newlabel{sec:intro}{{1}{3}{Introduction}{section.1}{}}
 \newlabel{sec:intro@cref}{{[section][1][]1}{[1][3][]3}{}{}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.1}Six formats, one molecule, six different things said}{3}{subsection.1.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.2}The problem is not conversion; it is what conversion hides}{3}{subsection.1.2}\protected@file@percent }
+\citation{rdkit}
+\citation{oboyle2011openbabel}
+\citation{willighagen2017cdk}
 \citation{young2008errors,fourches2010curation,williams2012quality,akhondi2012consistency}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2}The problem is not conversion; it is what conversion hides}{4}{subsection.1.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Errors become unattributable.}{4}{section*.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Agreement becomes uninformative.}{4}{section*.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Absence becomes invisible.}{4}{section*.4}\protected@file@percent }
@@ -27,19 +27,19 @@
 \citation{heller2015inchi}
 \citation{weininger1989smiles2,oboyle2012inchi}
 \citation{krenn2020selfies}
-\citation{fourches2010curation,fourches2016curation2,williams2012quality,young2008errors}
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.4}What Masamune is not}{5}{subsection.1.4}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.5}Contributions}{5}{subsection.1.5}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {2}Related work and what is new}{5}{section.2}\protected@file@percent }
 \newlabel{sec:related}{{2}{5}{Related work and what is new}{section.2}{}}
 \newlabel{sec:related@cref}{{[section][2][]2}{[1][5][]5}{}{}{}}
 \@writefile{toc}{\contentsline {paragraph}{Format conversion.}{5}{section*.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Canonicalisation.}{5}{section*.6}\protected@file@percent }
+\citation{fourches2010curation,fourches2016curation2,williams2012quality,young2008errors}
 \citation{buneman2001why,cheney2009provenance}
 \citation{moreau2013prov}
 \citation{codd1979extending,imielinski1984incomplete,libkin2016sql}
 \citation{perez2009sparql,angles2017foundations}
 \citation{koster2012snakemake,ditommaso2017nextflow}
+\@writefile{toc}{\contentsline {paragraph}{Canonicalisation.}{6}{section*.6}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Curation.}{6}{section*.7}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Provenance in databases.}{6}{section*.8}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Nulls and missing information.}{6}{section*.9}\protected@file@percent }
@@ -69,9 +69,9 @@
 \newlabel{def:bondattrs@cref}{{[theorem][6][3]3.6}{[1][7][]7}{}{}{}}
 \newlabel{rem:cellcount}{{3.7}{7}{Why cell count rather than bond order alone}{theorem.3.7}{}}
 \newlabel{rem:cellcount@cref}{{[theorem][7][3]3.7}{[1][7][]7}{}{}{}}
-\newlabel{prop:deloc}{{3.8}{7}{Delocalisation is not a per-bond attribute}{theorem.3.8}{}}
-\newlabel{prop:deloc@cref}{{[theorem][8][3]3.8}{[1][7][]7}{}{}{}}
 \citation{opensmiles}
+\newlabel{prop:deloc}{{3.8}{8}{Delocalisation is not a per-bond attribute}{theorem.3.8}{}}
+\newlabel{prop:deloc@cref}{{[theorem][8][3]3.8}{[1][7][]8}{}{}{}}
 \@writefile{toc}{\contentsline {part}{III\hspace  {1em}The Three Disciplines}{8}{part.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {4}Provenance typing}{8}{section.4}\protected@file@percent }
 \newlabel{sec:provenance}{{4}{8}{Provenance typing}{section.4}{}}
@@ -89,7 +89,7 @@
 \newlabel{ex:ethanol@cref}{{[theorem][5][4]4.5}{[1][8][]8}{}{}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Composition}{9}{subsection.4.2}\protected@file@percent }
 \newlabel{def:compose}{{4.6}{9}{Composition of tags}{theorem.4.6}{}}
-\newlabel{def:compose@cref}{{[theorem][6][4]4.6}{[1][8][]9}{}{}{}}
+\newlabel{def:compose@cref}{{[theorem][6][4]4.6}{[1][9][]9}{}{}{}}
 \newlabel{lem:monoid}{{4.7}{9}{$\oplus $ is associative with absorbing element}{theorem.4.7}{}}
 \newlabel{lem:monoid@cref}{{[theorem][7][4]4.7}{[1][9][]9}{}{}{}}
 \newlabel{thm:prov-compose}{{4.8}{9}{Provenance composes}{theorem.4.8}{}}
@@ -211,41 +211,67 @@
 \newlabel{rem:refimpl}{{9.1}{17}{What writing an implementation settles}{theorem.9.1}{}}
 \newlabel{rem:refimpl@cref}{{[theorem][1][9]9.1}{[1][17][]17}{}{}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {9.2}The run}{17}{subsection.9.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.3}The supplied fraction across formats}{17}{subsection.9.3}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Supplied fraction $\phi $ by source format over the same $1{,}000$ structures. ``Elements'' counts vertices and edges of the resulting contact graph.}}{17}{table.1}\protected@file@percent }
-\newlabel{tab:phi}{{1}{17}{Supplied fraction $\phi $ by source format over the same $1{,}000$ structures. ``Elements'' counts vertices and edges of the resulting contact graph}{table.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.3}The supplied fraction}{17}{subsection.9.3}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Supplied fraction $\phi $ over the $48$-structure corpus. $\phi $ ranges over the graph's own vertices and contacts; medium edges are excluded (defect D2).}}{17}{table.1}\protected@file@percent }
+\newlabel{tab:phi}{{1}{17}{Supplied fraction $\phi $ over the $48$-structure corpus. $\phi $ ranges over the graph's own vertices and contacts; medium edges are excluded (defect D2)}{table.1}{}}
 \newlabel{tab:phi@cref}{{[table][1][]1}{[1][17][]17}{}{}{}}
+\newlabel{rem:nozero}{{9.2}{17}{No structure attained $\phi =0$}{theorem.9.2}{}}
+\newlabel{rem:nozero@cref}{{[theorem][2][9]9.2}{[1][17][]17}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.4}The medium-edge defect, measured}{18}{subsection.9.4}\protected@file@percent }
+\newlabel{sec:d2measured}{{9.4}{18}{The medium-edge defect, measured}{subsection.9.4}{}}
+\newlabel{sec:d2measured@cref}{{[subsection][4][9]9.4}{[1][18][]18}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.5}Capability containment, measured}{18}{subsection.9.5}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Static refusal against post-read outcome over three formats and eight requests.}}{18}{table.2}\protected@file@percent }
+\newlabel{tab:cap}{{2}{18}{Static refusal against post-read outcome over three formats and eight requests}{table.2}{}}
+\newlabel{tab:cap@cref}{{[table][2][]2}{[1][18][]18}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.6}Verdicts are distinct, and a failure carries no value}{18}{subsection.9.6}\protected@file@percent }
+\newlabel{rem:d4}{{9.3}{18}{A fourth defect, found by this probe: D4}{theorem.9.3}{}}
+\newlabel{rem:d4@cref}{{[theorem][3][9]9.3}{[1][18][]18}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.7}Two formats, one molecule, undetected disagreement}{18}{subsection.9.7}\protected@file@percent }
+\newlabel{sec:disagreement}{{9.7}{18}{Two formats, one molecule, undetected disagreement}{subsection.9.7}{}}
+\newlabel{sec:disagreement@cref}{{[subsection][7][9]9.7}{[1][18][]18}{}{}{}}
 \citation{heller2015inchi}
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.4}The negative outcome}{18}{subsection.9.4}\protected@file@percent }
-\newlabel{sec:negative}{{9.4}{18}{The negative outcome}{subsection.9.4}{}}
-\newlabel{sec:negative@cref}{{[subsection][4][9]9.4}{[1][17][]18}{}{}{}}
-\newlabel{rem:report-negative}{{9.2}{18}{Why this is reported here}{theorem.9.2}{}}
-\newlabel{rem:report-negative@cref}{{[theorem][2][9]9.2}{[1][18][]18}{}{}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.5}Two formats, one molecule, undetected disagreement}{18}{subsection.9.5}\protected@file@percent }
-\newlabel{sec:disagreement}{{9.5}{18}{Two formats, one molecule, undetected disagreement}{subsection.9.5}{}}
-\newlabel{sec:disagreement@cref}{{[subsection][5][9]9.5}{[1][18][]18}{}{}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.6}Defects found by implementing}{18}{subsection.9.6}\protected@file@percent }
-\newlabel{sec:defects}{{9.6}{18}{Defects found by implementing}{subsection.9.6}{}}
-\newlabel{sec:defects@cref}{{[subsection][6][9]9.6}{[1][18][]18}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Aromatic against Kekul\'e representations of the same ten molecules.}}{19}{table.3}\protected@file@percent }
+\newlabel{tab:disagree}{{3}{19}{Aromatic against Kekul\'e representations of the same ten molecules}{table.3}{}}
+\newlabel{tab:disagree@cref}{{[table][3][]3}{[1][18][]19}{}{}{}}
+\newlabel{rem:tenten}{{9.4}{19}{What the ratio does and does not mean}{theorem.9.4}{}}
+\newlabel{rem:tenten@cref}{{[theorem][4][9]9.4}{[1][19][]19}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.8}Defects found by implementing}{19}{subsection.9.8}\protected@file@percent }
+\newlabel{sec:defects}{{9.8}{19}{Defects found by implementing}{subsection.9.8}{}}
+\newlabel{sec:defects@cref}{{[subsection][8][9]9.8}{[1][19][]19}{}{}{}}
+\newlabel{rem:d2}{{9.5}{20}{D2 is the instructive one}{theorem.9.5}{}}
+\newlabel{rem:d2@cref}{{[theorem][5][9]9.5}{[1][20][]20}{}{}{}}
+\newlabel{rem:d4found}{{9.6}{20}{D4 was found by running the suite, not by writing it}{theorem.9.6}{}}
+\newlabel{rem:d4found@cref}{{[theorem][6][9]9.6}{[1][20][]20}{}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {10}What Masamune does not do}{20}{section.10}\protected@file@percent }
+\newlabel{sec:limits}{{10}{20}{What Masamune does not do}{section.10}{}}
+\newlabel{sec:limits@cref}{{[section][10][]10}{[1][20][]20}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces \textbf  {Across a $48$-structure corpus a mean of $73.4\%$ of a SMILES-derived contact graph is supplied by convention rather than stated by the record, and no structure falls below $50.0\%$.} $\phi $ (\Cref  {def:suppfrac}) ranges over the graph's own vertices and contacts; medium edges are excluded, for the reason defect D2 gives and panel~(\textbf  {D}) measures. (\textbf  {A})~Distribution of $\phi $, with the corpus mean $0.734$ dashed and $0.500$ dotted. The distribution is tight --- standard deviation $0.071$ --- and lies entirely above $0.5$. We had expected the corpus to contain records stating everything the request needed, giving $\phi =0$ exactly; it contains none, which \Cref  {rem:nozero} records as a fact about the format rather than about the reader. (\textbf  {B})~$\phi $ against heavy-atom count, coloured by total atom count. The cloud is close to flat: the supplied fraction is a property of the notation's conventions rather than of molecular size, so it does not wash out as structures grow. (\textbf  {C})~The corrected and uncorrected statistics for every structure, joined per structure. Green points exclude medium edges and red include them; the vertical segment is the inflation. The two point clouds never cross, so the correction changes the value of $\phi $ everywhere without changing its ordering. (\textbf  {D})~The inflation itself, one bar per structure ordered by heavy-atom count, with the mean $0.089$ dashed. It runs from $0.040$ to $0.167$ and is largest on the smallest molecules --- because every medium edge is $\textsf  {supplied}$ by construction, including them makes $\phi $ a quantity dominated by the target representation exactly where the source record is shortest. That is defect D2 as a measurement rather than as an argument.}}{21}{figure.1}\protected@file@percent }
+\newlabel{fig:supplied}{{1}{21}{\textbf {Across a $48$-structure corpus a mean of $73.4\%$ of a SMILES-derived contact graph is supplied by convention rather than stated by the record, and no structure falls below $50.0\%$.} $\phi $ (\Cref {def:suppfrac}) ranges over the graph's own vertices and contacts; medium edges are excluded, for the reason defect D2 gives and panel~(\textbf {D}) measures. (\textbf {A})~Distribution of $\phi $, with the corpus mean $0.734$ dashed and $0.500$ dotted. The distribution is tight --- standard deviation $0.071$ --- and lies entirely above $0.5$. We had expected the corpus to contain records stating everything the request needed, giving $\phi =0$ exactly; it contains none, which \Cref {rem:nozero} records as a fact about the format rather than about the reader. (\textbf {B})~$\phi $ against heavy-atom count, coloured by total atom count. The cloud is close to flat: the supplied fraction is a property of the notation's conventions rather than of molecular size, so it does not wash out as structures grow. (\textbf {C})~The corrected and uncorrected statistics for every structure, joined per structure. Green points exclude medium edges and red include them; the vertical segment is the inflation. The two point clouds never cross, so the correction changes the value of $\phi $ everywhere without changing its ordering. (\textbf {D})~The inflation itself, one bar per structure ordered by heavy-atom count, with the mean $0.089$ dashed. It runs from $0.040$ to $0.167$ and is largest on the smallest molecules --- because every medium edge is $\supplied $ by construction, including them makes $\phi $ a quantity dominated by the target representation exactly where the source record is shortest. That is defect D2 as a measurement rather than as an argument}{figure.1}{}}
+\newlabel{fig:supplied@cref}{{[figure][1][]1}{[1][20][]21}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces \textbf  {Capability containment decides $19$ of $24$ format--request pairs before any record is read, and agrees with the post-read outcome on all $24$.} Each pair was checked twice: statically against the declared capability set (\Cref  {cor:static}), and again by attempting the translation and inspecting the resulting label. (\textbf  {A})~Requests per format, split into those refused statically and those a read may satisfy. The \textsf  {inchi} row refuses all eight, because no reader is implemented and the capability set is empty --- an honest under-declaration, which \Cref  {sec:capability} argues is the safe direction to err in. (\textbf  {B})~Each pair as a bar over (format, features asked), with height the number of asked-for features the format actually declares and the dashed diagonal marking full service. A bar reaching the diagonal is translatable; one short of it is refused. Height is features \emph  {declared} rather than features \emph  {missing} because the latter renders every satisfiable request as a zero-height, invisible bar. (\textbf  {C})~Declared capability size per format: seven features for SMILES, two for the coordinate-only reader, none for \textsf  {inchi}. The zero is drawn as an explicit floor tick so that a format declaring nothing is legible as a measured zero rather than as an absent bar. (\textbf  {D})~Agreement between the static verdict and the post-read outcome, over all $24$ pairs. The disagreement count is zero. The direction that would matter is a static refusal of a request a read would have satisfied, since that is the unsound one; there were none.}}{21}{figure.2}\protected@file@percent }
+\newlabel{fig:capability}{{2}{21}{\textbf {Capability containment decides $19$ of $24$ format--request pairs before any record is read, and agrees with the post-read outcome on all $24$.} Each pair was checked twice: statically against the declared capability set (\Cref {cor:static}), and again by attempting the translation and inspecting the resulting label. (\textbf {A})~Requests per format, split into those refused statically and those a read may satisfy. The \textsf {inchi} row refuses all eight, because no reader is implemented and the capability set is empty --- an honest under-declaration, which \Cref {sec:capability} argues is the safe direction to err in. (\textbf {B})~Each pair as a bar over (format, features asked), with height the number of asked-for features the format actually declares and the dashed diagonal marking full service. A bar reaching the diagonal is translatable; one short of it is refused. Height is features \emph {declared} rather than features \emph {missing} because the latter renders every satisfiable request as a zero-height, invisible bar. (\textbf {C})~Declared capability size per format: seven features for SMILES, two for the coordinate-only reader, none for \textsf {inchi}. The zero is drawn as an explicit floor tick so that a format declaring nothing is legible as a measured zero rather than as an absent bar. (\textbf {D})~Agreement between the static verdict and the post-read outcome, over all $24$ pairs. The disagreement count is zero. The direction that would matter is a static refusal of a request a read would have satisfied, since that is the unsound one; there were none}{figure.2}{}}
+\newlabel{fig:capability@cref}{{[figure][2][]2}{[1][20][]21}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces \textbf  {Ten molecules written two faithful ways yield ten pairs of contact graphs that differ, while formula-level comparison reports agreement on all ten.} Each molecule is expressed once with a lower-case aromatic ring and once in an alternating Kekul\'e assignment. Both translations state exactly what their source states, so neither is a misreading. (\textbf  {A})~Delocalised contacts under each reading. The aromatic form yields six per benzenoid ring (eleven for naphthalene); the Kekul\'e form yields none, drawn as explicit floor ticks so the zeros read as measured rather than missing. By \Cref  {prop:deloc} neither graph converts into the other without supplying a fact. (\textbf  {B})~The supplied fraction under each reading, joined per molecule. The Kekul\'e form is lower in every case --- benzene gives $0.750$ against $0.625$ --- because stating per-contact cell counts removes them from what convention must supply. The gap is a measurement of how much the aromatic notation leaves to the reader. (\textbf  {C})~What each comparison detects. A formula-level comparison finds $0$ of $10$ differences; a cell-count comparison finds $10$ of $10$. This is the paper's central practical claim in one measurement: the disagreement is real and the conventional instrument is blind to it, which is why \Cref  {sec:disagreement} argues identity comparison is the wrong tool here. (\textbf  {D})~The two readings in (total cells, delocalised contacts, $\phi $) space, joined per molecule. The two clouds are disjoint on every axis, and the connecting segments are all parallel: the disagreement is systematic, not sporadic. Note that the measured ratio is $10/10$ because these pairs were constructed to contain an aromatic ring; \Cref  {rem:tenten} states that this measures visibility and not prevalence.}}{22}{figure.3}\protected@file@percent }
+\newlabel{fig:disagreement}{{3}{22}{\textbf {Ten molecules written two faithful ways yield ten pairs of contact graphs that differ, while formula-level comparison reports agreement on all ten.} Each molecule is expressed once with a lower-case aromatic ring and once in an alternating Kekul\'e assignment. Both translations state exactly what their source states, so neither is a misreading. (\textbf {A})~Delocalised contacts under each reading. The aromatic form yields six per benzenoid ring (eleven for naphthalene); the Kekul\'e form yields none, drawn as explicit floor ticks so the zeros read as measured rather than missing. By \Cref {prop:deloc} neither graph converts into the other without supplying a fact. (\textbf {B})~The supplied fraction under each reading, joined per molecule. The Kekul\'e form is lower in every case --- benzene gives $0.750$ against $0.625$ --- because stating per-contact cell counts removes them from what convention must supply. The gap is a measurement of how much the aromatic notation leaves to the reader. (\textbf {C})~What each comparison detects. A formula-level comparison finds $0$ of $10$ differences; a cell-count comparison finds $10$ of $10$. This is the paper's central practical claim in one measurement: the disagreement is real and the conventional instrument is blind to it, which is why \Cref {sec:disagreement} argues identity comparison is the wrong tool here. (\textbf {D})~The two readings in (total cells, delocalised contacts, $\phi $) space, joined per molecule. The two clouds are disjoint on every axis, and the connecting segments are all parallel: the disagreement is systematic, not sporadic. Note that the measured ratio is $10/10$ because these pairs were constructed to contain an aromatic ring; \Cref {rem:tenten} states that this measures visibility and not prevalence}{figure.3}{}}
+\newlabel{fig:disagreement@cref}{{[figure][3][]3}{[1][20][]22}{}{}{}}
 \citation{daylight_smarts}
-\newlabel{rem:d2}{{9.3}{19}{D2 is the instructive one}{theorem.9.3}{}}
-\newlabel{rem:d2@cref}{{[theorem][3][9]9.3}{[1][19][]19}{}{}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {10}What Masamune does not do}{19}{section.10}\protected@file@percent }
-\newlabel{sec:limits}{{10}{19}{What Masamune does not do}{section.10}{}}
-\newlabel{sec:limits@cref}{{[section][10][]10}{[1][19][]19}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces \textbf  {Eight probes realise five distinct verdict labels, and no failure verdict carries a value.} (\textbf  {A})~Labels realised by the probe set. \textsf  {empty} appears here only because of defect D4: the parser raised on empty input before clause (V2) was reached, so \textsf  {empty} was unreachable from the SMILES path and an empty record was reported as \textsf  {malformed}. That is the conflation \Cref  {thm:conflation} identifies, occurring inside the implementation built to prevent it; \Cref  {rem:d4} gives the account. (\textbf  {B})~Probes by whether their label may carry a value, whether the label is a failure, and whether a value was in fact carried. One probe is value-bearing, seven are failures, and exactly one carried a value --- the same one. The failure column is the population in which a violation could occur, and it is empty. (\textbf  {C})~Each probe positioned by label, by whether its label may carry a value, and by whether it did. Every bar sits at $\text  {did carry}=0$ except the single \textsf  {translated} probe, and no bar sits in the region (may carry $=0$, did carry $=1$) that would constitute a violation. That region is empty by construction as well as by measurement: the invariant is enforced in the verdict constructor, so this panel confirms the constructor is reached rather than establishing the property independently. (\textbf  {D})~Labels realised by these probes against those defined but not probed. Five of twelve are exercised. The unexercised seven are plan-level and honjo-level labels outside the translation path, and we make no claim about them here.}}{23}{figure.4}\protected@file@percent }
+\newlabel{fig:verdicts}{{4}{23}{\textbf {Eight probes realise five distinct verdict labels, and no failure verdict carries a value.} (\textbf {A})~Labels realised by the probe set. \textsf {empty} appears here only because of defect D4: the parser raised on empty input before clause (V2) was reached, so \textsf {empty} was unreachable from the SMILES path and an empty record was reported as \textsf {malformed}. That is the conflation \Cref {thm:conflation} identifies, occurring inside the implementation built to prevent it; \Cref {rem:d4} gives the account. (\textbf {B})~Probes by whether their label may carry a value, whether the label is a failure, and whether a value was in fact carried. One probe is value-bearing, seven are failures, and exactly one carried a value --- the same one. The failure column is the population in which a violation could occur, and it is empty. (\textbf {C})~Each probe positioned by label, by whether its label may carry a value, and by whether it did. Every bar sits at $\text {did carry}=0$ except the single \textsf {translated} probe, and no bar sits in the region (may carry $=0$, did carry $=1$) that would constitute a violation. That region is empty by construction as well as by measurement: the invariant is enforced in the verdict constructor, so this panel confirms the constructor is reached rather than establishing the property independently. (\textbf {D})~Labels realised by these probes against those defined but not probed. Five of twelve are exercised. The unexercised seven are plan-level and honjo-level labels outside the translation path, and we make no claim about them here}{figure.4}{}}
+\newlabel{fig:verdicts@cref}{{[figure][4][]4}{[1][20][]23}{}{}{}}
+\newlabel{prop:nameable-analogue}{{10.1}{23}{An unnameable feature is an undetectable omission}{theorem.10.1}{}}
+\newlabel{prop:nameable-analogue@cref}{{[theorem][1][10]10.1}{[1][23][]23}{}{}{}}
 \bibstyle{plainnat}
 \bibdata{references}
 \bibcite{akhondi2012consistency}{{1}{2012}{{Akhondi et~al.}}{{Akhondi, Kors, and Muresan}}}
-\newlabel{prop:nameable-analogue}{{10.1}{20}{An unnameable feature is an undetectable omission}{theorem.10.1}{}}
-\newlabel{prop:nameable-analogue@cref}{{[theorem][1][10]10.1}{[1][20][]20}{}{}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {11}Conclusion}{20}{section.11}\protected@file@percent }
-\newlabel{sec:conclusion}{{11}{20}{Conclusion}{section.11}{}}
-\newlabel{sec:conclusion@cref}{{[section][11][]11}{[1][20][]20}{}{}{}}
 \bibcite{angles2017foundations}{{2}{2017}{{Angles et~al.}}{{Angles, Arenas, Barcel{\'o}, Hogan, Reutter, and Vrgo{\v c}}}}
 \bibcite{berman2000pdb}{{3}{2000}{{Berman et~al.}}{{Berman, Westbrook, Feng, Gilliland, Bhat, Weissig, Shindyalov, and Bourne}}}
 \bibcite{buneman2001why}{{4}{2001}{{Buneman et~al.}}{{Buneman, Khanna, and Tan}}}
 \bibcite{cheney2009provenance}{{5}{2009}{{Cheney et~al.}}{{Cheney, Chiticariu, and Tan}}}
 \bibcite{codd1979extending}{{6}{1979}{{Codd}}{{}}}
+\@writefile{toc}{\contentsline {section}{\numberline {11}Conclusion}{24}{section.11}\protected@file@percent }
+\newlabel{sec:conclusion}{{11}{24}{Conclusion}{section.11}{}}
+\newlabel{sec:conclusion@cref}{{[section][11][]11}{[1][23][]24}{}{}{}}
 \bibcite{dalby1992ctfile}{{7}{1992}{{Dalby et~al.}}{{Dalby, Nourse, Hounshell, Gushurst, Grier, Leland, and Laufer}}}
 \bibcite{daylight_smarts}{{8}{2019}{{Daylight Chemical Information Systems}}{{}}}
 \bibcite{ditommaso2017nextflow}{{9}{2017}{{Di~Tommaso et~al.}}{{Di~Tommaso, Chatzou, Floden, Barja, Palumbo, and Notredame}}}
@@ -275,4 +301,4 @@
 \bibcite{williams2012quality}{{33}{2012}{{Williams et~al.}}{{Williams, Ekins, and Tkachenko}}}
 \bibcite{willighagen2017cdk}{{34}{2017}{{Willighagen et~al.}}{{Willighagen, Mayfield, Alvarsson, Berg, Carlsson, Jeliazkova, Kuhn, Pluskal, Rojas-Chert{\'o}, Spjuth, et~al.}}}
 \bibcite{young2008errors}{{35}{2008}{{Young et~al.}}{{Young, Martin, Venkatapathy, and Harten}}}
-\gdef \@abspage@last{23}
+\gdef \@abspage@last{26}
