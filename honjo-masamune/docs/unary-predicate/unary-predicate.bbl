@@ -1,0 +1,182 @@
+\begin{thebibliography}{25}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Angles et~al.(2017)Angles, Arenas, Barcel{\'o}, Hogan, Reutter, and
+  Vrgo{\v c}]{angles2017}
+Renzo Angles, Marcelo Arenas, Pablo Barcel{\'o}, Aidan Hogan, Juan Reutter, and
+  Domagoj Vrgo{\v c}.
+\newblock Foundations of modern query languages for graph databases.
+\newblock \emph{ACM Computing Surveys}, 50\penalty0 (5):\penalty0 1--40, 2017.
+\newblock \doi{10.1145/3104031}.
+
+\bibitem[Arvind et~al.(2015)Arvind, K{\"o}bler, Rattan, and
+  Verbitsky]{arvind2015}
+Vikraman Arvind, Johannes K{\"o}bler, Gaurav Rattan, and Oleg Verbitsky.
+\newblock On the power of color refinement.
+\newblock \emph{Fundamentals of Computation Theory}, 9210:\penalty0 339--350,
+  2015.
+\newblock \doi{10.1007/978-3-319-22177-9_26}.
+
+\bibitem[Barnard(1993)]{barnard1993}
+John~M. Barnard.
+\newblock Substructure searching methods: Old and new.
+\newblock \emph{Journal of Chemical Information and Computer Sciences},
+  33\penalty0 (4):\penalty0 532--538, 1993.
+\newblock \doi{10.1021/ci00014a001}.
+
+\bibitem[Callen(1985)]{callen1985}
+Herbert~B. Callen.
+\newblock \emph{Thermodynamics and an Introduction to Thermostatistics}.
+\newblock Wiley, New York, 2 edition, 1985.
+
+\bibitem[Cordella et~al.(2004)Cordella, Foggia, Sansone, and
+  Vento]{cordella2004}
+Luigi~P. Cordella, Pasquale Foggia, Carlo Sansone, and Mario Vento.
+\newblock A (sub)graph isomorphism algorithm for matching large graphs.
+\newblock \emph{IEEE Transactions on Pattern Analysis and Machine
+  Intelligence}, 26\penalty0 (10):\penalty0 1367--1372, 2004.
+\newblock \doi{10.1109/TPAMI.2004.75}.
+
+\bibitem[Ehrlich and Rarey(2011)]{ehrlich2011}
+Hans-Christian Ehrlich and Matthias Rarey.
+\newblock Maximum common subgraph isomorphism algorithms and their applications
+  in molecular science: A review.
+\newblock \emph{WIREs Computational Molecular Science}, 1\penalty0
+  (1):\penalty0 68--79, 2011.
+\newblock \doi{10.1002/wcms.5}.
+
+\bibitem[Ehrlich and Rarey(2012)]{ehrlich2012}
+Hans-Christian Ehrlich and Matthias Rarey.
+\newblock Systematic benchmark of substructure search in molecular
+  graphs---from {Ullmann} to {VF2}.
+\newblock \emph{Journal of Cheminformatics}, 4:\penalty0 13, 2012.
+\newblock \doi{10.1186/1758-2946-4-13}.
+
+\bibitem[Ford and Fulkerson(1956)]{fordfulkerson1956}
+L.~R. Ford and D.~R. Fulkerson.
+\newblock Maximal flow through a network.
+\newblock \emph{Canadian Journal of Mathematics}, 8:\penalty0 399--404, 1956.
+\newblock \doi{10.4153/CJM-1956-045-5}.
+
+\bibitem[Garey and Johnson(1979)]{garey1979}
+Michael~R. Garey and David~S. Johnson.
+\newblock \emph{Computers and Intractability: A Guide to the Theory of
+  {NP}-Completeness}.
+\newblock W. H. Freeman, San Francisco, 1979.
+
+\bibitem[Heller et~al.(2015)Heller, McNaught, Pletnev, Stein, and
+  Tchekhovskoi]{heller2015}
+Stephen~R. Heller, Alan McNaught, Igor Pletnev, Stephen Stein, and Dmitrii
+  Tchekhovskoi.
+\newblock {InChI}, the {IUPAC} international chemical identifier.
+\newblock \emph{Journal of Cheminformatics}, 7:\penalty0 23, 2015.
+\newblock \doi{10.1186/s13321-015-0068-4}.
+
+\bibitem[Ioannidis(2005)]{ioannidis2005}
+John P.~A. Ioannidis.
+\newblock Why most published research findings are false.
+\newblock \emph{PLoS Medicine}, 2\penalty0 (8):\penalty0 e124, 2005.
+\newblock \doi{10.1371/journal.pmed.0020124}.
+
+\bibitem[Levy et~al.(1996)Levy, Rajaraman, and Ordille]{levy1996}
+Alon~Y. Levy, Anand Rajaraman, and Joann~J. Ordille.
+\newblock Querying heterogeneous information sources using source descriptions.
+\newblock \emph{Proceedings of the 22nd VLDB Conference}, pages 251--262, 1996.
+
+\bibitem[McKay and Piperno(2014)]{mckay2014}
+Brendan~D. McKay and Adolfo Piperno.
+\newblock Practical graph isomorphism, {II}.
+\newblock \emph{Journal of Symbolic Computation}, 60:\penalty0 94--112, 2014.
+\newblock \doi{10.1016/j.jsc.2013.09.003}.
+
+\bibitem[Morgan(1965)]{morgan1965}
+H.~L. Morgan.
+\newblock The generation of a unique machine description for chemical
+  structures---a technique developed at chemical abstracts service.
+\newblock \emph{Journal of Chemical Documentation}, 5\penalty0 (2):\penalty0
+  107--113, 1965.
+\newblock \doi{10.1021/c160017a018}.
+
+\bibitem[Orlin(2013)]{orlin2013}
+James~B. Orlin.
+\newblock Max flows in {O(nm)} time, or better.
+\newblock \emph{Proceedings of the 45th Annual ACM Symposium on Theory of
+  Computing}, pages 765--774, 2013.
+\newblock \doi{10.1145/2488608.2488705}.
+
+\bibitem[P{\'e}rez et~al.(2009)P{\'e}rez, Arenas, and Gutierrez]{perez2009}
+Jorge P{\'e}rez, Marcelo Arenas, and Claudio Gutierrez.
+\newblock Semantics and complexity of {SPARQL}.
+\newblock \emph{ACM Transactions on Database Systems}, 34\penalty0
+  (3):\penalty0 1--45, 2009.
+\newblock \doi{10.1145/1567274.1567278}.
+
+\bibitem[Raymond and Willett(2002)]{raymond2002}
+John~W. Raymond and Peter Willett.
+\newblock Maximum common subgraph isomorphism algorithms for the matching of
+  chemical structures.
+\newblock \emph{Journal of Computer-Aided Molecular Design}, 16\penalty0
+  (7):\penalty0 521--533, 2002.
+\newblock \doi{10.1023/A:1021271615909}.
+
+\bibitem[Redlich(1970)]{redlich1970}
+Otto Redlich.
+\newblock Intensive and extensive properties.
+\newblock \emph{Journal of Chemical Education}, 47\penalty0 (2):\penalty0 154,
+  1970.
+\newblock \doi{10.1021/ed047p154.2}.
+
+\bibitem[Sayle et~al.(2012)Sayle, Batista, and Grant]{sayle2012}
+Roger~A. Sayle, Jose Batista, and J.~Andrew Grant.
+\newblock Efficient chemical structure search using fingerprint screening.
+\newblock \emph{Journal of Cheminformatics}, 4\penalty0 (Suppl 1):\penalty0
+  P26, 2012.
+\newblock \doi{10.1186/1758-2946-4-S1-P26}.
+
+\bibitem[Stoer and Wagner(1997)]{stoer1997}
+Mechthild Stoer and Frank Wagner.
+\newblock A simple min-cut algorithm.
+\newblock \emph{Journal of the ACM}, 44\penalty0 (4):\penalty0 585--591, 1997.
+\newblock \doi{10.1145/263867.263872}.
+
+\bibitem[Swamidass and Baldi(2007)]{swamidass2007}
+S.~Joshua Swamidass and Pierre Baldi.
+\newblock Bounds and algorithms for fast exact searches of chemical
+  fingerprints in linear and sublinear time.
+\newblock \emph{Journal of Chemical Information and Modeling}, 47\penalty0
+  (2):\penalty0 302--317, 2007.
+\newblock \doi{10.1021/ci600358f}.
+
+\bibitem[Ullmann(1976)]{ullmann1976}
+Julian~R. Ullmann.
+\newblock An algorithm for subgraph isomorphism.
+\newblock \emph{Journal of the ACM}, 23\penalty0 (1):\penalty0 31--42, 1976.
+\newblock \doi{10.1145/321921.321925}.
+
+\bibitem[Weininger(1988)]{weininger1988}
+David Weininger.
+\newblock {SMILES}, a chemical language and information system. 1. introduction
+  to methodology and encoding rules.
+\newblock \emph{Journal of Chemical Information and Computer Sciences},
+  28\penalty0 (1):\penalty0 31--36, 1988.
+\newblock \doi{10.1021/ci00057a005}.
+
+\bibitem[Weisfeiler and Leman(1968)]{weisfeiler1968}
+Boris Weisfeiler and Andrei Leman.
+\newblock The reduction of a graph to canonical form and the algebra which
+  appears therein.
+\newblock \emph{Nauchno-Technicheskaya Informatsia}, 2\penalty0 (9):\penalty0
+  12--16, 1968.
+
+\bibitem[Willett et~al.(1998)Willett, Barnard, and Downs]{willett1998}
+Peter Willett, John~M. Barnard, and Geoffrey~M. Downs.
+\newblock Chemical similarity searching.
+\newblock \emph{Journal of Chemical Information and Computer Sciences},
+  38\penalty0 (6):\penalty0 983--996, 1998.
+\newblock \doi{10.1021/ci9800211}.
+
+\end{thebibliography}

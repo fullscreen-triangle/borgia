@@ -1,0 +1,276 @@
+{
+  "experiment": "D: conservation, scaling, and discrimination",
+  "expectations": {
+    "D1_report_residual_no_zero_prediction": true,
+    "D2_ratio_grows_linearly": true,
+    "D3_classes_between_2_and_n_minus_1": true,
+    "D4_partition_order_independent": true,
+    "D5_control_must_be_order_dependent": true
+  },
+  "results": {
+    "D1_conservation": {
+      "rows": [
+        {
+          "transformation": "keto-enol (acetone)",
+          "heavy_reactant": 4,
+          "heavy_product": 4,
+          "hydrogens_reactant": 6,
+          "hydrogens_product": 6,
+          "balanced": true,
+          "sigma_reactant": 35.0,
+          "sigma_product": 35.0,
+          "sigma_residual": 0.0,
+          "sigma_relative": 0.0,
+          "depth_reactant": 16,
+          "depth_product": 16,
+          "depth_residual": 0
+        },
+        {
+          "transformation": "keto-enol (acetaldehyde)",
+          "heavy_reactant": 3,
+          "heavy_product": 3,
+          "hydrogens_reactant": 4,
+          "hydrogens_product": 4,
+          "balanced": true,
+          "sigma_reactant": 25.0,
+          "sigma_product": 25.0,
+          "sigma_residual": 0.0,
+          "sigma_relative": 0.0,
+          "depth_reactant": 11,
+          "depth_product": 11,
+          "depth_residual": 0
+        },
+        {
+          "transformation": "1-propanol -> 2-propanol",
+          "heavy_reactant": 4,
+          "heavy_product": 4,
+          "hydrogens_reactant": 8,
+          "hydrogens_product": 8,
+          "balanced": true,
+          "sigma_reactant": 39.0,
+          "sigma_product": 39.0,
+          "sigma_residual": 0.0,
+          "sigma_relative": 0.0,
+          "depth_reactant": 20,
+          "depth_product": 20,
+          "depth_residual": 0
+        },
+        {
+          "transformation": "allyl shift",
+          "heavy_reactant": 4,
+          "heavy_product": 4,
+          "hydrogens_reactant": 6,
+          "hydrogens_product": 6,
+          "balanced": true,
+          "sigma_reactant": 35.0,
+          "sigma_product": 35.0,
+          "sigma_residual": 0.0,
+          "sigma_relative": 0.0,
+          "depth_reactant": 16,
+          "depth_product": 16,
+          "depth_residual": 0
+        },
+        {
+          "transformation": "cyclopropane -> propene",
+          "heavy_reactant": 3,
+          "heavy_product": 3,
+          "hydrogens_reactant": 6,
+          "hydrogens_product": 6,
+          "balanced": true,
+          "sigma_reactant": 30.0,
+          "sigma_product": 30.0,
+          "sigma_residual": 0.0,
+          "sigma_relative": 0.0,
+          "depth_reactant": 15,
+          "depth_product": 15,
+          "depth_residual": 0
+        },
+        {
+          "transformation": "ring open (oxetane-like)",
+          "heavy_reactant": 4,
+          "heavy_product": 4,
+          "hydrogens_reactant": 6,
+          "hydrogens_product": 6,
+          "balanced": true,
+          "sigma_reactant": 35.0,
+          "sigma_product": 35.0,
+          "sigma_residual": 0.0,
+          "sigma_relative": 0.0,
+          "depth_reactant": 16,
+          "depth_product": 16,
+          "depth_residual": 0
+        },
+        {
+          "transformation": "catechol -> resorcinol",
+          "heavy_reactant": 8,
+          "heavy_product": 8,
+          "hydrogens_reactant": 6,
+          "hydrogens_product": 6,
+          "balanced": true,
+          "sigma_reactant": 52.0,
+          "sigma_product": 52.0,
+          "sigma_residual": 0.0,
+          "sigma_relative": 0.0,
+          "depth_reactant": 20,
+          "depth_product": 20,
+          "depth_residual": 0
+        },
+        {
+          "transformation": "ortho -> para xylene",
+          "heavy_reactant": 8,
+          "heavy_product": 8,
+          "hydrogens_reactant": 10,
+          "hydrogens_product": 10,
+          "balanced": true,
+          "sigma_reactant": 62.0,
+          "sigma_product": 62.0,
+          "sigma_residual": 0.0,
+          "sigma_relative": 0.0,
+          "depth_reactant": 28,
+          "depth_product": 28,
+          "depth_residual": 0
+        }
+      ],
+      "n_balanced": 8,
+      "sigma_exactly_conserved": 8,
+      "depth_exactly_conserved": 8,
+      "mean_abs_sigma_residual": 0.0,
+      "max_abs_sigma_residual": 0.0,
+      "mean_relative_sigma_residual": 0.0,
+      "mean_abs_depth_residual": 0,
+      "note": "reported, not predicted: the framework asserts depth-preserving rearrangement; whether this weighting realises it is the open question"
+    },
+    "D2_scaling": {
+      "rows": [
+        {
+          "n": 5,
+          "unary_evaluations": 5,
+          "pairwise_comparisons": 10,
+          "ratio": 2.0
+        },
+        {
+          "n": 10,
+          "unary_evaluations": 10,
+          "pairwise_comparisons": 45,
+          "ratio": 4.5
+        },
+        {
+          "n": 15,
+          "unary_evaluations": 15,
+          "pairwise_comparisons": 105,
+          "ratio": 7.0
+        },
+        {
+          "n": 20,
+          "unary_evaluations": 20,
+          "pairwise_comparisons": 190,
+          "ratio": 9.5
+        },
+        {
+          "n": 25,
+          "unary_evaluations": 25,
+          "pairwise_comparisons": 300,
+          "ratio": 12.0
+        },
+        {
+          "n": 30,
+          "unary_evaluations": 30,
+          "pairwise_comparisons": 435,
+          "ratio": 14.5
+        }
+      ],
+      "ratio_over_n": [
+        0.4,
+        0.45,
+        0.466667,
+        0.475,
+        0.48,
+        0.483333
+      ],
+      "slope_mean": 0.459167,
+      "slope_spread": 0.083333,
+      "matches_exact_identity": true,
+      "identity": "pairwise / unary = (n-1)/2",
+      "note": "the ratio grows linearly in n; the slope approaches 1/2 from below and does not attain it at finite n, so the check is the identity rather than the asymptote",
+      "passed": true
+    },
+    "D3_discrimination": {
+      "n_structures": 30,
+      "n_classes": 22,
+      "class_sizes": [
+        3,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "largest_class": 3,
+      "n_singletons": 15,
+      "example_classes": [
+        {
+          "members": [
+            "catechol",
+            "resorcinol",
+            "hydroquinone"
+          ]
+        },
+        {
+          "members": [
+            "acetone",
+            "propanol"
+          ]
+        },
+        {
+          "members": [
+            "phenol",
+            "aniline"
+          ]
+        },
+        {
+          "members": [
+            "anisole",
+            "cresol"
+          ]
+        },
+        {
+          "members": [
+            "benzoic-acid",
+            "nicotinamide"
+          ]
+        }
+      ],
+      "passed": true
+    },
+    "D4_order_independence": {
+      "n_shuffles": 20,
+      "n_agreeing": 20,
+      "agreement": 1.0,
+      "note": "the key is computed from each structure alone, so no processing order can change it; this check confirms the implementation has no hidden shared state",
+      "passed": true
+    },
+    "D5_negative_control": {
+      "n_orders": 12,
+      "n_distinct_partitions": 12,
+      "note": "a key that reads accumulated context yields different partitions under different orders; D4 is therefore a claim about the sigma key and not a tautology",
+      "passed": true
+    }
+  },
+  "all_passed": true
+}

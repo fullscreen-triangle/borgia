@@ -1,26 +1,26 @@
 \contentsline {section}{\numberline {1}Introduction}{2}{section.1}%
 \contentsline {subsection}{\numberline {1.1}What a canonical ranking is for}{2}{subsection.1.1}%
 \contentsline {subsection}{\numberline {1.2}The distinction this paper turns on}{2}{subsection.1.2}%
-\contentsline {subsection}{\numberline {1.3}The construction}{3}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.3}The construction}{2}{subsection.1.3}%
 \contentsline {subsection}{\numberline {1.4}What we claim and what we do not}{3}{subsection.1.4}%
 \contentsline {section}{\numberline {2}Setting}{3}{section.2}%
 \contentsline {section}{\numberline {3}The cut key is an invariant}{4}{section.3}%
-\contentsline {section}{\numberline {4}Refinement}{5}{section.4}%
-\contentsline {subsection}{\numberline {4.1}The iteration}{5}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Every round is an invariant}{5}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}The refinement never crosses an orbit}{5}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}Cost}{6}{subsection.4.4}%
-\contentsline {section}{\numberline {5}Validation}{6}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Method}{6}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}The base key is coarse}{11}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}Refinement recovers the orbit partition}{11}{subsection.5.3}%
-\contentsline {subsection}{\numberline {5.4}Refinement is necessary and sufficient in the measured range}{11}{subsection.5.4}%
-\contentsline {subsection}{\numberline {5.5}Negative control}{12}{subsection.5.5}%
-\contentsline {subsection}{\numberline {5.6}What the suite does not establish}{12}{subsection.5.6}%
-\contentsline {section}{\numberline {6}Relation to existing methods}{12}{section.6}%
-\contentsline {paragraph}{Morgan and its descendants.}{12}{section*.2}%
-\contentsline {paragraph}{Colour refinement and graph isomorphism.}{12}{section*.3}%
-\contentsline {paragraph}{Fingerprints.}{12}{section*.4}%
-\contentsline {paragraph}{Canonical identifiers.}{13}{section*.5}%
-\contentsline {section}{\numberline {7}Limitations}{13}{section.7}%
-\contentsline {section}{\numberline {8}Conclusion}{13}{section.8}%
+\contentsline {section}{\numberline {4}Refinement}{4}{section.4}%
+\contentsline {subsection}{\numberline {4.1}The iteration}{4}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Every round is an invariant}{4}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}The refinement never crosses an orbit}{4}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Cost}{5}{subsection.4.4}%
+\contentsline {section}{\numberline {5}Validation}{5}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Method}{5}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}The base key is coarse}{5}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Refinement recovers the orbit partition}{10}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Refinement is necessary and sufficient in the measured range}{10}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}Negative control}{10}{subsection.5.5}%
+\contentsline {subsection}{\numberline {5.6}What the suite does not establish}{11}{subsection.5.6}%
+\contentsline {section}{\numberline {6}Relation to existing methods}{11}{section.6}%
+\contentsline {paragraph}{Morgan and its descendants.}{11}{section*.3}%
+\contentsline {paragraph}{Colour refinement and graph isomorphism.}{11}{section*.4}%
+\contentsline {paragraph}{Fingerprints.}{11}{section*.5}%
+\contentsline {paragraph}{Canonical identifiers.}{11}{section*.6}%
+\contentsline {section}{\numberline {7}Limitations}{11}{section.7}%
+\contentsline {section}{\numberline {8}Conclusion}{12}{section.8}%
