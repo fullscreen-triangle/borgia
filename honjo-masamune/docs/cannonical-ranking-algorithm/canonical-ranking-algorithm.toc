@@ -9,18 +9,18 @@
 \contentsline {subsection}{\numberline {4.1}The iteration}{4}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Every round is an invariant}{4}{subsection.4.2}%
 \contentsline {subsection}{\numberline {4.3}The refinement never crosses an orbit}{4}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}Cost}{5}{subsection.4.4}%
-\contentsline {section}{\numberline {5}Validation}{5}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Method}{5}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}The base key is coarse}{5}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}Refinement recovers the orbit partition}{10}{subsection.5.3}%
-\contentsline {subsection}{\numberline {5.4}Refinement is necessary and sufficient in the measured range}{10}{subsection.5.4}%
-\contentsline {subsection}{\numberline {5.5}Negative control}{10}{subsection.5.5}%
-\contentsline {subsection}{\numberline {5.6}What the suite does not establish}{11}{subsection.5.6}%
-\contentsline {section}{\numberline {6}Relation to existing methods}{11}{section.6}%
-\contentsline {paragraph}{Morgan and its descendants.}{11}{section*.3}%
-\contentsline {paragraph}{Colour refinement and graph isomorphism.}{11}{section*.4}%
-\contentsline {paragraph}{Fingerprints.}{11}{section*.5}%
-\contentsline {paragraph}{Canonical identifiers.}{11}{section*.6}%
-\contentsline {section}{\numberline {7}Limitations}{11}{section.7}%
+\contentsline {subsection}{\numberline {4.4}Cost}{6}{subsection.4.4}%
+\contentsline {section}{\numberline {5}Validation}{6}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Method}{6}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}The base key is coarse}{6}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Refinement recovers the orbit partition}{8}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Refinement is necessary and sufficient in the measured range}{8}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}Negative control}{8}{subsection.5.5}%
+\contentsline {subsection}{\numberline {5.6}What the suite does not establish}{10}{subsection.5.6}%
+\contentsline {section}{\numberline {6}Relation to existing methods}{10}{section.6}%
+\contentsline {paragraph}{Morgan and its descendants.}{10}{section*.4}%
+\contentsline {paragraph}{Colour refinement and graph isomorphism.}{10}{section*.5}%
+\contentsline {paragraph}{Fingerprints.}{12}{section*.6}%
+\contentsline {paragraph}{Canonical identifiers.}{12}{section*.7}%
+\contentsline {section}{\numberline {7}Limitations}{12}{section.7}%
 \contentsline {section}{\numberline {8}Conclusion}{12}{section.8}%

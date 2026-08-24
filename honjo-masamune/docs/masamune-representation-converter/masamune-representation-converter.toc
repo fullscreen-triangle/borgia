@@ -1,54 +1,54 @@
-\contentsline {part}{I\hspace {1em}The Problem}{3}{part.1}%
-\contentsline {section}{\numberline {1}Introduction}{3}{section.1}%
-\contentsline {subsection}{\numberline {1.1}Six formats, one molecule, six different things said}{3}{subsection.1.1}%
-\contentsline {subsection}{\numberline {1.2}The problem is not conversion; it is what conversion hides}{4}{subsection.1.2}%
-\contentsline {paragraph}{Errors become unattributable.}{4}{section*.2}%
-\contentsline {paragraph}{Agreement becomes uninformative.}{4}{section*.3}%
-\contentsline {paragraph}{Absence becomes invisible.}{4}{section*.4}%
-\contentsline {subsection}{\numberline {1.3}What Masamune is}{4}{subsection.1.3}%
-\contentsline {subsection}{\numberline {1.4}What Masamune is not}{5}{subsection.1.4}%
-\contentsline {subsection}{\numberline {1.5}Contributions}{5}{subsection.1.5}%
-\contentsline {section}{\numberline {2}Related work and what is new}{5}{section.2}%
-\contentsline {paragraph}{Format conversion.}{5}{section*.5}%
-\contentsline {paragraph}{Canonicalisation.}{6}{section*.6}%
-\contentsline {paragraph}{Curation.}{6}{section*.7}%
-\contentsline {paragraph}{Provenance in databases.}{6}{section*.8}%
-\contentsline {paragraph}{Nulls and missing information.}{6}{section*.9}%
-\contentsline {paragraph}{Capability-aware querying.}{6}{section*.10}%
-\contentsline {paragraph}{Workflow systems.}{6}{section*.11}%
-\contentsline {part}{II\hspace {1em}The Target}{6}{part.2}%
-\contentsline {section}{\numberline {3}The contact graph}{6}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Definition}{6}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}What a translation must produce}{7}{subsection.3.2}%
-\contentsline {part}{III\hspace {1em}The Three Disciplines}{8}{part.3}%
-\contentsline {section}{\numberline {4}Provenance typing}{8}{section.4}%
-\contentsline {subsection}{\numberline {4.1}The three tags}{8}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Composition}{9}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}The supplied fraction}{10}{subsection.4.3}%
-\contentsline {section}{\numberline {5}Verdict-carrying translation}{10}{section.5}%
-\contentsline {subsection}{\numberline {5.1}The six verdicts}{10}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}The conventional interface cannot express this}{11}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}An empty result is a result}{12}{subsection.5.3}%
-\contentsline {section}{\numberline {6}Declared capability}{12}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Features and capability sets}{12}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}The containment theorem}{13}{subsection.6.2}%
-\contentsline {part}{IV\hspace {1em}The Plan Language}{13}{part.4}%
-\contentsline {section}{\numberline {7}Plans}{13}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Design decisions}{14}{subsection.7.1}%
-\contentsline {subsection}{\numberline {7.2}Grammar}{14}{subsection.7.2}%
-\contentsline {subsection}{\numberline {7.3}The standard operations}{15}{subsection.7.3}%
-\contentsline {section}{\numberline {8}Operational semantics}{15}{section.8}%
-\contentsline {subsection}{\numberline {8.1}Configurations}{15}{subsection.8.1}%
-\contentsline {subsection}{\numberline {8.2}Properties}{16}{subsection.8.2}%
+\contentsline {part}{I\hspace {1em}The Problem}{2}{part.1}%
+\contentsline {section}{\numberline {1}Introduction}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Six formats, one molecule, six different things said}{2}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}The problem is not conversion; it is what conversion hides}{3}{subsection.1.2}%
+\contentsline {paragraph}{Errors become unattributable.}{3}{section*.4}%
+\contentsline {paragraph}{Agreement becomes uninformative.}{3}{section*.5}%
+\contentsline {paragraph}{Absence becomes invisible.}{3}{section*.6}%
+\contentsline {subsection}{\numberline {1.3}What Masamune is}{3}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}What Masamune is not}{4}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}Contributions}{4}{subsection.1.5}%
+\contentsline {section}{\numberline {2}Related work and what is new}{4}{section.2}%
+\contentsline {paragraph}{Format conversion.}{4}{section*.7}%
+\contentsline {paragraph}{Canonicalisation.}{5}{section*.8}%
+\contentsline {paragraph}{Curation.}{5}{section*.9}%
+\contentsline {paragraph}{Provenance in databases.}{5}{section*.10}%
+\contentsline {paragraph}{Nulls and missing information.}{5}{section*.11}%
+\contentsline {paragraph}{Capability-aware querying.}{5}{section*.12}%
+\contentsline {paragraph}{Workflow systems.}{5}{section*.13}%
+\contentsline {part}{II\hspace {1em}The Target}{5}{part.2}%
+\contentsline {section}{\numberline {3}The contact graph}{5}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Definition}{5}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}What a translation must produce}{6}{subsection.3.2}%
+\contentsline {part}{III\hspace {1em}The Three Disciplines}{7}{part.3}%
+\contentsline {section}{\numberline {4}Provenance typing}{7}{section.4}%
+\contentsline {subsection}{\numberline {4.1}The three tags}{7}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Composition}{7}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}The supplied fraction}{9}{subsection.4.3}%
+\contentsline {section}{\numberline {5}Verdict-carrying translation}{9}{section.5}%
+\contentsline {subsection}{\numberline {5.1}The six verdicts}{9}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}The conventional interface cannot express this}{10}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}An empty result is a result}{11}{subsection.5.3}%
+\contentsline {section}{\numberline {6}Declared capability}{11}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Features and capability sets}{11}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}The containment theorem}{11}{subsection.6.2}%
+\contentsline {part}{IV\hspace {1em}The Plan Language}{12}{part.4}%
+\contentsline {section}{\numberline {7}Plans}{12}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Design decisions}{12}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Grammar}{13}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}The standard operations}{14}{subsection.7.3}%
+\contentsline {section}{\numberline {8}Operational semantics}{14}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Configurations}{14}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Properties}{14}{subsection.8.2}%
 \contentsline {part}{V\hspace {1em}Realisation}{16}{part.5}%
-\contentsline {section}{\numberline {9}Reference implementation and a translation run}{17}{section.9}%
-\contentsline {subsection}{\numberline {9.1}The implementation}{17}{subsection.9.1}%
-\contentsline {subsection}{\numberline {9.2}The run}{17}{subsection.9.2}%
-\contentsline {subsection}{\numberline {9.3}The supplied fraction}{17}{subsection.9.3}%
-\contentsline {subsection}{\numberline {9.4}The medium-edge defect, measured}{18}{subsection.9.4}%
-\contentsline {subsection}{\numberline {9.5}Capability containment, measured}{18}{subsection.9.5}%
-\contentsline {subsection}{\numberline {9.6}Verdicts are distinct, and a failure carries no value}{18}{subsection.9.6}%
-\contentsline {subsection}{\numberline {9.7}Two formats, one molecule, undetected disagreement}{18}{subsection.9.7}%
-\contentsline {subsection}{\numberline {9.8}Defects found by implementing}{19}{subsection.9.8}%
+\contentsline {section}{\numberline {9}Reference implementation and a translation run}{16}{section.9}%
+\contentsline {subsection}{\numberline {9.1}The implementation}{16}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}The run}{16}{subsection.9.2}%
+\contentsline {subsection}{\numberline {9.3}The supplied fraction}{16}{subsection.9.3}%
+\contentsline {subsection}{\numberline {9.4}The medium-edge defect, measured}{16}{subsection.9.4}%
+\contentsline {subsection}{\numberline {9.5}Capability containment, measured}{17}{subsection.9.5}%
+\contentsline {subsection}{\numberline {9.6}Verdicts are distinct, and a failure carries no value}{17}{subsection.9.6}%
+\contentsline {subsection}{\numberline {9.7}Two formats, one molecule, undetected disagreement}{17}{subsection.9.7}%
+\contentsline {subsection}{\numberline {9.8}Defects found by implementing}{18}{subsection.9.8}%
 \contentsline {section}{\numberline {10}What Masamune does not do}{20}{section.10}%
-\contentsline {section}{\numberline {11}Conclusion}{24}{section.11}%
+\contentsline {section}{\numberline {11}Conclusion}{20}{section.11}%
