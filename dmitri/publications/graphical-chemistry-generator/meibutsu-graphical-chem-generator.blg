@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99e
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: meibutsu-graphical-chem-generator.aux
+Reallocating 'name_of_file' (item size: 1) to 9 items.
+The style file: plainnat.bst
+Reallocating 'name_of_file' (item size: 1) to 11 items.
+Database file #1: references.bib
+You've used 31 entries,
+            2773 wiz_defined-function locations,
+            813 strings with 9627 characters,
+and the built_in function-call counts, 13599 in all, are:
+= -- 1258
+> -- 680
+< -- 22
++ -- 235
+- -- 204
+* -- 1108
+:= -- 2139
+add.period$ -- 120
+call.type$ -- 31
+change.case$ -- 157
+chr.to.int$ -- 31
+cite$ -- 62
+duplicate$ -- 630
+empty$ -- 1154
+format.name$ -- 253
+if$ -- 2828
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 39
+newline$ -- 190
+num.names$ -- 124
+pop$ -- 281
+preamble$ -- 1
+purify$ -- 129
+quote$ -- 0
+skip$ -- 456
+stack$ -- 0
+substring$ -- 530
+swap$ -- 36
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 296
+warning$ -- 0
+while$ -- 133
+width$ -- 0
+write$ -- 469
