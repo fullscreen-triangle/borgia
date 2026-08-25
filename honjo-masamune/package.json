@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "check:tutorials": "node scripts/check-tutorials.mjs",
+    "data": "python src/data/generate.py"
   },
   "dependencies": {
     "@react-three/drei": "^9.88.17",

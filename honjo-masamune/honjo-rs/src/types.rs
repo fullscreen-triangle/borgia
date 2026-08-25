@@ -172,7 +172,11 @@ impl Checker {
             Stmt::Assert { cond, .. } => {
                 self.check_cond(cond)?;
             }
-            Stmt::Track { item, process, admit, yield_name, pos } => {
+            // reps names representatives consumed by the interpreter; it
+            // carries no typing obligation.  Bound and ignored explicitly
+            // rather than via '..' so that a future field addition is a
+            // compile error here instead of silently unchecked.
+            Stmt::Track { item, process, admit, yield_name, pos, reps: _ } => {
                 let it = self
                     .vars
                     .get(item)

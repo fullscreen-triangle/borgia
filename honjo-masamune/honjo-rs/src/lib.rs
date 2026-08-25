@@ -6,6 +6,7 @@ pub mod ast;
 pub mod interp;
 pub mod lexer;
 pub mod parser;
+pub mod serve;
 pub mod stdlib;
 pub mod types;
 
