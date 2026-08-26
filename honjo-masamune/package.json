@@ -10,7 +10,9 @@
     "check:tutorials": "node scripts/check-tutorials.mjs",
     "data": "python src/data/generate.py",
     "check:field": "node scripts/check-field.mjs",
-    "check": "npm run check:tutorials && npm run check:field"
+    "check": "npm run check:tutorials && npm run check:field && npm run check:masamune && npm run check:plan",
+    "check:masamune": "node scripts/check-masamune.mjs",
+    "check:plan": "node scripts/check-plan.mjs"
   },
   "dependencies": {
     "@react-three/drei": "^9.88.17",

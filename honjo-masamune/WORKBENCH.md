@@ -78,15 +78,31 @@ is used instead.
 
 ## Which languages execute
 
-| Language | Extension | Executes | Engine |
-|---|---|---|---|
-| honjo | `.hnj` | yes | Rust reference, or JS in-browser |
-| masamune | `.msm` | no | — |
-| meibutsu | `.mbt` | no | — |
+All three, and every tutorial runs.
 
-The masamune and meibutsu tutorials are illustrative: the workbench
-shows measured results for them rather than pretending a run occurred.
-Their measurements come from the validation suites, not from the editor.
+| Language | Extension | Engine |
+|---|---|---|
+| honjo | `.hnj` | Rust reference over a token, or JS in-browser |
+| masamune | `.msm` | JS in-browser (there is no Rust Masamune) |
+| meibutsu | `.mbt` | JS in-browser |
+
+Connecting a local engine changes only the `.hnj` path. The other two
+run in the browser either way, and the terminal says which engine ran.
+
+Each browser implementation is checked against the Python reference:
+
+```
+npm run check           # all four checks
+npm run check:tutorials # 15/15 tutorials run
+npm run check:field     # 126/126 field values to 1e-13
+npm run check:masamune  # 359/359 translations
+npm run check:plan      # 94/94 plan traces
+```
+
+The browser has no disk, so a plan's `source lib : smiles at "x.smi"`
+resolves against record sets in `src/data/records.json`, generated from
+the validation corpus. That is the only intentional difference from the
+reference.
 
 ## Where the displayed numbers come from
 
@@ -154,6 +170,16 @@ HONJO_ENDPOINT=http://127.0.0.1:8731 HONJO_TOKEN=<token> npm run check:tutorials
 Current state: 5/5 tutorials run, 0 divergences.
 
 Run both checks together with `npm run check`.
+
+## The Ask panel
+
+Answers come from the generated result files and name their source.
+There is no model and no network call: a wrong number stated
+confidently would be worse than no answer, and a local-first tool
+should not be shipping questions elsewhere.
+
+When it has no grounded answer it refuses and says what it can answer
+about, rather than producing a fluent guess.
 
 ## The editor markers
 

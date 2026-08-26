@@ -1,0 +1,557 @@
+{
+ "_note": "reference dump from honjo-py; see scripts/check-masamune.mjs",
+ "structures": {
+  "ethanol": {
+   "smiles": "CCO",
+   "label": "translated",
+   "phi": 0.823529411765,
+   "n_atoms": 9,
+   "n_contacts": 8,
+   "n_medium": 9,
+   "n_deloc": 0,
+   "n_heavy": 3
+  },
+  "acetic-acid": {
+   "smiles": "CC(=O)O",
+   "label": "translated",
+   "phi": 0.666666666667,
+   "n_atoms": 8,
+   "n_contacts": 7,
+   "n_medium": 8,
+   "n_deloc": 0,
+   "n_heavy": 4
+  },
+  "acetone": {
+   "smiles": "CC(C)=O",
+   "label": "translated",
+   "phi": 0.736842105263,
+   "n_atoms": 10,
+   "n_contacts": 9,
+   "n_medium": 10,
+   "n_deloc": 0,
+   "n_heavy": 4
+  },
+  "phenol": {
+   "smiles": "Oc1ccccc1",
+   "label": "translated",
+   "phi": 0.730769230769,
+   "n_atoms": 13,
+   "n_contacts": 13,
+   "n_medium": 13,
+   "n_deloc": 1,
+   "n_heavy": 7
+  },
+  "aniline": {
+   "smiles": "Nc1ccccc1",
+   "label": "translated",
+   "phi": 0.75,
+   "n_atoms": 14,
+   "n_contacts": 14,
+   "n_medium": 14,
+   "n_deloc": 1,
+   "n_heavy": 7
+  },
+  "anisole": {
+   "smiles": "COc1ccccc1",
+   "label": "translated",
+   "phi": 0.75,
+   "n_atoms": 16,
+   "n_contacts": 16,
+   "n_medium": 16,
+   "n_deloc": 1,
+   "n_heavy": 8
+  },
+  "benzoic-acid": {
+   "smiles": "OC(=O)c1ccccc1",
+   "label": "translated",
+   "phi": 0.666666666667,
+   "n_atoms": 15,
+   "n_contacts": 15,
+   "n_medium": 15,
+   "n_deloc": 1,
+   "n_heavy": 9
+  },
+  "aspirin": {
+   "smiles": "CC(=O)Oc1ccccc1C(=O)O",
+   "label": "translated",
+   "phi": 0.642857142857,
+   "n_atoms": 21,
+   "n_contacts": 21,
+   "n_medium": 21,
+   "n_deloc": 1,
+   "n_heavy": 13
+  },
+  "paracetamol": {
+   "smiles": "CC(=O)Nc1ccc(O)cc1",
+   "label": "translated",
+   "phi": 0.7,
+   "n_atoms": 20,
+   "n_contacts": 20,
+   "n_medium": 20,
+   "n_deloc": 1,
+   "n_heavy": 11
+  },
+  "ibuprofen": {
+   "smiles": "CC(C)Cc1ccc(cc1)C(C)C(=O)O",
+   "label": "translated",
+   "phi": 0.757575757576,
+   "n_atoms": 33,
+   "n_contacts": 33,
+   "n_medium": 33,
+   "n_deloc": 1,
+   "n_heavy": 15
+  },
+  "styrene": {
+   "smiles": "C=Cc1ccccc1",
+   "label": "translated",
+   "phi": 0.71875,
+   "n_atoms": 16,
+   "n_contacts": 16,
+   "n_medium": 16,
+   "n_deloc": 1,
+   "n_heavy": 8
+  },
+  "indole": {
+   "smiles": "c1ccc2[nH]ccc2c1",
+   "label": "translated",
+   "phi": 0.666666666667,
+   "n_atoms": 16,
+   "n_contacts": 17,
+   "n_medium": 16,
+   "n_deloc": 1,
+   "n_heavy": 9
+  },
+  "quinoline": {
+   "smiles": "c1ccc2ncccc2c1",
+   "label": "translated",
+   "phi": 0.714285714286,
+   "n_atoms": 17,
+   "n_contacts": 18,
+   "n_medium": 17,
+   "n_deloc": 1,
+   "n_heavy": 10
+  },
+  "nicotinamide": {
+   "smiles": "NC(=O)c1cccnc1",
+   "label": "translated",
+   "phi": 0.666666666667,
+   "n_atoms": 15,
+   "n_contacts": 15,
+   "n_medium": 15,
+   "n_deloc": 1,
+   "n_heavy": 9
+  },
+  "salicylic": {
+   "smiles": "OC(=O)c1ccccc1O",
+   "label": "translated",
+   "phi": 0.65625,
+   "n_atoms": 16,
+   "n_contacts": 16,
+   "n_medium": 16,
+   "n_deloc": 1,
+   "n_heavy": 10
+  },
+  "catechol": {
+   "smiles": "Oc1ccccc1O",
+   "label": "translated",
+   "phi": 0.714285714286,
+   "n_atoms": 14,
+   "n_contacts": 14,
+   "n_medium": 14,
+   "n_deloc": 1,
+   "n_heavy": 8
+  },
+  "resorcinol": {
+   "smiles": "Oc1cccc(O)c1",
+   "label": "translated",
+   "phi": 0.714285714286,
+   "n_atoms": 14,
+   "n_contacts": 14,
+   "n_medium": 14,
+   "n_deloc": 1,
+   "n_heavy": 8
+  },
+  "hydroquinone": {
+   "smiles": "Oc1ccc(O)cc1",
+   "label": "translated",
+   "phi": 0.714285714286,
+   "n_atoms": 14,
+   "n_contacts": 14,
+   "n_medium": 14,
+   "n_deloc": 1,
+   "n_heavy": 8
+  },
+  "cresol": {
+   "smiles": "Cc1ccccc1O",
+   "label": "translated",
+   "phi": 0.75,
+   "n_atoms": 16,
+   "n_contacts": 16,
+   "n_medium": 16,
+   "n_deloc": 1,
+   "n_heavy": 8
+  },
+  "xylene-o": {
+   "smiles": "Cc1ccccc1C",
+   "label": "translated",
+   "phi": 0.777777777778,
+   "n_atoms": 18,
+   "n_contacts": 18,
+   "n_medium": 18,
+   "n_deloc": 1,
+   "n_heavy": 8
+  },
+  "chlorobenzene": {
+   "smiles": "Clc1ccccc1",
+   "label": "translated",
+   "phi": 0.708333333333,
+   "n_atoms": 12,
+   "n_contacts": 12,
+   "n_medium": 12,
+   "n_deloc": 1,
+   "n_heavy": 7
+  },
+  "nitro-like": {
+   "smiles": "Cc1ccc(cc1)C(=O)O",
+   "label": "translated",
+   "phi": 0.694444444444,
+   "n_atoms": 18,
+   "n_contacts": 18,
+   "n_medium": 18,
+   "n_deloc": 1,
+   "n_heavy": 10
+  },
+  "phenylalanine": {
+   "smiles": "NC(Cc1ccccc1)C(=O)O",
+   "label": "translated",
+   "phi": 0.717391304348,
+   "n_atoms": 23,
+   "n_contacts": 23,
+   "n_medium": 23,
+   "n_deloc": 1,
+   "n_heavy": 12
+  },
+  "tyrosine": {
+   "smiles": "NC(Cc1ccc(O)cc1)C(=O)O",
+   "label": "translated",
+   "phi": 0.708333333333,
+   "n_atoms": 24,
+   "n_contacts": 24,
+   "n_medium": 24,
+   "n_deloc": 1,
+   "n_heavy": 13
+  },
+  "glycine": {
+   "smiles": "NCC(=O)O",
+   "label": "translated",
+   "phi": 0.684210526316,
+   "n_atoms": 10,
+   "n_contacts": 9,
+   "n_medium": 10,
+   "n_deloc": 0,
+   "n_heavy": 5
+  },
+  "alanine": {
+   "smiles": "CC(N)C(=O)O",
+   "label": "translated",
+   "phi": 0.72,
+   "n_atoms": 13,
+   "n_contacts": 12,
+   "n_medium": 13,
+   "n_deloc": 0,
+   "n_heavy": 6
+  },
+  "serine": {
+   "smiles": "OCC(N)C(=O)O",
+   "label": "translated",
+   "phi": 0.703703703704,
+   "n_atoms": 14,
+   "n_contacts": 13,
+   "n_medium": 14,
+   "n_deloc": 0,
+   "n_heavy": 7
+  },
+  "valine": {
+   "smiles": "CC(C)C(N)C(=O)O",
+   "label": "translated",
+   "phi": 0.756756756757,
+   "n_atoms": 19,
+   "n_contacts": 18,
+   "n_medium": 19,
+   "n_deloc": 0,
+   "n_heavy": 8
+  },
+  "propanol": {
+   "smiles": "CCCO",
+   "label": "translated",
+   "phi": 0.826086956522,
+   "n_atoms": 12,
+   "n_contacts": 11,
+   "n_medium": 12,
+   "n_deloc": 0,
+   "n_heavy": 4
+  },
+  "butanol": {
+   "smiles": "CCCCO",
+   "label": "translated",
+   "phi": 0.827586206897,
+   "n_atoms": 15,
+   "n_contacts": 14,
+   "n_medium": 15,
+   "n_deloc": 0,
+   "n_heavy": 5
+  },
+  "benzene": {
+   "smiles": "c1ccccc1",
+   "label": "translated",
+   "phi": 0.75,
+   "n_atoms": 12,
+   "n_contacts": 12,
+   "n_medium": 12,
+   "n_deloc": 1,
+   "n_heavy": 6
+  },
+  "cyclohexane": {
+   "smiles": "C1CCCCC1",
+   "label": "translated",
+   "phi": 0.833333333333,
+   "n_atoms": 18,
+   "n_contacts": 18,
+   "n_medium": 18,
+   "n_deloc": 0,
+   "n_heavy": 6
+  },
+  "ethane": {
+   "smiles": "CC",
+   "label": "translated",
+   "phi": 0.866666666667,
+   "n_atoms": 8,
+   "n_contacts": 7,
+   "n_medium": 8,
+   "n_deloc": 0,
+   "n_heavy": 2
+  },
+  "naphthalene": {
+   "smiles": "c1ccc2ccccc2c1",
+   "label": "translated",
+   "phi": 0.72972972973,
+   "n_atoms": 18,
+   "n_contacts": 19,
+   "n_medium": 18,
+   "n_deloc": 1,
+   "n_heavy": 10
+  },
+  "anthracene": {
+   "smiles": "c1ccc2cc3ccccc3cc2c1",
+   "label": "translated",
+   "phi": 0.72,
+   "n_atoms": 24,
+   "n_contacts": 26,
+   "n_medium": 24,
+   "n_deloc": 1,
+   "n_heavy": 14
+  },
+  "biphenyl": {
+   "smiles": "c1ccc(cc1)c1ccccc1",
+   "label": "translated",
+   "phi": 0.733333333333,
+   "n_atoms": 22,
+   "n_contacts": 23,
+   "n_medium": 22,
+   "n_deloc": 1,
+   "n_heavy": 12
+  },
+  "p-xylene": {
+   "smiles": "Cc1ccc(C)cc1",
+   "label": "translated",
+   "phi": 0.777777777778,
+   "n_atoms": 18,
+   "n_contacts": 18,
+   "n_medium": 18,
+   "n_deloc": 1,
+   "n_heavy": 8
+  },
+  "propane": {
+   "smiles": "CCC",
+   "label": "translated",
+   "phi": 0.857142857143,
+   "n_atoms": 11,
+   "n_contacts": 10,
+   "n_medium": 11,
+   "n_deloc": 0,
+   "n_heavy": 3
+  },
+  "neopentane": {
+   "smiles": "CC(C)(C)C",
+   "label": "translated",
+   "phi": 0.848484848485,
+   "n_atoms": 17,
+   "n_contacts": 16,
+   "n_medium": 17,
+   "n_deloc": 0,
+   "n_heavy": 5
+  },
+  "pyrazine": {
+   "smiles": "c1cnccn1",
+   "label": "translated",
+   "phi": 0.7,
+   "n_atoms": 10,
+   "n_contacts": 10,
+   "n_medium": 10,
+   "n_deloc": 1,
+   "n_heavy": 6
+  },
+  "pyridine": {
+   "smiles": "c1ccncc1",
+   "label": "translated",
+   "phi": 0.727272727273,
+   "n_atoms": 11,
+   "n_contacts": 11,
+   "n_medium": 11,
+   "n_deloc": 1,
+   "n_heavy": 6
+  },
+  "toluene": {
+   "smiles": "Cc1ccccc1",
+   "label": "translated",
+   "phi": 0.766666666667,
+   "n_atoms": 15,
+   "n_contacts": 15,
+   "n_medium": 15,
+   "n_deloc": 1,
+   "n_heavy": 7
+  },
+  "water-like": {
+   "smiles": "O",
+   "label": "translated",
+   "phi": 0.8,
+   "n_atoms": 3,
+   "n_contacts": 2,
+   "n_medium": 3,
+   "n_deloc": 0,
+   "n_heavy": 1
+  },
+  "methane": {
+   "smiles": "C",
+   "label": "translated",
+   "phi": 0.888888888889,
+   "n_atoms": 5,
+   "n_contacts": 4,
+   "n_medium": 5,
+   "n_deloc": 0,
+   "n_heavy": 1
+  },
+  "ethylene": {
+   "smiles": "C=C",
+   "label": "translated",
+   "phi": 0.727272727273,
+   "n_atoms": 6,
+   "n_contacts": 5,
+   "n_medium": 6,
+   "n_deloc": 0,
+   "n_heavy": 2
+  },
+  "acetylene": {
+   "smiles": "C#C",
+   "label": "translated",
+   "phi": 0.571428571429,
+   "n_atoms": 4,
+   "n_contacts": 3,
+   "n_medium": 4,
+   "n_deloc": 0,
+   "n_heavy": 2
+  },
+  "p-benzoquinone": {
+   "smiles": "O=C1C=CC(=O)C=C1",
+   "label": "translated",
+   "phi": 0.5,
+   "n_atoms": 12,
+   "n_contacts": 12,
+   "n_medium": 12,
+   "n_deloc": 0,
+   "n_heavy": 8
+  },
+  "durene": {
+   "smiles": "Cc1cc(C)c(C)cc1C",
+   "label": "translated",
+   "phi": 0.791666666667,
+   "n_atoms": 24,
+   "n_contacts": 24,
+   "n_medium": 24,
+   "n_deloc": 1,
+   "n_heavy": 10
+  }
+ },
+ "probes": {
+  "empty": {
+   "smiles": "",
+   "label": "empty",
+   "phi": null
+  },
+  "blank": {
+   "smiles": "   ",
+   "label": "empty",
+   "phi": null
+  },
+  "malformed": {
+   "smiles": "C(((",
+   "label": "malformed",
+   "phi": null
+  },
+  "outside-subset": {
+   "smiles": "Zz",
+   "label": "malformed",
+   "phi": null
+  },
+  "bracket": {
+   "smiles": "[NH4+]",
+   "label": "translated",
+   "phi": 0.0
+  },
+  "isotope": {
+   "smiles": "[13CH4]",
+   "label": "translated",
+   "phi": 0.0
+  },
+  "charge": {
+   "smiles": "CC(=O)[O-]",
+   "label": "translated",
+   "phi": 0.615384615385
+  },
+  "stereo": {
+   "smiles": "F/C=C/F",
+   "label": "translated",
+   "phi": 0.363636363636
+  },
+  "ring": {
+   "smiles": "c1ccccc1",
+   "label": "translated",
+   "phi": 0.75
+  },
+  "fused": {
+   "smiles": "c1ccc2ccccc2c1",
+   "label": "translated",
+   "phi": 0.72972972973
+  },
+  "triple": {
+   "smiles": "C#N",
+   "label": "translated",
+   "phi": 0.4
+  },
+  "disconnect": {
+   "smiles": "CC.O",
+   "label": "translated",
+   "phi": 0.85
+  },
+  "branch": {
+   "smiles": "CC(C)(C)C",
+   "label": "translated",
+   "phi": 0.848484848485
+  },
+  "stereo-required": {
+   "smiles": "F/C=C/F",
+   "label": "unsupported",
+   "phi": null
+  }
+ }
+}

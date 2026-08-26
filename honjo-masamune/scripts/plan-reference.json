@@ -1,0 +1,3461 @@
+{
+ "files": {
+  "compounds.smi": [
+   {
+    "name": "ethanol",
+    "text": "CCO"
+   },
+   {
+    "name": "carbon-dioxide",
+    "text": "O=C=O"
+   },
+   {
+    "name": "benzene",
+    "text": "c1ccccc1"
+   },
+   {
+    "name": "ethanol-explicit",
+    "text": "[CH3][CH2][OH]"
+   },
+   {
+    "name": "acetic-acid",
+    "text": "CC(=O)O"
+   },
+   {
+    "name": "ammonia",
+    "text": "N"
+   },
+   {
+    "name": "ammonia-explicit",
+    "text": "[NH3]"
+   }
+  ],
+  "one.smi": [
+   {
+    "name": "ethanol",
+    "text": "CCO"
+   }
+  ],
+  "stated.smi": [
+   {
+    "name": "co2",
+    "text": "O=C=O"
+   }
+  ]
+ },
+ "cases": {
+  "audit": {
+   "source": "-- audit.ms : how much of this corpus is record, and how much convention?\nplan provenance_audit {\n  source lib : smiles at \"compounds.smi\"\n  budget 100 records\n\n  let raw  := read lib\n  let mols := translate raw\n                require element, connectivity, cellcount\n                expect supplied < 0.25\n                else report\n\n  let core := select mols where supplied == 0.0\n\n  assert core.count > 1  emit \"too few fully-stated structures\"\n  emit core with provenance\n}\n",
+   "plan": "provenance_audit",
+   "status": "ok",
+   "budget": 100,
+   "records_read": 7,
+   "sources": {
+    "lib": {
+     "format": "smiles",
+     "path": "compounds.smi"
+    }
+   },
+   "steps": [
+    {
+     "step": "read",
+     "line": 6,
+     "target": "raw",
+     "count": 7
+    },
+    {
+     "step": "translate",
+     "line": 7,
+     "target": "mols",
+     "require": [
+      "cellcount",
+      "connectivity",
+      "element"
+     ],
+     "tally": {
+      "incomplete": 4,
+      "translated": 3
+     }
+    },
+    {
+     "step": "select",
+     "line": 12,
+     "target": "core",
+     "kept": 2,
+     "dropped": 5,
+     "condition": {
+      "lhs": "supplied",
+      "op": "==",
+      "rhs": 0.0
+     }
+    },
+    {
+     "step": "assert",
+     "line": 14,
+     "condition": {
+      "lhs": "core.count",
+      "op": ">",
+      "rhs": 1.0
+     },
+     "observed": 2,
+     "passed": true
+    },
+    {
+     "step": "emit",
+     "line": 15,
+     "name": "core",
+     "emitted": [
+      {
+       "record": "carbon-dioxide",
+       "verdict": "translated",
+       "payload": {
+        "supplied_fraction": 0.0
+       },
+       "value": {
+        "floor": 1.0,
+        "atoms": [
+         {
+          "key": "a0",
+          "z": 8,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "key": "a1",
+          "z": 6,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "key": "a2",
+          "z": 8,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "stated",
+          "convention": null
+         }
+        ],
+        "contacts": [
+         {
+          "u": "a0",
+          "v": "a1",
+          "weight": 2.0,
+          "cells": 2,
+          "deloc_id": null,
+          "medium_edge": false,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "u": "a1",
+          "v": "a2",
+          "weight": 2.0,
+          "cells": 2,
+          "deloc_id": null,
+          "medium_edge": false,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "u": "a0",
+          "v": "__medium__",
+          "weight": 3.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a1",
+          "v": "__medium__",
+          "weight": 2.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a2",
+          "v": "__medium__",
+          "weight": 3.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         }
+        ],
+        "delocalised_systems": [],
+        "provenance": "stated",
+        "supplied_fraction": 0.0,
+        "conventions_used": [
+         "medium-residual"
+        ],
+        "meta": {
+         "source": "carbon-dioxide",
+         "source_format": "smiles",
+         "input": "O=C=O"
+        }
+       }
+      },
+      {
+       "record": "ammonia-explicit",
+       "verdict": "translated",
+       "payload": {
+        "supplied_fraction": 0.0
+       },
+       "value": {
+        "floor": 1.0,
+        "atoms": [
+         {
+          "key": "a0",
+          "z": 7,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "key": "a1",
+          "z": 1,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "key": "a2",
+          "z": 1,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "key": "a3",
+          "z": 1,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "stated",
+          "convention": null
+         }
+        ],
+        "contacts": [
+         {
+          "u": "a0",
+          "v": "a1",
+          "weight": 1.0,
+          "cells": 1,
+          "deloc_id": null,
+          "medium_edge": false,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "u": "a0",
+          "v": "a2",
+          "weight": 1.0,
+          "cells": 1,
+          "deloc_id": null,
+          "medium_edge": false,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "u": "a0",
+          "v": "a3",
+          "weight": 1.0,
+          "cells": 1,
+          "deloc_id": null,
+          "medium_edge": false,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "u": "a0",
+          "v": "__medium__",
+          "weight": 2.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a1",
+          "v": "__medium__",
+          "weight": 1.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a2",
+          "v": "__medium__",
+          "weight": 1.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a3",
+          "v": "__medium__",
+          "weight": 1.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         }
+        ],
+        "delocalised_systems": [],
+        "provenance": "stated",
+        "supplied_fraction": 0.0,
+        "conventions_used": [
+         "medium-residual"
+        ],
+        "meta": {
+         "source": "ammonia-explicit",
+         "source_format": "smiles",
+         "input": "[NH3]"
+        }
+       }
+      }
+     ]
+    }
+   ],
+   "log": [
+    {
+     "level": "report",
+     "step_line": 7,
+     "message": "4 record(s) did not translate"
+    }
+   ]
+  },
+  "basic": {
+   "source": "plan basic {\n  source lib : smiles at \"compounds.smi\"\n  let raw := read lib\n  let mols := translate raw require element, connectivity else report\n  emit mols with provenance\n}",
+   "plan": "basic",
+   "status": "ok",
+   "budget": null,
+   "records_read": 7,
+   "sources": {
+    "lib": {
+     "format": "smiles",
+     "path": "compounds.smi"
+    }
+   },
+   "steps": [
+    {
+     "step": "read",
+     "line": 3,
+     "target": "raw",
+     "count": 7
+    },
+    {
+     "step": "translate",
+     "line": 4,
+     "target": "mols",
+     "require": [
+      "connectivity",
+      "element"
+     ],
+     "tally": {
+      "translated": 7
+     }
+    },
+    {
+     "step": "emit",
+     "line": 5,
+     "name": "mols",
+     "emitted": [
+      {
+       "record": "ethanol",
+       "verdict": "translated",
+       "payload": {
+        "supplied_fraction": 0.823529
+       },
+       "value": {
+        "floor": 1.0,
+        "atoms": [
+         {
+          "key": "a0",
+          "z": 6,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "key": "a1",
+          "z": 6,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "key": "a2",
+          "z": 8,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "key": "a3",
+          "z": 1,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "supplied",
+          "convention": "smiles:organic-subset-implicit-hydrogen"
+         },
+         {
+          "key": "a4",
+          "z": 1,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "supplied",
+          "convention": "smiles:organic-subset-implicit-hydrogen"
+         },
+         {
+          "key": "a5",
+          "z": 1,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "supplied",
+          "convention": "smiles:organic-subset-implicit-hydrogen"
+         },
+         {
+          "key": "a6",
+          "z": 1,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "supplied",
+          "convention": "smiles:organic-subset-implicit-hydrogen"
+         },
+         {
+          "key": "a7",
+          "z": 1,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "supplied",
+          "convention": "smiles:organic-subset-implicit-hydrogen"
+         },
+         {
+          "key": "a8",
+          "z": 1,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "supplied",
+          "convention": "smiles:organic-subset-implicit-hydrogen"
+         }
+        ],
+        "contacts": [
+         {
+          "u": "a0",
+          "v": "a1",
+          "weight": 1.0,
+          "cells": 1,
+          "deloc_id": null,
+          "medium_edge": false,
+          "provenance": "supplied",
+          "convention": "smiles:adjacent-atoms-single-bond"
+         },
+         {
+          "u": "a1",
+          "v": "a2",
+          "weight": 1.0,
+          "cells": 1,
+          "deloc_id": null,
+          "medium_edge": false,
+          "provenance": "supplied",
+          "convention": "smiles:adjacent-atoms-single-bond"
+         },
+         {
+          "u": "a0",
+          "v": "a3",
+          "weight": 1.0,
+          "cells": 1,
+          "deloc_id": null,
+          "medium_edge": false,
+          "provenance": "supplied",
+          "convention": "smiles:organic-subset-implicit-hydrogen"
+         },
+         {
+          "u": "a0",
+          "v": "a4",
+          "weight": 1.0,
+          "cells": 1,
+          "deloc_id": null,
+          "medium_edge": false,
+          "provenance": "supplied",
+          "convention": "smiles:organic-subset-implicit-hydrogen"
+         },
+         {
+          "u": "a0",
+          "v": "a5",
+          "weight": 1.0,
+          "cells": 1,
+          "deloc_id": null,
+          "medium_edge": false,
+          "provenance": "supplied",
+          "convention": "smiles:organic-subset-implicit-hydrogen"
+         },
+         {
+          "u": "a1",
+          "v": "a6",
+          "weight": 1.0,
+          "cells": 1,
+          "deloc_id": null,
+          "medium_edge": false,
+          "provenance": "supplied",
+          "convention": "smiles:organic-subset-implicit-hydrogen"
+         },
+         {
+          "u": "a1",
+          "v": "a7",
+          "weight": 1.0,
+          "cells": 1,
+          "deloc_id": null,
+          "medium_edge": false,
+          "provenance": "supplied",
+          "convention": "smiles:organic-subset-implicit-hydrogen"
+         },
+         {
+          "u": "a2",
+          "v": "a8",
+          "weight": 1.0,
+          "cells": 1,
+          "deloc_id": null,
+          "medium_edge": false,
+          "provenance": "supplied",
+          "convention": "smiles:organic-subset-implicit-hydrogen"
+         },
+         {
+          "u": "a0",
+          "v": "__medium__",
+          "weight": 2.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a1",
+          "v": "__medium__",
+          "weight": 2.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a2",
+          "v": "__medium__",
+          "weight": 3.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a3",
+          "v": "__medium__",
+          "weight": 1.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a4",
+          "v": "__medium__",
+          "weight": 1.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a5",
+          "v": "__medium__",
+          "weight": 1.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a6",
+          "v": "__medium__",
+          "weight": 1.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a7",
+          "v": "__medium__",
+          "weight": 1.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a8",
+          "v": "__medium__",
+          "weight": 1.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         }
+        ],
+        "delocalised_systems": [],
+        "provenance": "supplied",
+        "supplied_fraction": 0.823529,
+        "conventions_used": [
+         "medium-residual",
+         "smiles:adjacent-atoms-single-bond",
+         "smiles:organic-subset-implicit-hydrogen"
+        ],
+        "meta": {
+         "source": "ethanol",
+         "source_format": "smiles",
+         "input": "CCO"
+        }
+       }
+      },
+      {
+       "record": "carbon-dioxide",
+       "verdict": "translated",
+       "payload": {
+        "supplied_fraction": 0.0
+       },
+       "value": {
+        "floor": 1.0,
+        "atoms": [
+         {
+          "key": "a0",
+          "z": 8,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "key": "a1",
+          "z": 6,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "key": "a2",
+          "z": 8,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "stated",
+          "convention": null
+         }
+        ],
+        "contacts": [
+         {
+          "u": "a0",
+          "v": "a1",
+          "weight": 2.0,
+          "cells": 2,
+          "deloc_id": null,
+          "medium_edge": false,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "u": "a1",
+          "v": "a2",
+          "weight": 2.0,
+          "cells": 2,
+          "deloc_id": null,
+          "medium_edge": false,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "u": "a0",
+          "v": "__medium__",
+          "weight": 3.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a1",
+          "v": "__medium__",
+          "weight": 2.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a2",
+          "v": "__medium__",
+          "weight": 3.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         }
+        ],
+        "delocalised_systems": [],
+        "provenance": "stated",
+        "supplied_fraction": 0.0,
+        "conventions_used": [
+         "medium-residual"
+        ],
+        "meta": {
+         "source": "carbon-dioxide",
+         "source_format": "smiles",
+         "input": "O=C=O"
+        }
+       }
+      },
+      {
+       "record": "benzene",
+       "verdict": "translated",
+       "payload": {
+        "supplied_fraction": 0.75
+       },
+       "value": {
+        "floor": 1.0,
+        "atoms": [
+         {
+          "key": "a0",
+          "z": 6,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "key": "a1",
+          "z": 6,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "key": "a2",
+          "z": 6,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "key": "a3",
+          "z": 6,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "key": "a4",
+          "z": 6,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "key": "a5",
+          "z": 6,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "key": "a6",
+          "z": 1,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "supplied",
+          "convention": "smiles:organic-subset-implicit-hydrogen"
+         },
+         {
+          "key": "a7",
+          "z": 1,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "supplied",
+          "convention": "smiles:organic-subset-implicit-hydrogen"
+         },
+         {
+          "key": "a8",
+          "z": 1,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "supplied",
+          "convention": "smiles:organic-subset-implicit-hydrogen"
+         },
+         {
+          "key": "a9",
+          "z": 1,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "supplied",
+          "convention": "smiles:organic-subset-implicit-hydrogen"
+         },
+         {
+          "key": "a10",
+          "z": 1,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "supplied",
+          "convention": "smiles:organic-subset-implicit-hydrogen"
+         },
+         {
+          "key": "a11",
+          "z": 1,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "supplied",
+          "convention": "smiles:organic-subset-implicit-hydrogen"
+         }
+        ],
+        "contacts": [
+         {
+          "u": "a0",
+          "v": "a1",
+          "weight": 1.0,
+          "cells": 1,
+          "deloc_id": 0,
+          "medium_edge": false,
+          "provenance": "supplied",
+          "convention": "smiles:aromatic-lowercase-delocalised"
+         },
+         {
+          "u": "a1",
+          "v": "a2",
+          "weight": 1.0,
+          "cells": 1,
+          "deloc_id": 0,
+          "medium_edge": false,
+          "provenance": "supplied",
+          "convention": "smiles:aromatic-lowercase-delocalised"
+         },
+         {
+          "u": "a2",
+          "v": "a3",
+          "weight": 1.0,
+          "cells": 1,
+          "deloc_id": 0,
+          "medium_edge": false,
+          "provenance": "supplied",
+          "convention": "smiles:aromatic-lowercase-delocalised"
+         },
+         {
+          "u": "a3",
+          "v": "a4",
+          "weight": 1.0,
+          "cells": 1,
+          "deloc_id": 0,
+          "medium_edge": false,
+          "provenance": "supplied",
+          "convention": "smiles:aromatic-lowercase-delocalised"
+         },
+         {
+          "u": "a4",
+          "v": "a5",
+          "weight": 1.0,
+          "cells": 1,
+          "deloc_id": 0,
+          "medium_edge": false,
+          "provenance": "supplied",
+          "convention": "smiles:aromatic-lowercase-delocalised"
+         },
+         {
+          "u": "a0",
+          "v": "a5",
+          "weight": 1.0,
+          "cells": 1,
+          "deloc_id": 0,
+          "medium_edge": false,
+          "provenance": "supplied",
+          "convention": "smiles:aromatic-lowercase-delocalised"
+         },
+         {
+          "u": "a0",
+          "v": "a6",
+          "weight": 1.0,
+          "cells": 1,
+          "deloc_id": null,
+          "medium_edge": false,
+          "provenance": "supplied",
+          "convention": "smiles:organic-subset-implicit-hydrogen"
+         },
+         {
+          "u": "a1",
+          "v": "a7",
+          "weight": 1.0,
+          "cells": 1,
+          "deloc_id": null,
+          "medium_edge": false,
+          "provenance": "supplied",
+          "convention": "smiles:organic-subset-implicit-hydrogen"
+         },
+         {
+          "u": "a2",
+          "v": "a8",
+          "weight": 1.0,
+          "cells": 1,
+          "deloc_id": null,
+          "medium_edge": false,
+          "provenance": "supplied",
+          "convention": "smiles:organic-subset-implicit-hydrogen"
+         },
+         {
+          "u": "a3",
+          "v": "a9",
+          "weight": 1.0,
+          "cells": 1,
+          "deloc_id": null,
+          "medium_edge": false,
+          "provenance": "supplied",
+          "convention": "smiles:organic-subset-implicit-hydrogen"
+         },
+         {
+          "u": "a4",
+          "v": "a10",
+          "weight": 1.0,
+          "cells": 1,
+          "deloc_id": null,
+          "medium_edge": false,
+          "provenance": "supplied",
+          "convention": "smiles:organic-subset-implicit-hydrogen"
+         },
+         {
+          "u": "a5",
+          "v": "a11",
+          "weight": 1.0,
+          "cells": 1,
+          "deloc_id": null,
+          "medium_edge": false,
+          "provenance": "supplied",
+          "convention": "smiles:organic-subset-implicit-hydrogen"
+         },
+         {
+          "u": "a0",
+          "v": "__medium__",
+          "weight": 2.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a1",
+          "v": "__medium__",
+          "weight": 2.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a2",
+          "v": "__medium__",
+          "weight": 2.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a3",
+          "v": "__medium__",
+          "weight": 2.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a4",
+          "v": "__medium__",
+          "weight": 2.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a5",
+          "v": "__medium__",
+          "weight": 2.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a6",
+          "v": "__medium__",
+          "weight": 1.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a7",
+          "v": "__medium__",
+          "weight": 1.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a8",
+          "v": "__medium__",
+          "weight": 1.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a9",
+          "v": "__medium__",
+          "weight": 1.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a10",
+          "v": "__medium__",
+          "weight": 1.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a11",
+          "v": "__medium__",
+          "weight": 1.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         }
+        ],
+        "delocalised_systems": [
+         {
+          "id": 0,
+          "members": [
+           "a0",
+           "a1",
+           "a2",
+           "a3",
+           "a4",
+           "a5"
+          ],
+          "sigma_cells": 6,
+          "delocalised_cells": 3,
+          "total_cells": 9,
+          "provenance": "supplied",
+          "convention": "smiles:aromatic-lowercase-delocalised",
+          "per_bond_cells": null
+         }
+        ],
+        "provenance": "supplied",
+        "supplied_fraction": 0.75,
+        "conventions_used": [
+         "medium-residual",
+         "smiles:aromatic-lowercase-delocalised",
+         "smiles:organic-subset-implicit-hydrogen"
+        ],
+        "meta": {
+         "source": "benzene",
+         "source_format": "smiles",
+         "input": "c1ccccc1"
+        }
+       }
+      },
+      {
+       "record": "ethanol-explicit",
+       "verdict": "translated",
+       "payload": {
+        "supplied_fraction": 0.117647
+       },
+       "value": {
+        "floor": 1.0,
+        "atoms": [
+         {
+          "key": "a0",
+          "z": 6,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "key": "a1",
+          "z": 6,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "key": "a2",
+          "z": 8,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "key": "a3",
+          "z": 1,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "key": "a4",
+          "z": 1,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "key": "a5",
+          "z": 1,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "key": "a6",
+          "z": 1,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "key": "a7",
+          "z": 1,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "key": "a8",
+          "z": 1,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "stated",
+          "convention": null
+         }
+        ],
+        "contacts": [
+         {
+          "u": "a0",
+          "v": "a1",
+          "weight": 1.0,
+          "cells": 1,
+          "deloc_id": null,
+          "medium_edge": false,
+          "provenance": "supplied",
+          "convention": "smiles:adjacent-atoms-single-bond"
+         },
+         {
+          "u": "a1",
+          "v": "a2",
+          "weight": 1.0,
+          "cells": 1,
+          "deloc_id": null,
+          "medium_edge": false,
+          "provenance": "supplied",
+          "convention": "smiles:adjacent-atoms-single-bond"
+         },
+         {
+          "u": "a0",
+          "v": "a3",
+          "weight": 1.0,
+          "cells": 1,
+          "deloc_id": null,
+          "medium_edge": false,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "u": "a0",
+          "v": "a4",
+          "weight": 1.0,
+          "cells": 1,
+          "deloc_id": null,
+          "medium_edge": false,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "u": "a0",
+          "v": "a5",
+          "weight": 1.0,
+          "cells": 1,
+          "deloc_id": null,
+          "medium_edge": false,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "u": "a1",
+          "v": "a6",
+          "weight": 1.0,
+          "cells": 1,
+          "deloc_id": null,
+          "medium_edge": false,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "u": "a1",
+          "v": "a7",
+          "weight": 1.0,
+          "cells": 1,
+          "deloc_id": null,
+          "medium_edge": false,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "u": "a2",
+          "v": "a8",
+          "weight": 1.0,
+          "cells": 1,
+          "deloc_id": null,
+          "medium_edge": false,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "u": "a0",
+          "v": "__medium__",
+          "weight": 2.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a1",
+          "v": "__medium__",
+          "weight": 2.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a2",
+          "v": "__medium__",
+          "weight": 3.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a3",
+          "v": "__medium__",
+          "weight": 1.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a4",
+          "v": "__medium__",
+          "weight": 1.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a5",
+          "v": "__medium__",
+          "weight": 1.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a6",
+          "v": "__medium__",
+          "weight": 1.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a7",
+          "v": "__medium__",
+          "weight": 1.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a8",
+          "v": "__medium__",
+          "weight": 1.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         }
+        ],
+        "delocalised_systems": [],
+        "provenance": "supplied",
+        "supplied_fraction": 0.117647,
+        "conventions_used": [
+         "medium-residual",
+         "smiles:adjacent-atoms-single-bond"
+        ],
+        "meta": {
+         "source": "ethanol-explicit",
+         "source_format": "smiles",
+         "input": "[CH3][CH2][OH]"
+        }
+       }
+      },
+      {
+       "record": "acetic-acid",
+       "verdict": "translated",
+       "payload": {
+        "supplied_fraction": 0.666667
+       },
+       "value": {
+        "floor": 1.0,
+        "atoms": [
+         {
+          "key": "a0",
+          "z": 6,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "key": "a1",
+          "z": 6,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "key": "a2",
+          "z": 8,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "key": "a3",
+          "z": 8,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "key": "a4",
+          "z": 1,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "supplied",
+          "convention": "smiles:organic-subset-implicit-hydrogen"
+         },
+         {
+          "key": "a5",
+          "z": 1,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "supplied",
+          "convention": "smiles:organic-subset-implicit-hydrogen"
+         },
+         {
+          "key": "a6",
+          "z": 1,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "supplied",
+          "convention": "smiles:organic-subset-implicit-hydrogen"
+         },
+         {
+          "key": "a7",
+          "z": 1,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "supplied",
+          "convention": "smiles:organic-subset-implicit-hydrogen"
+         }
+        ],
+        "contacts": [
+         {
+          "u": "a0",
+          "v": "a1",
+          "weight": 1.0,
+          "cells": 1,
+          "deloc_id": null,
+          "medium_edge": false,
+          "provenance": "supplied",
+          "convention": "smiles:adjacent-atoms-single-bond"
+         },
+         {
+          "u": "a1",
+          "v": "a2",
+          "weight": 2.0,
+          "cells": 2,
+          "deloc_id": null,
+          "medium_edge": false,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "u": "a1",
+          "v": "a3",
+          "weight": 1.0,
+          "cells": 1,
+          "deloc_id": null,
+          "medium_edge": false,
+          "provenance": "supplied",
+          "convention": "smiles:adjacent-atoms-single-bond"
+         },
+         {
+          "u": "a0",
+          "v": "a4",
+          "weight": 1.0,
+          "cells": 1,
+          "deloc_id": null,
+          "medium_edge": false,
+          "provenance": "supplied",
+          "convention": "smiles:organic-subset-implicit-hydrogen"
+         },
+         {
+          "u": "a0",
+          "v": "a5",
+          "weight": 1.0,
+          "cells": 1,
+          "deloc_id": null,
+          "medium_edge": false,
+          "provenance": "supplied",
+          "convention": "smiles:organic-subset-implicit-hydrogen"
+         },
+         {
+          "u": "a0",
+          "v": "a6",
+          "weight": 1.0,
+          "cells": 1,
+          "deloc_id": null,
+          "medium_edge": false,
+          "provenance": "supplied",
+          "convention": "smiles:organic-subset-implicit-hydrogen"
+         },
+         {
+          "u": "a3",
+          "v": "a7",
+          "weight": 1.0,
+          "cells": 1,
+          "deloc_id": null,
+          "medium_edge": false,
+          "provenance": "supplied",
+          "convention": "smiles:organic-subset-implicit-hydrogen"
+         },
+         {
+          "u": "a0",
+          "v": "__medium__",
+          "weight": 2.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a1",
+          "v": "__medium__",
+          "weight": 2.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a2",
+          "v": "__medium__",
+          "weight": 3.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a3",
+          "v": "__medium__",
+          "weight": 3.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a4",
+          "v": "__medium__",
+          "weight": 1.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a5",
+          "v": "__medium__",
+          "weight": 1.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a6",
+          "v": "__medium__",
+          "weight": 1.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a7",
+          "v": "__medium__",
+          "weight": 1.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         }
+        ],
+        "delocalised_systems": [],
+        "provenance": "supplied",
+        "supplied_fraction": 0.666667,
+        "conventions_used": [
+         "medium-residual",
+         "smiles:adjacent-atoms-single-bond",
+         "smiles:organic-subset-implicit-hydrogen"
+        ],
+        "meta": {
+         "source": "acetic-acid",
+         "source_format": "smiles",
+         "input": "CC(=O)O"
+        }
+       }
+      },
+      {
+       "record": "ammonia",
+       "verdict": "translated",
+       "payload": {
+        "supplied_fraction": 0.857143
+       },
+       "value": {
+        "floor": 1.0,
+        "atoms": [
+         {
+          "key": "a0",
+          "z": 7,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "key": "a1",
+          "z": 1,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "supplied",
+          "convention": "smiles:organic-subset-implicit-hydrogen"
+         },
+         {
+          "key": "a2",
+          "z": 1,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "supplied",
+          "convention": "smiles:organic-subset-implicit-hydrogen"
+         },
+         {
+          "key": "a3",
+          "z": 1,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "supplied",
+          "convention": "smiles:organic-subset-implicit-hydrogen"
+         }
+        ],
+        "contacts": [
+         {
+          "u": "a0",
+          "v": "a1",
+          "weight": 1.0,
+          "cells": 1,
+          "deloc_id": null,
+          "medium_edge": false,
+          "provenance": "supplied",
+          "convention": "smiles:organic-subset-implicit-hydrogen"
+         },
+         {
+          "u": "a0",
+          "v": "a2",
+          "weight": 1.0,
+          "cells": 1,
+          "deloc_id": null,
+          "medium_edge": false,
+          "provenance": "supplied",
+          "convention": "smiles:organic-subset-implicit-hydrogen"
+         },
+         {
+          "u": "a0",
+          "v": "a3",
+          "weight": 1.0,
+          "cells": 1,
+          "deloc_id": null,
+          "medium_edge": false,
+          "provenance": "supplied",
+          "convention": "smiles:organic-subset-implicit-hydrogen"
+         },
+         {
+          "u": "a0",
+          "v": "__medium__",
+          "weight": 2.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a1",
+          "v": "__medium__",
+          "weight": 1.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a2",
+          "v": "__medium__",
+          "weight": 1.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a3",
+          "v": "__medium__",
+          "weight": 1.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         }
+        ],
+        "delocalised_systems": [],
+        "provenance": "supplied",
+        "supplied_fraction": 0.857143,
+        "conventions_used": [
+         "medium-residual",
+         "smiles:organic-subset-implicit-hydrogen"
+        ],
+        "meta": {
+         "source": "ammonia",
+         "source_format": "smiles",
+         "input": "N"
+        }
+       }
+      },
+      {
+       "record": "ammonia-explicit",
+       "verdict": "translated",
+       "payload": {
+        "supplied_fraction": 0.0
+       },
+       "value": {
+        "floor": 1.0,
+        "atoms": [
+         {
+          "key": "a0",
+          "z": 7,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "key": "a1",
+          "z": 1,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "key": "a2",
+          "z": 1,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "key": "a3",
+          "z": 1,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "stated",
+          "convention": null
+         }
+        ],
+        "contacts": [
+         {
+          "u": "a0",
+          "v": "a1",
+          "weight": 1.0,
+          "cells": 1,
+          "deloc_id": null,
+          "medium_edge": false,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "u": "a0",
+          "v": "a2",
+          "weight": 1.0,
+          "cells": 1,
+          "deloc_id": null,
+          "medium_edge": false,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "u": "a0",
+          "v": "a3",
+          "weight": 1.0,
+          "cells": 1,
+          "deloc_id": null,
+          "medium_edge": false,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "u": "a0",
+          "v": "__medium__",
+          "weight": 2.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a1",
+          "v": "__medium__",
+          "weight": 1.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a2",
+          "v": "__medium__",
+          "weight": 1.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a3",
+          "v": "__medium__",
+          "weight": 1.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         }
+        ],
+        "delocalised_systems": [],
+        "provenance": "stated",
+        "supplied_fraction": 0.0,
+        "conventions_used": [
+         "medium-residual"
+        ],
+        "meta": {
+         "source": "ammonia-explicit",
+         "source_format": "smiles",
+         "input": "[NH3]"
+        }
+       }
+      }
+     ]
+    }
+   ],
+   "log": []
+  },
+  "refused": {
+   "source": "plan needs_geometry {\n  source lib : smiles at \"compounds.smi\"\n  let raw := read lib\n  let mols := translate raw require element, connectivity, coords3d else refuse\n  emit mols\n}",
+   "plan": "needs_geometry",
+   "status": "refused",
+   "refusal": {
+    "reason": "capability",
+    "step_line": 4,
+    "source": "lib",
+    "format": "smiles",
+    "missing_features": [
+     "coords3d"
+    ],
+    "source_capability": [
+     "cellcount",
+     "charge",
+     "connectivity",
+     "delocalisation",
+     "element",
+     "hcount",
+     "isotope"
+    ]
+   },
+   "records_read": 0,
+   "steps": []
+  },
+  "threshold": {
+   "source": "plan low {\n  source lib : smiles at \"compounds.smi\"\n  let raw := read lib\n  let mols := translate raw require element, connectivity expect supplied < 0.25 else report\n  emit mols with provenance\n}",
+   "plan": "low",
+   "status": "ok",
+   "budget": null,
+   "records_read": 7,
+   "sources": {
+    "lib": {
+     "format": "smiles",
+     "path": "compounds.smi"
+    }
+   },
+   "steps": [
+    {
+     "step": "read",
+     "line": 3,
+     "target": "raw",
+     "count": 7
+    },
+    {
+     "step": "translate",
+     "line": 4,
+     "target": "mols",
+     "require": [
+      "connectivity",
+      "element"
+     ],
+     "tally": {
+      "incomplete": 4,
+      "translated": 3
+     }
+    },
+    {
+     "step": "emit",
+     "line": 5,
+     "name": "mols",
+     "emitted": [
+      {
+       "record": "ethanol",
+       "verdict": "incomplete",
+       "payload": {
+        "absent_features": [
+         "supplied-threshold"
+        ],
+        "supplied_fraction": 0.823529
+       },
+       "value": null
+      },
+      {
+       "record": "carbon-dioxide",
+       "verdict": "translated",
+       "payload": {
+        "supplied_fraction": 0.0
+       },
+       "value": {
+        "floor": 1.0,
+        "atoms": [
+         {
+          "key": "a0",
+          "z": 8,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "key": "a1",
+          "z": 6,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "key": "a2",
+          "z": 8,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "stated",
+          "convention": null
+         }
+        ],
+        "contacts": [
+         {
+          "u": "a0",
+          "v": "a1",
+          "weight": 2.0,
+          "cells": 2,
+          "deloc_id": null,
+          "medium_edge": false,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "u": "a1",
+          "v": "a2",
+          "weight": 2.0,
+          "cells": 2,
+          "deloc_id": null,
+          "medium_edge": false,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "u": "a0",
+          "v": "__medium__",
+          "weight": 3.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a1",
+          "v": "__medium__",
+          "weight": 2.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a2",
+          "v": "__medium__",
+          "weight": 3.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         }
+        ],
+        "delocalised_systems": [],
+        "provenance": "stated",
+        "supplied_fraction": 0.0,
+        "conventions_used": [
+         "medium-residual"
+        ],
+        "meta": {
+         "source": "carbon-dioxide",
+         "source_format": "smiles",
+         "input": "O=C=O"
+        }
+       }
+      },
+      {
+       "record": "benzene",
+       "verdict": "incomplete",
+       "payload": {
+        "absent_features": [
+         "supplied-threshold"
+        ],
+        "supplied_fraction": 0.75
+       },
+       "value": null
+      },
+      {
+       "record": "ethanol-explicit",
+       "verdict": "translated",
+       "payload": {
+        "supplied_fraction": 0.117647
+       },
+       "value": {
+        "floor": 1.0,
+        "atoms": [
+         {
+          "key": "a0",
+          "z": 6,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "key": "a1",
+          "z": 6,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "key": "a2",
+          "z": 8,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "key": "a3",
+          "z": 1,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "key": "a4",
+          "z": 1,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "key": "a5",
+          "z": 1,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "key": "a6",
+          "z": 1,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "key": "a7",
+          "z": 1,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "key": "a8",
+          "z": 1,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "stated",
+          "convention": null
+         }
+        ],
+        "contacts": [
+         {
+          "u": "a0",
+          "v": "a1",
+          "weight": 1.0,
+          "cells": 1,
+          "deloc_id": null,
+          "medium_edge": false,
+          "provenance": "supplied",
+          "convention": "smiles:adjacent-atoms-single-bond"
+         },
+         {
+          "u": "a1",
+          "v": "a2",
+          "weight": 1.0,
+          "cells": 1,
+          "deloc_id": null,
+          "medium_edge": false,
+          "provenance": "supplied",
+          "convention": "smiles:adjacent-atoms-single-bond"
+         },
+         {
+          "u": "a0",
+          "v": "a3",
+          "weight": 1.0,
+          "cells": 1,
+          "deloc_id": null,
+          "medium_edge": false,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "u": "a0",
+          "v": "a4",
+          "weight": 1.0,
+          "cells": 1,
+          "deloc_id": null,
+          "medium_edge": false,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "u": "a0",
+          "v": "a5",
+          "weight": 1.0,
+          "cells": 1,
+          "deloc_id": null,
+          "medium_edge": false,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "u": "a1",
+          "v": "a6",
+          "weight": 1.0,
+          "cells": 1,
+          "deloc_id": null,
+          "medium_edge": false,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "u": "a1",
+          "v": "a7",
+          "weight": 1.0,
+          "cells": 1,
+          "deloc_id": null,
+          "medium_edge": false,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "u": "a2",
+          "v": "a8",
+          "weight": 1.0,
+          "cells": 1,
+          "deloc_id": null,
+          "medium_edge": false,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "u": "a0",
+          "v": "__medium__",
+          "weight": 2.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a1",
+          "v": "__medium__",
+          "weight": 2.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a2",
+          "v": "__medium__",
+          "weight": 3.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a3",
+          "v": "__medium__",
+          "weight": 1.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a4",
+          "v": "__medium__",
+          "weight": 1.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a5",
+          "v": "__medium__",
+          "weight": 1.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a6",
+          "v": "__medium__",
+          "weight": 1.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a7",
+          "v": "__medium__",
+          "weight": 1.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a8",
+          "v": "__medium__",
+          "weight": 1.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         }
+        ],
+        "delocalised_systems": [],
+        "provenance": "supplied",
+        "supplied_fraction": 0.117647,
+        "conventions_used": [
+         "medium-residual",
+         "smiles:adjacent-atoms-single-bond"
+        ],
+        "meta": {
+         "source": "ethanol-explicit",
+         "source_format": "smiles",
+         "input": "[CH3][CH2][OH]"
+        }
+       }
+      },
+      {
+       "record": "acetic-acid",
+       "verdict": "incomplete",
+       "payload": {
+        "absent_features": [
+         "supplied-threshold"
+        ],
+        "supplied_fraction": 0.666667
+       },
+       "value": null
+      },
+      {
+       "record": "ammonia",
+       "verdict": "incomplete",
+       "payload": {
+        "absent_features": [
+         "supplied-threshold"
+        ],
+        "supplied_fraction": 0.857143
+       },
+       "value": null
+      },
+      {
+       "record": "ammonia-explicit",
+       "verdict": "translated",
+       "payload": {
+        "supplied_fraction": 0.0
+       },
+       "value": {
+        "floor": 1.0,
+        "atoms": [
+         {
+          "key": "a0",
+          "z": 7,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "key": "a1",
+          "z": 1,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "key": "a2",
+          "z": 1,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "key": "a3",
+          "z": 1,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "stated",
+          "convention": null
+         }
+        ],
+        "contacts": [
+         {
+          "u": "a0",
+          "v": "a1",
+          "weight": 1.0,
+          "cells": 1,
+          "deloc_id": null,
+          "medium_edge": false,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "u": "a0",
+          "v": "a2",
+          "weight": 1.0,
+          "cells": 1,
+          "deloc_id": null,
+          "medium_edge": false,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "u": "a0",
+          "v": "a3",
+          "weight": 1.0,
+          "cells": 1,
+          "deloc_id": null,
+          "medium_edge": false,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "u": "a0",
+          "v": "__medium__",
+          "weight": 2.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a1",
+          "v": "__medium__",
+          "weight": 1.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a2",
+          "v": "__medium__",
+          "weight": 1.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a3",
+          "v": "__medium__",
+          "weight": 1.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         }
+        ],
+        "delocalised_systems": [],
+        "provenance": "stated",
+        "supplied_fraction": 0.0,
+        "conventions_used": [
+         "medium-residual"
+        ],
+        "meta": {
+         "source": "ammonia-explicit",
+         "source_format": "smiles",
+         "input": "[NH3]"
+        }
+       }
+      }
+     ]
+    }
+   ],
+   "log": [
+    {
+     "level": "report",
+     "step_line": 4,
+     "message": "4 record(s) did not translate"
+    }
+   ]
+  },
+  "budget": {
+   "source": "plan budgeted {\n  source lib : smiles at \"compounds.smi\"\n  budget 3 records\n  let raw := read lib\n  let mols := translate raw require element, connectivity else report\n  emit mols\n}",
+   "plan": "budgeted",
+   "status": "ok",
+   "budget": 3,
+   "records_read": 3,
+   "sources": {
+    "lib": {
+     "format": "smiles",
+     "path": "compounds.smi"
+    }
+   },
+   "steps": [
+    {
+     "step": "read",
+     "line": 4,
+     "target": "raw",
+     "count": 3
+    },
+    {
+     "step": "translate",
+     "line": 5,
+     "target": "mols",
+     "require": [
+      "connectivity",
+      "element"
+     ],
+     "tally": {
+      "translated": 3
+     }
+    },
+    {
+     "step": "emit",
+     "line": 6,
+     "name": "mols",
+     "emitted": [
+      {
+       "record": "ethanol",
+       "verdict": "translated",
+       "payload": {
+        "supplied_fraction": 0.823529
+       },
+       "value": {
+        "floor": 1.0,
+        "atoms": [
+         {
+          "key": "a0",
+          "z": 6,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "key": "a1",
+          "z": 6,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "key": "a2",
+          "z": 8,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "key": "a3",
+          "z": 1,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "supplied",
+          "convention": "smiles:organic-subset-implicit-hydrogen"
+         },
+         {
+          "key": "a4",
+          "z": 1,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "supplied",
+          "convention": "smiles:organic-subset-implicit-hydrogen"
+         },
+         {
+          "key": "a5",
+          "z": 1,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "supplied",
+          "convention": "smiles:organic-subset-implicit-hydrogen"
+         },
+         {
+          "key": "a6",
+          "z": 1,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "supplied",
+          "convention": "smiles:organic-subset-implicit-hydrogen"
+         },
+         {
+          "key": "a7",
+          "z": 1,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "supplied",
+          "convention": "smiles:organic-subset-implicit-hydrogen"
+         },
+         {
+          "key": "a8",
+          "z": 1,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "supplied",
+          "convention": "smiles:organic-subset-implicit-hydrogen"
+         }
+        ],
+        "contacts": [
+         {
+          "u": "a0",
+          "v": "a1",
+          "weight": 1.0,
+          "cells": 1,
+          "deloc_id": null,
+          "medium_edge": false,
+          "provenance": "supplied",
+          "convention": "smiles:adjacent-atoms-single-bond"
+         },
+         {
+          "u": "a1",
+          "v": "a2",
+          "weight": 1.0,
+          "cells": 1,
+          "deloc_id": null,
+          "medium_edge": false,
+          "provenance": "supplied",
+          "convention": "smiles:adjacent-atoms-single-bond"
+         },
+         {
+          "u": "a0",
+          "v": "a3",
+          "weight": 1.0,
+          "cells": 1,
+          "deloc_id": null,
+          "medium_edge": false,
+          "provenance": "supplied",
+          "convention": "smiles:organic-subset-implicit-hydrogen"
+         },
+         {
+          "u": "a0",
+          "v": "a4",
+          "weight": 1.0,
+          "cells": 1,
+          "deloc_id": null,
+          "medium_edge": false,
+          "provenance": "supplied",
+          "convention": "smiles:organic-subset-implicit-hydrogen"
+         },
+         {
+          "u": "a0",
+          "v": "a5",
+          "weight": 1.0,
+          "cells": 1,
+          "deloc_id": null,
+          "medium_edge": false,
+          "provenance": "supplied",
+          "convention": "smiles:organic-subset-implicit-hydrogen"
+         },
+         {
+          "u": "a1",
+          "v": "a6",
+          "weight": 1.0,
+          "cells": 1,
+          "deloc_id": null,
+          "medium_edge": false,
+          "provenance": "supplied",
+          "convention": "smiles:organic-subset-implicit-hydrogen"
+         },
+         {
+          "u": "a1",
+          "v": "a7",
+          "weight": 1.0,
+          "cells": 1,
+          "deloc_id": null,
+          "medium_edge": false,
+          "provenance": "supplied",
+          "convention": "smiles:organic-subset-implicit-hydrogen"
+         },
+         {
+          "u": "a2",
+          "v": "a8",
+          "weight": 1.0,
+          "cells": 1,
+          "deloc_id": null,
+          "medium_edge": false,
+          "provenance": "supplied",
+          "convention": "smiles:organic-subset-implicit-hydrogen"
+         },
+         {
+          "u": "a0",
+          "v": "__medium__",
+          "weight": 2.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a1",
+          "v": "__medium__",
+          "weight": 2.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a2",
+          "v": "__medium__",
+          "weight": 3.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a3",
+          "v": "__medium__",
+          "weight": 1.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a4",
+          "v": "__medium__",
+          "weight": 1.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a5",
+          "v": "__medium__",
+          "weight": 1.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a6",
+          "v": "__medium__",
+          "weight": 1.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a7",
+          "v": "__medium__",
+          "weight": 1.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a8",
+          "v": "__medium__",
+          "weight": 1.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         }
+        ],
+        "delocalised_systems": [],
+        "provenance": "supplied",
+        "supplied_fraction": 0.823529,
+        "meta": {
+         "source": "ethanol",
+         "source_format": "smiles",
+         "input": "CCO"
+        }
+       }
+      },
+      {
+       "record": "carbon-dioxide",
+       "verdict": "translated",
+       "payload": {
+        "supplied_fraction": 0.0
+       },
+       "value": {
+        "floor": 1.0,
+        "atoms": [
+         {
+          "key": "a0",
+          "z": 8,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "key": "a1",
+          "z": 6,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "key": "a2",
+          "z": 8,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "stated",
+          "convention": null
+         }
+        ],
+        "contacts": [
+         {
+          "u": "a0",
+          "v": "a1",
+          "weight": 2.0,
+          "cells": 2,
+          "deloc_id": null,
+          "medium_edge": false,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "u": "a1",
+          "v": "a2",
+          "weight": 2.0,
+          "cells": 2,
+          "deloc_id": null,
+          "medium_edge": false,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "u": "a0",
+          "v": "__medium__",
+          "weight": 3.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a1",
+          "v": "__medium__",
+          "weight": 2.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a2",
+          "v": "__medium__",
+          "weight": 3.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         }
+        ],
+        "delocalised_systems": [],
+        "provenance": "stated",
+        "supplied_fraction": 0.0,
+        "meta": {
+         "source": "carbon-dioxide",
+         "source_format": "smiles",
+         "input": "O=C=O"
+        }
+       }
+      },
+      {
+       "record": "benzene",
+       "verdict": "translated",
+       "payload": {
+        "supplied_fraction": 0.75
+       },
+       "value": {
+        "floor": 1.0,
+        "atoms": [
+         {
+          "key": "a0",
+          "z": 6,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "key": "a1",
+          "z": 6,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "key": "a2",
+          "z": 6,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "key": "a3",
+          "z": 6,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "key": "a4",
+          "z": 6,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "key": "a5",
+          "z": 6,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "stated",
+          "convention": null
+         },
+         {
+          "key": "a6",
+          "z": 1,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "supplied",
+          "convention": "smiles:organic-subset-implicit-hydrogen"
+         },
+         {
+          "key": "a7",
+          "z": 1,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "supplied",
+          "convention": "smiles:organic-subset-implicit-hydrogen"
+         },
+         {
+          "key": "a8",
+          "z": 1,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "supplied",
+          "convention": "smiles:organic-subset-implicit-hydrogen"
+         },
+         {
+          "key": "a9",
+          "z": 1,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "supplied",
+          "convention": "smiles:organic-subset-implicit-hydrogen"
+         },
+         {
+          "key": "a10",
+          "z": 1,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "supplied",
+          "convention": "smiles:organic-subset-implicit-hydrogen"
+         },
+         {
+          "key": "a11",
+          "z": 1,
+          "charge": 0,
+          "isotope": null,
+          "coords": null,
+          "provenance": "supplied",
+          "convention": "smiles:organic-subset-implicit-hydrogen"
+         }
+        ],
+        "contacts": [
+         {
+          "u": "a0",
+          "v": "a1",
+          "weight": 1.0,
+          "cells": 1,
+          "deloc_id": 0,
+          "medium_edge": false,
+          "provenance": "supplied",
+          "convention": "smiles:aromatic-lowercase-delocalised"
+         },
+         {
+          "u": "a1",
+          "v": "a2",
+          "weight": 1.0,
+          "cells": 1,
+          "deloc_id": 0,
+          "medium_edge": false,
+          "provenance": "supplied",
+          "convention": "smiles:aromatic-lowercase-delocalised"
+         },
+         {
+          "u": "a2",
+          "v": "a3",
+          "weight": 1.0,
+          "cells": 1,
+          "deloc_id": 0,
+          "medium_edge": false,
+          "provenance": "supplied",
+          "convention": "smiles:aromatic-lowercase-delocalised"
+         },
+         {
+          "u": "a3",
+          "v": "a4",
+          "weight": 1.0,
+          "cells": 1,
+          "deloc_id": 0,
+          "medium_edge": false,
+          "provenance": "supplied",
+          "convention": "smiles:aromatic-lowercase-delocalised"
+         },
+         {
+          "u": "a4",
+          "v": "a5",
+          "weight": 1.0,
+          "cells": 1,
+          "deloc_id": 0,
+          "medium_edge": false,
+          "provenance": "supplied",
+          "convention": "smiles:aromatic-lowercase-delocalised"
+         },
+         {
+          "u": "a0",
+          "v": "a5",
+          "weight": 1.0,
+          "cells": 1,
+          "deloc_id": 0,
+          "medium_edge": false,
+          "provenance": "supplied",
+          "convention": "smiles:aromatic-lowercase-delocalised"
+         },
+         {
+          "u": "a0",
+          "v": "a6",
+          "weight": 1.0,
+          "cells": 1,
+          "deloc_id": null,
+          "medium_edge": false,
+          "provenance": "supplied",
+          "convention": "smiles:organic-subset-implicit-hydrogen"
+         },
+         {
+          "u": "a1",
+          "v": "a7",
+          "weight": 1.0,
+          "cells": 1,
+          "deloc_id": null,
+          "medium_edge": false,
+          "provenance": "supplied",
+          "convention": "smiles:organic-subset-implicit-hydrogen"
+         },
+         {
+          "u": "a2",
+          "v": "a8",
+          "weight": 1.0,
+          "cells": 1,
+          "deloc_id": null,
+          "medium_edge": false,
+          "provenance": "supplied",
+          "convention": "smiles:organic-subset-implicit-hydrogen"
+         },
+         {
+          "u": "a3",
+          "v": "a9",
+          "weight": 1.0,
+          "cells": 1,
+          "deloc_id": null,
+          "medium_edge": false,
+          "provenance": "supplied",
+          "convention": "smiles:organic-subset-implicit-hydrogen"
+         },
+         {
+          "u": "a4",
+          "v": "a10",
+          "weight": 1.0,
+          "cells": 1,
+          "deloc_id": null,
+          "medium_edge": false,
+          "provenance": "supplied",
+          "convention": "smiles:organic-subset-implicit-hydrogen"
+         },
+         {
+          "u": "a5",
+          "v": "a11",
+          "weight": 1.0,
+          "cells": 1,
+          "deloc_id": null,
+          "medium_edge": false,
+          "provenance": "supplied",
+          "convention": "smiles:organic-subset-implicit-hydrogen"
+         },
+         {
+          "u": "a0",
+          "v": "__medium__",
+          "weight": 2.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a1",
+          "v": "__medium__",
+          "weight": 2.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a2",
+          "v": "__medium__",
+          "weight": 2.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a3",
+          "v": "__medium__",
+          "weight": 2.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a4",
+          "v": "__medium__",
+          "weight": 2.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a5",
+          "v": "__medium__",
+          "weight": 2.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a6",
+          "v": "__medium__",
+          "weight": 1.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a7",
+          "v": "__medium__",
+          "weight": 1.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a8",
+          "v": "__medium__",
+          "weight": 1.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a9",
+          "v": "__medium__",
+          "weight": 1.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a10",
+          "v": "__medium__",
+          "weight": 1.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         },
+         {
+          "u": "a11",
+          "v": "__medium__",
+          "weight": 1.0,
+          "cells": 0,
+          "deloc_id": null,
+          "medium_edge": true,
+          "provenance": "supplied",
+          "convention": "medium-residual"
+         }
+        ],
+        "delocalised_systems": [
+         {
+          "id": 0,
+          "members": [
+           "a0",
+           "a1",
+           "a2",
+           "a3",
+           "a4",
+           "a5"
+          ],
+          "sigma_cells": 6,
+          "delocalised_cells": 3,
+          "total_cells": 9,
+          "provenance": "supplied",
+          "convention": "smiles:aromatic-lowercase-delocalised",
+          "per_bond_cells": null
+         }
+        ],
+        "provenance": "supplied",
+        "supplied_fraction": 0.75,
+        "meta": {
+         "source": "benzene",
+         "source_format": "smiles",
+         "input": "c1ccccc1"
+        }
+       }
+      }
+     ]
+    }
+   ],
+   "log": [
+    {
+     "level": "report",
+     "step_line": 4,
+     "message": "budget 3 < 7 available; truncated"
+    }
+   ]
+  },
+  "assert-fail": {
+   "source": "plan strict {\n  source lib : smiles at \"compounds.smi\"\n  let raw := read lib\n  let mols := translate raw require element, connectivity else report\n  let core := select mols where supplied == 0.0\n  assert core.count > 100 emit \"too few\"\n  emit core\n}",
+   "plan": "strict",
+   "status": "assertion-failed",
+   "budget": null,
+   "records_read": 7,
+   "sources": {
+    "lib": {
+     "format": "smiles",
+     "path": "compounds.smi"
+    }
+   },
+   "steps": [
+    {
+     "step": "read",
+     "line": 3,
+     "target": "raw",
+     "count": 7
+    },
+    {
+     "step": "translate",
+     "line": 4,
+     "target": "mols",
+     "require": [
+      "connectivity",
+      "element"
+     ],
+     "tally": {
+      "translated": 7
+     }
+    },
+    {
+     "step": "select",
+     "line": 5,
+     "target": "core",
+     "kept": 2,
+     "dropped": 5,
+     "condition": {
+      "lhs": "supplied",
+      "op": "==",
+      "rhs": 0.0
+     }
+    },
+    {
+     "step": "assert",
+     "line": 6,
+     "condition": {
+      "lhs": "core.count",
+      "op": ">",
+      "rhs": 100.0
+     },
+     "observed": 2,
+     "passed": false
+    }
+   ],
+   "log": [
+    {
+     "level": "refusal",
+     "step_line": 6,
+     "message": "too few",
+     "observed": 2
+    }
+   ]
+  },
+  "parse-error": {
+   "source": "plan bad {\n  source lib : smiles at \"x.smi\"\n  let raw := read lib\n  let mols := translate raw require element bogus\n}",
+   "plan": null,
+   "status": "parse-error",
+   "error": "line 4: unexpected 'bogus'",
+   "steps": []
+  }
+ }
+}

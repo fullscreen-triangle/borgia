@@ -22,11 +22,15 @@ import Head from "next/head";
 import { run as engineRun, STATUS, ENGINE, loadConnection } from "@/lib/engine";
 import ConnectionPanel, { ConnectionBadge } from "@/components/workbench/ConnectionPanel";
 import InterferencePanel from "@/components/workbench/InterferencePanel";
+import AskPanel from "@/components/workbench/AskPanel";
 import MASAMUNE from "@/data/masamune.json";
 import HONJO from "@/data/honjo.json";
 import MEIBUTSU from "@/data/meibutsu.json";
 import { TUTORIALS } from "@/lib/tutorials";
 import { lint } from "@/lib/lint";
+import { runPlan } from "@/lib/plan";
+import { runMbt } from "@/lib/mbt";
+import RECORDS from "@/data/records.json";
 
 const T = {
   bg: "#1a1b26", surface: "#1e1f2e", panel: "#24253a", border: "#2f3146",
@@ -144,10 +148,13 @@ export default function Workbench() {
     endpoint: "", token: "", status: STATUS.DISCONNECTED,
   });
   const [showConn, setShowConn] = useState(false);
+  const [showAsk, setShowAsk] = useState(false);
   const [busy, setBusy] = useState(false);
 
   const [outTab, setOutTab] = useState("supplied");
   const [lastRun, setLastRun] = useState(null);
+  const [lastPlan, setLastPlan] = useState(null);
+  const [lastMbt, setLastMbt] = useState(null);
   const [term, setTerm] = useState([
     { k: "dim", t: "workbench ready — running in-browser engine" },
     { k: "dim", t: "connect a local engine for the reference compiler" },
@@ -198,13 +205,116 @@ export default function Workbench() {
     const where = connection.token ? "local engine" : "browser engine";
     setTerm((p) => [...p, { k: "cmd", t: `run ${name}  (${where})` }]);
 
-    // Only .hnj executes: it is the language both engines implement.
-    if (ext !== ".hnj") {
-      setTerm((p) => [...p, {
-        k: "warn",
-        t: `${ext} has no executable back end yet — showing measured results instead`,
-      }]);
-      setOutTab(ext === ".msm" ? "supplied" : "interference");
+    // .msm runs through the plan runner, in the browser. There is no
+    // Rust Masamune, so a local engine does not change this path and
+    // the terminal says which engine actually ran.
+    if (ext === ".msm") {
+      let res;
+      try {
+        res = runPlan(src, RECORDS.files);
+      } catch (err) {
+        setTerm((p) => [...p, { k: "err", t: String(err.message || err) }]);
+        setBusy(false);
+        return;
+      }
+      setLastPlan(res);
+      const lines = [];
+      if (res.status === "parse-error") {
+        lines.push({ k: "err", t: res.error });
+      } else if (res.status === "refused") {
+        const r = res.refusal;
+        lines.push({ k: "warn", t: `refused at line ${r.step_line}: ${r.reason}` });
+        lines.push({ k: "out", t: `  ${r.format} cannot state: ${r.missing_features.join(", ")}` });
+        lines.push({ k: "out", t: `  it declares: ${r.source_capability.join(", ") || "nothing"}` });
+        lines.push({ k: "dim", t: "  records read: 0 — no source was opened" });
+      } else {
+        for (const st of res.steps) {
+          if (st.error) { lines.push({ k: "err", t: `${st.step}: ${st.error}` }); continue; }
+          if (st.step === "read") lines.push({ k: "out", t: `read ${st.count} records into ${st.target}` });
+          if (st.step === "translate") {
+            const t = Object.entries(st.tally)
+              .map(([k, v]) => `${v} ${k}`).join(", ");
+            lines.push({ k: "out", t: `translate -> ${st.target}: ${t}` });
+          }
+          if (st.step === "select") lines.push({ k: "out", t: `select -> ${st.target}: ${st.kept} kept, ${st.dropped} dropped` });
+          if (st.step === "assert") {
+            lines.push({
+              k: st.passed ? "ok" : "err",
+              t: `assert ${st.condition.lhs} ${st.condition.op} ${st.condition.rhs}: observed ${st.observed}, ${st.passed ? "passed" : "FAILED"}`,
+            });
+          }
+          if (st.step === "emit") lines.push({ k: "ok", t: `emit ${st.name}: ${st.emitted.length} records` });
+        }
+        for (const l of res.log || []) lines.push({ k: "warn", t: `${l.level}: ${l.message}` });
+        lines.push({ k: "dim", t: `status: ${res.status} · engine: js-browser (no Rust Masamune)` });
+      }
+      setTerm((p) => [...p, ...lines]);
+      setOutTab("plan");
+      setBusy(false);
+      return;
+    }
+
+    // .mbt runs through the field language. Every operation calls
+    // into the field code that is checked against the reference, so a
+    // program that runs here is running verified numerics.
+    if (ext === ".mbt") {
+      let res;
+      try {
+        res = runMbt(src);
+      } catch (err) {
+        setTerm((p) => [...p, { k: "err", t: String(err.message || err) }]);
+        setBusy(false);
+        return;
+      }
+      setLastMbt(res);
+      const lines = [];
+      if (res.status !== "ok") {
+        lines.push({ k: "err", t: res.error });
+      }
+      for (const st of res.steps) {
+        if (st.step === "grid") lines.push({ k: "dim", t: `grid ${st.value}` });
+        if (st.step === "reference") lines.push({ k: "dim", t: `reference ${st.value} cm-1` });
+        if (st.step === "spectrum") {
+          lines.push({
+            k: "out",
+            t: `spectrum ${st.name}: ${st.modes.length} mode${st.modes.length === 1 ? "" : "s"}` +
+               (st.from ? ` (from ${st.from})` : ""),
+          });
+        }
+        if (st.step === "observe") {
+          const c = st.coords.map((x) => x.toFixed(4)).join(", ");
+          lines.push({ k: "out", t: `observe ${st.name}: coords (${c}) energy ${st.energy.toFixed(4)}` });
+        }
+        if (st.step === "superpose") {
+          lines.push({
+            k: st.visibility === 1 ? "ok" : "out",
+            t: `superpose ${st.a} ${st.b}: V = ${st.visibility.toFixed(6)}`,
+          });
+          lines.push({
+            k: "dim",
+            t: `  own ${st.own_energy.toFixed(3)} · relational ${st.relational.toFixed(3)} · ` +
+               `${st.constructive} constructive / ${st.destructive} destructive`,
+          });
+        }
+        if (st.step === "invert") {
+          lines.push({ k: "out", t: `invert ${st.query} against ${st.n_reference} references:` });
+          for (const r of st.ranked) {
+            lines.push({ k: "dim", t: `  ${r.name.padEnd(8)} V = ${r.visibility.toFixed(6)}` });
+          }
+        }
+        if (st.step === "report") {
+          for (const row of st.rows) {
+            const bits = [];
+            if (row.coordinates) bits.push(`(${row.coordinates.map((x) => x.toFixed(4)).join(", ")})`);
+            if (row.energy !== undefined) bits.push(`E ${row.energy.toFixed(4)}`);
+            if (row.peak) bits.push(`peak ${row.peak.amplitude.toFixed(3)} at u=${row.peak.at.toFixed(3)}`);
+            lines.push({ k: "out", t: `  ${row.name}: ${bits.join("  ")}` });
+          }
+        }
+      }
+      lines.push({ k: "dim", t: `status: ${res.status} · engine: js-browser` });
+      setTerm((p) => [...p, ...lines]);
+      setOutTab("interference");
       setBusy(false);
       return;
     }
@@ -286,6 +396,7 @@ export default function Workbench() {
 
       <div style={{
         height: "100vh", display: "flex", flexDirection: "column",
+        position: "relative",
         background: T.bg, color: T.text, fontFamily: MONO, fontSize: 13,
         overflow: "hidden",
       }}>
@@ -303,6 +414,16 @@ export default function Workbench() {
             <span style={{ color: T.muted, fontSize: 11 }}>workbench</span>
           </div>
           <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+            <button
+              onClick={() => setShowAsk((v) => !v)}
+              title="Ask about a measured result"
+              style={{
+                padding: "3px 10px", background: "transparent",
+                border: `1px solid ${T.border}`, borderRadius: 4,
+                color: showAsk ? T.accent : T.dim, fontSize: 11,
+                cursor: "pointer", fontFamily: MONO,
+              }}
+            >ask</button>
             <ConnectionBadge status={connection.status} onClick={() => setShowConn(true)} />
             <button
               onClick={doRun}
@@ -318,6 +439,8 @@ export default function Workbench() {
             </button>
           </div>
         </div>
+
+        <AskPanel open={showAsk} onClose={() => setShowAsk(false)} />
 
         <div style={{ flex: 1, display: "flex", overflow: "hidden" }}>
           {/* explorer */}
@@ -475,6 +598,7 @@ export default function Workbench() {
             }}>
               {[
                 ["run", "Run"],
+                ["plan", "Plan"],
                 ["supplied", "Provenance"],
                 ["capability", "Capability"],
                 ["conformance", "Conformance"],
@@ -494,7 +618,8 @@ export default function Workbench() {
               ))}
             </div>
             <div style={{ flex: 1, overflowY: "auto" }}>
-              <Results tab={outTab} lastRun={lastRun} tutorial={tut} />
+              <Results tab={outTab} lastRun={lastRun} lastPlan={lastPlan}
+                       tutorial={tut} />
             </div>
           </div>
         </div>
@@ -619,8 +744,9 @@ function Editor({ src, markerByLine, onChange }) {
 /*  Result views — all values from generated data                   */
 /* ---------------------------------------------------------------- */
 
-function Results({ tab, lastRun, tutorial }) {
+function Results({ tab, lastRun, lastPlan, tutorial }) {
   if (tab === "run") return <RunView res={lastRun} tutorial={tutorial} />;
+  if (tab === "plan") return <PlanView res={lastPlan} tutorial={tutorial} />;
   if (tab === "supplied") return <SuppliedView />;
   if (tab === "capability") return <CapabilityView />;
   if (tab === "conformance") return <ConformanceView />;
@@ -699,6 +825,199 @@ function RunView({ res, tutorial }) {
       )}
     </Section>
   );
+}
+
+
+/**
+ * The plan trace.
+ *
+ * A plan is a statement of what was asked for and in what order, so the
+ * trace is the result — not just the final record set. Each step shows
+ * what it did, and a refusal shows what was missing and what the format
+ * does declare.
+ */
+function PlanView({ res, tutorial }) {
+  if (!res) {
+    return (
+      <Section title="No plan run yet" sub="Press Run, or Ctrl+Enter.">
+        {tutorial?.expect && (
+          <div style={{
+            fontSize: 11, color: T.dim, lineHeight: 1.7, background: T.bg,
+            border: `1px solid ${T.border}`, borderRadius: 4, padding: 10,
+            whiteSpace: "pre-wrap",
+          }}>
+            <div style={{ color: T.warn, marginBottom: 6 }}>expected</div>
+            {tutorial.expect}
+          </div>
+        )}
+      </Section>
+    );
+  }
+
+  if (res.status === "parse-error") {
+    return (
+      <Section title="Plan" sub="did not parse">
+        <div style={{
+          fontSize: 11.5, color: T.err, background: T.bg,
+          border: `1px solid ${T.err}`, borderRadius: 4, padding: 10,
+          whiteSpace: "pre-wrap",
+        }}>{res.error}</div>
+      </Section>
+    );
+  }
+
+  if (res.status === "refused") {
+    const r = res.refusal;
+    return (
+      <Section
+        title="Refused"
+        sub={`before any record was read — ${res.records_read} opened`}
+      >
+        <KV k="reason" v={r.reason} />
+        <KV k="line" v={r.step_line} />
+        <KV k="source" v={`${r.source} : ${r.format}`} />
+        <div style={{ marginTop: 10 }}>
+          <div style={{ fontSize: 10, color: T.dim, marginBottom: 4 }}>
+            REQUESTED BUT NOT DECLARED
+          </div>
+          {r.missing_features.map((f) => (
+            <span key={f} style={chip(T.err)}>{f}</span>
+          ))}
+          <div style={{ fontSize: 10, color: T.dim, margin: "10px 0 4px" }}>
+            {r.format.toUpperCase()} DECLARES
+          </div>
+          {r.source_capability.length === 0 ? (
+            <span style={{ ...chip(T.muted), color: T.dim }}>nothing</span>
+          ) : (
+            r.source_capability.map((f) => (
+              <span key={f} style={chip(T.stated)}>{f}</span>
+            ))
+          )}
+        </div>
+        <div style={{
+          fontSize: 10, color: T.muted, marginTop: 12, lineHeight: 1.6,
+          borderLeft: `2px solid ${T.warn}`, paddingLeft: 8,
+        }}>
+          The refusal is static: it follows from the declared capability
+          set alone, so no file was opened and no record was parsed.
+        </div>
+      </Section>
+    );
+  }
+
+  const emitted = res.steps.filter((s) => s.step === "emit")
+    .flatMap((s) => s.emitted || []);
+
+  return (
+    <Section
+      title={`Plan ${res.plan || ""}`}
+      sub={
+        <>
+          {res.status} · {res.records_read} record
+          {res.records_read === 1 ? "" : "s"} read ·{" "}
+          <span style={{ color: T.warn }}>js-browser</span>
+        </>
+      }
+    >
+      {res.steps.map((st, i) => (
+        <div key={i} style={{
+          padding: "6px 0", borderBottom: `1px solid ${T.border}`,
+          fontSize: 11,
+        }}>
+          <div style={{ display: "flex", gap: 8 }}>
+            <span style={{ color: T.muted, width: 26, flexShrink: 0 }}>
+              {st.line}
+            </span>
+            <span style={{ color: T.accent, width: 66, flexShrink: 0 }}>
+              {st.step}
+            </span>
+            <span style={{ flex: 1, color: st.error ? T.err : T.text }}>
+              {st.error ? st.error : stepSummary(st)}
+            </span>
+          </div>
+          {st.step === "translate" && (
+            <div style={{ marginLeft: 100, marginTop: 4 }}>
+              {Object.entries(st.tally).map(([label, n]) => (
+                <span key={label}
+                      style={chip(label === "translated" ? T.stated : T.warn)}>
+                  {n} {label}
+                </span>
+              ))}
+            </div>
+          )}
+        </div>
+      ))}
+
+      {(res.log || []).map((l, i) => (
+        <div key={i} style={{
+          fontSize: 10.5, color: T.warn, marginTop: 6,
+          borderLeft: `2px solid ${T.warn}`, paddingLeft: 8,
+        }}>
+          line {l.step_line}: {l.message}
+        </div>
+      ))}
+
+      {emitted.length > 0 && (
+        <div style={{ marginTop: 12 }}>
+          <div style={{ fontSize: 10, color: T.dim, marginBottom: 6 }}>
+            EMITTED — {emitted.length} record{emitted.length === 1 ? "" : "s"}
+          </div>
+          {emitted.slice(0, 40).map((e, i) => (
+            <div key={i} style={{ marginBottom: 4 }}>
+              <div style={{
+                display: "flex", justifyContent: "space-between",
+                fontSize: 10.5, color: T.dim,
+              }}>
+                <span style={{ color: T.text }}>{e.record}</span>
+                <span>
+                  {e.payload?.supplied_fraction !== undefined
+                    ? `φ ${e.payload.supplied_fraction.toFixed(3)}`
+                    : e.verdict}
+                </span>
+              </div>
+              {e.payload?.supplied_fraction !== undefined && (
+                <div style={{
+                  height: 5, background: T.bg, borderRadius: 3,
+                  overflow: "hidden",
+                }}>
+                  <div style={{
+                    width: `${e.payload.supplied_fraction * 100}%`,
+                    height: "100%",
+                    background: e.payload.supplied_fraction === 0
+                      ? T.stated : T.supplied,
+                  }} />
+                </div>
+              )}
+            </div>
+          ))}
+          {emitted.length > 40 && (
+            <div style={{ fontSize: 10, color: T.muted, marginTop: 4 }}>
+              {emitted.length - 40} more not shown
+            </div>
+          )}
+        </div>
+      )}
+    </Section>
+  );
+}
+
+function stepSummary(st) {
+  if (st.step === "read") return `${st.count} → ${st.target}`;
+  if (st.step === "translate") return `→ ${st.target}`;
+  if (st.step === "select") return `${st.kept} kept, ${st.dropped} dropped → ${st.target}`;
+  if (st.step === "assert") {
+    return `${st.condition.lhs} ${st.condition.op} ${st.condition.rhs} — observed ${st.observed}, ${st.passed ? "passed" : "failed"}`;
+  }
+  if (st.step === "emit") return `${st.name}: ${st.emitted.length}`;
+  return "";
+}
+
+function chip(color) {
+  return {
+    display: "inline-block", padding: "1px 6px", marginRight: 4,
+    marginBottom: 3, fontSize: 9.5, borderRadius: 3,
+    background: "transparent", color, border: `1px solid ${color}`,
+  };
 }
 
 function KV({ k, v }) {

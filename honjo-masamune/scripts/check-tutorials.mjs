@@ -27,6 +27,32 @@ const { evaluate } = await import(
   pathToFileURL(join(ROOT, "src/lib/honjo.js")).href
 );
 
+// plan.js imports through the "@/" alias, which node does not resolve
+function loadAliased(relPath) {
+  const src = readFileSync(join(ROOT, relPath), "utf8")
+    // node requires an import attribute for JSON; webpack does not
+    .replace(
+      /from\s+"@\/data\/([\w.]+)"/g,
+      (_m, name) =>
+        'from "' + pathToFileURL(join(ROOT, "src/data", name)).href +
+        '" with { type: "json" }'
+    )
+    .replace(
+      /from\s+"@\/lib\/([\w.]+)"/g,
+      (_m, name) => {
+        const file = name.endsWith(".js") ? name : name + ".js";
+        return 'from "' + pathToFileURL(join(ROOT, "src/lib", file)).href + '"';
+      }
+    );
+  return import("data:text/javascript," + encodeURIComponent(src));
+}
+
+const { runPlan } = await loadAliased("src/lib/plan.js");
+const { runMbt } = await loadAliased("src/lib/mbt.js");
+const RECORDS = JSON.parse(
+  readFileSync(join(ROOT, "src/data/records.json"), "utf8")
+).files;
+
 // tutorials.js uses the "@/..." alias, which node does not resolve.
 // Read and strip the single import rather than pulling in a bundler.
 const rawTutorials = readFileSync(join(ROOT, "src/lib/tutorials.js"), "utf8");
@@ -64,6 +90,68 @@ for (const [lang, files] of Object.entries(TUTORIALS)) {
       continue;
     }
     checked += 1;
+
+    // Meibutsu programs run through the field language. Every
+    // operation calls into meibutsu.js, which is itself checked
+    // against the Python reference, so a program that runs here is
+    // running the verified field code.
+    if (name.endsWith(".mbt")) {
+      let res;
+      try {
+        res = runMbt(entry.source);
+      } catch (err) {
+        failed += 1;
+        console.log(`  ${lang}/${name}  FAILED (threw)`);
+        console.log(`      ${err.message}`);
+        continue;
+      }
+      if (res.status !== "ok") {
+        failed += 1;
+        console.log(`  ${lang}/${name}  FAILED (${res.status})`);
+        console.log(`      ${res.error}`);
+        continue;
+      }
+      console.log(
+        `  ${lang}/${name}  ok  steps=${res.steps.length}  ` +
+          `fields=${res.fields.length}`
+      );
+      continue;
+    }
+
+
+    // Masamune plans run through the plan runner, not the honjo
+    // interpreter. A plan that halts on its own assertion is a
+    // successful run of a plan written to halt, so the check is that
+    // it parsed and executed, not that its status is "ok".
+    if (name.endsWith(".msm")) {
+      let res;
+      try {
+        res = runPlan(entry.source, RECORDS);
+      } catch (err) {
+        failed += 1;
+        console.log(`  ${lang}/${name}  FAILED (threw)`);
+        console.log(`      ${err.message}`);
+        continue;
+      }
+      if (res.status === "parse-error") {
+        failed += 1;
+        console.log(`  ${lang}/${name}  FAILED (parse)`);
+        console.log(`      ${res.error}`);
+        continue;
+      }
+      const errStep = (res.steps || []).find((s) => s.error);
+      if (errStep) {
+        failed += 1;
+        console.log(`  ${lang}/${name}  FAILED (step ${errStep.step})`);
+        console.log(`      ${errStep.error}`);
+        continue;
+      }
+      console.log(
+        `  ${lang}/${name}  ok  status=${res.status}  ` +
+          `steps=${res.steps.length}  read=${res.records_read}`
+      );
+      continue;
+    }
 
     let browser;
     try {

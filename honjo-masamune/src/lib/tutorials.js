@@ -140,136 +140,248 @@ limit, and the two contacts oxygen passed through are named.`,
 
   masamune: {
     "01_provenance.msm": {
-      executable: false,
+      executable: true,
       title: "What the record did not say",
       source: `-- Masamune translates a record into a contact graph and
 -- reports how much of the graph the record actually stated.
 
 plan hello {
-  source input : smiles at "ethanol.smi"
+  source lib : smiles at "one.smi"
 
-  let records := read input
+  let raw  := read lib
+  let mols := translate raw
+                require element, connectivity
+                else report
 
-  let result := translate records
-    require element, connectivity
-    else report
-
-  emit result with provenance
+  emit mols with provenance
 }`,
       expect: `Verdict: translated
-Measured over 48 structures, the mean supplied fraction is 0.734
-and the minimum is 0.500. Every hydrogen is supplied: the SMILES
-string never writes one.`,
+Ethanol is written CCO -- three heavy atoms and two bonds. The graph
+that comes out has nine atoms and eight contacts, because six hydrogens
+and their bonds were supplied by the valence convention. Nothing in the
+record mentions them.`,
     },
 
     "02_static_refusal.msm": {
-      executable: false,
+      executable: true,
       title: "Refused before reading",
       source: `-- A request for a feature the format cannot state is
--- refused without opening the file. The editor marks this
--- line: the marker is computed from the same declared
--- capability set the compiler uses.
+-- refused without opening the source. The editor marks the
+-- line, and the marker is computed from the same declared
+-- capability set the runner uses.
 
 plan needs_geometry {
-  source input : smiles at "benzene.smi"
+  source lib : smiles at "compounds.smi"
 
-  let records := read input
+  let raw  := read lib
+  let mols := translate raw
+                require element, connectivity, coords3d
+                else refuse
 
-  let result := translate records
-    require element, connectivity, coords3d
-    else refuse
+  emit mols
 }`,
-      expect: `Verdict: unsupported — missing coords3d.
-Measured: 19 of 24 format/request pairs are decided statically,
-and the static verdict agrees with the post-read outcome on all 24.`,
+      expect: `status: refused -- missing coords3d.
+records_read: 0. No record was opened; the refusal is static.
+Measured across the reference set, 19 of 24 format/request pairs are
+decided this way, and the static verdict agrees with the post-read
+outcome on all 24.`,
     },
 
     "03_threshold.msm": {
-      executable: false,
+      executable: true,
       title: "A threshold that admits nothing",
-      source: `-- expect states a requirement in advance. This one cannot
--- be met by any SMILES source, and the editor says so.
+      source: `-- expect states a requirement before the run. This one
+-- cannot be met by any SMILES source, and the editor says so
+-- on the expect line.
 
 plan mostly_stated {
   source lib : smiles at "compounds.smi"
 
-  let raw := read lib
-
+  let raw  := read lib
   let mols := translate raw
-    require element, connectivity, cellcount
-    expect supplied < 0.25
-    else report
+                require element, connectivity, cellcount
+                expect supplied < 0.25
+                else report
 
   emit mols with provenance
 }`,
-      expect: `Every structure is reported rather than emitted.
-The measured minimum φ over the corpus is 0.500, so a threshold
-of 0.25 admits nothing. The plan surfaces the question instead of
-computing over supplied data.`,
+      expect: `Every structure comes back incomplete rather than translated.
+The measured minimum supplied fraction over this corpus is 0.500, so a
+threshold of 0.25 admits nothing. The plan surfaces the question instead
+of computing over supplied data.`,
+    },
+
+    "04_select_and_assert.msm": {
+      executable: true,
+      title: "Select, then assert",
+      source: `-- select narrows a verdict set by a condition on the
+-- provenance. assert states an expectation about what survived,
+-- and halts the plan if it does not hold.
+--
+-- The corpus contains one record written with bracket atoms.
+-- Bracket hydrogens are stated, so that structure alone reaches
+-- a supplied fraction of exactly zero, and the assertion holds.
+
+plan strict {
+  source lib : smiles at "mixed.smi"
+  budget 8 records
+
+  let raw  := read lib
+  let mols := translate raw
+                require element, connectivity
+                else report
+
+  let core := select mols where supplied == 0.0
+
+  assert core.count > 0  emit "no fully-stated structures in this corpus"
+  emit core with provenance
+}`,
+      expect: `read 8 (the budget truncates 9 records to 8)
+translate: 8 translated
+select: 1 kept, 7 dropped -- only ammonia-explicit, written [NH3],
+  reaches a supplied fraction of exactly 0.0
+assert: observed 1, passed true
+emit: one record, with its provenance
+
+Change the assertion to > 1 and the plan halts instead, with
+status assertion-failed and the emit never running.`,
+    },
+
+    "05_bracket_hydrogen.msm": {
+      executable: true,
+      title: "Stating what convention would supply",
+      source: `-- Bracket atoms state their hydrogens explicitly. Compare
+-- the supplied fraction of the same molecule written both ways
+-- in mixed.smi: 'ethanol' as CCO and 'ethanol-explicit' as
+-- [CH3][CH2][OH].
+--
+-- Same molecule. Different information sets.
+
+plan compare_forms {
+  source lib : smiles at "mixed.smi"
+
+  let raw  := read lib
+  let mols := translate raw
+                require element, connectivity, hcount
+                else report
+
+  emit mols with provenance
+}`,
+      expect: `Every emitted record carries its own supplied fraction.
+A bracket hydrogen is written in the record, so it is stated; an
+implicit hydrogen is supplied by the organic-subset convention and
+names that convention in its provenance.`,
     },
   },
 
   meibutsu: {
     "01_field.mbt": {
-      executable: false,
+      executable: true,
       title: "The observation field",
       source: `-- A structure is realised as a complex field on a grid:
 -- an amplitude and a phase at every point. This is what one
 -- evaluation pass writes to a texture.
 
-meibutsu field {
-  spectrum [3657, 1595, 3756]     -- water, cm-1
-  grid 256
-  reference 4401
+grid 256
 
-  compute amplitude, phase, energy
-  display field
-}`,
-      expect: `One amplitude lobe per mode at its normalised frequency
-address. The phase carries the coordinate information; the
-amplitude alone would not distinguish structures whose modes
-coincide.`,
+spectrum water [3657, 1595, 3756]
+
+observe water
+report coordinates, energy, peak`,
+      expect: `Three amplitude lobes, one per mode, at each mode's
+normalised frequency address. The coordinates come out near
+(0.944, 0.285, 1.0): water's third coordinate is exactly 1
+because all three of its pairwise frequency ratios land on
+low-order rationals -- the molecule interferes with itself.`,
     },
 
     "02_superposition.mbt": {
-      executable: false,
+      executable: true,
       title: "Comparison by addition",
-      source: `-- Two structures are compared by adding their fields.
--- The relational content is the cross-term. No similarity
+      source: `-- Two structures are compared by ADDING their fields.
+-- The relational content is the cross-term; no similarity
 -- function is evaluated on extracted features.
+--
+-- Spectra can be named from the reference set instead of
+-- typed, which is how the corpus avoids transcription errors.
 
-meibutsu compare {
-  spectrum a [3657, 1595, 3756]   -- water
-  spectrum b [1333, 667, 2349]    -- carbon dioxide
+spectrum a = H2O
+spectrum b = CO2
 
-  superpose
-  compute visibility
-  display interference
-}`,
+observe a
+observe b
+
+superpose a b`,
       expect: `|A+B|^2 = |A|^2 + |B|^2 + 2 Re<A,B>
-The first two terms are properties of each structure alone.
-Self-comparison is exactly 1 for all 39 reference structures,
-by Cauchy-Schwarz — not by assumption about phase.`,
+own_energy is the first two terms -- what would be there if the
+other structure were absent. relational is the third.
+
+Water against carbon dioxide gives a small visibility and a
+cross-term that is nearly balanced between constructive and
+destructive points: they share almost nothing, and the
+disagreement averages away rather than being reported as a
+small similarity.`,
     },
 
-    "03_inversion.mbt": {
-      executable: false,
+    "03_self.mbt": {
+      executable: true,
+      title: "A field against itself",
+      source: `-- The same structure on both sides. Cauchy-Schwarz with
+-- equality gives visibility exactly 1 -- not approximately,
+-- and with no assumption about how the phase is distributed.
+
+spectrum w = H2O
+
+observe w
+superpose w w`,
+      expect: `visibility: 1
+constructive: 256, destructive: 0 -- every grid point in phase
+relational equals own_energy exactly, because a field superposed
+with itself contributes its whole energy to the cross-term.`,
+    },
+
+    "04_inversion.mbt": {
+      executable: true,
       title: "Spectrum in, structure out",
-      source: `-- The inverse direction: given a measured value, return
--- the structure that would have produced it.
+      source: `-- The inverse direction. Given a measured value, rank the
+-- structures that could have produced it.
+--
+-- Try replacing C6H6 with a spectrum you type by hand, and
+-- watch what it ranks against.
 
-meibutsu invert {
-  query [3657, 1595, 3756]
+spectrum query = C6H6
 
-  route address           -- base-3 prefix descent
-  route interference      -- visibility ranking
+invert query`,
+      expect: `The generating structure ranks first at visibility 1.
+Measured over the 39-structure reference set, interference ranks
+the true structure first 39/39. The addressing route -- base-3
+prefix descent -- resolves only 27/39 uniquely, so it is a screen
+and this is the route that identifies.`,
+    },
 
-  compute agreement
-}`,
-      expect: `Interference ranks the generating structure first 39/39.
-Address uniqueness resolves only 27/39, so the address is a
-screen and the interference route does the identification.
-The two routes disagree and both are reported.`,
+    "05_refusal.mbt": {
+      executable: true,
+      title: "What the language refuses",
+      source: `-- The reference frequency is a property of the corpus,
+-- not a knob. Changing it would silently rescale every
+-- address, so the language refuses rather than obliging.
+--
+-- Uncomment the last line to see the refusal.
+
+grid 256
+reference 4401
+
+spectrum ok = HF
+observe ok
+report coordinates
+
+-- reference 1000`,
+      expect: `Declaring the reference at its actual value is accepted.
+Declaring any other value is refused, with both numbers named.
+
+The same applies to a mode frequency of zero or a negative
+grid: these are refused at the line that wrote them rather
+than producing a field that looks plausible.`,
     },
   },
 };
