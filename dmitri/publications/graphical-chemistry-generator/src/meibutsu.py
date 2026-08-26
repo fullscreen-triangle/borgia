@@ -260,8 +260,15 @@ class Instrument:
         for name in self.db:
             rec = _ENC.encode(name)
             self.records[name] = rec
+        # Coordinates are recomputed rather than read back from the
+        # stored record: the encoder rounds to six decimals when it
+        # stores, and feeding a rounded coordinate into the field
+        # perturbs every downstream visibility at the 1e-6 level for no
+        # modelling reason.  The rounding is a property of the storage
+        # format, not of the construction.
         self.obs = {
-            n: observe(r["modes"], (r["S_k"], r["S_t"], r["S_e"]),
+            n: observe(r["modes"],
+                       coordinates(r["modes"], self.db[n].get("B_rot")),
                        grid=grid, name=n)
             for n, r in self.records.items()
         }

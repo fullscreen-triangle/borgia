@@ -336,8 +336,8 @@
  "bulk_identity": {
   "n_stacked": 12,
   "n_pairs_implied": 66,
-  "bulk_cross_energy": 319.358567,
-  "explicit_pairwise_sum": 319.358567,
+  "bulk_cross_energy": 319.357946,
+  "explicit_pairwise_sum": 319.357946,
   "absolute_residual": 0.0,
   "relative_residual": 0.0,
   "n_superpositions_performed": 1,
@@ -357,18 +357,18 @@
   {
    "stack_size": 4,
    "n_pairs": 6,
-   "demod_vs_true_correlation": 0.452031,
-   "median_projection": 0.850311,
-   "projection_iqr": 2.371014,
+   "demod_vs_true_correlation": 0.452035,
+   "median_projection": 0.850305,
+   "projection_iqr": 2.371122,
    "n_projections_diverged": 0,
    "frac_diverged": 0.0
   },
   {
    "stack_size": 8,
    "n_pairs": 28,
-   "demod_vs_true_correlation": -0.122567,
-   "median_projection": 1.565867,
-   "projection_iqr": 4.272051,
+   "demod_vs_true_correlation": -0.122568,
+   "median_projection": 1.565828,
+   "projection_iqr": 4.271907,
    "n_projections_diverged": 0,
    "frac_diverged": 0.0
   },
@@ -376,8 +376,8 @@
    "stack_size": 16,
    "n_pairs": 120,
    "demod_vs_true_correlation": -0.10254,
-   "median_projection": 8.113135,
-   "projection_iqr": 23.166099,
+   "median_projection": 8.112731,
+   "projection_iqr": 23.166084,
    "n_projections_diverged": 3,
    "frac_diverged": 0.025
   },
@@ -385,26 +385,26 @@
    "stack_size": 24,
    "n_pairs": 276,
    "demod_vs_true_correlation": -0.080554,
-   "median_projection": 4.427325,
-   "projection_iqr": 44.860628,
+   "median_projection": 4.427342,
+   "projection_iqr": 44.859829,
    "n_projections_diverged": 38,
    "frac_diverged": 0.138686
   },
   {
    "stack_size": 32,
    "n_pairs": 496,
-   "demod_vs_true_correlation": -0.037118,
-   "median_projection": 3.281709,
-   "projection_iqr": 43.499603,
+   "demod_vs_true_correlation": -0.037112,
+   "median_projection": 3.281702,
+   "projection_iqr": 43.499732,
    "n_projections_diverged": 91,
    "frac_diverged": 0.184211
   },
   {
    "stack_size": 39,
    "n_pairs": 741,
-   "demod_vs_true_correlation": -0.055814,
-   "median_projection": 4.390855,
-   "projection_iqr": 63.474327,
+   "demod_vs_true_correlation": -0.055809,
+   "median_projection": 4.390863,
+   "projection_iqr": 63.473908,
    "n_projections_diverged": 129,
    "frac_diverged": 0.174797
   }

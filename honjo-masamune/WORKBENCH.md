@@ -107,6 +107,36 @@ reads
 and writes `src/data/*.json`. If a result file is missing it fails
 rather than emitting a partial file.
 
+## The interference panel
+
+The Interference tab computes an observation field for each of two
+structures, superposes them, and draws the result. The canvas is not a
+picture of a comparison made elsewhere: the pixel buffer and the
+reported visibility come from the same two arrays, in the browser.
+
+That is only defensible if the browser computes what the reference
+implementation computes.
+
+```
+npm run check:field
+```
+
+compares coordinates, energies and all pairwise visibilities against a
+dump from the Python reference and fails on any disagreement beyond
+1e-9. Current state: 126/126 agree to 1e-13, self-visibility is exactly
+1 for every structure, and the cross-term identity residual is 9e-16.
+
+The **display precision** buttons quantise the field to a fixed number
+of bits per channel, as a framebuffer would, and recompute the
+visibility from the quantised arrays. Eight bits is what an ordinary
+framebuffer stores; the measured result is that inversion accuracy at 8
+bits equals accuracy at 16 exactly. The array that is displayed can be
+the array that is compared.
+
+Reference spectra come from `src/data/spectra.json`, generated from the
+same NIST-derived database the validation used. They are not typed by
+hand — a first attempt at that got three of twelve wrong.
+
 ## Keeping the tutorials honest
 
 ```
@@ -122,6 +152,8 @@ HONJO_ENDPOINT=http://127.0.0.1:8731 HONJO_TOKEN=<token> npm run check:tutorials
 ```
 
 Current state: 5/5 tutorials run, 0 divergences.
+
+Run both checks together with `npm run check`.
 
 ## The editor markers
 

@@ -517,8 +517,8 @@ as a single accuracy would conceal that.
 \subsection{The bulk identity holds exactly}
 
 Over $12$ stacked structures---$66$ implied pairs---one superposition
-gives relational energy $319.358567$ and the explicit sum over all pairs
-gives $319.358567$, an absolute residual of $0$ and a relative residual
+gives relational energy $319.357946$ and the explicit sum over all pairs
+gives $319.357946$, an absolute residual of $0$ and a relative residual
 of $0$. \Cref{thm:bulkid} is realised by the implementation to the limit
 of double precision \citep{ieee754,highamNA2002}.
 
@@ -690,6 +690,21 @@ ones, and both figures are identical at $12$ and $16$ bits
 tested. Nothing measurable is lost by letting the displayed array be the
 compared array.
 
+\begin{remark}[A rounding artefact in the first implementation]
+\label{rem:rounding}
+The first version of the instrument built each field from the
+\emph{stored} coordinate triple, which the encoder rounds to six
+decimals. Feeding a rounded coordinate into \Cref{eq:field} perturbs
+every downstream visibility at the $10^{-6}$ level for no modelling
+reason: the rounding is a property of the storage format, not of the
+construction. It was found by porting the field to a second language
+and requiring the two implementations to agree to $10^{-9}$, which they
+did not. The implementation now recomputes coordinates rather than
+reading them back. Every quantity reported here is unchanged by the
+correction except the stacked relational energy of \Cref{sec:bulk},
+which moves from $319.358567$ to $319.357946$ in the sixth decimal.
+\end{remark}
+
 \begin{remark}[An artefact that first suggested the opposite]
 \label{rem:rngartefact}
 The first version of this experiment drew fresh perturbations at each bit
@@ -855,7 +870,8 @@ the source with their status marked are the vacuous floor criterion of
 \Cref{rem:floorcriterion}, the undefined single-pair correlation of
 \Cref{rem:n2}, the non-discriminating zero-perturbation control row of
 \Cref{rem:controlhonest}, and the fresh-draw quantisation artefact of
-\Cref{rem:rngartefact}. The only stochastic component is the frequency
+\Cref{rem:rngartefact}, and the coordinate-rounding artefact of
+\Cref{rem:rounding}. The only stochastic component is the frequency
 perturbation, which seeds explicitly and is drawn once and reused across
 bit depths. Numerical work uses double-precision arithmetic
 \citep{ieee754,harris2020}.

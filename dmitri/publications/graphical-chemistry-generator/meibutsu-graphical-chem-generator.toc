@@ -24,8 +24,8 @@
 \contentsline {paragraph}{Interferometric spectroscopy.}{7}{section*.3}%
 \contentsline {paragraph}{Holography.}{7}{section*.4}%
 \contentsline {paragraph}{Phase retrieval.}{7}{section*.5}%
-\contentsline {paragraph}{Spectral library search.}{7}{section*.6}%
-\contentsline {paragraph}{Fingerprint similarity.}{7}{section*.7}%
+\contentsline {paragraph}{Spectral library search.}{12}{section*.6}%
+\contentsline {paragraph}{Fingerprint similarity.}{12}{section*.7}%
 \contentsline {paragraph}{Molecular visualisation.}{12}{section*.8}%
 \contentsline {section}{\numberline {6}Limitations}{12}{section.6}%
 \contentsline {section}{\numberline {7}Conclusion}{12}{section.7}%

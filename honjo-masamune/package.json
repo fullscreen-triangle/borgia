@@ -8,7 +8,9 @@
     "start": "next start",
     "lint": "next lint",
     "check:tutorials": "node scripts/check-tutorials.mjs",
-    "data": "python src/data/generate.py"
+    "data": "python src/data/generate.py",
+    "check:field": "node scripts/check-field.mjs",
+    "check": "npm run check:tutorials && npm run check:field"
   },
   "dependencies": {
     "@react-three/drei": "^9.88.17",

@@ -21,6 +21,7 @@ import Head from "next/head";
 
 import { run as engineRun, STATUS, ENGINE, loadConnection } from "@/lib/engine";
 import ConnectionPanel, { ConnectionBadge } from "@/components/workbench/ConnectionPanel";
+import InterferencePanel from "@/components/workbench/InterferencePanel";
 import MASAMUNE from "@/data/masamune.json";
 import HONJO from "@/data/honjo.json";
 import MEIBUTSU from "@/data/meibutsu.json";
@@ -203,7 +204,7 @@ export default function Workbench() {
         k: "warn",
         t: `${ext} has no executable back end yet — showing measured results instead`,
       }]);
-      setOutTab(ext === ".msm" ? "supplied" : "meibutsu");
+      setOutTab(ext === ".msm" ? "supplied" : "interference");
       setBusy(false);
       return;
     }
@@ -477,7 +478,8 @@ export default function Workbench() {
                 ["supplied", "Provenance"],
                 ["capability", "Capability"],
                 ["conformance", "Conformance"],
-                ["meibutsu", "Interference"],
+                ["interference", "Interference"],
+                ["meibutsu", "Bulk"],
               ].map(([id, label]) => (
                 <div
                   key={id}
@@ -622,6 +624,7 @@ function Results({ tab, lastRun, tutorial }) {
   if (tab === "supplied") return <SuppliedView />;
   if (tab === "capability") return <CapabilityView />;
   if (tab === "conformance") return <ConformanceView />;
+  if (tab === "interference") return <InterferencePanel width={380} />;
   if (tab === "meibutsu") return <MeibutsuView />;
   return null;
 }
