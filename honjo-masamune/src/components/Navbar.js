@@ -64,6 +64,7 @@ const Navbar = () => {
           <NavLink href="/validation" title="Validation" />
           <NavLink href="/database" title="Database" />
           <NavLink href="/tools" title="Tools" />
+          <NavLink href="/workbench" title="Workbench" />
           <NavLink href="/playground" title="Playground" />
           <NavLink href="/consulting" title="Consulting" />
           <NavLink href="/licensing" title="Licensing" />
@@ -103,6 +104,7 @@ const Navbar = () => {
             <MobileNavLink href="/validation" title="Validation" toggle={toggle} />
             <MobileNavLink href="/database" title="Database" toggle={toggle} />
             <MobileNavLink href="/tools" title="Tools" toggle={toggle} />
+            <MobileNavLink href="/workbench" title="Workbench" toggle={toggle} />
             <MobileNavLink href="/playground" title="Playground" toggle={toggle} />
             <MobileNavLink href="/consulting" title="Consulting" toggle={toggle} />
             <MobileNavLink href="/licensing" title="Licensing" toggle={toggle} />

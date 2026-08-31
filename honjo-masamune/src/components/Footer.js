@@ -18,6 +18,7 @@ const Footer = () => {
               <Link href="/validation" className="text-neutral-500 hover:text-[#58E6D9] text-sm transition-colors">Validation</Link>
               <Link href="/database" className="text-neutral-500 hover:text-[#58E6D9] text-sm transition-colors">Database</Link>
               <Link href="/tools" className="text-neutral-500 hover:text-[#58E6D9] text-sm transition-colors">Tools</Link>
+              <Link href="/workbench" className="text-neutral-500 hover:text-[#58E6D9] text-sm transition-colors">Workbench</Link>
               <Link href="/consulting" className="text-neutral-500 hover:text-[#58E6D9] text-sm transition-colors">Consulting</Link>
               <Link href="/licensing" className="text-neutral-500 hover:text-[#58E6D9] text-sm transition-colors">Licensing</Link>
               <Link href="/research" className="text-neutral-500 hover:text-[#58E6D9] text-sm transition-colors">Research</Link>
