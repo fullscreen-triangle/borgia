@@ -1,0 +1,43 @@
+{
+  "generated": "2026-08-30T02:34:08.358345+00:00",
+  "seed": 20260830,
+  "categories": {
+    "closed_ladder": {
+      "checks": 4,
+      "passed": 4,
+      "failed": []
+    },
+    "aromaticity": {
+      "checks": 4,
+      "passed": 4,
+      "failed": []
+    },
+    "substitution": {
+      "checks": 3,
+      "passed": 3,
+      "failed": []
+    },
+    "inert_repetition": {
+      "checks": 2,
+      "passed": 2,
+      "failed": []
+    },
+    "refinement": {
+      "checks": 2,
+      "passed": 2,
+      "failed": []
+    },
+    "sensitivity": {
+      "checks": 3,
+      "passed": 3,
+      "failed": []
+    },
+    "elimination": {
+      "checks": 3,
+      "passed": 3,
+      "failed": []
+    }
+  },
+  "total_checks": 21,
+  "total_passed": 21
+}

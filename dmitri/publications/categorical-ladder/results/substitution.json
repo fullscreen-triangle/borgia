@@ -1,0 +1,51 @@
+{
+  "expectation": {
+    "peripheral_delta_u_zero": true,
+    "ring_delta_u_positive": true,
+    "monotone_in_ring_letters": false
+  },
+  "measured": {
+    "cases": [
+      {
+        "name": "phenol->aniline (peripheral)",
+        "ring_letters_changed": 0,
+        "u": 1.0,
+        "delta_u": 0.0
+      },
+      {
+        "name": "benzene->pyridine (1 ring)",
+        "ring_letters_changed": 1,
+        "u": 0.9139973854807774,
+        "delta_u": 0.08600261451922264
+      },
+      {
+        "name": "benzene->pyrimidine (2 ring)",
+        "ring_letters_changed": 2,
+        "u": 0.8952434398242152,
+        "delta_u": 0.10475656017578483
+      },
+      {
+        "name": "benzene->pyrazine (2 ring)",
+        "ring_letters_changed": 2,
+        "u": 0.8952434398242152,
+        "delta_u": 0.10475656017578483
+      },
+      {
+        "name": "benzene->triazine (3 ring)",
+        "ring_letters_changed": 3,
+        "u": 0.8928571428571429,
+        "delta_u": 0.1071428571428571
+      }
+    ],
+    "max_peripheral_delta_u": 0.0,
+    "min_ring_delta_u": 0.08600261451922264,
+    "separation": 0.08600261451922264,
+    "monotone_in_ring_letters": true
+  },
+  "checks": {
+    "peripheral_leaves_u_intact": true,
+    "ring_substitution_lowers_u": true,
+    "asymmetry_predicted": true
+  },
+  "note": "REGISTERED EXPECTATION REFUTED.  We predicted non-monotonicity, reasoning that a symmetric trisubstitution (triazine) would restore rotational symmetry and return u toward its unsubstituted value.  It does not: delta_u rises 0.086 -> 0.105 -> 0.107 and is monotone.  The reason is that u as defined here measures dispersion of the profile about its mean, which a symmetric substitution does not reduce -- symmetry of the PATTERN is not sameness of the VALUES.  A rotation-orbit invariant sensitive to the symmetry group of the substitution pattern would behave as we first expected; u is not that invariant.  The positional prediction (peripheral 0.000 vs ring >= 0.086) survives and is what the category tests; the monotonicity is an unpredicted property of u, recorded because it contradicts what we wrote before running."
+}

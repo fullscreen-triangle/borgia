@@ -1,0 +1,89 @@
+{
+  "expectation": {
+    "u_separates_benzene_cyclohexane": false,
+    "rho_separates_benzene_cyclohexane": true,
+    "u_separates_benzene_pyridine": true,
+    "rho_per_rung_margin_positive": true
+  },
+  "measured": {
+    "rings": [
+      {
+        "name": "benzene",
+        "n": 6,
+        "rho": 4.1588830833596715,
+        "rho_per_rung": 0.6931471805599453,
+        "u": 1.0,
+        "aromatic": true
+      },
+      {
+        "name": "pyridine",
+        "n": 6,
+        "rho": 4.433319929061432,
+        "rho_per_rung": 0.7388866548435721,
+        "u": 0.9139973854807774,
+        "aromatic": true
+      },
+      {
+        "name": "pyrimidine",
+        "n": 6,
+        "rho": 4.707756774763192,
+        "rho_per_rung": 0.7846261291271986,
+        "u": 0.8952434398242152,
+        "aromatic": true
+      },
+      {
+        "name": "pyrazine",
+        "n": 6,
+        "rho": 4.707756774763192,
+        "rho_per_rung": 0.7846261291271986,
+        "u": 0.8952434398242152,
+        "aromatic": true
+      },
+      {
+        "name": "cyclohexane",
+        "n": 6,
+        "rho": 2.402865399582752,
+        "rho_per_rung": 0.40047756659712536,
+        "u": 1.0,
+        "aromatic": false
+      },
+      {
+        "name": "cyclopentane",
+        "n": 5,
+        "rho": 2.002387832985627,
+        "rho_per_rung": 0.40047756659712536,
+        "u": 1.0,
+        "aromatic": false
+      },
+      {
+        "name": "cyclobutane",
+        "n": 4,
+        "rho": 1.4266997757549298,
+        "rho_per_rung": 0.35667494393873245,
+        "u": 1.0,
+        "aromatic": false
+      },
+      {
+        "name": "naphthalene",
+        "n": 10,
+        "rho": 6.931471805599453,
+        "rho_per_rung": 0.6931471805599453,
+        "u": 1.0,
+        "aromatic": true
+      }
+    ],
+    "u_separates_benzene_cyclohexane": false,
+    "rho_separates_benzene_cyclohexane": true,
+    "u_separates_benzene_pyridine": true,
+    "min_aromatic_rho_per_rung": 0.6931471805599453,
+    "max_nonaromatic_rho_per_rung": 0.40047756659712536,
+    "margin": 0.29266961396281993
+  },
+  "checks": {
+    "naive_uniformity_claim_refuted": true,
+    "rho_does_the_separating": true,
+    "u_still_needed_for_heteroatoms": true,
+    "rho_per_rung_separates_classes": true
+  },
+  "note": "The naive claim 'a ring is aromatic iff its profile is rotation invariant' is REFUTED here: cyclohexane is perfectly uniform and not aromatic.  Uniformity distinguishes substituted from unsubstituted rings; rho-per-rung distinguishes aromatic from saturated.  Both invariants are required and neither suffices."
+}

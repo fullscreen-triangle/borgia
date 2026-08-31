@@ -1,0 +1,19 @@
+{
+  "expectation": {
+    "same_sequence_same_readout": true,
+    "different_sequence_separates": true,
+    "nonlocal_carrier_separates": true
+  },
+  "measured": {
+    "trials": 3000,
+    "same_sequence_agree": 3000,
+    "different_sequence_separate": 3000,
+    "nonlocal_carrier_separate": 3000
+  },
+  "checks": {
+    "elimination_lossless": true,
+    "control_discriminates": true,
+    "locality_violation_detected": true
+  },
+  "note": "The first row is true by construction once the readout is defined to consult the terminal state alone; it is reported as a consistency check, not evidence.  The load-bearing rows are the two controls, which establish that the readout CAN separate and that the stated hypothesis is what stops it."
+}

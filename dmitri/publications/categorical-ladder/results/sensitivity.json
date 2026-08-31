@@ -1,0 +1,22 @@
+{
+  "expectation": {
+    "additive_control_at_strongest": true,
+    "proportional_control_flat": true,
+    "prior_papers_overstate": true
+  },
+  "measured": {
+    "trials": 5000,
+    "additive_argmax_is_strongest_rung": 5000,
+    "additive_fraction": 1.0,
+    "proportional_flat_count": 5000,
+    "proportional_fraction_flat": 1.0,
+    "max_proportional_spread": 1.1102230246251565e-16,
+    "max_derivative_error": 1.6435042216045304e-10
+  },
+  "checks": {
+    "additive_reproduces_prior_claim": true,
+    "proportional_is_flat": true,
+    "derivative_correct": true
+  },
+  "note": "Both prior papers validated the analytic derivative against the numerical one.  That check CANNOT detect this, because both compute the same additive quantity.  The counter-intuitive direction is real under additive headroom and vanishes under proportional headroom, so the claim must state its parameterisation.  This is a narrowing of the sharpest claim in both prior papers."
+}

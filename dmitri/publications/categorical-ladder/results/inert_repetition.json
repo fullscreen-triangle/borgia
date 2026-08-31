@@ -1,0 +1,19 @@
+{
+  "expectation": {
+    "biconditional_holds": true,
+    "violations": 0
+  },
+  "measured": {
+    "steps_tested": 2061,
+    "fresh_and_nonrepeat": 1716,
+    "fresh_and_repeat_VIOLATION": 0,
+    "inert_and_repeat": 345,
+    "inert_and_nonrepeat_VIOLATION": 0,
+    "violations": 0
+  },
+  "checks": {
+    "inert_iff_repetition": true,
+    "both_branches_populated": true
+  },
+  "note": "Both branches must be populated or the biconditional is vacuously satisfied by a run in which no step ever repeats.  The second check guards against exactly that."
+}

@@ -1,0 +1,37 @@
+{
+  "expectation": {
+    "refinement_gains_no_rho": true,
+    "refinement_splits_classes": true
+  },
+  "measured": {
+    "by_radius": [
+      {
+        "radius": 0,
+        "mean_rho_gained": 0.0,
+        "mean_classes_split": 0.0
+      },
+      {
+        "radius": 1,
+        "mean_rho_gained": 0.0,
+        "mean_classes_split": 6.962
+      },
+      {
+        "radius": 2,
+        "mean_rho_gained": 0.0,
+        "mean_classes_split": 14.348
+      },
+      {
+        "radius": 3,
+        "mean_rho_gained": 0.0,
+        "mean_classes_split": 21.444
+      }
+    ],
+    "rho_gain_always_zero": true,
+    "splitting_monotone_in_radius": true
+  },
+  "checks": {
+    "refinement_is_inert": true,
+    "refinement_still_discriminates": true
+  },
+  "note": "This category is a CONSEQUENCE of modelling refinement as appended repetitions, not an independent measurement of the radius sweep.  It shows the ladder account is CONSISTENT with the measured collapse of the separation margin; it does not re-measure that collapse.  Stated so the reader does not read it as confirmation."
+}

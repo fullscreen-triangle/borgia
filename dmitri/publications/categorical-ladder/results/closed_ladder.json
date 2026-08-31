@@ -1,0 +1,24 @@
+{
+  "expectation": {
+    "rho_rotation_invariant": true,
+    "u_rotation_invariant": true,
+    "rho_zero_iff_all_inert": true,
+    "u_separates_where_composite_does_not": true,
+    "rho_redundant_for_linear_ladders": "expected True -- recorded, not hidden"
+  },
+  "measured": {
+    "max_rotation_deviation_rho": 3.552713678800501e-15,
+    "max_rotation_deviation_u": 4.440892098500626e-16,
+    "rho_all_inert_cycle": 0.0,
+    "pairs_same_composite_different_uniformity": 2755,
+    "pairs_tested": 4000,
+    "rho_equals_minus_log_one_minus_composite": true
+  },
+  "checks": {
+    "rho_rotation_invariant": true,
+    "u_rotation_invariant": true,
+    "rho_zero_on_inert_cycle": true,
+    "u_adds_information": true
+  },
+  "note": "rho is exactly -log(1-composite), so for a LINEAR ladder it is a reparametrisation and adds nothing.  Its value is that it is additive around a cycle and defined without a target, which composite power is not.  The invariant that genuinely adds information beyond composite power is u."
+}
