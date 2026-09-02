@@ -31,6 +31,7 @@ import { lint } from "@/lib/lint";
 import { runPlan } from "@/lib/plan";
 import { runMbt } from "@/lib/mbt";
 import RECORDS from "@/data/records.json";
+import PaperPanels, { PAPER_NAMES, RESULT_COUNT } from "@/components/workbench/PaperPanels";
 
 const T = {
   bg: "#1a1b26", surface: "#1e1f2e", panel: "#24253a", border: "#2f3146",
@@ -139,8 +140,17 @@ export default function Workbench() {
   const [expanded, setExpanded] = useState(
     new Set(["honjo", "masamune", "meibutsu"])
   );
-  const [tabs, setTabs] = useState([]);
-  const [active, setActive] = useState(null);
+  /**
+   * The workbench opens on a real program rather than an empty editor.
+   * With no file open the Run button is disabled, which on a dark
+   * surface reads as chrome rather than as a control — the page looked
+   * like it had no way to execute anything. Landing on a runnable file
+   * makes the first Run the obvious next action.
+   */
+  const FIRST_FILE = "honjo/01_cut.hnj";
+
+  const [tabs, setTabs] = useState([FIRST_FILE]);
+  const [active, setActive] = useState(FIRST_FILE);
   const [edits, setEdits] = useState({});
   const [dirty, setDirty] = useState(new Set());
 
@@ -157,6 +167,7 @@ export default function Workbench() {
   const [lastMbt, setLastMbt] = useState(null);
   const [term, setTerm] = useState([
     { k: "dim", t: "workbench ready — running in-browser engine" },
+    { k: "ok", t: "press ▶ Run (or Ctrl+Enter) to execute the open program" },
     { k: "dim", t: "connect a local engine for the reference compiler" },
   ]);
 
@@ -428,11 +439,16 @@ export default function Workbench() {
             <button
               onClick={doRun}
               disabled={busy || !active}
+              title={active ? "Run this program (Ctrl+Enter)" : "Open a file to run"}
               style={{
-                padding: "4px 14px", background: busy ? T.border : T.ok,
-                color: busy ? T.dim : T.bg, border: "none", borderRadius: 4,
+                padding: "5px 16px",
+                background: busy || !active ? "transparent" : T.ok,
+                color: busy || !active ? T.dim : T.bg,
+                border: busy || !active ? `1px solid ${T.border}` : "none",
+                borderRadius: 4,
                 fontSize: 11, fontWeight: 700, fontFamily: MONO,
                 cursor: busy || !active ? "default" : "pointer",
+                minWidth: 96,
               }}
             >
               {busy ? "running…" : "▶ Run"}
@@ -604,6 +620,7 @@ export default function Workbench() {
                 ["conformance", "Conformance"],
                 ["interference", "Interference"],
                 ["meibutsu", "Bulk"],
+                ["papers", `Papers (${RESULT_COUNT})`],
               ].map(([id, label]) => (
                 <div
                   key={id}
@@ -752,7 +769,42 @@ function Results({ tab, lastRun, lastPlan, tutorial }) {
   if (tab === "conformance") return <ConformanceView />;
   if (tab === "interference") return <InterferencePanel width={380} />;
   if (tab === "meibutsu") return <MeibutsuView />;
+  if (tab === "papers") return <PapersView />;
   return null;
+}
+
+/**
+ * The corpus figures, rendered live from the same results the papers plot.
+ * The ladder tab additionally recomputes its invariants in the browser and
+ * diffs them against the committed values.
+ */
+function PapersView() {
+  const [paper, setPaper] = useState(
+    PAPER_NAMES.includes("categorical-ladder") ? "categorical-ladder" : PAPER_NAMES[0]
+  );
+  if (!PAPER_NAMES.length) {
+    return <Section title="No panel data" sub="Run python src/data/generate.py." />;
+  }
+  return (
+    <div style={{ padding: 10 }}>
+      <div style={{ display: "flex", gap: 4, flexWrap: "wrap", marginBottom: 12 }}>
+        {PAPER_NAMES.map((n) => (
+          <button
+            key={n}
+            onClick={() => setPaper(n)}
+            style={{
+              padding: "3px 9px", fontSize: 10, fontFamily: MONO,
+              background: n === paper ? T.accent : "transparent",
+              color: n === paper ? T.bg : T.dim,
+              border: `1px solid ${n === paper ? T.accent : T.border}`,
+              borderRadius: 3, cursor: "pointer",
+            }}
+          >{n.replace(/-/g, " ")}</button>
+        ))}
+      </div>
+      <PaperPanels paper={paper} />
+    </div>
+  );
 }
 
 function Section({ title, sub, children }) {

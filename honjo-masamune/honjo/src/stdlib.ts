@@ -4,6 +4,8 @@
 // results match: Individuate (spectroscopic atom), Bond (Delta-thickness),
 // Close (vacancy closure + geometry), Propagate (accountable propagation).
 
+import { deriveAtom, shellCapacity as shellCap } from "./shell.js";
+
 // ----------------------------------------------------------------------------
 //  Atom value
 // ----------------------------------------------------------------------------
@@ -17,6 +19,9 @@ export interface AtomVal {
   capV: number;     // valence-shell capacity (duet 2 / octet 8 for light elements)
   vacancy: number;  // nu = capV - qv (holes to closure)
   valence: number;  // bonding capacity = min(nu, capV - nu)  (chemical-structure def)
+  period: number;         // highest occupied principal number
+  group: number | null;   // null inside the f block, where the notion does not apply
+  exception: boolean;     // true where the ground state departs from strict aufbau
   floor: number;
   residue: number;
 }
@@ -40,6 +45,7 @@ export interface CompoundVal {
   geometry: string;
   angleDeg: number | null;
   valenceClosed: boolean;
+  mainGroupModel: boolean; // false where the octet/VSEPR rule is extrapolated
   floor: number;
   residue: number;
 }
@@ -57,41 +63,10 @@ export interface PathVal {
 
 export type CutVal = AtomVal | BondVal | CompoundVal | PathVal;
 
-// ----------------------------------------------------------------------------
-//  Element table (light elements; valence shell + common data)
-//  qv = valence electrons, capV = 2 (duet, n=1) or 8 (octet, main group)
-// ----------------------------------------------------------------------------
-interface ElemRec { sym: string; Z: number; qv: number; capV: number; config: string; term: string; }
-
-const ELEMENTS: ElemRec[] = [
-  { sym: "H",  Z: 1,  qv: 1, capV: 2, config: "1s1",                 term: "2S1/2" },
-  { sym: "He", Z: 2,  qv: 2, capV: 2, config: "1s2",                 term: "1S0" },
-  { sym: "Li", Z: 3,  qv: 1, capV: 8, config: "[He] 2s1",            term: "2S1/2" },
-  { sym: "Be", Z: 4,  qv: 2, capV: 8, config: "[He] 2s2",            term: "1S0" },
-  { sym: "B",  Z: 5,  qv: 3, capV: 8, config: "[He] 2s2 2p1",        term: "2P1/2" },
-  { sym: "C",  Z: 6,  qv: 4, capV: 8, config: "[He] 2s2 2p2",        term: "3P0" },
-  { sym: "N",  Z: 7,  qv: 5, capV: 8, config: "[He] 2s2 2p3",        term: "4S3/2" },
-  { sym: "O",  Z: 8,  qv: 6, capV: 8, config: "[He] 2s2 2p4",        term: "3P2" },
-  { sym: "F",  Z: 9,  qv: 7, capV: 8, config: "[He] 2s2 2p5",        term: "2P3/2" },
-  { sym: "Ne", Z: 10, qv: 8, capV: 8, config: "[He] 2s2 2p6",        term: "1S0" },
-  { sym: "Na", Z: 11, qv: 1, capV: 8, config: "[Ne] 3s1",            term: "2S1/2" },
-  { sym: "Mg", Z: 12, qv: 2, capV: 8, config: "[Ne] 3s2",            term: "1S0" },
-  { sym: "Al", Z: 13, qv: 3, capV: 8, config: "[Ne] 3s2 3p1",        term: "2P1/2" },
-  { sym: "Si", Z: 14, qv: 4, capV: 8, config: "[Ne] 3s2 3p2",        term: "3P0" },
-  { sym: "P",  Z: 15, qv: 5, capV: 8, config: "[Ne] 3s2 3p3",        term: "4S3/2" },
-  { sym: "S",  Z: 16, qv: 6, capV: 8, config: "[Ne] 3s2 3p4",        term: "3P2" },
-  { sym: "Cl", Z: 17, qv: 7, capV: 8, config: "[Ne] 3s2 3p5",        term: "2P3/2" },
-  { sym: "Ar", Z: 18, qv: 8, capV: 8, config: "[Ne] 3s2 3p6",        term: "1S0" },
-];
-
-const BY_Z = new Map(ELEMENTS.map((e) => [e.Z, e]));
-
 // Shell capacity C(n) = 2 n^2 (the partition-coordinate count) — exposed as a
-// pure verb for programs that want it.
+// pure verb for programs that want it. Derived in shell.ts as a sum over l.
 export function shellCapacity(n: number): number {
-  let c = 0;
-  for (let l = 0; l < n; l++) c += 2 * (2 * l + 1);
-  return c; // == 2 n^2
+  return shellCap(n);
 }
 
 // ----------------------------------------------------------------------------
@@ -106,17 +81,19 @@ function thickness(nu: number, floor: number, kappa = 1.0): number {
 //  Individuate (cut Z)  — spectroscopic atom individuation
 // ----------------------------------------------------------------------------
 export function individuate(Z: number, floor: number): AtomVal {
-  if (!Number.isInteger(Z) || Z < 1) throw new Error(`cut: atomic number must be a positive integer (got ${Z})`);
-  const e = BY_Z.get(Z);
-  if (!e) throw new Error(`cut: element Z=${Z} not in the light-element table (1..18 supported)`);
-  const vacancy = e.capV - e.qv;
-  const valence = Math.min(vacancy, e.capV - vacancy); // bonding capacity (chemical-structure def)
+  // Everything here follows from Z by shell arithmetic — Madelung filling,
+  // subshell capacity 2(2l+1), Hund's three rules. There is no element table
+  // to consult, so the range is the named elements rather than a hand-entered
+  // subset, and an element nobody anticipated still resolves.
+  const d = deriveAtom(Z);
   // residue = the boundary deposited individuating this atom from the medium;
   // bounded below by the floor, increasing with vacancy (the partition malformation).
-  const residue = thickness(vacancy, floor);
+  const residue = thickness(d.vacancy, floor);
   return {
-    ty: "Atom", Z, symbol: e.sym, config: e.config, term: e.term,
-    qv: e.qv, capV: e.capV, vacancy, valence, floor, residue,
+    ty: "Atom", Z, symbol: d.symbol, config: d.configStr, term: d.term,
+    qv: d.qv, capV: d.capV, vacancy: d.vacancy, valence: d.valence,
+    period: d.period, group: d.group, exception: d.exception,
+    floor, residue,
   };
 }
 
@@ -151,7 +128,8 @@ export function close(central: AtomVal, ligands: AtomVal[], floor: number): Comp
     return {
       ty: "Compound", central: central.symbol, ligand: lig.symbol,
       formula: [2, 0], ligands: 1, geometry: "linear", angleDeg: 180,
-      valenceClosed: true, floor, residue: thickness(central.vacancy, floor),
+      valenceClosed: true, mainGroupModel: true,
+      floor, residue: thickness(central.vacancy, floor),
     };
   }
 
@@ -164,6 +142,13 @@ export function close(central: AtomVal, ligands: AtomVal[], floor: number): Comp
   // Electron-domain count for VSEPR geometry: bonded domains + lone pairs on
   // the central atom. Lone pairs = (valence-shell electrons - electrons in
   // sigma bonds) / 2, for the octet (main-group) case.
+  //
+  // LIMIT, stated because `cut` now reaches Z=118 while this does not: the
+  // octet/VSEPR model below was validated for main-group elements. Applied to
+  // a transition metal it still returns a geometry, but that geometry is the
+  // main-group rule extrapolated, not a derived d-block result. Compounds
+  // whose centre carries an open d shell are marked so the caller can tell
+  // the difference.
   const bondedDomains = nLig;
   const lonePairs = central.capV === 8
     ? Math.max(0, Math.floor((central.qv - nLig) / 2))
@@ -182,10 +167,14 @@ export function close(central: AtomVal, ligands: AtomVal[], floor: number): Comp
     angleDeg = lonePairs === 0 ? round2(ANGLE_TET) : lonePairs === 1 ? 107.0 : 104.5;
   }
 
+  // An open d shell means the octet closure target above does not apply.
+  const dBlock = central.group !== null && central.group >= 3 && central.group <= 12;
+
   return {
     ty: "Compound", central: central.symbol, ligand: lig.symbol,
     formula: [1, nLig], ligands: nLig, geometry, angleDeg,
-    valenceClosed: true, floor, residue: thickness(0, floor) + nLig * floor,
+    valenceClosed: true, mainGroupModel: !dBlock,
+    floor, residue: thickness(0, floor) + nLig * floor,
   };
 }
 

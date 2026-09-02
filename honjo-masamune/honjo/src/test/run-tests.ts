@@ -4,6 +4,7 @@
 
 import { evaluate, compile } from "../index.js";
 import { AtomVal, CompoundVal, PathVal, BondVal, shellCapacity } from "../stdlib.js";
+import { deriveAtom, MAX_Z } from "../shell.js";
 
 let pass = 0, fail = 0;
 const failures: string[] = [];
@@ -23,7 +24,7 @@ function throws(name: string, fn: () => void) {
   const C = r.named["C"] as AtomVal;
   ok("carbon symbol", C.symbol === "C", C.symbol);
   ok("carbon config", C.config === "[He] 2s2 2p2", C.config);
-  ok("carbon term", C.term === "3P0", C.term);
+  ok("carbon term", C.term === "3P_0", C.term);
   ok("carbon vacancy=4", C.vacancy === 4, String(C.vacancy));
   ok("carbon residue>=floor", C.residue >= 1.0, String(C.residue));
   ok("carbon cut count M=1", r.cutCount === 1, String(r.cutCount));
@@ -114,6 +115,65 @@ import { dirname, join } from "node:path";
     failures.push(`examples dir: ${(e as Error).message}`);
   }
   ok("found example programs", ran >= 3, String(ran));
+}
+
+// ---- shell arithmetic: the atom is derived, not tabulated ----
+// These check the port against the SAME committed benchmark the Python
+// reference is validated on (atomic-derivation/results/*.json, NIST-checked).
+// If the derivation drifts, this fails rather than quietly returning a
+// plausible-looking configuration.
+{
+  const here2 = dirname(fileURLToPath(import.meta.url));
+  const resDir = join(here2, "..", "..", "..", "..", "dmitri",
+                      "publications", "atomic-derivation", "results");
+
+  // C(n) = 2n^2 must hold as a computed sum, not by construction.
+  ok("C(n)=2n^2", [1, 2, 3, 4, 5, 6].every((n) => shellCapacity(n) === 2 * n * n));
+
+  try {
+    const terms = JSON.parse(readFileSync(join(resDir, "term_symbols.json"), "utf8"));
+    let tOk = 0;
+    for (const r of terms.results) {
+      const a = deriveAtom(r.Z);
+      if (a.term === r.nist_term) tOk++;
+      else failures.push(`term Z=${r.Z} ${r.symbol}: got ${a.term}, NIST ${r.nist_term}`);
+    }
+    ok("term symbols match NIST benchmark", tOk === terms.results.length,
+       `${tOk}/${terms.results.length}`);
+  } catch (e) {
+    ok("term benchmark readable", false, (e as Error).message);
+  }
+
+  // Every named element must resolve. The old table stopped at 18; a
+  // derivation that silently failed above some Z would be a table wearing a
+  // function's clothes.
+  let resolved = 0;
+  for (let Z = 1; Z <= MAX_Z; Z++) {
+    try { deriveAtom(Z); resolved++; } catch { /* counted by the assertion */ }
+  }
+  ok("all named elements resolve", resolved === MAX_Z, `${resolved}/${MAX_Z}`);
+
+  // Spot-check placements the arithmetic has to get right, including the
+  // cases that broke naive formulas: filled-d exceptions (Cu, Ag, Au) must
+  // not read as alkali metals, and Pd must not fall a period short.
+  const placements: [number, number, number][] = [
+    [6, 2, 14], [17, 3, 17], [20, 4, 2], [21, 4, 3], [26, 4, 8],
+    [29, 4, 11], [30, 4, 12], [46, 5, 10], [47, 5, 11], [79, 6, 11],
+    [80, 6, 12], [2, 1, 18], [36, 4, 18],
+  ];
+  let placed = 0;
+  for (const [Z, period, group] of placements) {
+    const a = deriveAtom(Z);
+    if (a.period === period && a.group === group) placed++;
+    else failures.push(`placement Z=${Z} ${a.symbol}: got period ${a.period} group ${a.group}, want ${period}/${group}`);
+  }
+  ok("periods and groups derived correctly", placed === placements.length,
+     `${placed}/${placements.length}`);
+
+  // Elements the old eighteen-row table could not express at all.
+  const fe = deriveAtom(26);
+  ok("Z=26 beyond the old table", fe.configStr === "[Ar] 3d6 4s2" && fe.term === "5D_4",
+     `${fe.configStr} ${fe.term}`);
 }
 
 // ---- report ----

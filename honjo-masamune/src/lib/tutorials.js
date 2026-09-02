@@ -30,8 +30,35 @@ observe C                 -- force the measurement now
 
 -- The atom is not looked up in a table. Its shell structure,
 -- term symbol and vacancy follow from the cut itself.`,
-      expect: `Atom  [He] 2s2 2p2  term 3P0  vacancy 4
+      expect: `Atom  [He] 2s2 2p2  term 3P_0  vacancy 4
 cut count M = 1`,
+    },
+
+    "06_derivation.hnj": {
+      executable: true,
+      title: "Derivation, not lookup",
+      source: `-- The atom is computed from Z by shell arithmetic:
+-- Madelung filling, subshell capacity 2(2l+1), Hund's three rules.
+-- Nothing here is read out of a table, which is why elements that
+-- no table in this project ever listed still resolve.
+
+floor 1.0
+
+Fe := cut 26              -- iron: an open d shell
+observe Fe
+
+Cu := cut 29              -- copper: ground state departs from aufbau
+observe Cu
+
+U  := cut 92              -- uranium: the f block
+observe U
+
+-- Period and group are read off the derived configuration, so the
+-- atom reports its own place in the table without being told it.`,
+      expect: `Fe  [Ar] 3d6 4s2   5D_4    period=4 group=8
+Cu  [Ar] 3d10 4s1  2S_1/2  period=4 group=11  [departs from aufbau]
+U   [Rn] 5f4 7s2   5I_4    period=7 group=f
+cut count M = 3`,
     },
 
     "02_closure.hnj": {

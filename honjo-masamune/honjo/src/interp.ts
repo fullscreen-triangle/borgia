@@ -213,13 +213,19 @@ export function renderValue(v: RVal, name?: string): string {
   const tag = name ? `${name} : ` : "";
   switch (v.ty) {
     case "Atom":
-      return `${tag}Atom @ ${fmt(v.floor)}  Z=${v.Z} ${v.symbol}  ${v.config}  ${v.term}  vacancy=${v.vacancy}  valence=${v.valence}  residue=${fmt(v.residue)}`;
+      // Period and group are shown because they are now derived rather than
+      // absent: the configuration determines the placement, so the atom can
+      // report where in the table it sits without being told.
+      return `${tag}Atom @ ${fmt(v.floor)}  Z=${v.Z} ${v.symbol}  ${v.config}  ${v.term}` +
+             `  period=${v.period} group=${v.group ?? "f"}` +
+             `  vacancy=${v.vacancy}  valence=${v.valence}  residue=${fmt(v.residue)}` +
+             (v.exception ? "  [ground state departs from aufbau]" : "");
     case "Bond":
       return `${tag}Bond @ ${fmt(v.floor)}  ${v.a}~${v.b}  exists=${v.exists}  delta=${fmt(v.delta)}  shared=${v.shared}  residue=${fmt(v.residue)}`;
     case "Compound": {
       const lig = v.formula[1] > 1 ? v.ligand + v.formula[1] : v.formula[1] === 1 ? v.ligand : "";
       const formula = v.formula[0] === 2 ? v.central + "2" : v.central + lig;
-      return `${tag}Compound @ ${fmt(v.floor)}  ${formula}  geometry=${v.geometry}  angle=${v.angleDeg ?? "-"}  closed=${v.valenceClosed}  residue=${fmt(v.residue)}`;
+      return `${tag}Compound @ ${fmt(v.floor)}  ${formula}  geometry=${v.geometry}  angle=${v.angleDeg ?? "-"}  closed=${v.valenceClosed}  residue=${fmt(v.residue)}` + (v.mainGroupModel ? "" : "  [octet/VSEPR extrapolated beyond main group]");
     }
     case "Path":
       return `${tag}Path @ ${fmt(v.floor)}  item=${v.item}  steps=${v.steps}  converged=${v.converged}  reps=[${v.reps.join(",")}]  amalgamation=[${v.amalgamation.join(", ")}]  residue=${fmt(v.residue)}`;
