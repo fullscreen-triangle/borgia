@@ -783,6 +783,11 @@ function lower(p) {
 function subshellCapacity(l) {
   return 2 * (2 * l + 1);
 }
+function shellCapacity(n) {
+  let c = 0;
+  for (let l = 0; l < n; l++) c += subshellCapacity(l);
+  return c;
+}
 var L_LETTER = ["s", "p", "d", "f", "g", "h"];
 var S_LABELS = "S P D F G H I K L M N O Q R T U V".split(" ");
 var MADELUNG_ORDER = [
@@ -932,6 +937,12 @@ function hundTerm(cfg) {
   const J = occ <= cap / 2 ? Math.abs(L - totalS) : L + totalS;
   const letter = L < S_LABELS.length ? S_LABELS[L] : `[${L}]`;
   return `${mult}${letter}_${formatJ(J)}`;
+}
+function valenceShell(cfg) {
+  const nMax = Math.max(...cfg.map((s) => s.n));
+  const outer = cfg.filter((s) => s.n === nMax);
+  const innerOpen = cfg.filter((s) => s.n < nMax && s.occ < subshellCapacity(s.l) && s.occ > 0);
+  return [...innerOpen, ...outer];
 }
 function valenceCounts(cfg) {
   const nMax = Math.max(...cfg.map((s) => s.n));
@@ -1325,13 +1336,27 @@ function exec(src) {
   return { log: r.log, cutCount: r.cutCount, ok: r.ok };
 }
 export {
+  MADELUNG_ORDER,
+  MAX_Z,
+  aufbauConfig,
   check,
   compile,
+  configToString,
+  deriveAtom,
+  deriveConfiguration,
   evaluate,
   exec,
+  hundTerm,
+  isAufbauException,
   lex,
   lower,
+  openShells,
   parse,
   renderValue,
-  run
+  run,
+  shellCapacity,
+  subshellCapacity,
+  symbolOf,
+  valenceCounts,
+  valenceShell
 };

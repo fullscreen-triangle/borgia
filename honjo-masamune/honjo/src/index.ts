@@ -15,6 +15,16 @@ export { parse } from "./parser.js";
 export { check } from "./types.js";
 export { lower } from "./lower.js";
 export { run, renderValue } from "./interp.js";
+
+// The shell arithmetic, exported so the browser can derive an atom directly
+// rather than only through a `cut Z` program. The generator UI needs the
+// structured DerivedAtom (config, term, vacancy, group), not a log line.
+export {
+  subshellCapacity, shellCapacity, MADELUNG_ORDER, MAX_Z, symbolOf,
+  aufbauConfig, deriveConfiguration, isAufbauException, configToString,
+  openShells, hundTerm, valenceShell, valenceCounts, deriveAtom,
+} from "./shell.js";
+export type { Subshell, DerivedAtom } from "./shell.js";
 export type { RunResult, RVal } from "./interp.js";
 
 export interface CompileResult {

@@ -32,6 +32,8 @@ import { runPlan } from "@/lib/plan";
 import { runMbt } from "@/lib/mbt";
 import RECORDS from "@/data/records.json";
 import PaperPanels, { PAPER_NAMES, RESULT_COUNT } from "@/components/workbench/PaperPanels";
+import Generator from "@/components/workbench/Generator";
+import PapersFull from "@/components/workbench/PapersFull";
 
 const T = {
   bg: "#1a1b26", surface: "#1e1f2e", panel: "#24253a", border: "#2f3146",
@@ -162,6 +164,10 @@ export default function Workbench() {
   const [busy, setBusy] = useState(false);
 
   const [outTab, setOutTab] = useState("supplied");
+  // Which of the three workspaces is on screen. The editor is not the only
+  // thing this tool does, and burying the other two in a 400px sidebar tab
+  // made them effectively invisible.
+  const [mode, setMode] = useState("generator");
   const [lastRun, setLastRun] = useState(null);
   const [lastPlan, setLastPlan] = useState(null);
   const [lastMbt, setLastMbt] = useState(null);
@@ -422,7 +428,7 @@ export default function Workbench() {
             <span style={{ fontWeight: 700, color: T.accent, letterSpacing: 0.5 }}>
               HONJO
             </span>
-            <span style={{ color: T.muted, fontSize: 11 }}>workbench</span>
+            <ModeSwitch mode={mode} setMode={setMode} />
           </div>
           <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
             <button
@@ -458,7 +464,17 @@ export default function Workbench() {
 
         <AskPanel open={showAsk} onClose={() => setShowAsk(false)} />
 
-        <div style={{ flex: 1, display: "flex", overflow: "hidden" }}>
+        {mode === "generator" && (
+          <div style={{ flex: 1, overflow: "hidden" }}><Generator /></div>
+        )}
+        {mode === "papers" && (
+          <div style={{ flex: 1, overflow: "hidden" }}><PapersFull /></div>
+        )}
+
+        <div style={{
+          flex: 1, display: mode === "editor" ? "flex" : "none",
+          overflow: "hidden",
+        }}>
           {/* explorer */}
           <div style={{
             width: leftW, background: T.surface,
@@ -803,6 +819,35 @@ function PapersView() {
         ))}
       </div>
       <PaperPanels paper={paper} />
+    </div>
+  );
+}
+
+/**
+ * The three things this tool does, at the top level.
+ *
+ * Previously the generator did not have a surface at all and the corpus panels
+ * were the eighth tab of a 400px sidebar — present in the markup, invisible on
+ * the screen. Anything that has its own screen belongs in the header.
+ */
+function ModeSwitch({ mode, setMode }) {
+  const modes = [
+    ["generator", "generate", "Derive all 118 atoms from Z"],
+    ["editor", "editor", "Write and run honjo / masamune / meibutsu"],
+    ["papers", `panels (${RESULT_COUNT})`, "Corpus figures, recomputed in-browser"],
+  ];
+  return (
+    <div style={{ display: "flex", gap: 2, marginLeft: 4 }}>
+      {modes.map(([id, label, title]) => (
+        <button key={id} onClick={() => setMode(id)} title={title} style={{
+          padding: "4px 12px", fontSize: 11, fontFamily: MONO,
+          background: mode === id ? T.surface : "transparent",
+          color: mode === id ? T.accent : T.dim,
+          border: `1px solid ${mode === id ? T.border : "transparent"}`,
+          borderRadius: 4, cursor: "pointer",
+          fontWeight: mode === id ? 700 : 400,
+        }}>{label}</button>
+      ))}
     </div>
   );
 }
