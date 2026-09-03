@@ -91,6 +91,23 @@ export class Refusal extends Error {
 }
 
 /**
+ * Raised when a lowered request exceeds the effort allocated to its step.
+ *
+ * Distinct from `Refusal` and the distinction is the point. A refusal says the
+ * source cannot express this request at all -- blocker `model`, and rewriting
+ * the plan is the only remedy. A timeout says it could have, but was not given
+ * enough of the budget -- blocker `engine`, and raising the budget or shifting
+ * the allocation would fix it. Collapsing the two would tell the reader to
+ * rewrite a plan that was merely underfunded.
+ */
+export class Timeout extends Error {
+  constructor(message) {
+    super(message);
+    this.name = "Timeout";
+  }
+}
+
+/**
  * A set of identifiers, each carrying an attribute map.
  *
  * Insertion order is preserved by the underlying Map, but no operation may

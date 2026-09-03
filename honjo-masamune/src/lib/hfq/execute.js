@@ -22,10 +22,32 @@
  * Ported from hfq/execute.py.
  */
 
-import { Verdict, blockerOf, ResultSet, Refusal, VERDICT_PROSE } from "./model.js";
+import {
+  Verdict,
+  blockerOf,
+  ResultSet,
+  Refusal,
+  Timeout,
+  VERDICT_PROSE,
+} from "./model.js";
 import { check, refusalDocument } from "./check.js";
 import { resolveFeatures } from "./adapters.js";
 import { YieldSpec, solve, kktResiduals } from "./allocate.js";
+
+/**
+ * Python's `%g` for the numbers a budget produces.
+ *
+ * The reference builds its diagnosis strings with `{:g}`, and those strings are
+ * user-visible on the page as well as compared by the semantic differ. JS
+ * number-to-string is close but not identical, so the formatting lives in one
+ * function rather than being approximated at each call site.
+ */
+function fmtG(x) {
+  if (!Number.isFinite(x)) return String(x);
+  if (Number.isInteger(x)) return String(x);
+  const s = x.toPrecision(6).replace(/0+$/, "").replace(/\.$/, "");
+  return String(parseFloat(s));
+}
 
 export class StepResult {
   constructor(fields) {
@@ -370,91 +392,99 @@ export class Executor {
       inputs[y] = values[y] === undefined ? ResultSet.empty("-") : values[y];
     }
 
-    // (R2). Re-tested here even though the static check passed, because the
-    // required features can depend on the request's bindings, and a plan
-    // rewritten between check and run must not slip through.
-    let required;
-    try {
-      required = resolveFeatures(adapter, step);
-    } catch (e) {
-      if (e instanceof Refusal) {
-        return new StepResult({
-          step: step.var,
-          source: step.source,
-          verdict: Verdict.REFUSED,
-          diagnosis: e.message,
-          allocated,
-          shadowPrice: shadow,
-          payload: ResultSet.empty(adapter.namespace),
-        });
-      }
-      throw e;
-    }
+    const base = {
+      step: step.var,
+      source: step.source,
+      allocated,
+      shadowPrice: shadow,
+      snapshot: adapter.snapshot,
+    };
+    const nothing = () => ResultSet.empty(adapter.namespace);
+
+    // (R2) capability containment. `thm:static` already decided this without
+    // contact, so reaching it here means the checker and the adapter disagree
+    // -- which is a bug worth surfacing rather than a condition to handle.
+    // `resolveFeatures` is called UNGUARDED on purpose: a throw from it is a
+    // checker defect, and `Refusal` exists precisely so that defect is loud.
+    const required = resolveFeatures(adapter, step);
     const missing = [...required].filter((f) => !adapter.capabilities.has(f));
     if (missing.length) {
       return new StepResult({
-        step: step.var,
-        source: step.source,
+        ...base,
         verdict: Verdict.SURFACE,
-        diagnosis: `${step.source} does not declare ${missing.sort().join(", ")}`,
-        allocated,
-        shadowPrice: shadow,
-        payload: ResultSet.empty(adapter.namespace),
+        diagnosis: {
+          missing: missing.sort(),
+          required: [...required].sort(),
+          reason: "required capabilities not declared by the source",
+        },
+        payload: nothing(),
       });
     }
 
-    // (R3). The cost is a function of the INPUT cardinality, so it cannot be
-    // known statically -- which is why the budget verdict lives here and not
-    // in the check.
-    let cost;
-    try {
-      cost = adapter.cost(step, inputs);
-    } catch (e) {
-      cost = 1.0;
-    }
-    if (cost > remaining + 1e-9) {
+    // (R3) the remaining PLAN budget against the cost at the REALISED input
+    // cardinality. `prop:necessary-not-sufficient` lives here: the declared
+    // per-source costs are minima over inputs, and the input a step actually
+    // meets is not the minimising one -- so a plan whose budget exceeds the
+    // sum of those minima can still be refused. `budget_trap` is that plan.
+    const cost = adapter.cost(step, inputs);
+    if (remaining < cost) {
       return new StepResult({
-        step: step.var,
-        source: step.source,
+        ...base,
         verdict: Verdict.REFUSED,
-        diagnosis:
-          `costs ${cost} requests at this cardinality; ` +
-          `${remaining.toFixed(2)} remain`,
-        allocated,
-        shadowPrice: shadow,
-        payload: ResultSet.empty(adapter.namespace),
+        diagnosis: {
+          reason:
+            `remaining budget ${fmtG(remaining)} below cost ${fmtG(cost)} ` +
+            `at input cardinality`,
+          remaining,
+          required: cost,
+          shortfall: cost - remaining,
+        },
+        payload: nothing(),
       });
     }
 
-    // (R4). The per-step ceiling declared by `within N`.
-    if (cost > step.budget) {
-      return new StepResult({
-        step: step.var,
-        source: step.source,
-        verdict: Verdict.TIMEOUT,
-        diagnosis: `costs ${cost}, exceeding the declared ceiling ${step.budget}`,
-        allocated,
-        spent: step.budget,
-        shadowPrice: shadow,
-        payload: ResultSet.empty(adapter.namespace),
-      });
-    }
+    // (R4) the effort this step may actually spend: its own `within N`
+    // annotation capped by the share `thm:allocation` gave it. Both bounds are
+    // real and the tighter one governs. Gating on the annotation alone -- as an
+    // earlier version of this port did -- makes a step that the allocator
+    // starved of effort report `answer`, because the only way to time out
+    // would be to exceed a ceiling the plan author wrote by hand.
+    //
+    // `allocated > 0` guards the case where the allocator assigned nothing
+    // because the step is all-or-nothing and was charged up front; there the
+    // annotation is the only bound in play.
+    const effort = allocated > 0 ? Math.min(step.budget, allocated) : step.budget;
 
     let payload;
     try {
-      payload = adapter.evaluate(step, inputs);
+      payload = adapter.evaluate(step, inputs, effort);
     } catch (e) {
-      if (e instanceof Refusal) {
+      if (e instanceof Timeout) {
         return new StepResult({
-          step: step.var,
-          source: step.source,
-          verdict: Verdict.REFUSED,
-          diagnosis: e.message,
-          allocated,
-          spent: cost,
-          shadowPrice: shadow,
-          loweredForm: adapter.lastLowered,
-          payload: ResultSet.empty(adapter.namespace),
+          ...base,
+          verdict: Verdict.TIMEOUT,
+          diagnosis: {
+            reason:
+              `cost ${fmtG(cost)} exceeds the effort ${fmtG(effort)} ` +
+              `allocated to this step`,
+            step_budget: effort,
+            elapsed_cost: cost,
+          },
+          payload: nothing(),
+        });
+      }
+      if (e instanceof Refusal) {
+        // SURFACE, not REFUSED. A refusal from `evaluate` means the source
+        // cannot express this request -- blocker `model`, and the remedy is to
+        // rewrite the plan. Reporting it as `refused` would put the blocker at
+        // `budget` and tell the reader to spend more on a request that no
+        // budget can buy. On a page arguing that a verdict names the real
+        // obstacle, that mislabel was the worst defect in the port.
+        return new StepResult({
+          ...base,
+          verdict: Verdict.SURFACE,
+          diagnosis: { reason: e.message },
+          payload: nothing(),
         });
       }
       throw e;
@@ -462,19 +492,15 @@ export class Executor {
 
     // (R5) then (R6).
     return new StepResult({
-      step: step.var,
-      source: step.source,
+      ...base,
       verdict: payload.size ? Verdict.ANSWER : Verdict.EMPTY,
       // An empty answer carries NO blocker and no diagnosis of obstruction.
       // "Nothing matched" is a fact about the world, not a failure of the
       // machinery, and labelling it as one would be a lie about the corpus.
       diagnosis: payload.size
         ? null
-        : "no member of the extent satisfied the request",
-      allocated,
+        : { reason: "no member of the extent satisfied the request" },
       spent: cost,
-      shadowPrice: shadow,
-      snapshot: adapter.snapshot,
       loweredForm: adapter.lastLowered,
       payload,
     });
@@ -637,6 +663,26 @@ export class Executor {
       }[step.op];
       for (const i of a.identifiers()) {
         const row = a.attrs(i);
+
+        // `_id` names the IDENTIFIER, not an attribute, and it is the only
+        // field a filter can rely on after a translation step. A map need not
+        // be injective -- `chebi2kegg` sends both CHEBI:9 and CHEBI:10 to
+        // KEGG:C9 -- and when two preimages collide on one identifier,
+        // `ResultSet.of` merges their attribute maps so the surviving row
+        // carries whichever preimage was written last. Attributes therefore do
+        // not survive such a map intact, and a filter that must single out one
+        // element has to name it.
+        //
+        // Omitting this branch does not raise: `_id` is simply absent from
+        // every row, so the guard below drops every row as untested and the
+        // step reports `empty`. That is a coherent-looking lie -- the filter
+        // matched nothing, so its consumer starved -- and it is what this port
+        // did until the 24-plan sweep put `order_a` beside the reference.
+        if (step.attr === "_id") {
+          if (cmp(i, step.value)) pairs.push([i, row]);
+          continue;
+        }
+
         // A row LACKING the attribute is dropped, not passed. It was never
         // tested, and treating an absence as a pass would report rows the
         // filter did not examine.

@@ -1,5 +1,145 @@
 {
  "maps": {
+  "chebi2kegg": {
+   "name": "chebi2kegg",
+   "pairs": {
+    "CHEBI:10": [
+     "KEGG:C9",
+     "KEGG:C10"
+    ],
+    "CHEBI:2": [
+     "KEGG:C2"
+    ],
+    "CHEBI:3": [
+     "KEGG:C3"
+    ],
+    "CHEBI:4": [
+     "KEGG:C4"
+    ],
+    "CHEBI:5": [
+     "KEGG:C5"
+    ],
+    "CHEBI:7": [
+     "KEGG:C7"
+    ],
+    "CHEBI:9": [
+     "KEGG:C9"
+    ]
+   },
+   "source_ns": "CHEBI",
+   "target_ns": "KEGG"
+  },
+  "chebi2kegg_total": {
+   "name": "chebi2kegg_total",
+   "pairs": {
+    "CHEBI:10": [
+     "KEGG:C9",
+     "KEGG:C10"
+    ],
+    "CHEBI:2": [
+     "KEGG:C2"
+    ],
+    "CHEBI:3": [
+     "KEGG:C3"
+    ],
+    "CHEBI:4": [
+     "KEGG:C4"
+    ],
+    "CHEBI:5": [
+     "KEGG:C5"
+    ],
+    "CHEBI:6": [
+     "KEGG:C6"
+    ],
+    "CHEBI:7": [
+     "KEGG:C7"
+    ],
+    "CHEBI:8": [
+     "KEGG:C8"
+    ],
+    "CHEBI:9": [
+     "KEGG:C9"
+    ]
+   },
+   "source_ns": "CHEBI",
+   "target_ns": "KEGG"
+  },
+  "chebi_to_inchikey": {
+   "name": "chebi_to_inchikey",
+   "pairs": {
+    "CHEBI:10": [
+     "INCHI:10"
+    ],
+    "CHEBI:2": [
+     "INCHI:2"
+    ],
+    "CHEBI:4": [
+     "INCHI:4"
+    ],
+    "CHEBI:5": [
+     "INCHI:5"
+    ],
+    "CHEBI:6": [
+     "INCHI:6"
+    ],
+    "CHEBI:7": [
+     "INCHI:7"
+    ],
+    "CHEBI:8": [
+     "INCHI:8"
+    ],
+    "CHEBI:9": [
+     "INCHI:9"
+    ]
+   },
+   "source_ns": "CHEBI",
+   "target_ns": "INCHI"
+  },
+  "chebi_to_kegg": {
+   "name": "chebi_to_kegg",
+   "pairs": {
+    "CHEBI:10": [
+     "KEGG:C9",
+     "KEGG:C10"
+    ],
+    "CHEBI:2": [
+     "KEGG:C2"
+    ],
+    "CHEBI:3": [
+     "KEGG:C3"
+    ],
+    "CHEBI:4": [
+     "KEGG:C4"
+    ],
+    "CHEBI:5": [
+     "KEGG:C5"
+    ],
+    "CHEBI:7": [
+     "KEGG:C7"
+    ],
+    "CHEBI:9": [
+     "KEGG:C9"
+    ]
+   },
+   "source_ns": "CHEBI",
+   "target_ns": "KEGG"
+  },
+  "ec_to_kegg": {
+   "name": "ec_to_kegg",
+   "pairs": {
+    "EC:1.1.1.1": [
+     "KEGG:E1"
+    ],
+    "EC:2.7.1.1": [
+     "KEGG:E2"
+    ],
+    "EC:3.1.3.1": [
+     "KEGG:E3"
+    ]
+   },
+   "source_ns": "EC",
+   "target_ns": "KEGG"
+  },
   "enz_to_seq": {
    "name": "enz_to_seq",
    "pairs": {
@@ -27,6 +167,47 @@
    },
    "source_ns": "RXN",
    "target_ns": "SEQ"
+  },
+  "inchikey_to_kegg": {
+   "name": "inchikey_to_kegg",
+   "pairs": {
+    "INCHI:2": [
+     "KEGG:C2"
+    ],
+    "INCHI:4": [
+     "KEGG:C4"
+    ],
+    "INCHI:5": [
+     "KEGG:C5"
+    ],
+    "INCHI:6": [
+     "KEGG:C6"
+    ],
+    "INCHI:7": [
+     "KEGG:C7"
+    ],
+    "INCHI:9": [
+     "KEGG:C9"
+    ]
+   },
+   "source_ns": "INCHI",
+   "target_ns": "KEGG"
+  },
+  "kegg2rhea": {
+   "name": "kegg2rhea",
+   "pairs": {
+    "KEGG:C2": [
+     "RHEA:100"
+    ],
+    "KEGG:C5": [
+     "RHEA:102"
+    ],
+    "KEGG:C9": [
+     "RHEA:105"
+    ]
+   },
+   "source_ns": "KEGG",
+   "target_ns": "RHEA"
   }
  },
  "plans": {
@@ -150,6 +331,59 @@
   ]
  },
  "sources": {
+  "CHEBI": {
+   "capabilities": [
+    "lookup",
+    "path"
+   ],
+   "kind": "OntologyAdapter",
+   "labels": {
+    "CHEBI:10": "compound-10",
+    "CHEBI:2": "compound-2",
+    "CHEBI:3": "compound-3",
+    "CHEBI:4": "compound-4",
+    "CHEBI:5": "compound-5",
+    "CHEBI:6": "compound-6",
+    "CHEBI:7": "compound-7",
+    "CHEBI:8": "compound-8",
+    "CHEBI:9": "compound-9"
+   },
+   "name": "CHEBI",
+   "namespace": "CHEBI",
+   "parents": {
+    "CHEBI:1": [
+     "CHEBI:35238"
+    ],
+    "CHEBI:10": [
+     "CHEBI:9"
+    ],
+    "CHEBI:2": [
+     "CHEBI:1"
+    ],
+    "CHEBI:3": [
+     "CHEBI:1"
+    ],
+    "CHEBI:4": [
+     "CHEBI:1"
+    ],
+    "CHEBI:5": [
+     "CHEBI:2"
+    ],
+    "CHEBI:6": [
+     "CHEBI:2"
+    ],
+    "CHEBI:7": [
+     "CHEBI:3"
+    ],
+    "CHEBI:8": [
+     "CHEBI:4"
+    ],
+    "CHEBI:9": [
+     "CHEBI:4"
+    ]
+   },
+   "snapshot": "fixture-v3"
+  },
   "INST": {
    "capabilities": [
     "batch",
@@ -185,6 +419,43 @@
     }
    },
    "snapshot": "biocat-v1"
+  },
+  "KEGG": {
+   "capabilities": [
+    "batch",
+    "bind",
+    "link",
+    "lookup"
+   ],
+   "kind": "LookupAdapter",
+   "links": {
+    "pathway": {
+     "KEGG:E1": [
+      "MAP:00010"
+     ],
+     "KEGG:E2": [
+      "MAP:00010",
+      "MAP:00051"
+     ],
+     "KEGG:E3": [
+      "MAP:00790"
+     ]
+    }
+   },
+   "name": "KEGG",
+   "namespace": "KEGG",
+   "records": {
+    "KEGG:E1": {
+     "name": "adh"
+    },
+    "KEGG:E2": {
+     "name": "hk"
+    },
+    "KEGG:E3": {
+     "name": "alp"
+    }
+   },
+   "snapshot": "fixture-v3"
   },
   "PROV": {
    "capabilities": [
@@ -320,6 +591,98 @@
      "ACT:BT4",
      "measured_with",
      "DEV:Bruker-Avance-400"
+    ]
+   ]
+  },
+  "RHEA": {
+   "capabilities": [
+    "agg",
+    "bind",
+    "filter",
+    "path",
+    "pattern"
+   ],
+   "kind": "GraphPatternAdapter",
+   "name": "RHEA",
+   "namespace": "RHEA",
+   "paths": {
+    "enzyme_of": "catalysed_by",
+    "participants_of": "consumes",
+    "reactions_consuming": "consumes",
+    "reactions_producing": "produces"
+   },
+   "prefixes": {},
+   "snapshot": "fixture-v3",
+   "triples": [
+    [
+     "CHEBI:2",
+     "consumes",
+     "RHEA:100"
+    ],
+    [
+     "CHEBI:2",
+     "consumes",
+     "RHEA:101"
+    ],
+    [
+     "CHEBI:5",
+     "consumes",
+     "RHEA:102"
+    ],
+    [
+     "CHEBI:7",
+     "consumes",
+     "RHEA:103"
+    ],
+    [
+     "CHEBI:7",
+     "consumes",
+     "RHEA:104"
+    ],
+    [
+     "CHEBI:9",
+     "consumes",
+     "RHEA:105"
+    ],
+    [
+     "CHEBI:2",
+     "produces",
+     "RHEA:200"
+    ],
+    [
+     "CHEBI:5",
+     "produces",
+     "RHEA:201"
+    ],
+    [
+     "RHEA:100",
+     "catalysed_by",
+     "EC:1.1.1.1"
+    ],
+    [
+     "RHEA:101",
+     "catalysed_by",
+     "EC:1.1.1.2"
+    ],
+    [
+     "RHEA:102",
+     "catalysed_by",
+     "EC:2.7.1.1"
+    ],
+    [
+     "RHEA:103",
+     "catalysed_by",
+     "EC:1.1.1.1"
+    ],
+    [
+     "RHEA:104",
+     "catalysed_by",
+     "EC:3.1.3.1"
+    ],
+    [
+     "RHEA:105",
+     "catalysed_by",
+     "EC:2.7.1.1"
     ]
    ]
   },
@@ -617,6 +980,237 @@
     ]
    },
    "snapshot": "biocat-v1"
+  },
+  "chebi": {
+   "capabilities": [
+    "lookup",
+    "path"
+   ],
+   "kind": "OntologyAdapter",
+   "labels": {
+    "CHEBI:10": "compound-10",
+    "CHEBI:2": "compound-2",
+    "CHEBI:3": "compound-3",
+    "CHEBI:4": "compound-4",
+    "CHEBI:5": "compound-5",
+    "CHEBI:6": "compound-6",
+    "CHEBI:7": "compound-7",
+    "CHEBI:8": "compound-8",
+    "CHEBI:9": "compound-9"
+   },
+   "name": "chebi",
+   "namespace": "CHEBI",
+   "parents": {
+    "CHEBI:10": [
+     "CHEBI:9"
+    ],
+    "CHEBI:2": [
+     "CHEBI:1"
+    ],
+    "CHEBI:3": [
+     "CHEBI:1"
+    ],
+    "CHEBI:4": [
+     "CHEBI:1"
+    ],
+    "CHEBI:5": [
+     "CHEBI:2"
+    ],
+    "CHEBI:6": [
+     "CHEBI:2"
+    ],
+    "CHEBI:7": [
+     "CHEBI:3"
+    ],
+    "CHEBI:8": [
+     "CHEBI:4"
+    ],
+    "CHEBI:9": [
+     "CHEBI:4"
+    ]
+   },
+   "snapshot": "fixture-v3"
+  },
+  "enzdb": {
+   "capabilities": [
+    "link",
+    "lookup"
+   ],
+   "kind": "LookupAdapter",
+   "links": {
+    "pathway": {
+     "EC:1.1.1.1": [
+      "MAP:00010"
+     ],
+     "EC:2.7.1.1": [
+      "MAP:00010",
+      "MAP:00051"
+     ],
+     "EC:3.1.3.1": [
+      "MAP:00790"
+     ]
+    }
+   },
+   "name": "enzdb",
+   "namespace": "EC",
+   "records": {
+    "EC:1.1.1.1": {
+     "name": "alcohol dehydrogenase",
+     "organisms": 12
+    },
+    "EC:1.1.1.2": {
+     "name": "alcohol dehydrogenase (NADP+)",
+     "organisms": 4
+    },
+    "EC:2.7.1.1": {
+     "name": "hexokinase",
+     "organisms": 31
+    },
+    "EC:3.1.3.1": {
+     "name": "alkaline phosphatase",
+     "organisms": 7
+    }
+   },
+   "snapshot": "fixture-v3"
+  },
+  "rhea": {
+   "capabilities": [
+    "agg",
+    "bind",
+    "filter",
+    "path",
+    "pattern"
+   ],
+   "kind": "GraphPatternAdapter",
+   "name": "rhea",
+   "namespace": "RHEA",
+   "paths": {
+    "enzyme_of": "catalysed_by",
+    "participants_of": "consumes",
+    "reactions_consuming": "consumes",
+    "reactions_producing": "produces"
+   },
+   "prefixes": {
+    "rh": "http://example.invalid/rhea/"
+   },
+   "snapshot": "fixture-v3",
+   "triples": [
+    [
+     "KEGG:C2",
+     "consumes",
+     "RHEA:100"
+    ],
+    [
+     "KEGG:C2",
+     "consumes",
+     "RHEA:101"
+    ],
+    [
+     "KEGG:C5",
+     "consumes",
+     "RHEA:102"
+    ],
+    [
+     "KEGG:C7",
+     "consumes",
+     "RHEA:103"
+    ],
+    [
+     "KEGG:C7",
+     "consumes",
+     "RHEA:104"
+    ],
+    [
+     "KEGG:C9",
+     "consumes",
+     "RHEA:105"
+    ],
+    [
+     "KEGG:C2",
+     "produces",
+     "RHEA:200"
+    ],
+    [
+     "KEGG:C5",
+     "produces",
+     "RHEA:201"
+    ],
+    [
+     "RHEA:100",
+     "catalysed_by",
+     "EC:1.1.1.1"
+    ],
+    [
+     "RHEA:101",
+     "catalysed_by",
+     "EC:1.1.1.2"
+    ],
+    [
+     "RHEA:102",
+     "catalysed_by",
+     "EC:2.7.1.1"
+    ],
+    [
+     "RHEA:103",
+     "catalysed_by",
+     "EC:1.1.1.1"
+    ],
+    [
+     "RHEA:104",
+     "catalysed_by",
+     "EC:3.1.3.1"
+    ],
+    [
+     "RHEA:105",
+     "catalysed_by",
+     "EC:2.7.1.1"
+    ]
+   ]
+  },
+  "tiny_graph": {
+   "capabilities": [
+    "agg",
+    "bind",
+    "filter",
+    "path",
+    "pattern"
+   ],
+   "kind": "GraphPatternAdapter",
+   "name": "tiny_graph",
+   "namespace": "RHEA",
+   "paths": {
+    "reactions_consuming": "consumes"
+   },
+   "prefixes": {},
+   "snapshot": "fixture-v3",
+   "triples": [
+    [
+     "CHEBI:2",
+     "consumes",
+     "RHEA:1"
+    ]
+   ]
+  },
+  "tiny_onto": {
+   "capabilities": [
+    "lookup",
+    "path"
+   ],
+   "kind": "OntologyAdapter",
+   "name": "tiny_onto",
+   "namespace": "CHEBI",
+   "parents": {
+    "CHEBI:2": [
+     "CHEBI:1"
+    ],
+    "CHEBI:3": [
+     "CHEBI:1"
+    ],
+    "CHEBI:4": [
+     "CHEBI:1"
+    ]
+   },
+   "snapshot": "fixture-v3"
   }
  }
 }

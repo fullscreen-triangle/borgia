@@ -15,7 +15,7 @@
  * Ported from hfq/adapters.py and hfq/biocat.py.
  */
 
-import { ResultSet, Refusal } from "./model.js";
+import { ResultSet, Refusal, Timeout } from "./model.js";
 
 /* ------------------------------------------------------------------ *
  * Capability requirements per abstract predicate.
@@ -104,9 +104,33 @@ export class Adapter {
     return 1.0;
   }
 
-  /** Lower, count the request, extract. Order matters: the counter increments
-   *  even when extraction refuses, because the request was formed. */
-  evaluate(request, inputs) {
+  /**
+   * Issue the request, or explain why it cannot be issued.
+   *
+   * The two gates run BEFORE `lower`, and that ordering is load-bearing rather
+   * than tidy. `requestsIssued` is an observable claim on the page -- a plan
+   * refused before contact must report zero -- so a step that fails either gate
+   * must not touch the counter. Lowering first and checking after would inflate
+   * it by one per obstructed step and quietly falsify the claim.
+   *
+   * Past the gates the counter increments even if `extract` throws, because by
+   * then the request really was formed and sent.
+   */
+  evaluate(request, inputs, effort) {
+    const req = resolveFeatures(this, request);
+    const missing = [...req].filter((f) => !this.capabilities.has(f));
+    if (missing.length) {
+      throw new Refusal(
+        `${this.name} lacks ${JSON.stringify(missing.sort())} for ` +
+          `'${request.predicate}'`
+      );
+    }
+    const c = this.cost(request, inputs);
+    if (c > effort) {
+      throw new Timeout(
+        `${this.name}: cost ${c} exceeds allocated effort ${effort}`
+      );
+    }
     const concrete = this.lower(request, inputs);
     this.lastLowered = concrete;
     this.requestsIssued += 1;
@@ -791,88 +815,111 @@ export class OntologyAdapter extends Adapter {
     this.labels = opts.labels || {};
   }
 
-  ancestors(node) {
-    const out = new Set();
-    const stack = [...(this.parents[node] || [])];
-    while (stack.length) {
-      const cur = stack.pop();
-      if (out.has(cur)) continue;
-      out.add(cur);
-      stack.push(...(this.parents[cur] || []));
+  /**
+   * The inverted subsumption index, built on demand.
+   *
+   * `parents` is the stored direction because that is how a class hierarchy is
+   * authored -- each term names what it specialises. `descendants_of` needs the
+   * other direction, and inverting is cheaper and less error-prone than storing
+   * both and keeping them consistent.
+   */
+  children() {
+    const out = {};
+    for (const [child, ps] of Object.entries(this.parents)) {
+      for (const p of ps) (out[p] ||= []).push(child);
     }
     return out;
   }
 
-  lower(request, inputs) {
-    const [keys, targets] = this.splitArgs(request, inputs);
-    const lines = [`GET ${this.name}/${request.predicate}`];
-    for (const k of [...keys].sort()) lines.push(`  node = ${k}`);
-    for (const t of targets) lines.push(`  under = ${t}`);
-    return lines.join("\n");
+  /**
+   * The roots the closure starts from: literal arguments written in the plan,
+   * plus every identifier bound by an earlier step.
+   *
+   * Both sources matter and neither is optional. A plan may name a root
+   * directly (`ask descendants_of CHEBI:35366`) or hand one in from a previous
+   * step, and the same predicate has to accept both.
+   */
+  roots(request, inputs) {
+    const out = request.args.map(String).filter((a) => !a.startsWith("?"));
+    for (const [, planVar] of request.bindings) {
+      const rs = inputs[planVar];
+      if (rs) out.push(...[...rs.identifiers()].sort());
+    }
+    return out;
   }
 
-  splitArgs(request, inputs) {
-    const keys = [];
-    for (const [, planVar] of request.bindings) {
-      keys.push(...inputs[planVar].identifiers());
+  /**
+   * The SPARQL a closure lowers to.
+   *
+   * This is the one adapter whose lowered form is real SPARQL rather than a
+   * REST sketch, because subsumption closure is the one operation a triple
+   * store genuinely evaluates itself -- that is what the `path` capability
+   * declares. The direction flips with the predicate: `subClassOf*` walks up,
+   * `^subClassOf*` walks down, and getting that backwards would return a
+   * well-formed wrong answer rather than an error.
+   */
+  lower(request, inputs) {
+    const roots = this.roots(request, inputs);
+    const direction =
+      request.predicate === "ancestors_of" ? "subClassOf*" : "^subClassOf*";
+    const lines = ["SELECT DISTINCT ?c WHERE {"];
+    if (roots.length) {
+      const vals = [...new Set(roots)].sort().map((r) => `<${r}>`).join(" ");
+      lines.push(`  VALUES ?root { ${vals} }`);
     }
-    const literals = request.args.filter(isLiteralArg);
-    if (request.predicate === "descends_from") {
-      if (!literals.length) {
-        throw new Refusal("descends_from requires an ancestor argument");
-      }
-      return [
-        keys.concat(literals.slice(1).filter((a) => !keys.includes(a))),
-        [literals[0]],
-      ];
-    }
-    return [keys.concat(literals.filter((a) => !keys.includes(a))), []];
+    lines.push(`  ?c ${direction} ?root .`);
+    lines.push("}");
+    return lines.join("\n");
   }
 
   extract(concrete, request, inputs) {
     const pred = request.predicate;
-    const [keys, targets] = this.splitArgs(request, inputs);
+    const roots = this.roots(request, inputs);
 
-    if (pred === "descends_from") {
-      const root = targets[0];
-      const pairs = [];
-      for (const k of keys) {
-        const anc = this.ancestors(k);
-        if (anc.has(root)) {
-          pairs.push([
-            k,
-            { _under: root, _label: this.labels[k] ?? null, _depth: anc.size },
-          ]);
+    // An unrecognised predicate yields the EMPTY step relation, not a refusal.
+    // That is the reference's behaviour and it is the honest one: the adapter
+    // declares `path` over a hierarchy, so a predicate it does not recognise
+    // is a corpus fact it does not hold -- verdict `empty`, blocker absent --
+    // and not a capability it failed to provide. Raising here would report
+    // `refused` with blocker `budget`, naming an obstacle that never occurred.
+    let step = {};
+    if (pred === "ancestors_of") step = this.parents;
+    else if (pred === "descendants_of") step = this.children();
+
+    // Iterative frontier, not recursion. A cyclic hierarchy is malformed data
+    // rather than an impossible input, and `seen` bounds the walk either way.
+    // Note the root itself is NOT in the result unless some path re-reaches it:
+    // the descendants of a class are its subclasses, not itself.
+    const seen = new Set();
+    const frontier = [...roots];
+    while (frontier.length) {
+      const u = frontier.pop();
+      for (const v of step[u] || []) {
+        if (!seen.has(v)) {
+          seen.add(v);
+          frontier.push(v);
         }
       }
-      return ResultSet.of(this.namespace, pairs);
     }
 
-    if (pred === "ancestors_of") {
-      const pairs = [];
-      for (const k of keys) {
-        for (const a of [...this.ancestors(k)].sort()) {
-          pairs.push([a, { _of: k, _label: this.labels[a] ?? null }]);
-        }
-      }
-      return ResultSet.of(this.namespace, pairs);
-    }
-
-    if (pred === "labelled") {
-      const pairs = [];
-      for (const k of keys) {
-        if (k in this.labels) pairs.push([k, { label: this.labels[k] }]);
-      }
-      return ResultSet.of(this.namespace, pairs);
-    }
-
-    throw new Refusal(`${this.name} does not implement '${pred}'`);
+    const pairs = [...seen]
+      .sort()
+      .map((v) => [v, { label: this.labels[v] ?? "" }]);
+    return ResultSet.of(this.namespace, pairs);
   }
 
+  /**
+   * A closure is ONE request, whatever its input cardinality.
+   *
+   * This is not a simplification. The `path` capability is precisely the
+   * declaration that the SOURCE evaluates the closure, so the whole root set
+   * enters a single query through `VALUES` and one response comes back. Costing
+   * it per-root would model a client that walks the hierarchy edge by edge --
+   * an adapter that does that cannot honestly declare `path` at all, and would
+   * be refused statically instead of quietly costed.
+   */
   cost(request, inputs) {
-    let n = 0;
-    for (const [, planVar] of request.bindings) n += inputs[planVar].size;
-    return Math.max(1, n);
+    return 1.0;
   }
 }
 

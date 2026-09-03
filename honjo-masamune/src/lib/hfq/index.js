@@ -31,6 +31,7 @@ import {
   FEAT,
   isFeature,
   Refusal,
+  Timeout,
   ResultSet,
   TranslationMap,
 } from "./model.js";
@@ -174,6 +175,7 @@ export {
   FEAT,
   isFeature,
   Refusal,
+  Timeout,
   ResultSet,
   TranslationMap,
   // parse
