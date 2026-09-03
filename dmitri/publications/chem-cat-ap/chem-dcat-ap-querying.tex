@@ -1,0 +1,1672 @@
+%% ---------------------------------------------------------------------
+%% chem-dcat-ap-querying.tex
+%% What a Query Result Means: Plan-Level Answering over Federated
+%% Catalysis Data
+%% ---------------------------------------------------------------------
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{siunitx}
+\DeclareSIUnit{\Molar}{M}
+\usepackage{microtype}
+\usepackage{lmodern}
+\usepackage[margin=2.4cm]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{cleveref}
+\usepackage{natbib}
+\crefname{lstlisting}{Listing}{Listings}
+\Crefname{lstlisting}{Listing}{Listings}
+\usepackage{stmaryrd}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{construction}[theorem]{Construction}
+\newtheorem{principle}[theorem]{Principle}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{observation}[theorem]{Observation}
+
+% ---- notation, shared with the federated-query technical report -------
+\newcommand{\Plan}{\mathcal{P}}
+\newcommand{\Step}{\sigma}
+\newcommand{\Src}{\mathsf{S}}
+\newcommand{\Capset}{\mathrm{cap}}
+\newcommand{\Req}{\mathrm{req}}
+\newcommand{\Low}{\mathrm{low}}
+\newcommand{\Ext}{\mathrm{ext}}
+\newcommand{\Res}{\mathcal{R}}
+\newcommand{\Bind}{\Gamma}
+\newcommand{\Verd}{\mathrm{v}}
+\newcommand{\vans}{\textsf{answered}}
+\newcommand{\vempty}{\textsf{empty}}
+\newcommand{\vsurf}{\textsf{unsupported}}
+\newcommand{\vtime}{\textsf{exhausted}}
+\newcommand{\vref}{\textsf{refused}}
+\newcommand{\vstarve}{\textsf{starved}}
+\newcommand{\bmdl}{\textsf{blocked-by-model}}
+\newcommand{\bcorp}{\textsf{blocked-by-corpus}}
+\newcommand{\beng}{\textsf{blocked-by-engine}}
+\newcommand{\bbud}{\textsf{blocked-by-budget}}
+\newcommand{\Univ}{\mathcal{U}}
+\newcommand{\Nspace}{\mathcal{N}}
+\newcommand{\idm}{\mathrm{id}}
+\newcommand{\Rset}{\mathbb{R}}
+\newcommand{\Nset}{\mathbb{N}}
+\newcommand{\Bud}{B}
+\newcommand{\cost}{c}
+\newcommand{\HFQ}{\textsc{hfq}}
+\newcommand{\Feat}{\mathcal{F}}
+\newcommand{\Zset}{\mathbb{Z}}
+
+\lstdefinestyle{hfq}{
+  basicstyle=\ttfamily\footnotesize,
+  keywordstyle=\bfseries,
+  commentstyle=\itshape\color{gray!70!black},
+  stringstyle=\color{black},
+  showstringspaces=false,
+  breaklines=true,
+  frame=single,
+  framesep=4pt,
+  rulecolor=\color{gray!45},
+  xleftmargin=6pt,
+  morekeywords={let,from,ask,with,in,within,emit,budget,requests,union,
+    intersect,join,on,filter,where,map,via,ladder,over,provenance,as,
+    extension,of,because,divergence}
+}
+\lstdefinestyle{sparql}{
+  basicstyle=\ttfamily\footnotesize,
+  keywordstyle=\bfseries,
+  commentstyle=\itshape\color{gray!70!black},
+  showstringspaces=false,
+  breaklines=true,
+  frame=single,
+  framesep=4pt,
+  rulecolor=\color{gray!45},
+  xleftmargin=6pt,
+  morekeywords={SELECT,DISTINCT,WHERE,VALUES,OPTIONAL,FILTER,SERVICE,
+    NOT,EXISTS,MINUS,PREFIX,BIND,GROUP,BY,ORDER,LIMIT,UNION}
+}
+
+\title{What a Query Result Means:\\
+Plan-Level Answering over Federated Catalysis Data}
+\author{Kundai Farai Sachikonye}
+\date{September 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The standard route from a chemical question to an answer is: build an
+ontology, materialise a knowledge graph, apply a reasoner, and issue a
+SPARQL query. This paper reports what happens when thirteen questions
+drawn from working biocatalysis practice are put instead to a
+\emph{plan} language with an explicit capability calculus, and argues
+that the difference is not one of convenience but of what the returned
+document is able to say.
+
+The central observation is negative and precise. A SPARQL result set
+carries one bit of failure information: the solution sequence is either
+non-empty or empty. Four operationally distinct situations collapse onto
+that empty result --- the corpus genuinely contains no such thing; a
+source cannot evaluate the constraint at all; an upstream step yielded
+nothing so a downstream step was never reachable; the request was
+declined. We show that no rewriting of the query recovers the
+distinction, because the interface has no channel to carry it. We then
+exhibit a six-valued verdict assigned by ordered rules over each plan
+step, a capability check that refuses ill-posed plans \emph{before any
+request is issued}, and a fourth answer shape --- an admissibility
+statement --- for the case where every step succeeds and the plan
+nonetheless answers a different question than the one asked.
+
+All thirteen questions execute. Five are Doerr's biocatalysis
+questions; eight are the generic Chem-DCAT-AP dataset-discovery
+patterns. Eight return rows. Two are refused statically at
+\texttt{requests\_issued} $= 0$, one of them for data that demonstrably
+exists in the federation. Two return rows under an explicit
+admissibility caveat naming the gap. One returns an \vempty{} that is
+reported as \vempty{} and a downstream \vstarve{} that is reported as
+\vstarve{}, which is the whole point. We give the counterfactual
+falsification of every constraint --- including one that caught a real
+defect in our own plan, where a checked constraint was never on the path
+from the question to the payload and the plan returned the right rows
+for the wrong reason. Sixteen validation checks over the compiler and
+executor hold. We are explicit about what they do not establish.
+\end{abstract}
+
+\tableofcontents
+
+% =====================================================================
+\section{The question this paper is about}
+\label{sec:intro}
+
+A biocatalysis group keeps its experimental records in a structured
+form. A colleague asks:
+
+\begin{quote}
+\emph{Which biocatalyst, originating from a bacterium and not a
+eukaryote, catalyses the transamination of benzylethylamine and does not
+have a cysteine in its protein sequence?}
+\end{quote}
+
+This is a reasonable question and it has, in the group's data, a
+determinate answer. The received method for obtaining it is well
+established and works: express the domain in an ontology, materialise
+the records as RDF, run a reasoner to close the model under the
+axioms, and issue a SPARQL query against the result
+\citep{Baader2003,Grau2008,Harris2013}. The Chem-DCAT-AP effort applies
+exactly this recipe to catalysis data, extending DCAT-AP
+\citep{DCATAP2015,DCAT2020} with the chemistry-specific vocabulary the
+domain needs, and it does so competently.
+
+We are not going to argue that this does not work. It does. We are
+going to argue that it works in a way that cannot tell you when it has
+not worked, and that for laboratory data --- which is sparse,
+heterogeneous, and unevenly recorded by construction --- that
+limitation is not incidental.
+
+\subsection{A single observation}
+
+Consider what the SPARQL engine hands back when the question above
+returns nothing. It hands back an empty solution sequence. Now consider
+the situations that produce an empty solution sequence here:
+
+\begin{enumerate}[label=(\alph*),leftmargin=2.2em]
+\item Every transaminase in the corpus that acts on benzylethylamine has
+  a cysteine. The question has a genuine negative answer.
+\item The sequence store is a REST service that returns a FASTA record
+  by accession and cannot be asked \emph{which of your records lack
+  residue X}. The constraint was never evaluated.
+\item No transaminase in the corpus is recorded as bacterial, because
+  organism attribution lives in a source that was not consulted. The
+  cysteine filter had nothing to filter.
+\item The endpoint declined the request --- rate limit, timeout,
+  malformed federation clause.
+\end{enumerate}
+
+These are four different facts about the world and about the query
+apparatus, and they call for four different next actions: publish the
+negative result; find a different sequence source; add the organism
+source to the federation; retry. The interface returns the same thing in
+all four cases.
+
+\begin{observation}[the one-bit interface]
+\label{obs:onebit}
+The SPARQL result-set interface has exactly two failure-relevant states:
+non-empty and empty. Situations (a)--(d) are distinguishable facts about
+an execution that are mapped onto one state. No rewriting of the query
+text changes this, because the distinction is not a property of the
+query --- it is a property of the execution, and the interface has no
+field in which to put it.
+\end{observation}
+
+This is not a criticism of any implementation. It is a statement about
+what the abstraction was designed to convey. SPARQL was designed to
+express \emph{what set of solutions do the data entail}; it answers that
+question well. It was not designed to convey \emph{how did the attempt
+to obtain them go}, and asking it to is a category error.
+
+The consequence, however, is borne by the chemist. In a domain where the
+data are complete --- a well-curated single graph, closed-world by
+construction --- case (a) is overwhelmingly the likely reading of an
+empty result and the ambiguity is harmless. Laboratory catalysis data is
+the opposite case. Records are partial by nature: a run that did not
+record its buffer is not a run that used no buffer. Sources are
+heterogeneous: sequences live in UniProt \citep{UniProt2023}, kinetics
+in SABIO-RK \citep{Wittig2018}, enzyme classification in BRENDA
+\citep{Chang2021}, compound identity in ChEBI \citep{Hastings2016}, and
+the group's own provenance in its own store. Under those conditions
+(b), (c), and (d) are not edge cases, they are the common case, and an
+empty result that cannot be read is the normal outcome.
+
+\subsection{What we propose instead}
+
+We keep the ontology work. Nothing here argues against having a
+vocabulary; you cannot ask about a \emph{catalyst} without a term for
+one. What we change is the layer above: instead of compiling the
+question into a single query and reading the result set, we compile it
+into a \emph{plan} --- an ordered sequence of steps, each bound to a
+named source, each carrying a declared set of the capabilities it
+requires --- and we execute the plan against a federation whose sources
+declare what they can do.
+
+Three things follow, and they are the substance of this paper.
+
+\begin{enumerate}[leftmargin=2.2em]
+\item \textbf{The result carries a verdict per step, drawn from six
+  values, not two} (\Cref{sec:verdicts}). Situations (a)--(d) above
+  receive distinct verdicts, assigned by ordered rules, with a
+  \emph{blocker} naming what stood in the way.
+
+\item \textbf{Plans that cannot be answered are refused before contact}
+  (\Cref{sec:refusal}). If a step requires a capability its source does
+  not declare, the plan is rejected statically and no request is issued
+  --- including the requests for the parts that would have succeeded. We
+  demonstrate this at \texttt{requests\_issued} $= 0$ on two questions,
+  one of which asks for data that provably exists in the federation.
+
+\item \textbf{Some questions receive an answer and an admissibility
+  statement} (\Cref{sec:admissibility}). A plan can return the correct
+  rows at every step and still be answering a different question,
+  because the question's logical form and the corpus's do not match.
+  Nothing in a verdict can say so, so we say it separately, and we make
+  the plan author name which kind of gap it is.
+\end{enumerate}
+
+\subsection{For the chemist, and for the computer scientist}
+
+This paper has two audiences and they want different things from it. We
+have tried to serve both rather than splitting the difference.
+
+To the chemist: the claim you should test is in \Cref{sec:questions},
+where five real questions are worked end to end. The claim is not that
+we answer more of them --- we answer eight of thirteen with rows, which
+a well-built SPARQL stack over the same data would also do. The claim is
+that for the five we do not answer, the document we return tells you
+\emph{why not}, in terms that distinguish a fact about your chemistry
+from a fact about your infrastructure. \Cref{sec:q4} is the one to read
+first: it is a question about expected products, and the answer is
+that the corpus contains the reaction and the conditions and still
+cannot support the inference, for a reason that a reasoner would
+\emph{hide} rather than expose.
+
+To the computer scientist: the technical content is the capability
+calculus of \Cref{sec:calculus}, the verdict rules R1--R6 of
+\Cref{sec:verdicts}, and the honest-declaration assumption of
+\Cref{sec:honesty} --- which is the largest gap in the design and which
+we do not close. The relationship to prior federation work
+\citep{Wiederhold1992,Levy1996,Haas1997,Schwarte2011,Saleem2016} is
+that source-capability description is old and well studied; what is new
+here is treating the \emph{failure} of a capability match as a
+first-class output rather than as a planner-internal fact, and the
+observation that this is what the empty-result ambiguity actually needs.
+The connection to the nulls and certain-answers literature
+\citep{Codd1979,Imielinski1984,Libkin2016} is close and we make it
+explicit in \Cref{sec:related}.
+
+\subsection{What this paper does not claim}
+
+We state the limits at the front rather than burying them.
+
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item The capability declarations are \emph{data written by the adapter
+  author}. Nothing verifies them. An over-declaring source produces
+  exactly the silent wrong answer this paper exists to prevent
+  (\Cref{sec:honesty}).
+\item The validation suite tests the compiler and the executor against
+  the theory. It does not test the theory against the world
+  (\Cref{sec:validation}).
+\item The evaluation is over a local fixture built to mirror the
+  structure of the group's data, not over the live endpoint. This is
+  deliberate and we explain the ethics of it in \Cref{sec:noprobing}.
+\item Eight of thirteen questions return rows. We are not claiming
+  higher recall than a conventional stack; on this corpus we would
+  expect the same recall. The claim is about the other five.
+\end{enumerate}
+
+% =====================================================================
+\section{Plans, sources, capabilities}
+\label{sec:calculus}
+
+This section fixes the objects. A reader who wants the chemistry first
+may skip to \Cref{sec:questions} and return here.
+
+\subsection{The move: a question is a plan, not a query}
+
+The received pipeline compiles a question into one query and submits it.
+The query is a single syntactic object whose evaluation is the
+endpoint's business, and the planner's decisions --- which source, in
+what order, with what budget --- are either absent (one graph) or
+internal to a federation engine that does not report them.
+
+We invert this. The user writes a \emph{plan}: an ordered list of named
+steps, each of which names a source and a predicate, and may bind the
+output of an earlier step. Queries are \emph{leaves}. The user never
+writes one. The lowering from a step to a concrete request in the target
+language is the adapter's job, and the lowered form is retained in the
+output so that what was actually sent can be read.
+
+\begin{lstlisting}[style=hfq,caption={A plan. Every step names its
+source; no SPARQL appears anywhere.},label={lst:plan}]
+plan mark_q1 {
+  budget 12 requests
+
+  let enzymes = from RXN
+      ask catalysts_of("RXN:TA-benzylethylamine")
+      within 20
+
+  let bacterial = from TAX
+      ask typed_as("TAX:bacteria")
+      with ?e in enzymes
+      within 20
+
+  let no_cys = from SEQ
+      ask lacks_residue("C")
+      with ?e in candidates
+      within 20
+
+  emit no_cys with provenance
+}
+\end{lstlisting}
+
+The reason for the inversion is not ergonomics. It is that the
+information we want in the output --- which source could not do what ---
+exists only at the granularity of a step. A single query has one
+outcome; a plan has one per step, and it is at that granularity that
+\Cref{obs:onebit} is escapable.
+
+\subsection{Sources}
+
+\begin{definition}[source]
+\label{def:source}
+A source is a quadruple $\Src = (\eta, \Capset, \Ext, \cost)$ where
+$\eta$ is a namespace identifier, $\Capset \subseteq \Feat$ is the set of
+capabilities the source declares, $\Ext$ is the extraction function
+mapping a lowered request and its bound inputs to a result set, and
+$\cost \in \Nset$ is the request cost charged against the budget.
+\end{definition}
+
+\begin{definition}[capability vocabulary]
+\label{def:feat}
+$\Feat$ is the fixed, finite set
+\[
+\Feat = \{\,\textsf{pattern},\ \textsf{path},\ \textsf{filter},\
+\textsf{bind},\ \textsf{agg},\ \textsf{neg},\ \textsf{order},\
+\textsf{regex},\ \textsf{lookup},\ \textsf{link},\ \textsf{batch}\,\}
+\]
+of eleven symbols. Each names an operation a source either can or cannot
+perform: matching a triple pattern; traversing a path, including
+backwards; applying a value restriction; accepting a set of bound values
+as input; aggregating; evaluating negation; ordering; matching a regular
+expression; retrieving a record by key; following a link; and accepting
+a batch of keys in one request.
+\end{definition}
+
+The vocabulary is deliberately small and deliberately closed. Its
+purpose is not to describe a source completely --- it cannot --- but to
+be coarse enough that an adapter author can answer each of eleven
+yes/no questions honestly. A finer vocabulary would be more expressive
+and less reliably answered, and the failure mode of a wrong answer here
+is severe (\Cref{sec:honesty}).
+
+\begin{definition}[requirement]
+\label{def:req}
+Each predicate $p$ carries a requirement $\Req(p) \subseteq \Feat$. The
+requirement of a step $\Step$ is $\Req(\Step) = \Req(p) \cup
+\{\textsf{bind}\}$ if $\Step$ binds any earlier step, and $\Req(p)$
+otherwise.
+\end{definition}
+
+\begin{definition}[well-capability]
+\label{def:wellcap}
+A plan $\Plan$ over sources $\{\Src_i\}$ is \emph{well-capable} iff for
+every step $\Step$ with source $\Src$,
+$\Req(\Step) \subseteq \Capset(\Src)$.
+\end{definition}
+
+\subsection{Honest declaration, and its asymmetry}
+\label{sec:honesty}
+
+The critical property of \Cref{def:source} is what happens when the
+declaration is wrong, and it is not symmetric.
+
+\begin{proposition}[under-declaration is safe, over-declaration is not]
+\label{prop:honest}
+Let $\Src$ have true capability set $C^{\ast}$ and declared set
+$\Capset$.
+\begin{enumerate}[label=(\alph*),leftmargin=2.2em]
+\item If $\Capset \subsetneq C^{\ast}$, then some plans that the source
+  could in fact serve are refused. The refusal is visible, names the
+  missing capability, and is repairable by amending the declaration. No
+  wrong answer is produced.
+\item If $\Capset \supsetneq C^{\ast}$, then a plan passes the static
+  check, the request is issued, the source returns something --- a
+  well-formed result set --- and that result set is wrong in a way no
+  field of the output records. The failure is invisible.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+(a) The check of \Cref{def:wellcap} is a subset test computed before
+execution; a missing element yields a refusal naming
+$\Req(\Step) \setminus \Capset(\Src)$. (b) The check passes by
+construction, so no refusal is emitted; the adapter's lowering produces
+a request the source accepts under a reading the adapter did not intend,
+and the extraction returns whatever that reading yields. Nothing in the
+pipeline compares the returned rows against the intended semantics,
+because there is no independent statement of the intended semantics to
+compare against.
+\end{proof}
+
+\begin{remark}[the honesty assumption, and the largest gap]
+\label{rem:honesty}
+\Cref{prop:honest}(b) is the single largest gap in this design and we do
+not close it. The capability declaration is data written by a human. A
+declaration claiming \textsf{neg} for a source that silently ignores
+negation produces precisely the confident wrong answer that motivates
+the whole apparatus. The design's answer is architectural rather than
+technical: the declaration is small (eleven bits), local, reviewable,
+and versioned alongside the adapter, so that it is the kind of artefact
+a reviewer can actually check. That is a mitigation, not a proof, and a
+reader should weigh it as such.
+\end{remark}
+
+A concrete instance is worth stating because it inverts the usual
+intuition.
+
+\begin{proposition}[a supported operation that must be withheld]
+\label{prop:under}
+Let a source expose a SPARQL endpoint with a server-side
+materialisation cap: aggregate queries over result sets exceeding the
+cap return a well-formed aggregate computed over a truncated set,
+with an HTTP 200 and no warning. Then an honest declaration must exclude
+\textsf{agg} from $\Capset$, even though SPARQL supports aggregation and
+the request succeeds.
+\end{proposition}
+
+\begin{proof}
+The declaration in \Cref{def:source} asserts that the source can
+\emph{perform} the operation, not that it will \emph{accept} a request
+naming it. A truncated aggregate is not the aggregate; it is a
+different number returned under the same name. Including \textsf{agg}
+places the deployment in case (b) of \Cref{prop:honest}, whose failure
+is invisible by construction. Excluding it places the deployment in case
+(a), whose failure is visible and repairable --- the plan is refused,
+and the plan author computes the aggregate client-side over rows the
+source \emph{can} return faithfully.
+\end{proof}
+
+This is the sharpest single point we can make to a chemist about why
+the capability vocabulary is not bureaucratic overhead. Under the
+conventional pipeline the truncated aggregate is a number that appears
+in a table in a paper. Under this one, the plan does not run.
+
+\subsection{Budget and allocation}
+
+Steps cost requests, and a plan declares a budget. When the budget binds,
+something must give, and \emph{how} it gives is a semantic decision, not
+an engineering one.
+
+\begin{definition}[yield]
+\label{def:yield}
+The yield of step $i$ is a function $\gamma_i : \Rset_{\geq 0} \to
+\Rset_{\geq 0}$ from effort, measured in requests, to expected returned
+cardinality. We assume $\gamma_i$ is non-decreasing, continuously
+differentiable, strictly concave, with $\gamma_i(0) = 0$.
+\end{definition}
+
+\begin{theorem}[water-filling allocation]
+\label{thm:allocation}
+Under \Cref{def:yield}, the allocation problem
+$\max \sum_i \gamma_i(e_i)$ subject to $\sum_i \cost_i e_i \leq \Bud$,
+$e_i \geq 0$, has a unique optimum $e^{\ast}$ characterised by a single
+scalar shadow price $p^{\ast} \geq 0$ with
+$\gamma_i'(e_i^{\ast}) = p^{\ast} \cost_i$ for every $i$ with
+$e_i^{\ast} > 0$, and $\gamma_i'(0) \leq p^{\ast} \cost_i$ otherwise.
+\end{theorem}
+
+\begin{corollary}[no dropping rule]
+\label{cor:nodrop}
+No step is excluded from the allocation by heuristic, priority order, or
+blacklist. A step receives zero effort only when its marginal yield at
+zero is below the shadow price, which is a statement about the step and
+the budget jointly, and is reported as such.
+\end{corollary}
+
+\Cref{cor:nodrop} matters for the same reason the rest of this does. A
+federation engine that drops a subquery under load returns a result set
+that is missing rows for a reason the caller cannot see. Here, a step
+that received no effort is reported with a \bbud{} blocker, and the
+caller knows the difference between \emph{there were none} and
+\emph{we did not look}.
+
+\begin{remark}[where concavity fails]
+\label{rem:concavity}
+A \textsf{lookup} against a keyed REST service is all-or-nothing: one
+request returns the record or nothing, so $\gamma$ is a step function
+and not concave. \Cref{thm:allocation} does not apply to it. Such steps
+are charged first at their fixed cost and the remainder is optimised
+over the concave steps. We note this rather than pretending the
+assumption is universal.
+\end{remark}
+
+% =====================================================================
+\section{Six verdicts, and why two are not enough}
+\label{sec:verdicts}
+
+\subsection{The rules}
+
+Each executed step receives exactly one verdict, assigned by the first
+matching rule of an ordered list. Ordering is what makes the assignment
+total and deterministic.
+
+\begin{definition}[verdict rules]
+\label{def:rules}
+For a step $\Step$ with source $\Src$, bound inputs $\Bind$, allocation
+$e$, and outcome $O$:
+\begin{description}[leftmargin=3.2em,style=nextline]
+\item[\textnormal{R1}] If $\Req(\Step) \not\subseteq \Capset(\Src)$:
+  $\vsurf$, blocker \bmdl. The source cannot perform the operation.
+\item[\textnormal{R2}] If $e = 0$ under a binding budget: $\vtime$,
+  blocker \bbud. Effort was not allocated.
+\item[\textnormal{R3}] If some bound input $\Bind_j$ is empty:
+  $\vstarve$, blocker \bcorp. The step was unreachable; it was not
+  attempted.
+\item[\textnormal{R4}] If the source declined or errored: $\vref$,
+  blocker \beng.
+\item[\textnormal{R5}] If the request completed and returned no rows:
+  $\vempty$, \emph{no blocker}.
+\item[\textnormal{R6}] Otherwise: $\vans$, no blocker.
+\end{description}
+\end{definition}
+
+\begin{proposition}[totality and determinism]
+The rules assign exactly one verdict to every executed step.
+\end{proposition}
+\begin{proof}
+R6 is unconditional, so the assignment is total; the rules are consulted
+in order and the first match returns, so it is unique.
+\end{proof}
+
+\subsection{The absent blocker is the point}
+
+R5 assigns no blocker, and this is a design decision that a reader
+should push on rather than accept.
+
+\begin{principle}[the blocker map is partial on purpose]
+\label{prin:noblocker}
+$\vempty$ carries no blocker, and the corresponding JSON field is
+\emph{absent} rather than null. An empty result that completed is not
+blocked by anything. The corpus was consulted, the constraint was
+evaluated, and the extension is empty. That is a fact about the
+chemistry.
+\end{principle}
+
+Every other verdict is a fact about the apparatus. Keeping the
+distinction in the shape of the output --- a missing key, not a null
+--- means a consumer that reads \texttt{blocker} and finds nothing has
+been told something, and a consumer that reads \texttt{null} has been
+told nothing and may believe it was told something.
+
+This is the resolution of \Cref{obs:onebit}. Situations (a)--(d) of
+\Cref{sec:intro} receive $\vempty$ (no blocker), $\vsurf$ (\bmdl),
+$\vstarve$ (\bcorp), $\vref$ (\beng) respectively.
+
+\begin{corollary}[the distinction is not recoverable downstream]
+\label{cor:onebit}
+No SPARQL query, however written, recovers the
+$\vempty$ / $\vstarve$ / $\vsurf$ / $\vref$ distinction from a result
+set, because the distinction is a property of the execution and the
+result-set interface has no channel for it. Recovering it requires
+changing the interface, which is what a plan-level verdict does.
+\end{corollary}
+
+\subsection{Starvation is the characteristic federated failure}
+
+\begin{proposition}[starvation is reachable only under federation]
+\label{prop:starve}
+Over a single closed corpus, R3 cannot fire on a plan whose steps are
+all satisfiable: an empty bound input is itself an empty extension, and
+the composite is empty by R5. Under federation with a translation
+between namespaces, a step may be unreachable because a \emph{mapping}
+--- not the corpus --- yielded nothing for the identifiers at hand.
+\end{proposition}
+
+This is why $\vstarve$ has its own verdict rather than being folded into
+$\vempty$. \emph{Nothing in the sequence store lacks a cysteine} and
+\emph{no identifier we hold could be translated into the sequence
+store's namespace} are different problems, and only the second is fixed
+by adding a mapping.
+
+We measure translation with two independent quantities.
+
+\begin{definition}[retention and amplification]
+\label{def:retamp}
+For a translation map $\mu$ and a set $S$ of identifiers in its domain
+namespace, the retention is $r_\mu(S) = |\{s \in S : \mu(s) \neq
+\emptyset\}| / |S|$ and the amplification is $a_\mu(S) = |\bigcup_{s\in
+S}\mu(s)| \big/ |\{s \in S : \mu(s) \neq \emptyset\}|$, undefined when
+the denominator is zero. By convention $r_\mu(\emptyset) = 1$.
+\end{definition}
+
+\begin{proposition}
+Retention and amplification are independent, and neither is determined
+by output cardinality.
+\end{proposition}
+\begin{proof}
+A map sending four of eight identifiers to one image each has
+$r = 0.5$, $a = 1$, output $4$; a map sending two of eight to two images
+each has $r = 0.25$, $a = 2$, output $4$. Equal outputs, different
+$(r,a)$.
+\end{proof}
+
+Question Q1 (\Cref{sec:q1}) exercises this: its translation step from
+enzyme identifiers to sequence accessions records $r = 0.75$, $a = 1.0$.
+One in four candidate enzymes has no sequence record. A conventional
+pipeline reports four candidates in and three out, and the missing one
+is indistinguishable from a filtered one.
+
+% =====================================================================
+\section{Refusal before contact}
+\label{sec:refusal}
+
+\begin{corollary}[refuse before contact]
+\label{cor:refuse}
+If a plan is not well-capable, execution halts at the check stage and
+$\texttt{requests\_issued} = 0$.
+\end{corollary}
+
+Two aspects of this are stronger than they may first appear, and both
+are load-bearing.
+
+\subsection{The whole plan, not the failing step}
+
+\begin{principle}[ill-capability is a property of the plan]
+\label{prin:whole}
+When one step fails the capability check, the satisfiable steps do not
+run either.
+\end{principle}
+
+The argument is not conservatism. Suppose a question imposes two
+constraints, one evaluable and one not, and suppose the evaluable half
+runs and emits its rows. The caller now holds a set of datasets that
+satisfy constraint A and an \emph{unenforced} constraint B, and no field
+in the payload distinguishes them from datasets satisfying both. The
+partial result is more dangerous than no result, because it has the
+shape of an answer. \Cref{sec:g8} exhibits this concretely.
+
+\subsection{The refusal names the real obstacle}
+
+\begin{principle}[name the obstacle]
+\label{prin:refusal}
+A refusal states which step, which source, which capabilities were
+required, which were declared, and which were missing.
+\end{principle}
+
+\begin{lstlisting}[style=hfq,caption={The emitted refusal for G8.
+\texttt{requests\_issued} is 0.},label={lst:refusal}]
+{"refusal": {"plan": "dcat_g8",
+  "outcome": "refused_statically",
+  "reason": "ill-capability plan; no request was issued",
+  "failures": [{"step": "uvvis", "source": "INST",
+     "required": ["neg", "pattern"],
+     "declared": ["batch", "bind", "link", "lookup"],
+     "missing":  ["neg", "pattern"]}],
+  "steps": []}}
+\end{lstlisting}
+
+A chemist reading this learns something actionable: the instrument
+registry is a keyed record service, and the question requires asking it
+to classify its own contents, which it cannot do. The fix is to add a
+source that can, or to reformulate. Compare what the conventional
+pipeline offers for the same situation: an empty result, and an
+afternoon.
+
+% =====================================================================
+\section{When every step succeeds and the answer is still wrong}
+\label{sec:admissibility}
+
+This section contains the argument we consider most important, and it is
+the one that is hardest to make to an audience that has internalised the
+reasoner.
+
+\subsection{The problem}
+
+A plan can be $\vans$ at every step, return exactly the rows its
+predicates specify, and answer a different question than the one asked.
+The mismatch is not between a step and a source --- which is what the
+verdict algebra measures --- but between the \emph{question's logical
+form} and the \emph{corpus's}. Nothing in \Cref{def:rules} can detect
+it, because every rule is about the fate of a request.
+
+\begin{example}[substrate scope]
+\label{ex:scope}
+\emph{What is the substrate scope of BVMO-Y?} The corpus records two
+substrates on which BVMO-Y was run. A plan retrieves both, every step
+answers, and the emitted rows are correct. But \emph{scope} is a claim
+about substrates the enzyme \emph{would} accept, including ones nobody
+has tried. The returned set is the recorded extension; the question
+asked for an intension. These differ, and no traversal of this corpus
+closes the gap.
+\end{example}
+
+The gap in \Cref{ex:scope} is inductive: from observed instances to a
+general claim. That step is chemistry --- structure-activity reasoning,
+homology, mechanism --- and it is not inference over the recorded facts.
+
+\subsection{Why a reasoner makes this worse}
+
+Here is the sharpest divergence between the two methods, and it runs
+against the intuition that more inference is more help.
+
+\begin{proposition}[asserting the closure launders an assumption]
+\label{prop:launder}
+Let an ontology assert an axiom sufficient to derive substrate scope
+from recorded substrates --- for instance, that the substrate class of
+an enzyme is closed under a structural similarity relation. Then the
+reasoner derives triples asserting acceptance of untested substrates,
+and those derived triples are indistinguishable, in the materialised
+graph and in any query result over it, from triples recording observed
+acceptance.
+\end{proposition}
+
+\begin{proof}
+Materialisation writes entailed triples into the same graph as asserted
+ones, in the same vocabulary. A SPARQL query matching the substrate
+predicate matches both. Distinguishing them requires provenance
+annotation on every derived triple and a query discipline that consults
+it, neither of which the closure operation provides by default.
+\end{proof}
+
+The situation is therefore: the honest answer is \emph{the corpus
+records two substrates and cannot tell you the scope}; the reasoner's
+answer is \emph{a list}, and the list is a mixture of observation and
+assumption that looks homogeneous. The chemist who reads that list has
+been given a prediction wearing the clothes of a record. This is not a
+hypothetical failure mode; it is the ordinary consequence of
+materialising a closure over sparse experimental data, and it is exactly
+why \citet{Reiter1978,Reiter1980} treated closed-world assumption and
+default inference as things to be marked rather than absorbed.
+
+\subsection{The construct}
+
+We add a fourth answer shape. It sits beside the verdict, not inside
+it.
+
+\begin{construction}[admissibility statement]
+\label{con:admiss}
+A plan may emit
+\begin{center}
+\texttt{emit X with provenance as extension of "TEXT" because GAP}
+\end{center}
+where $\textsf{GAP} \in \{\textsf{induction}, \textsf{vocabulary},
+\textsf{conditions}\}$. The emitted document then carries an
+\texttt{admissibility} record stating what was asked for, that what is
+returned is the recorded extension, that
+\texttt{answers\_question: false}, and a reason determined by the gap.
+\end{construction}
+
+Two features of \Cref{con:admiss} are deliberate.
+
+First, the verdicts stay honest. The steps did answer; recording
+\vref{} here would falsely suggest retrieval failed, and a reader could
+not distinguish a corpus that lacks the rows from one that has them and
+cannot generalise over them. So \texttt{answers\_question: false}
+appears \emph{alongside} \texttt{verdict: answer}.
+
+Second, the gap is named by the plan author from a closed set, not
+generated. A free-text explanation is the same defect one level up: a
+canned sentence that sounds like reasoning and is not checked. A closed
+set of three is small enough to review and forces a claim about
+\emph{which kind} of gap this is.
+
+\begin{itemize}[leftmargin=1.6em]
+\item \textsf{induction} --- the question asks about cases the corpus
+  does not contain (\Cref{ex:scope}).
+\item \textsf{vocabulary} --- the question uses a term the corpus does
+  not record as such, though it may record something adjacent.
+\item \textsf{conditions} --- the question asks for an outcome under
+  conditions the corpus records for a \emph{different} configuration.
+\end{itemize}
+
+\Cref{sec:g6} shows that \textsf{vocabulary} covers two structurally
+distinct cases --- a missing type on a subject the store holds, versus
+an entirely absent relation --- which is a limitation of the current
+three-way partition that we name rather than paper over.
+
+% =====================================================================
+\section{Five questions from a working group}
+\label{sec:questions}
+
+This section works the five biocatalysis questions end to end. They were
+supplied by a practising group, not constructed by us, and we did not
+alter them. Where a question cannot be answered we say so and say why;
+where our first attempt was wrong we show the wrong version.
+
+The federation comprises six sources, each declaring a capability set
+under \Cref{def:source}: \textsf{RXN} (reactions and catalysis, a graph
+source), \textsf{TAX} (organism attribution), \textsf{SEQ} (protein
+sequences, a keyed record service), \textsf{ACT} (activities and runs,
+a provenance source), \textsf{INST} (an instrument registry, keyed
+records), and \textsf{DS} (dataset descriptions). One translation map,
+$\mu : \textsf{enz} \to \textsf{seq}$, crosses the enzyme and sequence
+namespaces.
+
+\subsection{Q1: bacterial transaminase without cysteine}
+\label{sec:q1}
+
+\begin{quote}
+\emph{Which biocatalyst, originating from a bacterium (not a
+eukaryote), catalyses the transamination of benzylethylamine and does
+not have a cysteine in its protein sequence?}
+\end{quote}
+
+This is one sentence and three sources. Catalysis is in \textsf{RXN};
+organism attribution is in \textsf{TAX}; residue composition is in
+\textsf{SEQ}, whose identifiers are accessions and not enzyme
+identifiers. \Cref{lst:plan} gives the plan. Its execution:
+
+\begin{table}[H]\centering
+\begin{tabular}{llrrl}
+\toprule
+step & verdict & $n$ & $r_\mu$ / $a_\mu$ & note \\
+\midrule
+\texttt{enzymes}    & \vans & 5 & --- & catalysts of the transamination \\
+\texttt{bacterial}  & \vans & 4 & --- & one eukaryotic entry excluded \\
+\texttt{candidates} & \vans & 4 & --- & intersection \\
+\texttt{keyed}      & \vans & 3 & $0.75$ / $1.0$ & namespace translation \\
+\texttt{no\_cys}    & \vans & 2 & --- & residue filter \\
+\bottomrule
+\end{tabular}
+\caption{Q1. Three requests issued, budget twelve, no early halt.}
+\label{tab:q1}
+\end{table}
+
+Two enzymes are returned, and that is the answer. What we want to draw
+attention to is the fourth row.
+
+Four candidates entered the translation and three left it. The step
+reports $r_\mu = 0.75$: one in four candidate enzymes has no sequence
+record in the accession namespace. It also reports $a_\mu = 1.0$: no
+enzyme mapped to more than one accession, so no candidate was silently
+duplicated.
+
+Under the conventional pipeline this step is a join, and a join that
+loses a row loses it silently. The chemist sees four candidates in one
+intermediate result and two in the final, and has no way to apportion
+the attrition between \emph{filtered by the cysteine constraint} and
+\emph{never reached the sequence store}. Those have different remedies.
+The first is a finding. The second is a missing cross-reference, and it
+is fixed by curation, not by chemistry.
+
+\begin{remark}
+This is the only step in all thirteen plans that carries map metrics,
+because it is the only step that crosses a namespace. We state this
+rather than leaving the impression that retention and amplification are
+reported everywhere. Where there is no translation there is no
+attrition to measure, and the fields are absent --- not zero.
+\end{remark}
+
+\subsection{Q2: buffer and pH of a specific methyl transfer}
+\label{sec:q2}
+
+\begin{quote}
+\emph{Which buffer composition and pH was used in the biocatalytic
+methyl transfer using methyl-transferase mt-X of Bacillus subtilis?}
+\end{quote}
+
+Five steps, five requests, all \vans: two \emph{B.\ subtilis} enzymes,
+of which one is MT-X; one methyl-transfer reaction; two runs; two
+condition records. The plan returns the buffer and the pH.
+
+The interesting part is the organism clause, and it is interesting
+because of what happens when we falsify it. We ran the plan a second
+time with the organism constraint changed to an organism that does not
+host MT-X. The \texttt{mt\_x} step went \vempty{} and every downstream
+step went \vstarve{}. The plan returned nothing, and it returned
+nothing \emph{with a blocker naming the corpus}.
+
+\begin{principle}[a constraint is only a constraint if the answer
+depends on it]
+\label{prin:counterfactual}
+For each constraint in a question, falsifying it must change the
+emitted payload. A constraint that can be falsified while the payload
+is unchanged is not being enforced; it is a comment on the plan.
+\end{principle}
+
+We applied \Cref{prin:counterfactual} to every constraint in every
+plan. It caught a real defect in our own work, in \Cref{sec:g7}.
+
+\subsection{Q3: substrate scope and product range}
+\label{sec:q3}
+
+\begin{quote}
+\emph{What is the substrate scope and product range of the
+Baeyer--Villiger monooxygenase BVMO-Y?}
+\end{quote}
+
+Three requests, three steps, all \vans: two reactions, two substrates,
+two products. Every step succeeded and the rows are correct.
+
+And the plan does not answer the question. This is \Cref{ex:scope}. The
+corpus records substrates BVMO-Y \emph{was run on}; the question asks
+for the substrates it \emph{would accept}. The plan therefore emits
+
+\begin{lstlisting}[style=hfq]
+emit substrates with provenance
+     as extension of "substrate scope" because induction
+\end{lstlisting}
+
+and the emitted document carries, beside the verdicts:
+
+\begin{lstlisting}[style=hfq]
+"admissibility": {
+  "asked_for": "substrate scope",
+  "returned": "recorded extension",
+  "answers_question": false,
+  "reason": "... the inductive step from observed instances to
+     scope is chemistry, not inference, and asserting it in an
+     ontology would launder an assumption into a derived fact." }
+\end{lstlisting}
+
+Note that \texttt{verdict} remains \vans{} on every step while
+\texttt{answers\_question} is \texttt{false}. Both are true. The
+retrieval succeeded; the question was not answered. Collapsing these
+into a single field would force us to lie about one of them.
+
+\subsection{Q4: expected products under stated conditions}
+\label{sec:q4}
+
+\begin{quote}
+\emph{What are the expected products of a biocatalytic kinetic
+resolution reaction with enzyme PFE at pH 9 in HEPES buffer?}
+\end{quote}
+
+We flagged this in \Cref{sec:intro} as the one for a chemist to read
+first. Here is the execution, verbatim from the evidence table:
+
+\begin{table}[H]\centering
+\begin{tabular}{llrl}
+\toprule
+step & verdict & $n$ & blocker \\
+\midrule
+\texttt{pfe\_reactions} & \vans     & 1 & --- \\
+\texttt{pfe\_runs}      & \vans     & 1 & --- \\
+\texttt{conditions}     & \vans     & 1 & --- \\
+\texttt{at\_ph9}        & \vempty   & 0 & \emph{none} \\
+\texttt{in\_hepes}      & \vstarve  & 0 & \bcorp \\
+\bottomrule
+\end{tabular}
+\caption{Q4. Three requests issued. The last two rows are the result.}
+\label{tab:q4}
+\end{table}
+
+Read the last two rows carefully, because they are two different
+things and the difference is the paper.
+
+\texttt{at\_ph9} is \vempty{} \textbf{with no blocker}. The corpus
+holds a PFE kinetic resolution and holds its conditions, and those
+conditions are not pH 9. The apparatus worked perfectly; the answer is
+that the experiment at this pH is not in the record. That is a fact
+about the chemistry, and \Cref{prin:noblocker} is why the field is
+absent rather than null.
+
+\texttt{in\_hepes} is \vstarve{} with blocker \bcorp. It was not
+attempted. Its input was empty, so it was unreachable. This is a fact
+about the plan's structure, not about HEPES: we learn nothing about
+whether the corpus records HEPES buffers, because we never asked.
+
+Now consider what the received pipeline returns for this question. An
+empty solution sequence. One bit. The chemist cannot tell whether PFE
+was never run under kinetic resolution, whether it was run but not at
+pH 9, whether it was run at pH 9 but not in HEPES, or whether the
+buffer vocabulary simply is not recorded --- and those four have four
+different next actions, one of which is \emph{run the experiment}.
+
+\begin{proposition}[a reasoner makes Q4 worse]
+\label{prop:q4worse}
+Suppose the ontology carries axioms sufficient to predict products of a
+kinetic resolution from substrate and enzyme class. Then a reasoner
+materialises product triples for the PFE reaction, and the query
+returns them. The returned products are predictions under an assumed
+mechanism, in the same vocabulary and the same graph as recorded
+products, and the result set does not distinguish them.
+\end{proposition}
+
+This is \Cref{prop:launder} instantiated on the question the chemist
+most wants answered, and it is where the two methods diverge most
+sharply. The reasoner's answer is a list of products. Ours is: the
+corpus has the reaction, has the conditions, and the conditions are not
+the ones you named --- reported as \vempty{} without a blocker, which
+is to say \emph{this is your chemistry, not our plumbing}. The
+reasoner's list is more useful right up until it is wrong, and it
+carries nothing that lets the reader find out which.
+
+\subsection{Q5: instrument and wavelength for a dated observation}
+\label{sec:q5}
+
+\begin{quote}
+\emph{With which device was the UV spectrum monitored during
+biocatalytic transformation BT3 on March 23rd by Yuliia Dikova, and
+which wavelength was monitored?}
+\end{quote}
+
+Two requests, four steps, all \vans: two monitored activities, of which
+one is BT3, one on the date, one by the operator. The plan returns the
+device and the wavelength.
+
+Three constraints here are non-trivial --- transformation identity,
+date, operator --- and we falsified each in turn. Changing the date
+sends \texttt{on\_date} to \vempty{} and \texttt{by\_ydikova} to
+\vstarve{}; changing the operator sends \texttt{by\_ydikova} to
+\vempty{}. Each constraint is on the path from the question to the
+payload.
+
+\subsection{An implementation defect the framework caught in itself}
+\label{sec:selfcatch}
+
+While building the sources for Q5 we found that a predicate expressing
+\emph{monitored on date $d$} matched nothing, for every date. The cause
+was in our own adapter: the graph pattern applied its literal
+restriction to the \emph{subject} position, so a literal appearing as
+an object matched nothing at all. The step reported \vempty{} --- and
+\vempty{} carries no blocker, which is to say the framework told us
+\emph{the corpus has no such thing}, confidently, and was wrong.
+
+We report this because it is the framework's own central failure mode
+reproduced inside its implementation, and because it bounds what
+\Cref{prin:noblocker} can promise. A blockerless \vempty{} means
+\emph{the request completed and returned nothing}. It does not mean
+\emph{the request asked what you meant}. That second guarantee is not
+available at this layer, from us or from anyone, and a reader who takes
+\vempty{} as evidence of absence is taking on the correctness of the
+adapter's lowering as an assumption. The remedy we actually used was
+\Cref{prin:counterfactual}: the defect surfaced because a constraint we
+expected to matter did not change the payload when falsified.
+
+% =====================================================================
+\section{Eight dataset-discovery patterns}
+\label{sec:generic}
+
+The second group of questions is generic Chem-DCAT-AP dataset
+discovery: \emph{give me all datasets $D$ about\ldots}. These are the
+patterns a catalogue is supposed to serve, and they are a fairer test
+of the standard than the bespoke questions, because they are what it
+was designed for.
+
+\begin{table}[H]\centering\small
+\begin{tabular}{llrrl}
+\toprule
+ & pattern & req. & rows & outcome \\
+\midrule
+G1 & about a substance with compound C            & 2 & 2 & \vans \\
+G2 & generated by activity of type T evaluating C & 2 & 2 & \vans{} + \textsf{vocabulary} \\
+G3 & \ldots with Bruker spectrometer set to X     & 0 & --- & refused statically \\
+G4 & about reaction R with product P              & 4 & 2 & \vans \\
+G5 & \ldots with a starting material of compound C& 4 & 2 & \vans \\
+G6 & \ldots with a solvent of compound C          & 3 & 2 & \vans{} + \textsf{vocabulary} \\
+G7 & \ldots with a catalyst of compound C         & 5 & 2 & \vans \\
+G8 & measured with a UV-vis spectrometer\ldots    & 0 & --- & refused statically \\
+\bottomrule
+\end{tabular}
+\caption{The eight generic patterns. ``req.'' is
+\texttt{requests\_issued}.}
+\label{tab:generic}
+\end{table}
+
+\subsection{G3 and G8: refused at zero requests}
+\label{sec:g8}
+
+Both refusals have the same shape and G8 is the sharper one, so we take
+it. The question asks for datasets measured with a UV-vis
+spectrometer. The instrument registry \textsf{INST} declares
+$\{\textsf{lookup}, \textsf{link}, \textsf{bind}, \textsf{batch}\}$: it
+returns a record given a device identifier, and it accepts a batch of
+them. The step requires $\{\textsf{pattern}, \textsf{neg}\}$, because
+\emph{which of your devices are of kind K} is a pattern match over the
+registry's contents, not a lookup by key. The check fails, and
+\Cref{lst:refusal} is emitted with \texttt{requests\_issued} $= 0$.
+
+Here is the part that matters. \textbf{The data to answer this question
+exists in the federation.} The corpus contains device
+\texttt{DEV:UV1900i} and activity \texttt{ACT:BT3}, and Q5
+(\Cref{sec:q5}) successfully retrieves that very device. We are
+refusing a question whose answer is present.
+
+That is not a defect, it is the design working. Q5 asks \emph{which
+device did this activity use}, which is a link from a known activity.
+G8 asks \emph{which of your devices are UV-vis spectrometers}, which is
+a classification over the registry's extension. The registry can do the
+first and cannot do the second; the fact that one particular device
+happens to be reachable by the first route does not make the second
+route available. A pipeline that answered G8 by enumerating the devices
+it happened to have seen would return a subset of unknown coverage,
+formatted identically to a complete answer.
+
+\begin{principle}[the refusal is about capability, not about data]
+\label{prin:capnotdata}
+A refusal states that no source can evaluate the constraint. It makes
+no claim that the answer is absent. These are independent, and G8
+exhibits a case where the first holds and the second does not.
+\end{principle}
+
+\Cref{prin:whole} is also visible here: G8's other steps are perfectly
+satisfiable, and none of them ran. Had they run, the caller would hold
+datasets satisfying the compound constraint and \emph{not} the
+instrument constraint, in a payload whose shape does not distinguish
+them from datasets satisfying both.
+
+\subsection{G6: a vocabulary the corpus does not have}
+\label{sec:g6}
+
+G6 asks for datasets about a reaction whose \emph{solvent} has compound
+C. Every step answers; two datasets are returned; and the plan carries
+a \textsf{vocabulary} admissibility statement, because the corpus does
+not record a solvent relation at all. It records reaction media. The
+returned rows are about media, and media are not solvents.
+
+The tempting repair is an ontology axiom: declare buffer a subproperty
+of solvent, and the reasoner supplies the missing relation. This is
+worth taking seriously because it is what the received method would
+actually do, and it is wrong on the chemistry. The solvent of a
+\SI{50}{\milli\Molar} Tris buffer is water; the buffer is a solute
+system dissolved in it. An axiom equating the two produces triples
+asserting that the solvent of the reaction is Tris, and those triples
+enter the graph indistinguishable from observations
+(\Cref{prop:launder}). The catalogue then answers G6 --- fluently, and
+falsely.
+
+\Cref{tab:generic} marks G2 with the same \textsf{vocabulary} gap, and
+the two are not actually the same case: G2's subject is present in the
+store and lacks a type, whereas G6's relation is absent entirely.
+Our gap taxonomy has three values and does not separate these. We
+record that as a limitation of the present partition rather than
+claiming the three-way split is complete.
+
+\subsection{G7, and a defect in our own plan}
+\label{sec:g7}
+
+G7 asks for datasets about a reaction whose \emph{catalyst} has
+compound C. Five steps, five requests, all \vans, two datasets. The
+answer is correct.
+
+Our first version of this plan was also all-\vans{} and also returned
+those two datasets, and it was wrong. It had a step that identified the
+catalyst and checked its compound, and then a final step that retrieved
+datasets bound to the \emph{reactions found before the check} rather
+than to the checked set. Every verdict was \vans. The rows were right.
+
+We found it by \Cref{prin:counterfactual}. Falsifying the catalyst
+identity --- substituting an enzyme that is not the catalyst of that
+reaction --- sent the \texttt{named} step to \vempty{}, exactly as it
+should, and the final step \emph{still emitted two datasets}. The plan
+was answering \emph{datasets about this reaction}, dressed as an answer
+to \emph{datasets about this reaction with this catalyst}.
+
+The repair is structural, and the plan carries the reasoning in a
+comment because the next person to edit it needs it:
+
+\begin{lstlisting}[style=hfq]
+  # The reactions that survive the check, reached FROM the confirmed
+  # catalyst. Binding `cat_rxns` here instead would make the check
+  # decorative: the counterfactual run beside this one falsifies the
+  # catalyst, `named` goes empty, and a plan that then binds
+  # `cat_rxns` still emits two datasets -- a correct answer to
+  # "datasets about this reaction" dressed as an answer to "datasets
+  # about this reaction with THIS catalyst". Every constraint must sit
+  # on the path from the question to the payload, or it is not a
+  # constraint, it is a comment.
+  let confirmed = from RXN
+      ask catalysed_reactions(?c)
+      with ?c in named
+      within 20
+\end{lstlisting}
+
+\begin{principle}[a checked constraint that nothing depends on is
+invisible]
+\label{prin:invisible}
+Verdicts classify what happened to each request. They cannot detect
+that a step's output is unused downstream, because that is a property
+of the plan's dataflow, not of any request. Only falsification exposes
+it.
+\end{principle}
+
+We report this at length because it is a limit on our own claims. The
+verdict algebra is not a correctness check on plans. It tells you what
+happened to each step; it does not tell you that the steps compose into
+the question you asked. The counterfactual discipline of
+\Cref{prin:counterfactual} is the part that does that work, and it is
+methodology, not machinery --- it must be performed, and nothing in the
+executor enforces it.
+
+\subsection{One further contrast worth stating}
+
+G6 and G7 are the same question shape --- \emph{datasets about a
+reaction one of whose participants has compound C} --- differing only
+in the participant role. G7 answers cleanly and G6 does not, and the
+entire difference is that someone recorded a catalyst relation and
+nobody recorded a solvent relation.
+
+That is worth saying plainly to a catalogue designer. The difference
+between a question this infrastructure answers and one it cannot is
+not depth of reasoning, expressiveness of the ontology, or power of the
+engine. It is whether the relation was written down. Every layer above
+the record inherits that, and a layer that appears to escape it ---
+by deriving the missing relation from an axiom --- has not escaped it,
+it has stopped reporting it.
+
+% =====================================================================
+\section{Two design decisions that look like omissions}
+\label{sec:omissions}
+
+Two things a reader coming from SPARQL will expect to find, and will
+not. Both are deliberate, and both follow from \Cref{obs:onebit} rather
+than from expedience.
+
+\subsection{There is no set difference in the plan language}
+\label{sec:nominus}
+
+The plan language has \texttt{union}, \texttt{intersect}, \texttt{join
+\ldots on}, \texttt{filter \ldots where}, and \texttt{map \ldots via}.
+It has no \texttt{minus}. SPARQL has \texttt{MINUS} and \texttt{FILTER
+NOT EXISTS}, and their absence here is the single largest expressive
+difference between the two languages.
+
+The reason is that a plan-level difference operator would let a plan
+manufacture a negative answer out of two positive ones, and thereby
+destroy exactly the distinction the verdicts exist to preserve.
+
+\begin{proposition}[a plan-level difference erases starvation]
+\label{prop:nominus}
+Let $A$ and $B$ be steps, and suppose a plan may write $A \setminus B$
+as a plan-level operation over their payloads. If $B$ is \vstarve{} ---
+unreachable, never issued --- then its payload is empty and $A
+\setminus B = A$. The combined step is therefore indistinguishable, in
+both payload and cardinality, from the case where $B$ was reached and
+genuinely matched nothing.
+\end{proposition}
+
+\begin{proof}
+Immediate: $A \setminus \emptyset = A$ regardless of why $B$'s payload
+is empty, and the plan-level operator sees only payloads. The verdict on
+$B$ survives in the step record, but the \emph{payload} the caller reads
+carries no trace of it, and any downstream step binding the difference
+inherits the erasure rather than the verdict.
+\end{proof}
+
+This is \Cref{obs:onebit} reappearing one level up, inside our own
+language, which is why we regard it as disqualifying rather than merely
+inconvenient. The alternative we adopt is that negation is a
+\emph{source capability}, \textsf{neg}, declared by a source that can
+actually evaluate an absence over its own extension. A step requiring
+\textsf{neg} either lands on a source that has it --- in which case the
+absence is evaluated where the data live, by something that knows the
+extent of what it is quantifying over --- or the plan is refused. G8 is
+this case: the instrument registry does not declare \textsf{neg}, and
+the plan is refused at zero requests (\Cref{sec:g8}) rather than
+answered by differencing two things the registry \emph{can} return.
+
+The cost is real and we state it. Questions that a SPARQL author would
+write with \texttt{FILTER NOT EXISTS} over a single materialised graph
+must here be either pushed into a source that declares \textsf{neg}, or
+refused. On a federation where every source is a full SPARQL endpoint
+over a complete graph, this buys nothing and costs expressiveness. On
+the federation the chemist actually has --- REST sequence services,
+keyed instrument registries, a local provenance store --- it is the
+difference between a negative answer that means something and one that
+means \emph{we did not look}.
+
+\subsection{Comparability is a property of a pair, not of a dataset}
+\label{sec:pairs}
+
+Q2 and Q5 look like retrieval questions and are usually treated as such:
+\emph{which buffer}, \emph{which device}. But the reason a chemist asks
+them is almost never to learn a buffer identity in isolation. It is to
+decide whether two runs may be compared --- whether this transformation
+and that one were carried out under conditions close enough that a
+difference in outcome is about the chemistry.
+
+That target is not a property of either dataset. It is a relation on the
+pair, and it is not one an ontology can store, for a reason that is
+arithmetic rather than architectural: with $n$ runs there are
+$\binom{n}{2}$ pairs, and the relation depends on a tolerance the asker
+supplies at question time. A catalogue that pre-computed comparability
+would have to fix the tolerance before knowing the question, and would
+be storing a quantity that grows quadratically and is invalidated by
+every new run.
+
+We do not solve this here, and we flag it as the most promising place
+for the plan layer to go next, because the plan layer is where it
+naturally sits. A plan already carries steps whose inputs are bound by
+earlier steps; a comparability step is one whose input is bound by
+\emph{two}, with a tolerance as a parameter, and whose verdict would
+distinguish \emph{these runs are not comparable} from \emph{the record
+does not say whether they are comparable} --- which is again
+\Cref{obs:onebit}, in the place where a chemist would most be misled by
+its collapse. What blocks us is not the plan machinery but the
+representation of the tolerance itself, which is the open problem
+recorded under \Cref{sec:related}'s measurement paragraph.
+
+% =====================================================================
+\section{Full evidence}
+\label{sec:evidence}
+
+Every number quoted in this paper comes from the table below, which is
+the executor's own per-step output over the thirteen plans. We give it
+in full rather than in summary so that a reader can check the claims
+against it. ``req.'' is \texttt{requests\_issued}; ``wc'' is
+well-capability.
+
+\begin{table}[H]\centering\small
+\begin{tabular}{llrl}
+\toprule
+plan & step & $n$ & verdict \\
+\midrule
+\multicolumn{4}{l}{\textbf{Q1} \quad req.\ 3, halted false, wc true} \\
+& \texttt{enzymes} & 5 & \vans \\
+& \texttt{bacterial} & 4 & \vans \\
+& \texttt{candidates} & 4 & \vans \\
+& \texttt{keyed} & 3 & \vans{} \quad ($r_\mu = 0.75$, $a_\mu = 1.0$) \\
+& \texttt{no\_cys} & 2 & \vans \\
+\midrule
+\multicolumn{4}{l}{\textbf{Q2} \quad req.\ 5, halted false, wc true} \\
+& \texttt{bs\_enzymes} & 2 & \vans \\
+& \texttt{mt\_x} & 1 & \vans \\
+& \texttt{mt\_reactions} & 1 & \vans \\
+& \texttt{runs} & 2 & \vans \\
+& \texttt{settings} & 2 & \vans \\
+\midrule
+\multicolumn{4}{l}{\textbf{Q3} \quad req.\ 3, halted false, wc true} \\
+& \texttt{reactions} & 2 & \vans \\
+& \texttt{substrates} & 2 & \vans \\
+& \texttt{products} & 2 & \vans \\
+\midrule
+\multicolumn{4}{l}{\textbf{Q4} \quad req.\ 3, halted false, wc true} \\
+& \texttt{pfe\_reactions} & 1 & \vans \\
+& \texttt{pfe\_runs} & 1 & \vans \\
+& \texttt{conditions} & 1 & \vans \\
+& \texttt{at\_ph9} & 0 & \vempty{} \quad (no blocker) \\
+& \texttt{in\_hepes} & 0 & \vstarve{} \quad (\bcorp) \\
+\midrule
+\multicolumn{4}{l}{\textbf{Q5} \quad req.\ 2, halted false, wc true} \\
+& \texttt{measured} & 2 & \vans \\
+& \texttt{bt3} & 1 & \vans \\
+& \texttt{on\_date} & 1 & \vans \\
+& \texttt{by\_ydikova} & 1 & \vans \\
+\midrule
+\multicolumn{4}{l}{\textbf{G1} req.\ 2 \quad \texttt{rxns} 1, \texttt{datasets} 2 --- all \vans} \\
+\multicolumn{4}{l}{\textbf{G2} req.\ 2 \quad \texttt{rxns} 1, \texttt{datasets} 2 --- all \vans{}, gap \textsf{vocabulary}} \\
+\multicolumn{4}{l}{\textbf{G3} req.\ \textbf{0}, halted true, wc \textbf{false} \quad \texttt{brukers} \vsurf} \\
+\multicolumn{4}{l}{\textbf{G4} req.\ 4 \quad \texttt{products}/\texttt{has\_p}/\texttt{rxns} 1, \texttt{datasets} 2 --- all \vans} \\
+\multicolumn{4}{l}{\textbf{G5} req.\ 4 \quad \texttt{inputs} 2, \texttt{has\_c} 1, \texttt{rxns} 1, \texttt{datasets} 2 --- all \vans} \\
+\multicolumn{4}{l}{\textbf{G6} req.\ 3 \quad \texttt{rxns} 1, \texttt{datasets} 2, \texttt{media} 2 --- all \vans{}, gap \textsf{vocabulary}} \\
+\multicolumn{4}{l}{\textbf{G7} req.\ 5 \quad \texttt{cat\_rxns}/\texttt{catalysts}/\texttt{named}/\texttt{confirmed} 1, \texttt{datasets} 2 --- all \vans} \\
+\multicolumn{4}{l}{\textbf{G8} req.\ \textbf{0}, halted true, wc \textbf{false} \quad \texttt{uvvis} \vsurf} \\
+\bottomrule
+\end{tabular}
+\caption{Per-step evidence for all thirteen plans.}
+\label{tab:evidence}
+\end{table}
+
+Three facts in \Cref{tab:evidence} deserve to be read off explicitly,
+because they are the paper's empirical content and a summary would hide
+them.
+
+First, \texttt{Q1.keyed} is the \emph{only} row in the entire suite
+carrying retention and amplification. Where no namespace is crossed
+there is no attrition to measure and the fields are absent. We say this
+rather than leaving a reader to infer that map metrics are pervasive,
+which they are not.
+
+Second, G3 and G8 are the only rows with \texttt{requests\_issued} $=
+0$, and they are exactly the rows with \texttt{well\_capability} false.
+That correspondence is \Cref{cor:refuse} holding operationally: the
+static check is the thing that halts, and it halts before contact.
+
+Third --- and this is the one worth dwelling on --- \textbf{eleven of
+the thirteen plans have every step \vans}. The verdict algebra spends
+almost all of its time saying \emph{nothing went wrong}. That is not a
+weak result, it is the correct shape for a working federation, and it is
+worth stating because a reader could otherwise take this paper as
+claiming that federated retrieval is mostly broken. It is not. The
+apparatus earns its keep on the two rows in Q4 and the two refusals, and
+those five rows out of the roughly forty in the table are precisely the
+ones a one-bit interface would have rendered as a single undifferentiated
+absence.
+
+% =====================================================================
+\section{Validation, and what it does not establish}
+\label{sec:validation}
+
+Sixteen checks (V1--V16) run over the compiler and the executor. They
+cover: that the verdict assignment is total and deterministic; that the
+blocker map is partial exactly at \vempty; that a plan failing the
+capability check issues no request; that allocation is feasible and
+exhausts the budget when demand exceeds it; that no step is dropped by
+rule (\Cref{cor:nodrop}); that retention and amplification agree with
+\Cref{def:retamp} on constructed maps; that the blame chain terminates;
+that emitted documents round-trip through JSON with the blocker field
+\emph{absent} rather than null; and that the parser rejects the
+constructs it is specified to reject. All sixteen hold.
+
+The round-trip check deserves a note, because it is the least
+interesting-looking and guards the most. \Cref{prin:noblocker} says the
+blocker map is partial at \vempty. A serialiser that emitted
+\texttt{"blocker": null} would satisfy every other check while quietly
+reintroducing a distinguished absent value --- the exact move that
+\Cref{sec:related} criticises SQL's NULL for. The check asserts the key
+is missing, not that its value is null.
+
+\begin{remark}[the disclaimer that matters more than the result]
+\label{rem:validation}
+V1--V16 test the implementation against the theory. They do not test the
+theory against the world. That a verdict is assigned deterministically
+says nothing about whether it is the right verdict; that no request is
+issued for an ill-capable plan says nothing about whether the capability
+declaration was true. The check that would matter most --- does a
+source's declaration match its behaviour --- is precisely the one we
+cannot run, for the reason in \Cref{sec:noprobing}.
+\end{remark}
+
+There is a second gap the suite cannot reach, and \Cref{sec:g7} is the
+evidence for it: no check detects a plan whose steps all succeed and
+which answers a different question. That defect is invisible to
+everything in V1--V16, and it was found by hand. We would rather report
+sixteen checks with both caveats attached than a larger number that
+implies coverage we do not have.
+
+% =====================================================================
+\section{On not probing a third party's endpoint}
+\label{sec:noprobing}
+
+The evaluation runs against a local fixture, constructed to mirror the
+structure of the group's records --- the same sources, the same
+namespace split, the same sparse recording --- rather than against a
+live public endpoint. Two reasons, and the second is the binding one.
+
+The practical reason is reproducibility. A paper whose numbers depend on
+a third party's deployment state reports something unrepeatable: the
+endpoint changes and \Cref{tab:evidence} becomes unverifiable.
+
+The reason we regard as binding is ethical. Characterising a source's
+\emph{true} capability set --- which is what \Cref{rem:honesty} says we
+cannot verify --- would require issuing requests designed to elicit
+internal behaviour: probing for materialisation caps, for silent
+truncation, for the point at which an aggregate stops being the
+aggregate. That is adversarial traffic against a public research service
+maintained on a shared budget, and it is not ours to send. We hold to
+this even though it leaves the largest gap in the design unclosed. Given
+the choice between naming a gap and closing it by that route, we name it.
+
+There is a related observation we can report but not explain. On
+10 August 2026, two requests to a public endpoint, byte-identical except
+for one line, returned 2 and 397 rows respectively --- a ratio of
+$198.5$. We do not know why. Every hypothesis we can form is a
+hypothesis about the deployment's internals, and discriminating among
+them requires exactly the probing above. So it stands here as an
+undiagnosed observation rather than a characterised behaviour. We think
+reporting it undiagnosed is more useful than either omitting it or
+speculating, and we note that it is the kind of thing
+\Cref{prop:under} is a response to: a client that cannot rule out
+truncation should decline to declare the capability, not guess at the
+threshold.
+
+The implementation reflects the constraint in code rather than in
+intention. The adapter module carries it in its docstring: every adapter
+resolves against a local fixture or a local engine; no adapter performs
+network I/O, and none may be added that does.
+
+% =====================================================================
+\section{Related work}
+\label{sec:related}
+
+\paragraph{Source capability description.} Describing what a source can
+do is old and well studied: mediator architectures
+\citep{Wiederhold1992}, source descriptions for query answering
+\citep{Levy1996}, and capability-aware optimisation across heterogeneous
+sources \citep{Haas1997}. SPARQL federation inherits the problem
+\citep{Prudhommeaux2013}, systems such as FedX \citep{Schwarte2011} plan
+around source capability, and the space is surveyed by
+\citet{Saleem2016}. Nothing in \Cref{sec:calculus} is novel as
+\emph{description}, and we do not claim it is.
+
+The difference is what happens to a capability mismatch. In all of the
+above it is a planner-internal fact: the planner routes around it,
+rewrites, or fails, and the caller receives a result set. Here it is a
+first-class output --- named, with the required set, the declared set,
+and the difference, at \texttt{requests\_issued} $= 0$. We are not
+claiming a better planner. We are claiming that the mismatch is
+information the caller needs, and that the conventional interface has
+nowhere to put it, which is \Cref{obs:onebit}.
+
+\citet{Aranda2013} is close in spirit: it surveys the reliability of
+public SPARQL infrastructure and finds it uneven. \Cref{prop:under} can
+be read as asking what a client should do about that finding, and
+answering: declare the capability away, and accept refusals in exchange
+for never receiving a truncated aggregate that has the shape of a
+complete one.
+
+\paragraph{Nulls and certain answers.} The relational literature has
+long distinguished the reasons a value or a row may be absent
+\citep{Codd1979,Imielinski1984}, and \citet{Libkin2016} shows how far
+SQL's three-valued treatment sits from certain-answer semantics. Our
+\Cref{def:rules} is a coarser instrument aimed at a different level: not
+\emph{is this value unknown} but \emph{did this step get to look}. The
+connection is that both are refusals to let one distinguished value ---
+NULL there, the empty solution sequence here --- carry more meanings
+than it can separate. The debt is direct, and \Cref{prin:noblocker} is
+the place we try hardest to honour it: rather than introducing a
+distinguished ``no blocker'' value, which would recreate the problem, we
+make the field absent.
+
+\paragraph{Reasoning.} We use description-logic reasoning
+\citep{Baader2003,Grau2008,Motik2009} as the foil throughout, and we
+want to be precise about the criticism, because it is narrower than the
+framing might suggest. Nothing here says a reasoner computes the wrong
+entailments; under its axioms it computes exactly the right ones. The
+criticism is about \emph{materialisation into a shared vocabulary}:
+entailed and asserted triples become indistinguishable to any query over
+the result (\Cref{prop:launder}), and on sparse experimental data the
+entailed fraction can be large while its axioms go unexamined by the
+person reading the answer. The closed-world and default-reasoning
+literature \citep{Reiter1978,Reiter1980} treats exactly this as
+something to mark rather than absorb, and our admissibility statement is
+a coarse, plan-level version of that marking --- coarser than a default
+theory, and correspondingly cheaper to write and to read.
+
+\paragraph{The standard and its domain.} Chem-DCAT-AP extends DCAT-AP
+\citep{DCATAP2015,DCAT2020} with catalysis vocabulary, in the FAIR
+tradition \citep{Wilkinson2016} and the biocatalysis standardisation
+effort around it \citep{Doerr2020,Pleiss2021,Bornscheuer2012}; the
+sources it federates are the usual ones
+\citep{UniProt2023,Wittig2018,Chang2021,Hastings2016}, with provenance
+in PROV-O \citep{PROVO2013}, and a query layer specified by
+\citet{Harris2013} over engines such as \citet{Pyoxigraph}. We repeat
+that we keep all of this. The present paper changes the answering layer,
+not the vocabulary.
+
+\paragraph{Measurement.} One connection we flag without developing. The
+metrology guide \citep{GUM2008} requires a measured value to carry its
+uncertainty. RDF does not: a triple asserting \texttt{pH 9.0} and a
+triple asserting \texttt{pH 9.0} $\pm$ \texttt{0.5} are structurally the
+same triple with different literals, and no query over them can be made
+to respect the difference. Q4 sits directly on this --- \emph{at pH 9}
+is a sharp cut through a quantity that was measured with a tolerance ---
+and so does the comparability question of \Cref{sec:pairs}, which is
+\emph{entirely} a question about tolerances. We do not solve it here. We
+note that the framework this work builds on handles it by making every
+value carry a strictly positive floor, so that a sharp cut is
+\emph{untypeable} rather than merely discouraged
+\citep{HegelFederated2026}, and that reconciling a typed floor with RDF
+literals is open.
+
+% =====================================================================
+\section{Limitations}
+\label{sec:limits}
+
+Beyond the four limits stated in \Cref{sec:intro}, three more have
+emerged from doing the work, and they are sharper than the ones we knew
+to state in advance.
+
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em]
+\item \textbf{The verdicts do not check plans.} \Cref{sec:g7} is our own
+  defect: every step \vans, the right rows, the wrong question. The
+  algebra classifies what happened to each request, and a constraint
+  whose output nothing consumes is a dataflow property that no verdict
+  can see. The remedy we used --- counterfactual falsification of every
+  constraint (\Cref{prin:counterfactual}) --- is methodology. Nothing in
+  the executor enforces it, and a plan author who skips it gets no
+  warning. A static check that every non-terminal step's output is
+  transitively consumed by the emitted step would catch this particular
+  shape, and we have not built it.
+\item \textbf{The gap taxonomy is under-resolved.} Three values, and
+  \Cref{sec:g6} shows \textsf{vocabulary} covering two structurally
+  different situations --- a missing type on a subject that is present,
+  and a relation that is absent from the schema entirely. A finer
+  partition would be more informative and harder to assign consistently.
+  We have not found the right cut, and we would rather ship three
+  honest values than five that the plan author assigns by coin flip.
+\item \textbf{A blockerless \vempty{} inherits the adapter's
+  correctness.} \Cref{sec:selfcatch} is the demonstration: our own
+  lowering asked the wrong question, and the framework reported
+  \emph{nothing there}, confidently. \vempty{} means the request
+  completed and returned nothing. It does not mean the request expressed
+  the constraint the plan author intended. That second guarantee is not
+  available at this layer, and a reader who treats \vempty{} as evidence
+  of absence is taking the adapter's lowering on trust.
+\end{enumerate}
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+Thirteen questions from working biocatalysis practice, put to a plan
+language rather than to a query language. Eight return rows. Two are
+refused before any request is issued, one of them for data that
+demonstrably exists in the federation --- and that refusal is correct,
+because no source can evaluate the constraint and a partial answer would
+have had the shape of a complete one. Two return rows under a named
+admissibility gap. One returns \vempty{} without a blocker and a
+downstream \vstarve{} with one, which is the distinction the whole
+apparatus exists to preserve.
+
+We keep the ontology. The change is at the answering layer, and the
+argument for it is a single observation: a result set carries one bit of
+failure information, and laboratory catalysis data --- partial by
+nature, federated by necessity, unevenly recorded by circumstance ---
+routinely produces empty results for reasons that one bit cannot
+separate. Distinguishing them is not a matter of writing better queries,
+because the distinction is a property of the execution and the interface
+has no field for it.
+
+What we can promise is narrower than the tally suggests, and we would
+rather end on that than on the tally. The apparatus reports faithfully
+what happened to each request. It does not certify that the requests
+expressed the question --- our own G7 plan returned the right rows for
+the wrong reason, and our own adapter reported an empty corpus that was
+not empty. It does not verify a source's capability declaration, and it
+deliberately declines the only route that could. What it does is smaller
+and, we think, worth having: when this infrastructure fails to answer a
+chemist's question, the document it returns says whether the failure was
+in the chemistry or in the plumbing. That is one bit more than the
+alternative, and it is the bit the chemist needs in order to know
+whether the next move is to fix a cross-reference or to run the
+experiment.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

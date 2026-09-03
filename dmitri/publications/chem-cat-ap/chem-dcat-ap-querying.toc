@@ -1,0 +1,47 @@
+\contentsline {section}{\numberline {1}The question this paper is about}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}A single observation}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}What we propose instead}{3}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}For the chemist, and for the computer scientist}{4}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}What this paper does not claim}{4}{subsection.1.4}%
+\contentsline {section}{\numberline {2}Plans, sources, capabilities}{5}{section.2}%
+\contentsline {subsection}{\numberline {2.1}The move: a question is a plan, not a query}{5}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Sources}{5}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Honest declaration, and its asymmetry}{6}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Budget and allocation}{7}{subsection.2.4}%
+\contentsline {section}{\numberline {3}Six verdicts, and why two are not enough}{7}{section.3}%
+\contentsline {subsection}{\numberline {3.1}The rules}{7}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}The absent blocker is the point}{8}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Starvation is the characteristic federated failure}{8}{subsection.3.3}%
+\contentsline {section}{\numberline {4}Refusal before contact}{9}{section.4}%
+\contentsline {subsection}{\numberline {4.1}The whole plan, not the failing step}{9}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}The refusal names the real obstacle}{9}{subsection.4.2}%
+\contentsline {section}{\numberline {5}When every step succeeds and the answer is still wrong}{9}{section.5}%
+\contentsline {subsection}{\numberline {5.1}The problem}{9}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Why a reasoner makes this worse}{10}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}The construct}{10}{subsection.5.3}%
+\contentsline {section}{\numberline {6}Five questions from a working group}{11}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Q1: bacterial transaminase without cysteine}{11}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Q2: buffer and pH of a specific methyl transfer}{11}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Q3: substrate scope and product range}{12}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}Q4: expected products under stated conditions}{12}{subsection.6.4}%
+\contentsline {subsection}{\numberline {6.5}Q5: instrument and wavelength for a dated observation}{13}{subsection.6.5}%
+\contentsline {subsection}{\numberline {6.6}An implementation defect the framework caught in itself}{13}{subsection.6.6}%
+\contentsline {section}{\numberline {7}Eight dataset-discovery patterns}{14}{section.7}%
+\contentsline {subsection}{\numberline {7.1}G3 and G8: refused at zero requests}{14}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}G6: a vocabulary the corpus does not have}{14}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}G7, and a defect in our own plan}{15}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.4}One further contrast worth stating}{15}{subsection.7.4}%
+\contentsline {section}{\numberline {8}Two design decisions that look like omissions}{16}{section.8}%
+\contentsline {subsection}{\numberline {8.1}There is no set difference in the plan language}{16}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Comparability is a property of a pair, not of a dataset}{16}{subsection.8.2}%
+\contentsline {section}{\numberline {9}Full evidence}{17}{section.9}%
+\contentsline {section}{\numberline {10}Validation, and what it does not establish}{19}{section.10}%
+\contentsline {section}{\numberline {11}On not probing a third party's endpoint}{19}{section.11}%
+\contentsline {section}{\numberline {12}Related work}{20}{section.12}%
+\contentsline {paragraph}{Source capability description.}{20}{section*.2}%
+\contentsline {paragraph}{Nulls and certain answers.}{20}{section*.3}%
+\contentsline {paragraph}{Reasoning.}{20}{section*.4}%
+\contentsline {paragraph}{The standard and its domain.}{20}{section*.5}%
+\contentsline {paragraph}{Measurement.}{20}{section*.6}%
+\contentsline {section}{\numberline {13}Limitations}{21}{section.13}%
+\contentsline {section}{\numberline {14}Conclusion}{21}{section.14}%

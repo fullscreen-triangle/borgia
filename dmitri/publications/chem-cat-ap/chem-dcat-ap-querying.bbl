@@ -1,0 +1,197 @@
+\begin{thebibliography}{30}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Albertoni et~al.(2020)Albertoni, Browning, Cox, Gonzalez~Beltran,
+  Perego, and Winstanley]{DCAT2020}
+Riccardo Albertoni, David Browning, Simon Cox, Alejandra Gonzalez~Beltran,
+  Andrea Perego, and Peter Winstanley.
+\newblock Data catalog vocabulary ({DCAT}) --- version 2.
+\newblock {W3C} recommendation, World Wide Web Consortium, 2020.
+
+\bibitem[Baader et~al.(2003)Baader, Calvanese, McGuinness, Nardi, and
+  Patel-Schneider]{Baader2003}
+Franz Baader, Diego Calvanese, Deborah McGuinness, Daniele Nardi, and Peter
+  Patel-Schneider.
+\newblock \emph{The Description Logic Handbook}.
+\newblock Cambridge University Press, 2003.
+
+\bibitem[Bornscheuer et~al.(2012)Bornscheuer, Huisman, Kazlauskas, Lutz, Moore,
+  and Robins]{Bornscheuer2012}
+Uwe~T. Bornscheuer, G.~W. Huisman, R.~J. Kazlauskas, S.~Lutz, J.~C. Moore, and
+  K.~Robins.
+\newblock Engineering the third wave of biocatalysis.
+\newblock \emph{Nature}, 485:\penalty0 185--194, 2012.
+
+\bibitem[Buil-Aranda et~al.(2013)Buil-Aranda, Hogan, Umbrich, and
+  Vandenbussche]{Aranda2013}
+Carlos Buil-Aranda, Aidan Hogan, J\"urgen Umbrich, and Pierre-Yves
+  Vandenbussche.
+\newblock {SPARQL} web-querying infrastructure: ready for action?
+\newblock In \emph{International Semantic Web Conference}, pages 277--293,
+  2013.
+
+\bibitem[Chang et~al.(2021)]{Chang2021}
+Antje Chang et~al.
+\newblock {BRENDA}, the {ELIXIR} core data resource in 2021.
+\newblock \emph{Nucleic Acids Research}, 49\penalty0 (D1):\penalty0 D498--D508,
+  2021.
+
+\bibitem[Codd(1979)]{Codd1979}
+E.~F. Codd.
+\newblock Extending the database relational model to capture more meaning.
+\newblock \emph{ACM Transactions on Database Systems}, 4\penalty0 (4):\penalty0
+  397--434, 1979.
+
+\bibitem[D\"orr et~al.(2020)D\"orr, Hasenpusch, and Bornscheuer]{Doerr2020}
+Mark D\"orr, Detlef Hasenpusch, and Uwe~T. Bornscheuer.
+\newblock Standardisation and automation in biocatalysis: towards
+  machine-readable experimental records.
+\newblock \emph{Biotechnology Journal}, 15\penalty0 (8):\penalty0 1900407,
+  2020.
+
+\bibitem[{European Commission, ISA Programme}(2015)]{DCATAP2015}
+{European Commission, ISA Programme}.
+\newblock {DCAT} application profile for data portals in europe.
+\newblock Technical report, Publications Office of the European Union, 2015.
+\newblock Version 1.1.
+
+\bibitem[Grau et~al.(2008)Grau, Horrocks, Motik, Parsia, Patel-Schneider, and
+  Sattler]{Grau2008}
+Bernardo~Cuenca Grau, Ian Horrocks, Boris Motik, Bijan Parsia, Peter
+  Patel-Schneider, and Ulrike Sattler.
+\newblock {OWL} 2: the next step for {OWL}.
+\newblock \emph{Journal of Web Semantics}, 6\penalty0 (4):\penalty0 309--322,
+  2008.
+
+\bibitem[Haas et~al.(1997)Haas, Kossmann, Wimmers, and Yang]{Haas1997}
+Laura~M. Haas, Donald Kossmann, Edward~L. Wimmers, and Jun Yang.
+\newblock Optimizing queries across diverse data sources.
+\newblock In \emph{Proceedings of VLDB}, pages 276--285, 1997.
+
+\bibitem[Harris and Seaborne(2013)]{Harris2013}
+Steve Harris and Andy Seaborne.
+\newblock {SPARQL} 1.1 query language.
+\newblock {W3C} recommendation, World Wide Web Consortium, 2013.
+
+\bibitem[Hastings et~al.(2016)Hastings, Owen, Dekker, Ennis, Kale,
+  Muthukrishnan, Turner, Swainston, Mendes, and Steinbeck]{Hastings2016}
+Janna Hastings, Gareth Owen, Adriano Dekker, Marcus Ennis, Namrata Kale,
+  Venkatesh Muthukrishnan, Steve Turner, Neil Swainston, Pedro Mendes, and
+  Christoph Steinbeck.
+\newblock {ChEBI} in 2016: improved services and an expanding collection of
+  metabolites.
+\newblock \emph{Nucleic Acids Research}, 44\penalty0 (D1):\penalty0
+  D1214--D1219, 2016.
+
+\bibitem[Imielinski and Lipski(1984)]{Imielinski1984}
+Tomasz Imielinski and Witold Lipski.
+\newblock Incomplete information in relational databases.
+\newblock \emph{Journal of the ACM}, 31\penalty0 (4):\penalty0 761--791, 1984.
+
+\bibitem[{Joint Committee for Guides in Metrology}(2008)]{GUM2008}
+{Joint Committee for Guides in Metrology}.
+\newblock Evaluation of measurement data --- guide to the expression of
+  uncertainty in measurement.
+\newblock Technical Report JCGM 100:2008, BIPM, 2008.
+
+\bibitem[Lebo et~al.(2013)Lebo, Sahoo, and McGuinness]{PROVO2013}
+Timothy Lebo, Satya Sahoo, and Deborah McGuinness.
+\newblock {PROV-O}: The {PROV} ontology.
+\newblock {W3C} recommendation, World Wide Web Consortium, 2013.
+
+\bibitem[Levy et~al.(1996)Levy, Rajaraman, and Ordille]{Levy1996}
+Alon~Y. Levy, Anand Rajaraman, and Joann~J. Ordille.
+\newblock Querying heterogeneous information sources using source descriptions.
+\newblock In \emph{Proceedings of VLDB}, pages 251--262, 1996.
+
+\bibitem[Libkin(2016)]{Libkin2016}
+Leonid Libkin.
+\newblock Three-valued logic and certain answers in {SQL}.
+\newblock \emph{ACM Transactions on Database Systems}, 41\penalty0
+  (1):\penalty0 1--28, 2016.
+
+\bibitem[Motik et~al.(2009)Motik, Shearer, and Horrocks]{Motik2009}
+Boris Motik, Rob Shearer, and Ian Horrocks.
+\newblock Hypertableau reasoning for description logics.
+\newblock \emph{Journal of Artificial Intelligence Research}, 36:\penalty0
+  165--228, 2009.
+
+\bibitem[Pleiss(2021)]{Pleiss2021}
+J\"urgen Pleiss.
+\newblock Standardized data, {FAIR}ness, and the reproducibility of enzyme
+  kinetics.
+\newblock \emph{ChemCatChem}, 13\penalty0 (18):\penalty0 3924--3929, 2021.
+
+\bibitem[Prudhommeaux and Buil-Aranda(2013)]{Prudhommeaux2013}
+Eric Prudhommeaux and Carlos Buil-Aranda.
+\newblock {SPARQL} 1.1 federated query.
+\newblock {W3C} recommendation, World Wide Web Consortium, 2013.
+
+\bibitem[Reiter(1978)]{Reiter1978}
+Raymond Reiter.
+\newblock On closed world data bases.
+\newblock In \emph{Logic and Data Bases}, pages 55--76. Plenum Press, 1978.
+
+\bibitem[Reiter(1980)]{Reiter1980}
+Raymond Reiter.
+\newblock A logic for default reasoning.
+\newblock \emph{Artificial Intelligence}, 13\penalty0 (1--2):\penalty0 81--132,
+  1980.
+
+\bibitem[Sachikonye(2026)]{HegelFederated2026}
+Kundai~Farai Sachikonye.
+\newblock Federated querying over heterogeneous chemical knowledge sources:
+  Plans, capabilities, and verdicts.
+\newblock Technical report, \textsc{hegel}/\textsc{ckg}, 2026.
+
+\bibitem[Saleem et~al.(2016)Saleem, Khan, Hasnain, Ermilov, and
+  Ngonga~Ngomo]{Saleem2016}
+Muhammad Saleem, Yasar Khan, Ali Hasnain, Ivan Ermilov, and Axel-Cyrille
+  Ngonga~Ngomo.
+\newblock A fine-grained evaluation of {SPARQL} endpoint federation systems.
+\newblock \emph{Semantic Web}, 7\penalty0 (5):\penalty0 493--518, 2016.
+
+\bibitem[Schwarte et~al.(2011)Schwarte, Haase, Hose, Schenkel, and
+  Schmidt]{Schwarte2011}
+Andreas Schwarte, Peter Haase, Katja Hose, Ralf Schenkel, and Michael Schmidt.
+\newblock {FedX}: optimization techniques for federated query processing on
+  linked data.
+\newblock In \emph{International Semantic Web Conference}, pages 601--616,
+  2011.
+
+\bibitem[Tanon(2024)]{Pyoxigraph}
+Thomas~Pellissier Tanon.
+\newblock Oxigraph: a graph database implementing the {SPARQL} standard, 2024.
+\newblock Software.
+
+\bibitem[{The UniProt Consortium}(2023)]{UniProt2023}
+{The UniProt Consortium}.
+\newblock {UniProt}: the universal protein knowledgebase in 2023.
+\newblock \emph{Nucleic Acids Research}, 51\penalty0 (D1):\penalty0 D523--D531,
+  2023.
+
+\bibitem[Wiederhold(1992)]{Wiederhold1992}
+Gio Wiederhold.
+\newblock Mediators in the architecture of future information systems.
+\newblock \emph{Computer}, 25\penalty0 (3):\penalty0 38--49, 1992.
+
+\bibitem[Wilkinson et~al.(2016)]{Wilkinson2016}
+Mark~D. Wilkinson et~al.
+\newblock The {FAIR} guiding principles for scientific data management and
+  stewardship.
+\newblock \emph{Scientific Data}, 3:\penalty0 160018, 2016.
+
+\bibitem[Wittig et~al.(2018)Wittig, Rey, Weidemann, Kania, and
+  M\"uller]{Wittig2018}
+Ulrike Wittig, Maja Rey, Andreas Weidemann, Renate Kania, and Wolfgang
+  M\"uller.
+\newblock {SABIO-RK}: an updated resource for manually curated biochemical
+  reaction kinetics.
+\newblock \emph{Nucleic Acids Research}, 46\penalty0 (D1):\penalty0 D656--D660,
+  2018.
+
+\end{thebibliography}

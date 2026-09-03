@@ -1,0 +1,380 @@
+{
+  "paper": "Four-Route Convergence: H, H2, H2O",
+  "suite": "ladder_routes",
+  "framework_version": "2.0.0",
+  "timestamp_utc": "2026-09-02T23:16:01.345250+00:00",
+  "provenance": "all powers computed from measured transition data",
+  "ritz_additivity": {
+    "expectation": {
+      "ritz_additivity_holds": true,
+      "registered_note": "this may hold trivially since it IS the Ritz combination principle; report if so rather than claim novelty"
+    },
+    "outcome": "REGISTERED EXPECTATION INITIALLY REFUTED, then diagnosed. On the wavelength table as tabulated -- vacuum Lyman alongside standard-air Balmer -- Ritz additivity fails at 6.4e-5, which is 50x the rounding budget of the quoted digits and grows monotonically with n.  The failure is a unit-convention error in the source table, not a failure of additivity: converting the Balmer values from air to vacuum restores the residual to 7e-7, inside the budget, and removes the trend.  A per-line comparison against the same table cannot detect this, because every line agrees with the value it was drawn from.  The cross-line constraint detects it immediately.",
+    "measured": {
+      "triples_vacuum": [
+        {
+          "n": 3,
+          "nu_1_to_n": 97492.30298267952,
+          "nu_1_to_2_plus_2_to_n": 97492.37244680524,
+          "relative_residual": 7.125088195576771e-07
+        },
+        {
+          "n": 4,
+          "nu_1_to_n": 102823.85143187355,
+          "nu_1_to_2_plus_2_to_n": 102823.83854770524,
+          "relative_residual": 1.2530330403602927e-07
+        },
+        {
+          "n": 5,
+          "nu_1_to_n": 105291.64205474533,
+          "nu_1_to_2_plus_2_to_n": 105291.65904726164,
+          "relative_residual": 1.6138523414337355e-07
+        },
+        {
+          "n": 6,
+          "nu_1_to_n": 106632.20313861227,
+          "nu_1_to_2_plus_2_to_n": 106632.1959694471,
+          "relative_residual": 6.723264602333613e-08
+        }
+      ],
+      "max_relative_residual_vacuum": 7.125088195576771e-07,
+      "triples_mixed_convention": [
+        {
+          "n": 3,
+          "nu_1_to_n": 97492.30298267952,
+          "nu_1_to_2_plus_2_to_n": 97496.58065133965,
+          "relative_residual": 4.387698853404075e-05
+        },
+        {
+          "n": 4,
+          "nu_1_to_n": 102823.85143187355,
+          "nu_1_to_2_plus_2_to_n": 102829.58340987224,
+          "relative_residual": 5.574560686908561e-05
+        },
+        {
+          "n": 5,
+          "nu_1_to_n": 105291.64205474533,
+          "nu_1_to_2_plus_2_to_n": 105298.1347613237,
+          "relative_residual": 6.166402623861254e-05
+        },
+        {
+          "n": 6,
+          "nu_1_to_n": 106632.20313861227,
+          "nu_1_to_2_plus_2_to_n": 106639.07492700737,
+          "relative_residual": 6.444383772292841e-05
+        }
+      ],
+      "max_relative_residual_mixed": 6.444383772292841e-05,
+      "tabulation_rounding_budget": 8.783170802825143e-07,
+      "mixed_exceeds_budget_by_factor": 73.37195093849226,
+      "rho_composition": [
+        {
+          "n": 3,
+          "rho_direct": 2.197316301485655,
+          "rho_two_step": 2.1972774049731343,
+          "abs_diff": 3.889651252064752e-05
+        },
+        {
+          "n": 4,
+          "rho_direct": 2.7727516846577207,
+          "rho_two_step": 2.7726427688743485,
+          "abs_diff": 0.00010891578337224317
+        },
+        {
+          "n": 5,
+          "rho_direct": 3.219140724478903,
+          "rho_two_step": 3.218957272821892,
+          "abs_diff": 0.00018345165701116883
+        },
+        {
+          "n": 6,
+          "rho_direct": 3.583919226976818,
+          "rho_two_step": 3.58363140064468,
+          "abs_diff": 0.0002878263321379748
+        }
+      ],
+      "max_rho_composition_gap": 0.0002878263321379748
+    },
+    "checks": {
+      "ritz_holds_in_vacuum_to_1e6": true,
+      "mixed_convention_detected": true
+    }
+  },
+  "inert_and_hyperfine": {
+    "expectation": {
+      "forbidden_rungs_contribute_zero_circulation": true,
+      "hyperfine_is_smallest_nonzero_power": true,
+      "hyperfine_orders_below_smallest_allowed": ">=4"
+    },
+    "measured": {
+      "hyperfine_nu_MHz": 1420.405751768,
+      "hyperfine_nu_cm": 0.047379635940274396,
+      "hyperfine_power": 4.3199015213771847e-07,
+      "hyperfine_rho": 4.3199024540215847e-07,
+      "smallest_allowed_power": 0.30555890979961015,
+      "orders_of_magnitude_below": 5.849621105308906,
+      "n_allowed_rungs": 19,
+      "rho_forbidden_set": 0.0,
+      "forbidden": [
+        {
+          "label": "2s->1s (dl=0, E1-forbidden)",
+          "power": 0.0
+        },
+        {
+          "label": "3d->1s (dl=2, E1-forbidden)",
+          "power": 0.0
+        }
+      ],
+      "all_rungs": [
+        {
+          "n_upper": 2,
+          "n_final": 1,
+          "nu_measured_cm": 82259.1657275412,
+          "power": 0.7500089186450706,
+          "rho_contribution": 1.3863300363365259
+        },
+        {
+          "n_upper": 3,
+          "n_final": 1,
+          "nu_measured_cm": 97492.30298267952,
+          "power": 0.888899079993656,
+          "rho_contribution": 2.197316301485655
+        },
+        {
+          "n_upper": 4,
+          "n_final": 1,
+          "nu_measured_cm": 102823.85143187355,
+          "power": 0.9375101843212679,
+          "rho_contribution": 2.7727516846577207
+        },
+        {
+          "n_upper": 5,
+          "n_final": 1,
+          "nu_measured_cm": 105291.64205474533,
+          "power": 0.9600105945811159,
+          "rho_contribution": 3.219140724478903
+        },
+        {
+          "n_upper": 6,
+          "n_final": 1,
+          "nu_measured_cm": 106632.20313861227,
+          "power": 0.9722333391226652,
+          "rho_contribution": 3.583919226976818
+        },
+        {
+          "n_upper": 3,
+          "n_final": 2,
+          "nu_measured_cm": 15233.206719264046,
+          "power": 0.555563178788079,
+          "rho_contribution": 0.8109473686366085
+        },
+        {
+          "n_upper": 4,
+          "n_final": 2,
+          "nu_measured_cm": 20564.672820164033,
+          "power": 0.7500045928122946,
+          "rho_contribution": 1.3863127325378224
+        },
+        {
+          "n_upper": 5,
+          "n_final": 2,
+          "nu_measured_cm": 23032.493319720445,
+          "power": 0.84000732347032,
+          "rho_contribution": 1.8326272364853662
+        },
+        {
+          "n_upper": 6,
+          "n_final": 2,
+          "nu_measured_cm": 24373.0302419059,
+          "power": 0.888897420447099,
+          "rho_contribution": 2.1973013643081543
+        },
+        {
+          "n_upper": 7,
+          "n_final": 2,
+          "nu_measured_cm": 25181.3166068266,
+          "power": 0.918376055546203,
+          "rho_contribution": 2.5056326231224864
+        },
+        {
+          "n_upper": 4,
+          "n_final": 3,
+          "nu_measured_cm": 5333.04890405845,
+          "power": 0.4376230643252773,
+          "rho_contribution": 0.5755829498623363
+        },
+        {
+          "n_upper": 5,
+          "n_final": 3,
+          "nu_measured_cm": 7801.529099703542,
+          "power": 0.640183342109789,
+          "rho_contribution": 1.022160660899244
+        },
+        {
+          "n_upper": 6,
+          "n_final": 3,
+          "nu_measured_cm": 9142.4392027793,
+          "power": 0.7502166830465601,
+          "rho_contribution": 1.3871614691356504
+        },
+        {
+          "n_upper": 7,
+          "n_final": 3,
+          "nu_measured_cm": 9951.238929246692,
+          "power": 0.8165857378011022,
+          "rho_contribution": 1.6960079566495612
+        },
+        {
+          "n_upper": 5,
+          "n_final": 4,
+          "nu_measured_cm": 2468.4044233807267,
+          "power": 0.3600961066861188,
+          "rho_contribution": 0.44643728060162746
+        },
+        {
+          "n_upper": 6,
+          "n_final": 4,
+          "nu_measured_cm": 3809.2335822032605,
+          "power": 0.5556991266977009,
+          "rho_contribution": 0.8112533034732232
+        },
+        {
+          "n_upper": 7,
+          "n_final": 4,
+          "nu_measured_cm": 4617.871161394597,
+          "power": 0.6736649029816691,
+          "rho_contribution": 1.1198305205837866
+        },
+        {
+          "n_upper": 6,
+          "n_final": 5,
+          "nu_measured_cm": 1340.5185125606583,
+          "power": 0.30555890979961015,
+          "rho_contribution": 0.36464794371101283
+        },
+        {
+          "n_upper": 7,
+          "n_final": 5,
+          "nu_measured_cm": 2148.7816408096605,
+          "power": 0.4897950825826489,
+          "rho_contribution": 0.6729428351057595
+        }
+      ]
+    },
+    "checks": {
+      "forbidden_rho_is_zero": true,
+      "hyperfine_nonzero": true,
+      "hyperfine_is_minimum": true
+    }
+  },
+  "closed_molecular": {
+    "expectation": {
+      "u_h2o_less_than_1": true,
+      "rotation_invariance_holds": true,
+      "rho_per_rung_separates_electronic_from_vibrational": true,
+      "registered_risk": "the aromatic case needed TWO invariants; a single-invariant separation may fail here exactly as it failed for cyclohexane"
+    },
+    "measured": {
+      "h2o_vibrational_profile": [
+        0.08888200267347188,
+        0.03875926601045084,
+        0.09128521083971321
+      ],
+      "h2o_rho": 0.228337260143414,
+      "h2o_rho_per_rung": 0.07611242004780466,
+      "h2o_uniformity": 0.6681843547292576,
+      "h2o_rotational_ABC_profile": [
+        0.5316426154265043,
+        0.28359718386557237,
+        0.1847602007079233
+      ],
+      "h2o_rotational_ABC_uniformity": 0.5622527041786003,
+      "h2_profile": [
+        0.11520999166622829
+      ],
+      "h2_rho": 0.12240494084815855,
+      "h2_uniformity": 1.0,
+      "rotation_deviation_rho": 0.0,
+      "rotation_deviation_u": 0.0,
+      "rho_per_rung_electronic": 2.6318915947871244,
+      "rho_per_rung_vibrational": 0.07611242004780466,
+      "separation_margin": 2.5557791747393197,
+      "D0_H2O_cm": 41145.0,
+      "D0_H2_cm": 36118.1
+    },
+    "checks": {
+      "u_h2o_below_1": true,
+      "rotation_invariant_rho": true,
+      "rotation_invariant_u": true,
+      "margin_positive": true
+    }
+  },
+  "four_route": {
+    "expectation": {
+      "all_four_routes_agree": true,
+      "registered_note": "the ladder row is exact by construction, being reconstructed from the measured value; it is a consistency check and NOT evidence.  The load-bearing comparison is established vs instrument vs catalogue."
+    },
+    "measured": {
+      "rows": [
+        {
+          "line": "Ly-2",
+          "nu_measured_cm": 82259.1657275412,
+          "established_cm": 82258.18755210264,
+          "instrument_cm": 82258.18755210264,
+          "ladder_cm": 82259.1657275412,
+          "catalogue_cm": 82258.18755210264,
+          "max_spread_cm": 0.9781754385621753,
+          "max_spread_rel": 1.1891385353968796e-05
+        },
+        {
+          "line": "Ly-3",
+          "nu_measured_cm": 97492.30298267952,
+          "established_cm": 97491.18524693645,
+          "instrument_cm": 97491.18524693644,
+          "ladder_cm": 97492.30298267952,
+          "catalogue_cm": 97491.18524693645,
+          "max_spread_cm": 1.1177357430860866,
+          "max_spread_rel": 1.1464861418697469e-05
+        },
+        {
+          "line": "Ly-4",
+          "nu_measured_cm": 102823.85143187355,
+          "established_cm": 102822.73444012829,
+          "instrument_cm": 102822.73444012829,
+          "ladder_cm": 102823.85143187355,
+          "catalogue_cm": 102822.73444012829,
+          "max_spread_cm": 1.1169917452643858,
+          "max_spread_rel": 1.08631580096419e-05
+        },
+        {
+          "line": "Ly-5",
+          "nu_measured_cm": 105291.64205474533,
+          "established_cm": 105290.48006669137,
+          "instrument_cm": 105290.48006669138,
+          "ladder_cm": 105291.64205474533,
+          "catalogue_cm": 105290.48006669138,
+          "max_spread_cm": 1.161988053965615,
+          "max_spread_rel": 1.1035900203374652e-05
+        },
+        {
+          "line": "Ly-6",
+          "nu_measured_cm": 106632.20313861227,
+          "established_cm": 106630.98386383675,
+          "instrument_cm": 106630.98386383677,
+          "ladder_cm": 106632.20313861227,
+          "catalogue_cm": 106630.98386383675,
+          "max_spread_cm": 1.219274775517988,
+          "max_spread_rel": 1.1434395423050958e-05
+        }
+      ],
+      "worst_relative_spread": 1.1891385353968796e-05
+    },
+    "checks": {
+      "routes_agree_to_1e4": true
+    }
+  },
+  "summary": {
+    "passed": 10,
+    "failed": 0
+  }
+}

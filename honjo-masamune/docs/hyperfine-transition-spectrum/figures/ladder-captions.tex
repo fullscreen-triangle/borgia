@@ -1,0 +1,116 @@
+% ============================================================
+%  Figure captions for the four-route convergence paper.
+%  Panels 5-8: the ladder and convergence routes.
+%  Every number quoted here is read from results/ladder_routes.json.
+% ============================================================
+
+\newcommand{\captionFourRoutes}{%
+\caption{\textbf{Four Routes to One Value, and What the Cross-Line
+Constraint Catches.}
+The four routes share the alphabet $C(n)=2n^{2}$ and nothing else: the
+established route solves a differential equation, the instrument route
+resolves a partition address physically, the ladder route deletes the
+carrier and computes invariants of a contact sequence, and the catalogue
+route takes a minimum cut at rest.
+(\textbf{A})~Signed residual from the NIST measurement, in parts per
+million, for each route on each Lyman line. The established, instrument and
+catalogue routes are \emph{bit-identical} at $-11$~ppm; the ladder bar is
+zero because it is reconstructed from the measured value. Plotting the raw
+wavenumbers instead would show four bars of equal height and say nothing,
+which is why the residual is drawn.
+(\textbf{B})~The spread \emph{among} the three predictive routes against
+their common gap to measurement. The spread is exactly zero and is drawn at
+a clamped floor with that fact labelled, because rendering machine zero on a
+logarithmic axis would dress floating-point dust as data. The honest reading
+of (\textbf{A}) and (\textbf{B}) together is that the three routes are three
+\emph{derivations of one closed form}, not three independent predictions
+that happen to agree; the shared $1.1\times10^{-5}$ residual is the
+reduced-mass and QED gap between that closed form and experiment.
+(\textbf{C})~The measurement that a single route cannot make. Ritz
+additivity, $\tilde\nu(1\!\to\!n)=\tilde\nu(1\!\to\!2)+\tilde\nu(2\!\to\!n)$,
+evaluated on the tabulated wavelengths (red) and after converting the Balmer
+values from standard air to vacuum (green), against the rounding budget of
+the quoted four-decimal digits (dotted). As tabulated the residual is
+$6.4\times10^{-5}$, exceeding the budget by a factor of $73$ and rising
+monotonically with $n$; converted, it falls to $7.1\times10^{-7}$, inside the
+budget, and the trend disappears. The tabulated Balmer wavelengths are
+standard-air values sitting alongside vacuum Lyman values. A per-line
+comparison cannot detect this, because every line agrees with the table it
+was drawn from; the cross-line constraint detects it immediately.
+(\textbf{D})~Residual landscape over (route, line, $\log_{10}$ relative
+residual), showing the three coincident routes as three parallel planes and
+the reconstructed ladder route on the floor.}}
+
+\newcommand{\captionLadderRungs}{%
+\caption{\textbf{Rung Powers and Circulation Computed from Measured
+Lines.}
+A transition is a rung; its power $\pi$ is the fraction of the final
+state's binding that the transition supplies, computed throughout from the
+measured NIST wavenumber rather than assigned. This is the half the
+categorical-ladder development did not have: its ring profiles were inputs,
+so its chemical claims were statements about a formalism.
+(\textbf{A})~Rung power against upper level for the five hydrogen series.
+Each series is an ordered fan approaching $\pi\to1$ at its limit, where the
+transition supplies the whole of the final state's binding.
+(\textbf{B})~The circulation contribution $-\log(1-\pi)$ of each rung. The
+divergence toward the series limit is the statement that a rung closing all
+remaining ambiguity deposits unbounded residue.
+(\textbf{C})~Total circulation $\varrho$ and circulation per rung
+$\varrho/n$ by series. $\varrho$ is additive along the ladder, which is the
+ladder-language form of the Ritz combination principle tested in
+Figure~\ref{fig:fourroutes}(C).
+(\textbf{D})~Rung landscape over $(n_f, n_u, \pi)$, the whole measured
+hydrogen atlas as a single surface in power coordinates.}}
+
+\newcommand{\captionHyperfineRung}{%
+\caption{\textbf{The 21\,cm Line as the Parity Rung: Nearly Inert, and
+Therefore Nearly Forbidden.}
+A rung rewrites one or more letters of the word $(n,\ell,m,s)$. The
+hyperfine transition rewrites the parity letter $s$ alone, with $n$, $\ell$
+and $m$ all fixed.
+(\textbf{A})~Every allowed electric-dipole rung of the measured hydrogen
+atlas, sorted by power, against the 21\,cm rung and against the inert
+(forbidden) line at exactly zero. The parity rung sits five decades below
+the body of the atlas and above zero.
+(\textbf{B})~The three cases side by side on a logarithmic power axis: a
+forbidden rung at exactly $0$, the 21\,cm rung at
+$\pi=4.32\times10^{-7}$, and the smallest allowed rung at $\pi=0.306$. The
+parity rung lies $5.85$ orders of magnitude below the smallest allowed one.
+The registered expectation was ``at least four orders''; the measured value
+exceeds it.
+(\textbf{C})~Which letter each rung rewrites. The two allowed transitions
+move $n$ and $\ell$ together, satisfying $\Delta\ell=\pm1$; the
+$2s\to1s$ transition moves $n$ alone and is dipole-forbidden; the 21\,cm
+rung moves $s$ alone. Since chirality is a topological invariant and
+continuous deformation cannot change it, a rung on $s$ alone is forbidden as
+an electric-dipole transition --- and the near-vanishing power in
+(\textbf{B}) is the quantitative form of that statement, and of the
+$10^{7}$-year lifetime that follows from it.
+(\textbf{D})~Ten decades of transition energy in
+$(\log_{10}\tilde\nu, n_f, \log_{10}\pi)$, with the parity rung starred at
+the far corner.}}
+
+\newcommand{\captionClosedLadders}{%
+\caption{\textbf{Closed Molecular Ladders, with Powers from HITRAN.}
+A cycle has no target, so composite power is undefined for it; the closed
+ladder carries the circulation $\varrho$ and the uniformity $u$ instead.
+(\textbf{A})~The three vibrational modes of H$_2$O drawn as a closed
+ladder, node area and colour encoding the rung power computed from the
+measured HITRAN fundamentals against the dissociation limit. The bend
+$\nu_2$ at $0.0388$ is the odd node against the two stretches at $0.0889$
+and $0.0913$, and that asymmetry is exactly what gives $u=0.6682$.
+(\textbf{B})~Both invariants under every rotation of the cycle. Each is
+flat, with deviation below $10^{-16}$. The values are plotted rather than
+the deviations, because a deviation of machine zero on a logarithmic axis
+would render floating-point dust as a measurement.
+(\textbf{C})~Circulation per rung for the electronic (Lyman) and
+vibrational (H$_2$O) modalities, separated with margin $+2.556$. The
+corresponding separation in the ring corpus of the categorical-ladder
+development was $+0.293$ on assigned profiles; here the profiles are
+measured.
+(\textbf{D})~The closed-ladder coordinates $(\varrho/n, u, \text{cycle
+length})$ for the four cycles treated: the H$_2$O vibrational triple, the
+H$_2$O rotational constants $(A,B,C)$, the single H$_2$ vibrational mode,
+and the Lyman ladder. Neither coordinate alone separates the four --- the
+same two-invariant conclusion the ring corpus reached when uniformity alone
+was refuted by cyclohexane.}}
