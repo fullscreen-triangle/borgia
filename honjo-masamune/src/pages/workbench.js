@@ -136,7 +136,7 @@ function highlight(src) {
 
 export default function Workbench() {
   const [leftW, setLeftW] = useState(230);
-  const [rightW, setRightW] = useState(400);
+  const [rightW, setRightW] = useState(560);
   const [termH, setTermH] = useState(160);
 
   const [expanded, setExpanded] = useState(
@@ -149,7 +149,7 @@ export default function Workbench() {
    * like it had no way to execute anything. Landing on a runnable file
    * makes the first Run the obvious next action.
    */
-  const FIRST_FILE = "honjo/01_cut.hnj";
+  const FIRST_FILE = "honjo/05_track.hnj";
 
   const [tabs, setTabs] = useState([FIRST_FILE]);
   const [active, setActive] = useState(FIRST_FILE);

@@ -231,12 +231,54 @@ function Invariants({ paths }) {
             display: "flex", gap: 16, alignItems: "flex-start",
             marginBottom: 20, flexWrap: "wrap",
           }}>
-            <LadderRing
-              powers={powers}
-              size={150}
-              label={p.name}
-              highlight={powers.indexOf(Math.min(...powers))}
-            />
+            {/* A ring needs three or more rungs to be a ring; with two it
+                degenerates to a line and reads as a rendering fault. Below
+                three, show the profile as bars instead. */}
+            {powers.length >= 3 ? (
+              <LadderRing
+                powers={powers}
+                size={150}
+                label={p.name}
+                highlight={powers.indexOf(Math.min(...powers))}
+              />
+            ) : (
+              // BarRows reserves a 128px label column, which does not fit
+              // beside the invariants; draw the profile directly instead.
+              <div style={{ width: 150, flexShrink: 0 }}>
+                <div style={{ fontSize: 10, color: T.dim, marginBottom: 5 }}>
+                  RUNG PROFILE
+                </div>
+                {powers.map((v, k) => (
+                  <div key={k} style={{
+                    display: "flex", alignItems: "center", gap: 6,
+                    marginBottom: 4,
+                  }}>
+                    <div style={{
+                      fontSize: 10, color: T.dim, width: 16, flexShrink: 0,
+                    }}>{k + 1}</div>
+                    <div style={{
+                      flex: 1, height: 12, background: T.bg,
+                      borderRadius: 2, overflow: "hidden",
+                    }}>
+                      <div style={{
+                        width: `${Math.min(100, v * 100)}%`, height: "100%",
+                        background: SERIES[k % SERIES.length],
+                      }} />
+                    </div>
+                    <div style={{
+                      fontSize: 10, fontFamily: MONO, color: T.text,
+                      width: 42, textAlign: "right", flexShrink: 0,
+                    }}>{v.toFixed(3)}</div>
+                  </div>
+                ))}
+                <div style={{
+                  fontSize: 9.5, color: T.dim, marginTop: 6, lineHeight: 1.5,
+                }}>
+                  {powers.length} rung{powers.length === 1 ? "" : "s"} — too
+                  few to draw as a cycle
+                </div>
+              </div>
+            )}
             <div style={{ flex: 1, minWidth: 190 }}>
               <BarRows
                 rows={[
