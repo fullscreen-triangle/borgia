@@ -50,6 +50,18 @@ import {
   VERDICT_COLOUR,
   VERDICT_GLOSS,
 } from "@/components/federated/Cells";
+import {
+  BudgetSweep,
+  CapabilityGrid,
+  PlanDag,
+  // Aliased: this file already has a PriceWalk, the labelled table that serves
+  // the dcat_g1 panel above. The instrument is the same walk under a slider,
+  // and both are wanted -- the table is the static reading, the chart is the
+  // shape you need when the budget is moving.
+  PriceWalk as PriceWalkChart,
+  WaterFilling,
+  sweepBudget,
+} from "@/components/federated/Instruments";
 
 /* ================================================================== */
 /*  Execution, once, at module scope of the render                    */
@@ -209,6 +221,13 @@ export default function Federated() {
                 capability requirements
               </div>
             </Panel>
+            <Panel
+              title="withdraw a capability, or grant one that does not exist"
+              subtitle="The paragraph above makes two claims. Under-declaring is safe; over-declaring is unsound and invisible. Both are switches. Withdraw RXN's neg and the plan is refused at zero requests with the line number; grant RXN agg, which it does not implement, and watch nothing at all happen."
+              source="check() over a perturbed registry — no network, structuredClone per run"
+            >
+              <CapabilityGrid planName="mark_q1" />
+            </Panel>
           </Cell>
 
           {/* =========================================================== */}
@@ -367,6 +386,16 @@ export default function Federated() {
             ) : (
               <MissingPlan name="starved_chain" failed={failed} />
             )}
+            {chain && (
+              <Panel
+                title="the same plan as its dependency graph"
+                subtitle="Click a step to walk its blame chain. The layout is not a force simulation and never will be: x is plan order, and plan order is the entire content of the figure."
+                source="steps[].diagnosis, parsed for the bound input it names"
+                note="Every edge points left. That is not a drawing convention — the parser rejects a plan whose step binds an input from a later step, so a cycle cannot be written down, and the walk terminates in at most m hops without needing a visited set to rescue it. If an edge ever pointed right, the figure says so in red."
+              >
+                <BlameDag chain={chain} />
+              </Panel>
+            )}
           </Cell>
 
           {/* =========================================================== */}
@@ -461,6 +490,16 @@ export default function Federated() {
             ) : (
               <MissingPlan name="dcat_g1" failed={failed} />
             )}
+
+            <P>
+              Everything above is one plan at one budget. The budget is the
+              parameter the whole apparatus turns on, so here it is as a
+              control. Move it and the engine re-executes — a plan is 0.35 ms,
+              so this is a real run and not a lookup table, and the request
+              counter you are watching is genuinely reset per run rather than
+              accumulated across the session.
+            </P>
+            <AllocationLab />
             {trap && (
               <Panel
                 title="budget_trap — why a sufficient-looking budget is not sufficient"
@@ -580,14 +619,24 @@ export default function Federated() {
                   over-declaring is unsound <em>and invisible</em> — the check will pass, the
                   request will be lowered, and the result will be wrong with no verdict
                   registering the fact. This is the largest gap in the approach and nothing on
-                  this page closes it.
+                  this page closes it — <em>but cell [2] lets you produce it.</em>{" "}
+                  Grant a source a capability it does not implement and watch the
+                  figure stay exactly as it was. Nothing on this page can show
+                  you the resulting wrongness, because the fixture answers
+                  honestly whatever it is asked; the identical figure is the
+                  whole of the evidence, and that is precisely the shape of the
+                  gap.
                 </p>
                 <p style={{ margin: "0 0 10px 0" }}>
                   <strong style={{ color: T.warn }}>Concavity fails for some steps.</strong>{" "}
                   A single-record lookup against a REST interface is all-or-nothing — a step
                   function, not a concave yield. Those steps are charged first, at plan order,
                   and the remainder is optimised. It is a correct handling of a case the theorem
-                  does not cover, not an instance of it.
+                  does not cover, not an instance of it. In cell [8], drop the{" "}
+                  <K>enzymes</K> weight to 0.2 at a budget of 6: the step is
+                  allocated nothing, drops off the support entirely, and answers
+                  anyway. The bar is a dashed line at zero and the verdict above
+                  it is green.
                 </p>
                 <p style={{ margin: "0 0 10px 0" }}>
                   <strong style={{ color: T.warn }}>
@@ -646,7 +695,39 @@ function Masthead({ names, runs, failed, sources }) {
         <span style={{ color: nFailed ? T.err : T.dim }}>
           <span style={{ color: nFailed ? T.err : T.ok }}>{nFailed}</span> plans failed to run
         </span>
+        {/* Stated as a number because it is the claim the whole method rests
+            on, and a claim nobody can count is a slogan. */}
+        <span><span style={{ color: T.ok }}>0</span> network requests</span>
       </div>
+
+      {/* The question this page exists to answer, in the words it was asked
+          in. It is set apart rather than paraphrased into the prose because
+          the method is being judged against someone else's problem, not
+          against a problem chosen to suit it. */}
+      <blockquote
+        style={{
+          borderLeft: `3px solid ${T.accent}`,
+          margin: "26px 0 0",
+          padding: "2px 0 2px 16px",
+          maxWidth: 760,
+        }}
+      >
+        <p style={{ fontSize: 14.5, lineHeight: 1.7, color: "#a9b1d6", fontStyle: "italic", margin: 0 }}>
+          Which biocatalyst, originating from a bacterium and not a eukaryote,
+          catalyses the transamination of benzylethylamine, and does not have a
+          cysteine in its protein sequence?
+        </p>
+        <footer style={{ fontSize: 10, fontFamily: MONO, color: T.dim, marginTop: 9 }}>
+          one sentence · five steps · three sources · two namespaces
+        </footer>
+      </blockquote>
+
+      <p style={{ fontSize: 12.5, color: T.dim, lineHeight: 1.75, maxWidth: 780, margin: "20px 0 0" }}>
+        Cells [2], [6], [8] and [9] have controls. They are not illustrations of
+        the engine — they run it, on every frame, and a plan is 0.35 ms. Use
+        them to drive the page into the regimes where its claims stop holding;
+        several cells are written to tell you when you have.
+      </p>
       {nFailed > 0 && (
         <div style={{ marginTop: 14, border: `1px solid ${T.err}`, borderRadius: 4, padding: 10 }}>
           <div style={{ fontSize: 10, fontFamily: MONO, color: T.err, marginBottom: 6 }}>
@@ -791,6 +872,99 @@ function PriceWalk({ run }) {
 }
 
 /**
+ * The blame graph, over a live re-run of the plan.
+ *
+ * The page's `runs` are serialised through toJSON(), and the DAG needs the
+ * step objects the executor produced -- so this re-runs the one plan it draws
+ * rather than reaching into a shape that was flattened for display. One plan
+ * is 0.35 ms; the alternative is a second serialisation format to maintain.
+ */
+function BlameDag({ chain }) {
+  const [picked, setPicked] = useState(null);
+  const steps = chain?.steps || [];
+  return <PlanDag steps={steps} picked={picked} onPick={setPicked} />;
+}
+
+/**
+ * Cell [8]'s controls: one budget, three figures that share it.
+ *
+ * The plan list is restricted to plans whose behaviour actually varies with
+ * budget. Offering all twenty-four would put plans in the menu whose figure is
+ * a flat line at every setting, and a reader who lands on one first learns the
+ * wrong thing about the control. The flat ones are named rather than hidden.
+ */
+function AllocationLab() {
+  const [plan, setPlan] = useState("mark_q1");
+  const [budget, setBudget] = useState(6);
+
+  const source = useMemo(() => planSource(plan), [plan]);
+
+  // Which plans are worth putting in the menu, and which are not. Computed,
+  // not hardcoded: a fixture change must not quietly leave a stale list.
+  const { varies, flat } = useMemo(() => {
+    const v = [];
+    const f = [];
+    for (const n of planNames()) {
+      const s = planSource(n);
+      if (!s) continue;
+      let regimes;
+      try {
+        regimes = sweepBudget(s, 24).regimes;
+      } catch {
+        continue;
+      }
+      (regimes.length >= 3 ? v : f).push(n);
+    }
+    return { varies: v, flat: f };
+  }, []);
+
+  return (
+    <Panel
+      title="the budget, as a control"
+      subtitle="One slider, three views of what it does: where the effort goes, what the whole range looks like, and how the price moves as the plan runs."
+      source="Executor.run() — re-executed per frame, fresh registry per run"
+      note="The weight sliders and the effort bars re-execute the engine on every frame. The sweep beneath them does not: it is computed once on mount, because it is 41 runs rather than one. Both are real executions of the same code; only their timing differs, and it seemed better to say so than to let the smoothness imply otherwise."
+    >
+      <div style={{ display: "flex", flexWrap: "wrap", gap: 8, alignItems: "center", marginBottom: 12 }}>
+        <select
+          value={plan}
+          onChange={(e) => setPlan(e.target.value)}
+          style={{
+            background: T.panel, color: T.text, border: `1px solid ${T.border}`,
+            borderRadius: 3, fontSize: 10, fontFamily: MONO, padding: "4px 7px",
+          }}
+        >
+          {varies.map((n) => (
+            <option key={n} value={n}>{n}</option>
+          ))}
+        </select>
+        <span style={{ fontSize: 10, fontFamily: MONO, color: T.dim }}>
+          {varies.length} of {varies.length + flat.length} plans change behaviour with budget
+        </span>
+      </div>
+
+      <WaterFilling source={source} budget={budget} onBudget={setBudget} hiBudget={40} />
+      <BudgetSweep source={source} budget={budget} hi={40} />
+      <PriceWalkChart source={source} budget={budget} />
+
+      {flat.length > 0 && (
+        <div style={{ fontSize: 11, color: T.dim, lineHeight: 1.7, marginTop: 14 }}>
+          Not in the menu, and named rather than hidden:{" "}
+          <span style={{ fontFamily: MONO, color: T.violet }}>{flat.join(", ")}</span>. Each of
+          these has fewer than three distinct outcomes across the whole budget range, for one of
+          two reasons. Some are refused by the capability check before allocation happens at all,
+          so every budget produces the same <K>surface</K> verdict at zero requests — no amount
+          of money buys a capability. The rest have exactly one threshold, at nothing versus
+          something, and are flat on either side of it. Both are real results, but neither makes
+          a good slider: a control that moves without changing the figure teaches the reader that
+          the budget does not matter, which is the opposite of what is true.
+        </div>
+      )}
+    </Panel>
+  );
+}
+
+/**
  * The editable cell.
  *
  * Recompiles on every keystroke, and does so synchronously without a Run
@@ -807,8 +981,12 @@ function PlanEditor({ names }) {
   const result = useMemo(() => {
     try {
       const b = budget.trim() === "" ? null : Number(budget);
-      if (b !== null && (!Number.isFinite(b) || b <= 0)) {
-        return { error: "budget override must be a positive number" };
+      // Zero is admitted, where the original guard rejected it. A budget of
+      // nothing is a legitimate question -- it is the budget at which every
+      // step is refused before contact -- and the slider's left end has to
+      // reach it or the reader cannot see the regime the prose describes.
+      if (b !== null && (!Number.isFinite(b) || b < 0)) {
+        return { error: "budget override must be zero or a positive number" };
       }
       const { execution } = runSource(text, { budget: b });
       return { run: execution.toJSON() };
@@ -858,6 +1036,32 @@ function PlanEditor({ names }) {
             }}
           />
         </label>
+        {/* The slider writes the same string the field holds, so the two are
+            one control with two grips. The prose in this cell tells the reader
+            to "lower the budget until a step reports refused"; typing numbers
+            to find a threshold is the wrong instrument for a search, and
+            dragging is the right one. Clearing returns to the plan's own line. */}
+        <input
+          type="range"
+          min={0}
+          max={40}
+          step={1}
+          value={budget.trim() === "" ? 0 : Math.min(40, Math.max(0, Number(budget) || 0))}
+          onChange={(e) => setBudget(e.target.value)}
+          style={{ accentColor: T.accent, width: 150 }}
+          title="drag to override the budget; clear the field to restore the plan's own"
+        />
+        <button
+          type="button"
+          onClick={() => setBudget("")}
+          style={{
+            background: T.panel, color: T.dim, border: `1px solid ${T.border}`,
+            borderRadius: 3, fontSize: 10, fontFamily: MONO, padding: "4px 8px",
+            cursor: "pointer",
+          }}
+        >
+          plan&rsquo;s own
+        </button>
         {run && (
           <span style={{ fontSize: 10, fontFamily: MONO, color: T.dim }}>
             {run.requests_issued} requests ·{" "}

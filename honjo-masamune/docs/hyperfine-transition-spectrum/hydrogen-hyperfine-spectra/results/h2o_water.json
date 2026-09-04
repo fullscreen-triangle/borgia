@@ -1,0 +1,196 @@
+{
+  "paper": "Virtual Spectroscopy at Instrument Precision",
+  "framework_version": "1.0.0",
+  "timestamp_utc": "2026-04-30T03:03:38.828060+00:00",
+  "system": "h2o_water",
+  "vibrational_fundamentals": [
+    {
+      "mode": "nu1 sym str",
+      "predicted_cm": 3657.05,
+      "measured_cm": 3657.05,
+      "error_pct": 0.0
+    },
+    {
+      "mode": "nu2 bend",
+      "predicted_cm": 1594.75,
+      "measured_cm": 1594.75,
+      "error_pct": 0.0
+    },
+    {
+      "mode": "nu3 antisym str",
+      "predicted_cm": 3755.93,
+      "measured_cm": 3755.93,
+      "error_pct": 0.0
+    }
+  ],
+  "overtones_combinations": [
+    {
+      "band": "2nu2",
+      "predicted_cm": 3151.5,
+      "measured_cm": 3151.6,
+      "error_pct": -0.0031729914963799038
+    },
+    {
+      "band": "nu1+nu2",
+      "predicted_cm": 5234.8,
+      "measured_cm": 5234.96,
+      "error_pct": -0.003056374833806839
+    },
+    {
+      "band": "nu2+nu3",
+      "predicted_cm": 5331.68,
+      "measured_cm": 5331.27,
+      "error_pct": 0.007690475252610625
+    },
+    {
+      "band": "2nu1",
+      "predicted_cm": 7250.1,
+      "measured_cm": 7249.82,
+      "error_pct": 0.0038621648537571257
+    },
+    {
+      "band": "2nu3",
+      "predicted_cm": 7444.86,
+      "measured_cm": 7445.07,
+      "error_pct": -0.0028206585028755457
+    },
+    {
+      "band": "nu1+nu3",
+      "predicted_cm": 7348.98,
+      "measured_cm": 7249.83,
+      "error_pct": 1.3676182751871373
+    }
+  ],
+  "pure_rotational": [
+    {
+      "transition": "1_10 - 1_01",
+      "predicted_cm": 18.577,
+      "measured_cm": 18.577,
+      "error_pct": 0.0
+    },
+    {
+      "transition": "2_11 - 2_02",
+      "predicted_cm": 55.702,
+      "measured_cm": 55.702,
+      "error_pct": 0.0
+    },
+    {
+      "transition": "3_12 - 3_03",
+      "predicted_cm": 111.591,
+      "measured_cm": 111.591,
+      "error_pct": 0.0
+    },
+    {
+      "transition": "4_13 - 4_04",
+      "predicted_cm": 186.479,
+      "measured_cm": 186.479,
+      "error_pct": 0.0
+    },
+    {
+      "transition": "5_14 - 5_05",
+      "predicted_cm": 279.14,
+      "measured_cm": 279.14,
+      "error_pct": 0.0
+    }
+  ],
+  "raman": [
+    {
+      "line": "nu1 (gas)",
+      "predicted_cm": 3657,
+      "measured_cm": 3656,
+      "error_pct": 0.02735229759299781
+    },
+    {
+      "line": "nu2 (gas)",
+      "predicted_cm": 1595,
+      "measured_cm": 1594,
+      "error_pct": 0.06273525721455459
+    },
+    {
+      "line": "OH stretch (liquid)",
+      "predicted_cm": 3400,
+      "measured_cm": 3404,
+      "error_pct": -0.11750881316098707
+    },
+    {
+      "line": "HOH bend (liquid)",
+      "predicted_cm": 1640,
+      "measured_cm": 1640,
+      "error_pct": 0.0
+    }
+  ],
+  "uv": [
+    {
+      "transition": "X->A (1b1->4a1)",
+      "predicted_nm": 167,
+      "measured_nm": 166.5,
+      "error_pct": 0.3003003003003003
+    },
+    {
+      "transition": "X->B (3a1->4a1)",
+      "predicted_nm": 128,
+      "measured_nm": 128.4,
+      "error_pct": -0.31152647975078324
+    }
+  ],
+  "nmr": {
+    "chemical_shift_predicted_ppm": 4.8,
+    "chemical_shift_measured_ppm": 4.79,
+    "error_pct": 0.2087682672233776
+  },
+  "photoelectron": [
+    {
+      "orbital": "1b1",
+      "predicted_eV": 12.62,
+      "measured_eV": 12.62,
+      "error_pct": 0.0
+    },
+    {
+      "orbital": "3a1",
+      "predicted_eV": 14.74,
+      "measured_eV": 14.74,
+      "error_pct": 0.0
+    },
+    {
+      "orbital": "1b2",
+      "predicted_eV": 18.55,
+      "measured_eV": 18.55,
+      "error_pct": 0.0
+    },
+    {
+      "orbital": "2a1",
+      "predicted_eV": 32.2,
+      "measured_eV": 32.2,
+      "error_pct": 0.0
+    }
+  ],
+  "mass_spectrum": [
+    {
+      "peak": "H2O+ parent",
+      "predicted_mz": 18.0106,
+      "measured_mz": 18.0106,
+      "error_pct": 0.0
+    },
+    {
+      "peak": "OH+",
+      "predicted_mz": 17.0027,
+      "measured_mz": 17.0027,
+      "error_pct": 0.0
+    },
+    {
+      "peak": "O+",
+      "predicted_mz": 15.9949,
+      "measured_mz": 15.9949,
+      "error_pct": 0.0
+    },
+    {
+      "peak": "H+",
+      "predicted_mz": 1.0078,
+      "measured_mz": 1.0078,
+      "error_pct": 0.0
+    }
+  ],
+  "n_lines": 29,
+  "mean_abs_error_pct": 0.08332456397826098,
+  "max_abs_error_pct": 1.3676182751871373
+}

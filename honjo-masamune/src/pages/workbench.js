@@ -149,7 +149,7 @@ export default function Workbench() {
    * like it had no way to execute anything. Landing on a runnable file
    * makes the first Run the obvious next action.
    */
-  const FIRST_FILE = "honjo/05_track.hnj";
+  const FIRST_FILE = "honjo/00_sandbox.hnj";
 
   const [tabs, setTabs] = useState([FIRST_FILE]);
   const [active, setActive] = useState(FIRST_FILE);

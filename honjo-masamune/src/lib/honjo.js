@@ -1009,6 +1009,10 @@ function individuate(Z, floor) {
     Z,
     symbol: d.symbol,
     config: d.configStr,
+    // The shells themselves, not just their printed form: the subshell
+    // occupancies are what `cut` actually derived, and a caller that wants to
+    // draw the derivation needs the numbers, not the string.
+    shells: d.config,
     term: d.term,
     qv: d.qv,
     capV: d.capV,

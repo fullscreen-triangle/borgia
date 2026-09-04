@@ -21,16 +21,22 @@
  */
 
 import { useMemo } from "react";
+import dynamic from "next/dynamic";
+import { CHART_THEME as T, CHART_MONO as MONO, Panel } from "./Charts";
 import {
-  CHART_THEME as T,
-  CHART_MONO as MONO,
-  Panel,
-  BarRows,
-  Scatter,
-  LadderRing,
-  SERIES,
-  fmt,
-} from "./Charts";
+  LinePlot, RingChart, ShellChart, BarChart, Histogram, SERIES, fmt,
+} from "./D3Charts";
+
+// three.js and r3f are client-only and heavy; the chart pane should not wait
+// on them, and a run that builds no compound should not load them at all.
+const Molecule3D = dynamic(() => import("./Molecule3D"), {
+  ssr: false,
+  loading: () => (
+    <div style={{ fontSize: 11, color: T.dim, padding: "18px 0" }}>
+      loading the 3D view…
+    </div>
+  ),
+});
 
 /* ------------------------------------------------------------------ */
 /*  Reading the run                                                    */
@@ -179,16 +185,19 @@ function Trajectories({ paths }) {
               </span>
             </div>
             {conv.length > 1 ? (
-              <Scatter
+              <LinePlot
                 series={[{
-                  points: conv,
+                  points: conv.map((c) => ({
+                    ...c,
+                    label: `step ${c.x} · gap ${fmt(c.y, 4)}`,
+                  })),
                   colour: SERIES[i % SERIES.length],
                   name: p.name,
                 }]}
                 xLabel="step"
                 yLabel="ambiguity remaining"
-                connect
-                height={170}
+                logY={conv.every((c) => c.y > 0)}
+                height={180}
               />
             ) : (
               <div style={{ fontSize: 11, color: T.dim }}>
@@ -235,11 +244,11 @@ function Invariants({ paths }) {
                 degenerates to a line and reads as a rendering fault. Below
                 three, show the profile as bars instead. */}
             {powers.length >= 3 ? (
-              <LadderRing
+              <RingChart
                 powers={powers}
-                size={150}
-                label={p.name}
-                highlight={powers.indexOf(Math.min(...powers))}
+                labels={p.amalgamation}
+                size={168}
+                title={p.name}
               />
             ) : (
               // BarRows reserves a 128px label column, which does not fit
@@ -280,14 +289,13 @@ function Invariants({ paths }) {
               </div>
             )}
             <div style={{ flex: 1, minWidth: 190 }}>
-              <BarRows
+              <BarChart
                 rows={[
                   { label: "circulation ϱ", value: rho },
                   { label: "ϱ per rung", value: rho / powers.length },
                   { label: "uniformity u", value: u },
                   { label: "composite power", value: comp },
                 ]}
-                max={Math.max(rho, 1)}
                 dp={4}
               />
               <div style={{
@@ -328,7 +336,14 @@ function Spectra({ spectra }) {
                 {"  "}{modes.length} mode{modes.length === 1 ? "" : "s"}
               </span>
             </div>
-            <BarRows rows={modes} max={max} unit=" cm⁻¹" dp={2} />
+            <BarChart rows={modes} unit=" cm⁻¹" dp={2} />
+            {modes.length >= 6 && (
+              <Histogram
+                values={modes.map((m) => m.value)}
+                xLabel="wavenumber / cm⁻¹"
+                height={130}
+              />
+            )}
           </div>
         );
       })}
@@ -359,8 +374,70 @@ function Numerics({ scalars, atoms, bonds, compounds }) {
   }
   const clean = rows.filter((r) => Number.isFinite(r.value));
   if (!clean.length) return <Empty what="numeric bindings" />;
-  const max = Math.max(...clean.map((r) => Math.abs(r.value)), 1);
-  return <BarRows rows={clean} max={max} dp={4} />;
+  return <BarChart rows={clean} dp={4} />;
+}
+
+/**
+ * 5. Structure — what the program actually built.
+ *
+ * `close O(H,H)` derives a geometry, an angle and a ligand count; `cut Z`
+ * derives a shell configuration.  Until now the chart pane kept the angle as
+ * a bar and threw the rest away, which is the one reading where a number is
+ * strictly worse than a picture: "bent, 104.5" is the answer, but only the
+ * drawn molecule shows that it was *derived* rather than looked up.
+ */
+function Structure({ compounds, atoms }) {
+  const withConfig = atoms.filter((a) => Array.isArray(a.shells) && a.shells.length);
+  if (!compounds.length && !withConfig.length)
+    return <Empty what="atoms or compounds" />;
+
+  return (
+    <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+      {compounds.map((c) => (
+        <div key={c.name}>
+          <div style={{
+            fontFamily: MONO, fontSize: 11.5, color: T.text, marginBottom: 6,
+          }}>
+            {c.name}
+            <span style={{ color: T.dim }}>
+              {"  "}{c.geometry}
+              {c.angleDeg != null ? ` · ${c.angleDeg}°` : ""}
+              {" · "}
+              <span style={{ color: c.valenceClosed ? T.ok : T.warn }}>
+                {c.valenceClosed ? "valence closed" : "open valence"}
+              </span>
+              {c.mainGroupModel === false ? " · d-block" : ""}
+            </span>
+          </div>
+          <Molecule3D compound={c} />
+        </div>
+      ))}
+
+      {withConfig.length > 0 && (
+        <div>
+          <div style={{
+            fontFamily: MONO, fontSize: 11.5, color: T.text, marginBottom: 8,
+          }}>
+            derived shells
+          </div>
+          <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
+            {withConfig.map((a) => (
+              <div key={a.name}>
+                <ShellChart config={a.shells} symbol={a.symbol} size={168} />
+                <div style={{
+                  fontFamily: MONO, fontSize: 10, color: T.dim,
+                  textAlign: "center", marginTop: 2,
+                }}>
+                  {a.name} · Z={a.Z} · vacancy={a.vacancy}
+                  {a.exception ? " · exception" : ""}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  );
 }
 
 /* ------------------------------------------------------------------ */
@@ -443,6 +520,17 @@ export default function RunCharts({ res }) {
           source="res.named — spectrum values"
         >
           <Spectra spectra={spectra} />
+        </Panel>
+      )}
+
+      {(compounds.length > 0 || atoms.length > 0) && (
+        <Panel
+          title="Structure"
+          subtitle="the compound this program built, and the shells it derived"
+          source="res.named — Compound and Atom values"
+          note="Positions are constructed from the run's own geometry and bond angle, not loaded from a model file. Change the program and the shape changes, because the shape was computed."
+        >
+          <Structure compounds={compounds} atoms={atoms} />
         </Panel>
       )}
 

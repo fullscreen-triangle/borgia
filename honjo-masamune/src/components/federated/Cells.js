@@ -183,7 +183,7 @@ export function StepTable({ steps, onPick, picked }) {
  * does not control -- an unrecognised diagnosis shows its keys rather than
  * silently rendering blank.
  */
-function diagnosisText(d) {
+export function diagnosisText(d) {
   if (!d) return "";
   if (typeof d === "string") return d;
   if (d.reason) return d.reason;
@@ -466,6 +466,169 @@ export function K({ children }) {
     >
       {children}
     </code>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/*  Controls                                                          */
+/* ------------------------------------------------------------------ */
+
+/**
+ * A block that appears only in the regime it describes.
+ *
+ * This is the one presentational idea worth taking wholesale from the ladder
+ * tool: a page that states every caveat at once teaches nothing, because the
+ * reader has no way to tell which caveat is live. A page that speaks up when
+ * the reader has driven it somewhere interesting is making a claim the reader
+ * can check against what is on screen in front of them.
+ *
+ * There is deliberately no `when` prop. The condition belongs at the call site,
+ * written as `{cond && <Callout/>}`, so that the thing that triggers the
+ * paragraph sits next to the paragraph rather than inside a component that
+ * hides it.
+ */
+export function Callout({ tone = "accent", title, children }) {
+  const c = {
+    ok: T.ok, warn: T.warn, err: T.err, violet: T.violet,
+    accent: T.accent, orange: T.orange, dim: T.dim,
+  }[tone] ?? T.accent;
+  return (
+    <div
+      style={{
+        borderLeft: `3px solid ${c}`,
+        background: T.surface,
+        borderRadius: "0 4px 4px 0",
+        padding: "9px 12px",
+        margin: "11px 0",
+        maxWidth: 760,
+      }}
+    >
+      {title && (
+        <div
+          style={{
+            fontFamily: MONO,
+            fontSize: 9.5,
+            letterSpacing: 0.8,
+            textTransform: "uppercase",
+            color: c,
+            marginBottom: 5,
+          }}
+        >
+          {title}
+        </div>
+      )}
+      <div style={{ fontSize: 12, lineHeight: 1.7, color: "#a9b1d6" }}>{children}</div>
+    </div>
+  );
+}
+
+/**
+ * A labelled range input whose label carries the live value.
+ *
+ * The value goes in the label rather than beside the track because the reader
+ * is looking at the label while dragging, and a number that lives somewhere
+ * else forces a saccade on every frame.
+ */
+export function Slider({ label, value, min, max, step = 1, onChange, fmt: f, hint }) {
+  return (
+    <label style={{ display: "block", marginBottom: 9 }}>
+      <div
+        style={{
+          fontFamily: MONO,
+          fontSize: 10,
+          color: T.dim,
+          marginBottom: 3,
+          display: "flex",
+          justifyContent: "space-between",
+          gap: 10,
+        }}
+      >
+        <span>{label}</span>
+        <b style={{ color: T.accent, fontWeight: 600 }}>{f ? f(value) : value}</b>
+      </div>
+      <input
+        type="range"
+        min={min}
+        max={max}
+        step={step}
+        value={value}
+        onChange={(e) => onChange(Number(e.target.value))}
+        style={{ width: "100%", accentColor: T.accent, cursor: "pointer" }}
+      />
+      {hint && (
+        <div style={{ fontFamily: MONO, fontSize: 9, color: T.muted, marginTop: 2 }}>{hint}</div>
+      )}
+    </label>
+  );
+}
+
+/**
+ * A capability chip that can be withdrawn or granted.
+ *
+ * `declared` records what the fixture actually says, which is not the same as
+ * `on`: a chip the reader has switched ON that was never declared is the
+ * interesting case, and it is drawn differently so that the reader can see they
+ * have asserted something the source never claimed.
+ */
+export function Toggle({ on, declared, label, onChange, title }) {
+  const c = on ? (declared ? T.ok : T.warn) : T.muted;
+  return (
+    <button
+      type="button"
+      title={title}
+      onClick={() => onChange(!on)}
+      style={{
+        fontFamily: MONO,
+        fontSize: 9.5,
+        color: on ? c : T.dim,
+        background: on ? `${c}1a` : "transparent",
+        border: `1px solid ${on ? c : T.border}`,
+        borderStyle: on && !declared ? "dashed" : "solid",
+        borderRadius: 3,
+        padding: "2px 6px",
+        cursor: "pointer",
+        textDecoration: !on && declared ? "line-through" : "none",
+      }}
+    >
+      {label}
+    </button>
+  );
+}
+
+/**
+ * The strip of knobs that governs the figure below it.
+ *
+ * Grouping the controls means the reader can see at a glance what is
+ * manipulable and what is a read-out, which matters on a page where most
+ * panels are deliberately not manipulable.
+ */
+export function Instrument({ title, children }) {
+  return (
+    <div
+      style={{
+        background: T.surface,
+        border: `1px solid ${T.border}`,
+        borderRadius: 4,
+        padding: "11px 13px",
+        marginBottom: 12,
+      }}
+    >
+      {title && (
+        <div
+          style={{
+            fontFamily: MONO,
+            fontSize: 9.5,
+            letterSpacing: 0.8,
+            textTransform: "uppercase",
+            color: T.dim,
+            marginBottom: 8,
+          }}
+        >
+          {title}
+        </div>
+      )}
+      {children}
+    </div>
   );
 }
 

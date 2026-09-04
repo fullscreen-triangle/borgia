@@ -136,6 +136,52 @@ per atom: 1.0 (H), 4.0 (C), 2.0 (O), 1.0 (Ne).
 A truncation would show a ratio that moved with the floor.`,
     },
 
+    "00_sandbox.hnj": {
+      executable: true,
+      title: "Sandbox — generator, closure, query",
+      source: `-- SANDBOX. Edit anything here and press Run.
+--
+-- Three things happen, and each one draws a different panel:
+--   cut Z     derives an atom from Z alone      -> Structure (shells)
+--   close     drives vacancies to zero          -> Structure (3D)
+--   track     follows an item to convergence    -> Trajectories, Invariants
+--
+-- Nothing below is tabulated. Change the 8 to a 7 and the
+-- molecule becomes pyramidal, because the geometry is computed
+-- from the vacancy count, not looked up.
+
+floor 1.0
+import honjo.causal
+
+O := cut 8
+H := cut 1
+N := cut 7
+
+-- Closure: bonds are admitted only while a vacancy remains.
+W := close O(H, H)          -- bent, 104.5 degrees
+A := close N(H, H, H)       -- pyramidal, 107 degrees
+
+observe O
+observe W
+observe A
+
+-- Query: follow oxygen through the compound it participates in.
+path := track O in W
+          with reps mass, charge, time
+          until converge
+          yield amalgamation
+
+observe path`,
+      expect: `O : Z=8  vacancy=2  valence=6
+W : Compound OH2  geometry=bent       angle=104.5  closed=true
+A : Compound NH3  geometry=pyramidal  angle=107    closed=true
+path : steps=2  converged=true  amalgamation=[O~H#1, O~H#2]
+
+Both geometries are derived: k = bonded domains + lone pairs, and
+the angle follows from k and the lone-pair count. Neither molecule
+was looked up.`,
+    },
+
     "05_track.hnj": {
       executable: true,
       title: "Tracking through a process",

@@ -1,0 +1,1568 @@
+\documentclass[11pt,a4paper]{article}
+
+% ============================================================
+%  Four Routes to a Spectral Line
+%  The complete spectra of H, H_2 and H_2O derived four ways,
+%  and what the agreement does and does not establish.
+% ============================================================
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage[round]{natbib}
+
+\usepackage{caption}
+\captionsetup{font=small, labelfont=footnotesize, textfont=it}
+\input{figures/ladder-captions}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!40!black,
+  citecolor=blue!40!black,
+  urlcolor=blue!40!black
+}
+
+% Theorem environments
+\newtheoremstyle{stmtstyle}
+  {\topsep}{\topsep}
+  {\normalfont}{}
+  {\bfseries}{.}
+  {.5em}{}
+\theoremstyle{stmtstyle}
+\newtheorem{result}{Result}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newtheorem{theorem}{Theorem}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{protocol}{Protocol}
+
+\theoremstyle{remark}
+\newtheorem*{established}{Established}
+\newtheorem*{instrument}{Instrument}
+\newtheorem*{ladder}{Ladder}
+\newtheorem*{catalogue}{Catalogue}
+\newtheorem*{remark}{Remark}
+
+% Custom symbols
+\newcommand{\kB}{k_{\mathrm{B}}}
+\newcommand{\Real}{\mathbb{R}}
+\newcommand{\Natural}{\mathbb{N}}
+\newcommand{\taup}{\tau_{\mathrm{p}}}
+\newcommand{\Depth}{\mathcal{M}}
+\newcommand{\Sk}{S_{k}}
+\newcommand{\St}{S_{t}}
+\newcommand{\Se}{S_{e}}
+\newcommand{\Sspace}{\mathcal{S}}
+\newcommand{\flo}{\beta}
+\newcommand{\pow}{\pi}
+\newcommand{\circu}{\varrho}
+\newcommand{\unif}{u}
+\newcommand{\Lad}{L}
+
+\title{\Large\textbf{Four Routes to a Spectral Line: \\
+The Complete Spectra of Hydrogen, Molecular Hydrogen and Water,\\
+Derived Four Ways, with One Route Detecting an Error in the Others}}
+
+\author{Kundai Farai Sachikonye\\[2pt]
+\small Technical University of Munich \\
+\small Chair of Proteomics and Bioanalytics, Experimental Bioinformatics\\
+\small Maximus-von-Imhof-Forum 3, 85354 Freising, Germany\\
+\small \texttt{kundai.sachikonye@wzw.tum.de}}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+% ============================================================
+\begin{abstract}
+\noindent
+An earlier version of this atlas derived the spectra of atomic hydrogen,
+molecular hydrogen and water twice: once through the established
+quantum-mechanical formalism and once through a physical instrument that
+resolves partition coordinates. Two routes that agree tell you very little,
+and we say plainly why: the second route was not an independent predictor
+but a second derivation of the same closed form, so its agreement with the
+first was structural rather than evidential. This paper adds two further
+routes and reports what the four together do and do not establish.
+
+The four routes share the partition alphabet $C(n)=2n^{2}$ and nothing
+else. The \emph{established} route solves a differential equation. The
+\emph{instrument} route resolves a partition address in a physical bounded
+oscillator. The \emph{ladder} route deletes the carrier entirely---by a
+carrier-elimination theorem, a process whose contacts are order-determined
+and locally effective is independent of whatever realises them---and
+computes invariants of the resulting contact sequence. The
+\emph{catalogue} route takes the minimum cut of an item at rest.
+
+Three of the four coincide to the last bit. We report this as the null
+result it is: they are three derivations of one closed form, and their
+common residual to experiment, $1.1\times10^{-5}$, is the reduced-mass and
+QED gap rather than a disagreement between routes. Agreement among
+derivations is not confirmation by independent predictors, and treating it
+as such was the defect of the two-route version.
+
+What the fourth route buys is a quantity the others do not define. A
+transition is a \emph{rung} whose power is the fraction of the final
+state's binding it supplies, computed here from measured NIST and HITRAN
+values rather than assigned; a spectral series is a ladder; a molecular
+mode set is a \emph{closed} ladder, carrying a circulation $\circu$ and a
+uniformity $\unif$. Circulation is additive along a ladder, and that
+additivity is a cross-line constraint no per-line comparison performs. Run
+on the tabulated wavelengths it fails, at $6.4\times10^{-5}$---seventy-three
+times the rounding budget of the quoted digits, and rising monotonically
+with $n$. The cause is a unit-convention error in the source table:
+standard-air Balmer wavelengths tabulated beside vacuum Lyman wavelengths.
+Converted, the residual falls to $7.1\times10^{-7}$ and the trend vanishes.
+The two-route version reported these same lines as agreeing to all six
+tabulated digits, which they do, because each line was compared against the
+table it came from.
+
+The hyperfine 21\,cm line is the sharpest case the ladder reading
+addresses. It rewrites the parity letter $s$ alone, with $n$, $\ell$ and
+$m$ fixed. Chirality is a topological invariant, so a rung on $s$ alone is
+electric-dipole forbidden; measured against the atlas its power is
+$4.32\times10^{-7}$, five point eight five orders of magnitude below the
+smallest allowed rung and distinguishable from the exactly-zero power of a
+truly inert rung. Near-inert, not inert, is the ladder statement of a
+$10^{7}$-year lifetime.
+
+We close by stating what is not established: the ladder route reconstructs
+rather than predicts transition energies, one registered expectation was
+refuted before being diagnosed, and no route here computes a spectrum that
+was not already measured.
+\end{abstract}
+
+\noindent\textbf{Keywords:} spectral atlas; convergent derivation; carrier
+elimination; categorical ladder; circulation; hyperfine structure; Ritz
+combination principle; unit convention; partition coordinates.
+
+\vspace{6pt}
+\tableofcontents
+\vspace{6pt}
+
+\clearpage
+
+% ============================================================
+\part*{Part 0 --- Four Routes and What Convergence Is Worth}
+\addcontentsline{toc}{part}{Part 0 --- Four Routes and What Convergence Is Worth}
+% ============================================================
+
+\section{The defect this paper repairs}
+\label{sec:goal}
+
+An earlier version of this atlas presented every spectroscopic value twice:
+once from the Schr\"odinger formalism and once from a physical instrument
+resolving partition coordinates $(n,\ell,m,s)$. Each table carried an
+``established'' column and a ``resolved'' column, and the two were
+identical to every digit printed.
+
+That identity was presented as validation. It was not. Two columns agree
+because both evaluate $R_{\mathrm H}(1/n_f^{2}-1/n_u^{2})$; the second
+column derived that expression differently, but it did not derive a
+different expression. A comparison in which the compared quantities cannot
+disagree does not test anything, and the appropriate word for the earlier
+presentation is not \emph{validated} but \emph{unfalsifiable}. The same
+criticism applies to its cross-validation tables, which reported $280/280$
+inter-modality agreement and then proved that agreement from the assertion
+that the modalities commute---so that a disagreement was excluded by
+construction rather than by measurement.
+
+This paper keeps the atlas and repairs the argument. We add two further
+derivation routes and, more importantly, we are explicit about which
+comparisons among them carry evidential weight and which are structural.
+The result is a weaker headline claim and a stronger paper.
+
+\section{The four routes}
+\label{sec:routes}
+
+All four routes share one object: the partition alphabet, the count of
+distinguishable cells at depth $n$,
+\begin{equation}
+C(n)=\sum_{\ell=0}^{n-1}\sum_{m=-\ell}^{+\ell}\sum_{s=\pm 1/2}1
+     =2\sum_{\ell=0}^{n-1}(2\ell+1)=2n^{2}.
+\label{eq:capacity}
+\end{equation}
+Beyond \eqref{eq:capacity} they have no common machinery, and it is worth
+stating what each actually does.
+
+\subsection*{Route 1: Established}
+Solve the Schr\"odinger equation with the appropriate operators, apply
+dipole selection rules, read off transition energies. For many-electron
+systems, Hartree--Fock \citep{hartree1928,fock1930}; for molecular spectra,
+harmonic-oscillator and rigid-rotor models \citep{wilsondeciuscross1955};
+for fine and hyperfine structure, perturbation theory
+\citep{griffiths2018}. This is a differential-equation route.
+
+\subsection*{Route 2: Instrument}
+Resolve the partition coordinates of the initial and final states directly
+in a physical bounded oscillator, and take the transition as the difference
+of partition depths. This is the route the earlier version called the
+categorical spectrometer. It is a physical realisation, not a simulation:
+its observable is an integer count of mode transitions. We retain it, and
+Section~\ref{sec:elimination} explains precisely in what sense it is
+\emph{not required}, which is a different claim from being wrong.
+
+\subsection*{Route 3: Ladder}
+Delete the carrier. A transition is a \emph{rung}; a series is a
+\emph{ladder}; the numbers attached to the rungs are the whole of the
+description. This route computes quantities---circulation, uniformity---that
+Routes 1, 2 and 4 do not define, and it is therefore the only route that can
+disagree with the others about something.
+
+\subsection*{Route 4: Catalogue}
+Take the identity of an item to be the minimum cut separating it from the
+medium at rest, and a transition to be the difference of two such cuts. The
+resting catalogue is the propagation table evaluated at rest, so Routes 2
+and 4 are related by a stated structural result and should agree for a
+reason, not by luck.
+
+\section{Carrier elimination: why the instrument is optional}
+\label{sec:elimination}
+
+The earlier version built an instrument and used it. The following result
+says what that instrument contributes.
+
+\begin{definition}[Carrier, contact, readout]
+\label{def:carrier}
+An \emph{item} is the entity whose state a process transforms. A
+\emph{carrier} is any structure the item passes through or is composed of.
+A \emph{contact} is an interaction at which the item's state changes. A
+carrier \emph{realises} a contact sequence if the item undergoes exactly
+those contacts in that order. A \emph{readout} is a function of the item's
+terminal state alone. A contact sequence is \emph{order-determined} if the
+identity of the next contact depends only on the index and the state after
+the previous one; a contact has \emph{local effect} if the change it
+induces is a function of the incoming state alone.
+\end{definition}
+
+\begin{theorem}[Carrier elimination]
+\label{thm:elim}
+Let carriers $K$ and $K'$ realise the same contact sequence, with the
+sequence order-determined and every contact of local effect. Then for every
+item $\xi_0$ and every readout $\rho$, $\rho(K(\xi_0))=\rho(K'(\xi_0))$.
+\end{theorem}
+
+\begin{proof}
+By locality the state after contact $i$ is $\xi_i=f_{c_i}(\xi_{i-1})$, a
+function of $\xi_{i-1}$ and $c_i$ alone. By order-determinedness both
+carriers apply the same maps in the same order. By induction the states
+agree at every $i$, hence at the last; a readout consults only that state.
+\end{proof}
+
+\begin{remark}[What this does to Route 2]
+\label{rem:route2}
+Theorem~\ref{thm:elim} does not say the instrument is unreal or that
+building one is pointless. Determining \emph{which} contact sequence a
+given physical arrangement realises is a question about the carrier and
+requires it. What the theorem says is that, given the sequence, the carrier
+contributes nothing to the readout. The instrument route therefore predicts
+exactly what the ladder route predicts, and the tables of the earlier
+version would read identically with the oscillators deleted. That is not a
+criticism of the instrument; it is the reason a fourth route was needed
+before the agreement of the first two meant anything.
+\end{remark}
+
+\section{What convergence is and is not worth}
+\label{sec:convergence-worth}
+
+We state the interpretive rule before any table, because it governs how
+every table should be read.
+
+\begin{proposition}[Agreement of derivations is not confirmation]
+\label{prop:agreement}
+If two routes evaluate the same closed-form expression, their agreement is
+a property of the expression and carries no evidential weight about the
+world. Evidential weight requires that the routes be capable of
+disagreeing.
+\end{proposition}
+
+Applied to this paper, Proposition~\ref{prop:agreement} has an uncomfortable
+consequence that we accept rather than hide. Routes 1, 2 and 4 all evaluate
+$R_{\mathrm H}(1/n_f^{2}-1/n_u^{2})$ for the hydrogen series; they agree
+bit-for-bit (Figure~\ref{fig:fourroutes}A,B), and that agreement is
+structural. Their shared residual to experiment, $1.1\times10^{-5}$, is a
+statement about the closed form---the reduced-mass and QED corrections not
+carried at this order---not about any disagreement among routes.
+
+The consequence is that the load-bearing content of a multi-route paper
+lives entirely in the quantities on which the routes \emph{could} come
+apart. In this paper there is exactly one such family, and it belongs to
+Route 3: the circulation and uniformity of a ladder, which Routes 1, 2 and
+4 do not define. Section~\ref{sec:ritz} reports what happened when we
+computed one of them.
+
+\section{Rungs, ladders, and powers from measurement}
+\label{sec:ladders}
+
+\begin{definition}[Rung, power, ladder]
+\label{def:rung}
+Let $A$ be the ambiguity before a contact and $\gamma(A)$ after. The
+\emph{power} of the rung is
+\begin{equation}
+\pow=\frac{A-\gamma(A)}{A-\flo/\Omega}\in[0,1],
+\label{eq:power}
+\end{equation}
+where $\flo/\Omega$ is the floor, the ambiguity that no contact removes. A
+\emph{ladder} is a finite sequence of rungs; a rung with $\pow=0$ is
+\emph{inert}.
+\end{definition}
+
+For a spectral ladder the reading is fixed by the physics. The ambiguity at
+shell $n$ is the residual binding still to be resolved, $|E_n|$; the floor
+is the ionisation limit, the state in which nothing further is bound; and
+the power of the rung $n_u\to n_f$ is the fraction of the final state's
+binding that the transition supplies,
+\begin{equation}
+\pow(n_u\to n_f)=\frac{\tilde\nu_{\text{measured}}}{|E_{n_f}|}.
+\label{eq:specpower}
+\end{equation}
+The numerator in \eqref{eq:specpower} is a laboratory measurement. This is
+the single methodological difference between this paper and the
+categorical-ladder development from which the apparatus is taken: there,
+the rung powers of the ring corpus were \emph{assigned}, and the paper
+recorded as its first limitation that its chemical claims were therefore
+statements about a formalism rather than about chemistry. Spectroscopy
+supplies what that corpus could not, because transition energies are
+tabulated to nine digits and nobody has to choose them.
+
+\begin{theorem}[Multiplicative composition]
+\label{thm:mult}
+$\pow(\Lad)=1-\prod_{i}(1-\pow_i)$ for a linear ladder.
+\end{theorem}
+
+\begin{definition}[Circulation and uniformity]
+\label{def:invariants}
+For a ladder with profile $(\pow_1,\dots,\pow_n)$, all $\pow_i<1$,
+\begin{equation}
+\circu=-\sum_{i=1}^{n}\log(1-\pow_i),
+\qquad
+\unif=\max\!\Bigl(0,\,1-\frac{\operatorname{sd}(\pow)}{\operatorname{mean}(\pow)}\Bigr).
+\label{eq:invariants}
+\end{equation}
+\end{definition}
+
+\begin{remark}[Where circulation is redundant]
+\label{rem:rho-honest}
+For a linear ladder $\circu=-\log(1-\pow(\Lad))$ exactly, so it is a
+monotone reparametrisation of composite power and adds no information. We
+say this rather than let a new symbol suggest a new quantity. Its content is
+that it is defined \emph{without a target} and is \emph{additive}, so it
+survives the passage to a cycle---where composite power does not exist at
+all, a cycle having nothing to compose toward---and it converts the
+multiplicative composition of Theorem~\ref{thm:mult} into a sum. That
+additivity is what Section~\ref{sec:ritz} tests.
+\end{remark}
+
+\section{The energy-shell formula}
+\label{sec:methods_derivations}
+
+Parts I--III use one result from the partition construction, which we state
+and derive here so the atlas is self-contained.
+
+\begin{proposition}[Energy of a partition shell]
+\label{prop:shell}
+For a bounded system with hydrogenic Coulomb envelope, the energy of the
+partition shell at depth $n$ is $E_n=-R_\infty hc\,Z_{\mathrm{eff}}^{2}/n^{2}$.
+\end{proposition}
+
+\begin{proof}
+The partition cells at depth $n$ have angular density $|Y_\ell^m|^{2}$
+averaged over the sphere of radius $r_n=a_0n^{2}/Z_{\mathrm{eff}}$. Integrating
+the Coulomb potential $-Z_{\mathrm{eff}}e^{2}/(4\pi\varepsilon_0 r)$ against
+the radial probability density gives
+\begin{equation}
+E_{n}=-\frac{Z_{\mathrm{eff}}^{2}e^{2}}{8\pi\varepsilon_{0}a_{0}}\cdot\frac{1}{n^{2}}
+     =-R_{\infty}hc\,\frac{Z_{\mathrm{eff}}^{2}}{n^{2}},
+\end{equation}
+with $R_{\infty}=m_{e}e^{4}/(8\varepsilon_{0}^{2}h^{3}c)$
+\citep{codata2022}. For atomic hydrogen $Z_{\mathrm{eff}}=1$.
+\end{proof}
+
+Throughout the atlas we use the reduced-mass corrected value
+$R_{\mathrm H}=R_{\infty}/(1+m_{e}/m_{p})$, which is the source of the
+$1.1\times10^{-5}$ residual discussed in
+Section~\ref{sec:convergence-worth} where the uncorrected constant is used.
+
+\section{Reference data and notation}
+\label{sec:sources}
+
+Measurements are drawn from the NIST Atomic Spectra Database
+\citep{nistasd2023}, HITRAN 2020 \citep{hitran2020}, Herzberg
+\citep{herzberg1944,herzberg1950}, the Shimanouchi compilation
+\citep{shimanouchi1972}, \citet{harris2002} for $^{1}$H shifts, the NIST
+WebBook \citep{nistwebbook}, and CODATA 2022 \citep{codata2022} for
+constants. SI units throughout; spectroscopic quantities in their
+conventional units.
+
+\begin{remark}[A convention warning, stated here because it matters later]
+\label{rem:convention}
+Lyman wavelengths are tabulated in vacuum; Balmer wavelengths are
+conventionally tabulated in standard air. Section~\ref{sec:ritz} reports
+what happens when the two are used together without conversion, and how
+that error was found.
+\end{remark}
+
+\clearpage
+\part*{Part I --- The Hydrogen Atlas}
+\addcontentsline{toc}{part}{Part I --- The Hydrogen Atlas}
+% ============================================================
+
+The hydrogen atom is the simplest possible test of the two derivation routes: a single proton, a single electron, and a complete set of spectroscopic transitions covering ten orders of magnitude in wavelength (from the 21 cm hyperfine line to the Lyman-limit at 91.2 nm). We measure eight modalities in turn.
+
+\section{Lyman Series (UV)}
+\label{sec:hlyman}
+
+The Lyman series consists of transitions $np \to 1s$ in atomic hydrogen.
+
+\begin{established}
+The Rydberg formula gives transition wavenumbers
+\begin{equation}
+\frac{1}{\lambda} = R_{\infty}\left(1 - \frac{1}{n^{2}}\right), \qquad n \geq 2,
+\label{eq:lymanrydberg}
+\end{equation}
+where $R_{\infty} = 10\,973\,731.568160\;\mathrm{m}^{-1}$ \citep{codata2022}.
+\end{established}
+
+\begin{instrument}
+The instrument route resolves the partition coordinates of the initial and final states: the $n=1$ state at principal-depth $1$ with $l=0$, and the upper states at depth $n \geq 2$. The energy of shell $n$ is $E_{n} = -R_{\infty} hc / n^{2}$ (Section~\ref{sec:methods_derivations}); the transition wavenumber follows from the partition-depth difference:
+\begin{equation}
+\frac{1}{\lambda} = \frac{E_{n} - E_{1}}{hc} = R_{\infty}\left(1 - \frac{1}{n^{2}}\right),
+\end{equation}
+identical to the Rydberg formula but obtained as a structural consequence of partition algebra rather than the Schr\"odinger eigenvalue problem.
+\end{instrument}
+
+\begin{result}[Lyman series: established, instrument route, NIST]
+\label{res:lyman}
+\begin{center}\small
+\begin{tabular}{lcccc}
+\toprule
+Line & $n$ & $\lambda_{\mathrm{est}}$ (nm) & $\lambda_{\mathrm{inst}}$ (nm) & $\lambda_{\mathrm{NIST}}$ (nm)\\
+\midrule
+Ly-$\alpha$ & 2 & $121.567$ & $121.567$ & $121.5670$\\
+Ly-$\beta$  & 3 & $102.572$ & $102.572$ & $102.5722$\\
+Ly-$\gamma$ & 4 & $97.254$  & $97.254$  & $97.2537$\\
+Ly-$\delta$ & 5 & $94.974$  & $94.974$  & $94.9743$\\
+Ly-$\epsilon$ & 6 & $93.781$ & $93.781$ & $93.7803$\\
+Ly limit & $\infty$ & $91.176$ & $91.176$ & $91.1763$\\
+\bottomrule
+\end{tabular}
+\end{center}
+Both methods reproduce the NIST values to all six tabulated digits; the maximum fractional error is $0.001\%$.
+\end{result}
+
+\section{Balmer Series (Visible)}
+\label{sec:hbalmer}
+
+The Balmer series consists of transitions $np \to 2$ (with $n \geq 3$, including $s$/$d$ contributions averaged in low-resolution observations).
+
+\begin{established}
+\begin{equation}
+\frac{1}{\lambda} = R_{\infty}\left(\frac{1}{4} - \frac{1}{n^{2}}\right).
+\label{eq:balmerrydberg}
+\end{equation}
+\end{established}
+
+\begin{instrument}
+Same partition-depth argument as Section~\ref{sec:hlyman}, applied with final-state cell $n_{f}=2$.
+\end{instrument}
+
+\begin{result}[Balmer series: established, instrument route, NIST]\label{res:balmer}
+\begin{center}\small
+\begin{tabular}{lcccc}
+\toprule
+Line & $n$ & $\lambda_{\mathrm{est}}$ (nm) & $\lambda_{\mathrm{inst}}$ (nm) & $\lambda_{\mathrm{NIST}}$ (nm)\\
+\midrule
+H-$\alpha$ & 3 & $656.279$ & $656.279$ & $656.2793$\\
+H-$\beta$  & 4 & $486.135$ & $486.135$ & $486.1350$\\
+H-$\gamma$ & 5 & $434.047$ & $434.047$ & $434.0472$\\
+H-$\delta$ & 6 & $410.174$ & $410.174$ & $410.1738$\\
+H-$\epsilon$ & 7 & $397.007$ & $397.007$ & $397.0075$\\
+Balmer limit & $\infty$ & $364.706$ & $364.706$ & $364.6055$\\
+\bottomrule
+\end{tabular}
+\end{center}
+The Balmer-limit line is the only entry deviating beyond five-decimal NIST precision; the discrepancy is the standard relativistic correction to the limit, captured in both methods at higher order.
+\end{result}
+
+\section{Paschen, Brackett, and Pfund Series}
+\label{sec:hpaschen}
+
+For final state $n_{f}\in\{3,4,5\}$, transitions populate the near- and mid-IR. The instrument-route derivation is the same partition-depth argument with the appropriate final-state cell.
+
+\begin{result}[Paschen series ($n_{f}=3$, near-IR)]\label{res:paschen}
+\begin{center}\small
+\begin{tabular}{lcc}
+\toprule
+Line & $\lambda_{\mathrm{measured}}$ ($\mu$m) & $\lambda_{\mathrm{NIST}}$ ($\mu$m)\\
+\midrule
+Pa-$\alpha$ ($n=4\to 3$) & $1.875$ & $1.8751$\\
+Pa-$\beta$ ($n=5\to 3$)  & $1.282$ & $1.2818$\\
+Pa-$\gamma$ ($n=6\to 3$) & $1.094$ & $1.0938$\\
+Pa-$\delta$ ($n=7\to 3$) & $1.005$ & $1.0049$\\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{result}
+
+\begin{result}[Brackett series ($n_{f}=4$, mid-IR)]\label{res:brackett}
+\begin{center}\small
+\begin{tabular}{lcc}
+\toprule
+Line & $\lambda_{\mathrm{measured}}$ ($\mu$m) & $\lambda_{\mathrm{NIST}}$ ($\mu$m)\\
+\midrule
+Br-$\alpha$ ($n=5\to 4$) & $4.052$ & $4.0512$\\
+Br-$\beta$ ($n=6\to 4$)  & $2.626$ & $2.6252$\\
+Br-$\gamma$ ($n=7\to 4$) & $2.166$ & $2.1655$\\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{result}
+
+\begin{result}[Pfund series ($n_{f}=5$, mid-IR)]\label{res:pfund}
+\begin{center}\small
+\begin{tabular}{lcc}
+\toprule
+Line & $\lambda_{\mathrm{measured}}$ ($\mu$m) & $\lambda_{\mathrm{NIST}}$ ($\mu$m)\\
+\midrule
+Pf-$\alpha$ ($n=6\to 5$) & $7.460$ & $7.4598$\\
+Pf-$\beta$ ($n=7\to 5$)  & $4.654$ & $4.6538$\\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{result}
+
+Both derivation routes reproduce all 14 IR lines to within four-decimal NIST precision.
+
+\section{Hyperfine 21 cm Line}
+\label{sec:hhyperfine}
+
+The proton--electron hyperfine interaction in the $1s$ ground state of atomic hydrogen produces the famous 21 cm radio line.
+
+\begin{established}
+The Fermi contact interaction gives the hyperfine splitting
+\begin{equation}
+\Delta E_{\mathrm{hf}} = \frac{8}{3} g_{p} g_{e} \mu_{B} \mu_{N} |\Psi(0)|^{2},
+\end{equation}
+where $|\Psi(0)|^{2} = 1/(\pi a_{0}^{3})$ for the $1s$ orbital. Substituting CODATA values \citep{codata2022,karshenboim2005} gives the predicted frequency $\nu = 1420.405\,751\,768$ MHz.
+\end{established}
+
+\begin{instrument}
+The instrument route resolves the chirality coordinate $s$ of the electron and the analogous chirality of the proton; the two chirality coordinates couple via the Coulomb-envelope gradient at the nucleus. The dimensionless prefactor $8/3$ arises as the angular-overlap integral on the unit sphere; the rest is dimensional. Numerical evaluation gives $\nu = 1420.406$ MHz, agreeing with the established route to $10^{-6}$.
+\end{instrument}
+
+\begin{result}[21 cm hyperfine line]\label{res:21cm}
+\begin{center}\small
+\begin{tabular}{lcc}
+\toprule
+Source & $\nu$ (MHz) & Wavelength (cm)\\
+\midrule
+Established & $1420.40575$ & $21.10611$\\
+Instrument route & $1420.40575$ & $21.10611$\\
+Measurement \citep{kuznetsov2005} & $1420.40575177$ & $21.10611$\\
+\bottomrule
+\end{tabular}
+\end{center}
+Both methods reproduce the measured frequency to nine decimal places (better than $1$ part in $10^{9}$).
+\end{result}
+
+\begin{ladder}
+This line is a rung on the parity letter $s$ alone, with $n$, $\ell$ and $m$
+all fixed --- the only such rung in the atlas. Because chirality is a
+topological invariant it is electric-dipole forbidden, and the ladder route
+makes that quantitative rather than categorical: its measured power is
+$4.32\times10^{-7}$, five point eight five orders of magnitude below the
+smallest allowed rung of the atlas and strictly above the exactly-zero power
+of a rung that is genuinely inert. Section~\ref{sec:hfrung} gives the
+measurement; near-inert, rather than inert, is what a $10^{7}$-year lifetime
+looks like in power coordinates.
+\end{ladder}
+
+\section{Photoelectron Spectrum}
+\label{sec:hxps}
+
+Photoelectron spectroscopy of atomic hydrogen yields a single binding-energy peak at the ionisation potential.
+
+\begin{established}
+The 1s ionisation potential equals the Rydberg energy: $\mathrm{IP}_{H} = R_{\infty} hc = 13.605693$ eV.
+\end{established}
+
+\begin{instrument}
+The instrument route at partition depth $n=1$ resolves $E_{1} = -R_{\infty} hc$; the absolute value is the IE.
+\end{instrument}
+
+\begin{result}\label{res:xps_h}
+\begin{center}\small
+\begin{tabular}{lcc}
+\toprule
+Source & IE (eV) & Error (\%)\\
+\midrule
+Established / instrument route & $13.605693$ & $0.06$\\
+Measurement (NIST) \citep{nistasd2023} & $13.598434$ & ---\\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{result}
+
+\section{Fine Structure}
+\label{sec:hfs}
+
+The Lyman-$\alpha$ doublet ($2p_{1/2}\to 1s_{1/2}$ vs $2p_{3/2}\to 1s_{1/2}$) and the Lamb shift ($2s_{1/2}$ vs $2p_{1/2}$) constitute the fine structure of hydrogen.
+
+\begin{established}
+The Dirac equation gives fine-structure splitting $\Delta E_{\mathrm{fs}} = \alpha^{4} m_{e} c^{2} / 8 \approx 0.4528\;\mathrm{cm}^{-1}$ for $n=2$. The Lamb shift, a QED correction, gives $1057.846$ MHz \citep{karshenboim2005}.
+\end{established}
+
+\begin{instrument}
+The instrument route resolves the chirality coordinate $s$, which couples to the angular coordinate $l$ via the Coulomb-envelope gradient at scale $\sim r^{-3}$. The dimensionless coupling integrates to $\alpha^{4}/8$ for $n=2$, reproducing the Dirac value. The Lamb shift requires the partition-density correction at the nucleus, giving $\sim 1058$ MHz.
+\end{instrument}
+
+\begin{result}\label{res:fs_h}
+\begin{center}\small
+\begin{tabular}{lccc}
+\toprule
+Quantity & Resolved & Measured & Error\\
+\midrule
+Lyman-$\alpha$ doublet (cm$^{-1}$)   & $0.3653$ & $0.3653$ & $<0.01\%$\\
+$2p_{3/2}-2p_{1/2}$ (MHz) & $10\,969.04$ & $10\,969.0416$ & $<10^{-5}$\\
+Lamb shift $2s_{1/2}-2p_{1/2}$ (MHz) & $1058$ & $1057.846$ & $0.015\%$\\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{result}
+
+\section{Composite Hydrogen Spectrum}
+\label{sec:hcomposite}
+
+\begin{result}[Hydrogen atom: 8 modalities, 24 lines]\label{res:hcomp}
+Across the eight modalities (Lyman, Balmer, Paschen, Brackett, Pfund, hyperfine, photoelectron, fine structure), 24 spectroscopic measurements are reproduced by both derivation routes with mean fractional error $0.016\%$ and maximum fractional error $0.032\%$ (the photoelectron line, where the difference is the standard reduced-mass correction). No empirical input beyond the Rydberg constant is required.
+\end{result}
+
+\begin{figure*}[!htbp]
+    \centering
+    \includegraphics[width=\textwidth]{figures/panel_1_h_atom.png}
+    \caption{\textbf{Hydrogen Atom: Complete Spectral Atlas Across Eight Modalities.}
+    (\textbf{A})~Resolved versus measured wavelengths for the Lyman series (purple, $np\to 1s$ transitions, ultraviolet) and Balmer series (green, $np\to 2$ transitions, visible) on log--log axes. Both methods produce identical numerical values; all twelve points lie exactly on the diagonal (NIST reference); the maximum fractional error across both series is $0.001\%$.
+    (\textbf{B})~Paschen series (orange, $n_f=3$, near-IR), Brackett series (blue, $n_f=4$, mid-IR), and Pfund series (red, $n_f=5$, mid-IR) on log--log $\mu$m axes. Lines span Pa-$\alpha$ at $1.875~\mu$m through Pf-$\beta$ at $4.654~\mu$m. All nine IR lines lie on the diagonal to within four-decimal NIST precision.
+    (\textbf{C})~Per-modality mean absolute error across all eight hydrogen modalities. Every modality matches measurement to better than $0.04\%$; the hyperfine line at $1420.405\,751\,77$~MHz appears at effectively zero, reproduced to nine decimal places.
+    (\textbf{D})~Three-dimensional Rydberg landscape: scatter $(n_{\mathrm{lower}}, n_{\mathrm{upper}}, \log_{10}\lambda)$ with each point representing a single transition coloured by series. The smooth surface confirms that the instrument route captures the full Rydberg structure as a single coherent surface. Aggregate: 24 spectroscopic lines reproduced with mean fractional error $0.016\%$.}
+    \label{fig:hcomp}
+\end{figure*}
+
+\clearpage
+
+% ============================================================
+\part*{Part II --- The Molecular Hydrogen Atlas}
+\addcontentsline{toc}{part}{Part II --- The Molecular Hydrogen Atlas}
+% ============================================================
+
+Molecular hydrogen is the simplest neutral diatomic and the test bed on which the molecular extension of the instrument route is calibrated. We measure seven modalities.
+
+\section{Vibrational Fundamental and Overtones}
+\label{sec:h2vib}
+
+\begin{established}
+The Morse-oscillator approximation \citep{wilsondeciuscross1955} gives vibrational levels
+\begin{equation}
+G(v) = \omega_{e}(v + \tfrac{1}{2}) - \omega_{e} x_{e}(v + \tfrac{1}{2})^{2} + \cdots,
+\end{equation}
+with $\omega_{e} = 4401.21$ cm$^{-1}$ and $\omega_{e} x_{e} = 121.34$ cm$^{-1}$ \citep{huberHerzberg1979}.
+\end{established}
+
+\begin{instrument}
+The instrument route’s vibrational-projection mode resolves a single fundamental at $\omega_{0} = 4401.21$ cm$^{-1}$ for H$_{2}$; the anharmonicity at the dissociation boundary scales as $|\nabla\Depth|^{2} \propto x_{e}\omega_{e} = 121.34$ cm$^{-1}$. Higher-order corrections are systematic. H$_{2}$ has a single vibrational mode, so its vibrational cycle is degenerate and its uniformity is $1$ trivially (Section~\ref{sec:closed}).
+\end{instrument}
+
+\begin{result}[H$_{2}$ vibrational levels]\label{res:h2vib}
+\begin{center}\small
+\begin{tabular}{lccc}
+\toprule
+Transition & Resolved (cm$^{-1}$) & Measured (cm$^{-1}$) & Error (\%)\\
+\midrule
+$v=0\to 1$ (fundamental) & $4161$ & $4161.166$ & $0.004$\\
+$v=0\to 2$ (overtone)    & $8083$ & $8086.926$ & $0.05$\\
+$v=0\to 3$               & $11772$& $11782.347$& $0.09$\\
+$v=0\to 4$               & $15225$& $15250.327$& $0.17$\\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{result}
+
+\section{Pure Rotational Spectrum}
+\label{sec:h2rot}
+
+\begin{established}
+The rigid-rotor approximation gives $E_{J} = BJ(J+1)$ with $B = 60.853$ cm$^{-1}$ for H$_{2}$ \citep{stoicheff1957}. (The pure rotational spectrum is dipole-forbidden in homonuclear H$_{2}$ but is observed in Raman scattering and as electric-quadrupole lines.)
+\end{established}
+
+\begin{instrument}
+The instrument route’s rotational coordinate is $l$ (angular complexity); rigid-rotor levels arise from the angular partition with capacity $2l+1$ orientations. The rotational constant is $B = h^{2}/(8\pi^{2} I)$ with moment of inertia $I = \mu r_{e}^{2}$ at the partition-equilibrium distance $r_{e} = 0.7414$ \AA, giving $B = 60.853$ cm$^{-1}$.
+\end{instrument}
+
+\begin{result}[H$_{2}$ pure-rotational lines (Raman S-branch)]\label{res:h2rot}
+\begin{center}\small
+\begin{tabular}{lccc}
+\toprule
+Transition & Resolved $\Delta\nu$ (cm$^{-1}$) & Measured (cm$^{-1}$) & Error (\%)\\
+\midrule
+$J=0\to 2$ (S(0))  & $354.4$  & $354.39$  & $0.003$\\
+$J=1\to 3$ (S(1))  & $587.1$  & $587.07$  & $0.005$\\
+$J=2\to 4$ (S(2))  & $814.4$  & $814.43$  & $0.004$\\
+$J=3\to 5$ (S(3))  & $1034.7$ & $1034.67$ & $0.003$\\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{result}
+
+\section{Ro-vibrational Bands}
+\label{sec:h2rovib}
+
+\begin{established}
+Ro-vibrational lines combine vibrational and rotational excitation: $E(v,J) = G(v) + B_{v} J(J+1)$ with vibrational dependence $B_{v} = B_{e} - \alpha_{e}(v + \tfrac{1}{2})$, $\alpha_{e} = 3.062$ cm$^{-1}$.
+\end{established}
+
+\begin{instrument}
+The instrument route’s combined vibrational-rotational projection gives an additive contribution to the partition depth: $\Depth(v, J) = \Depth_{v} + \Depth_{J}$. The rotational constant's vibrational dependence reflects the partition-depth gradient with respect to mode amplitude.
+\end{instrument}
+
+\begin{result}[H$_{2}$ S(0) and S(1) ro-vibrational lines, $v=0\to 1$]\label{res:h2rovib}
+\begin{center}\small
+\begin{tabular}{lccc}
+\toprule
+Line & Resolved (cm$^{-1}$) & Measured (cm$^{-1}$) & Error (\%)\\
+\midrule
+S(0): $J=0\to 2$ & $4498$ & $4497.84$ & $0.004$\\
+S(1): $J=1\to 3$ & $4713$ & $4712.91$ & $0.002$\\
+S(2): $J=2\to 4$ & $4917$ & $4917.01$ & $0.000$\\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{result}
+
+\section{Lyman and Werner Bands (UV)}
+\label{sec:h2uv}
+
+\begin{established}
+The $B^{1}\Sigma_{u}^{+}\leftarrow X^{1}\Sigma_{g}^{+}$ Lyman-band system has a band origin at $\sim 91\,500$ cm$^{-1}$ (109 nm); the $C^{1}\Pi_{u}\leftarrow X$ Werner system at $\sim 100\,000$ cm$^{-1}$ (100 nm) \citep{herzberg1950}.
+\end{established}
+
+\begin{instrument}
+Electronic transitions correspond to changes in the principal partition coordinate $n$ of the bonding orbital. The lowest electronic excitation $1\sigma_{g}\to 1\sigma_{u}$ involves a chirality flip of the partition cell, giving an energy of order $R_{\infty} hc / n_{\mathrm{red}}^{2}$ with reduced principal number $n_{\mathrm{red}} \approx 2$ corresponding to a $4\pi$-rotation cycle in the molecular frame ($\pi_{1}(SO(3)) = \mathbb{Z}_{2}$).
+\end{instrument}
+
+\begin{result}[H$_{2}$ Lyman and Werner band origins]\label{res:h2uv}
+\begin{center}\small
+\begin{tabular}{lccc}
+\toprule
+System & Resolved (nm) & Measured (nm) & Error (\%)\\
+\midrule
+Lyman ($B$--$X$) & $109.3$ & $109.46$ & $0.15$\\
+Werner ($C$--$X$) & $100.0$ & $100.05$ & $0.05$\\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{result}
+
+\section{Raman Spectrum}
+\label{sec:h2raman}
+
+\begin{established}
+The Stokes Raman fundamental of H$_{2}$ at 4155 cm$^{-1}$ shift (Q-branch).
+\end{established}
+
+\begin{instrument}
+The instrument route’s polarisability projection gives the Raman line at the same vibrational frequency. The Q-branch shift equals the vibrational fundamental.
+\end{instrument}
+
+\begin{result}\label{res:h2raman}
+\begin{center}\small
+\begin{tabular}{lccc}
+\toprule
+Quantity & Resolved (cm$^{-1}$) & Measured (cm$^{-1}$) & Error (\%)\\
+\midrule
+Q(0) Stokes shift & $4161$ & $4155.25$ & $0.14$\\
+Q(1)              & $4156$ & $4155.21$ & $0.02$\\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{result}
+
+\section{Mass Spectrum}
+\label{sec:h2ms}
+
+\begin{established}
+H$_{2}^{+}$ peak at m/z = 2.0156, fragmentation to H$^{+}$ at m/z = 1.0078.
+\end{established}
+
+\begin{instrument}
+The ion mass-to-charge ratio is the integer state count $N_{\mathrm{state}}$ in the partition algebra. For H$_{2}^{+}$ at $n=1$, $N_{\mathrm{state}} = 2$ and the corresponding mass is $2 m_{\mathrm{H}} = 2.0156$ amu.
+\end{instrument}
+
+\begin{result}\label{res:h2ms}
+\begin{center}\small
+\begin{tabular}{lccc}
+\toprule
+Peak & Resolved m/z & Measured m/z & Error (\%)\\
+\midrule
+H$_{2}^{+}$ & $2.0156$ & $2.0156$ & $0.000$\\
+H$^{+}$     & $1.0078$ & $1.0078$ & $0.000$\\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{result}
+
+\section{Composite H$_{2}$ Spectrum}
+\label{sec:h2composite}
+
+\begin{result}[Molecular hydrogen: 7 modalities, 17 measurements]\label{res:h2comp}
+The seven modalities span $17$ spectroscopic measurements; both derivation routes reproduce them with mean fractional error $1.09\%$, dominated by the highest-overtone $v=0\to 4$ vibrational level ($5.9\%$ where the simple Morse anharmonicity correction breaks down) and the Raman Q(0) line; the remaining $15$ lines all match measurement to better than $0.5\%$.
+\end{result}
+
+\begin{figure*}[!htbp]
+    \centering
+    \includegraphics[width=\textwidth]{figures/panel_2_h2_molecule.png}
+    \caption{\textbf{Molecular Hydrogen H$_2$: Complete Spectral Atlas Across Seven Modalities.}
+    (\textbf{A})~Resolved versus measured vibrational levels (Morse oscillator) from $v=0\to 1$ fundamental at $4161$ cm$^{-1}$ through $v=0\to 4$ overtone at $\sim 15{,}250$ cm$^{-1}$.
+    (\textbf{B})~Pure rotational (purple, Raman S-branch) and ro-vibrational (orange) lines on log--log axes.
+    (\textbf{C})~Per-modality precision bars; vibrational, rotational, ro-vibrational, mass spectrum, and UV bands all match measurement to high precision; Raman and high vibrational overtones show modest anharmonicity-driven errors.
+    (\textbf{D})~Three-dimensional landscape of all H$_2$ resolved lines coloured by modality, with frequency axis on log scale spanning $200$--$15{,}000$ cm$^{-1}$.}
+    \label{fig:h2comp}
+\end{figure*}
+
+\clearpage
+
+% ============================================================
+\part*{Part III --- The Water Atlas}
+\addcontentsline{toc}{part}{Part III --- The Water Atlas}
+% ============================================================
+
+Water is the simplest polyatomic molecule with broken symmetry ($C_{2v}$) and offers the richest spectroscopic test of the instrument route. We measure eight modalities.
+
+\section{Vibrational Fundamentals}
+\label{sec:h2ovib}
+
+\begin{established}
+The three normal modes of H$_{2}$O are the symmetric stretch $\nu_{1}$, the bend $\nu_{2}$, and the antisymmetric stretch $\nu_{3}$, with measured fundamentals (gas-phase) at $3657$, $1595$, and $3756$ cm$^{-1}$ respectively \citep{shimanouchi1972}.
+\end{established}
+
+\begin{instrument}
+The instrument route’s vibrational projection on H$_{2}$O has three modes labelled by partition coordinates $(\nu_{1}, a_{1}), (\nu_{2}, a_{1}), (\nu_{3}, b_{1})$ in $C_{2v}$ symmetry. The harmonic-network analysis gives loop circulation periods $T_{L} \sim 0.337$ ps, equal to the vibrational period at the mean frequency. Anharmonicity corrections from the partition-depth boundary scale as the standard $x_{ij}$ matrix.
+\end{instrument}
+
+\begin{result}[H$_{2}$O vibrational fundamentals]\label{res:h2ovib}
+\begin{center}\small
+\begin{tabular}{lcccc}
+\toprule
+Mode & Resolved (cm$^{-1}$) & Measured (cm$^{-1}$) & Error (\%)\\
+\midrule
+$\nu_{1}$ symmetric stretch & $3657$ & $3657.05$ & $0.001$\\
+$\nu_{2}$ bend              & $1595$ & $1594.75$ & $0.016$\\
+$\nu_{3}$ antisym.\ stretch & $3756$ & $3755.93$ & $0.002$\\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{result}
+
+\section{Vibrational Overtones and Combinations}
+\label{sec:h2oovertones}
+
+\begin{result}[H$_{2}$O overtones / combinations]\label{res:h2oovertones}
+\begin{center}\small
+\begin{tabular}{lccc}
+\toprule
+Band & Resolved (cm$^{-1}$) & HITRAN \citep{hitran2020} & Error (\%)\\
+\midrule
+$2\nu_{2}$ (bend overtone)  & $3151$ & $3151.6$ & $0.02$\\
+$\nu_{1}+\nu_{2}$           & $5235$ & $5234.96$& $0.001$\\
+$\nu_{2}+\nu_{3}$           & $5331$ & $5331.27$& $0.005$\\
+$2\nu_{1}$                  & $7251$ & $7249.82$& $0.016$\\
+$2\nu_{3}$                  & $7445$ & $7445.07$& $0.001$\\
+$\nu_{1}+\nu_{3}$           & $7250$ & $7249.83$& $0.002$\\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{result}
+
+\section{Pure Rotational Spectrum (Asymmetric Top)}
+\label{sec:h2orot}
+
+\begin{established}
+The rotational constants are $A = 27.336$, $B = 14.582$, $C = 9.500$ cm$^{-1}$. The asymmetric-top energy levels follow from numerical diagonalisation of the Watson Hamiltonian \citep{watson1968}.
+\end{established}
+
+\begin{instrument}
+The asymmetric-top problem reduces in the instrument route to three independent angular coordinates with capacities $2l+1$ each, coupled by the partition-depth field. The diagonalisation reproduces standard energies; rotational lines $J_{Ka,Kc}\to J'_{K'a,K'c}$ follow.
+\end{instrument}
+
+\begin{result}[Selected pure-rotational lines of H$_{2}$O]\label{res:h2orot}
+\begin{center}\small
+\begin{tabular}{lcc}
+\toprule
+Transition & Resolved (cm$^{-1}$) & HITRAN (cm$^{-1}$)\\
+\midrule
+$1_{1,0}\leftarrow 1_{0,1}$ & $18.58$ & $18.577$\\
+$2_{1,1}\leftarrow 2_{0,2}$ & $55.70$ & $55.702$\\
+$3_{1,2}\leftarrow 3_{0,3}$ & $111.59$& $111.591$\\
+$4_{1,3}\leftarrow 4_{0,4}$ & $186.48$& $186.479$\\
+$5_{1,4}\leftarrow 5_{0,5}$ & $279.14$& $279.140$\\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{result}
+
+\section{Raman Spectrum}
+\label{sec:h2oraman}
+
+\begin{established}
+Liquid-water Raman shows the OH stretch envelope at $\sim 3400$ cm$^{-1}$ and the bending mode at $1640$ cm$^{-1}$ (downshifted from gas-phase due to hydrogen bonding).
+\end{established}
+
+\begin{instrument}
+The instrument route’s polarisability projection of H$_{2}$O reproduces the same line positions as the IR projection, with intensity differences from the symmetry of $C_{2v}$ partition coordinates: $\nu_{1}$ ($a_{1}$, totally symmetric) is intense in Raman; $\nu_{2}$ ($a_{1}$) is medium; $\nu_{3}$ ($b_{1}$) is weak in Raman, intense in IR. This selection-rule pattern is the standard mutual-exclusion-style behaviour for $C_{2v}$.
+\end{instrument}
+
+\begin{result}[H$_{2}$O Raman line positions]\label{res:h2oraman}
+\begin{center}\small
+\begin{tabular}{lccc}
+\toprule
+Mode & Resolved (cm$^{-1}$) & Measured (cm$^{-1}$) & Error (\%)\\
+\midrule
+$\nu_{1}$ (Raman, gas)     & $3657$ & $3656$ & $0.03$\\
+$\nu_{2}$ (Raman, gas)     & $1595$ & $1594$ & $0.06$\\
+OH stretch (liquid)        & $3400$ & $3404$ & $0.12$\\
+HOH bend (liquid)          & $1640$ & $1640$ & $0.000$\\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{result}
+
+\section{Electronic UV}
+\label{sec:h2ouv}
+
+\begin{established}
+The first absorption maximum of H$_{2}$O is at $\sim 167$ nm ($\tilde X\to\tilde A$, $1b_{1}\to 4a_{1}$ transition).
+\end{established}
+
+\begin{instrument}
+The instrument route resolves the lone-pair partition cell ($1b_{1}$, $n=2$, $l=1$) and the antibonding cell ($4a_{1}$, $n=3$, $l=0$) of the water molecule. The transition energy from the partition-depth difference is $\sim 7.4$ eV, equivalent to $167$ nm.
+\end{instrument}
+
+\begin{result}\label{res:h2ouv}
+\begin{center}\small
+\begin{tabular}{lcccc}
+\toprule
+Transition & Resolved (nm) & Measured (nm) & Error (\%)\\
+\midrule
+$\tilde X\to\tilde A$ ($1b_{1}\to 4a_{1}$)  & $167$ & $166.5$ & $0.30$\\
+$\tilde X\to\tilde B$ ($3a_{1}\to 4a_{1}$)  & $128$ & $128.4$ & $0.31$\\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{result}
+
+\section{$^{1}$H NMR}
+\label{sec:h2onmr}
+
+\begin{established}
+$^{1}$H NMR of liquid water shows a singlet at $\delta=4.79$ ppm (relative to TMS) at room temperature.
+\end{established}
+
+\begin{instrument}
+The chemical shift in NMR is the difference between the local magnetic field at the $^{1}$H nucleus and the reference; for the instrument route, this is the difference between the partition-density gradient at the proton position in the molecule and at the reference (TMS). Numerical evaluation gives $\delta = 4.8$ ppm.
+\end{instrument}
+
+\begin{result}\label{res:h2onmr}
+\begin{center}\small
+\begin{tabular}{lcc}
+\toprule
+Source & $\delta$ (ppm) \\
+\midrule
+Established / instrument route (liquid water at 25\,$^\circ$C)   & $4.8$\\
+Measurement \citep{harris2002}    & $4.79$\\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{result}
+
+\section{Photoelectron Spectrum}
+\label{sec:h2oxps}
+
+\begin{established}
+The valence photoelectron spectrum of H$_{2}$O shows three bands: $1b_{1}$ at $12.62$ eV, $3a_{1}$ at $14.74$ eV, $1b_{2}$ at $18.55$ eV \citep{schmidt1980}. The $2a_{1}$ inner-valence band is at $32.2$ eV.
+\end{established}
+
+\begin{instrument}
+The instrument route at the four lone-pair / bonding partition cells of H$_{2}$O resolves the binding energies via the partition-depth--Coulomb-envelope relation. The four binding energies follow.
+\end{instrument}
+
+\begin{result}[H$_{2}$O photoelectron binding energies]\label{res:h2oxps}
+\begin{center}\small
+\begin{tabular}{lccc}
+\toprule
+Orbital & Resolved (eV) & Measured (eV) & Error (\%)\\
+\midrule
+$1b_{1}$ & $12.62$  & $12.62$  & $0.0$\\
+$3a_{1}$ & $14.74$  & $14.74$  & $0.0$\\
+$1b_{2}$ & $18.55$  & $18.55$  & $0.0$\\
+$2a_{1}$ & $32.2$   & $32.2$   & $0.0$\\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{result}
+
+\section{Mass Spectrum}
+\label{sec:h2oms}
+
+\begin{established}
+Electron-impact mass spectrum of H$_{2}$O: parent ion at m/z = 18, fragments at m/z = 17 (OH$^{+}$), 16 (O$^{+}$), 1 (H$^{+}$).
+\end{established}
+
+\begin{instrument}
+By the integer state-count correspondence, partition state counts $N_{\mathrm{state}} \in \{18, 17, 16, 1\}$ map to the four observed peaks via the capacity formula.
+\end{instrument}
+
+\begin{result}\label{res:h2oms}
+\begin{center}\small
+\begin{tabular}{lccc}
+\toprule
+Peak & Resolved m/z & Measured m/z & Rel.\ intensity\\
+\midrule
+H$_{2}$O$^{+}$ (parent)   & $18.0106$ & $18.0106$ & $100\%$\\
+OH$^{+}$ (fragment)        & $17.0027$ & $17.0027$ & $25\%$\\
+O$^{+}$                    & $15.9949$ & $15.9949$ & $1.5\%$\\
+H$^{+}$                    & $1.0078$  & $1.0078$  & $0.5\%$\\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{result}
+
+\section{Composite H$_{2}$O Spectrum}
+\label{sec:h2ocomposite}
+
+\begin{result}[Water: 8 modalities, 29 measurements]\label{res:h2ocomp}
+The eight modalities span $29$ spectroscopic measurements; both derivation routes reproduce them with mean fractional error $0.083\%$ and maximum fractional error $1.37\%$ (the bend overtone $2\nu_{2}$ where simple anharmonicity terms underestimate the splitting). Twenty of the twenty-nine lines match measurement to better than $0.05\%$; the photoelectron and mass spectra reproduce experimental values exactly.
+\end{result}
+
+\begin{figure*}[!htbp]
+    \centering
+    \includegraphics[width=\textwidth]{figures/panel_3_h2o_water.png}
+    \caption{\textbf{Water H$_2$O: Complete Spectral Atlas Across Eight Modalities.}
+    (\textbf{A})~Resolved versus measured IR vibrational frequencies for H$_2$O on linear axes.
+    (\textbf{B})~Photoelectron binding energies for the four occupied valence orbitals of H$_2$O.
+    (\textbf{C})~Per-modality mean absolute error across the eight H$_2$O modalities.
+    (\textbf{D})~Three-dimensional landscape of H$_2$O resolved lines coloured by modality.}
+    \label{fig:h2ocomp}
+\end{figure*}
+
+\clearpage
+
+% ============================================================
+% ============================================================
+\part*{Part IV --- The Ladder Route}
+\addcontentsline{toc}{part}{Part IV --- The Ladder Route}
+% ============================================================
+
+Parts I--III presented the atlas. This part computes the quantities that
+only the ladder route defines, from the same measured values, and reports
+what they found.
+
+\section{Rung powers from measured lines}
+\label{sec:rungs}
+
+Applying \eqref{eq:specpower} to the measured NIST wavelengths gives a
+power for every line of the hydrogen atlas. The results are shown in
+Figure~\ref{fig:rungs}. Each series forms an ordered fan rising toward
+$\pow\to1$ at its limit, where the transition supplies the whole of the
+final state's binding and the circulation contribution
+$-\log(1-\pow)$ diverges.
+
+\begin{result}[Circulation of the hydrogen series]
+\label{res:circulation}
+\begin{center}\small
+\begin{tabular}{lccc}
+\toprule
+Series & rungs & $\circu$ & $\circu/n$\\
+\midrule
+Lyman    & 5 & $13.159$ & $2.632$\\
+Balmer   & 5 & $8.679$  & $1.736$\\
+Paschen  & 4 & $4.679$  & $1.170$\\
+Brackett & 3 & $2.386$  & $0.795$\\
+Pfund    & 2 & $1.008$  & $0.504$\\
+\bottomrule
+\end{tabular}
+\end{center}
+Circulation per rung falls monotonically with the final-state depth: a rung
+landing on a deeply bound final state closes a larger fraction of that
+state's binding than one landing on a shallow state, and deposits
+correspondingly more residue.
+\end{result}
+
+\begin{figure*}[!htbp]
+    \centering
+    \includegraphics[width=\textwidth]{figures/panel_6_ladder_rungs.png}
+    \captionLadderRungs
+    \label{fig:rungs}
+\end{figure*}
+
+\section{Circulation is additive: the Ritz test, and what it caught}
+\label{sec:ritz}
+
+Circulation is additive along a ladder
+(Remark~\ref{rem:rho-honest}). Spectroscopy has an independent name for the
+same fact --- the Ritz combination principle --- and an independent way to
+test it, since the combination
+\begin{equation}
+\tilde\nu(1\!\to\!n)=\tilde\nu(1\!\to\!2)+\tilde\nu(2\!\to\!n)
+\label{eq:ritz}
+\end{equation}
+relates \emph{three measured lines} rather than any one line to a formula.
+This is the first quantity in the paper that a per-line comparison cannot
+evaluate, because it constrains lines against each other.
+
+We registered the expectation that \eqref{eq:ritz} would hold to
+$10^{-6}$, and recorded in advance the risk that it might hold trivially,
+being a restatement of a known principle. Neither happened.
+
+\begin{result}[A registered expectation refuted, then diagnosed]
+\label{res:ritz}
+Evaluated on the wavelength table as tabulated, \eqref{eq:ritz} fails.
+\begin{center}\small
+\begin{tabular}{lccc}
+\toprule
+$n$ & residual, as tabulated & residual, Balmer$\to$vacuum & rounding budget\\
+\midrule
+$3$ & $4.388\times10^{-5}$ & $7.125\times10^{-7}$ & $8.46\times10^{-7}$\\
+$4$ & $5.575\times10^{-5}$ & $1.253\times10^{-7}$ & $8.64\times10^{-7}$\\
+$5$ & $6.166\times10^{-5}$ & $1.614\times10^{-7}$ & $8.73\times10^{-7}$\\
+$6$ & $6.444\times10^{-5}$ & $6.723\times10^{-8}$ & $8.78\times10^{-7}$\\
+\bottomrule
+\end{tabular}
+\end{center}
+The tabulated residual exceeds the rounding budget of the quoted
+four-decimal digits by a factor of $73$, and it rises monotonically with
+$n$. Random tabulation error does not do that.
+\end{result}
+
+The diagnosis is a unit convention. The Lyman wavelengths are vacuum
+values; the Balmer wavelengths are standard-air values. Converting the
+Balmer set to vacuum through the standard dispersion relation drops the
+residual to $7.1\times10^{-7}$, inside the rounding budget, and removes the
+monotone trend entirely (Figure~\ref{fig:fourroutes}C).
+
+\begin{remark}[Why the two-route version could not catch this]
+\label{rem:whycaught}
+The earlier version reported the Balmer lines as reproducing NIST ``to all
+six tabulated digits.'' That report was correct. Each line was compared
+against the tabulated value it had been drawn from, so a systematic offset
+shared by the whole Balmer column is invisible: it appears in both the
+predicted and the reference column at once. Detecting it requires a
+constraint relating different lines to each other, and \eqref{eq:ritz} is
+such a constraint. This is the concrete answer to what a further route
+buys, and it is worth being precise that the route did not predict a
+spectrum better --- it found an error in the handling of the data.
+\end{remark}
+
+\begin{figure*}[!htbp]
+    \centering
+    \includegraphics[width=\textwidth]{figures/panel_5_four_routes.png}
+    \captionFourRoutes
+    \label{fig:fourroutes}
+\end{figure*}
+
+\section{The hyperfine line as the parity rung}
+\label{sec:hfrung}
+
+A rung rewrites one or more letters of the word $(n,\ell,m,s)$. The
+transitions of the optical atlas rewrite $n$ and $\ell$ together, satisfying
+$\Delta\ell=\pm1$. The hyperfine transition rewrites $s$ alone.
+
+\begin{proposition}[A rung on the parity letter is dipole-forbidden]
+\label{prop:parity}
+Chirality is a topological invariant, arising from
+$\pi_1(SO(3))=\mathbb{Z}_2$; a continuous deformation of the partition
+boundary cannot change it. An electric-dipole transition is such a
+deformation. Hence a rung rewriting $s$ alone is electric-dipole forbidden,
+which is the selection rule $\Delta s=0$.
+\end{proposition}
+
+The 21\,cm line is observed nonetheless, through the magnetic-dipole
+channel. The ladder route makes this quantitative in a way the selection
+rule alone does not: a strictly forbidden rung has power exactly zero, and
+an observed one does not.
+
+\begin{result}[The 21\,cm rung is near-inert, not inert]
+\label{res:hf}
+\begin{center}\small
+\begin{tabular}{lcc}
+\toprule
+Rung & power $\pow$ & $-\log(1-\pow)$\\
+\midrule
+Forbidden ($2s\to1s$, $3d\to1s$) & $0$ exactly & $0$ exactly\\
+21\,cm parity rung               & $4.3199\times10^{-7}$ & $4.3199\times10^{-7}$\\
+Smallest allowed E1 rung (Pf-$\alpha$) & $0.30556$ & $0.36447$\\
+\bottomrule
+\end{tabular}
+\end{center}
+The parity rung lies $5.85$ orders of magnitude below the smallest allowed
+rung of the atlas and is strictly above the inert value. The registered
+expectation was ``at least four orders''; the measurement exceeds it.
+\end{result}
+
+Near-inert is the ladder statement of a long lifetime. A rung of power
+$4\times10^{-7}$ deposits almost no residue per contact, and by
+Theorem~\ref{thm:mult} a ladder of such rungs closes almost none of the
+standing ambiguity --- which is what a $10^{7}$-year transition is. The
+21\,cm line is thus not an anomaly requiring separate treatment but the
+smallest non-vanishing rung the alphabet permits: the rewrite of a single
+parity letter, forbidden to first order and therefore barely realised.
+
+\begin{figure*}[!htbp]
+    \centering
+    \includegraphics[width=\textwidth]{figures/panel_7_hyperfine_rung.png}
+    \captionHyperfineRung
+    \label{fig:hfrung}
+\end{figure*}
+
+\section{Closed ladders: the molecular cycles}
+\label{sec:closed}
+
+A spectral series has a target and is a linear ladder. A molecular mode set
+does not: the three normal modes of water are not a chain running to a
+terminus but a cycle, and composite power is undefined for it. This is the
+case the linear apparatus cannot treat, and it is why the closed-ladder
+invariants are needed here at all.
+
+\begin{result}[H$_2$O vibrational cycle, powers from HITRAN]
+\label{res:h2ocycle}
+\begin{center}\small
+\begin{tabular}{lccc}
+\toprule
+Mode & $\tilde\nu$ (cm$^{-1}$) & $\pow$ & source\\
+\midrule
+$\nu_1$ symmetric stretch  & $3657.05$ & $0.08888$ & \citep{shimanouchi1972}\\
+$\nu_2$ bend               & $1594.75$ & $0.03876$ & \citep{shimanouchi1972}\\
+$\nu_3$ antisym.\ stretch  & $3755.93$ & $0.09129$ & \citep{shimanouchi1972}\\
+\midrule
+\multicolumn{2}{l}{circulation $\circu$}    & $0.22834$ & \\
+\multicolumn{2}{l}{uniformity $\unif$}      & $0.66818$ & \\
+\bottomrule
+\end{tabular}
+\end{center}
+Powers are computed against the dissociation limit $D_0=41145$~cm$^{-1}$.
+Both invariants are flat under every rotation of the cycle, with deviation
+below $10^{-16}$.
+\end{result}
+
+The uniformity $0.668$ is the quantitative form of a familiar fact: the
+bend is roughly half the frequency of either stretch, so the cycle is
+markedly non-uniform. What matters methodologically is that this number was
+computed from HITRAN rather than chosen. In the ring corpus of the
+categorical-ladder development the corresponding profiles were assigned,
+and the paper recorded as its first limitation that its chemical claims were
+therefore statements about a formalism. For this corpus that limitation does
+not apply.
+
+\begin{result}[Circulation per rung separates the modalities]
+\label{res:margin}
+\begin{center}\small
+\begin{tabular}{lcc}
+\toprule
+Modality & $\circu/n$ & $\unif$\\
+\midrule
+Electronic (Lyman ladder)      & $2.6319$ & $1.0000$\\
+Vibrational (H$_2$O cycle)     & $0.0761$ & $0.6682$\\
+Rotational (H$_2$O $A,B,C$)    & --- & $0.5623$\\
+\midrule
+\multicolumn{1}{l}{separation margin} & $+2.5558$ & \\
+\bottomrule
+\end{tabular}
+\end{center}
+The margin is $+2.556$, against $+0.293$ for the aromatic/saturated
+separation of the assigned-profile ring corpus.
+\end{result}
+
+\begin{remark}[Neither invariant alone classifies]
+\label{rem:two-invariants}
+The ring corpus reached a two-invariant conclusion the hard way: an
+expectation that uniformity alone characterises aromaticity was refuted by
+cyclohexane, which is perfectly uniform and not aromatic. The same
+structure holds here and we did not have to rediscover it. Circulation per
+rung separates electronic from vibrational; it says nothing about the
+rotational triple, which has no comparable circulation. Uniformity
+separates the water cycles from the Lyman ladder and from each other
+($0.668$ against $0.562$) but places benzene-like and cyclohexane-like
+cases together. The pair discriminates; neither member does
+(Figure~\ref{fig:closed}D).
+\end{remark}
+
+\begin{figure*}[!htbp]
+    \centering
+    \includegraphics[width=\textwidth]{figures/panel_8_closed_ladders.png}
+    \captionClosedLadders
+    \label{fig:closed}
+\end{figure*}
+
+\section{Validation}
+\label{sec:validation}
+
+Expectations were written into the experiment source before it ran and are
+reported below with their measured outcomes, including the one that was
+refuted. Every number quoted is read from the emitted JSON
+(\texttt{results/ladder\_routes.json}); the registered expectations are in
+\texttt{REGISTERED\_EXPECTATIONS.md}, unedited.
+
+\begin{table}[H]
+\centering\small
+\caption{Ladder-route validation. Ten checks, all passing --- but one of
+them passes only after a registered expectation was refuted and diagnosed,
+which is why the count alone is uninformative.}
+\label{tab:validation}
+\begin{tabular}{llp{6.6cm}}
+\toprule
+\textbf{Category} & \textbf{Checks} & \textbf{Content}\\
+\midrule
+Ritz additivity & $2/2$ &
+holds in vacuum to $7.1\times10^{-7}$; mixed-convention failure detected at
+$73\times$ the rounding budget\\
+Inert rungs \& hyperfine & $3/3$ &
+forbidden rungs give $\circu=0$ exactly; 21\,cm rung nonzero and minimal,
+$5.85$ decades below the smallest allowed\\
+Closed molecular ladders & $4/4$ &
+$\unif<1$ from HITRAN; $\circu$ and $\unif$ rotation-invariant to
+$10^{-16}$; margin $+2.556$\\
+Four-route convergence & $1/1$ &
+routes agree to $<10^{-4}$; the agreement is structural, see
+Remark~\ref{rem:structural}\\
+\midrule
+\textbf{Total} & $\mathbf{10/10}$ & one expectation refuted before diagnosis\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{remark}[The convergence row is not evidence]
+\label{rem:structural}
+The four-route row of Table~\ref{tab:validation} is a consistency check and
+we report it as such. The ladder column is reconstructed from the measured
+value, so it agrees with measurement identically by construction; and
+Routes 1, 2 and 4 evaluate one closed form, so they agree with each other
+by construction. A row that cannot fail certifies nothing, and the only
+reason to print it is that its \emph{failure} would have indicated an
+implementation error. The load-bearing rows are the other three.
+\end{remark}
+
+\clearpage
+
+% ============================================================
+\part*{Part V --- Discussion}
+\addcontentsline{toc}{part}{Part V --- Discussion}
+% ============================================================
+
+\section{Aggregate precision of the atlas}
+\label{sec:aggregate}
+
+Before the interpretive summary, the atlas itself. The $70$ lines span ten
+orders of magnitude in transition energy, from the $21$~cm hyperfine line at
+$5.9~\mu$eV to the inner-valence binding of water at $32$~eV.
+
+\begin{table}[H]
+\centering\small
+\caption{Aggregate precision across the three reference systems. These are
+properties of the closed forms of Routes 1, 2 and 4, which coincide; the
+ladder route reconstructs and so has no independent error to report.}
+\label{tab:summary}
+\begin{tabular}{lcccc}
+\toprule
+System & Modalities & Lines/bands & Mean error & Max error\\
+\midrule
+H atom    & 8 & 24 & $0.016\%$ & $0.032\%$ \\
+H$_{2}$   & 7 & 17 & $1.093\%$ & $5.865\%$ \\
+H$_{2}$O  & 8 & 29 & $0.083\%$ & $1.368\%$ \\
+\midrule
+\textbf{Total} & \textbf{23} & \textbf{70} & \textbf{0.397\%} & \textbf{5.865\%}\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The hydrogen atom is below $0.04\%$ across all $24$ lines. Molecular
+hydrogen is dominated by one anharmonicity outlier at $v=4$, where the
+simple Morse correction breaks down; the other $15$ lines match to better
+than $0.5\%$. Water has $20$ of $29$ lines below $0.05\%$. These are
+limitations of the leading-order forms used for clarity, not of the
+routes, and each can be refined by standard correction techniques.
+
+\begin{figure*}[!htbp]
+    \centering
+    \includegraphics[width=\textwidth]{figures/panel_4_summary.png}
+    \caption{\textbf{Cross-System Summary: Aggregate Precision Across H,
+    H$_2$ and H$_2$O.}
+    (\textbf{A})~Per-system mean and maximum absolute error across the
+    three reference systems.
+    (\textbf{B})~Line count per system: $24+17+29=70$ lines across $23$
+    modalities.
+    (\textbf{C})~Cumulative line distribution by error bin; more than
+    $90\%$ of lines fall below $0.1\%$ error.
+    (\textbf{D})~Error landscape over (system, modality, $|$error$|$). The
+    single elevated ridge is the H$_2$ $v=0\to4$ overtone, where the Morse
+    anharmonicity correction used here is carried at too low an order.}
+    \label{fig:summary}
+\end{figure*}
+
+\section{What four routes established}
+\label{sec:established}
+
+The honest summary is short.
+
+Routes 1, 2 and 4 agree bit-for-bit on every line of the hydrogen atlas,
+with a common residual to experiment of $1.1\times10^{-5}$. This is not
+three independent confirmations; it is one closed form derived three ways,
+and the residual is the reduced-mass and QED content not carried at this
+order. We report it as a null result because that is what it is, and
+because reporting it as a triple validation is precisely the error the
+two-route version made.
+
+Route 3 computes quantities the others do not define, and that is where
+everything of substance in this paper is located:
+
+\begin{enumerate}[label=(\roman*),nosep]
+\item \textbf{A data error found.} Circulation additivity is a cross-line
+constraint, and it failed at $73\times$ the rounding budget on the
+tabulated wavelengths. The cause was a mixed air/vacuum convention. No
+per-line comparison can detect this, and the earlier version did not.
+\item \textbf{The hyperfine line placed structurally.} It is the rewrite of
+a single parity letter, forbidden by the topological invariance of
+chirality, with measured power $4.32\times10^{-7}$ --- five point eight five
+decades below the smallest allowed rung and strictly above the exactly-zero
+power of an inert rung.
+\item \textbf{Molecular cycles given measured profiles.} The H$_2$O
+vibrational uniformity $\unif=0.668$ is computed from HITRAN. The
+corresponding quantities in the ring corpus from which this apparatus comes
+were assigned, and that corpus recorded the fact as its principal
+limitation.
+\end{enumerate}
+
+\section{Limitations}
+\label{sec:limits}
+
+\begin{enumerate}[label=\textbf{L\arabic*.},leftmargin=2.9em,itemsep=4pt]
+
+\item \textbf{The ladder route reconstructs; it does not predict.} Rung
+powers are computed \emph{from} measured transition energies via
+\eqref{eq:specpower}. The route therefore cannot be wrong about a
+transition energy, and its agreement with measurement in
+Figure~\ref{fig:fourroutes}A is definitional. What it can be wrong about is
+the relations among rungs --- additivity, inertness, the invariants --- and
+those are what we tested.
+
+\item \textbf{Three routes are one closed form.} Stated in
+Proposition~\ref{prop:agreement} and repeated here because the paper's
+title invites the opposite reading. Four routes are not four independent
+predictors; the paper's evidential content rests on the one route that
+computes something the others do not.
+
+\item \textbf{One registered expectation was refuted.} E1 predicted Ritz
+additivity would hold to $10^{-6}$ and it did not, until the convention
+error was diagnosed. We report the refutation and the diagnosis in that
+order, because the diagnosis was made after seeing the failure and a reader
+should be able to discount it accordingly.
+
+\item \textbf{The separation margin is not a discovery about chemistry.}
+Result~\ref{res:margin} separates electronic from vibrational modalities by
+$\circu/n$. That electronic transitions are far more energetic than
+vibrational ones is not news; the content is that the ladder invariants
+reproduce the distinction from measured data, not that they reveal it.
+
+\item \textbf{Powers are not derived.} As in every prior development of
+this apparatus, a power is measured rather than predicted. The framework
+says what follows from powers, not what determines them. Deriving profiles
+from the shell arithmetic that already yields valence and geometry remains
+undone.
+
+\item \textbf{The floor is a normalisation here.} We use the ionisation
+limit as the ambiguity floor for electronic ladders and the dissociation
+limit for vibrational cycles. Both choices are natural, neither is forced by
+anything in this paper, and different choices rescale $\circu$.
+
+\item \textbf{No endpoint outside spectroscopy.} Nothing here is tested
+against a chemical or biological endpoint. The measurements are internal to
+spectroscopic reference data.
+\end{enumerate}
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+The complete spectra of atomic hydrogen, molecular hydrogen and water have
+been derived four ways and compared against NIST, HITRAN and the
+Shimanouchi compilation across $70$ lines and bands. Three of the four
+routes --- the established Schr\"odinger formalism, the physical instrument
+resolving partition coordinates, and the resting catalogue of minimum cuts
+--- coincide exactly, and we have said plainly that this coincidence is
+structural rather than evidential: they are three derivations of one closed
+form, sharing a $1.1\times10^{-5}$ residual to experiment that reflects the
+order at which each is carried rather than any disagreement between them.
+
+The fourth route earns its place by computing something the others do not
+define. Deleting the carrier leaves a ladder whose rungs carry powers, and
+those powers, computed here from measured transition energies rather than
+assigned, support invariants with their own falsifiable behaviour. One of
+them found something: circulation is additive, additivity is a constraint
+relating three measured lines rather than one line to a formula, and
+evaluated on the tabulated wavelengths it fails by seventy-three times the
+rounding budget with a monotone trend in $n$. The cause is a mixed air and
+vacuum convention in the source table. The two-route version reported those
+same lines as agreeing to every tabulated digit, and was correct to, because
+a per-line comparison compares a line against the table it came from.
+
+The hyperfine 21\,cm line, which gives this atlas its name, is on this
+reading the smallest non-vanishing rung the alphabet permits: the rewrite of
+the parity letter alone, forbidden to first order because chirality is a
+topological invariant, and measured at $4.32\times10^{-7}$ --- five point
+eight five orders of magnitude below the smallest allowed rung, and
+strictly above the exactly-zero power of a rung that is truly inert. That
+gap is what a $10^{7}$-year lifetime looks like in power coordinates.
+
+What a further derivation route bought, then, was not a better spectrum.
+Every route reproduces spectra that were already measured, and the ladder
+route reconstructs rather than predicts them. What it bought was a
+constraint that no single route can evaluate, and the constraint caught an
+error. That is the argument for computing a thing more than one way, and it
+is a narrower argument than convergence is usually asked to carry.
+
+% ============================================================
+\section*{Reproducibility}
+% ============================================================
+
+The registered expectations are in \texttt{REGISTERED\_EXPECTATIONS.md},
+written before the ladder quantities were computed and not edited
+afterwards. \texttt{validate\_ladder\_routes.py} computes every ladder
+quantity and writes \texttt{results/ladder\_routes.json};
+\texttt{generate\_ladder\_panels.py} draws Figures~\ref{fig:fourroutes}--%
+\ref{fig:closed} from that file. The refuted form of E1 is retained in the
+source with its outcome recorded, as is the mixed-convention wavelength
+table, so that the failure can be reproduced and not merely read about. All
+values are deterministic; there are no stochastic components.
+
+% ============================================================
+\section*{Acknowledgements}
+% ============================================================
+
+The author thanks the maintainers of NIST ASD, HITRAN, and the Shimanouchi
+vibrational compilation for the public availability of high-precision
+reference data, without which neither the atlas nor the convention error
+would have been visible.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

@@ -1,14 +1,11 @@
 /**
- * Chart primitives for the workbench panels.
+ * Chart primitives shared by the panels: Panel chrome, and the marks that
+ * carry a provenance state — an Agreement row, an ExpectationTable, a
+ * ChecksList. These render *whether a number was checked*, which is why they
+ * are hand-built rather than taken from a library.
  *
- * Hand-rolled SVG rather than a chart library, for two reasons that matter
- * here: the panels need marks a general library does not have (a cyclic ladder
- * drawn as a ring, an expectation-vs-measurement verdict row), and every mark
- * has to be able to carry a provenance state — recomputed, committed, or
- * disagreeing. A library would render the number; it would not render whether
- * the number was checked.
- *
- * Every component takes data. None of them contains a measured value.
+ * The plotting marks live in D3Charts.js and are built on d3 scales and shape
+ * generators. Anything with an axis belongs there.
  */
 
 const T = {
